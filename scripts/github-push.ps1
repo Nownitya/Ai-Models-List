@@ -8,7 +8,6 @@ param (
     [string]$Visibility = "public"
 )
 
-$ErrorActionPreference = "Stop"
 $RepoName = "Ai-Models-List"
 
 Write-Host "=== GitHub Publishing Script for $RepoName ===" -ForegroundColor Cyan
@@ -25,9 +24,8 @@ if (-not (Test-Path $ghPath)) {
     }
 }
 
-# Resolve Token
-$authCheck = & $ghPath auth status 2>&1
-if ($LASTEXITCODE -ne 0) {
+# Resolve Token from Git Credential Store
+if (-not $env:GH_TOKEN) {
     Write-Host "Resolving GitHub token from Git credential store..." -ForegroundColor Yellow
     $prompt = "protocol=https`nhost=github.com`n`n"
     $cred = $prompt | git credential fill 2>$null
@@ -36,43 +34,42 @@ if ($LASTEXITCODE -ne 0) {
         $env:GH_TOKEN = $token
         Write-Host "Token resolved successfully." -ForegroundColor Green
     } else {
-        Write-Error "Could not resolve GitHub token. Please run 'gh auth login'."
+        Write-Host "Could not resolve GitHub token. Please login via: gh auth login" -ForegroundColor Red
         exit 1
     }
 }
 
 $currentUser = (& $ghPath api user --jq .login 2>$null).Trim()
+if (-not $currentUser) {
+    Write-Host "Authentication failed with provided credentials." -ForegroundColor Red
+    exit 1
+}
 Write-Host "Authenticated as GitHub user: $currentUser" -ForegroundColor Green
 
-# Initialize Git
-if (-not (Test-Path ".git")) {
-    Write-Host "Initializing Git repository..." -ForegroundColor Yellow
-    git init -b main
-} else {
-    git branch -M main
-}
+# Ensure on main branch
+git branch -M main
 
-# Commit
+# Commit unstaged changes if any
 git add .
 $status = git status --porcelain
 if ($status) {
     Write-Host "Committing changes..." -ForegroundColor Yellow
     git commit -m "feat: initial commit of AI Coding Skills and Tools Matrix (dual-format md/csv)"
 } else {
-    Write-Host "No unstaged changes." -ForegroundColor Gray
+    Write-Host "Working tree clean." -ForegroundColor Gray
 }
 
 # Check or Create Remote
 $repoExists = $false
 try {
-    & $ghPath repo view "$currentUser/$RepoName" --json name 2>$null | Out-Null
-    if ($LASTEXITCODE -eq 0) { $repoExists = $true }
+    $check = & $ghPath repo view "$currentUser/$RepoName" --json name 2>$null
+    if ($LASTEXITCODE -eq 0 -and $check) { $repoExists = $true }
 } catch {
     $repoExists = $false
 }
 
 if ($repoExists) {
-    Write-Host "Remote repository $currentUser/$RepoName exists." -ForegroundColor Green
+    Write-Host "Remote repository $currentUser/$RepoName already exists." -ForegroundColor Green
     $remotes = git remote
     if ($remotes -notcontains "origin") {
         git remote add origin "https://github.com/$currentUser/$RepoName.git"
