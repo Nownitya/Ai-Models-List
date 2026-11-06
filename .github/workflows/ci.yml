@@ -1,0 +1,34 @@
+name: Matrix Parity & Verification Gate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify-matrix:
+    name: Dual-Matrix Parity & Skill Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate Dual-Matrix Parity (.md <-> .csv)
+        run: |
+          python scripts/sync-matrix.py
+
+      - name: Verify Skills Structure
+        run: |
+          python -c "
+          from pathlib import Path
+          skills = list(Path('skills').rglob('SKILL.md'))
+          print(f'Total structured skills verified: {len(skills)}')
+          assert len(skills) >= 50, 'Skill catalog verification failed!'
+          "
