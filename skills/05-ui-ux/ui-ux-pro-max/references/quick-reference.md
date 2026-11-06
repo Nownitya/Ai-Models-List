@@ -18,3 +18,4 @@ Key rules, contrast ratios, and ergonomics standards from UI/UX Pro Max.
 - **Auxiliary Controls**: Minimum **44dp / 44pt** touch hitbox.
 - **Monospaced Telemetry**: Strictly monospaced digits for frequencies, dBFS levels, GPS coordinates, ping latency, and packet drop counts.
 - **Zero UI Slop**: Zero decorative emojis in interface chrome; use 100% vector SF Symbols (iOS) or Lucide/Material vector paths (Android).
+

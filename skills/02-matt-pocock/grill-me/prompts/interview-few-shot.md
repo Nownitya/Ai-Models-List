@@ -17,3 +17,4 @@ Before implementing the offline voice caching pipeline, I need to align on 2 cri
    - `(Recommended)` **Encrypted Room SQLite**: Encrypted at rest via SQLCipher; survives process kills.
    - **In-Memory RingBuffer**: Zero disk writes; lost if app is killed by Android OS.
 ```
+
