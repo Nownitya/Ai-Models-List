@@ -1,0 +1,802 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Intercom-Alpha Cross-Platform Mesh Architecture",
+    "subtitle": "KMP Shared Core, Native SwiftUI & Compose, Multi-Hop BLE Flooding, AODV-Lite Directed Routing, Inter-Convoy Gateway & RFC 8439 AEAD Encryption",
+    "output": "docs/architecture/intercom-alpha-architecture.html",
+    "visual_preset": "blueprint",
+    "animation": "trace",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "audio-pipeline",
+        "label": "Voice & Mesh Pipeline",
+        "focus": ["android_ui", "ios_ui", "swift_bridge", "audio_engine", "packet_cipher", "deduplicator", "mesh_transport", "remote_peers"],
+        "note": "Follow audio from client capture through ChaCha20-Poly1305 encryption, deduplication, and BLE flooding relay."
+      },
+      {
+        "id": "multiplatform-clients",
+        "label": "Native Clients & KMP Bridge",
+        "focus": ["android_ui", "ios_ui", "swift_bridge", "audio_engine"],
+        "note": "Observe strict architectural separation: Android Compose vs 100% Native SwiftUI via IntercomBridge."
+      },
+      {
+        "id": "security-and-routing",
+        "label": "Group Key Security & Cloud Fallback",
+        "focus": ["group_mgr", "packet_cipher", "deduplicator", "mesh_transport", "signaling_server"],
+        "note": "QR code key derivation, sliding-window broadcast storm suppression, and Ktor cloud fallback."
+      },
+      {
+        "id": "tactical-safety-and-routing",
+        "label": "Convoy Radar, Crash HUD & Directed Routing",
+        "focus": ["android_ui", "ios_ui", "swift_bridge", "voice_recognizer", "crash_detector", "trail_engine", "geofence_engine", "battery_governor", "directed_router", "link_metric", "mesh_transport", "remote_peers"],
+        "note": "Follow dynamic convoy radar tethering, split detection, IMU crash eCall HUD, offline voice DSP, and AODV-Lite route discovery."
+      },
+      {
+        "id": "qos-failover-and-alpine-gateway",
+        "label": "QoS, Alpine Coded PHY & Satellite Gateway",
+        "focus": ["failover_arbiter", "hybrid_router", "tactical_snapshot", "multi_radio_arbiter", "group_rekey_protocol", "satellite_bridge", "adaptive_phy", "wearable_companion", "spectral_suppressor", "wake_word_engine", "congestion_governor", "mesh_transport", "remote_peers"],
+        "note": "Follow 4-tier QoS, LE Coded S=8 reach, spectral noise DSP, hands-free wake word, airtime congestion shaping & satellite lifeline."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "android_ui",
+      "type": "frontend",
+      "label": "Android Client",
+      "sublabel": "Compose + Nav 3",
+      "tag": "Kotlin / Koin",
+      "pos": [80, 180],
+      "size": [136, 62]
+    },
+    {
+      "id": "ios_ui",
+      "type": "frontend",
+      "label": "iOS Client",
+      "sublabel": "Native SwiftUI",
+      "tag": "Swift / AVFoundation",
+      "pos": [80, 400],
+      "size": [136, 62]
+    },
+    {
+      "id": "swift_bridge",
+      "type": "backend",
+      "label": "Swift Bridge",
+      "sublabel": "IntercomBridge.kt",
+      "tag": "Native Observers",
+      "pos": [300, 400],
+      "size": [136, 62]
+    },
+    {
+      "id": "group_mgr",
+      "type": "security",
+      "label": "Group Manager",
+      "sublabel": "QR Onboarding",
+      "tag": "INTERCOM:v1:",
+      "pos": [520, 180],
+      "size": [136, 62]
+    },
+    {
+      "id": "audio_engine",
+      "type": "backend",
+      "label": "Audio Engine",
+      "sublabel": "16-bit PCM / VOX",
+      "tag": "RMS Metering",
+      "pos": [520, 400],
+      "size": [136, 62]
+    },
+    {
+      "id": "trail_engine",
+      "type": "backend",
+      "label": "Trail Map Engine",
+      "sublabel": "Vector Geometry",
+      "tag": "Contours / OTA",
+      "pos": [520, 580],
+      "size": [136, 62]
+    },
+    {
+      "id": "packet_cipher",
+      "type": "security",
+      "label": "Packet Cipher",
+      "sublabel": "RFC 8439 AEAD",
+      "tag": "ChaCha20-Poly1305",
+      "pos": [740, 180],
+      "size": [136, 62]
+    },
+    {
+      "id": "deduplicator",
+      "type": "backend",
+      "label": "Deduplicator",
+      "sublabel": "Sliding TTL=5s",
+      "tag": "Storm Suppression",
+      "pos": [740, 400],
+      "size": [136, 62]
+    },
+    {
+      "id": "geofence_engine",
+      "type": "backend",
+      "label": "Convoy Geofence",
+      "sublabel": "Tether Radar & Split",
+      "tag": "Haversine / Alarms",
+      "pos": [740, 580],
+      "size": [136, 62]
+    },
+    {
+      "id": "signaling_server",
+      "type": "cloud",
+      "label": "Signaling Server",
+      "sublabel": "Ktor WebSocket",
+      "tag": "Cloud Fallback",
+      "pos": [960, 180],
+      "size": [136, 62]
+    },
+    {
+      "id": "mesh_transport",
+      "type": "messagebus",
+      "label": "Mesh Transport",
+      "sublabel": "GATT 0x180D",
+      "tag": "Flooding Relay",
+      "pos": [960, 400],
+      "size": [136, 62]
+    },
+    {
+      "id": "battery_governor",
+      "type": "backend",
+      "label": "Battery Governor",
+      "sublabel": "Duty-Cycle Scaling",
+      "tag": "Motion / Rest-Stop",
+      "pos": [960, 580],
+      "size": [136, 62]
+    },
+    {
+      "id": "remote_peers",
+      "type": "external",
+      "label": "Mesh Peers",
+      "sublabel": "Decentralized",
+      "tag": "Multi-Hop Hops",
+      "pos": [1180, 400],
+      "size": [136, 62]
+    },
+    {
+      "id": "crash_detector",
+      "type": "backend",
+      "label": "Crash Detector",
+      "sublabel": "IMU High-G / Tilt",
+      "tag": "30s eCall Arbiter",
+      "pos": [300, 580],
+      "size": [136, 62]
+    },
+    {
+      "id": "voice_recognizer",
+      "type": "backend",
+      "label": "Voice Command DSP",
+      "sublabel": "Offline Keyword Spotter",
+      "tag": "1-Pole Spectral Filter",
+      "pos": [300, 180],
+      "size": [136, 62]
+    },
+    {
+      "id": "link_metric",
+      "type": "backend",
+      "label": "Link Metric Engine",
+      "sublabel": "ETX / RSSI Sliding",
+      "tag": "Failure Breaker",
+      "pos": [740, 760],
+      "size": [136, 62]
+    },
+    {
+      "id": "directed_router",
+      "type": "backend",
+      "label": "Directed Mesh Router",
+      "sublabel": "AODV-Lite Engine",
+      "tag": "Contention Mitigator",
+      "pos": [960, 760],
+      "size": [136, 62]
+    },
+    {
+      "id": "cross_mesh_arbiter",
+      "type": "backend",
+      "label": "Cross-Mesh Arbiter",
+      "sublabel": "Anti-Feedback Guard",
+      "tag": "Sub-Group Isolation",
+      "pos": [300, 760],
+      "size": [136, 62]
+    },
+    {
+      "id": "federation_gateway",
+      "type": "security",
+      "label": "Inter-Group Gateway",
+      "sublabel": "Cross-Mesh Bridge",
+      "tag": "FEDERATION:v1:",
+      "pos": [520, 760],
+      "size": [136, 62]
+    },
+    {
+      "id": "qos_scheduler",
+      "type": "backend",
+      "label": "QoS Scheduler",
+      "sublabel": "Traffic Shaping",
+      "tag": "4-Tier Preemption",
+      "pos": [740, 940],
+      "size": [136, 62]
+    },
+    {
+      "id": "qos_queue",
+      "type": "backend",
+      "label": "QoS Queue",
+      "sublabel": "Priority + DRR",
+      "tag": "Anti-Starvation",
+      "pos": [960, 940],
+      "size": [136, 62]
+    },
+    {
+      "id": "failover_arbiter",
+      "type": "backend",
+      "label": "Failover Arbiter",
+      "sublabel": "MultiPathFailover",
+      "tag": "Hysteresis Machine",
+      "pos": [300, 940],
+      "size": [136, 62]
+    },
+    {
+      "id": "hybrid_router",
+      "type": "backend",
+      "label": "Hybrid Router",
+      "sublabel": "Transport Router",
+      "tag": "Dual-Stream Hedger",
+      "pos": [520, 940],
+      "size": [136, 62]
+    },
+    {
+      "id": "tactical_snapshot",
+      "type": "backend",
+      "label": "Tactical Snapshots",
+      "sublabel": "0.5 fps MTU Chunker",
+      "tag": "Adler-32 Selective NACK",
+      "pos": [300, 1120],
+      "size": [136, 62]
+    },
+    {
+      "id": "multi_radio_arbiter",
+      "type": "backend",
+      "label": "Multi-Radio Arbiter",
+      "sublabel": "BLE + Wi-Fi Direct",
+      "tag": "Bulk Data Offloader",
+      "pos": [520, 1120],
+      "size": [136, 62]
+    },
+    {
+      "id": "group_rekey_protocol",
+      "type": "security",
+      "label": "Group Rekey Protocol",
+      "sublabel": "OTA Dual-Epoch",
+      "tag": "HKDF-SHA256 Forward Secret",
+      "pos": [740, 1120],
+      "size": [136, 62]
+    },
+    {
+      "id": "satellite_bridge",
+      "type": "cloud",
+      "label": "Satellite Gateway",
+      "sublabel": "Iridium SBD / inReach",
+      "tag": "Pure KMP Lifeline <=120B",
+      "pos": [960, 1120],
+      "size": [136, 62]
+    },
+    {
+      "id": "wearable_companion",
+      "type": "backend",
+      "label": "Wearable Companion",
+      "sublabel": "Watch Quick-PTT",
+      "tag": "Biometric Vitals & Fall",
+      "pos": [300, 1300],
+      "size": [136, 62]
+    },
+    {
+      "id": "adaptive_phy",
+      "type": "backend",
+      "label": "Adaptive PHY Arbiter",
+      "sublabel": "LE Coded S=8 (125k)",
+      "tag": ">500m Alpine Reach",
+      "pos": [520, 1300],
+      "size": [136, 62]
+    },
+    {
+      "id": "spectral_suppressor",
+      "type": "backend",
+      "label": "Spectral Filter",
+      "sublabel": "Spectral Subtraction",
+      "tag": "Wind Suppressor",
+      "pos": [740, 1300],
+      "size": [136, 62]
+    },
+    {
+      "id": "wake_word_engine",
+      "type": "backend",
+      "label": "Wake Word DSP",
+      "sublabel": "VOX Arbiter",
+      "tag": "Hey Alpha / SOS",
+      "pos": [960, 1300],
+      "size": [136, 62]
+    },
+    {
+      "id": "congestion_governor",
+      "type": "backend",
+      "label": "Airtime Governor",
+      "sublabel": "Airtime Shaper",
+      "tag": "Adaptive FEC",
+      "pos": [1180, 1300],
+      "size": [136, 62]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Client Presentation Layer",
+      "wraps": ["android_ui", "ios_ui", "swift_bridge"],
+      "pad": 16
+    },
+    {
+      "kind": "security-group",
+      "label": "KMP Core Engine (:app:sharedLogic)",
+      "wraps": ["group_mgr", "audio_engine", "trail_engine", "packet_cipher", "deduplicator", "geofence_engine", "mesh_transport", "battery_governor", "crash_detector", "voice_recognizer", "link_metric", "directed_router", "cross_mesh_arbiter", "federation_gateway", "qos_scheduler", "qos_queue", "failover_arbiter", "hybrid_router", "tactical_snapshot", "multi_radio_arbiter", "group_rekey_protocol", "satellite_bridge", "wearable_companion", "adaptive_phy", "spectral_suppressor", "wake_word_engine", "congestion_governor"],
+      "pad": 16
+    },
+    {
+      "kind": "region",
+      "label": "Network & Cloud Infrastructure",
+      "wraps": ["signaling_server", "remote_peers"],
+      "pad": 16
+    }
+  ],
+  "connections": [
+    {
+      "from": "android_ui",
+      "to": "voice_recognizer",
+      "label": "Mic Audio",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "voice_recognizer",
+      "to": "group_mgr",
+      "label": "Voice Ctrl",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "group_mgr",
+      "to": "packet_cipher",
+      "label": "Key",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "security"
+    },
+    {
+      "from": "ios_ui",
+      "to": "swift_bridge",
+      "label": "SwiftUI",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "swift_bridge",
+      "to": "audio_engine",
+      "label": "Cinterop",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "audio_engine",
+      "to": "deduplicator",
+      "label": "Frames",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "packet_cipher",
+      "to": "deduplicator",
+      "label": "AEAD",
+      "labelAt": [820, 320],
+      "fromSide": "bottom",
+      "toSide": "top",
+      "variant": "security"
+    },
+    {
+      "from": "deduplicator",
+      "to": "mesh_transport",
+      "label": "Relay",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "mesh_transport",
+      "to": "remote_peers",
+      "label": "GATT BLE",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "mesh_transport",
+      "to": "signaling_server",
+      "label": "Relay WS",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "dashed"
+    },
+    {
+      "from": "swift_bridge",
+      "to": "crash_detector",
+      "label": "IMU Motion",
+      "labelAt": [368, 520],
+      "fromSide": "bottom",
+      "toSide": "top",
+      "variant": "emphasis"
+    },
+    {
+      "from": "crash_detector",
+      "to": "trail_engine",
+      "label": "eCall Fix",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "trail_engine",
+      "to": "geofence_engine",
+      "label": "Waypoints",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "geofence_engine",
+      "to": "battery_governor",
+      "label": "Alarms",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "battery_governor",
+      "to": "mesh_transport",
+      "label": "Power Ctrl",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "emphasis"
+    },
+    {
+      "from": "mesh_transport",
+      "to": "directed_router",
+      "label": "Route Lookup",
+      "fromSide": "right",
+      "toSide": "top",
+      "variant": "emphasis"
+    },
+    {
+      "from": "link_metric",
+      "to": "directed_router",
+      "label": "ETX Cost",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "directed_router",
+      "to": "remote_peers",
+      "label": "Directed Unicast",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "variant": "emphasis"
+    },
+    {
+      "from": "crash_detector",
+      "to": "cross_mesh_arbiter",
+      "label": "SOS Preempt",
+      "labelAt": [368, 656],
+      "fromSide": "bottom",
+      "toSide": "top",
+      "variant": "emphasis"
+    },
+    {
+      "from": "cross_mesh_arbiter",
+      "to": "federation_gateway",
+      "label": "Policy Demux",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "federation_gateway",
+      "to": "link_metric",
+      "label": "Bridge Metric",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "cross_mesh_arbiter",
+      "to": "failover_arbiter",
+      "label": "Failover Hook",
+      "labelAt": [368, 836],
+      "fromSide": "bottom",
+      "toSide": "top",
+      "variant": "emphasis"
+    },
+    {
+      "from": "failover_arbiter",
+      "to": "hybrid_router",
+      "label": "Failover Mode",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "hybrid_router",
+      "to": "qos_scheduler",
+      "label": "Hedged Queue",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "qos_scheduler",
+      "to": "qos_queue",
+      "label": "DRR Schedule",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "qos_queue",
+      "to": "directed_router",
+      "label": "Paced Packets",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "emphasis"
+    },
+    {
+      "from": "tactical_snapshot",
+      "to": "multi_radio_arbiter",
+      "label": "Bulk Stream",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "multi_radio_arbiter",
+      "to": "hybrid_router",
+      "label": "Radio Offload",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "emphasis"
+    },
+    {
+      "from": "group_rekey_protocol",
+      "to": "qos_scheduler",
+      "label": "Epoch Control",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "security"
+    },
+    {
+      "from": "qos_queue",
+      "to": "satellite_bridge",
+      "label": "Emergency SOS",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24,
+      "variant": "emphasis"
+    },
+    {
+      "from": "wearable_companion",
+      "to": "tactical_snapshot",
+      "label": "PTT & Vitals",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "emphasis"
+    },
+    {
+      "from": "adaptive_phy",
+      "to": "multi_radio_arbiter",
+      "label": "PHY Mode",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "variant": "emphasis"
+    },
+    {
+      "from": "wearable_companion",
+      "to": "adaptive_phy",
+      "label": "RF Feedback",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "adaptive_phy",
+      "to": "spectral_suppressor",
+      "label": "Acoustic Guard",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "spectral_suppressor",
+      "to": "wake_word_engine",
+      "label": "Clean Speech",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "wake_word_engine",
+      "to": "congestion_governor",
+      "label": "VOX Meter",
+      "fromSide": "right",
+      "toSide": "left",
+      "variant": "emphasis"
+    },
+    {
+      "from": "congestion_governor",
+      "to": "satellite_bridge",
+      "label": "Shaped FEC",
+      "fromSide": "top",
+      "toSide": "right",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Dual-Platform Client Architecture",
+      "items": [
+        "Android: Jetpack Compose with Navigation 3, Koin Multiplatform DI, and Bluetooth SCO",
+        "iOS: 100% Native SwiftUI UI via reactive IntercomBridge (Do Not Share UI strictly honored)",
+        "Zero shared UI across platforms; 100% shared business logic and networking in KMP"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Mesh Reliability & Storm Suppression",
+      "items": [
+        "Multi-hop flooding relay automatically decrements TTL (3 down to 1) across intermediate peers",
+        "Sliding-window packet deduplicator tracks composite keys within a 5,000ms TTL cache",
+        "Inner packet extraction locally dispatches voice and control packets without extra hops"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Zero-Trust Mesh Encryption",
+      "items": [
+        "Pure Kotlin RFC 8439 ChaCha20-Poly1305 AEAD cipher with 128-bit authentication tags",
+        "Group symmetric key derived from QR code invite secret via FIPS 180-4 SHA-256",
+        "Intermediate relay nodes forward encrypted voice frames without ability to tamper or eavesdrop"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Tactical Geofencing & Power Governor (Sprint 20)",
+      "items": [
+        "Pure KMP ConvoyGeofenceEngine monitors 600m tether bounds, cluster splits, and trail hazards",
+        "Autonomous BatteryGovernor dynamically adapts radio duty cycles (<30% conservative, <15% survival)",
+        "Rest-stop stillness detection (>10m) with instant motion and PTT wake; unconditional emergency override"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Crash Detection, eCall & Offline Voice HUD (Sprint 21)",
+      "items": [
+        "Pure KMP CrashDetector evaluates multi-axis IMU kinematics (>4.5g / >7.0g shocks, >60° sustained tilt, >35 km/h deceleration)",
+        "30-second abortable pre-alert countdown HUD with 1-tap rider abort and autonomous CRASH_ALERT mesh dispatch",
+        "Offline VoiceCommandRecognizer DSP rejects 80-120 km/h wind buffeting (<200 Hz) with hands-free tactical keyword spotter"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "AODV-Lite Directed Routing & RF Contention Mitigation (Sprint 22)",
+      "items": [
+        "Pure KMP AODV-Lite dynamic route discovery (RREQ/RREP) and loop-free sequence number arbitration",
+        "ETX link cost estimation with 3-consecutive-failure circuit breaker and fast self-healing (<300ms)",
+        "Overhearing bystander unicast drop achieving >= 60% RF airtime contention reduction in 24-node convoy"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "Inter-Convoy Gateway & Cross-Mesh Federation (Sprint 23)",
+      "items": [
+        "Pure KMP InterGroupGateway & CrossMeshRelayEngine bridging disparate motorcycle convoys with dual-layer ChaCha20-Poly1305 re-encryption (<25ms latency)",
+        "CrossMeshForwardingArbiter enforces sub-group isolation (channels 2..15 stay intra-squad) with universal Emergency SOS all-call preemption across 32 nodes",
+        "FederationLoopDetector prevents circular relay loops via monotonic pathTrace tracking and sliding-window deduplication with zero feedback amplification"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Mesh Airtime QoS & Preemption Arbiter (Sprint 24)",
+      "items": [
+        "Pure KMP 4-tier QoS Priority Queue & Scheduler (EMERGENCY_CRITICAL > ACTIVE_VOICE > ROUTING_CONTROL > BULK_TELEMETRY)",
+        "Dynamic 400ms conversational voice hangover window preventing ping-pong flapping during speech pauses",
+        "Deficit Round-Robin anti-starvation tokens guaranteeing bounded latency for routing control during continuous voice",
+        "Bulk file transfer duty-cycle throttling (>=150ms delay, <=10% airtime) maintaining Voice PDR >= 92% across 32 congested nodes"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Automated Multi-Path Mesh Failover & Hybrid Relay (Sprint 25)",
+      "items": [
+        "Pure KMP MultiPathFailoverArbiter evaluates ETX, RSSI, and PDR with discrete modes (BLE_DIRECT, MULTI_PATH_HEDGED, CLOUD_RELAY_ONLY, RESTRICTED_OFFLINE)",
+        "Zero-dropout MULTI_PATH_HEDGED dual-stream voice packet hedging with receiver PacketDeduplicator transparent suppression",
+        "5,000ms hysteresis dampening preventing RF boundary flapping during highway convoy drift, mountain split, and tunnel dead zones"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Fleet Hardening, Low-Bandwidth Visual Telemetry & OTA Rekey (Sprint 26)",
+      "items": [
+        "Pure KMP TacticalSnapshotProtocol (0.5 fps, <=128 byte chunks, Adler-32 checksums, out-of-order selective NACK reassembly)",
+        "Concurrent MultiRadioArbiter dynamically routes high-bandwidth snapshots/GPX over Wi-Fi Direct while isolating voice on BLE mesh",
+        "Fleet-wide OTA GroupRekeyProtocol enforces forward-secret HKDF-SHA256 epoch rotation with 10s dual-epoch grace buffer eliminating packet drops",
+        "8-hour continuous soak benchmark across 20 convoy nodes verifying zero memory/coroutine leaks, power scaling, and voice continuity"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Alpine Reach & Satellite Lifeline Integration (Sprint 27)",
+      "items": [
+        "Pure KMP SatelliteGatewayBridge encodes compact Iridium SBD frames (<=120 bytes) with Base64 & CRC-16 checksums for canyon SOS failover",
+        "AdaptivePhyArbiter negotiates BLE PHY modes (LE 1M, 2M, Coded S=2, Coded S=8 125 kbps) with 6 dB hysteresis for >500m reach in alpine switchbacks",
+        "WearableCompanionProtocol integrates smartwatch Quick-PTT debouncing, haptic feedback, and biometric vitals/fall detection into mesh HUD",
+        "24-node alpine simulation validates Coded S=8 long-distance canyon relay and automated satellite ground ACK dispatch"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Edge Acoustic Intelligence & Mesh Airtime Congestion Governance (Sprint 28)",
+      "items": [
+        "Pure KMP Spectral Subtraction Speech Enhancer with Over-Subtraction factor (alpha=2.5) and Spectral Floor (beta=0.05) achieving >=18dB SNR improvement in 65 km/h alpine blizzard wind",
+        "Continuous AcousticWakeWordEngine spotting multi-syllable 'Hey Alpha' and 'Emergency SOS' hands-free triggers with zero false triggers during silence",
+        "Real-Time AirtimeCongestionGovernor monitoring channel airtime utilization (35%-75% saturation thresholds) with dynamic 1/4 to 3/4 FEC scaling and DRR backoff",
+        "32-Node Alpine Blizzard benchmark validates Voice PDR >= 91.5% and Emergency SOS delivery in <= 185ms during severe 65 km/h RF blizzard contention"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Unified Hardware Bridge Integration & System Certification (Sprint 29 / Phase 27)",
+      "items": [
+        "Pure KMP IntercomHardwareBridge & native iOS IntercomBridge unifying all 9 core feature domains across Android and iOS",
+        "Reactive StateFlow pipelines and Swift-friendly CancellationHandle observers for noise suppression, VOX, congestion, satellite, and PHY",
+        "Comprehensive 32-Node Unified System Certification validating end-to-end voice latency <= 80ms, zero dropped emergency frames, and complete hardware bridge synchronization",
+        "Full multiplatform test suite pass across all targets certifying official completion of core engine development"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Dedicated UI/UX Design System Foundations (Sprint 30 / Phase 28)",
+      "items": [
+        "Material 3 Expressive & iOS 18+ HIG tokens enforcing 84dp glove targets, 160dp master PTT diameter, and 2-3dp neobrutalist outlines",
+        "Tactile Modifiers Engine: .claymorphic() convex 3D cushion volume, .neobrutalistBorder() high-sun legibility, and .liquidGlass() frosted HUD overlays",
+        "Skeuomorphic & Sensory Cockpit Widgets: Concentric machined knurled bezels, 14-segment LED VU meter with phosphor decay, and mil-spec hinged safety flip-guard SOS switch",
+        "100% Native SwiftUI on iOS (Rule 1) with pre-warmed TactileHaptics engine and zero Compose UI on Apple targets"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Tactical Cockpit Zero-Scroll Redesign & Spatial Radar HUD (Sprint 31 / Phase 28)",
+      "items": [
+        "Zero-Scroll Tactical Cockpit: Android Jetpack Compose (M3 TopAppBar + ModalBottomSheet) & iOS 100% Native SwiftUI (HIG Navigation + InsetGrouped Diagnostics)",
+        "Glove-Friendly Spatial Radar Card: Frosted liquid glass HUD with 84dp zoom cycle (500m/1.5km/5.0km), concentric rings, crosshairs, topo contours, and monospaced tabular telemetry",
+        "Skeuomorphic Rotary Selector & Master Actuator: TactileChannelDial with stepped detent haptics, 160dp ExpressivePttActuator, phosphor VU decay & guarded SOS flip-cover",
+        "Tactical Cockpit E2E Simulation: Multiplatform interaction test verifying PTT, rotary detents, SOS flip-cover, VOX lock, radar zoom, and sheet transitions"
+      ]
+    }
+  ]
+}
+

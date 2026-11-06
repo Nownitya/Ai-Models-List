@@ -41,3 +41,17 @@ Canonical domain terms and definitions to ensure humans and AI agents share an u
 - **KMP**: Kotlin Multiplatform — cross-platform logic sharing across Android, iOS, Desktop, and Server without sacrificing native UI.
 - **ADK**: Google Agent Development Kit for building, testing, and deploying enterprise agent workflows.
 
+---
+
+## Universal Project Documentation Standard (Layer 15)
+
+- **ADR (Architecture Decision Record)**: Append-only document capturing an architectural decision, its context, considered options, consequences, and enforcement rules.
+- **BRD (Business Requirements Document)**: High-level specification defining commercial objectives, stakeholder matrices, ROI targets, and regulatory invariants.
+- **MRD (Market Requirements Document)**: Market-facing document analyzing market pain points, TAM/SAM/SOM sizing, and competitive positioning.
+- **PRD (Product Requirements Document)**: The definitive product blueprint detailing user personas, epic user stories, acceptance criteria (Gherkin), and NFRs.
+- **SRD (Software Requirements Document)**: Engineering specification of subsystem behavior, internal state machines, network backoff, and error taxonomy.
+- **SSD (System Specification Document)**: Low-level decomposition detailing module concurrency, thread pool dispatchers, and memory lifecycle constraints.
+- **TRD (Technical Requirements Document)**: Infrastructure and platform requirements defining supported OS targets, toolchains, CPU/RAM budgets, and binary limits.
+- **TSD (Technical Specification Document)**: Detailed technical specifications for wire protocols, packet binary layouts, and mathematical algorithms.
+- **DoD (Definition of Done)**: Strict, verifiable checklist of criteria that must be satisfied with empirical evidence before a task, sprint, or milestone is declared complete.
+
