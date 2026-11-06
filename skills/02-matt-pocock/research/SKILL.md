@@ -1,26 +1,12 @@
 ---
 name: research
-title: "research"
-description: "Research technical solutions and documentation."
-priority: P1
-category: 02-matt-pocock
+description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.
 ---
 
-# Research
+Spin up a **background agent** to do the research, so you keep working while it reads. Start it with a fresh context window.
 
-> **Priority**: `P1` | **Category**: `02-matt-pocock`
+Its job:
 
-Research technical solutions and documentation.
-
-## When to Use
-- Activate when executing workflows requiring **research**.
-- Follow project architecture rules and verify compatibility before loading.
-
-## Core Capabilities & Protocol
-1. **Initialize Context**: Load relevant contracts, tests, and documentation.
-2. **Execute Action**: Perform surgical, task-specific implementations following standards.
-3. **Validate Result**: Run verification commands and assert expected behavior.
-
-## Anti-Patterns & Warnings
-- Speculative changes without verifiable acceptance criteria.
-- Loading duplicate overlapping tools simultaneously causing context degradation.
+1. Investigate the question against **primary sources** (official docs, source code, specs, first-party APIs), not a secondary write-up of them. Follow every claim back to the source that owns it.
+2. Write the findings to a single Markdown file, citing each claim's source.
+3. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
