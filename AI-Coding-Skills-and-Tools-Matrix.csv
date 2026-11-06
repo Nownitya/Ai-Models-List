@@ -1,0 +1,484 @@
+Field,Details
+Purpose,"Master inventory of AI coding skills, frameworks, agent tools and specialized capabilities."
+Priority P0,Essential capability; prioritize for the main toolkit.
+Priority P1,High value; strongly recommended.
+Priority P2,Medium value; enable when the workflow needs it.
+Priority P3,Optional; install only for relevant projects.
+Important,Priority does not mean every skill should remain permanently loaded. Activate only what the current project needs.
+Compatibility,"Verify current repository contents, exact skill names, licensing and Antigravity compatibility before installation. Model-agnostic skills run through the selected coding assistant/model; distinguish assistant compatibility from model-provider support."
+Avoid duplication,"GSD, Superpowers, gstack and general engineering skills overlap. Assign clear responsibilities and avoid loading duplicate workflows."
+Suggested focus,"Android/Kotlin/KMP, core engineering, project planning, UI/UX, testing, debugging, security and code review."
+Project documentation,"See 15_Project_Docs for the reusable project documentation standard, engineering quality checklist, AI self-review and security checklist."
+Newly reviewed tools,Graphify = codebase relationship graph; Context7 = current external library documentation (complementary). MemPalace = persistent project/conversation memory. GSD Core + GSD Pi = core workflow + Pi host integration. Impeccable = UI design critique/audit/polish.
+Tool distinction,Graphify = codebase relationship graph; Context7 = current external library docs; MemPalace = persistent project/conversation memory; GSD Pi = Pi integration for GSD Core.
+01 Core Engineering,,
+Reference / skill format:,https://agentskills.io/,
+Superpowers repository:,https://github.com/obra/superpowers,
+Matt Pocock skills repository:,https://github.com/mattpocock/skills,
+,,
+Skill,Priority,Why
+brainstorming,P0,"Explore requirements, alternatives and implementation approaches before coding."
+find-skills,P1,Discover relevant skills dynamically for different tasks.
+writing-plans,P0,Create structured and actionable implementation plans.
+executing-plans,P0,Execute implementation plans systematically.
+systematic-debugging,P0,Identify root causes instead of guessing.
+diagnosing-bugs,P0,Investigate and resolve software defects.
+test-driven-development,P0,Follow red-green-refactor and write tests before implementation.
+code-review,P0,"Review implementation quality, correctness and maintainability."
+requesting-code-review,P1,Prepare implementation changes for independent review.
+receiving-code-review,P1,Process review feedback and improve implementation.
+verification-before-completion,P0,"Verify builds, tests and deliverables before claiming completion."
+domain-modeling,P0,Create robust domain models and business rules.
+subagent-driven-development,P1,Delegate independent implementation tasks to subagents.
+dispatching-parallel-agents,P2,Run independent agent tasks in parallel.
+using-git-worktrees,P1,Isolate parallel development tasks safely.
+finishing-a-development-branch,P1,"Complete, validate and integrate development branches."
+setup-pre-commit,P1,Configure automated code-quality checks.
+accidental-data-loss-prevention,P0,Prevent destructive operations and accidental data loss.
+git-guardrails-claude-code,P1,Protect Git operations in supported Claude Code environments; host-specific.
+writing-for-agents,P1,Create clear instructions and documentation for coding agents.
+writing-skills,P2,Create and maintain reusable agent skills.
+skill-repair,P2,Diagnose and repair broken skills.
+handoff,P1,Transfer project context between sessions and agents.
+prototype,P1,Validate ideas and technical approaches before full implementation.
+scaffold-exercises,P3,Create guided implementation exercises.
+karpathy-guidelines,P1,"Third-party Karpathy-inspired behavioral guidelines: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Promotes explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria. Includes a portable Agent Skill; README documents Claude Code plugin and Cursor rule. Not an official Andrej Karpathy project."
+02 Matt Pocock,,
+Repository:,https://github.com/mattpocock/skills,
+Official site:,https://aihero.dev/,
+,,
+Skill,Priority,Why
+grill-me,P0,Ask detailed questions to uncover requirements and assumptions.
+grill-with-docs,P1,Explore requirements using supporting documentation.
+to-spec,P0,Convert discussions into technical specifications.
+to-tickets,P0,Break specifications into actionable development tasks.
+implement,P0,Implement well-defined engineering tasks.
+tdd,P0,Apply test-driven development practices.
+diagnosing-bugs,P0,Systematically investigate bugs.
+code-review,P0,Review code against requirements and engineering standards.
+codebase-design,P0,Maintain a well-structured and maintainable codebase.
+domain-modeling,P0,Build reliable domain models.
+improve-codebase-architecture,P1,Identify and implement architectural improvements.
+research,P1,Research technical solutions and documentation.
+prototype,P1,Explore implementation approaches.
+wayfinder,P1,Navigate and organize large implementation tasks.
+resolving-merge-conflicts,P1,Resolve Git conflicts safely.
+handoff,P1,Preserve context between development sessions.
+ask-matt,P2,Get guidance on choosing an appropriate engineering workflow.
+setup-matt-pocock-skills,P1,Configure the skills collection.
+triage,P2,Prioritize issues and incoming work.
+teach,P2,Explain technical concepts and workflows.
+writing-great-skills,P2,Build reusable and effective agent skills.
+Repository,Reference,https://github.com/mattpocock/skills
+Verification note,Check current repository contents before assuming each listed name exists as an installable skill.,
+03 Android Development Skills,,
+Official Android Skills documentation:,https://developer.android.com/tools/agents/android-skills/browse,
+Official Android Skills repository:,https://github.com/android/skills,
+Android developer documentation:,https://developer.android.com/,
+,,
+Official Android skills found in your installation log (36 unique skills),,
+Skill,Priority,Why
+android-cli,P0,"Create Android projects, run apps on devices, manage virtual devices and inspect UI."
+adaptive,P0,"Build responsive Compose UIs that adapt to window sizes, device types and input methods."
+navigation-3,P0,Apply recommended practices for setting up and using Navigation 3.
+jetpack-compose-performance,P0,"Diagnose recomposition overhead, dropped frames, UI jank and Compose performance problems."
+android-profiler,P0,"Record and analyze Android performance data to diagnose bottlenecks, jank and memory leaks."
+anr-audit-and-fix,P0,Audit codebases for ANR risks and diagnose Application Not Responding stack dumps.
+r8-analyzer,P0,Audit and optimize R8 configuration to improve app performance and release behavior.
+android-intent-security,P0,Secure Android components and handle Intents safely to prevent privilege escalation and unauthorized access.
+android-permissions-security,P0,"Audit permissions and IPC components, identify security gaps and remediate vulnerabilities."
+testing-setup,P0,"Set up a comprehensive testing strategy covering unit, UI and screenshot tests."
+agp-9-upgrade,P1,Plan and execute upgrades to Android Gradle Plugin 9.
+edge-to-edge,P1,Modernize app layouts with Android edge-to-edge support.
+migrate-xml-views-to-jetpack-compose,P1,Plan and implement migration from legacy XML Views to Jetpack Compose.
+camerax,P1,Migrate camera functionality to CameraX and apply CameraX best practices.
+appfunctions,P1,Expose app workflows to the Android system so on-device AI agents can discover and execute them.
+navigation-event,P1,Use NavigationEvent to intercept back gestures and support Predictive Back animations.
+ml-kit-genai-prompt-api,P1,Send natural-language requests on-device using the ML Kit GenAI Prompt API and Gemini Nano.
+mlkit-agent-api,P2,Build autonomous on-device agentic workflows using the ML Kit GenAI Agent API and Gemini Nano.
+litert-lm,P2,Run open text LLMs on-device using the LiteRT-LM Kotlin API on CPU or GPU.
+litert-runtime,P2,Run on-device TensorFlow Lite model inference using the LiteRT CompiledModel API.
+media3-cast-integration,P2,Integrate Google Cast support into Android apps using Media3.
+play-billing-library-version-upgrade,P2,Upgrade the Google Play Billing Library to access newer features and supported versions.
+play-policy-insights,P1,"Audit apps against Google Play policies, including permissions, account deletion and data safety."
+restore-credentials,P2,Implement Credential Manager Restore Credentials for silent sign-in on a new device.
+verified-email,P2,"Implement secure, OTP-less email verification using Credential Manager."
+engage-sdk-integration,P2,Integrate Play Engage SDK to publish content clusters and engage users on Google Play.
+glance-appwidget-updates-and-memory,P2,"Manage Glance AppWidget state updates, background sync and RemoteViews bitmap memory limits."
+glance-canonical-layouts,P2,Build home-screen widgets using recommended Jetpack Glance canonical layouts.
+android-for-cars-parked-apps,P3,"Adapt supported video, game and browser apps for parked-app experiences in Android Auto and Android Automotive OS."
+leanback-to-compose-tv-migration,P3,Migrate Android TV interfaces from the legacy Leanback toolkit to Compose for TV.
+wear-compose-m3,P3,"Build Wear OS interfaces with Compose Material 3, including scaffolding, layouts and migrations."
+wear-widgets,P3,"Build, migrate, update and verify Wear OS widgets using Glance Wear and Remote Compose."
+display-glasses-with-jetpack-compose-glimmer,P3,Build projected Android XR apps for display glasses using Jetpack Compose Glimmer.
+projected-hardware,P3,Access projected Android XR hardware such as cameras and microphones.
+ink-app-builder,P2,"Build freehand drawing surfaces with Jetpack Ink and Compose, including stylus input, erasing and persistence."
+ink-custom-brush-builder,P3,"Create custom Jetpack Ink BrushFamily styles, tips, textures and dynamic brush behaviors."
+04 Kotlin KMP,,
+Kotlin / Swift documentation:,https://kotlinlang.org/docs/home.html | https://www.swift.org/documentation/,
+Kotlin Agent Skills repository:,https://github.com/Kotlin/kotlin-agent-skills,
+,,
+Skill,Priority,Why
+kotlin-tooling-kotlin-toolchain,P0,Manage modern Kotlin toolchains.
+kotlin-tooling-agp9-migration,P1,Migrate and troubleshoot Android Gradle Plugin 9.
+kotlin-tooling-java-to-kotlin,P1,Migrate Java code to Kotlin.
+kotlin-tooling-native-build-performance,P1,Optimize Kotlin/Native build performance.
+kotlin-tooling-immutable-collections-0-5-x-migration,P2,Handle immutable collections migration.
+kotlin-tooling-cocoapods-spm-migration,P1,Manage Kotlin Multiplatform iOS dependency integration.
+kotlin-tooling-gradle-to-kotlin-toolchain-project,P2,Modernize Gradle toolchain project configuration.
+kotlin-tooling-gradle-to-kotlin-toolchain-plugin,P2,Modernize Gradle toolchain plugin configuration.
+kotlin-tooling-kotlin-toolchain-plugin-authoring,P3,Develop custom Kotlin toolchain plugins.
+swiftui-pro (twostraws),P0,"SwiftUI-focused agent skill targeting iOS 26+ and Swift 6.4+: modern API usage, navigation, layout, animations, state management, performance, accessibility/VoiceOver and deprecated API pitfalls. Uses the open Agent Skills format; install with npx skills add https://github.com/twostraws/swiftui-agent-skill --skill swiftui-pro. Compatible with Claude Code, Codex, Gemini, Cursor and other Agent Skills hosts. Model-agnostic: guidance is executed by the connected coding model; requires a host that supports Agent Skills. MIT licensed."
+swiftui-expert-skill (AvdLee),P0,"Broad SwiftUI expert reference skill for state/data flow, @Observable, view composition, performance, lists/identity, navigation/sheets, Swift Charts, animations, macOS, Liquid Glass, accessibility, image optimization and current SDK migrations. Also includes Python/xctrace tooling to record and analyse Instruments traces (Time Profiler, Hangs, Animation Hitches, SwiftUI updates and cause graph). Agent Skills + portable Agent Plugin; supports Claude Code, Codex, Gemini CLI, Cursor, pi and other compatible hosts. Install: npx skills@latest add https://github.com/avdlee/swiftui-agent-skill --skill swiftui-expert-skill. Model-agnostic; MIT licensed; Xcode/xctrace needed for trace tooling."
+Repository to verify,Reference,https://github.com/Kotlin/kotlin-agent-skills
+Verification note,Confirm repository availability and exact skill IDs before installing; treat this source as unverified until checked.,
+05 UI UX Design,,
+UI/UX Pro Max repository:,https://github.com/nextlevelbuilder/ui-ux-pro-max-skill,
+Impeccable repository / documentation:,https://github.com/pbakaus/impeccable | https://impeccable.style/docs,
+Apple Human Interface Guidelines:,https://developer.apple.com/design/human-interface-guidelines/,
+,,
+Skill / Capability,Priority,Why
+ui-ux-pro-max,P0,"Comprehensive UI/UX design-intelligence skill and CLI. Generates project-specific design systems and provides searchable guidance: 79 UI styles (50 active), 192 industry/product reasoning rules and palettes, 74 font pairings, 25 chart types, 119 UX guidelines, and 22 stack-specific playbooks including Jetpack Compose and SwiftUI. Supports Antigravity, Claude Code, Codex CLI, Gemini CLI, OpenCode, Cursor, GitHub Copilot, Windsurf, Kiro and many others. Install with npm install -g ui-ux-pro-max-cli, then uipro init --ai antigravity (or the relevant host). Python 3.x required for local search script. Model-agnostic skill: works through the connected coding assistant/model; it is not an LLM or model API. MIT-licensed core is open source; separate Premium offering adds brand identity, logo, banners/slides, custom iconography, image-generation integrations and enterprise token architecture. Search/guidance does not automatically build or visually QA the product; review output and verify implementation against platform guidelines."
+impeccable,P1,"Design command toolkit for coding agents: critique UX, audit accessibility/performance/responsive behavior, polish and harden interfaces, and detect common UI quality issues. Complements UI/UX Pro Max and native platform guidelines."
+ui-taste,P1,"Uizze UI Taste and related UI/UX agent skills. FREE: install/use the ui-taste skill from uizze.sh; the GitHub repo also provides free ui-design, anti-ui-slop and ui-radar skills, plus GitHub-native image-to-ui and uizze-ui packages. Skills work locally without a Uizze account or MCP. PAID: authenticated Uizze MCP at https://uizze.com/mcp provides find_ui_references and find_ui_materials for real app screens, flows, design systems, fonts, icons and materials. Website reference browsing is free without an account. LIMITATIONS: UI Taste/iOS Design are distributed separately from the GitHub skill packages; paid MCP exposes only two retrieval tools and may return no matches; the skills are guidance and playbooks, not a design editor or guaranteed visual QA. Third-party reference assets and branding are not automatically licensed for reuse; retain individual MIT/Apache notices."
+ios-design,P0,Build platform-native iOS interfaces using Apple platform conventions.
+design-taste-frontend,P3,Frontend-specific design guidance; lower relevance for native mobile projects.
+compose-preview,P1,Validate Compose UI concepts and layouts visually.
+prototype,P1,Explore different UI concepts before implementation.
+design-consultation,P2,Develop design systems and design direction.
+Impeccable capability note,Reference,"24 design commands covering steering, critique/audit, finish/polish and planning/context setup; supports many coding agents including Antigravity per repository README. Hook availability varies by host; the detector can also run in terminal/CI."
+06 GSD,,
+Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
+Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
+GSD Pi integration:,https://github.com/open-gsd/gsd-pi,
+Version note:,The repository default branch is next. Its package manifest and README/release-note versions can represent different versioning surfaces; verify the actual npm release and installer output before pinning.,
+,,
+Workflow / Capability,Priority,Why
+gsd-new-project,P0,Initialize a new project with GSD.
+gsd-onboard,P0,Onboard an existing codebase; map and understand the current project.
+Discuss → Plan → Execute → Verify → Ship,P0,Core milestone lifecycle documented by current GSD Core; use its current command names and phase workflow rather than relying on legacy command lists.
+GSD Core host integration,P0,Current Core supports multiple coding-agent runtimes through its host-integration interface; runtime support and installation mode are version-dependent.
+GSD companion MCP server,P1,Companion MCP server provides GSD interface operations; OpenCode integration is documented in current release notes.
+GSD Pi,P2,"Pi-specific integration/package for using GSD in the Pi coding agent. It is a host/runtime integration, not a separate planning methodology."
+GSD capability framework,P1,Optional capabilities extend GSD workflows; evaluate only the capabilities required by the project.
+GSD security / verification gates,P0,"Use plan/verify gates, API coverage decisions, human checkpoints and lifecycle guards; check exact behavior in the installed release."
+Legacy command inventory,Reference,Earlier workbook command names may be version-specific or legacy. Do not assume every listed command exists in current GSD Core; use current official command/reference docs.
+07 gstack,,
+Repository / documentation:,https://github.com/garrytan/gstack,
+,,
+Workflow / Command,Priority,Why
+office-hours,P1,Challenge and refine product ideas.
+plan-ceo-review,P1,Review product strategy and priorities.
+plan-eng-review,P0,Review technical architecture.
+plan-design-review,P1,Review interface direction.
+autoplan,P2,Combine planning workflows.
+design-consultation,P1,Establish visual design direction.
+design-review,P1,Evaluate UI quality.
+review,P0,Review implementation for bugs.
+qa,P0,Perform browser-based quality assurance.
+ship,P1,Prepare changes for release.
+land-and-deploy,P2,Complete deployment workflows.
+investigate,P1,Investigate bugs and production problems.
+careful,P0,Protect against risky operations.
+guard,P1,Apply safety guardrails.
+benchmark,P2,Benchmark application behavior.
+retro,P2,Review and improve development processes.
+document-release,P2,Prepare release documentation.
+Repository,Reference,https://github.com/garrytan/gstack
+Verification note,Verify current command names and Antigravity compatibility. Treat host integration as version-dependent.,
+08 Superpowers,,
+Repository:,https://github.com/obra/superpowers,
+,,
+Skill / Workflow,Priority,Why
+brainstorming,P0,Explore requirements and design options.
+writing-plans,P0,Create implementation plans.
+executing-plans,P0,Execute structured implementation plans.
+test-driven-development,P0,Enforce TDD.
+systematic-debugging,P0,Perform root-cause debugging.
+subagent-driven-development,P1,Delegate independent development tasks.
+requesting-code-review,P1,Request code review.
+receiving-code-review,P1,Address review feedback.
+using-git-worktrees,P1,Isolate development tasks.
+finishing-a-development-branch,P1,Complete Git workflows.
+Repository,Reference,https://github.com/obra/superpowers
+Verification note,Some workflows overlap with Core Engineering and GSD. Avoid loading duplicate implementations unnecessarily.,
+09 Autonomous Agents,,
+Ralph repository:,https://github.com/snarktank/ralph,
+OpenHands documentation / repository:,https://docs.openhands.dev/ | https://github.com/OpenHands/OpenHands,
+Codex documentation / repository:,https://developers.openai.com/codex/ | https://github.com/openai/codex,
+Ponytail documentation / repository:,https://ponytail.dev/docs | https://github.com/DietrichGebert/ponytail,
+Harness² repository:,https://github.com/google-research/harness2,
+MemPalace repository:,https://github.com/MemPalace/mempalace,
+T3 Code documentation / repository:,https://github.com/pingdotgg/t3code,
+Everything Claude Code (ECC) repository:,https://github.com/affaan-m/ecc,
+,,
+Tool / Framework,Priority,Why
+Ralph Loop,P1,Execute PRD-driven tasks autonomously through repeated iterations; use bounded iterations and test gates.
+Wiggum CLI,P2,Explore structured autonomous development; verify the exact project and host support.
+OpenHands,P2,Run independent autonomous software-development agents.
+Codex,P1,Perform complex coding and repository tasks.
+Ponytail,P1,"Evaluate its coding workflow and implementation approach; verify exact project, features and Antigravity compatibility."
+Harness²,P3,Explore research on agent harness design and evaluation; not a standard daily coding plugin.
+MemPalace,P1,"Persistent local-first memory for project files and agent conversation history; supports semantic/hybrid retrieval, wake-up/context recall, MCP integration and configurable storage backends. Use for durable cross-session knowledge, not source-code relationship mapping."
+MemPalace data-governance note,P1,"Before indexing private repositories or agent transcripts, define allowed data scope, retention/deletion, local/server backend, embedding model downloads and access controls."
+T3 Code,P2,"Open-source agent-harness control surface with mobile (iOS/Android), web and desktop clients for monitoring and controlling local coding-agent sessions. Supports Claude Code, Codex, Cursor, Grok Build, OpenCode and Google Antigravity. Useful for remote session access and orchestration visibility; it does not replace the coding agents themselves."
+Repository - Ralph,Reference,https://github.com/snarktank/ralph
+Repository - OpenHands,Reference,https://github.com/OpenHands/OpenHands
+Repository - Codex,Reference,https://github.com/openai/codex
+Repository - Ponytail,Reference,https://github.com/DietrichGebert/ponytail
+Repository - Harness²,Reference,https://github.com/google-research/harness2
+Repository - MemPalace,Reference,https://github.com/MemPalace/mempalace
+Safety note,P0,"Use isolated branches/worktrees, iteration limits, build/test gates and human approval before merges or deployments."
+Repository - T3 Code,Reference,https://github.com/pingdotgg/t3code
+Everything Claude Code (ECC),P1,"Broad open-source agent-harness engineering system: 71 specialized agents, 314 skills, rules, hooks, memory/continuous learning, workflow automation and AgentShield security scanning. Covers planning → TDD/implementation → review → verification → memory/improvement. Best-supported on Claude Code; native plugin paths for Codex and Qoder; adapters exist for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity and others, but feature parity varies—check platform support matrix before relying on hooks/memory/automation. Multi-harness guided installer supports Claude Code, Codex and Kimi Code; advanced adapters have separate install paths. MIT licensed. Model/provider configuration depends on host; ECC is not a model and does not supply one. Potential overlap with GSD, Superpowers, gstack, MemPalace and security/review tools—select capabilities rather than loading everything."
+10 AI Infrastructure,,,,Research
+OmniRoute website / repository:,https://omniroute.online/ | https://github.com/Adelo31/omniroute,,,
+Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
+Strata repository:,https://github.com/kytheros/strata,,,
+Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
+Context7 website / repository:,https://context7.com/ | https://github.com/upstash/context7,,,
+,,,,
+Tool / Service,Priority,Why,,
+OmniRoute,P2,Route requests across multiple AI model providers through a common gateway; useful for provider choice and fallback.,,
+Gemini API,P2,Integrate Gemini APIs into applications and development workflows.,,
+Gemini Live API,P2,Build real-time Gemini applications.,,
+Gemini Omni Flash API,P3,Explore Gemini multimodal capabilities.,,
+Strata,P2,Persistent memory/MCP option. Compare against MemPalace before adopting both; overlapping long-term memory roles may make one sufficient.,,
+Graphify,P1,"Builds a local code/document knowledge graph (AST-based code relations, imports/calls, query/path/explain) so agents can navigate relationships and retrieve focused subgraphs instead of repeatedly scanning files. It is codebase-structure intelligence, not a live external library-docs service.",,
+Context7,P1,"Retrieves current, version-aware documentation and code examples for external libraries/frameworks. Useful when implementing APIs or confirming current library usage. Complementary to Graphify, not redundant.",,
+Repository - OmniRoute,Reference,https://github.com/Adelo31/omniroute,,
+Repository - Strata,Reference,https://github.com/kytheros/strata,,
+Repository - Graphify,Reference,https://github.com/Graphify-Labs/graphify,,
+Graphify documentation,Reference,https://docs.graphify.com/,,
+Context7 website,Reference,https://context7.com/,,
+Context7 repository,Reference,https://github.com/upstash/context7,,
+Selection guidance,P0,"Graphify answers: how is this codebase connected and where does execution/reuse flow? Context7 answers: how does this external library/API work in its current version? MemPalace/Strata answer: what durable knowledge should persist across sessions? Choose memory products based on privacy, retrieval quality, local-first needs and integrations.",,
+TokenEconomizer,P1,"Experience-driven coding-agent cost control. Learns repository-specific micro-skills from repeated sessions, prunes tools that remain unused, and detects recurring failure loops to suggest a redirect. Local learning data; supports Claude Code, Codex, GitHub Copilot CLI and Pi, with experimental OpenCode support. Evaluate on repeated work in the same repository; savings are workload-dependent.",https://github.com/microsoft/TokenEconomizer,https://arxiv.org/abs/2610.22732
+Google Agents CLI,P1,"Google CLI + seven agent skills for building, scaffolding, coding, evaluating, deploying, publishing and observing AI agents on Google Cloud using ADK. It is a toolkit for coding assistants, not a coding agent/model. Works with Antigravity CLI, Claude Code, Codex and other coding agents; framework is ADK by default, while ADK model configuration supports Gemini natively and other providers via LiteLLM (documented examples: OpenAI GPT-4o, Anthropic Claude Sonnet, and Ollama-hosted Llama). Local create/run/eval can use Gemini AI Studio API key; cloud deployment needs Google Cloud. Useful when developing AI agents, not required for normal Android app coding.",https://github.com/google/agents-cli,
+11 Code Review Quality,,
+CodeRabbit documentation:,https://docs.coderabbit.ai/,
+CodeRabbit skills repository:,https://github.com/coderabbitai/skills,
+CodeRabbit Antigravity plugin:,https://github.com/coderabbitai/antigravity-plugin,
+,,
+Tool / Capability,Priority,Why
+CodeRabbit,P1,"Automate pull request reviews and identify bugs, security risks and missing tests."
+Open Code Review,P2,Explore additional automated code-review workflows; verify exact product/repository before adoption.
+code-review skill,P0,Perform agent-led review during implementation.
+requesting-code-review,P1,Prepare changes for independent review.
+receiving-code-review,P1,Process and resolve review feedback.
+verification-before-completion,P0,"Run builds, tests and checks before declaring work complete."
+setup-pre-commit,P1,Catch formatting and quality issues before commits.
+Repository - CodeRabbit Antigravity plugin,Reference,https://github.com/coderabbitai/antigravity-plugin
+Verification note,"CodeRabbit is a review service/integration, not a general-purpose coding skill. Check pricing, permissions and repository access.",
+12 Optional Specialized,,
+Google Maps Platform documentation:,https://developers.google.com/maps,
+Google Maps GitHub organization:,https://github.com/googlemaps,
+Python Packaging documentation:,https://packaging.python.org/,
+Python Packaging Authority:,https://github.com/pypa,
+Google Cloud documentation:,https://cloud.google.com/docs,
+Google Cloud repositories:,https://github.com/GoogleCloudPlatform,
+,,
+Skill / Capability,Priority,Why
+google-maps-platform,P2,Add Google Maps and location functionality.
+agent-browser,P2,Automate browser workflows.
+managing-python-dependencies,P2,Maintain Python tooling and dependencies.
+kotlin-backend-jpa-entity-mapping,P3,Develop Kotlin Spring/JPA backends.
+cloud-databases-onboarding,P3,Configure cloud databases.
+gcp-dataflow,P3,Develop Dataflow pipelines.
+gcp-spark,P3,Develop Spark workloads.
+gcp-spark-troubleshooting,P3,Diagnose Spark problems.
+gcp-spark-observability,P3,Monitor Spark workloads.
+gcp-pipeline-orchestration,P3,Orchestrate data pipelines.
+gcp-data-pipelines,P3,Develop data pipelines.
+bigquery-data-transfer-service,P3,Manage BigQuery data transfers.
+dataform-bigquery,P3,Manage BigQuery transformations.
+dbt-bigquery,P3,Develop dbt models.
+notebook-guidance,P3,Work with notebooks.
+building-data-apps,P3,Build data applications.
+ml-best-practices,P3,Apply machine-learning engineering practices.
+schema-mapping,P3,Map data schemas.
+data-autocleaning,P3,Clean datasets.
+dak-setup,P3,Specialized environment setup.
+graphify,P2,Visualize codebase relationships.
+Priority,Meaning,Recommended action
+P0,Essential,Prioritize for the main toolkit; enable when relevant.
+P1,High,Strongly recommended for regular workflows.
+P2,Medium,Keep available and activate when needed.
+P3,Optional,Install only for relevant projects or experiments.
+Operating principle,Modular setup,Do not permanently load every skill. Activate the smallest useful set for each project.
+Primary focus,Android / Kotlin / KMP,"Prioritize Android, Kotlin/KMP, Core Engineering, GSD, UI/UX, testing, debugging, security and code review."
+Category / Tool,Official Website / Documentation,GitHub Repository,Notes
+Agent Skills standard,https://agentskills.io/,,Format/specification; not a source repository for every skill.
+Matt Pocock Skills,https://aihero.dev/,https://github.com/mattpocock/skills,Skills collection.
+Android Skills,https://developer.android.com/tools/agents/android-skills/browse,https://github.com/android/skills,Official Android skills browse page and repository.
+Kotlin Agent Skills,https://kotlinlang.org/docs/home.html,https://github.com/Kotlin/kotlin-agent-skills,Kotlin language docs and agent skills repository.
+UI/UX Pro Max,https://uupm.cc/,https://github.com/nextlevelbuilder/ui-ux-pro-max-skill,Official site and GitHub source; MIT-licensed open-source core. CLI installs across multiple coding assistants; model-agnostic skill guidance. Stack coverage includes Jetpack Compose and SwiftUI; Premium is a separate paid offering.
+Impeccable,https://impeccable.style/docs,https://github.com/pbakaus/impeccable,Design vocabulary and UI review skill.
+Apple Human Interface Guidelines,https://developer.apple.com/design/human-interface-guidelines/,,Official iOS design guidance; no single skill repository.
+GSD Core,https://github.com/open-gsd/gsd-core/tree/next,https://github.com/open-gsd/gsd-core,Current OpenGSD core repo; active default branch next. Verify the published npm version before pinning.
+gstack,https://github.com/garrytan/gstack#readme,https://github.com/garrytan/gstack,Workflow toolkit; verify host compatibility.
+Superpowers,https://github.com/obra/superpowers#readme,https://github.com/obra/superpowers,Agentic skills framework and development methodology.
+Ralph Loop,https://github.com/snarktank/ralph#readme,https://github.com/snarktank/ralph,Autonomous PRD-driven coding loop.
+OpenHands,https://docs.openhands.dev/,https://github.com/OpenHands/OpenHands,Autonomous coding agent platform.
+OpenAI Codex,https://developers.openai.com/codex/,https://github.com/openai/codex,Official Codex documentation and code repository.
+Ponytail,https://ponytail.dev/docs,https://github.com/DietrichGebert/ponytail,"Agent skill/rules for smaller, safer implementations; host support varies."
+Harness²,https://github.com/google-research/harness2#readme,https://github.com/google-research/harness2,Google Research project; not an officially supported Google product.
+OmniRoute,https://omniroute.online/,https://github.com/Adelo31/omniroute,AI model gateway and routing infrastructure.
+Strata,https://github.com/kytheros/strata#readme,https://github.com/kytheros/strata,Local-first persistent memory MCP server; currently described as beta.
+CodeRabbit,https://docs.coderabbit.ai/,https://github.com/coderabbitai/skills,Canonical skills/plugin repository.
+CodeRabbit Antigravity Plugin,https://docs.coderabbit.ai/,https://github.com/coderabbitai/antigravity-plugin,Antigravity-specific plugin package; smoke testing/marketplace status may vary.
+Gemini API,https://ai.google.dev/gemini-api/docs,https://github.com/googleapis/python-genai,Official API docs and Python SDK; other languages have separate SDK repositories.
+Google Maps Platform,https://developers.google.com/maps,https://github.com/googlemaps,Official docs and GitHub organization.
+Python Packaging,https://packaging.python.org/,https://github.com/pypa,Packaging docs and Python Packaging Authority repositories.
+Google Cloud,https://cloud.google.com/docs,https://github.com/GoogleCloudPlatform,Service-specific documentation and repositories.
+ML best practices,https://developers.google.com/machine-learning,https://github.com/google,Broad ML references; use a framework-specific repository for implementation.
+Wiggum CLI,Not verified,Not verified,Exact product/repository was not established.
+Open Code Review,Not verified,Not verified,Ambiguous label; identify the exact project before adding a source link.
+GSD Pi,https://github.com/open-gsd/gsd-core/tree/next,https://github.com/open-gsd/gsd-pi,"Pi integration for GSD Core; runtime-specific host integration, not a separate GSD framework."
+MemPalace,https://github.com/MemPalace/mempalace#readme,https://github.com/MemPalace/mempalace,Persistent local-first memory for project sources and agent conversations; MCP and configurable storage backends.
+Graphify,https://docs.graphify.com/,https://github.com/Graphify-Labs/graphify,Local code/document knowledge graph; AST-based structural indexing and graph queries. Cloud offering is separate.
+Context7,https://context7.com/,https://github.com/upstash/context7,Version-aware library/framework docs retrieval; complementary to codebase graph tools.
+T3 Code,https://github.com/pingdotgg/t3code,https://github.com/pingdotgg/t3code,"Open-source agent-harness control surface; mobile, web and desktop control for supported local coding agents."
+TokenEconomizer,https://github.com/microsoft/TokenEconomizer,https://arxiv.org/abs/2610.22732,
+Uizze GitHub repository,https://github.com/uizze/uizze,"Free agent skills, licensing map and distribution details",
+Uizze UI Taste on Skills.sh,https://www.skills.sh/site/uizze.sh/ui-taste,"UI Taste listing; skill is free, hosted MCP retrieval is paid",
+Google Agents CLI,https://google.github.io/agents-cli/,https://github.com/google/agents-cli,"Coding-agent toolkit for Google ADK agent development; compatible hosts include Antigravity CLI, Claude Code, Codex and other coding agents. ADK supports Gemini and alternative model providers via LiteLLM."
+SwiftUI Pro (twostraws),https://github.com/twostraws/swiftui-agent-skill,https://github.com/twostraws/swiftui-agent-skill,"MIT Agent Skill; focused SwiftUI correctness, modern APIs, accessibility and performance. Host/model-agnostic; supports Claude Code, Codex, Gemini and compatible Agent Skills clients."
+SwiftUI Expert (AvdLee),https://github.com/avdlee/swiftui-agent-skill,https://github.com/AvdLee/SwiftUI-Agent-Skill,MIT Agent Skill + portable Agent Plugin; SwiftUI reference library plus executable xctrace record/analyse tooling. Host/model-agnostic; Xcode required for Instruments trace tooling.
+Everything Claude Code (ECC),https://github.com/affaan-m/ecc,https://github.com/affaan-m/ECC,"MIT agent-harness engineering system with agents, skills, hooks, rules, memory, workflows and AgentShield. Claude Code is strongest supported host; Codex/Qoder native paths; other adapters have limited/variable feature parity. Model provider is determined by host configuration."
+Karpathy Guidelines,https://github.com/multica-ai/andrej-karpathy-skills,https://github.com/multica-ai/andrej-karpathy-skills,"Four Karpathy-inspired coding principles: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Skill metadata declares MIT. README documents Claude Code plugin and Cursor rule; a portable Agent Skill file is included. The README's plugin install commands point to forrestchang/andrej-karpathy-skills, so verify the intended install source."
+15 Universal Project Documentation Standard,,,,
+Purpose:,Reusable documentation baseline for software projects built by humans and AI agents.,,,
+Operating principle:,Create only applicable documents; keep every document synchronized with implementation and verified evidence.,,,
+Priority key:,P0 = every project | P1 = most serious projects | P2 = only when applicable,,,
+Repository layout:,See the Repository Structure section below; omit irrelevant folders rather than creating empty files.,,,
+,,,,
+Layer,Document / Directory,Priority,Purpose / Key contents,Applicability
+01 · Foundation,README.md,P0,"Project overview, setup, features, supported platforms, build/test commands and links to key docs.",Every project
+01 · Foundation,LICENSE,P0,Defines the project license and permitted use; select an appropriate license before public distribution.,Every project; especially open-source
+01 · Foundation,CONTRIBUTING.md,P1,"Contribution workflow, coding standards, issue/PR expectations and local development steps.",Open-source or multi-contributor projects
+01 · Foundation,CHANGELOG.md,P1,Human-readable record of notable changes by release/version.,Projects with releases
+01 · Foundation,SECURITY.md,P1,"Supported versions, vulnerability reporting channel and responsible disclosure expectations.",Public or security-sensitive projects
+01 · Foundation,CODE_OF_CONDUCT.md,P2,Community participation and conduct expectations.,Open-source communities
+02 · Business & strategy,MRD.md,P2,"Market problem, target segments, competitor landscape, opportunity and positioning.",When market validation or commercial strategy matters
+02 · Business & strategy,BRD.md,P1,"Business objectives, outcomes/KPIs, constraints, stakeholders, costs, risks and compliance needs.",Most product/business projects
+03 · Product & scope,PRD.md,P0,"Product vision, users, use cases, functional/non-functional requirements, UX flows and acceptance criteria.",Every product project
+03 · Product & scope,ROADMAP.md,P0,"Phases, milestones, sequencing, release gates and scope boundaries.",Every project with phased delivery
+03 · Product & scope,FEATURES.md,P0,"Stable feature IDs and status: planned, in progress, implemented, verified, blocked or deprecated.",Every project
+03 · Product & scope,PERSONAS.md,P2,"User segments, needs, contexts and accessibility considerations.",When multiple user groups matter
+04 · Architecture & engineering,ARCHITECTURE.md,P0,"System context, components, boundaries, data flows, dependencies, architectural patterns and diagrams.",Every project
+04 · Architecture & engineering,TRD.md,P1,"Platforms, OS/API targets, toolchains, hardware constraints, performance budgets and technical limits.",Most non-trivial projects
+04 · Architecture & engineering,SRD.md,P1,"Detailed software requirements, subsystem behavior, interfaces, error states and fallback behavior.",Medium/large or regulated projects
+04 · Architecture & engineering,SSD.md,P2,"Module/class decomposition, runtime interactions, state machines, threading and lifecycle behavior.",Complex systems
+04 · Architecture & engineering,TSD.md,P2,"Low-level algorithms, data formats, wire protocols, binary layouts and mathematical specifications.","Protocol-, hardware- or algorithm-heavy systems"
+04 · Architecture & engineering,API-SPECIFICATION.md,P2,"API endpoints/contracts, schemas, auth, errors, versioning and examples; link to OpenAPI when used.",Projects exposing or consuming important APIs
+04 · Architecture & engineering,DATA-MODEL.md,P1,"Entities, relationships, ownership, persistence, validation, migrations and retention rules.",Projects with persistent or shared data
+04 · Architecture & engineering,adr/,P1,"Numbered, append-only Architecture Decision Records: status, context, decision, consequences and alternatives.",Projects making consequential architecture choices
+05 · AI governance,AGENTS.md,P0,"Agent entry point: project context, non-negotiable rules, workflow, verification commands and links to detailed guidance.",Every AI-assisted project
+05 · AI governance,docs/governance/RULES.md,P0,"Coding conventions, architecture laws, dependency rules, security constraints and prohibited patterns.",Every AI-assisted project
+05 · AI governance,docs/governance/SPRINT-RULES.md,P1,"Story sizing, branch/commit expectations, implementation gates and sprint completion rules.",Projects using sprint-based agent execution
+05 · AI governance,docs/governance/BRANCHING.md,P1,"Branch naming, branch protection, merge strategy, release branches and hotfix lifecycle.",Team or multi-agent Git workflows
+05 · AI governance,docs/governance/MEMORY.md,P1,"Curated durable project learnings, recurring pitfalls and validated workarounds; avoid stale transient logs.",Long-running AI-assisted projects
+05 · AI governance,GLOSSARY.md,P0,"Canonical domain terms, abbreviations and definitions to keep human and agent language consistent.",Every domain-heavy project; recommended for all
+05 · AI governance,docs/governance/AI-WORKFLOW.md,P1,"Agent roles, handoffs, tool permissions, context-loading rules, review responsibilities and escalation paths.",Projects using multiple or autonomous agents
+06 · Execution,tasks/ralph/prd.json,P1,"Machine-readable atomic stories with IDs, priority, target files, acceptance criteria and pass state.",When using Ralph or compatible automation
+06 · Execution,tasks/ralph/progress.txt,P1,"Append-only execution journal: story progress, commits, commands, test evidence and blockers.",When using Ralph or automated execution
+06 · Execution,SPRINT-PLAN.md / sprint plans,P2,"Sprint goals, scope, dependencies, owners/agents and exit criteria.",Sprint-based projects
+06 · Execution,docs/IMPLEMENTATION-STATUS.md,P0,"Truthful status of features and subsystems, with evidence and known gaps; distinguish implemented from verified.",Every project
+07 · Quality & security,docs/testing/TEST-STRATEGY.md,P0,"Test pyramid, test types, environments, coverage expectations, automation and release verification.",Every project
+07 · Quality & security,docs/testing/TEST-CASES.md,P2,"Traceable scenarios, edge cases, regression cases and acceptance-test mapping.",Complex or high-risk projects
+07 · Quality & security,docs/security/THREAT-MODEL.md,P2,"Assets, trust boundaries, threats, attack surfaces, mitigations and residual risks.",Security-sensitive projects or those handling user data
+07 · Quality & security,docs/SECURITY.md,P1,"Security architecture, secrets handling, permissions, dependency hygiene and vulnerability response.",Most production projects
+07 · Quality & security,docs/PERFORMANCE.md,P2,"Performance budgets, profiling approach, benchmarks and regression thresholds.",Performance-sensitive applications/services
+07 · Quality & security,docs/ACCESSIBILITY.md,P2,"Accessibility requirements, semantics, assistive technology checks and validation approach.",User-facing applications; strongly recommended
+07 · Quality & security,docs/reports/,P1,"Sprint/release closeout reports with build/test results, review findings, acceptance evidence and open risks.",Projects with formal milestones
+08 · Operations & release,docs/BUILD-GUIDE.md,P1,"Reproducible local/CI build steps, required tools, commands and troubleshooting.",Every project beyond a tiny prototype
+08 · Operations & release,docs/ENVIRONMENT.md,P1,"Environment variables, configuration profiles, secrets references and setup requirements; never store secret values.",Projects with environment-specific configuration
+08 · Operations & release,docs/RELEASE-PROCESS.md,P1,"Versioning, release checklist, signing, artifact validation, rollout and rollback.",Projects distributed to users
+08 · Operations & release,docs/DEPLOYMENT.md,P2,"Infrastructure, deployment topology, configuration, migrations, rollout and rollback steps.",Deployed services/backends
+08 · Operations & release,docs/TROUBLESHOOTING.md,P1,"Known failures, symptoms, diagnostics, fixes and links to relevant issues.",Projects with recurring setup/runtime issues
+08 · Operations & release,docs/RUNBOOK.md,P2,"Operational procedures, alerts, incident response, recovery and maintenance tasks.",Production services
+09 · Project-specific,Platform / integration / privacy documents,P2,"Add platform-specific rules, offline sync, data retention, third-party integrations, observability or hardware docs as needed.",Only when relevant to the product
+05 · AI governance,docs/governance/DECISION.md,P1,"Append-only engineering decision journal for meaningful implementation choices: context, options, chosen approach, rationale, trade-offs, affected files and verification. Link formal architecture decisions to numbered ADRs.",AI-assisted projects with ongoing code changes
+04 · Architecture & engineering,docs/architecture/FLOW.md,P1,"Current execution-flow map showing how key user actions, events, functions, modules and files connect; include entry points, data/state transitions, API/database boundaries and error paths. Update when flows change.",Non-trivial applications; especially useful for onboarding and agent navigation
+,,,,
+,,,,
+Standard repository layout (adapt per project),,,,
+Project/,README.md · LICENSE · CONTRIBUTING.md · CHANGELOG.md · SECURITY.md · AGENTS.md · GLOSSARY.md,,,
+docs/business/,MRD.md · BRD.md,,,
+docs/product/,PRD.md · ROADMAP.md · FEATURES.md · PERSONAS.md,,,
+docs/architecture/,ARCHITECTURE.md · TRD.md · SRD.md · SSD.md · TSD.md · API-SPECIFICATION.md · DATA-MODEL.md · adr/,,,
+docs/governance/,RULES.md · SPRINT-RULES.md · BRANCHING.md · MEMORY.md · AI-WORKFLOW.md,,,
+docs/testing/,TEST-STRATEGY.md · TEST-CASES.md,,,
+docs/security/,THREAT-MODEL.md,,,
+docs/operations/,BUILD-GUIDE.md · DEPLOYMENT.md · RELEASE-PROCESS.md · ENVIRONMENT.md · TROUBLESHOOTING.md · RUNBOOK.md,,,
+docs/reports/,Sprint and release closeout reports,,,
+docs/,IMPLEMENTATION-STATUS.md · PERFORMANCE.md · ACCESSIBILITY.md,,,
+tasks/ralph/,prd.json · progress.txt (only when Ralph is used),,,
+src/,,,,
+,,,,
+Documentation governance rules,,,,
+1.,PRD defines product scope; agents must not silently invent requirements.,,,
+2.,ARCHITECTURE is the architecture source of truth; consequential changes require an ADR.,,,
+3.,AGENTS.md is the agent entry point and should link to detailed rules instead of duplicating them.,,,
+4.,FEATURES.md uses stable feature IDs and explicit lifecycle statuses.,,,
+5.,"IMPLEMENTATION-STATUS.md must distinguish planned, partial, implemented, and verified functionality.",,,
+6.,Progress logs are append-only; preserve historical execution evidence.,,,
+7.,Update relevant documentation in the same change as the code it describes.,,,
+8.,"Never claim a build, test, benchmark or review passed unless it was actually run and evidence is recorded.",,,
+9.,"Sprint closeout records acceptance criteria, test/build results, review findings and unresolved risks.",,,
+10.,"Keep documents concise, current and cross-linked; remove obsolete guidance rather than letting it conflict.",,,
+,,,,
+Engineering quality and maintainability checklist,,,,
+Area,Engineering rule,Priority,Applicability,
+Code organization,"Organize the project into a clear, predictable structure with documented module boundaries.",P0,All projects,
+Separation of concerns,"Keep business/domain logic separate from UI, presentation and framework-specific code.",P0,All projects,
+Dead and duplicate code,"Remove genuinely unused, unreachable and duplicated code after checking references, build variants and generated code.",P0,All projects,
+Naming conventions,"Use consistent, descriptive naming for packages, modules, types, functions, variables, resources and files.",P0,All projects,
+Error handling,"Handle expected failures explicitly; preserve useful context, avoid swallowed exceptions and provide safe user-facing fallbacks.",P0,All projects,
+Environment configuration,Separate environment-specific configuration from source; validate required values and never commit secrets.,P0,All projects,
+Reusable components,Extract components and utilities when reuse improves consistency; avoid premature abstraction and oversized shared modules.,P1,When reuse is meaningful,
+State management,"Define state ownership, lifecycle, events, loading/error/empty states and concurrency rules consistently.",P0,Stateful applications,
+Codebase documentation,"Document module responsibilities, non-obvious logic, public contracts and important setup/maintenance workflows.",P0,All projects,
+Scalable API structure,"Use explicit API contracts, versioning strategy where needed, consistent error models, validation and clear client/server boundaries.",P1,Projects with APIs,
+,,,,
+AI agent self-review — quiz before marking work complete,,,,
+Review area,Agent must answer before completion,Gate,,
+Requirements,Can I point to the requirement/story and acceptance criteria for this change?,Required,,
+Architecture,Can I explain why this approach fits the documented architecture and constraints?,Required,,
+Code flow,"Can I trace the changed execution path across the relevant files, functions and state transitions?",Required,,
+Alternatives,"Did I consider a simpler or safer alternative, and record a meaningful decision where appropriate?",Required,,
+Correctness,"Have I checked edge cases, null/empty states, concurrency and failure paths relevant to this change?",Required,,
+Security,"Have I considered input validation, authorization, data exposure, secrets and relevant threat scenarios?",Required,,
+Verification,"Which exact tests, builds, static checks or manual checks did I run, and what were their results?",Required,,
+Documentation,"Did I update FLOW.md, DECISION.md, FEATURES.md or other documents affected by this change?",Required,,
+Maintainability,"Did I introduce unnecessary duplication, dead code, unclear naming or avoidable complexity?",Required,,
+Honesty,"Am I claiming only what is implemented and verified, with remaining gaps clearly stated?",Required,,
+,,,,
+Security checklist — assess applicability and record evidence,,,,
+Category,Check,Expected control / verification,Priority,Applicability
+Injection and input,SQL/NoSQL injection,Use parameterized queries or safe query builders; validate input at trust boundaries.,P0,Backend/database
+Injection and input,Cross-site scripting (XSS),"Contextual output encoding, safe rendering, sanitization where HTML is intentionally accepted, and a suitable CSP.",P1,Web applications
+Injection and input,CSRF protection,Use appropriate anti-CSRF defenses for cookie-authenticated browser requests; validate SameSite/origin strategy.,P1,Cookie-authenticated web apps
+Injection and input,File upload validation,"Validate size, type and content; generate safe names; store outside executable web roots; scan/process safely.",P1,Apps accepting uploads
+Injection and input,SSRF,"Restrict outbound destinations, block private/metadata ranges where appropriate, validate redirects and avoid arbitrary URL fetches.",P1,Services fetching user-supplied URLs
+Injection and input,General input validation,"Validate type, length, range, format and business invariants on the server or trusted boundary; do not rely on UI validation alone.",P0,All systems
+Authentication and access,Broken object-level authorization (BOLA/IDOR),Authorize every object/action against the authenticated principal; never trust client-supplied IDs alone.,P0,APIs and multi-user data
+Authentication and access,Rate limiting and abuse controls,"Apply limits to login, OTP, password reset, expensive endpoints and other abuse-prone operations.",P1,Networked services
+Authentication and access,Secure password hashing,Hash passwords server-side with a modern password-hashing algorithm and unique salts; never encrypt or store plaintext passwords.,P0,Systems storing passwords
+Authentication and access,Multi-factor authentication,"Offer or enforce MFA according to risk, account sensitivity and compliance requirements.",P1,Accounts and privileged access
+Authentication and access,Server-side authorization,"Enforce roles, permissions and ownership on the server for every protected operation; UI hiding is not authorization.",P0,Client/server applications
+Authentication and access,Row-level security,Use database row-level policies as defense in depth where supported; test policies for both allowed and denied access.,P1,Multi-tenant or user-scoped databases
+Secrets and tokens,JWT and signing secrets,"Generate strong secrets/keys, store in a secrets manager, rotate when exposed and validate issuer, audience, expiry and algorithm.",P0,JWT-based systems
+Secrets and tokens,API secrets remain server-side,"Never embed privileged API keys or private credentials in mobile, web or desktop client binaries; proxy through trusted services when needed.",P0,Applications using private credentials
+Secrets and tokens,Secure token storage,"Avoid browser localStorage for sensitive long-lived tokens; use appropriate secure, platform-provided storage and short-lived credentials. Do not apply a blanket token-removal rule to all clients.",P0,Apps handling authentication tokens
+Secrets and tokens,Default credentials,"Remove or rotate default accounts, passwords, keys and sample credentials before deployment.",P0,Deployable systems
+Configuration and hygiene,CORS policy,"Allow only required origins, methods and headers; never combine credentialed requests with wildcard origins.",P1,Browser-facing APIs
+Configuration and hygiene,Webhook signatures,"Verify signatures using the raw request body, compare safely, enforce timestamp/replay protections and rotate signing secrets.",P1,Webhook consumers
+Configuration and hygiene,Source maps and debug artifacts,"Do not publicly expose sensitive source maps, debug endpoints or verbose production diagnostics; protect artifacts if needed for monitoring.",P1,Web/production builds
+Configuration and hygiene,Sensitive data in logs,"Redact passwords, tokens, personal data and secrets; restrict log access and retention.",P0,All systems
+Configuration and hygiene,Vulnerable dependencies,"Track dependency advisories, update vulnerable packages, review transitive dependencies and remove unused dependencies.",P0,All projects
+Configuration and hygiene,Transport and data protection,Use TLS in transit and appropriate encryption/key management for sensitive data at rest.,P0,Networked or data-sensitive systems
+Configuration and hygiene,Security headers and platform settings,"Apply appropriate security headers, secure cookie flags, platform permissions and production hardening.",P1,Where applicable
+Configuration and hygiene,"Backup, retention and deletion","Define backup access, retention periods, recovery tests and deletion behavior for user data.",P1,Systems storing important user data
+Checklist rule: mark each item Applicable / Not applicable / Verified / Needs work in the project’s security review. Record evidence or a remediation task; do not claim a control is satisfied merely because it is documented.,,,,
