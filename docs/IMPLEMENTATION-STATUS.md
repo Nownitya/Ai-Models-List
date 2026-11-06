@@ -7,8 +7,12 @@ Truthful tracking of features, files, and deliverables across the repository and
 | **Master Markdown Matrix** | P0 | Verified | [`AI-Coding-Skills-and-Tools-Matrix.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/AI-Coding-Skills-and-Tools-Matrix.md) (596 lines) |
 | **Master CSV Matrix** | P0 | Verified | [`AI-Coding-Skills-and-Tools-Matrix.csv`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/AI-Coding-Skills-and-Tools-Matrix.csv) (485 rows) |
 | **Dual Matrix Parity Validator** | P0 | Verified | [`scripts/sync-matrix.py`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/sync-matrix.py) (Exit code 0) |
+| **Interactive Web Dashboard** | P0 | Verified | [`index.html`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/index.html) (Live search, filters, modal prompt copy) |
+| **Cross-Project Skill Injector CLI** | P0 | Verified | [`scripts/install-to-project.py`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/install-to-project.py) (Tested with `--dry-run`) |
+| **Local Git Pre-Commit Hook** | P0 | Verified | [`scripts/setup-git-hooks.py`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/setup-git-hooks.py) & `.git/hooks/pre-commit` |
+| **P0 Few-Shot Exemplars & Cheat Sheets** | P0 | Verified | [`skills/01-core-engineering/systematic-debugging/prompts/few-shots.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/skills/01-core-engineering/systematic-debugging/prompts/few-shots.md), Navigation 3 & Compose Performance cheat-sheets |
 | **GitHub Actions CI/CD Parity Gate** | P0 | Verified | [`.github/workflows/ci.yml`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/.github/workflows/ci.yml) |
-| **Interactive CLI Search Tool** | P0 | Verified | [`scripts/search-skill.py`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/search-skill.py) (Supports keyword, priority, category, stats) |
+| **Interactive CLI Search Tool** | P0 | Verified | [`scripts/search-skill.py`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/search-skill.py) |
 | **100% Matrix Coverage in Catalog** | P0 | Verified | **186 structured `SKILL.md` packages** across all 12 domains in [`skills/`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/skills/) |
 | **Model Selection & Routing Matrix** | P0 | Verified | [`docs/models/MODEL-ROUTING-MATRIX.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/docs/models/MODEL-ROUTING-MATRIX.md) |
 | **Obsidian Vault Hub** | P0 | Verified | [`D:\ObsidianVault\Vault1\ObsidianVault\Project-Docs\Ai-Models-List`](file:///D:/ObsidianVault/Vault1/ObsidianVault/Project-Docs/Ai-Models-List) (19 verified notes + MOC) |

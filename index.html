@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Coding Skills & Tools Matrix — Interactive Catalog</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --card-hover: #1e293b;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --p0-bg: #7f1d1d; --p0-text: #fca5a5; --p0-border: #b91c1c;
+      --p1-bg: #78350f; --p1-text: #fcd34d; --p1-border: #d97706;
+      --p2-bg: #064e3b; --p2-text: #6ee7b7; --p2-border: #059669;
+      --p3-bg: #1e1b4b; --p3-text: #c7d2fe; --p3-border: #4338ca;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 4rem;
+    }
+    header {
+      padding: 2.5rem 1.5rem 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+      background: linear-gradient(180deg, #111827 0%, var(--bg) 100%);
+      text-align: center;
+    }
+    .header-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      margin-bottom: 0.75rem;
+    }
+    h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 0.5rem; }
+    p.subtitle { color: var(--text-muted); max-width: 700px; margin: 0 auto 1.5rem; font-size: 0.95rem; }
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .stats-pill {
+      background: var(--card-bg);
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid var(--card-border);
+    }
+    .stats-pill strong { color: var(--text); }
+    .container { max-width: 1280px; margin: 0 auto; padding: 1.5rem; }
+    .search-box {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      font-size: 1rem;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    }
+    .filters-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .filter-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; width: 80px; }
+    .filter-btn {
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: var(--card-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { background: var(--card-hover); color: var(--text); }
+    .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #374151;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .priority-pill {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .priority-P0 { background: var(--p0-bg); color: var(--p0-text); border-color: var(--p0-border); }
+    .priority-P1 { background: var(--p1-bg); color: var(--p1-text); border-color: var(--p1-border); }
+    .priority-P2 { background: var(--p2-bg); color: var(--p2-text); border-color: var(--p2-border); }
+    .priority-P3 { background: var(--p3-bg); color: var(--p3-text); border-color: var(--p3-border); }
+    .card-category {
+      font-size: 0.75rem;
+      color: #60a5fa;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .card-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .action-btn {
+      flex: 1;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--card-border);
+      background: #1f2937;
+      color: var(--text);
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+    .action-btn:hover { background: #374151; color: #fff; }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      max-width: 650px;
+      width: 100%;
+      padding: 1.5rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.75rem;
+    }
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .modal-body pre {
+      background: #090d16;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      color: #93c5fd;
+      border: 1px solid #1f2937;
+      white-space: pre-wrap;
+    }
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10b981;
+      color: #064e3b;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      display: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+      z-index: 200;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-badge">Universal Agent Toolkit · Layer 15</div>
+    <h1>AI Coding Skills & Tools Matrix</h1>
+    <p class="subtitle">Authoritative catalog of 186 AI coding skills, agent harnesses, memory frameworks, and developer tools across 12 functional domains.</p>
+    <div class="stats-bar">
+      <div class="stats-pill"><strong id="stat-total">186</strong> Total Skills</div>
+      <div class="stats-pill"><strong id="stat-p0">52</strong> P0 Essential</div>
+      <div class="stats-pill"><strong id="stat-p1">65</strong> P1 High</div>
+      <div class="stats-pill"><strong id="stat-p2">40</strong> P2 Medium</div>
+      <div class="stats-pill"><strong id="stat-p3">29</strong> P3 Optional</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search skills by name, description, or stack (e.g. compose, tdd, debugger, kmp)..." autofocus>
+    </div>
+
+    <div class="filters-wrapper">
+      <div class="filter-group">
+        <span class="filter-label">Priority:</span>
+        <button class="filter-btn active" data-priority="ALL">All</button>
+        <button class="filter-btn" data-priority="P0">P0 Essential</button>
+        <button class="filter-btn" data-priority="P1">P1 High</button>
+        <button class="filter-btn" data-priority="P2">P2 Medium</button>
+        <button class="filter-btn" data-priority="P3">P3 Optional</button>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Category:</span>
+        <button class="filter-btn active" data-cat="ALL">All Categories</button>
+        <button class="filter-btn" data-cat="01-core-engineering">Core Eng</button>
+        <button class="filter-btn" data-cat="02-matt-pocock">Matt Pocock</button>
+        <button class="filter-btn" data-cat="03-android">Android</button>
+        <button class="filter-btn" data-cat="04-kotlin-kmp">Kotlin KMP</button>
+        <button class="filter-btn" data-cat="05-ui-ux">UI / UX</button>
+        <button class="filter-btn" data-cat="06-gsd">GSD</button>
+        <button class="filter-btn" data-cat="07-gstack">gstack</button>
+        <button class="filter-btn" data-cat="08-superpowers">Superpowers</button>
+        <button class="filter-btn" data-cat="09-autonomous-agents">Agents</button>
+        <button class="filter-btn" data-cat="10-ai-infrastructure">AI Infra</button>
+        <button class="filter-btn" data-cat="11-code-review">Code Review</button>
+        <button class="filter-btn" data-cat="12-specialized">Specialized</button>
+      </div>
+    </div>
+
+    <div id="skillsGrid" class="grid"></div>
+  </div>
+
+  <div id="promptModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Skill Prompt Injection</h3>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">Copy and inject this prompt block into your AI coding agent session:</p>
+        <pre id="modalPrompt"></pre>
+      </div>
+      <div style="margin-top:1rem; display:flex; justify-content:flex-end; gap:0.5rem;">
+        <button class="action-btn" onclick="copyModalPrompt()">Copy to Clipboard</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <script>
+    let skillsData = [];
+    let activePriority = 'ALL';
+    let activeCategory = 'ALL';
+
+    // Fetch matrix data from embedded JSON or CSV
+    async function loadData() {
+      try {
+        const res = await fetch('AI-Coding-Skills-and-Tools-Matrix.csv');
+        const text = await res.text();
+        parseCSV(text);
+      } catch (err) {
+        console.error('Loading CSV failed, initializing fallback', err);
+      }
+    }
+
+    function parseCSV(csvText) {
+      const lines = csvText.split('\n');
+      let currentCat = "01-core-engineering";
+      const catMap = {
+        "01 Core Engineering": "01-core-engineering",
+        "02 Matt Pocock": "02-matt-pocock",
+        "03 Android Development Skills": "03-android",
+        "04 Kotlin KMP": "04-kotlin-kmp",
+        "05 UI UX Design": "05-ui-ux",
+        "06 GSD": "06-gsd",
+        "07 gstack": "07-gstack",
+        "08 Superpowers": "08-superpowers",
+        "09 Autonomous Agents": "09-autonomous-agents",
+        "10 AI Infrastructure": "10-ai-infrastructure",
+        "11 Code Review Quality": "11-code-review",
+        "12 Optional Specialized": "12-specialized"
+      };
+
+      skillsData = [];
+      for (let rawLine of lines) {
+        const line = rawLine.trim();
+        if (!line) continue;
+        
+        for (let k in catMap) {
+          if (line.startsWith(k)) {
+            currentCat = catMap[k];
+            break;
+          }
+        }
+
+        // CSV parsing simple row
+        const parts = parseCSVLine(line);
+        if (parts.length >= 3 && ['P0', 'P1', 'P2', 'P3'].includes(parts[1])) {
+          skillsData.push({
+            name: parts[0],
+            priority: parts[1],
+            why: parts[2],
+            category: currentCat
+          });
+        }
+      }
+      render();
+    }
+
+    function parseCSVLine(text) {
+      let p = '', row = [''], i = 0, r = 0, q = false;
+      for (let c of text) {
+        if (c === '"') { q = !q; }
+        else if (c === ',' && !q) { row[++r] = ''; }
+        else { row[r] += c; }
+      }
+      return row.map(s => s.trim());
+    }
+
+    function render() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const grid = document.getElementById('skillsGrid');
+      grid.innerHTML = '';
+
+      const filtered = skillsData.filter(s => {
+        const matchP = activePriority === 'ALL' || s.priority === activePriority;
+        const matchC = activeCategory === 'ALL' || s.category === activeCategory;
+        const matchQ = !q || s.name.toLowerCase().includes(q) || s.why.toLowerCase().includes(q) || s.category.toLowerCase().includes(q);
+        return matchP && matchC && matchQ;
+      });
+
+      for (let s of filtered) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="card-title">${escapeHtml(s.name)}</span>
+              <span class="priority-pill priority-${s.priority}">${s.priority}</span>
+            </div>
+            <div class="card-category">${s.category}</div>
+            <div class="card-desc">${escapeHtml(s.why)}</div>
+          </div>
+          <div class="card-actions">
+            <button class="action-btn" onclick="openPrompt('${escapeHtml(s.name)}', '${escapeHtml(s.priority)}', '${escapeHtml(s.why)}')">Prompt Snippet</button>
+            <a class="action-btn" href="https://github.com/Nownitya/Ai-Models-List/tree/main/skills/${s.category}" target="_blank">Folder</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      }
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    // Modal & Toast
+    function openPrompt(name, priority, why) {
+      document.getElementById('modalTitle').textContent = `Skill: ${name} [${priority}]`;
+      const promptText = `<skill_instruction>
+Skill: ${name} (Priority: ${priority})
+Objective: ${why}
+Instruction: Execute the required changes following strict red-green verification, zero assumptions, and minimal surgical modifications. Ensure full compliance with repository governance laws.
+</skill_instruction>`;
+      document.getElementById('modalPrompt').textContent = promptText;
+      document.getElementById('promptModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('promptModal').classList.remove('active');
+    }
+
+    function copyModalPrompt() {
+      const text = document.getElementById('modalPrompt').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast();
+        closeModal();
+      });
+    }
+
+    function showToast() {
+      const t = document.getElementById('toast');
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 2000);
+    }
+
+    // Filters event binding
+    document.querySelectorAll('[data-priority]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('[data-priority]').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        activePriority = e.target.getAttribute('data-priority');
+        render();
+      });
+    });
+
+    document.querySelectorAll('[data-cat]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('[data-cat]').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        activeCategory = e.target.getAttribute('data-cat');
+        render();
+      });
+    });
+
+    document.getElementById('searchInput').addEventListener('input', render);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== document.getElementById('searchInput')) {
+        e.preventDefault();
+        document.getElementById('searchInput').focus();
+      }
+    });
+
+    loadData();
+  </script>
+</body>
+</html>

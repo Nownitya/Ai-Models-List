@@ -32,3 +32,4 @@ jobs:
           print(f'Total structured skills verified: {len(skills)}')
           assert len(skills) >= 50, 'Skill catalog verification failed!'
           "
+

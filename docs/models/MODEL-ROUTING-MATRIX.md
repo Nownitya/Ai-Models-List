@@ -53,3 +53,4 @@ flowchart TD
 ### 4. Security Review & Pre-Commit Audit (`11 Code Review Quality`)
 - **Primary**: Claude 3.7 Sonnet or CodeRabbit AST parser.
 - **Why**: Ruthless identification of BOLA/IDOR, SQL injection, missing CSRF tokens, and insecure deserialization.
+
