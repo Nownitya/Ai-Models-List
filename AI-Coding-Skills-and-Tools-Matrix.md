@@ -593,3 +593,4 @@ Adapt this structure to the project. Omit irrelevant folders rather than creatin
 - Spreadsheet hyperlinks are reproduced as URL text in Markdown tables and source lists.
 - No new research or unverified capabilities were added during conversion; descriptions and priorities are taken from the workbook.
 - For the most up-to-date details, follow each official repository/documentation link in **14 · Source Links**.
+

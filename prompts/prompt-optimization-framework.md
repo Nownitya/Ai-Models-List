@@ -50,3 +50,4 @@ Always embed defensive constraints in agent system prompts:
 1. **Accidental Data Loss Prevention**: Prohibit non-interactive deletion commands (`rm -rf`, `DROP TABLE`, destructive Git resets).
 2. **Deterministic Verification**: Never claim a test or build passes without executing the command and reading stdout.
 3. **Surgical Edits**: Require that only necessary lines be edited; do not rewrite undamaged helper functions.
+

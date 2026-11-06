@@ -92,3 +92,4 @@ You are a Lead UI/UX Engineer specialized in platform-native interfaces (SwiftUI
 4. Performance: Prevent unnecessary recompositions/re-draws; ensure 60/120 FPS fluid scrolling.
 </standards>
 ```
+

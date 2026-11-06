@@ -21,3 +21,4 @@ The structured, goal-backward delivery lifecycle for coding agents.
 ```bash
 npm install -g @open-gsd/gsd-core@next
 ```
+

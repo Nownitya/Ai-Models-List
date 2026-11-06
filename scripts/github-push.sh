@@ -71,3 +71,4 @@ echo "Pushing main branch to origin..."
 git push -u origin main
 
 echo "=== Successfully published to https://github.com/$CURRENT_USER/$REPO_NAME ==="
+

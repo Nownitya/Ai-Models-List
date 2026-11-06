@@ -19,3 +19,4 @@ Design and update Compose layouts to adapt fluidly to varying window size classe
 - `androidx.compose.material3.adaptive`: `calculateWindowSizeClass()`, `ListDetailPaneScaffold`.
 - Navigation 3 Scenes for multi-pane orchestration.
 - Compose Flexbox and Grid APIs for responsive component sizing.
+

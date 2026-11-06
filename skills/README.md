@@ -26,3 +26,4 @@ Each skill folder contains:
 - `SKILL.md`: Frontmatter metadata, prerequisites, installation/activation, execution flow, and anti-patterns.
 - `references/`: Supporting documentation, architecture notes, and official URLs.
 - `prompts/`: Skill-specific prompt optimization templates.
+

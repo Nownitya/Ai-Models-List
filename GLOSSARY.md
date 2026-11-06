@@ -40,3 +40,4 @@ Canonical domain terms and definitions to ensure humans and AI agents share an u
 - **Impeccable**: A design vocabulary and review toolkit for auditing UI accessibility, performance, visual polish, and responsive behavior.
 - **KMP**: Kotlin Multiplatform — cross-platform logic sharing across Android, iOS, Desktop, and Server without sacrificing native UI.
 - **ADK**: Google Agent Development Kit for building, testing, and deploying enterprise agent workflows.
+

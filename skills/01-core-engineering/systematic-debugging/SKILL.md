@@ -25,3 +25,4 @@ Identify and resolve software defects through scientific, evidence-based investi
 - Speculative edits without verifying the hypothesis.
 - Masking race conditions with arbitrary timeouts or sleep delays.
 - Swallowing exceptions to suppress crash logs.
+

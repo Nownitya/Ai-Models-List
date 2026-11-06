@@ -482,3 +482,4 @@ Configuration and hygiene,Transport and data protection,Use TLS in transit and a
 Configuration and hygiene,Security headers and platform settings,"Apply appropriate security headers, secure cookie flags, platform permissions and production hardening.",P1,Where applicable
 Configuration and hygiene,"Backup, retention and deletion","Define backup access, retention periods, recovery tests and deletion behavior for user data.",P1,Systems storing important user data
 Checklist rule: mark each item Applicable / Not applicable / Verified / Needs work in the project’s security review. Record evidence or a remediation task; do not claim a control is satisfied merely because it is documented.,,,,
+

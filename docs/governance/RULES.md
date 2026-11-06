@@ -23,3 +23,4 @@ Strict architectural and maintenance invariants governing the `Ai-Models-List` p
 1. **Source of Truth**: The Markdown and CSV matrices represent the single source of truth for skill rankings and links.
 2. **Honesty & Verification**: Never mark a skill as tested or verified unless actual execution or compilation was validated.
 3. **Security First**: Prohibit destructive commands and adhere to the security review checklist.
+

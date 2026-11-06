@@ -19,3 +19,4 @@ Conduct an interactive discovery session to eliminate ambiguity and uncover impl
 1. Ask one targeted question at a time (or 2-3 tightly related questions).
 2. Offer recommended choices with rationale.
 3. Incorporate the answers directly into the project's `PRD.md` or `ARCHITECTURE.md`.
+
