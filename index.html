@@ -290,6 +290,7 @@
         <button class="filter-btn" data-cat="10-ai-infrastructure">AI Infra</button>
         <button class="filter-btn" data-cat="11-code-review">Code Review</button>
         <button class="filter-btn" data-cat="12-specialized">Specialized</button>
+        <button class="filter-btn" data-cat="docs">Docs & Specs</button>
       </div>
     </div>
 
@@ -345,7 +346,8 @@
         "09 Autonomous Agents": "09-autonomous-agents",
         "10 AI Infrastructure": "10-ai-infrastructure",
         "11 Code Review Quality": "11-code-review",
-        "12 Optional Specialized": "12-specialized"
+        "12 Optional Specialized": "12-specialized",
+        "15 Universal Project Documentation Standard": "docs"
       };
 
       skillsData = [];
@@ -360,9 +362,18 @@
           }
         }
 
-        // CSV parsing simple row
+        // CSV parsing row
         const parts = parseCSVLine(line);
-        if (parts.length >= 3 && ['P0', 'P1', 'P2', 'P3'].includes(parts[1])) {
+        if (currentCat === "docs") {
+          if (parts.length >= 4 && ['P0', 'P1', 'P2', 'P3'].includes(parts[2])) {
+            skillsData.push({
+              name: parts[1],
+              priority: parts[2],
+              why: parts[3],
+              category: "docs"
+            });
+          }
+        } else if (parts.length >= 3 && ['P0', 'P1', 'P2', 'P3'].includes(parts[1])) {
           skillsData.push({
             name: parts[0],
             priority: parts[1],
@@ -371,6 +382,14 @@
           });
         }
       }
+
+      // Update dynamic stats
+      document.getElementById('stat-total').textContent = skillsData.length;
+      document.getElementById('stat-p0').textContent = skillsData.filter(s => s.priority === 'P0').length;
+      document.getElementById('stat-p1').textContent = skillsData.filter(s => s.priority === 'P1').length;
+      document.getElementById('stat-p2').textContent = skillsData.filter(s => s.priority === 'P2').length;
+      document.getElementById('stat-p3').textContent = skillsData.filter(s => s.priority === 'P3').length;
+
       render();
     }
 
