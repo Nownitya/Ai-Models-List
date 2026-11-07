@@ -10,7 +10,8 @@ class TestWebRedesign(unittest.TestCase):
     def test_bento_hero_telemetry_exists(self):
         self.assertIn('class="bento-grid"', self.content)
         self.assertIn('class="bento-card"', self.content)
-        self.assertIn('1.8M+', self.content)
+        self.assertIn('id="stat-stars"', self.content)
+        self.assertIn('M+', self.content)
 
     def test_radar_spotlight_strip_exists(self):
         self.assertIn('class="radar-strip"', self.content)

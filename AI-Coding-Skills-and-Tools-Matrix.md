@@ -305,6 +305,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Strata repository:** https://github.com/kytheros/strata
 - **Graphify repository / docs:** https://github.com/Graphify-Labs/graphify · https://docs.graphify.com/
 - **Context7 website / repository:** https://context7.com/ · https://github.com/upstash/context7
+- **Agent Skills specification repository:** https://github.com/agentskills/agentskills · https://agentskills.io/
 
 | Tool / Service | Priority | Why | Official repository / source | Research / reference |
 | --- | --- | --- | --- | --- |
@@ -324,6 +325,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Selection guidance | P0 | Graphify answers: how is this codebase connected and where does execution/reuse flow? Context7 answers: how does this external library/API work in its current version? MemPalace/Strata answer: what durable knowledge should persist across sessions? Choose memory products based on privacy, retrieval quality, local-first needs and integrations. |  |  |
 | TokenEconomizer | P1 | Experience-driven coding-agent cost control. Learns repository-specific micro-skills from repeated sessions, prunes tools that remain unused, and detects recurring failure loops to suggest a redirect. Local learning data; supports Claude Code, Codex, GitHub Copilot CLI and Pi, with experimental OpenCode support. Evaluate on repeated work in the same repository; savings are workload-dependent. | https://github.com/microsoft/TokenEconomizer | https://arxiv.org/abs/2610.22732 |
 | Google Agents CLI | P1 | Google CLI + seven agent skills for building, scaffolding, coding, evaluating, deploying, publishing and observing AI agents on Google Cloud using ADK. It is a toolkit for coding assistants, not a coding agent/model. Works with Antigravity CLI, Claude Code, Codex and other coding agents; framework is ADK by default, while ADK model configuration supports Gemini natively and other providers via LiteLLM (documented examples: OpenAI GPT-4o, Anthropic Claude Sonnet, and Ollama-hosted Llama). Local create/run/eval can use Gemini AI Studio API key; cloud deployment needs Google Cloud. Useful when developing AI agents, not required for normal Android app coding. | https://github.com/google/agents-cli |  |
+| agent-skills-spec | P0 | Open specification and reference toolchain (skills-ref) for Agent Skills across Anthropic Claude Code, Cursor, Codex, Gemini CLI, and Antigravity. Defines the universal SKILL.md format, metadata schema, and 3-stage progressive disclosure protocol (Discovery → Activation → Execution) with built-in validation CLI. | https://github.com/agentskills/agentskills | https://agentskills.io/ |
 
 ## 11 Code Review Quality
 
@@ -395,7 +397,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 | Category / Tool | Official Website / Documentation | GitHub Repository | Notes |
 | --- | --- | --- | --- |
-| Agent Skills standard | https://agentskills.io/ |  | Format/specification; not a source repository for every skill. |
+| Agent Skills Specification | https://agentskills.io/ | https://github.com/agentskills/agentskills | Official open specification, documentation, and skills-ref reference toolchain for Agent Skills (27k+ stars). |
 | Matt Pocock Skills | https://aihero.dev/ | https://github.com/mattpocock/skills | Skills collection. |
 | Android Skills | https://developer.android.com/tools/agents/android-skills/browse | https://github.com/android/skills | Official Android skills browse page and repository. |
 | Kotlin Agent Skills | https://kotlinlang.org/docs/home.html | https://github.com/Kotlin/kotlin-agent-skills | Kotlin language docs and agent skills repository. |

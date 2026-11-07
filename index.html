@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Coding Skills & Tools Matrix — Interactive Catalog</title>
-  <meta name="description" content="Authoritative catalog of 226+ AI coding skills, agent harnesses, memory frameworks, and developer tools across 12 functional domains with live upstream telemetry.">
+  <meta name="description" content="Authoritative catalog of 228+ AI coding skills, agent harnesses, memory frameworks, and developer tools across 12 functional domains with live upstream telemetry.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
@@ -777,22 +777,22 @@
       Universal Agent Toolkit · Layer 15
     </div>
     <h1>AI Coding Skills & Tools Matrix</h1>
-    <p class="subtitle">Authoritative catalog of 226+ AI coding skills, agent harnesses, memory frameworks, and developer tools across 12 functional domains with live upstream telemetry.</p>
+    <p class="subtitle">Authoritative catalog of 228+ AI coding skills, agent harnesses, memory frameworks, and developer tools across 12 functional domains with live upstream telemetry.</p>
     
     <!-- Bento Hero Telemetry Grid -->
     <div class="bento-grid">
       <div class="bento-card">
-        <div class="bento-val" id="stat-total">243</div>
+        <div class="bento-val" id="stat-total">244</div>
         <div class="bento-label">Cataloged Skills</div>
         <div class="bento-sub">12 Categories + Docs</div>
       </div>
       <div class="bento-card">
-        <div class="bento-val" id="stat-repos">30</div>
+        <div class="bento-val" id="stat-repos">32</div>
         <div class="bento-label">Upstream Frameworks</div>
         <div class="bento-sub">Synced Daily via CI</div>
       </div>
       <div class="bento-card">
-        <div class="bento-val highlight-gold" id="stat-stars">1.8M+</div>
+        <div class="bento-val highlight-gold" id="stat-stars">2.5M+</div>
         <div class="bento-label">Community Stars</div>
         <div class="bento-sub">Tracked in Realtime</div>
       </div>
@@ -1011,6 +1011,10 @@
         const millions = (totalStars / 1000000).toFixed(1);
         starBento.textContent = `${millions}M+`;
       }
+      const reposBento = document.getElementById('stat-repos');
+      if (reposBento) {
+        reposBento.textContent = repos.length;
+      }
     }
 
     function resolveMetric(name, category) {
@@ -1046,7 +1050,13 @@
         "taste-skill": "leonxlnx/taste-skill",
         "taste skill": "leonxlnx/taste-skill",
         "design-taste-frontend": "leonxlnx/taste-skill",
-        "design taste frontend": "leonxlnx/taste-skill"
+        "design taste frontend": "leonxlnx/taste-skill",
+        "agent-skills-spec": "agentskills/agentskills",
+        "agent skills spec": "agentskills/agentskills",
+        "agent-skills": "agentskills/agentskills",
+        "agentskills": "agentskills/agentskills",
+        "agent skills": "agentskills/agentskills",
+        "agent skills specification": "agentskills/agentskills"
       };
       const n = name.toLowerCase().trim();
       const slug = nameKeyMap[n] || catKeyMap[category];
