@@ -42,7 +42,15 @@ Follow the Universal Project Documentation Standard:
 | `prompts/` | Curated prompts for AI model and agent optimization |
 | `skills/` | Functional category folders (01-core to 12-specialized) |
 | `docs/` | Governance, product, architecture, and verification documentation |
+| `docs/agents/` | Matt Pocock agent skills configuration (tracker, triage, domain) |
 | `scripts/` | Tooling for GitHub CLI push and matrix synchronization |
+
+---
+
+## 🤖 Matt Pocock Skills Configuration
+* **Issue Tracker**: [`docs/agents/issue-tracker.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/docs/agents/issue-tracker.md)
+* **Triage Taxonomy**: [`docs/agents/triage-labels.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/docs/agents/triage-labels.md)
+* **Domain Layout**: [`docs/agents/domain.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/docs/agents/domain.md)
 
 ---
 
