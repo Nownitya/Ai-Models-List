@@ -30,9 +30,11 @@ jobs:
       - name: Prepare Static Site Artifacts
         run: |
           mkdir -p _site
+          mkdir -p _site/data
           cp index.html _site/
           cp AI-Coding-Skills-and-Tools-Matrix.csv _site/
           cp AI-Coding-Skills-and-Tools-Matrix.md _site/
+          cp -r data/* _site/data/ || true
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
