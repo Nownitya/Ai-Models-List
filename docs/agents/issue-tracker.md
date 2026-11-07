@@ -34,3 +34,4 @@
   * Clear user-story or engineering objective.
   * Acceptance criteria with verifiable evidence requirements.
   * Applicable priority (`p0-critical`, `p1-high`, `p2-normal`) and component labels.
+

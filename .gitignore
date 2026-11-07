@@ -15,6 +15,9 @@ desktop.ini
 tmp/
 temp/
 .cache/
+__pycache__/
+*.py[cod]
+*$py.class
 
 # Environment Files
 .env

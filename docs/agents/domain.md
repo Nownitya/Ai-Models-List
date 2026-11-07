@@ -21,3 +21,4 @@
 * Skills Quality Audit: `python scripts/test-skills.py`
 * Local Agent Parity Audit: `python scripts/sync-local-agents.py --status`
 * Pre-Commit Validation: `.git/hooks/pre-commit` (runs automatically on `git commit`)
+
