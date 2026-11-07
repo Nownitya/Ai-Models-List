@@ -1,0 +1,11 @@
+# Development environment specification for Ai-Models-List
+# Python runtime: 3.14.7 (C:\Python314)
+#
+# ARCHITECTURAL PRINCIPLE: ZERO THIRD-PARTY RUNTIME DEPENDENCIES
+# All core automation scripts operate strictly using standard Python modules:
+# - scripts/sync-matrix.py
+# - scripts/test-skills.py
+# - scripts/verify-lock.py
+# - scripts/sync_github_metrics.py
+# - scripts/install-to-project.py
+# - scripts/mcp-server.py

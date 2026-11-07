@@ -22,6 +22,9 @@ __pycache__/
 # Environment Files
 .env
 .env.local
+.venv/
+venv/
+ENV/
 
 # AI Agent, Knowledge Graph & Local Runtime Tooling
 graphify-out/
