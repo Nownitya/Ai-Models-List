@@ -307,6 +307,7 @@ P2,Medium,Keep available and activate when needed.
 P3,Optional,Install only for relevant projects or experiments.
 Operating principle,Modular setup,Do not permanently load every skill. Activate the smallest useful set for each project.
 Primary focus,Android / Kotlin / KMP,"Prioritize Android, Kotlin/KMP, Core Engineering, GSD, UI/UX, testing, debugging, security and code review."
+Live Community Radar,See docs/LIVE-STATS.md for real-time GitHub Stars and release tags,https://github.com/Nownitya/Ai-Models-List/blob/main/docs/LIVE-STATS.md,Live upstream stats
 Category / Tool,Official Website / Documentation,GitHub Repository,Notes
 Agent Skills standard,https://agentskills.io/,,Format/specification; not a source repository for every skill.
 Matt Pocock Skills,https://aihero.dev/,https://github.com/mattpocock/skills,Skills collection.

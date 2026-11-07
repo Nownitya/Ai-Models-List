@@ -390,6 +390,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 ## 14 Source Links
 
+> 📊 **Live Community Radar**: See [docs/LIVE-STATS.md](docs/LIVE-STATS.md) for real-time GitHub Stars, release tags, and maintenance activity across all upstream repositories.
+
 | Category / Tool | Official Website / Documentation | GitHub Repository | Notes |
 | --- | --- | --- | --- |
 | Agent Skills standard | https://agentskills.io/ |  | Format/specification; not a source repository for every skill. |

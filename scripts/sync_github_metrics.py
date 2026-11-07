@@ -163,6 +163,79 @@ def fetch_github_repo_data(repo_slug: str, token: str | None = None) -> tuple[di
 
     return raw_repo, latest_tag or "latest"
 
+def generate_live_stats_markdown(metrics_payload: dict) -> str:
+    """Generate GitHub Flavored Markdown table ranking repositories by stars."""
+    repos_dict = metrics_payload.get("repositories", {})
+    sorted_repos = sorted(repos_dict.values(), key=lambda r: r.get("stars", 0), reverse=True)
+    last_synced = metrics_payload.get("last_synced", "Unknown")
+
+    lines = [
+        "# Live Upstream Skills Radar",
+        "",
+        f"> **Last Synchronized:** `{last_synced}` | **Tracked Repositories:** `{len(sorted_repos)}`",
+        "",
+        "Real-time tracking of community engagement, release versions, and maintenance activity across all upstream AI coding skill repositories.",
+        "",
+        "| Rank | Repository | Stars | Latest Tag | License | Last Updated | Live Badge |",
+        "| :---: | :--- | :---: | :---: | :---: | :---: | :--- |"
+    ]
+
+    for rank, repo in enumerate(sorted_repos, 1):
+        slug = repo.get("repo", "")
+        url = repo.get("html_url") or f"https://github.com/{slug}"
+        stars_fmt = repo.get("stars_formatted", "0")
+        tag = repo.get("version", "latest")
+        license_str = repo.get("license", "Unknown")
+        updated = repo.get("last_updated", "Unknown")
+        badge = f"![Stars](https://img.shields.io/github/stars/{slug}?style=flat&label=stars)"
+
+        lines.append(f"| {rank:2d} | [{slug}]({url}) | **⭐ {stars_fmt}** | `{tag}` | `{license_str}` | {updated} | {badge} |")
+
+    lines.append("")
+    lines.append("---")
+    lines.append("*Automatically synchronized via `.github/workflows/sync-metrics.yml` and `scripts/sync-github-metrics.py`.*")
+    lines.append("")
+    return "\n".join(lines)
+
+def generate_live_stats_csv(metrics_payload: dict) -> str:
+    """Generate CSV string of ranked repository metrics."""
+    import csv
+    import io
+    repos_dict = metrics_payload.get("repositories", {})
+    sorted_repos = sorted(repos_dict.values(), key=lambda r: r.get("stars", 0), reverse=True)
+
+    output = io.StringIO()
+    writer = csv.writer(output, lineterminator="\n")
+    writer.writerow(["Rank", "Repository", "Stars", "Latest_Tag", "License", "Last_Updated", "URL"])
+
+    for rank, repo in enumerate(sorted_repos, 1):
+        writer.writerow([
+            rank,
+            repo.get("repo", ""),
+            repo.get("stars", 0),
+            repo.get("version", "latest"),
+            repo.get("license", "Unknown"),
+            repo.get("last_updated", "Unknown"),
+            repo.get("html_url", "")
+        ])
+
+    return output.getvalue()
+
+def update_live_stats_files(metrics_payload: dict, docs_dir: Path, data_dir: Path):
+    """Write docs/LIVE-STATS.md and data/live-stats.csv."""
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    md_content = generate_live_stats_markdown(metrics_payload)
+    md_path = docs_dir / "LIVE-STATS.md"
+    md_path.write_text(md_content, encoding="utf-8")
+    print(f"[OK] Written {md_path} ({md_path.stat().st_size:,} bytes)")
+
+    csv_content = generate_live_stats_csv(metrics_payload)
+    csv_path = data_dir / "live-stats.csv"
+    csv_path.write_text(csv_content, encoding="utf-8")
+    print(f"[OK] Written {csv_path} ({csv_path.stat().st_size:,} bytes)")
+
 def load_cached_metrics(json_path: Path) -> dict:
     """Load existing metrics cache if available."""
     if json_path.exists():
@@ -173,7 +246,7 @@ def load_cached_metrics(json_path: Path) -> dict:
             pass
     return {"version": 1, "last_synced": "", "repositories": {}}
 
-def sync_metrics(md_path=DEFAULT_MATRIX_MD, output_json=DEFAULT_METRICS_JSON, dry_run=False) -> dict:
+def sync_metrics(md_path=DEFAULT_MATRIX_MD, output_json=DEFAULT_METRICS_JSON, update_docs=True, dry_run=False) -> dict:
     """Main synchronization runner."""
     print("=" * 80)
     print("[*] LIVE GITHUB METRICS RADAR SYNCHRONIZER")
@@ -217,7 +290,7 @@ def sync_metrics(md_path=DEFAULT_MATRIX_MD, output_json=DEFAULT_METRICS_JSON, dr
 
     result_payload = {
         "version": 1,
-        "last_synced": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%SZ"),
+        "last_synced": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ"),
         "total_repositories": len(metrics_by_repo),
         "repositories": metrics_by_repo
     }
@@ -229,6 +302,9 @@ def sync_metrics(md_path=DEFAULT_MATRIX_MD, output_json=DEFAULT_METRICS_JSON, dr
             f.write("\n")
         print(f"\n[OK] Saved metrics to {output_json} ({output_json.stat().st_size:,} bytes)")
 
+        if update_docs:
+            update_live_stats_files(result_payload, REPO_ROOT / "docs", REPO_ROOT / "data")
+
     print(f"[OK] Sync Complete: {success_count} fetched live, {fallback_count} cached fallbacks.")
     return result_payload
 
@@ -237,10 +313,11 @@ def main():
     parser = argparse.ArgumentParser(description="Synchronize live GitHub metrics for upstream skill repositories.")
     parser.add_argument("--matrix", default=str(DEFAULT_MATRIX_MD), help="Path to master Markdown matrix")
     parser.add_argument("--output", default=str(DEFAULT_METRICS_JSON), help="Output path for github-metrics.json")
+    parser.add_argument("--update-docs", action="store_true", default=True, help="Generate docs/LIVE-STATS.md and data/live-stats.csv")
     parser.add_argument("--dry-run", action="store_true", help="Fetch without saving to disk")
     args = parser.parse_args()
 
-    sync_metrics(Path(args.matrix), Path(args.output), dry_run=args.dry_run)
+    sync_metrics(Path(args.matrix), Path(args.output), update_docs=args.update_docs, dry_run=args.dry_run)
 
 if __name__ == "__main__":
     main()
