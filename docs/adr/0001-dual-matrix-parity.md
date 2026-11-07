@@ -9,3 +9,4 @@
   - *Positive:* Eliminates data divergence; automated scripts and web dashboards can rely on either representation.
   - *Positive:* Pre-commit hook and CI gate catch accidental single-file modifications before landing.
   - *Trade-off:* Every addition or modification requires updating both files simultaneously.
+

@@ -33,3 +33,4 @@
 * **Hosting Mode**: Direct static hosting from `main` branch root `/` with `.nojekyll` enabled to prevent Jekyll parsing overhead.
 * **Asset Constraints**: Zero CDN or build tool dependencies for core logic. Self-contained vanilla CSS3 and vanilla JavaScript.
 * **Latency Budget**: Page First Contentful Paint (FCP) < 500ms; DOM Interactive < 800ms.
+

@@ -41,3 +41,4 @@ Executed via standard test runner: `python -m unittest discover tests "test_*.py
 * `.git/hooks/pre-commit`: Executes `sync-matrix.py` prior to creating local commits.
 * `.github/workflows/ci.yml`: Automated GitHub Actions runner validating test suites and matrix parity on push.
 * `.github/workflows/sync-metrics.yml`: Daily automated cron updating live GitHub telemetry.
+

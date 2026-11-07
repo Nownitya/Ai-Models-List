@@ -19,10 +19,19 @@
 | **TASK-006** | Cryptography | Lockfile verification CLI (`verify-lock.py`) | P0 | Verified | `tests/test_verify_lock.py` |
 | **TASK-007** | Installer | Preset bundles (`--bundle`) injection support | P0 | Verified | `tests/test_install_to_project.py` |
 | **TASK-008** | Web Search | Preset filter & slash command interactive search | P1 | Verified | `tests/test_web_dashboard.py` |
+| **TASK-009** | MCP Server | Zero-dependency Model Context Protocol JSON-RPC server | P0 | Verified | `tests/test_mcp_server.py` |
+| **TASK-010** | CI Gates | Full test-suite, lockfile & parity CI validation | P0 | Verified | `.github/workflows/ci.yml` |
+| **TASK-011** | Routing | Frontier model selection matrix (Claude 3.7, R1, o3-mini) | P1 | Verified | `docs/models/MODEL-ROUTING-MATRIX.md` |
 
 ---
 
 ## 2. Active Epic Breakdown: Roadmap & Catalog Evolution
+
+### Epic H3: Autonomous Agent Ecosystem & Extensibility
+- [x] Subtask 9.1: Author unit test `tests/test_mcp_server.py`.
+- [x] Subtask 9.2: Implement `scripts/mcp_server.py` & `scripts/mcp-server.py` with 5 tools & 2 resources.
+- [x] Subtask 10.1: Expand `.github/workflows/ci.yml` to run full 33-test suite, lockfile verification, and MCP validation.
+- [x] Subtask 11.1: Upgrade `docs/models/MODEL-ROUTING-MATRIX.md` with DeepSeek R1, o3-mini, and MCP config.
 
 ### TASK-005: Synthesize Canonical Layer 15 Documentation
 - [x] Subtask 5.1: Write failing `tests/test_docs_integrity.py`.

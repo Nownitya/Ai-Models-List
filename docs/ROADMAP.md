@@ -38,8 +38,8 @@
 * [x] **M2.6**: Add curated preset bundles (`--bundle`) to `scripts/install-to-project.py`.
 * [x] **M2.7**: Enable instant ecosystem filter presets on web dashboard.
 
-### Milestone H3: Autonomous Agent Ecosystem & Extensibility (Current)
-* [ ] **M3.1**: Model evaluation & routing matrix modernized for frontier reasoning models (Claude 3.7 Sonnet, Gemini 2.0 Flash Thinking, o3-mini, DeepSeek R1).
-* [ ] **M3.2**: Native zero-dependency Model Context Protocol (MCP) Server allowing Claude Code, Antigravity, and Cursor to discover, read, and inject skills via JSON-RPC.
-* [ ] **M3.3**: Automated Pull Request verification CI bot validating Law 1, Law 2, lockfile integrity, and unit tests on every PR.
+### Milestone H3: Autonomous Agent Ecosystem & Extensibility (Complete)
+* [x] **M3.1**: Model evaluation & routing matrix modernized for frontier reasoning models (Claude 3.7 Sonnet, Gemini 2.0 Flash Thinking, o3-mini, DeepSeek R1).
+* [x] **M3.2**: Native zero-dependency Model Context Protocol (MCP) Server allowing Claude Code, Antigravity, and Cursor to discover, read, and inject skills via JSON-RPC.
+* [x] **M3.3**: Automated Pull Request verification CI bot validating Law 1, Law 2, lockfile integrity, and unit tests on every PR.
 

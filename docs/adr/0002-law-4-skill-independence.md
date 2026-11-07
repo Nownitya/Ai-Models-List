@@ -10,3 +10,4 @@
 * **Consequences:**
   - *Positive:* Preserves unique authoring patterns, personas, and prompts from Superpowers, gstack, Matt Pocock, and GSD.
   - *Positive:* Prevents doc fragmentation within target project codebases.
+

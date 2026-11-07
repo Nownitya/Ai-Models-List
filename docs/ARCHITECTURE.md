@@ -74,3 +74,4 @@ The `Ai-Models-List` platform is structured into five interconnected tiers:
 * **Architecture**: Single-page vanilla HTML5/CSS3 application requiring zero build toolchains or bundlers.
 * **Asynchronous Telemetry Fetch**: Queries `data/github-metrics.json` at runtime; falls back gracefully to embedded CSV data if running off-line.
 * **Dynamic Search & Filtering**: Client-side filtering across categories, priorities (P0–P3), author presets, and keyboard shortcuts (`/` focus, `Esc` clear).
+

@@ -55,3 +55,4 @@ The platform serves as both a reference catalog with real-time upstream telemetr
 2. **Quality Gate**: `python scripts/test-skills.py` verifies 100% of `SKILL.md` files pass Law 2 structure.
 3. **Unit Test Gate**: `python -m unittest discover tests "test_*.py"` passes 100% of test suites.
 4. **Availability Gate**: `https://nownitya.github.io/Ai-Models-List/` delivers HTTP 200 with zero build cost on GitHub Pages.
+
