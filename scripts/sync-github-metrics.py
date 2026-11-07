@@ -11,3 +11,4 @@ from scripts.sync_github_metrics import main
 
 if __name__ == "__main__":
     main()
+

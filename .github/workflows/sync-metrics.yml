@@ -52,3 +52,4 @@ jobs:
           else
             echo "No metrics changes detected. Working tree clean."
           fi
+
