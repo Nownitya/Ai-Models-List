@@ -29,16 +29,17 @@
 * [x] **M1.4**: Establish Layer 15 Universal Project Documentation standard with 29 reusable templates.
 * [x] **M1.5**: Author `SKILL.md` root engineering skill, lockfile `skills-lock.json`, and local agent runtime.
 
-### Milestone H2: Live Telemetry, Web Redesign & Packaging (Current)
+### Milestone H2: Live Telemetry, Web Redesign & Packaging (Complete)
 * [x] **M2.1**: Implement `scripts/sync_github_metrics.py` tracking live GitHub community stars and releases.
 * [x] **M2.2**: Launch Bento Hero Telemetry and Live Radar Spotlight on `index.html`.
 * [x] **M2.3**: Catalog `Leonxlnx/taste-skill` (112k ⭐) and `agentskills/agentskills` (27k ⭐) with full specs.
 * [x] **M2.4**: Author canonical Layer 15 specifications (`PRD.md`, `ARCHITECTURE.md`, `ROADMAP.md`, `TASKS.md`, `BRD.md`, `TRD.md`).
-* [ ] **M2.5**: Ship standalone `scripts/verify-lock.py` CLI with cross-platform CRLF/LF invariance.
-* [ ] **M2.6**: Add curated preset bundles (`--bundle`) to `scripts/install-to-project.py`.
-* [ ] **M2.7**: Enable instant ecosystem filter presets on web dashboard.
+* [x] **M2.5**: Ship standalone `scripts/verify-lock.py` CLI with cross-platform CRLF/LF invariance.
+* [x] **M2.6**: Add curated preset bundles (`--bundle`) to `scripts/install-to-project.py`.
+* [x] **M2.7**: Enable instant ecosystem filter presets on web dashboard.
 
-### Milestone H3: Autonomous Agent Ecosystem & Extensibility (Planned)
-* [ ] **M3.1**: Model evaluation harness executing standardized coding tasks against Claude 3.7 Sonnet, GPT-4o, and Gemini 2.0 Pro.
-* [ ] **M3.2**: MCP Server interface allowing Claude Code and Antigravity to discover and inject skills via JSON-RPC.
-* [ ] **M3.3**: Community pull request linting bot validating Law 1 and Law 2 parity on every PR.
+### Milestone H3: Autonomous Agent Ecosystem & Extensibility (Current)
+* [ ] **M3.1**: Model evaluation & routing matrix modernized for frontier reasoning models (Claude 3.7 Sonnet, Gemini 2.0 Flash Thinking, o3-mini, DeepSeek R1).
+* [ ] **M3.2**: Native zero-dependency Model Context Protocol (MCP) Server allowing Claude Code, Antigravity, and Cursor to discover, read, and inject skills via JSON-RPC.
+* [ ] **M3.3**: Automated Pull Request verification CI bot validating Law 1, Law 2, lockfile integrity, and unit tests on every PR.
+
