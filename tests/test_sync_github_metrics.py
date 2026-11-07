@@ -11,7 +11,8 @@ from scripts.sync_github_metrics import (
     extract_github_repos,
     normalize_repo_key,
     format_star_count,
-    build_repo_metric
+    build_repo_metric,
+    update_readme_live_sample
 )
 
 class TestSyncGitHubMetrics(unittest.TestCase):
@@ -57,6 +58,36 @@ class TestSyncGitHubMetrics(unittest.TestCase):
         self.assertEqual(metric["stars_formatted"], "314k")
         self.assertEqual(metric["version"], "v7.0.2")
         self.assertEqual(metric["license"], "MIT")
+
+    def test_update_readme_live_sample(self):
+        import tempfile
+        sample_metrics = {
+            "repositories": {
+                "obra/superpowers": {
+                    "repo": "obra/superpowers",
+                    "html_url": "https://github.com/obra/superpowers",
+                    "stars": 314000,
+                    "stars_formatted": "314k",
+                    "version": "v7.0.2",
+                    "license": "MIT",
+                    "last_updated": "2026-11-03"
+                }
+            }
+        }
+        with tempfile.NamedTemporaryFile("w+", encoding="utf-8", delete=False) as tf:
+            tf.write("# Test\n<!-- START_LIVE_STATS -->\nold\n<!-- END_LIVE_STATS -->\n# Tail\n")
+            temp_path = Path(tf.name)
+
+        try:
+            success = update_readme_live_sample(sample_metrics, temp_path, top_n=5)
+            self.assertTrue(success)
+            content = temp_path.read_text(encoding="utf-8")
+            self.assertIn("obra/superpowers", content)
+            self.assertIn("314k", content)
+            self.assertNotIn("old", content)
+        finally:
+            if temp_path.exists():
+                temp_path.unlink()
 
 if __name__ == "__main__":
     unittest.main()

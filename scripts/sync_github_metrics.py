@@ -221,8 +221,44 @@ def generate_live_stats_csv(metrics_payload: dict) -> str:
 
     return output.getvalue()
 
-def update_live_stats_files(metrics_payload: dict, docs_dir: Path, data_dir: Path):
-    """Write docs/LIVE-STATS.md and data/live-stats.csv."""
+def update_readme_live_sample(metrics_payload: dict, readme_path: Path, top_n: int = 10) -> bool:
+    """Update Top Upstream Skills table inside README.md between sentinel comments."""
+    if not readme_path.exists():
+        return False
+
+    repos_dict = metrics_payload.get("repositories", {})
+    sorted_repos = sorted(repos_dict.values(), key=lambda r: r.get("stars", 0), reverse=True)
+    top_repos = sorted_repos[:top_n]
+
+    lines = [
+        "<!-- START_LIVE_STATS -->",
+        "| Rank | Framework / Repository | Stars | Release | License | Last Active | Live Badge |",
+        "| :---: | :--- | :---: | :---: | :---: | :---: | :--- |"
+    ]
+    for rank, repo in enumerate(top_repos, 1):
+        name = repo.get("repo", "")
+        url = repo.get("html_url", f"https://github.com/{name}")
+        stars = repo.get("stars_formatted", "0")
+        ver = repo.get("version", "latest")
+        lic = repo.get("license", "Unknown")
+        updated = repo.get("last_updated", "Unknown")
+        badge = f"![Stars](https://img.shields.io/github/stars/{name}?style=flat&label=stars)"
+        lines.append(f"| {rank} | [**{name}**]({url}) | **⭐ {stars}** | `{ver}` | `{lic}` | {updated} | {badge} |")
+
+    lines.append("<!-- END_LIVE_STATS -->")
+    replacement_block = "\n".join(lines)
+
+    content = readme_path.read_text(encoding="utf-8")
+    pattern = r'<!-- START_LIVE_STATS -->.*?<!-- END_LIVE_STATS -->'
+    if re.search(pattern, content, flags=re.DOTALL):
+        new_content = re.sub(pattern, replacement_block, content, flags=re.DOTALL)
+        readme_path.write_text(new_content, encoding="utf-8")
+        print(f"[OK] Updated {readme_path} Top {top_n} Live Sample ({readme_path.stat().st_size:,} bytes)")
+        return True
+    return False
+
+def update_live_stats_files(metrics_payload: dict, docs_dir: Path, data_dir: Path, readme_path: Path | None = None):
+    """Write docs/LIVE-STATS.md and data/live-stats.csv, and update README.md live sample."""
     docs_dir.mkdir(parents=True, exist_ok=True)
     data_dir.mkdir(parents=True, exist_ok=True)
 
@@ -235,6 +271,9 @@ def update_live_stats_files(metrics_payload: dict, docs_dir: Path, data_dir: Pat
     csv_path = data_dir / "live-stats.csv"
     csv_path.write_text(csv_content, encoding="utf-8")
     print(f"[OK] Written {csv_path} ({csv_path.stat().st_size:,} bytes)")
+
+    if readme_path and readme_path.exists():
+        update_readme_live_sample(metrics_payload, readme_path, top_n=10)
 
 def load_cached_metrics(json_path: Path) -> dict:
     """Load existing metrics cache if available."""
@@ -303,7 +342,7 @@ def sync_metrics(md_path=DEFAULT_MATRIX_MD, output_json=DEFAULT_METRICS_JSON, up
         print(f"\n[OK] Saved metrics to {output_json} ({output_json.stat().st_size:,} bytes)")
 
         if update_docs:
-            update_live_stats_files(result_payload, REPO_ROOT / "docs", REPO_ROOT / "data")
+            update_live_stats_files(result_payload, REPO_ROOT / "docs", REPO_ROOT / "data", readme_path=REPO_ROOT / "README.md")
 
     print(f"[OK] Sync Complete: {success_count} fetched live, {fallback_count} cached fallbacks.")
     return result_payload
