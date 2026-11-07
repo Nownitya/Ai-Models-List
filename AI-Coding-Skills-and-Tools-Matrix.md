@@ -185,6 +185,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 ## 05 UI UX Design
 
 - **UI/UX Pro Max repository:** https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+- **Taste Skill (tasteskill) repository:** https://github.com/Leonxlnx/taste-skill
 - **Impeccable repository / documentation:** https://github.com/pbakaus/impeccable · https://impeccable.style/docs
 - **Apple Human Interface Guidelines:** https://developer.apple.com/design/human-interface-guidelines/
 
@@ -194,7 +195,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | impeccable | P1 | Design command toolkit for coding agents: critique UX, audit accessibility/performance/responsive behavior, polish and harden interfaces, and detect common UI quality issues. Complements UI/UX Pro Max and native platform guidelines. |
 | ui-taste | P1 | Uizze UI Taste and related UI/UX agent skills. FREE: install/use the ui-taste skill from uizze.sh; the GitHub repo also provides free ui-design, anti-ui-slop and ui-radar skills, plus GitHub-native image-to-ui and uizze-ui packages. Skills work locally without a Uizze account or MCP. PAID: authenticated Uizze MCP at https://uizze.com/mcp provides find_ui_references and find_ui_materials for real app screens, flows, design systems, fonts, icons and materials. Website reference browsing is free without an account. LIMITATIONS: UI Taste/iOS Design are distributed separately from the GitHub skill packages; paid MCP exposes only two retrieval tools and may return no matches; the skills are guidance and playbooks, not a design editor or guaranteed visual QA. Third-party reference assets and branding are not automatically licensed for reuse; retain individual MIT/Apache notices. |
 | ios-design | P0 | Build platform-native iOS interfaces using Apple platform conventions. |
-| design-taste-frontend | P3 | Frontend-specific design guidance; lower relevance for native mobile projects. |
+| taste-skill | P1 | Anti-slop frontend web design skill for AI coding agents (Leonxlnx/taste-skill, 111k+ stars). Enforces figma.com/x.ai quality bar: plain authentic voice, one section per screen, equal edges, real photography, hero entrances (data-enter), quiet micro-interactions, shader/3D effects reserved strictly for tech/developer tooling, and automated browser-check finish gates. Works across React, Next.js, Vue, Svelte, Astro, Tailwind, or static HTML/CSS. Install with npx skills add https://github.com/Leonxlnx/taste-skill. |
 | compose-preview | P1 | Validate Compose UI concepts and layouts visually. |
 | prototype | P1 | Explore different UI concepts before implementation. |
 | design-consultation | P2 | Develop design systems and design direction. |
@@ -433,6 +434,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | SwiftUI Expert (AvdLee) | https://github.com/avdlee/swiftui-agent-skill | https://github.com/AvdLee/SwiftUI-Agent-Skill | MIT Agent Skill + portable Agent Plugin; SwiftUI reference library plus executable xctrace record/analyse tooling. Host/model-agnostic; Xcode required for Instruments trace tooling. |
 | Everything Claude Code (ECC) | https://ecc.tools | https://github.com/affaan-m/ecc | MIT agent-harness engineering system with agents, skills, hooks, rules, memory, workflows and AgentShield. Claude Code is strongest supported host; Codex/Qoder native paths; other adapters have limited/variable feature parity. Model provider is determined by host configuration. |
 | Karpathy Guidelines | https://github.com/multica-ai/andrej-karpathy-skills | https://github.com/multica-ai/andrej-karpathy-skills | Third-party Karpathy-inspired four-principle coding guide; skill metadata declares MIT. Includes portable Agent Skill plus documented Claude Code plugin and Cursor rule. README's plugin install commands point to forrestchang/andrej-karpathy-skills; verify intended install source. |
+| Taste Skill (Leonxlnx) | https://tasteskill.dev | https://github.com/Leonxlnx/taste-skill | Anti-slop frontend design skill with browser verification, art direction, and 111k+ stars. |
 
 ## 15 Universal Project Documentation Standard
 

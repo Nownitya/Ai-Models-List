@@ -37,7 +37,7 @@ def extract_github_repos(markdown_text: str) -> list[str]:
     valid_repos = []
 
     for match in matches:
-        clean = match.rstrip('/').removesuffix('.git')
+        clean = match.rstrip('/').rstrip('.').removesuffix('.git')
         parts = clean.split('/')
         if len(parts) == 2:
             owner, repo = parts

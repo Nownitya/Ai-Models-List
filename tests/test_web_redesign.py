@@ -27,6 +27,10 @@ class TestWebRedesign(unittest.TestCase):
         self.assertIn('--accent-gold', self.content)
         self.assertIn('--accent-cyan', self.content)
 
+    def test_taste_skill_integrated(self):
+        self.assertIn('leonxlnx/taste-skill', self.content)
+        self.assertIn('taste-skill', self.content)
+
 if __name__ == "__main__":
     unittest.main()
 
