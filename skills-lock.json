@@ -187,6 +187,12 @@
       "skillPath": "skills/engineering/domain-modeling/SKILL.md",
       "computedHash": "b62d997256cc073e123d4303da8e9db00db0e28de9739660ca3e55ab76e09cdb"
     },
+    "everything-claude-code": {
+      "source": "affaan-m/ecc",
+      "sourceType": "github",
+      "skillPath": "skills/everything-claude-code/SKILL.md",
+      "computedHash": "50ea71cfea69d7b1a8500850be9d60788ef577816058aec5d073800086b9b971"
+    },
     "executing-plans": {
       "source": "obra/superpowers",
       "sourceType": "github",

@@ -157,6 +157,7 @@ def gather_skills_to_install():
         ("graphify", SKILLS_SRC / "10-ai-infrastructure" / "graphify", "graphify/skill", "skills/graphify/SKILL.md"),
         ("agent-browser", SKILLS_SRC / "12-specialized" / "agent-browser", "vercel-labs/agent-browser", "skills/agent-browser/SKILL.md"),
         ("find-skills", SKILLS_SRC / "01-core-engineering" / "find-skills", "vercel-labs/skills", "skills/find-skills/SKILL.md"),
+        ("everything-claude-code", SKILLS_SRC / "09-autonomous-agents" / "everything-claude-code", "affaan-m/ecc", "skills/everything-claude-code/SKILL.md"),
     ]
     for dest_name, src, repo, rel_path in extra_skills:
         if src.exists():
@@ -338,3 +339,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
