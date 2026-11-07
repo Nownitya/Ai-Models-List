@@ -20,3 +20,23 @@ temp/
 .env
 .env.local
 
+# AI Agent, Knowledge Graph & Local Runtime Tooling
+graphify-out/
+**/graphify-out/
+.agents/
+**/.agents/
+.ocr/
+**/.ocr/
+.planning/
+**/.planning/
+.mempalace/
+**/.mempalace/
+.gemini/
+**/.gemini/
+.claude/
+**/.claude/
+.cursor/
+**/.cursor/
+.windsurf/
+**/.windsurf/
+
