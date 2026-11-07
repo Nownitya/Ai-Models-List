@@ -96,11 +96,12 @@ def main():
         results = [s for s in results if q in s["name"].lower() or q in s["why"].lower()]
 
     print(f"\nFound {len(results)} matching skill(s):\n")
-    print(f"{'PRIORITY':<10} {'SKILL NAME':<38} {'CATEGORY'}")
+    print(f"{'SLASH COMMAND':<24} {'PRIORITY':<8} {'SKILL NAME':<32} {'CATEGORY'}")
     print("-" * 80)
     for s in results:
-        local_badge = "[Local]" if find_local_skill_file(skills_root, s["name"]) else "       "
-        print(f"[{s['priority']}] {local_badge:<8} {s['name']:<38} {s['category']}")
+        clean_slug = s['name'].lower().replace(" ", "-").replace("→", "").replace("·", "").replace("(", "").replace(")", "").strip("-")
+        cmd = f"/{clean_slug}"[:22]
+        print(f"{cmd:<24} [{s['priority']}]     {s['name'][:30]:<32} {s['category']}")
         if args.detail:
             print(f"   Description: {s['why']}")
             local_file = find_local_skill_file(skills_root, s["name"])

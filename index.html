@@ -416,6 +416,7 @@
       });
 
       for (let s of filtered) {
+        const cmdSlug = s.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
@@ -424,11 +425,15 @@
               <span class="card-title">${escapeHtml(s.name)}</span>
               <span class="priority-pill priority-${s.priority}">${s.priority}</span>
             </div>
-            <div class="card-category">${s.category}</div>
+            <div class="card-category" style="display:flex; justify-content:space-between; align-items:center;">
+              <span>${s.category}</span>
+              <span style="background:#1f2937; color:#38bdf8; font-family:monospace; padding:1px 6px; border-radius:4px; font-size:0.75rem; cursor:pointer;" onclick="copyCmd('/${cmdSlug}')" title="Click to copy slash command">/${cmdSlug}</span>
+            </div>
             <div class="card-desc">${escapeHtml(s.why)}</div>
           </div>
           <div class="card-actions">
             <button class="action-btn" onclick="openPrompt('${escapeHtml(s.name)}', '${escapeHtml(s.priority)}', '${escapeHtml(s.why)}')">Prompt Snippet</button>
+            <button class="action-btn" onclick="copyCmd('/${cmdSlug}')">Copy /Cmd</button>
             <a class="action-btn" href="https://github.com/Nownitya/Ai-Models-List/tree/main/skills/${s.category}" target="_blank">Folder</a>
           </div>
         `;
@@ -459,13 +464,20 @@ Instruction: Execute the required changes following strict red-green verificatio
     function copyModalPrompt() {
       const text = document.getElementById('modalPrompt').textContent;
       navigator.clipboard.writeText(text).then(() => {
-        showToast();
+        showToast('Copied prompt to clipboard!');
         closeModal();
       });
     }
 
-    function showToast() {
+    function copyCmd(cmd) {
+      navigator.clipboard.writeText(cmd).then(() => {
+        showToast(`Copied ${cmd} to clipboard!`);
+      });
+    }
+
+    function showToast(msg) {
       const t = document.getElementById('toast');
+      if (msg) t.textContent = msg;
       t.style.display = 'block';
       setTimeout(() => { t.style.display = 'none'; }, 2000);
     }
