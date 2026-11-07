@@ -855,14 +855,14 @@
     <div class="ecosystem-section">
       <span class="ecosystem-label">Ecosystems:</span>
       <div class="ecosystem-pills">
-        <button class="eco-btn active" data-ecosystem="all">🌐 All Ecosystems</button>
-        <button class="eco-btn" data-ecosystem="superpowers">⚡ Superpowers</button>
-        <button class="eco-btn" data-ecosystem="gstack">🏛️ gstack</button>
-        <button class="eco-btn" data-ecosystem="mattpocock">🧠 Matt Pocock</button>
-        <button class="eco-btn" data-ecosystem="gsd">🚀 GSD Core</button>
-        <button class="eco-btn" data-ecosystem="agents">🤖 Agents & ECC</button>
-        <button class="eco-btn" data-ecosystem="docs">📑 Docs & Specs</button>
-        <button class="eco-btn" data-ecosystem="mobile">📱 Android & KMP</button>
+        <button class="eco-btn active" data-ecosystem="all" data-preset="all">🌐 All Ecosystems</button>
+        <button class="eco-btn" data-ecosystem="superpowers" data-preset="superpowers">⚡ Superpowers</button>
+        <button class="eco-btn" data-ecosystem="gstack" data-preset="gstack">🏛️ gstack</button>
+        <button class="eco-btn" data-ecosystem="mattpocock" data-preset="mattpocock">🧠 Matt Pocock</button>
+        <button class="eco-btn" data-ecosystem="gsd" data-preset="gsd">🚀 GSD Core</button>
+        <button class="eco-btn" data-ecosystem="agents" data-preset="agents">🤖 Agents & ECC</button>
+        <button class="eco-btn" data-ecosystem="docs" data-preset="docs">📑 Docs & Specs</button>
+        <button class="eco-btn" data-ecosystem="mobile" data-preset="mobile">📱 Android & KMP</button>
       </div>
     </div>
 
@@ -1136,8 +1136,15 @@
       return row.map(s => s.trim());
     }
 
+    function filterBySlashCommand(query) {
+      if (!query) return '';
+      const clean = query.trim().toLowerCase();
+      return clean.startsWith('/') ? clean.substring(1) : clean;
+    }
+
     function render() {
-      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const rawQ = document.getElementById('searchInput').value;
+      const q = filterBySlashCommand(rawQ);
       const grid = document.getElementById('skillsGrid');
       grid.innerHTML = '';
 
@@ -1147,7 +1154,8 @@
         const matchPriority = activePriority === 'ALL' || s.priority === activePriority;
         const matchCategory = activeCategory === 'ALL' || s.category === activeCategory;
         const matchEcosystem = !ecoFilter || ecoFilter.includes(s.category);
-        const matchSearch = !q || s.name.toLowerCase().includes(q) || s.why.toLowerCase().includes(q) || s.category.toLowerCase().includes(q);
+        const cmdSlug = s.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+        const matchSearch = !q || s.name.toLowerCase().includes(q) || s.why.toLowerCase().includes(q) || s.category.toLowerCase().includes(q) || cmdSlug.includes(q);
         return matchPriority && matchCategory && matchEcosystem && matchSearch;
       });
 
