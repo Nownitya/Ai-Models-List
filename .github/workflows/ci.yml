@@ -1,4 +1,4 @@
-name: Matrix Parity & Verification Gate
+name: Matrix Parity & CI Verification Gate
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  verify-matrix:
-    name: Dual-Matrix Parity & Skill Validation
+  verify:
+    name: Dual-Matrix Parity, Skills Quality & Test Pyramid
     runs-on: ubuntu-latest
 
     steps:
@@ -18,22 +18,43 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
-      - name: Validate Dual-Matrix Parity (.md <-> .csv)
+      - name: 1. Validate Dual-Matrix Parity (Law 1 Gate)
         run: |
           python scripts/sync-matrix.py
 
-      - name: Run Skill Quality & Link Audit (Law 2 Gate)
+      - name: 2. Run Skill Quality & Link Audit (Law 2 Gate)
         run: |
           python scripts/test-skills.py
 
-      - name: Verify Skills Structure
+      - name: 3. Verify Cryptographic Lockfile (SHA-256 Gate)
+        run: |
+          python scripts/verify-lock.py
+
+      - name: 4. Execute Full Unit Test Suite (33+ Tests)
+        run: |
+          python -m unittest discover tests "test_*.py" -v
+
+      - name: 5. Verify MCP Server & Toolchain
+        run: |
+          python -c "
+          from scripts.mcp_server import MCPServer
+          server = MCPServer()
+          res = server.search_skills('writing-plans')
+          assert 'writing-plans' in res, 'MCP Server search verification failed!'
+          metrics = server.get_upstream_metrics('agentskills')
+          assert 'agentskills' in metrics, 'MCP Server telemetry verification failed!'
+          print('[OK] MCP Server verified successfully!')
+          "
+
+      - name: 6. Verify Catalog Threshold (228+ SKILL.md packages)
         run: |
           python -c "
           from pathlib import Path
           skills = list(Path('skills').rglob('SKILL.md'))
           print(f'Total structured skills verified: {len(skills)}')
-          assert len(skills) >= 150, 'Skill catalog verification failed!'
+          assert len(skills) >= 228, f'Skill catalog verification failed! Found only {len(skills)}'
+          print('[OK] Full catalog threshold satisfied!')
           "
 
