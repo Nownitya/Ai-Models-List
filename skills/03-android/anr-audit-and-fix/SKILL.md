@@ -1,22 +1,35 @@
 ---
 name: anr-audit-and-fix
-description: "Audit codebases for ANR risks and diagnose Application Not Responding stack dumps."
-priority: P0
-category: 03-android
+description: Audits Android codebases for ANR risks and diagnoses ANR stack dumps.
+  Use this skill when scanning Android code for ANR risks or triaging ANR stack dumps.
+  Don't use for non-ANR crashes, dropped frames, general CPU profiling, or Perfetto
+  system traces.
+license: Complete terms in LICENSE.txt
+metadata:
+  author: Google LLC
+  last-updated: '2026-10-16'
+  keywords:
+  - Android
+  - ANR
+  - Application Not Responding
+  - responsiveness
+  - main thread
+  - ANR stack dump
+  - Sync Barrier Leak
 ---
 
-# Anr Audit And Fix
+Select the execution path matching the user's request:
 
-Audit codebases for ANR risks and diagnose Application Not Responding stack dumps.
+## 1. Path A: Static codebase ANR risk audit
 
-## When to Use
-- Triaging ANR crash reports or auditing thread safety.
+When auditing source files or scanning for thread-blocking operations:
 
-## Core Protocol / Capabilities
-1. Check main thread for Room database calls, SharedPreference sync, or network I/O.
-2. Audit synchronized locks and mutexes for deadlock risks.
-3. Migrate blocking calls to `Dispatchers.IO` with structured coroutines.
+- Follow [references/risk_analysis_guide.md](references/risk_analysis_guide.md) step by step: list candidates, **prove the executing thread** (trace callers when the thread depends on them), **prove the call blocks**, then attribute and grade. Report only candidates that pass these checks; list the dismissed ones separately with a one-line reason.
+- Evaluate off-main-thread mutations of attached Views not merely as crash risks (`CalledFromWrongThreadException`), but as **Sync Barrier Leak ANR** risks with their own proof (off-main execution plus an attached View).
 
-## Anti-Patterns & Warnings
-- Blocking main thread with `.get()` on Futures.
-- Sleeping on main thread.
+## 2. Path B: Trace-driven diagnosis and remediation
+
+When analyzing ANR traces or stack dumps:
+
+- Diagnose systematically using [references/trace_analysis_guide.md](references/trace_analysis_guide.md) and format the report with [references/anr_trace_report_template.md](references/anr_trace_report_template.md).
+- Base findings strictly on log evidence. Propose application fixes **only** for `APP_DEFECT` or `APP_RESOURCE_OVERLOAD` (never for `EXTERNAL_BOTTLENECK`).

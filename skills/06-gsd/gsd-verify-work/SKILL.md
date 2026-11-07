@@ -12,8 +12,8 @@ Output: {phase_num}-UAT.md tracking all test results. If issues found: diagnosed
 </objective>
 
 <execution_context>
-@.agents/gsd-core/workflows/verify-work.md
-@.agents/gsd-core/templates/UAT.md
+@~/.gemini/antigravity/gsd-core/workflows/verify-work.md
+@~/.gemini/antigravity/gsd-core/templates/UAT.md
 </execution_context>
 
 <context>

@@ -24,12 +24,16 @@ jobs:
         run: |
           python scripts/sync-matrix.py
 
+      - name: Run Skill Quality & Link Audit (Law 2 Gate)
+        run: |
+          python scripts/test-skills.py
+
       - name: Verify Skills Structure
         run: |
           python -c "
           from pathlib import Path
           skills = list(Path('skills').rglob('SKILL.md'))
           print(f'Total structured skills verified: {len(skills)}')
-          assert len(skills) >= 50, 'Skill catalog verification failed!'
+          assert len(skills) >= 150, 'Skill catalog verification failed!'
           "
 

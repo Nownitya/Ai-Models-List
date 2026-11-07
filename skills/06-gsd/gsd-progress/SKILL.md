@@ -23,10 +23,10 @@ Three modes:
 </flags>
 
 <execution_context>
-@.agents/gsd-core/workflows/progress.md
-@.agents/gsd-core/workflows/next.md
-@.agents/gsd-core/workflows/do.md
-@.agents/gsd-core/references/ui-brand.md
+@~/.gemini/antigravity/gsd-core/workflows/progress.md
+@~/.gemini/antigravity/gsd-core/workflows/next.md
+@~/.gemini/antigravity/gsd-core/workflows/do.md
+@~/.gemini/antigravity/gsd-core/references/ui-brand.md
 </execution_context>
 
 <process>

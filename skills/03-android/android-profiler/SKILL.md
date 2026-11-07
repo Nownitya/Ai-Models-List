@@ -1,22 +1,57 @@
 ---
 name: android-profiler
-description: "Record and analyze Android performance data (CPU, memory, Perfetto traces)."
-priority: P0
-category: 03-android
+description: 'Records and analyzes Android performance data and diagnoses performance
+  bottlenecks across user apps, system apps, and system services, even if the user
+  does not explicitly mention profiling or traces. Use when: recording system traces,
+  CPU call stacks, Vulkan GPU/DRM memory, or Java/native heap profiles; analyzing
+  Perfetto traces for UI jank, frame drops, ANRs, or app startup latency issues; investigating
+  CPU bottlenecks, IPC/Binder storms, or thread scheduling stalls; diagnosing battery
+  drain, modem power rails, and kernel wake locks; debugging memory pressure, Low
+  Memory Kills (LMK), OOMs, leaks, and allocation churn; performing A/B baseline trace
+  comparisons to find regressions; executing ad hoc PerfettoSQL queries on Android
+  traces.'
+license: Complete terms in LICENSE.txt
+metadata:
+  author: Google LLC
+  last-updated: '2026-10-23'
+  keywords:
+  - android performance
+  - debugging
+  - profiling
+  - recording
+  - trace analysis
+  - memory leaks
+  - bottleneck
+  - jank
+  - SQL
 ---
 
-# Android Profiler
+Your primary role is to figure out what the user wants to do (disambiguation),
+find the right instructions for it (workflow discovery), and follow them
+step-by-step (following the execution plan). If the request is unclear, work
+with the user to finalize the execution plan before proceeding.
 
-Record and analyze Android performance data (CPU, memory, Perfetto traces).
+## Prerequisites and Setup
 
-## When to Use
-- Investigating app startup latency, memory leaks, or thermal throttling.
+Before executing any workflows, read [`references/env_setup.md`](references/env_setup.md). It defines
+what to set `$SKILL_ROOT` to - the anchor every other path in this skill is
+written against.
 
-## Core Protocol / Capabilities
-1. Capture system traces using Perfetto.
-2. Analyze main thread slices for jank and Binder transactions.
-3. Diagnose heap churn and Low Memory Killer (LMK) triggers.
+## Intent Disambiguation
 
-## Anti-Patterns & Warnings
-- Guessing performance bottlenecks without traces.
-- Profiling debug builds instead of release/profile.
+Do not guess the user's intent. If the user request is not clear, **ask the
+user** what they want to do before proceeding.
+
+## Recording
+
+Route all recording requests through
+[recording/recording_orchestrator](recording/recording_orchestrator.md). This defines guidelines and
+pre-flight checks or dependency checks that apply to all recording workflows,
+and ensures you have the necessary setup to proceed. Read the orchestrator and
+execute the plan it describes based on what the user wants to record (for
+example, a system trace or a heap dump).
+
+## Analysis
+
+Route all analysis requests through
+[analysis/analysis_orchestrator](analysis/analysis_orchestrator.md).
