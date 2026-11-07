@@ -25,6 +25,12 @@ Follow the Universal Project Documentation Standard:
 - Maintain `GLOSSARY.md` for any new acronyms or specialized agent concepts.
 - Comply with the self-review quiz before claiming a change is complete.
 
+### Law 4: Skill Independence vs Project Docs Synthesis
+- **Skill Independence (Never Merge Skills Across Creators)**:
+  Skills from different upstream creators or repositories (e.g. `mattpocock`, `superpowers`, `gstack`, `open-gsd`, `google/android`) **MUST** remain separate, distinct, and pure. Never merge, blend, or overwrite different framework skills together even if they share similar names (such as `code-review`, `debugging`, or `tdd`). Each skill must preserve its author's unique methodology, prompts, and workflow, selectable individually using its repository-scoped `/` slash command.
+- **Project Documentation Synthesis (`docs/` Merging Only)**:
+  The rule of cumulative merging and updating applies **strictly to the `docs/` folder** created for a specific project (Layer 15 docs: `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, `docs/TASKS.md`, `docs/testing/TEST-STRATEGY.md`). Within a project's `docs/`, new findings, requirements, sprint reports, and test evidence must be synthesized and merged into the canonical living documents to maintain a single source of truth without fragmentation.
+
 ---
 
 ## 🧭 Directory Map

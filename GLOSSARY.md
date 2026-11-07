@@ -54,4 +54,6 @@ Canonical domain terms and definitions to ensure humans and AI agents share an u
 - **TRD (Technical Requirements Document)**: Infrastructure and platform requirements defining supported OS targets, toolchains, CPU/RAM budgets, and binary limits.
 - **TSD (Technical Specification Document)**: Detailed technical specifications for wire protocols, packet binary layouts, and mathematical algorithms.
 - **DoD (Definition of Done)**: Strict, verifiable checklist of criteria that must be satisfied with empirical evidence before a task, sprint, or milestone is declared complete.
+- **Skill Independence**: The governance invariant stipulating that external skills from distinct authors/repos (Matt Pocock, Superpowers, gstack, GSD, etc.) must never be merged into blended hybrids, preserving distinct methodologies and selectable `/` slash commands.
+- **Project Docs Synthesis**: The principle that within an active project, the `docs/` folder (Layer 15) represents the cumulative living source of truth; new requirements, sprint closeouts, and architectural decisions are merged into the canonical project documents rather than fragmented into conflicting duplicates.
 

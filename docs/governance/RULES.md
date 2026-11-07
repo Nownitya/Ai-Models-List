@@ -24,3 +24,9 @@ Strict architectural and maintenance invariants governing the `Ai-Models-List` p
 2. **Honesty & Verification**: Never mark a skill as tested or verified unless actual execution or compilation was validated.
 3. **Security First**: Prohibit destructive commands and adhere to the security review checklist.
 
+---
+
+## 4. Skill Independence vs Project Docs Synthesis Invariant
+1. **Skill Independence**: Skills from distinct upstream sources (`mattpocock`, `superpowers`, `gstack`, `open-gsd`, `google/android`) must NEVER be merged into generic hybrid files. Each framework retains its author's distinct methodology, prompts, and structure, selectable by its repository-scoped `/` slash command.
+2. **Project Docs Synthesis (`docs/` Merging Only)**: Merging rules apply strictly to project-level documentation (`docs/`). As a project evolves, new requirements, architecture decisions, and test evidence must be merged into the canonical project documents (`PRD.md`, `ARCHITECTURE.md`, `TASKS.md`, `TEST-STRATEGY.md`) to maintain a single unified source of truth.
+
