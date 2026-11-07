@@ -31,8 +31,34 @@ flowchart TD
 | **High-Throughput Daily Driver** | **Gemini 3.8 Flash**<br>`gemini-3.8-flash` | Fast iterative editing, test generation, git commit message authoring, inline documentation. | 1M tokens | `systematic-debugging`, `executing-plans`, `setup-pre-commit` |
 | **Real-Time Streaming** | **Gemini 3.8 Live**<br>`gemini-live-api` | Bidirectional real-time voice intercom, live terminal narration, pair programming audio session. | Real-time audio stream | `gemini-live-api-dev`, `VoiceModel`, `Intercom-Alpha` |
 | **Code Generation & CLI** | **OpenAI Codex / GPT-4o**<br>`gpt-4o` | General multi-language scripting, Python packaging, terminal automation scripts. | 128k tokens | `codex`, `managing-python-dependencies`, `agent-browser` |
+| **Complex Math & Algorithmic Logic** | **OpenAI o3-mini / o1**<br>`o3-mini` | Low-level bitwise operations, cryptographic algorithms, tricky concurrency bugs, race condition analysis. | 200k tokens | `systematic-debugging`, `tsd`, `ssd`, `investigate` |
+| **Open-Weights Frontier Reasoning** | **DeepSeek R1 / V3**<br>`deepseek-reasoner` | Transparent chain-of-thought verification, cost-efficient mathematical verification, open-source stack integration. | 64k–128k tokens | `tdd`, `test-strategy`, `qa`, `benchmark` |
 | **On-Device Edge Models** | **Gemini Nano / Gemma 2**<br>`litert-lm` | On-device private summarization, text extraction, edge smart replies with zero cloud latency. | 4k–8k tokens | `ml-kit-genai-prompt-api`, `mlkit-agent-api`, `litert-runtime` |
 | **Local Offline Specialist** | **Qwen 2.5 Coder 32B**<br>`ollama / vllm` | Complete offline privacy, air-gapped corporate codebases, zero external data leakage. | 32k–64k tokens | `accidental-data-loss-prevention`, `tdd`, `careful` |
+
+---
+
+## 🔌 Universal Model Context Protocol (MCP) Integration
+
+Any frontier model running inside an MCP-compatible host (Claude Code, Antigravity, Cursor, Windsurf, Claude Desktop) can connect directly to the catalog via our zero-dependency stdio server:
+
+```json
+{
+  "mcpServers": {
+    "ai-coding-skills": {
+      "command": "python",
+      "args": ["d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/mcp-server.py"]
+    }
+  }
+}
+```
+
+### Supported MCP Capabilities:
+1. `search_skills`: Dynamic semantic keyword and priority search across 228 skills.
+2. `get_skill`: Instant zero-latency loading of `SKILL.md` rules and workflows into the model's active context window.
+3. `list_presets`: Rapid exploration of curated multi-agent bundles (`superpowers`, `gstack`, `mattpocock`, `docs`, `core-eng`).
+4. `get_upstream_metrics`: On-demand query of live community stars (2.5M+ total ⭐) and release tags.
+5. `install_skill`: Automatic injection of authentic skill folders into the host workspace.
 
 ---
 
