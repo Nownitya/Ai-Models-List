@@ -43,3 +43,4 @@ stop caveman
 - **Never sacrifice code accuracy for brevity**: Code syntax, imports, types, and logic MUST remain complete, valid, and fully tested. Only natural language conversational framing is compressed.
 - **Do not use for formal client-facing deliverables**: Caveman mode is optimized for terminal developer efficiency and token economy, not for polished customer documentation, PRD sign-offs, or executive memos.
 - **Do not omit safety checks**: High-risk operations (e.g. database drops, file deletions) must still demand explicit confirmation regardless of compression tier.
+

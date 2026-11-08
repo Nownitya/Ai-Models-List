@@ -43,3 +43,4 @@ npx understand-anything@latest
 - **Do not replace AST compiler checks with visual graphs**: Visual graphs illustrate structure and intent; always verify type safety and interface contracts with unit tests and compiler runs.
 - **Complementary to Graphify**: Use Graphify for lightweight, local AST subgraphs piped directly into agent context windows during coding; use Understand Anything for visual exploration, onboarding tours, and human architectural alignment.
 - **Avoid running full re-indexing on minor edits**: Use incremental diff modes (`/understand-diff`) rather than re-analyzing multi-hundred-thousand-line repositories on single-file changes.
+

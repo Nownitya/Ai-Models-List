@@ -308,9 +308,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 ## 10 AI Infrastructure
 
 > 10 AI Infrastructure
-- **OmniRoute website / repository:** https://omniroute.online/ · https://github.com/Adelo31/omniroute
 - **Gemini API documentation / SDK:** https://ai.google.dev/gemini-api/docs · https://github.com/googleapis/python-genai
-- **Strata repository:** https://github.com/kytheros/strata
 - **Graphify repository / docs:** https://github.com/Graphify-Labs/graphify · https://docs.graphify.com/
 - **Context7 website / repository:** https://context7.com/ · https://github.com/upstash/context7
 - **Agent Skills specification repository:** https://github.com/agentskills/agentskills · https://agentskills.io/
@@ -327,20 +325,16 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | billion-context | P1 | Context-compression engine for month-long single agent sessions (billions of tokens). Employs semantic context compaction allowing small 100K-token context windows to sustain prolonged development cycles while reducing token consumption by up to 5x. | https://github.com/ranxianglei/billion-context |  |
 | anthropic-skills | P0 | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku. | https://github.com/anthropics/skills | https://docs.anthropic.com/ |
 | google-skills | P0 | Google's official open collection of Agent Skills for Google developer platforms, Cloud infrastructure, and AI engineering (23k+ stars). Complements android/skills and google/agents-cli with cross-ecosystem tools for Gemini, Vertex AI, and Workspace. | https://github.com/google/skills | https://ai.google.dev/ |
-| OmniRoute | P2 | Route requests across multiple AI model providers through a common gateway; useful for provider choice and fallback. |  |  |
 | Gemini API | P2 | Integrate Gemini APIs into applications and development workflows. |  |  |
 | Gemini Live API | P2 | Build real-time Gemini applications. |  |  |
 | Gemini Omni Flash API | P3 | Explore Gemini multimodal capabilities. |  |  |
-| Strata | P2 | Persistent memory/MCP option. Compare against MemPalace before adopting both; overlapping long-term memory roles may make one sufficient. |  |  |
 | Graphify | P1 | Builds a local code/document knowledge graph (AST-based code relations, imports/calls, query/path/explain) so agents can navigate relationships and retrieve focused subgraphs instead of repeatedly scanning files. It is codebase-structure intelligence, not a live external library-docs service. |  |  |
 | Context7 | P1 | Retrieves current, version-aware documentation and code examples for external libraries/frameworks. Useful when implementing APIs or confirming current library usage. Complementary to Graphify, not redundant. |  |  |
-| Repository - OmniRoute | Reference | https://github.com/Adelo31/omniroute |  |  |
-| Repository - Strata | Reference | https://github.com/kytheros/strata |  |  |
 | Repository - Graphify | Reference | https://github.com/Graphify-Labs/graphify |  |  |
 | Graphify documentation | Reference | https://docs.graphify.com/ |  |  |
 | Context7 website | Reference | https://context7.com/ |  |  |
 | Context7 repository | Reference | https://github.com/upstash/context7 |  |  |
-| Selection guidance | P0 | Graphify answers: how is this codebase connected and where does execution/reuse flow? Context7 answers: how does this external library/API work in its current version? MemPalace/Strata answer: what durable knowledge should persist across sessions? Choose memory products based on privacy, retrieval quality, local-first needs and integrations. |  |  |
+| Selection guidance | P0 | Graphify answers: how is this codebase connected and where does execution/reuse flow? Context7 answers: how does this external library/API work in its current version? MemPalace answers: what durable knowledge should persist across sessions? Choose memory products based on privacy, retrieval quality, local-first needs and integrations. |  |  |
 | TokenEconomizer | P1 | Experience-driven coding-agent cost control. Learns repository-specific micro-skills from repeated sessions, prunes tools that remain unused, and detects recurring failure loops to suggest a redirect. Local learning data; supports Claude Code, Codex, GitHub Copilot CLI and Pi, with experimental OpenCode support. Evaluate on repeated work in the same repository; savings are workload-dependent. | https://github.com/microsoft/TokenEconomizer | https://arxiv.org/abs/2610.22732 |
 | Google Agents CLI | P1 | Google CLI + seven agent skills for building, scaffolding, coding, evaluating, deploying, publishing and observing AI agents on Google Cloud using ADK. It is a toolkit for coding assistants, not a coding agent/model. Works with Antigravity CLI, Claude Code, Codex and other coding agents; framework is ADK by default, while ADK model configuration supports Gemini natively and other providers via LiteLLM (documented examples: OpenAI GPT-4o, Anthropic Claude Sonnet, and Ollama-hosted Llama). Local create/run/eval can use Gemini AI Studio API key; cloud deployment needs Google Cloud. Useful when developing AI agents, not required for normal Android app coding. | https://github.com/google/agents-cli |  |
 | agent-skills-spec | P0 | Open specification and reference toolchain (skills-ref) for Agent Skills across Anthropic Claude Code, Cursor, Codex, Gemini CLI, and Antigravity. Defines the universal SKILL.md format, metadata schema, and 3-stage progressive disclosure protocol (Discovery → Activation → Execution) with built-in validation CLI. | https://github.com/agentskills/agentskills | https://agentskills.io/ |
@@ -351,19 +345,17 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Cloudflare Security Audit Skill repository:** https://github.com/cloudflare/security-audit-skill
 - **CodeRabbit documentation:** https://docs.coderabbit.ai/
 - **CodeRabbit skills repository:** https://github.com/coderabbitai/skills
-- **CodeRabbit Antigravity plugin:** https://github.com/coderabbitai/antigravity-plugin
 
 | Tool / Capability | Priority | Why |
 | --- | --- | --- |
 | cloudflare-security-audit | P0 | Cloudflare's official coding-agent skill for multi-phase security audits (65k+ stars). Conducts automated vulnerability analysis, surface scanning, and machine-readable risk reporting across dependencies, API routes, authentication gates, and edge workers with independently verified proofs. |
-| CodeRabbit | P1 | Automate pull request reviews and identify bugs, security risks and missing tests. |
+| CodeRabbit | P1 | Automate pull request reviews and identify bugs, security risks and missing tests across GitHub PRs and Google Antigravity. |
 | Open Code Review | P2 | Explore additional automated code-review workflows; verify exact product/repository before adoption. |
 | code-review skill | P0 | Perform agent-led review during implementation. |
 | requesting-code-review | P1 | Prepare changes for independent review. |
 | receiving-code-review | P1 | Process and resolve review feedback. |
 | verification-before-completion | P0 | Run builds, tests and checks before declaring work complete. |
 | setup-pre-commit | P1 | Catch formatting and quality issues before commits. |
-| Repository - CodeRabbit Antigravity plugin | Reference | https://github.com/coderabbitai/antigravity-plugin |
 | Verification note | CodeRabbit is a review service/integration, not a general-purpose coding skill. Check pricing, permissions and repository access. |  |
 
 ## 12 Optional Specialized
@@ -432,10 +424,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | OpenAI Codex | https://developers.openai.com/codex/ | https://github.com/openai/codex | Official Codex documentation and code repository. |
 | Ponytail | https://ponytail.dev/docs | https://github.com/DietrichGebert/ponytail | Agent skill/rules for smaller, safer implementations; host support varies. |
 | Harness² | https://github.com/google-research/harness2#readme | https://github.com/google-research/harness2 | Google Research project; not an officially supported Google product. |
-| OmniRoute | https://omniroute.online/ | https://github.com/Adelo31/omniroute | AI model gateway and routing infrastructure. |
-| Strata | https://github.com/kytheros/strata#readme | https://github.com/kytheros/strata | Local-first persistent memory MCP server; currently described as beta. |
-| CodeRabbit | https://docs.coderabbit.ai/ | https://github.com/coderabbitai/skills | Canonical skills/plugin repository. |
-| CodeRabbit Antigravity Plugin | https://docs.coderabbit.ai/ | https://github.com/coderabbitai/antigravity-plugin | Antigravity-specific plugin package; smoke testing/marketplace status may vary. |
+| CodeRabbit | https://docs.coderabbit.ai/ | https://github.com/coderabbitai/skills | Canonical skills/plugin repository with GitHub PR and Antigravity review support. |
 | Gemini API | https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai | Official API docs and Python SDK; other languages have separate SDK repositories. |
 | Google Maps Platform | https://developers.google.com/maps | https://github.com/googlemaps | Official docs and GitHub organization. |
 | Python Packaging | https://packaging.python.org/ | https://github.com/pypa | Packaging docs and Python Packaging Authority repositories. |

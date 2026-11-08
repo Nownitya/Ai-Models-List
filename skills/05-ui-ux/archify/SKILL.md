@@ -43,3 +43,4 @@ npx archify@latest
 - **Do not use for operational dashboards**: Archify is designed for structural, architectural, and educational diagrams, not for real-time telemetry streaming or Grafana-style metric graphing.
 - **Avoid single-node over-clustering**: Do not collapse hundreds of functions into a single giant spaghetti diagram; decompose by subsystem or execution tier.
 - **Never fabricate unverified connections**: Always inspect codebase evidence before asserting inter-service relationships or API call contracts.
+

@@ -24,6 +24,7 @@
 | **TASK-011** | Routing | Frontier model selection matrix (Claude 3.7, R1, o3-mini) | P1 | Verified | `docs/models/MODEL-ROUTING-MATRIX.md` |
 | **TASK-012** | Catalog Expansion | Add meta/astryx, anthropics/skills, google/skills, cloudflare/security-audit-skill, billion-context | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 | **TASK-013** | Catalog Expansion | Add addyosmani/agent-skills, tt-a1i/archify, Egonex-AI/Understand-Anything, juliusbrussee/caveman, ComposioHQ/awesome-claude-skills | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
+| **TASK-014** | Catalog Quality Pruning | Remove Adelo31/omniroute (0★), kytheros/strata (1★, stalled), and coderabbitai/antigravity-plugin (subsumed) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 
 ---
 
@@ -77,5 +78,14 @@
 - [x] Subtask 13.4: Synchronize live GitHub telemetry across 42 upstream repositories (3.3M+ combined community stars).
 - [x] Subtask 13.5: Update `index.html` `nameKeyMap` bindings and bento metrics fallbacks.
 - [x] Subtask 13.6: Execute full verification test suite.
+
+### TASK-014: Catalog Quality Pruning & Consolidation
+- [x] Subtask 14.1: Prune `Adelo31/omniroute` (0 stars, unvetted clone) and `kytheros/strata` (1 star, stalled beta superseded by MemPalace).
+- [x] Subtask 14.2: Consolidate `coderabbitai/antigravity-plugin` (3 stars) into canonical `coderabbitai/skills` (212 stars).
+- [x] Subtask 14.3: Remove pruned skill directories from `skills/10-ai-infrastructure/` (leaving 236 active skills).
+- [x] Subtask 14.4: Enforce Dual Matrix Parity across `.md` and `.csv` editions (Law 1).
+- [x] Subtask 14.5: Re-synchronize GitHub telemetry across 39 verified repositories (Law 1/Live Stats).
+- [x] Subtask 14.6: Update web dashboard bento telemetry and pass full test suite.
+
 
 

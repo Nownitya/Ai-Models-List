@@ -39,3 +39,4 @@ npx skills add ComposioHQ/awesome-claude-skills
 - **Do not hardcode production API secrets**: Always use the managed authentication broker or secure environment variables.
 - **Avoid granting unbounded destructive permissions**: Enforce confirmation checks before allowing agents to execute write/delete actions on customer-facing SaaS systems.
 - **Do not bypass local project workflows**: Use Composio for external service orchestration; keep repository-local build, test, and git operations within standard project scripts.
+

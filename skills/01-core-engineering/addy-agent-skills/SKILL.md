@@ -54,3 +54,4 @@ agy plugin install https://github.com/addyosmani/agent-skills.git
 - **Law 4 Compliance (Never Merge Across Authors)**: Addy Osmani's skills must remain separate and distinct from Superpowers, Matt Pocock, and gstack. Never blend their prompts or overwrite their command namespaces.
 - **Never skip `/spec` on complex features**: Avoid jumping directly to `/build` without an approved specification; spec-driven rigor prevents architectural drift.
 - **Do not optimize prematurely without measurement**: Always run `/webperf` to measure actual bottlenecks before modifying algorithms or caching layers.
+
