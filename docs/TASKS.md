@@ -31,6 +31,9 @@
 | **TASK-018** | Catalog Expansion (Batch 4) | Add 10 Tier 1 high-star repos from skills.sh (vercel-agent-browser, copilot, anatomy, brag, claude-video, agent-desktop, gamedev, browser-act, higgsfield, daymade) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-019** | Catalog Expansion (Batch 5 - Complete Bucket 1) | Add final 5 Tier 1 high-star repos from skills.sh (make-interfaces-feel-better, tons-of-skills, benjitaylor, binance, motion-graphics) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-020** | Catalog Expansion (Batch 6 - Bucket 2 High-Impact Tools) | Add 10 high-impact & unique developer tools from Bucket 2 with 2.2M+ installs (firecrawl, convex, scrapegraphai, momentic-ai, extract-design-system, better-auth, review-loop-skill, mastra-ai, design-doc-mermaid, nx-ai-agents-config) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-021** | Catalog Expansion (Batch 7 - Bucket 2 Official Developer Platforms) | Add 9 official developer platforms and ecosystem tools from Bucket 2 (firebase, elevenlabs, solana-foundation, currents-playwright, svelte5, neon-postgres, clerk, prisma, stripe-link) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-020** | Catalog Expansion (Batch 6 - Bucket 2 High-Impact Tools) | Add 10 high-impact & unique developer tools from Bucket 2 with 2.2M+ installs (firecrawl, convex, scrapegraphai, momentic-ai, extract-design-system, better-auth, review-loop-skill, mastra-ai, design-doc-mermaid, nx-ai-agents-config) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-021** | Catalog Expansion (Batch 7 - Bucket 2 Official Developer Platforms) | Add 9 official developer platforms and ecosystem tools from Bucket 2 (firebase, elevenlabs, solana-foundation, currents-playwright, svelte5, neon-postgres, clerk, prisma, stripe-link) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 
 ---
 
@@ -134,6 +137,18 @@
 - [x] Subtask 20.3: Sync live GitHub telemetry across 95 upstream repositories.
 - [x] Subtask 20.4: Update `index.html` hero counters (308+ skills, 95 frameworks, 4.6M+ stars) and `nameKeyMap` bindings.
 - [x] Subtask 20.5: Verify Layer 15 governance, test gates, and push to origin main.
+
+### TASK-021: Catalog Expansion (Batch 7 - Bucket 2 Official Developer Platforms)
+- [x] Subtask 21.1: Author 9 standardized Law 2 `SKILL.md` packages (`firebase-agent-suite`, `svelte5-runes-patterns`, `neon-serverless-postgres`, `clerk-auth-identity`, `prisma-orm-patterns`, `stripe-link-checkout`, `currents-playwright-sharding`, `elevenlabs-voice-ai`, `solana-agent-kit`).
+- [x] Subtask 21.2: Enforce Dual Matrix Parity across `.md` and `.csv` editions (758 lines MD, 615 rows CSV).
+- [x] Subtask 21.3: Sync live GitHub telemetry across 104 upstream repositories.
+- [x] Subtask 21.4: Update `index.html` hero counters (317+ skills, 104 frameworks, 4.6M+ stars) and `nameKeyMap` bindings.
+- [x] Subtask 21.5: Verify Layer 15 governance, test gates, and push to origin main.
+
+
+
+
+
 
 
 

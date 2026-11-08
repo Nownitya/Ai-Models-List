@@ -59,6 +59,12 @@ convex-backend-sync,"Convex Backend State Sync",P1,/convex-backend-sync,"Convex 
 scrapegraph-ai-pipeline,"ScrapeGraphAI Pipeline",P1,/scrapegraph-ai-pipeline,"Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining."
 better-auth-patterns,"Better Auth Identity & 2FA",P1,/better-auth-patterns,"Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC."
 nx-monorepo-architect,"Nx Monorepo Architecture",P1,/nx-monorepo-architect,"Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries."
+firebase-agent-suite,"Firebase Agent Suite",P1,/firebase-agent-suite,"Google Firebase backend suite, Firestore security rules audit, Cloud Functions, and Firebase Auth."
+svelte5-runes-patterns,"Svelte 5 Runes Patterns",P1,/svelte5-runes-patterns,"Svelte 5 runes reactivity ($state, $derived, $effect), SvelteKit SSR hydration, and modern component architecture."
+neon-serverless-postgres,"Neon Serverless Postgres",P1,/neon-serverless-postgres,"Neon Serverless Postgres CLI, instant database branching, schema migrations, and connection pooling."
+clerk-auth-identity,"Clerk Auth & Identity",P1,/clerk-auth-identity,"Clerk identity management, multi-tenant organizations, webhook signature verification, and session tokens."
+prisma-orm-patterns,"Prisma ORM Patterns",P1,/prisma-orm-patterns,"Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters."
+stripe-link-checkout,"Stripe Link 1-Click Checkout",P1,/stripe-link-checkout,"Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,
@@ -329,6 +335,7 @@ browser-act-testing,"Browser Act Synthetic Testing",P1,/browser-act-testing,"Aut
 network-latency-benchmarks,"Network Latency Benchmarks",P1,/network-latency-benchmarks,"Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking."
 continuous-review-loop,"Continuous Review Loop",P1,/continuous-review-loop,"Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops."
 momentic-visual-testing,"Momentic Visual Testing",P1,/momentic-visual-testing,"AI-driven visual regression testing, session replay analysis, and automated test failure triage."
+currents-playwright-sharding,"Currents Playwright Sharding",P1,/currents-playwright-sharding,"Playwright test sharding, parallel CI optimization, flaky test mitigation, and Currents dashboard orchestration."
 12 Optional Specialized,,
 Google Maps Platform documentation:,https://developers.google.com/maps,
 Google Maps GitHub organization:,https://github.com/googlemaps,

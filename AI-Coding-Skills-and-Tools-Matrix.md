@@ -99,6 +99,12 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `scrapegraph-ai-pipeline` | **ScrapeGraphAI Pipeline** | `P1` | `/scrapegraph-ai-pipeline` | Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining. |
 | `better-auth-patterns` | **Better Auth Identity & 2FA** | `P1` | `/better-auth-patterns` | Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC. |
 | `nx-monorepo-architect` | **Nx Monorepo Architecture** | `P1` | `/nx-monorepo-architect` | Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries. |
+| `firebase-agent-suite` | **Firebase Agent Suite** | `P1` | `/firebase-agent-suite` | Google Firebase backend suite, Firestore security rules audit, Cloud Functions, and Firebase Auth. |
+| `svelte5-runes-patterns` | **Svelte 5 Runes Patterns** | `P1` | `/svelte5-runes-patterns` | Svelte 5 runes reactivity ($state, $derived, $effect), SvelteKit SSR hydration, and modern component architecture. |
+| `neon-serverless-postgres` | **Neon Serverless Postgres** | `P1` | `/neon-serverless-postgres` | Neon Serverless Postgres CLI, instant database branching, schema migrations, and connection pooling. |
+| `clerk-auth-identity` | **Clerk Auth & Identity** | `P1` | `/clerk-auth-identity` | Clerk identity management, multi-tenant organizations, webhook signature verification, and session tokens. |
+| `prisma-orm-patterns` | **Prisma ORM Patterns** | `P1` | `/prisma-orm-patterns` | Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters. |
+| `stripe-link-checkout` | **Stripe Link 1-Click Checkout** | `P1` | `/stripe-link-checkout` | Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation. |
 
 
 ## 02 Matt Pocock
@@ -408,6 +414,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `network-latency-benchmarks` | **Network Latency Benchmarks** | `P1` | `/network-latency-benchmarks` | Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking. |
 | `continuous-review-loop` | **Continuous Review Loop** | `P1` | `/continuous-review-loop` | Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops. |
 | `momentic-visual-testing` | **Momentic Visual Testing** | `P1` | `/momentic-visual-testing` | AI-driven visual regression testing, session replay analysis, and automated test failure triage. |
+| `currents-playwright-sharding` | **Currents Playwright Sharding** | `P1` | `/currents-playwright-sharding` | Playwright test sharding, parallel CI optimization, flaky test mitigation, and Currents dashboard orchestration. |
 
 
 ## 12 Optional Specialized
@@ -576,6 +583,16 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | [mastra-ai/skills](https://github.com/mastra-ai/skills) | **⭐ 102** (95k+ Installs) | `latest` | `Apache-2.0` | 2026-11-08 |
 | [spillwavesolutions/design-doc-mermaid](https://github.com/spillwavesolutions/design-doc-mermaid) | **⭐ 182** (92k+ Installs) | `latest` | `MIT` | 2026-11-08 |
 | [nrwl/nx-ai-agents-config](https://github.com/nrwl/nx-ai-agents-config) | **⭐ 30** (87k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+
+| [firebase/agent-skills](https://github.com/firebase/agent-skills) | **⭐ 505** (5.9k+ Installs) | `latest` | `Apache-2.0` | 2026-11-08 |
+| [elevenlabs/skills](https://github.com/elevenlabs/skills) | **⭐ 539** | `latest` | `MIT` | 2026-11-08 |
+| [solana-foundation/solana-dev-skill](https://github.com/solana-foundation/solana-dev-skill) | **⭐ 589** | `latest` | `Apache-2.0` | 2026-11-08 |
+| [currents-dev/playwright-best-practices-skill](https://github.com/currents-dev/playwright-best-practices-skill) | **⭐ 418** | `latest` | `MIT` | 2026-11-08 |
+| [sveltejs/ai-tools](https://github.com/sveltejs/ai-tools) | **⭐ 337** | `latest` | `MIT` | 2026-11-08 |
+| [neondatabase/agent-skills](https://github.com/neondatabase/agent-skills) | **⭐ 111** (5.2k+ Installs) | `latest` | `Apache-2.0` | 2026-11-08 |
+| [clerk/skills](https://github.com/clerk/skills) | **⭐ 93** | `latest` | `MIT` | 2026-11-08 |
+| [prisma/skills](https://github.com/prisma/skills) | **⭐ 79** | `latest` | `Apache-2.0` | 2026-11-08 |
+| [stripe/link-cli](https://github.com/stripe/link-cli) | **⭐ 894** (1.3k+ Installs) | `latest` | `MIT` | 2026-11-08 |
 
 ## 15 Universal Project Documentation Standard
 
