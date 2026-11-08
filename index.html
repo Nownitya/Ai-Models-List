@@ -561,6 +561,86 @@
       color: #fff;
     }
 
+    .cmd-pill.copied {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      border-color: rgba(16, 185, 129, 0.5);
+    }
+
+    .reset-btn {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .reset-btn:hover {
+      background: rgba(239, 68, 68, 0.3);
+      color: #fff;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 2.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      font-size: 0.9rem;
+      line-height: 1;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .search-clear:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .inspect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .inspect-grid { grid-template-columns: 1fr; }
+    }
+
+    .inspect-box {
+      background: #090d16;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+    }
+
+    .inspect-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 0.2rem;
+    }
+
+    .inspect-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
     .card-desc {
       font-size: 0.875rem;
       color: var(--text-muted);
@@ -861,6 +941,8 @@
         <button class="eco-btn" data-ecosystem="mattpocock" data-preset="mattpocock">🧠 Matt Pocock</button>
         <button class="eco-btn" data-ecosystem="gsd" data-preset="gsd">🚀 GSD Core</button>
         <button class="eco-btn" data-ecosystem="agents" data-preset="agents">🤖 Agents & ECC</button>
+        <button class="eco-btn" data-ecosystem="cloud" data-preset="cloud">☁️ Cloud & Backend</button>
+        <button class="eco-btn" data-ecosystem="uiux" data-preset="uiux">🎨 UI / UX & Design</button>
         <button class="eco-btn" data-ecosystem="docs" data-preset="docs">📑 Docs & Specs</button>
         <button class="eco-btn" data-ecosystem="mobile" data-preset="mobile">📱 Android & KMP</button>
       </div>
@@ -874,6 +956,7 @@
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
         <input type="text" id="searchInput" class="search-input" placeholder="Search skills, slash commands (/cmd), models, tools..." autofocus>
+        <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="Clear search">✕</button>
         <span class="search-shortcut">/</span>
       </div>
       <select id="sortSelect" class="sort-select">
@@ -916,7 +999,10 @@
 
     <!-- Results Meta Counter -->
     <div class="results-meta">
-      <div>Showing <span id="resultsCount" class="results-count">0</span> active skills</div>
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <div>Showing <span id="resultsCount" class="results-count">0</span> active skills</div>
+        <button id="resetFiltersBtn" class="reset-btn" onclick="resetAllFilters()" style="display:none;">✕ Reset Filters</button>
+      </div>
       <div style="font-size: 0.78rem; color: var(--text-dim);">Hit <kbd style="background:#1e293b; padding:1px 5px; border-radius:3px;">Esc</kbd> to clear filters</div>
     </div>
 
@@ -942,6 +1028,50 @@
     </div>
   </div>
 
+  <!-- Skill Inspection Modal -->
+  <div id="inspectModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h3 id="inspectTitle" class="modal-title" style="margin-bottom:0.25rem;">Skill Inspector</h3>
+          <span id="inspectCategory" class="card-category"></span>
+        </div>
+        <button class="modal-close" onclick="closeInspectModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="inspect-grid">
+          <div class="inspect-box">
+            <div class="inspect-label">Priority & Scope</div>
+            <div id="inspectPriority" class="inspect-value"></div>
+          </div>
+          <div class="inspect-box">
+            <div class="inspect-label">Slash Command</div>
+            <div id="inspectCommand" class="inspect-value" style="font-family:var(--font-mono); color:var(--accent-cyan);"></div>
+          </div>
+          <div class="inspect-box">
+            <div class="inspect-label">Upstream Repository</div>
+            <div id="inspectRepo" class="inspect-value"></div>
+          </div>
+          <div class="inspect-box">
+            <div class="inspect-label">Community Stars & Version</div>
+            <div id="inspectStars" class="inspect-value"></div>
+          </div>
+        </div>
+        <div style="margin-bottom:1.25rem;">
+          <div class="inspect-label">Description & Architectural Objective</div>
+          <p id="inspectDesc" style="font-size:0.92rem; color:var(--text); line-height:1.5; margin-top:0.35rem;"></p>
+        </div>
+      </div>
+      <div style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <a id="inspectGithubLink" class="action-btn" href="#" target="_blank">View GitHub Repo ↗</a>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="action-btn" onclick="copyInspectCmd()">Copy /Cmd</button>
+          <button class="action-btn primary" onclick="openPromptFromInspect()">Get Prompt Snippet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div id="toast" class="toast">Copied to clipboard!</div>
 
@@ -960,7 +1090,9 @@
       'gstack': ['07-gstack'],
       'mattpocock': ['02-matt-pocock'],
       'gsd': ['06-gsd'],
-      'agents': ['09-autonomous-agents'],
+      'agents': ['09-autonomous-agents', '10-ai-infrastructure'],
+      'cloud': ['01-core-engineering'],
+      'uiux': ['05-ui-ux'],
       'docs': ['docs'],
       'mobile': ['03-android', '04-kotlin-kmp']
     };
@@ -991,7 +1123,7 @@
       if (!repos || repos.length === 0) return;
 
       repos.sort((a, b) => (b.stars || 0) - (a.stars || 0));
-      const topRepos = repos.slice(0, 8);
+      const topRepos = repos.slice(0, 16);
 
       const radarStrip = document.getElementById('radarStrip');
       if (radarStrip && topRepos.length > 0) {
@@ -1315,7 +1447,8 @@
     }
 
     function render() {
-      const rawQ = document.getElementById('searchInput').value;
+      const searchInput = document.getElementById('searchInput');
+      const rawQ = searchInput.value;
       const q = filterBySlashCommand(rawQ);
       const grid = document.getElementById('skillsGrid');
       grid.innerHTML = '';
@@ -1334,6 +1467,14 @@
       // Update count indicator
       const countEl = document.getElementById('resultsCount');
       if (countEl) countEl.textContent = filtered.length;
+
+      // Toggle search clear & reset filters buttons
+      const isFiltered = Boolean(q || activePriority !== 'ALL' || activeCategory !== 'ALL' || activeEcosystem !== 'all' || activeSort !== 'default');
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      if (resetBtn) resetBtn.style.display = isFiltered ? 'inline-flex' : 'none';
+
+      const searchClearBtn = document.getElementById('searchClearBtn');
+      if (searchClearBtn) searchClearBtn.style.display = rawQ ? 'inline-block' : 'none';
 
       // Sort
       if (activeSort === 'stars') {
@@ -1363,12 +1504,12 @@
         card.innerHTML = `
           <div>
             <div class="card-top">
-              <span class="card-title">${escapeHtml(s.name)}</span>
+              <span class="card-title" onclick="openInspect('${escapeHtml(s.name)}')" style="cursor:pointer;" title="Click to inspect">${escapeHtml(s.name)}</span>
               <span class="priority-pill priority-${s.priority}">${s.priority}</span>
             </div>
             <div class="card-meta">
               <span class="card-category">${s.category}</span>
-              <span class="cmd-pill" onclick="copyCmd('/${cmdSlug}')" title="Click to copy slash command">
+              <span class="cmd-pill" onclick="copyCmd('/${cmdSlug}', this)" title="Click to copy slash command">
                 <span>/${cmdSlug}</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -1380,9 +1521,9 @@
             ${metricHtml}
           </div>
           <div class="card-actions">
-            <button class="action-btn primary" onclick="openPrompt('${escapeHtml(s.name)}', '${escapeHtml(s.priority)}', '${escapeHtml(s.why)}')">Prompt Snippet</button>
-            <button class="action-btn" onclick="copyCmd('/${cmdSlug}')">Copy /Cmd</button>
-            <a class="action-btn" href="https://github.com/Nownitya/Ai-Models-List/tree/main/skills/${s.category}" target="_blank">Folder</a>
+            <button class="action-btn primary" onclick="openPrompt('${escapeHtml(s.name)}', '${escapeHtml(s.priority)}', '${escapeHtml(s.why)}')">Prompt</button>
+            <button class="action-btn" onclick="copyCmd('/${cmdSlug}', this)">Copy /Cmd</button>
+            <button class="action-btn" onclick="openInspect('${escapeHtml(s.name)}')">Inspect</button>
           </div>
         `;
         grid.appendChild(card);
@@ -1417,10 +1558,97 @@ Instruction: Execute the required changes following strict red-green verificatio
       });
     }
 
-    function copyCmd(cmd) {
+    let currentInspectSkill = null;
+
+    function openInspect(name) {
+      const skill = skillsData.find(s => s.name === name);
+      if (!skill) return;
+      currentInspectSkill = skill;
+
+      const cmdSlug = skill.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      document.getElementById('inspectTitle').textContent = skill.name;
+      document.getElementById('inspectCategory').textContent = skill.category;
+      document.getElementById('inspectPriority').textContent = `${skill.priority} Priority`;
+      document.getElementById('inspectCommand').textContent = `/${cmdSlug}`;
+      document.getElementById('inspectDesc').textContent = skill.why;
+
+      const ghLink = document.getElementById('inspectGithubLink');
+      if (skill.metric) {
+        document.getElementById('inspectRepo').textContent = skill.metric.repo;
+        document.getElementById('inspectStars').textContent = `⭐ ${skill.metric.stars_formatted} | 🏷️ ${skill.metric.version} | ⚖️ ${skill.metric.license}`;
+        ghLink.href = `https://github.com/${skill.metric.repo}`;
+        ghLink.textContent = `View ${skill.metric.repo} ↗`;
+      } else {
+        document.getElementById('inspectRepo').textContent = 'Ai-Models-List / Curated';
+        document.getElementById('inspectStars').textContent = 'Internal Ecosystem Reference';
+        ghLink.href = `https://github.com/Nownitya/Ai-Models-List/tree/main/skills/${skill.category}`;
+        ghLink.textContent = 'View Category Folder ↗';
+      }
+
+      document.getElementById('inspectModal').classList.add('active');
+    }
+
+    function closeInspectModal() {
+      document.getElementById('inspectModal').classList.remove('active');
+      currentInspectSkill = null;
+    }
+
+    function copyInspectCmd() {
+      if (!currentInspectSkill) return;
+      const cmdSlug = currentInspectSkill.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      copyCmd(`/${cmdSlug}`);
+    }
+
+    function openPromptFromInspect() {
+      if (!currentInspectSkill) return;
+      const s = currentInspectSkill;
+      closeInspectModal();
+      openPrompt(s.name, s.priority, s.why);
+    }
+
+    function copyCmd(cmd, el) {
       navigator.clipboard.writeText(cmd).then(() => {
         showToast(`Copied ${cmd} to clipboard!`);
+        if (el) {
+          const originalHTML = el.innerHTML;
+          el.classList.add('copied');
+          el.innerHTML = `<span>Copied!</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+          setTimeout(() => {
+            el.innerHTML = originalHTML;
+            el.classList.remove('copied');
+          }, 1400);
+        }
       });
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('searchClearBtn').style.display = 'none';
+      render();
+    }
+
+    function resetAllFilters() {
+      document.getElementById('searchInput').value = '';
+      activePriority = 'ALL';
+      activeCategory = 'ALL';
+      activeEcosystem = 'all';
+      activeSort = 'default';
+
+      document.getElementById('sortSelect').value = 'default';
+      document.getElementById('searchClearBtn').style.display = 'none';
+      document.getElementById('resetFiltersBtn').style.display = 'none';
+
+      document.querySelectorAll('[data-priority]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-priority') === 'ALL');
+      });
+      document.querySelectorAll('[data-cat]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-cat') === 'ALL');
+      });
+      document.querySelectorAll('[data-ecosystem]').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-ecosystem') === 'all');
+      });
+
+      render();
     }
 
     function showToast(msg) {
@@ -1486,17 +1714,21 @@ Instruction: Execute the required changes following strict red-green verificatio
     document.addEventListener('keydown', (e) => {
       const searchEl = document.getElementById('searchInput');
       const modalEl = document.getElementById('promptModal');
+      const inspectModalEl = document.getElementById('inspectModal');
 
-      if (e.key === '/' && document.activeElement !== searchEl && !modalEl.classList.contains('active')) {
+      if (e.key === '/' && document.activeElement !== searchEl && !modalEl.classList.contains('active') && !inspectModalEl.classList.contains('active')) {
         e.preventDefault();
         searchEl.focus();
         searchEl.select();
       } else if (e.key === 'Escape') {
         if (modalEl.classList.contains('active')) {
           closeModal();
+        } else if (inspectModalEl.classList.contains('active')) {
+          closeInspectModal();
         } else if (searchEl.value) {
-          searchEl.value = '';
-          render();
+          clearSearch();
+        } else if (activePriority !== 'ALL' || activeCategory !== 'ALL' || activeEcosystem !== 'all') {
+          resetAllFilters();
         }
       }
     });
@@ -1504,6 +1736,9 @@ Instruction: Execute the required changes following strict red-green verificatio
     // Close modal on backdrop click
     document.getElementById('promptModal').addEventListener('click', (e) => {
       if (e.target.id === 'promptModal') closeModal();
+    });
+    document.getElementById('inspectModal').addEventListener('click', (e) => {
+      if (e.target.id === 'inspectModal') closeInspectModal();
     });
 
     // Initialize
