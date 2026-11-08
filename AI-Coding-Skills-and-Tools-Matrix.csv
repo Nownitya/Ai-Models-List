@@ -48,6 +48,9 @@ karpathy-guidelines,P1,"Third-party Karpathy-inspired behavioral guidelines: Thi
 playwright-cli,P0,"End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.",https://github.com/microsoft/playwright-cli,https://playwright.dev/
 obsidian-markdown,P0,"Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows.",https://github.com/kepano/obsidian-skills,https://stephango.com/file-over-app
 google-workspace-cli,P1,"Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically.",https://github.com/googleworkspace/cli,https://developers.google.com/workspace
+typescript-tailwind-patterns,"TypeScript & Tailwind Patterns",P1,/typescript-tailwind-patterns,"Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design."
+lark-enterprise-cli,"Lark & Feishu Enterprise CLI",P1,/lark-enterprise-cli,"Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable."
+fastify-backend-perf,"Fastify Backend Architecture",P1,/fastify-backend-perf,"High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,
@@ -161,6 +164,8 @@ shadcn-ui,P0,"Accessible, composable Tailwind CSS and Radix UI component library
 emil-design-eng,P0,"Emil Kowalski's Apple-grade design engineering, fluid micro-interactions, animation vocabulary, gesture physics, and craft polish.",https://github.com/emilkowalski/skills,https://emilkowal.ski/
 vercel-react-patterns,P0,"Vercel Labs production React composition patterns, Server Components architecture, web design guidelines, and performance practices.",https://github.com/vercel-labs/agent-skills,https://vercel.com/
 gsap-animation,P1,"GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion.",https://github.com/greensock/gsap-skills,https://gsap.com/
+typography-layout-polish,"Typography & Layout Polish",P1,/typography-layout-polish,"Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers."
+stitch-design-system,"Stitch Design System Bridge",P1,/stitch-design-system,"Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge."
 06 GSD,,
 Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
 Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
@@ -249,6 +254,7 @@ Repository - T3 Code,Reference,https://github.com/pingdotgg/t3code
 Everything Claude Code (ECC),P1,"Broad open-source agent-harness engineering system: 71 specialized agents, 314 skills, rules, hooks, memory/continuous learning, workflow automation and AgentShield security scanning. Covers planning → TDD/implementation → review → verification → memory/improvement. Best-supported on Claude Code; native plugin paths for Codex and Qoder; adapters exist for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity and others, but feature parity varies—check platform support matrix before relying on hooks/memory/automation. Multi-harness guided installer supports Claude Code, Codex and Kimi Code; advanced adapters have separate install paths. MIT licensed. Model/provider configuration depends on host; ECC is not a model and does not supply one. Potential overlap with GSD, Superpowers, gstack, MemPalace and security/review tools—select capabilities rather than loading everything."
 browser-use,P0,"Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows.",https://github.com/browser-use/browser-use,https://browser-use.com/
 orca-agent,P0,"Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously.",https://github.com/stablyai/orca,https://useorca.com/
+herdr-orchestration,"Herdr Multi-Agent Orchestration",P1,/herdr-orchestration,"Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination."
 10 AI Infrastructure,,,,Research
 Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
 Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
@@ -284,6 +290,7 @@ vercel-ai-sdk,P0,"Unified TypeScript and JavaScript AI SDK for building streamin
 cloudflare-skills,P0,"Cloudflare Workers edge compute, serverless deployment, Wrangler CLI configuration, KV/D1 database bindings, and global edge caching.",https://github.com/cloudflare/skills,https://developers.cloudflare.com/workers/
 supabase-skills,P0,"Supabase Postgres database design, pgvector semantic search, row-level security (RLS) policies, edge functions, and client SDK integration.",https://github.com/supabase/agent-skills,https://supabase.com/docs
 azure-skills,P1,"Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring.",https://github.com/microsoft/azure-skills,https://azure.microsoft.com/
+typesafe-ai-schemas,"TypeSafe AI Schemas",P1,/typesafe-ai-schemas,"Strict JSON schema validation, typed function calling, and structured output invariant guards."
 11 Code Review Quality,,
 Cloudflare Security Audit Skill repository:,https://github.com/cloudflare/security-audit-skill,
 CodeRabbit documentation:,https://docs.coderabbit.ai/,
@@ -302,6 +309,7 @@ Verification note,"CodeRabbit is a review service/integration, not a general-pur
 sentry-diagnostics,P0,"Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents.",https://github.com/getsentry/sentry,https://sentry.io/
 trailofbits-security,P0,"Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification.",https://github.com/trailofbits/skills,https://www.trailofbits.com/
 web-quality-a11y,P0,"Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering.",https://github.com/addyosmani/web-quality-skills,https://addyosmani.com/
+hallmark-frontend-eval,"Hallmark Frontend Evaluation",P1,/hallmark-frontend-eval,"Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment."
 12 Optional Specialized,,
 Google Maps Platform documentation:,https://developers.google.com/maps,
 Google Maps GitHub organization:,https://github.com/googlemaps,
@@ -332,6 +340,8 @@ schema-mapping,P3,Map data schemas.
 data-autocleaning,P3,Clean datasets.
 dak-setup,P3,Specialized environment setup.
 graphify,P2,Visualize codebase relationships.
+hyperframes-media,P1,"Declarative generative video framing, media automation, and scene composition manifests."
+marketing-growth-engine,P1,"Technical SEO audits, conversion rate optimization (CRO), and copywriting heuristics."
 Priority,Meaning,Recommended action
 P0,Essential,Prioritize for the main toolkit; enable when relevant.
 P1,High,Strongly recommended for regular workflows.
@@ -411,6 +421,16 @@ expo-mobile,https://expo.dev/,https://github.com/expo/skills,Official Expo React
 web-quality-a11y,https://addyosmani.com/,https://github.com/addyosmani/web-quality-skills,"Addy Osmani web accessibility (a11y), Core Web Vitals, and quality engineering (3k+ stars)."
 stripe-payments,P0,"Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades.",https://github.com/stripe/ai,https://stripe.com/docs
 stripe-payments,https://stripe.com/docs,https://github.com/stripe/ai,"Official Stripe payment integrations, Checkout sessions, and subscription lifecycles (2k+ stars)."
+hyperframes-media,https://heygen.com/,https://github.com/heygen-com/hyperframes,"Declarative generative video framing, media automation, and scene composition manifests"
+marketing-growth-engine,https://marketingskills.dev/,https://github.com/coreyhaines31/marketingskills,"Technical SEO audits, conversion rate optimization (CRO), and copywriting heuristics"
+hallmark-frontend-eval,https://hallmark.dev/,https://github.com/nutlope/hallmark,"Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment"
+herdr-orchestration,https://herdr.dev/,https://github.com/herdrdev/herdr,"Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination"
+typescript-tailwind-patterns,https://github.com/wshobson/agents,https://github.com/wshobson/agents,"Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design"
+lark-enterprise-cli,https://open.feishu.cn/,https://github.com/larksuite/cli,"Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable"
+typography-layout-polish,https://jakubkrehel.com/,https://github.com/jakubkrehel/skills,"Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers"
+stitch-design-system,https://stitch.withgoogle.com/,https://github.com/google-labs-code/stitch-skills,"Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge"
+typesafe-ai-schemas,https://typesafe-ai.com/,https://github.com/typesafe-ai/skills,"Strict JSON schema validation, typed function calling, and structured output invariant guards"
+fastify-backend-perf,https://fastify.dev/,https://github.com/mcollina/skills,"High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging"
 15 Universal Project Documentation Standard,,,,
 Purpose:,Reusable documentation baseline for software projects built by humans and AI agents.,,,
 Operating principle:,Create only applicable documents; keep every document synchronized with implementation and verified evidence.,,,

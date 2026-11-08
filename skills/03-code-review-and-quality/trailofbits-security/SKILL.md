@@ -66,3 +66,4 @@ Trail of Bits high-assurance code security, sharp edges detection, supply-chain 
 
 * **Anti-Pattern:** Assuming internal network microservices are trusted and omitting authorization checks.
 * **Anti-Pattern:** Inventing custom cryptographic algorithms or hand-rolled cipher modes.
+

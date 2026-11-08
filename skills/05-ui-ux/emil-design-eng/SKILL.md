@@ -73,3 +73,4 @@ export function FluidCard() {
 * **Anti-Pattern:** Animating layout properties (`width`, `height`, `top`, `margin`) directly instead of `transform` and `opacity`.
 * **Anti-Pattern:** Using linear easings or excessive bounce that distracts from user tasks.
 * **Anti-Pattern:** Un-interruptible animations that lock user interaction.
+

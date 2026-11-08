@@ -75,3 +75,4 @@ updated: 2026-11-08
 
 * **Anti-Pattern:** Locking knowledge in proprietary binary databases or cloud-only silos.
 * **Anti-Pattern:** Deep nested folder hierarchies (> 4 levels) that hinder semantic cross-linking.
+

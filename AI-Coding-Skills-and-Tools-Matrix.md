@@ -88,6 +88,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | playwright-cli | P0 | End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit. |
 | obsidian-markdown | P0 | Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows. |
 | google-workspace-cli | P1 | Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically. |
+| `typescript-tailwind-patterns` | **TypeScript & Tailwind Patterns** | `P1` | `/typescript-tailwind-patterns` | Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design. |
+| `lark-enterprise-cli` | **Lark & Feishu Enterprise CLI** | `P1` | `/lark-enterprise-cli` | Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable. |
+| `fastify-backend-perf` | **Fastify Backend Architecture** | `P1` | `/fastify-backend-perf` | High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging. |
 
 
 ## 02 Matt Pocock
@@ -216,6 +219,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | emil-design-eng | P0 | Emil Kowalski's Apple-grade design engineering, fluid micro-interactions, animation vocabulary, gesture physics, and craft polish. |
 | vercel-react-patterns | P0 | Vercel Labs production React composition patterns, Server Components architecture, web design guidelines, and performance practices. |
 | gsap-animation | P1 | GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion. |
+| `typography-layout-polish` | **Typography & Layout Polish** | `P1` | `/typography-layout-polish` | Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers. |
+| `stitch-design-system` | **Stitch Design System Bridge** | `P1` | `/stitch-design-system` | Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge. |
 
 
 ## 06 GSD
@@ -317,6 +322,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Everything Claude Code (ECC) | P1 | Broad open-source agent-harness engineering system: 71 specialized agents, 314 skills, rules, hooks, memory/continuous learning, workflow automation and AgentShield security scanning. Covers planning → TDD/implementation → review → verification → memory/improvement. Best-supported on Claude Code; native plugin paths for Codex and Qoder; adapters exist for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity and others, but feature parity varies—check platform support matrix before relying on hooks/memory/automation. Multi-harness guided installer supports Claude Code, Codex and Kimi Code; advanced adapters have separate install paths. MIT licensed. Model/provider configuration depends on host; ECC is not a model and does not supply one. Potential overlap with GSD, Superpowers, gstack, MemPalace and security/review tools—select capabilities rather than loading everything. |
 | browser-use | P0 | Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows. |
 | orca-agent | P0 | Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously. |
+| `herdr-orchestration` | **Herdr Multi-Agent Orchestration** | `P1` | `/herdr-orchestration` | Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination. |
 
 
 ## 10 AI Infrastructure
@@ -357,6 +363,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | cloudflare-skills | P0 | Cloudflare Workers edge compute, serverless deployment, Wrangler CLI configuration, KV/D1 database bindings, and global edge caching. |
 | supabase-skills | P0 | Supabase Postgres database design, pgvector semantic search, row-level security (RLS) policies, edge functions, and client SDK integration. |
 | azure-skills | P1 | Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring. |
+| `typesafe-ai-schemas` | **TypeSafe AI Schemas** | `P1` | `/typesafe-ai-schemas` | Strict JSON schema validation, typed function calling, and structured output invariant guards. |
 
 
 ## 11 Code Review Quality
@@ -380,6 +387,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | sentry-diagnostics | P0 | Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents. |
 | trailofbits-security | P0 | Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification. |
 | web-quality-a11y | P0 | Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering. |
+| `hallmark-frontend-eval` | **Hallmark Frontend Evaluation** | `P1` | `/hallmark-frontend-eval` | Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment. |
 
 
 ## 12 Optional Specialized
@@ -417,6 +425,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | graphify | P2 | Visualize codebase relationships. |
 | remotion-video | P1 | Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering. |
 | stripe-payments | P0 | Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades. |
+| `hyperframes-media` | **Hyperframes Media** | `P1` | `/hyperframes-media` | Declarative generative video framing, media automation, and scene composition manifests. |
+| `marketing-growth-engine` | **Marketing Growth Engine** | `P1` | `/marketing-growth-engine` | Technical SEO audits, conversion rate optimization (CRO), and copywriting heuristics. |
 
 
 ## 13 Priority Summary
@@ -504,6 +514,16 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | expo-mobile | https://expo.dev/ | https://github.com/expo/skills | Official Expo React Native mobile development workflows and dev clients (4k+ stars). |
 | web-quality-a11y | https://addyosmani.com/ | https://github.com/addyosmani/web-quality-skills | Addy Osmani web accessibility (a11y), Core Web Vitals, and quality engineering (3k+ stars). |
 | stripe-payments | https://stripe.com/docs | https://github.com/stripe/ai | Official Stripe payment integrations, Checkout sessions, and subscription lifecycles (2k+ stars). |
+| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | **⭐ 80.5k** | `latest` | `Other` | 2026-11-08 |
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | **⭐ 59.0k** | `latest` | `Other` | 2026-11-08 |
+| [nutlope/hallmark](https://github.com/nutlope/hallmark) | **⭐ 50.2k** | `latest` | `MIT` | 2026-11-08 |
+| [herdrdev/herdr](https://github.com/herdrdev/herdr) | **⭐ 49.1k** | `latest` | `MIT` | 2026-11-08 |
+| [wshobson/agents](https://github.com/wshobson/agents) | **⭐ 42.2k** | `latest` | `MIT` | 2026-11-08 |
+| [larksuite/cli](https://github.com/larksuite/cli) | **⭐ 18.0k** | `latest` | `MIT` | 2026-11-08 |
+| [jakubkrehel/skills](https://github.com/jakubkrehel/skills) | **⭐ 11.5k** | `latest` | `MIT` | 2026-11-08 |
+| [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | **⭐ 8.6k** | `latest` | `Apache-2.0` | 2026-11-08 |
+| [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | **⭐ 2.8k** | `latest` | `MIT` | 2026-11-08 |
+| [mcollina/skills](https://github.com/mcollina/skills) | **⭐ 1.9k** | `latest` | `MIT` | 2026-11-08 |
 
 
 ## 15 Universal Project Documentation Standard

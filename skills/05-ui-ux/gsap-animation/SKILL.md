@@ -86,3 +86,4 @@ export function HeroSection() {
 
 * **Anti-Pattern:** Creating ScrollTrigger instances without calling `ctx.revert()` or using `useGSAP()`, causing severe memory leaks on unmount.
 * **Anti-Pattern:** Over-animating every element, inducing cognitive fatigue and motion sickness.
+

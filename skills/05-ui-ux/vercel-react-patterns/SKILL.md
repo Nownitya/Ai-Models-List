@@ -72,3 +72,4 @@ async function AsyncUserProfile() {
 
 * **Anti-Pattern:** Marking entire layout roots with `'use client'`, destroying server-rendering advantages.
 * **Anti-Pattern:** Fetching data inside `useEffect()` on the client when it could be resolved server-side.
+

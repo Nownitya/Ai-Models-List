@@ -62,3 +62,4 @@ gws sheets append --sheet-id "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms" --ra
 
 * **Anti-Pattern:** Sending mass emails without user confirmation gates or review checkpoints.
 * **Anti-Pattern:** Overwriting entire spreadsheet tabs instead of appending rows safely.
+

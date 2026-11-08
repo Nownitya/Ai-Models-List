@@ -27,6 +27,7 @@
 | **TASK-014** | Catalog Quality Pruning | Remove Adelo31/omniroute (0★), kytheros/strata (1★, stalled), and coderabbitai/antigravity-plugin (subsumed) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 | **TASK-015** | Catalog Expansion (Batch 1) | Add 11 Tier 1 high-star repos from skills.sh (browser-use, shadcn, orca, sentry, turborepo, vercel-ai, playwright, remotion, cloudflare, supabase, azure) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-016** | Catalog Expansion (Batch 2) | Add 10 Tier 1 high-star repos from skills.sh (emilkowalski, kepano, vercel-labs/skills, vercel-labs/agent-skills, googleworkspace, greensock, trailofbits, expo, addyosmani, stripe) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-017** | Catalog Expansion (Batch 3) | Add 10 Tier 1 high-star repos from skills.sh (heygen, coreyhaines, nutlope, herdr, wshobson, larksuite, jakubkrehel, google-labs-stitch, typesafe-ai, mcollina) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 
 ---
 
@@ -102,6 +103,13 @@
 - [x] Subtask 16.3: Sync live GitHub telemetry across 60 upstream repositories (4.06M+ community stars).
 - [x] Subtask 16.4: Update `index.html` hero counters (273+ skills, 60 frameworks, 4.0M+ stars) and `nameKeyMap` bindings.
 - [x] Subtask 16.5: Verify Layer 15 governance, test gates, and push to origin main.
+
+### TASK-017: Catalog Expansion (Batch 3 High-Star Repositories)
+- [x] Subtask 17.1: Author 10 standardized Law 2 `SKILL.md` packages (`hyperframes-media`, `marketing-growth-engine`, `hallmark-frontend-eval`, `herdr-orchestration`, `typescript-tailwind-patterns`, `lark-enterprise-cli`, `typography-layout-polish`, `stitch-design-system`, `typesafe-ai-schemas`, `fastify-backend-perf`).
+- [x] Subtask 17.2: Enforce Dual Matrix Parity across `.md` and `.csv` editions (690 lines MD, 569 rows CSV).
+- [x] Subtask 17.3: Sync live GitHub telemetry across 70 upstream repositories (4.38M+ community stars).
+- [x] Subtask 17.4: Update `index.html` hero counters (283+ skills, 70 frameworks, 4.3M+ stars) and `nameKeyMap` bindings.
+- [x] Subtask 17.5: Verify Layer 15 governance, test gates, and push to origin main.
 
 
 

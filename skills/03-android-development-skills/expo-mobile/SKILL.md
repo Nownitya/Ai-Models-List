@@ -85,3 +85,4 @@ npx expo run:android
 
 * **Anti-Pattern:** Manually editing generated files in `android/` or `ios/` when Continuous Native Generation is enabled (changes will be overwritten on next prebuild).
 * **Anti-Pattern:** Pushing breaking native module changes via OTA updates without bumping runtime versions.
+

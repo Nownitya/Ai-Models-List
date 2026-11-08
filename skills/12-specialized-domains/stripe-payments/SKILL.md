@@ -95,3 +95,4 @@ export async function handleWebhook(rawBody: string, signature: string) {
 * **Anti-Pattern:** Storing raw credit card numbers on your servers (violates PCI-DSS Level 1 compliance); always use Stripe Elements or Checkout.
 * **Anti-Pattern:** Fulfilling orders without cryptographically verifying incoming webhook signatures.
 * **Anti-Pattern:** Omitting idempotency keys on payment creation calls.
+

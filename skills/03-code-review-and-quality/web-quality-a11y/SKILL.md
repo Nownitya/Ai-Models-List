@@ -74,3 +74,4 @@ async function processLargeDataset(items: Array<any>) {
 
 * **Anti-Pattern:** Removing focus outlines (`outline: none`) without providing an equally prominent custom focus indicator.
 * **Anti-Pattern:** Sprinkling `aria-*` attributes arbitrarily without understanding screen-reader tree mutations ("No ARIA is better than bad ARIA").
+

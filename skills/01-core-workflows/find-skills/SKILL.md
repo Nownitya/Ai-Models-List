@@ -58,3 +58,4 @@ npx skills install supabase/agent-skills
 
 * **Anti-Pattern:** Installing unverified third-party skills without inspecting their `SKILL.md` instructions and shell commands.
 * **Anti-Pattern:** Cluttering agent context with dozens of skills simultaneously instead of loading on demand.
+
