@@ -28,6 +28,7 @@
 | **TASK-015** | Catalog Expansion (Batch 1) | Add 11 Tier 1 high-star repos from skills.sh (browser-use, shadcn, orca, sentry, turborepo, vercel-ai, playwright, remotion, cloudflare, supabase, azure) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-016** | Catalog Expansion (Batch 2) | Add 10 Tier 1 high-star repos from skills.sh (emilkowalski, kepano, vercel-labs/skills, vercel-labs/agent-skills, googleworkspace, greensock, trailofbits, expo, addyosmani, stripe) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-017** | Catalog Expansion (Batch 3) | Add 10 Tier 1 high-star repos from skills.sh (heygen, coreyhaines, nutlope, herdr, wshobson, larksuite, jakubkrehel, google-labs-stitch, typesafe-ai, mcollina) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-018** | Catalog Expansion (Batch 4) | Add 10 Tier 1 high-star repos from skills.sh (vercel-agent-browser, copilot, anatomy, brag, claude-video, agent-desktop, gamedev, browser-act, higgsfield, daymade) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 
 ---
 
@@ -110,6 +111,13 @@
 - [x] Subtask 17.3: Sync live GitHub telemetry across 70 upstream repositories (4.38M+ community stars).
 - [x] Subtask 17.4: Update `index.html` hero counters (283+ skills, 70 frameworks, 4.3M+ stars) and `nameKeyMap` bindings.
 - [x] Subtask 17.5: Verify Layer 15 governance, test gates, and push to origin main.
+
+### TASK-018: Catalog Expansion (Batch 4 High-Star Repositories)
+- [x] Subtask 18.1: Author 10 standardized Law 2 `SKILL.md` packages (`vercel-agent-browser`, `github-copilot-patterns`, `component-anatomy-specs`, `brag-document-generator`, `video-frame-analysis`, `agent-desktop-gui`, `gamedev-mechanics`, `browser-act-testing`, `higgsfield-visual-media`, `data-viz-html-reports`).
+- [x] Subtask 18.2: Enforce Dual Matrix Parity across `.md` and `.csv` editions (710 lines MD, 589 rows CSV).
+- [x] Subtask 18.3: Sync live GitHub telemetry across 80 upstream repositories (4.57M+ community stars).
+- [x] Subtask 18.4: Update `index.html` hero counters (293+ skills, 80 frameworks, 4.5M+ stars) and `nameKeyMap` bindings.
+- [x] Subtask 18.5: Verify Layer 15 governance, test gates, and push to origin main.
 
 
 

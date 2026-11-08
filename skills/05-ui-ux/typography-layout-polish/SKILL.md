@@ -64,3 +64,4 @@ description: Better typography scales, fluid font sizing, optical margin alignme
 * **Anti-Pattern:** Setting line heights in fixed pixel units rather than unit-less multipliers (e.g. `1.5` instead of `24px`).
 * **Anti-Pattern:** Excessively long line lengths (>80 characters per line) on widescreen monitors that cause reading fatigue.
 * **Warning:** Avoid applying `text-wrap: balance` to long body paragraphs; it has a performance cost and can cause layout recalculations.
+

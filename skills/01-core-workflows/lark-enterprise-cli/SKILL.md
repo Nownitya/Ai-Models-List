@@ -77,3 +77,4 @@ lark-cli msg send-card \
 * **Anti-Pattern:** Storing plain text App Secrets inside Git repositories; always inject credentials via environment variables or secret vaults.
 * **Anti-Pattern:** Exceeding tenant API rate limits (default: 50 requests/sec per tenant); implement exponential backoff with jitter on bulk syncs.
 * **Warning:** Ensure appropriate tenant data residency boundaries (China Feishu domain vs Global Lark domain) are explicitly configured.
+

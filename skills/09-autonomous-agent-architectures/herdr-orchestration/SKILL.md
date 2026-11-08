@@ -77,3 +77,4 @@ herdr status --fleet project-build-fleet
 * **Anti-Pattern:** Unbounded fan-out of subagents without rate limit throttles, leading to LLM API quota exhaustion.
 * **Anti-Pattern:** Allowing subagents to write directly to shared disk without git worktree isolation, causing dirty file races.
 * **Warning:** Always establish explicit termination conditions and budget caps to avoid recursive infinite agent loops.
+

@@ -89,3 +89,4 @@ export async function parseWithRepair<T>(
 * **Anti-Pattern:** Omitting `.strict()` or `additionalProperties: false`, allowing models to emit arbitrary unwanted hallucinations.
 * **Anti-Pattern:** Using permissive `z.any()` or `z.unknown()` in tool call argument definitions, defeating type safety.
 * **Warning:** Extremely deep recursive schema definitions can exceed model grammar token limits in constrained structured decoding engines.
+

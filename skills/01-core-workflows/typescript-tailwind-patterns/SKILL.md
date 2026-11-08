@@ -95,3 +95,4 @@ export function makeUserId(id: string): UserId {
 * **Anti-Pattern:** Resorting to `as any` or `@ts-ignore` to silence compiler warnings instead of refining generic constraints.
 * **Anti-Pattern:** Concatenating raw Tailwind strings with string templates without `twMerge`, leading to conflicting CSS specificity.
 * **Warning:** Deeply nested recursive conditional types can degrade TypeScript language server compilation speeds in large monorepos.
+

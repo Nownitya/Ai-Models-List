@@ -51,6 +51,9 @@ google-workspace-cli,P1,"Google Workspace agent automation CLI for managing Gmai
 typescript-tailwind-patterns,"TypeScript & Tailwind Patterns",P1,/typescript-tailwind-patterns,"Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design."
 lark-enterprise-cli,"Lark & Feishu Enterprise CLI",P1,/lark-enterprise-cli,"Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable."
 fastify-backend-perf,"Fastify Backend Architecture",P1,/fastify-backend-perf,"High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging."
+vercel-agent-browser,"Vercel Agent Browser",P1,/vercel-agent-browser,"Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation."
+github-copilot-patterns,"GitHub Copilot Patterns",P1,/github-copilot-patterns,"Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows."
+brag-document-generator,"Brag Document Generator",P1,/brag-document-generator,"Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,
@@ -166,6 +169,8 @@ vercel-react-patterns,P0,"Vercel Labs production React composition patterns, Ser
 gsap-animation,P1,"GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion.",https://github.com/greensock/gsap-skills,https://gsap.com/
 typography-layout-polish,"Typography & Layout Polish",P1,/typography-layout-polish,"Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers."
 stitch-design-system,"Stitch Design System Bridge",P1,/stitch-design-system,"Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge."
+component-anatomy-specs,"Component Anatomy Specs",P1,/component-anatomy-specs,"Design system component anatomy contracts, visual bounding boxes, and layout contracts."
+data-viz-html-reports,"Data Viz & HTML Reports",P1,/data-viz-html-reports,"Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports."
 06 GSD,,
 Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
 Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
@@ -255,6 +260,7 @@ Everything Claude Code (ECC),P1,"Broad open-source agent-harness engineering sys
 browser-use,P0,"Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows.",https://github.com/browser-use/browser-use,https://browser-use.com/
 orca-agent,P0,"Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously.",https://github.com/stablyai/orca,https://useorca.com/
 herdr-orchestration,"Herdr Multi-Agent Orchestration",P1,/herdr-orchestration,"Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination."
+agent-desktop-gui,"Agent Desktop GUI",P1,/agent-desktop-gui,"Native desktop agent orchestration, operating system window management, and GUI interaction."
 10 AI Infrastructure,,,,Research
 Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
 Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
@@ -310,6 +316,7 @@ sentry-diagnostics,P0,"Developer-first error tracking, distributed tracing, cras
 trailofbits-security,P0,"Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification.",https://github.com/trailofbits/skills,https://www.trailofbits.com/
 web-quality-a11y,P0,"Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering.",https://github.com/addyosmani/web-quality-skills,https://addyosmani.com/
 hallmark-frontend-eval,"Hallmark Frontend Evaluation",P1,/hallmark-frontend-eval,"Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment."
+browser-act-testing,"Browser Act Synthetic Testing",P1,/browser-act-testing,"Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing."
 12 Optional Specialized,,
 Google Maps Platform documentation:,https://developers.google.com/maps,
 Google Maps GitHub organization:,https://github.com/googlemaps,
@@ -342,6 +349,9 @@ dak-setup,P3,Specialized environment setup.
 graphify,P2,Visualize codebase relationships.
 hyperframes-media,P1,"Declarative generative video framing, media automation, and scene composition manifests."
 marketing-growth-engine,P1,"Technical SEO audits, conversion rate optimization (CRO), and copywriting heuristics."
+video-frame-analysis,"Video Frame Analysis",P1,/video-frame-analysis,"Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection."
+gamedev-mechanics,"GameDev Physics & Mechanics",P1,/gamedev-mechanics,"Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math."
+higgsfield-visual-media,"Higgsfield Visual Media",P1,/higgsfield-visual-media,"Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition."
 Priority,Meaning,Recommended action
 P0,Essential,Prioritize for the main toolkit; enable when relevant.
 P1,High,Strongly recommended for regular workflows.
@@ -431,6 +441,16 @@ typography-layout-polish,https://jakubkrehel.com/,https://github.com/jakubkrehel
 stitch-design-system,https://stitch.withgoogle.com/,https://github.com/google-labs-code/stitch-skills,"Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge"
 typesafe-ai-schemas,https://typesafe-ai.com/,https://github.com/typesafe-ai/skills,"Strict JSON schema validation, typed function calling, and structured output invariant guards"
 fastify-backend-perf,https://fastify.dev/,https://github.com/mcollina/skills,"High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging"
+vercel-agent-browser,https://github.com/vercel-labs/agent-browser,https://github.com/vercel-labs/agent-browser,"Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation."
+github-copilot-patterns,https://github.com/github/awesome-copilot,https://github.com/github/awesome-copilot,"Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows."
+component-anatomy-specs,https://github.com/wheresryan22/anatomy,https://github.com/wheresryan22/anatomy,"Design system component anatomy contracts, visual bounding boxes, and layout contracts."
+brag-document-generator,https://github.com/latent-spaces/brag,https://github.com/latent-spaces/brag,"Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation."
+video-frame-analysis,https://github.com/bradautomates/claude-video,https://github.com/bradautomates/claude-video,"Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection."
+agent-desktop-gui,https://github.com/vercel-labs/agent-desktop,https://github.com/vercel-labs/agent-desktop,"Native desktop agent orchestration, operating system window management, and GUI interaction."
+gamedev-mechanics,https://github.com/gamedev-skills/awesome-gamedev-agent-skills,https://github.com/gamedev-skills/awesome-gamedev-agent-skills,"Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math."
+browser-act-testing,https://github.com/browser-act/skills,https://github.com/browser-act/skills,"Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing."
+higgsfield-visual-media,https://github.com/higgsfield-ai/skills,https://github.com/higgsfield-ai/skills,"Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition."
+data-viz-html-reports,https://github.com/daymade/claude-code-skills,https://github.com/daymade/claude-code-skills,"Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports."
 15 Universal Project Documentation Standard,,,,
 Purpose:,Reusable documentation baseline for software projects built by humans and AI agents.,,,
 Operating principle:,Create only applicable documents; keep every document synchronized with implementation and verified evidence.,,,

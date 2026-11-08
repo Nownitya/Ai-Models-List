@@ -91,6 +91,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `typescript-tailwind-patterns` | **TypeScript & Tailwind Patterns** | `P1` | `/typescript-tailwind-patterns` | Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design. |
 | `lark-enterprise-cli` | **Lark & Feishu Enterprise CLI** | `P1` | `/lark-enterprise-cli` | Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable. |
 | `fastify-backend-perf` | **Fastify Backend Architecture** | `P1` | `/fastify-backend-perf` | High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging. |
+| `vercel-agent-browser` | **Vercel Agent Browser** | `P1` | `/vercel-agent-browser` | Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation. |
+| `github-copilot-patterns` | **GitHub Copilot Patterns** | `P1` | `/github-copilot-patterns` | Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows. |
+| `brag-document-generator` | **Brag Document Generator** | `P1` | `/brag-document-generator` | Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation. |
 
 
 ## 02 Matt Pocock
@@ -221,6 +224,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | gsap-animation | P1 | GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion. |
 | `typography-layout-polish` | **Typography & Layout Polish** | `P1` | `/typography-layout-polish` | Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers. |
 | `stitch-design-system` | **Stitch Design System Bridge** | `P1` | `/stitch-design-system` | Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge. |
+| `component-anatomy-specs` | **Component Anatomy Specs** | `P1` | `/component-anatomy-specs` | Design system component anatomy contracts, visual bounding boxes, and layout contracts. |
+| `data-viz-html-reports` | **Data Viz & HTML Reports** | `P1` | `/data-viz-html-reports` | Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports. |
 
 
 ## 06 GSD
@@ -323,6 +328,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | browser-use | P0 | Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows. |
 | orca-agent | P0 | Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously. |
 | `herdr-orchestration` | **Herdr Multi-Agent Orchestration** | `P1` | `/herdr-orchestration` | Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination. |
+| `agent-desktop-gui` | **Agent Desktop GUI** | `P1` | `/agent-desktop-gui` | Native desktop agent orchestration, operating system window management, and GUI interaction. |
 
 
 ## 10 AI Infrastructure
@@ -388,6 +394,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | trailofbits-security | P0 | Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification. |
 | web-quality-a11y | P0 | Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering. |
 | `hallmark-frontend-eval` | **Hallmark Frontend Evaluation** | `P1` | `/hallmark-frontend-eval` | Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment. |
+| `browser-act-testing` | **Browser Act Synthetic Testing** | `P1` | `/browser-act-testing` | Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing. |
 
 
 ## 12 Optional Specialized
@@ -427,6 +434,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | stripe-payments | P0 | Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades. |
 | `hyperframes-media` | **Hyperframes Media** | `P1` | `/hyperframes-media` | Declarative generative video framing, media automation, and scene composition manifests. |
 | `marketing-growth-engine` | **Marketing Growth Engine** | `P1` | `/marketing-growth-engine` | Technical SEO audits, conversion rate optimization (CRO), and copywriting heuristics. |
+| `video-frame-analysis` | **Video Frame Analysis** | `P1` | `/video-frame-analysis` | Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection. |
+| `gamedev-mechanics` | **GameDev Physics & Mechanics** | `P1` | `/gamedev-mechanics` | Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math. |
+| `higgsfield-visual-media` | **Higgsfield Visual Media** | `P1` | `/higgsfield-visual-media` | Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition. |
 
 
 ## 13 Priority Summary
@@ -524,6 +534,16 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | **⭐ 8.6k** | `latest` | `Apache-2.0` | 2026-11-08 |
 | [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | **⭐ 2.8k** | `latest` | `MIT` | 2026-11-08 |
 | [mcollina/skills](https://github.com/mcollina/skills) | **⭐ 1.9k** | `latest` | `MIT` | 2026-11-08 |
+| [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | **⭐ 46.8k** | `latest` | `MIT` | 2026-11-08 |
+| [github/awesome-copilot](https://github.com/github/awesome-copilot) | **⭐ 40.9k** | `latest` | `MIT` | 2026-11-08 |
+| [wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) | **⭐ 25.8k** | `latest` | `MIT` | 2026-11-08 |
+| [latent-spaces/brag](https://github.com/latent-spaces/brag) | **⭐ 20.7k** | `latest` | `MIT` | 2026-11-08 |
+| [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | **⭐ 20.2k** | `latest` | `MIT` | 2026-11-08 |
+| [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop) | **⭐ 18.9k** | `latest` | `MIT` | 2026-11-08 |
+| [gamedev-skills/awesome-gamedev-agent-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) | **⭐ 7.6k** | `latest` | `MIT` | 2026-11-08 |
+| [browser-act/skills](https://github.com/browser-act/skills) | **⭐ 6.3k** | `latest` | `MIT` | 2026-11-08 |
+| [higgsfield-ai/skills](https://github.com/higgsfield-ai/skills) | **⭐ 1.9k** | `latest` | `MIT` | 2026-11-08 |
+| [daymade/claude-code-skills](https://github.com/daymade/claude-code-skills) | **⭐ 1.5k** | `latest` | `MIT` | 2026-11-08 |
 
 
 ## 15 Universal Project Documentation Standard

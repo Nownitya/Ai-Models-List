@@ -110,3 +110,4 @@ export default fp(dbPlugin, { name: 'db-plugin' });
 * **Anti-Pattern:** Using blocking synchronous code (e.g. `fs.readFileSync`) inside Fastify route handlers, stalling the Node.js event loop.
 * **Anti-Pattern:** Omitting route validation and response schemas, forfeiting Fastify's speed advantages and request safety.
 * **Warning:** Ensure plugins intended for global scope are properly wrapped with `fastify-plugin`; otherwise Fastify's encapsulation will restrict their visibility.
+

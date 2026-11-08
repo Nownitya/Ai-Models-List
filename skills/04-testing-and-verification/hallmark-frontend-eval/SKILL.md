@@ -66,3 +66,4 @@ hallmark compare \
 * **Anti-Pattern:** Running visual regression tests on un-mocked dynamic content (e.g. live clocks, randomized avatars) causing flaky diffs.
 * **Anti-Pattern:** Setting perceptual diff thresholds too loose (>15%), allowing significant layout breakage to pass CI unnoticed.
 * **Warning:** Ensure font rendering differences across operating systems (macOS font smoothing vs Windows ClearType) are normalized in headless Docker runners.
+

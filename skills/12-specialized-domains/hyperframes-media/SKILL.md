@@ -77,3 +77,4 @@ hyperframes render scene-composition.json --output dist/intro.mp4 --quality high
 * **Anti-Pattern:** Hardcoding uncompressed raw video assets inside the repo; always store assets in CDN buckets and reference via signed URLs.
 * **Anti-Pattern:** Triggering long renders synchronously in request handlers; always dispatch video rendering to asynchronous job queues.
 * **Warning:** Ensure all voice models and video likenesses comply with platform synthetic media policies and ethical guidelines.
+

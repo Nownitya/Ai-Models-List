@@ -72,3 +72,4 @@ stitch compile-tokens --spec ./DESIGN.md --target compose --output ./android/app
 * **Anti-Pattern:** Hardcoding arbitrary hex color values in component styles instead of referencing Stitch token variables.
 * **Anti-Pattern:** Modifying compiled design token outputs manually; always update the canonical `DESIGN.md` source spec.
 * **Warning:** Ensure responsive breakpoint tokens match across both web and native mobile client configurations.
+

@@ -61,3 +61,4 @@ marketing-growth audit-seo ./index.html --strict-og
 * **Anti-Pattern:** Keyword stuffing or creating low-value doorway pages; search engines penalize manipulative algorithmic copy.
 * **Anti-Pattern:** Vague, jargon-heavy marketing slogans (e.g. "Revolutionizing synergies") that conceal actual product utility.
 * **Warning:** Never collect user behavioral telemetry without transparent cookie banners and GDPR/CCPA consent compliance.
+
