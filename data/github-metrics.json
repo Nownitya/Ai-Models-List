@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_synced": "2026-11-08 00:41:30Z",
+  "last_synced": "2026-11-08 00:43:38Z",
   "total_repositories": 42,
   "repositories": {
     "adelo31/omniroute": {
@@ -24,14 +24,14 @@
       "owner": "DietrichGebert",
       "html_url": "https://github.com/DietrichGebert/ponytail",
       "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-      "stars": 186388,
+      "stars": 186389,
       "stars_formatted": "186k",
       "forks": 10319,
       "open_issues": 184,
       "version": "v5.3.3",
       "license": "MIT",
       "last_updated": "2026-10-29",
-      "fetched_at": "2026-11-08 00:40:49Z"
+      "fetched_at": "2026-11-08 00:43:10Z"
     },
     "graphify-labs/graphify": {
       "repo": "Graphify-Labs/graphify",
@@ -42,11 +42,11 @@
       "stars": 143998,
       "stars_formatted": "144k",
       "forks": 13780,
-      "open_issues": 1658,
+      "open_issues": 1657,
       "version": "v1.0.0",
       "license": "Apache-2.0",
-      "last_updated": "2026-11-06",
-      "fetched_at": "2026-11-08 00:40:51Z"
+      "last_updated": "2026-11-08",
+      "fetched_at": "2026-11-08 00:43:11Z"
     },
     "kotlin/kotlin-agent-skills": {
       "repo": "Kotlin/kotlin-agent-skills",
@@ -61,7 +61,7 @@
       "version": "latest",
       "license": "Apache-2.0",
       "last_updated": "2026-10-30",
-      "fetched_at": "2026-11-08 00:40:53Z"
+      "fetched_at": "2026-11-08 00:43:12Z"
     },
     "mempalace/mempalace": {
       "repo": "MemPalace/mempalace",
@@ -76,7 +76,7 @@
       "version": "v3.11.0",
       "license": "MIT",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:40:55Z"
+      "fetched_at": "2026-11-08 00:43:14Z"
     },
     "openhands/openhands": {
       "repo": "OpenHands/OpenHands",
@@ -91,7 +91,7 @@
       "version": "v1.37.0",
       "license": "MIT",
       "last_updated": "2026-11-08",
-      "fetched_at": "2026-11-08 00:40:56Z"
+      "fetched_at": "2026-11-08 00:43:14Z"
     },
     "affaan-m/ecc": {
       "repo": "affaan-m/ECC",
@@ -99,14 +99,14 @@
       "owner": "affaan-m",
       "html_url": "https://github.com/affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 299186,
+      "stars": 299188,
       "stars_formatted": "299k",
       "forks": 44196,
       "open_issues": 241,
       "version": "v2.2.3",
       "license": "MIT",
       "last_updated": "2026-11-06",
-      "fetched_at": "2026-11-08 00:40:58Z"
+      "fetched_at": "2026-11-08 00:43:16Z"
     },
     "android/skills": {
       "repo": "android/skills",
@@ -121,7 +121,7 @@
       "version": "v1.0.20",
       "license": "Apache-2.0",
       "last_updated": "2026-11-05",
-      "fetched_at": "2026-11-08 00:41:01Z"
+      "fetched_at": "2026-11-08 00:43:17Z"
     },
     "avdlee/swiftui-agent-skill": {
       "repo": "AvdLee/SwiftUI-Agent-Skill",
@@ -136,7 +136,7 @@
       "version": "5.3.0",
       "license": "MIT",
       "last_updated": "2026-11-06",
-      "fetched_at": "2026-11-08 00:41:03Z"
+      "fetched_at": "2026-11-08 00:43:19Z"
     },
     "coderabbitai/antigravity-plugin": {
       "repo": "coderabbitai/antigravity-plugin",
@@ -166,7 +166,7 @@
       "version": "v1.1.1",
       "license": "MIT",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:06Z"
+      "fetched_at": "2026-11-08 00:43:21Z"
     },
     "garrytan/gstack": {
       "repo": "garrytan/gstack",
@@ -174,14 +174,14 @@
       "owner": "garrytan",
       "html_url": "https://github.com/garrytan/gstack",
       "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
-      "stars": 140665,
+      "stars": 140666,
       "stars_formatted": "141k",
       "forks": 20765,
       "open_issues": 70,
       "version": "v1.97.0.0",
       "license": "MIT",
       "last_updated": "2026-11-08",
-      "fetched_at": "2026-11-08 00:41:07Z"
+      "fetched_at": "2026-11-08 00:43:22Z"
     },
     "google-research/harness2": {
       "repo": "google-research/harness2",
@@ -196,7 +196,7 @@
       "version": "latest",
       "license": "Apache-2.0",
       "last_updated": "2026-11-02",
-      "fetched_at": "2026-11-08 00:41:08Z"
+      "fetched_at": "2026-11-08 00:43:23Z"
     },
     "google/agents-cli": {
       "repo": "google/agents-cli",
@@ -211,7 +211,7 @@
       "version": "v1.13.0",
       "license": "Apache-2.0",
       "last_updated": "2026-11-04",
-      "fetched_at": "2026-11-08 00:41:09Z"
+      "fetched_at": "2026-11-08 00:43:23Z"
     },
     "googleapis/python-genai": {
       "repo": "googleapis/python-genai",
@@ -226,7 +226,7 @@
       "version": "v3.0.0",
       "license": "Apache-2.0",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:12Z"
+      "fetched_at": "2026-11-08 00:43:25Z"
     },
     "kytheros/strata": {
       "repo": "kytheros/strata",
@@ -249,14 +249,14 @@
       "owner": "mattpocock",
       "html_url": "https://github.com/mattpocock/skills",
       "description": "Skills for Real Engineers. Straight from my .agents directory.",
-      "stars": 317707,
+      "stars": 317709,
       "stars_formatted": "318k",
       "forks": 26580,
       "open_issues": 219,
       "version": "v1.3.2",
       "license": "MIT",
       "last_updated": "2026-11-05",
-      "fetched_at": "2026-11-08 00:41:13Z"
+      "fetched_at": "2026-11-08 00:43:26Z"
     },
     "microsoft/tokeneconomizer": {
       "repo": "microsoft/TokenEconomizer",
@@ -271,7 +271,7 @@
       "version": "v0.1.0",
       "license": "Apache-2.0",
       "last_updated": "2026-11-08",
-      "fetched_at": "2026-11-08 00:41:16Z"
+      "fetched_at": "2026-11-08 00:43:28Z"
     },
     "multica-ai/andrej-karpathy-skills": {
       "repo": "multica-ai/andrej-karpathy-skills",
@@ -279,14 +279,14 @@
       "owner": "multica-ai",
       "html_url": "https://github.com/multica-ai/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-      "stars": 230622,
+      "stars": 230624,
       "stars_formatted": "231k",
-      "forks": 22947,
+      "forks": 22948,
       "open_issues": 139,
       "version": "latest",
       "license": "Other",
       "last_updated": "2026-04-20",
-      "fetched_at": "2026-11-08 00:41:18Z"
+      "fetched_at": "2026-11-08 00:43:29Z"
     },
     "nextlevelbuilder/ui-ux-pro-max-skill": {
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
@@ -301,7 +301,7 @@
       "version": "v2.15.0",
       "license": "MIT",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:18Z"
+      "fetched_at": "2026-11-08 00:43:30Z"
     },
     "obra/superpowers": {
       "repo": "obra/superpowers",
@@ -309,14 +309,14 @@
       "owner": "obra",
       "html_url": "https://github.com/obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 314115,
+      "stars": 314117,
       "stars_formatted": "314k",
       "forks": 27946,
       "open_issues": 342,
       "version": "v7.0.2",
       "license": "MIT",
       "last_updated": "2026-11-03",
-      "fetched_at": "2026-11-08 00:41:19Z"
+      "fetched_at": "2026-11-08 00:43:30Z"
     },
     "open-gsd/gsd-core": {
       "repo": "open-gsd/gsd-core",
@@ -331,7 +331,7 @@
       "version": "v1.20.1",
       "license": "MIT",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:20Z"
+      "fetched_at": "2026-11-08 00:43:31Z"
     },
     "open-gsd/gsd-pi": {
       "repo": "open-gsd/gsd-pi",
@@ -346,7 +346,7 @@
       "version": "v1.23.0",
       "license": "MIT",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:21Z"
+      "fetched_at": "2026-11-08 00:43:32Z"
     },
     "openai/codex": {
       "repo": "openai/codex",
@@ -354,14 +354,14 @@
       "owner": "openai",
       "html_url": "https://github.com/openai/codex",
       "description": "Lightweight coding agent that runs in your terminal",
-      "stars": 133587,
+      "stars": 133588,
       "stars_formatted": "134k",
       "forks": 21180,
       "open_issues": 26872,
       "version": "winget-test-rust-v0.106.0-alpha.9",
       "license": "Apache-2.0",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:22Z"
+      "fetched_at": "2026-11-08 00:43:32Z"
     },
     "pbakaus/impeccable": {
       "repo": "pbakaus/impeccable",
@@ -369,14 +369,14 @@
       "owner": "pbakaus",
       "html_url": "https://github.com/pbakaus/impeccable",
       "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
-      "stars": 105534,
+      "stars": 105536,
       "stars_formatted": "106k",
       "forks": 6270,
       "open_issues": 72,
       "version": "skill-v4.8.0",
       "license": "Apache-2.0",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:23Z"
+      "fetched_at": "2026-11-08 00:43:33Z"
     },
     "pingdotgg/t3code": {
       "repo": "pingdotgg/t3code",
@@ -384,14 +384,14 @@
       "owner": "pingdotgg",
       "html_url": "https://github.com/pingdotgg/t3code",
       "description": "",
-      "stars": 51273,
+      "stars": 51276,
       "stars_formatted": "51.3k",
       "forks": 9882,
-      "open_issues": 5764,
+      "open_issues": 5765,
       "version": "v0.1.8-nightly.20261107.4340",
       "license": "MIT",
       "last_updated": "2026-11-08",
-      "fetched_at": "2026-11-08 00:41:24Z"
+      "fetched_at": "2026-11-08 00:43:34Z"
     },
     "snarktank/ralph": {
       "repo": "snarktank/ralph",
@@ -406,7 +406,7 @@
       "version": "latest",
       "license": "MIT",
       "last_updated": "2026-02-02",
-      "fetched_at": "2026-11-08 00:41:26Z"
+      "fetched_at": "2026-11-08 00:43:35Z"
     },
     "twostraws/swiftui-agent-skill": {
       "repo": "twostraws/SwiftUI-Agent-Skill",
@@ -421,7 +421,7 @@
       "version": "2.0.0",
       "license": "MIT",
       "last_updated": "2026-10-26",
-      "fetched_at": "2026-11-08 00:41:28Z"
+      "fetched_at": "2026-11-08 00:43:37Z"
     },
     "uizze/uizze": {
       "repo": "uizze/uizze",
@@ -436,7 +436,7 @@
       "version": "v1.3.1",
       "license": "MIT",
       "last_updated": "2026-11-01",
-      "fetched_at": "2026-11-08 00:41:29Z"
+      "fetched_at": "2026-11-08 00:43:37Z"
     },
     "upstash/context7": {
       "repo": "upstash/context7",
@@ -451,7 +451,7 @@
       "version": "v1.0.30",
       "license": "MIT",
       "last_updated": "2026-11-06",
-      "fetched_at": "2026-11-08 00:41:30Z"
+      "fetched_at": "2026-11-08 00:43:38Z"
     },
     "leonxlnx/taste-skill": {
       "repo": "Leonxlnx/taste-skill",
@@ -459,14 +459,14 @@
       "owner": "Leonxlnx",
       "html_url": "https://github.com/Leonxlnx/taste-skill",
       "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
-      "stars": 111653,
+      "stars": 111654,
       "stars_formatted": "112k",
       "forks": 7504,
       "open_issues": 2,
       "version": "v2.5.1",
       "license": "MIT",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:40:54Z"
+      "fetched_at": "2026-11-08 00:43:13Z"
     },
     "agentskills/agentskills": {
       "repo": "agentskills/agentskills",
@@ -481,7 +481,7 @@
       "version": "latest",
       "license": "Apache-2.0",
       "last_updated": "2026-11-04",
-      "fetched_at": "2026-11-08 00:41:00Z"
+      "fetched_at": "2026-11-08 00:43:17Z"
     },
     "anthropics/skills": {
       "repo": "anthropics/skills",
@@ -496,7 +496,7 @@
       "version": "latest",
       "license": "Other",
       "last_updated": "2026-11-06",
-      "fetched_at": "2026-11-08 00:41:02Z"
+      "fetched_at": "2026-11-08 00:43:18Z"
     },
     "cloudflare/security-audit-skill": {
       "repo": "cloudflare/security-audit-skill",
@@ -504,14 +504,14 @@
       "owner": "cloudflare",
       "html_url": "https://github.com/cloudflare/security-audit-skill",
       "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
-      "stars": 65721,
+      "stars": 65722,
       "stars_formatted": "65.7k",
       "forks": 4268,
       "open_issues": 119,
       "version": "latest",
       "license": "MIT",
       "last_updated": "2026-09-14",
-      "fetched_at": "2026-11-08 00:41:05Z"
+      "fetched_at": "2026-11-08 00:43:20Z"
     },
     "google/skills": {
       "repo": "google/skills",
@@ -526,7 +526,7 @@
       "version": "latest",
       "license": "Apache-2.0",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:11Z"
+      "fetched_at": "2026-11-08 00:43:24Z"
     },
     "meta/astryx": {
       "repo": "meta/astryx",
@@ -534,14 +534,14 @@
       "owner": "meta",
       "html_url": "https://github.com/meta/astryx",
       "description": "An open source design system that's fully customizable and agent ready",
-      "stars": 14520,
+      "stars": 14521,
       "stars_formatted": "14.5k",
       "forks": 1187,
-      "open_issues": 729,
+      "open_issues": 730,
       "version": "v0.7.11",
       "license": "MIT",
       "last_updated": "2026-11-08",
-      "fetched_at": "2026-11-08 00:41:15Z"
+      "fetched_at": "2026-11-08 00:43:27Z"
     },
     "ranxianglei/billion-context": {
       "repo": "ranxianglei/billion-context",
@@ -556,7 +556,7 @@
       "version": "v0.1.213",
       "license": "Other",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:25Z"
+      "fetched_at": "2026-11-08 00:43:34Z"
     },
     "composiohq/awesome-claude-skills": {
       "repo": "ComposioHQ/awesome-claude-skills",
@@ -564,14 +564,14 @@
       "owner": "ComposioHQ",
       "html_url": "https://github.com/ComposioHQ/awesome-claude-skills",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
-      "stars": 78995,
+      "stars": 78996,
       "stars_formatted": "79.0k",
       "forks": 9599,
       "open_issues": 1887,
       "version": "latest",
       "license": "Other",
       "last_updated": "2026-09-18",
-      "fetched_at": "2026-11-08 00:40:48Z"
+      "fetched_at": "2026-11-08 00:43:09Z"
     },
     "egonex-ai/understand-anything": {
       "repo": "Egonex-AI/Understand-Anything",
@@ -586,7 +586,7 @@
       "version": "v2.9.0",
       "license": "MIT",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:40:50Z"
+      "fetched_at": "2026-11-08 00:43:10Z"
     },
     "addyosmani/agent-skills": {
       "repo": "addyosmani/agent-skills",
@@ -601,7 +601,7 @@
       "version": "0.6.15",
       "license": "MIT",
       "last_updated": "2026-11-01",
-      "fetched_at": "2026-11-08 00:40:57Z"
+      "fetched_at": "2026-11-08 00:43:15Z"
     },
     "juliusbrussee/caveman": {
       "repo": "JuliusBrussee/caveman",
@@ -616,7 +616,7 @@
       "version": "v4.0.1",
       "license": "Apache-2.0",
       "last_updated": "2026-11-07",
-      "fetched_at": "2026-11-08 00:41:13Z"
+      "fetched_at": "2026-11-08 00:43:26Z"
     },
     "tt-a1i/archify": {
       "repo": "tt-a1i/archify",
@@ -624,14 +624,14 @@
       "owner": "tt-a1i",
       "html_url": "https://github.com/tt-a1i/archify",
       "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-      "stars": 94468,
+      "stars": 94469,
       "stars_formatted": "94.5k",
       "forks": 6433,
       "open_issues": 339,
       "version": "v3.2.0",
       "license": "Apache-2.0",
       "last_updated": "2026-11-08",
-      "fetched_at": "2026-11-08 00:41:27Z"
+      "fetched_at": "2026-11-08 00:43:36Z"
     }
   }
 }
