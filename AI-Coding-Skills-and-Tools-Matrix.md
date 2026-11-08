@@ -85,6 +85,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | prototype | P1 | Validate ideas and technical approaches before full implementation. |
 | scaffold-exercises | P3 | Create guided implementation exercises. |
 | karpathy-guidelines | P1 | Third-party Karpathy-inspired principles: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Encourages explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria; includes a portable Agent Skill plus documented Claude Code and Cursor integrations. |
+| playwright-cli | P0 | End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit. |
+
 
 ## 02 Matt Pocock
 
@@ -206,6 +208,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | prototype | P1 | Explore different UI concepts before implementation. |
 | design-consultation | P2 | Develop design systems and design direction. |
 | Impeccable capability note | Reference | 24 design commands covering steering, critique/audit, finish/polish and planning/context setup; supports many coding agents including Antigravity per repository README. Hook availability varies by host; the detector can also run in terminal/CI. |
+| shadcn-ui | P0 | Accessible, composable Tailwind CSS and Radix UI component library patterns for architecting production-grade design systems and user interfaces. |
+
 
 ## 06 GSD
 
@@ -304,6 +308,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Safety note | P0 | Use isolated branches/worktrees, iteration limits, build/test gates and human approval before merges or deployments. |
 | Repository - T3 Code | Reference | https://github.com/pingdotgg/t3code |
 | Everything Claude Code (ECC) | P1 | Broad open-source agent-harness engineering system: 71 specialized agents, 314 skills, rules, hooks, memory/continuous learning, workflow automation and AgentShield security scanning. Covers planning → TDD/implementation → review → verification → memory/improvement. Best-supported on Claude Code; native plugin paths for Codex and Qoder; adapters exist for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity and others, but feature parity varies—check platform support matrix before relying on hooks/memory/automation. Multi-harness guided installer supports Claude Code, Codex and Kimi Code; advanced adapters have separate install paths. MIT licensed. Model/provider configuration depends on host; ECC is not a model and does not supply one. Potential overlap with GSD, Superpowers, gstack, MemPalace and security/review tools—select capabilities rather than loading everything. |
+| browser-use | P0 | Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows. |
+| orca-agent | P0 | Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously. |
+
 
 ## 10 AI Infrastructure
 
@@ -338,6 +345,12 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | TokenEconomizer | P1 | Experience-driven coding-agent cost control. Learns repository-specific micro-skills from repeated sessions, prunes tools that remain unused, and detects recurring failure loops to suggest a redirect. Local learning data; supports Claude Code, Codex, GitHub Copilot CLI and Pi, with experimental OpenCode support. Evaluate on repeated work in the same repository; savings are workload-dependent. | https://github.com/microsoft/TokenEconomizer | https://arxiv.org/abs/2610.22732 |
 | Google Agents CLI | P1 | Google CLI + seven agent skills for building, scaffolding, coding, evaluating, deploying, publishing and observing AI agents on Google Cloud using ADK. It is a toolkit for coding assistants, not a coding agent/model. Works with Antigravity CLI, Claude Code, Codex and other coding agents; framework is ADK by default, while ADK model configuration supports Gemini natively and other providers via LiteLLM (documented examples: OpenAI GPT-4o, Anthropic Claude Sonnet, and Ollama-hosted Llama). Local create/run/eval can use Gemini AI Studio API key; cloud deployment needs Google Cloud. Useful when developing AI agents, not required for normal Android app coding. | https://github.com/google/agents-cli |  |
 | agent-skills-spec | P0 | Open specification and reference toolchain (skills-ref) for Agent Skills across Anthropic Claude Code, Cursor, Codex, Gemini CLI, and Antigravity. Defines the universal SKILL.md format, metadata schema, and 3-stage progressive disclosure protocol (Discovery → Activation → Execution) with built-in validation CLI. | https://github.com/agentskills/agentskills | https://agentskills.io/ |
+| turborepo | P1 | High-performance monorepo build orchestration, multi-package task pipeline caching, and dependency graph optimization. |
+| vercel-ai-sdk | P0 | Unified TypeScript and JavaScript AI SDK for building streaming chat interfaces, generative UI, structured object generation, and multi-agent tool execution. |
+| cloudflare-skills | P0 | Cloudflare Workers edge compute, serverless deployment, Wrangler CLI configuration, KV/D1 database bindings, and global edge caching. |
+| supabase-skills | P0 | Supabase Postgres database design, pgvector semantic search, row-level security (RLS) policies, edge functions, and client SDK integration. |
+| azure-skills | P1 | Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring. |
+
 
 ## 11 Code Review Quality
 
@@ -357,6 +370,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | verification-before-completion | P0 | Run builds, tests and checks before declaring work complete. |
 | setup-pre-commit | P1 | Catch formatting and quality issues before commits. |
 | Verification note | CodeRabbit is a review service/integration, not a general-purpose coding skill. Check pricing, permissions and repository access. |  |
+| sentry-diagnostics | P0 | Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents. |
+
 
 ## 12 Optional Specialized
 
@@ -391,6 +406,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | data-autocleaning | P3 | Clean datasets. |
 | dak-setup | P3 | Specialized environment setup. |
 | graphify | P2 | Visualize codebase relationships. |
+| remotion-video | P1 | Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering. |
+
 
 ## 13 Priority Summary
 
@@ -456,6 +473,18 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Understand Anything | https://understand-anything.com/ | https://github.com/Egonex-AI/Understand-Anything | Interactive visual codebase & knowledge-base intelligence suite with onboarding tours (91k+ stars). |
 | Composio Skills & MCP Gateway | https://composio.dev/ | https://github.com/ComposioHQ/awesome-claude-skills | Unified MCP Gateway connecting agents to 1,000+ external SaaS integrations and curated skill registry (79k+ stars). |
 | Caveman | https://caveman-ai.com/ | https://github.com/juliusbrussee/caveman | High-density telegraphic token compression skill and proxy cutting 33%–65% tokens without losing code precision (118k+ stars). |
+| browser-use | https://browser-use.com/ | https://github.com/browser-use/browser-use | Autonomous browser agent and web interaction controller (120k+ stars). |
+| shadcn-ui | https://ui.shadcn.com/ | https://github.com/shadcn/ui | Accessible component architecture and design system standard (127k+ stars). |
+| orca-agent | https://useorca.com/ | https://github.com/stablyai/orca | Multi-agent orchestration CLI and computer-use engine (118k+ stars). |
+| sentry-diagnostics | https://sentry.io/ | https://github.com/getsentry/sentry | Developer-first error tracking, crash reporting, and tracing platform (45k+ stars). |
+| turborepo | https://turbo.build/repo | https://github.com/vercel/turborepo | High-performance monorepo build system and task caching (31k+ stars). |
+| vercel-ai-sdk | https://sdk.vercel.ai/docs | https://github.com/vercel/ai | Unified TypeScript/JavaScript AI SDK for streaming and tool calling (27k+ stars). |
+| playwright-cli | https://playwright.dev/ | https://github.com/microsoft/playwright-cli | Microsoft cross-browser end-to-end testing and automation CLI (15k+ stars). |
+| remotion-video | https://www.remotion.dev/ | https://github.com/remotion-dev/skills | Programmatic video creation and motion graphics in React (6.5k+ stars). |
+| cloudflare-skills | https://developers.cloudflare.com/workers/ | https://github.com/cloudflare/skills | Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars). |
+| supabase-skills | https://supabase.com/docs | https://github.com/supabase/agent-skills | Supabase Postgres database best practices, pgvector, and auth workflows (3k+ stars). |
+| azure-skills | https://azure.microsoft.com/ | https://github.com/microsoft/azure-skills | Microsoft Azure cloud migration, AKS, AI Foundry, and diagnostics (1.6k+ stars). |
+
 
 ## 15 Universal Project Documentation Standard
 

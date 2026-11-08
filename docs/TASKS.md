@@ -25,6 +25,7 @@
 | **TASK-012** | Catalog Expansion | Add meta/astryx, anthropics/skills, google/skills, cloudflare/security-audit-skill, billion-context | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 | **TASK-013** | Catalog Expansion | Add addyosmani/agent-skills, tt-a1i/archify, Egonex-AI/Understand-Anything, juliusbrussee/caveman, ComposioHQ/awesome-claude-skills | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 | **TASK-014** | Catalog Quality Pruning | Remove Adelo31/omniroute (0★), kytheros/strata (1★, stalled), and coderabbitai/antigravity-plugin (subsumed) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
+| **TASK-015** | Catalog Expansion (Batch 1) | Add 11 Tier 1 high-star repos from skills.sh (browser-use, shadcn, orca, sentry, turborepo, vercel-ai, playwright, remotion, cloudflare, supabase, azure) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 
 ---
 
