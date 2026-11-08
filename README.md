@@ -38,16 +38,16 @@
 <!-- START_LIVE_STATS -->
 | Rank | Framework / Repository | Stars | Release | License | Last Active | Live Badge |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1 | [**mattpocock/skills**](https://github.com/mattpocock/skills) | **⭐ 317k** | `v1.3.2` | `MIT` | 2026-11-05 | ![Stars](https://img.shields.io/github/stars/mattpocock/skills?style=flat&label=stars) |
+| 1 | [**mattpocock/skills**](https://github.com/mattpocock/skills) | **⭐ 318k** | `v1.3.2` | `MIT` | 2026-11-05 | ![Stars](https://img.shields.io/github/stars/mattpocock/skills?style=flat&label=stars) |
 | 2 | [**obra/superpowers**](https://github.com/obra/superpowers) | **⭐ 314k** | `v7.0.2` | `MIT` | 2026-11-03 | ![Stars](https://img.shields.io/github/stars/obra/superpowers?style=flat&label=stars) |
 | 3 | [**affaan-m/ECC**](https://github.com/affaan-m/ECC) | **⭐ 299k** | `v2.2.3` | `MIT` | 2026-11-06 | ![Stars](https://img.shields.io/github/stars/affaan-m/ECC?style=flat&label=stars) |
 | 4 | [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | **⭐ 231k** | `latest` | `Other` | 2026-04-20 | ![Stars](https://img.shields.io/github/stars/multica-ai/andrej-karpathy-skills?style=flat&label=stars) |
-| 5 | [**DietrichGebert/ponytail**](https://github.com/DietrichGebert/ponytail) | **⭐ 186k** | `v5.3.3` | `MIT` | 2026-10-29 | ![Stars](https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat&label=stars) |
-| 6 | [**nextlevelbuilder/ui-ux-pro-max-skill**](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | **⭐ 146k** | `v2.15.0` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/nextlevelbuilder/ui-ux-pro-max-skill?style=flat&label=stars) |
-| 7 | [**Graphify-Labs/graphify**](https://github.com/Graphify-Labs/graphify) | **⭐ 144k** | `v1.0.0` | `Apache-2.0` | 2026-11-06 | ![Stars](https://img.shields.io/github/stars/Graphify-Labs/graphify?style=flat&label=stars) |
-| 8 | [**garrytan/gstack**](https://github.com/garrytan/gstack) | **⭐ 141k** | `v1.97.0.0` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars) |
-| 9 | [**openai/codex**](https://github.com/openai/codex) | **⭐ 134k** | `winget-test-rust-v0.106.0-alpha.9` | `Apache-2.0` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/openai/codex?style=flat&label=stars) |
-| 10 | [**Leonxlnx/taste-skill**](https://github.com/Leonxlnx/taste-skill) | **⭐ 112k** | `v2.5.1` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/Leonxlnx/taste-skill?style=flat&label=stars) |
+| 5 | [**anthropics/skills**](https://github.com/anthropics/skills) | **⭐ 189k** | `latest` | `Other` | 2026-11-06 | ![Stars](https://img.shields.io/github/stars/anthropics/skills?style=flat&label=stars) |
+| 6 | [**DietrichGebert/ponytail**](https://github.com/DietrichGebert/ponytail) | **⭐ 186k** | `v5.3.3` | `MIT` | 2026-10-29 | ![Stars](https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat&label=stars) |
+| 7 | [**nextlevelbuilder/ui-ux-pro-max-skill**](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | **⭐ 147k** | `v2.15.0` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/nextlevelbuilder/ui-ux-pro-max-skill?style=flat&label=stars) |
+| 8 | [**Graphify-Labs/graphify**](https://github.com/Graphify-Labs/graphify) | **⭐ 144k** | `v1.0.0` | `Apache-2.0` | 2026-11-06 | ![Stars](https://img.shields.io/github/stars/Graphify-Labs/graphify?style=flat&label=stars) |
+| 9 | [**garrytan/gstack**](https://github.com/garrytan/gstack) | **⭐ 141k** | `v1.97.0.0` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars) |
+| 10 | [**openai/codex**](https://github.com/openai/codex) | **⭐ 134k** | `winget-test-rust-v0.106.0-alpha.9` | `Apache-2.0` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/openai/codex?style=flat&label=stars) |
 <!-- END_LIVE_STATS -->
 
 👉 *Full 31 upstream frameworks ranked with live versions and telemetry in [**`docs/LIVE-STATS.md`**](docs/LIVE-STATS.md) and interactive catalog at [**`https://nownitya.github.io/Ai-Models-List/`**](https://nownitya.github.io/Ai-Models-List/).*

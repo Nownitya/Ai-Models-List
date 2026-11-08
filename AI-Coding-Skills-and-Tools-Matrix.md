@@ -184,6 +184,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 ## 05 UI UX Design
 
+- **Meta Astryx design system repository:** https://github.com/meta/astryx
 - **UI/UX Pro Max repository:** https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 - **Taste Skill (tasteskill) repository:** https://github.com/Leonxlnx/taste-skill
 - **Impeccable repository / documentation:** https://github.com/pbakaus/impeccable · https://impeccable.style/docs
@@ -191,6 +192,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 | Skill / Capability | Priority | Why |
 | --- | --- | --- |
+| astryx | P0 | Meta's agent-ready, fully customizable open-source React design system (14.5k+ stars). Evolved over 8 years powering thousands of apps inside Meta; features 150+ accessible StyleX-powered components, token-based theming (defineTheme), source ejection (swizzle), and built-in Model Context Protocol (MCP) server & CLI (@astryxdesign/cli) designed specifically to prevent AI coding assistants from hallucinating UI styles and layout tokens. |
 | ui-ux-pro-max | P0 | Comprehensive UI/UX design-intelligence skill and CLI. Generates project-specific design systems and provides searchable guidance: 79 UI styles (50 active), 192 industry/product reasoning rules and palettes, 74 font pairings, 25 chart types, 119 UX guidelines, and 22 stack-specific playbooks including Jetpack Compose and SwiftUI. Supports Antigravity, Claude Code, Codex CLI, Gemini CLI, OpenCode, Cursor, GitHub Copilot, Windsurf, Kiro and many others. Install with npm install -g ui-ux-pro-max-cli, then uipro init --ai antigravity (or the relevant host). Python 3.x required for local search script. Model-agnostic skill: works through the connected coding assistant/model; it is not an LLM or model API. MIT-licensed core is open source; separate Premium offering adds brand identity, logo, banners/slides, custom iconography, image-generation integrations and enterprise token architecture. Search/guidance does not automatically build or visually QA the product; review output and verify implementation against platform guidelines. |
 | impeccable | P1 | Design command toolkit for coding agents: critique UX, audit accessibility/performance/responsive behavior, polish and harden interfaces, and detect common UI quality issues. Complements UI/UX Pro Max and native platform guidelines. |
 | ui-taste | P1 | Uizze UI Taste and related UI/UX agent skills. FREE: install/use the ui-taste skill from uizze.sh; the GitHub repo also provides free ui-design, anti-ui-slop and ui-radar skills, plus GitHub-native image-to-ui and uizze-ui packages. Skills work locally without a Uizze account or MCP. PAID: authenticated Uizze MCP at https://uizze.com/mcp provides find_ui_references and find_ui_materials for real app screens, flows, design systems, fonts, icons and materials. Website reference browsing is free without an account. LIMITATIONS: UI Taste/iOS Design are distributed separately from the GitHub skill packages; paid MCP exposes only two retrieval tools and may return no matches; the skills are guidance and playbooks, not a design editor or guaranteed visual QA. Third-party reference assets and branding are not automatically licensed for reuse; retain individual MIT/Apache notices. |
@@ -306,9 +308,15 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Graphify repository / docs:** https://github.com/Graphify-Labs/graphify · https://docs.graphify.com/
 - **Context7 website / repository:** https://context7.com/ · https://github.com/upstash/context7
 - **Agent Skills specification repository:** https://github.com/agentskills/agentskills · https://agentskills.io/
+- **Billion-Context repository:** https://github.com/ranxianglei/billion-context
+- **Anthropic Agent Skills repository:** https://github.com/anthropics/skills
+- **Google Agent Skills repository:** https://github.com/google/skills
 
 | Tool / Service | Priority | Why | Official repository / source | Research / reference |
 | --- | --- | --- | --- | --- |
+| billion-context | P1 | Context-compression engine for month-long single agent sessions (billions of tokens). Employs semantic context compaction allowing small 100K-token context windows to sustain prolonged development cycles while reducing token consumption by up to 5x. | https://github.com/ranxianglei/billion-context |  |
+| anthropic-skills | P0 | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku. | https://github.com/anthropics/skills | https://docs.anthropic.com/ |
+| google-skills | P0 | Google's official open collection of Agent Skills for Google developer platforms, Cloud infrastructure, and AI engineering (23k+ stars). Complements android/skills and google/agents-cli with cross-ecosystem tools for Gemini, Vertex AI, and Workspace. | https://github.com/google/skills | https://ai.google.dev/ |
 | OmniRoute | P2 | Route requests across multiple AI model providers through a common gateway; useful for provider choice and fallback. |  |  |
 | Gemini API | P2 | Integrate Gemini APIs into applications and development workflows. |  |  |
 | Gemini Live API | P2 | Build real-time Gemini applications. |  |  |
@@ -330,12 +338,14 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 ## 11 Code Review Quality
 
 > 11 Code Review Quality
+- **Cloudflare Security Audit Skill repository:** https://github.com/cloudflare/security-audit-skill
 - **CodeRabbit documentation:** https://docs.coderabbit.ai/
 - **CodeRabbit skills repository:** https://github.com/coderabbitai/skills
 - **CodeRabbit Antigravity plugin:** https://github.com/coderabbitai/antigravity-plugin
 
 | Tool / Capability | Priority | Why |
 | --- | --- | --- |
+| cloudflare-security-audit | P0 | Cloudflare's official coding-agent skill for multi-phase security audits (65k+ stars). Conducts automated vulnerability analysis, surface scanning, and machine-readable risk reporting across dependencies, API routes, authentication gates, and edge workers with independently verified proofs. |
 | CodeRabbit | P1 | Automate pull request reviews and identify bugs, security risks and missing tests. |
 | Open Code Review | P2 | Explore additional automated code-review workflows; verify exact product/repository before adoption. |
 | code-review skill | P0 | Perform agent-led review during implementation. |
@@ -437,6 +447,11 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Everything Claude Code (ECC) | https://ecc.tools | https://github.com/affaan-m/ecc | MIT agent-harness engineering system with agents, skills, hooks, rules, memory, workflows and AgentShield. Claude Code is strongest supported host; Codex/Qoder native paths; other adapters have limited/variable feature parity. Model provider is determined by host configuration. |
 | Karpathy Guidelines | https://github.com/multica-ai/andrej-karpathy-skills | https://github.com/multica-ai/andrej-karpathy-skills | Third-party Karpathy-inspired four-principle coding guide; skill metadata declares MIT. Includes portable Agent Skill plus documented Claude Code plugin and Cursor rule. README's plugin install commands point to forrestchang/andrej-karpathy-skills; verify intended install source. |
 | Taste Skill (Leonxlnx) | https://tasteskill.dev | https://github.com/Leonxlnx/taste-skill | Anti-slop frontend design skill with browser verification, art direction, and 111k+ stars. |
+| Meta Astryx | https://github.com/meta/astryx | https://github.com/meta/astryx | Meta's agent-ready open-source React design system with built-in MCP server and CLI (14.5k+ stars). |
+| Billion-Context | https://github.com/ranxianglei/billion-context | https://github.com/ranxianglei/billion-context | Context-compression plugin for month-long single agent sessions and token savings (4.5k+ stars). |
+| Anthropic Agent Skills | https://docs.anthropic.com/ | https://github.com/anthropics/skills | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). |
+| Google Agent Skills | https://ai.google.dev/ | https://github.com/google/skills | Google's official open collection of Agent Skills for Google developer platforms (23k+ stars). |
+| Cloudflare Security Audit Skill | https://github.com/cloudflare/security-audit-skill | https://github.com/cloudflare/security-audit-skill | Cloudflare's coding-agent skill for multi-phase security audits with machine-readable findings (65k+ stars). |
 
 ## 15 Universal Project Documentation Standard
 
