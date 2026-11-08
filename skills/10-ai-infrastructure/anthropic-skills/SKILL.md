@@ -53,3 +53,4 @@ npx @anthropic-ai/claude-code skills list
 
 - **Do NOT blend upstream skill contracts**: Keep Anthropic skills distinct from other creator frameworks to preserve prompt fidelity (Law 4).
 - **Never bypass tool permission gates**: Always respect Claude Code's sandbox constraints and bash execution approval prompts.
+

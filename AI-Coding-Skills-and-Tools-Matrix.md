@@ -54,9 +54,11 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Reference / skill format:** https://agentskills.io/
 - **Superpowers repository:** https://github.com/obra/superpowers
 - **Matt Pocock skills repository:** https://github.com/mattpocock/skills
+- **Addy Osmani Agent Skills repository:** https://github.com/addyosmani/agent-skills
 
 | Skill | Priority | Why |
 | --- | --- | --- |
+| addy-agent-skills | P0 | Production-grade engineering skills suite by Addy Osmani (113k+ stars). Encodes senior engineering workflows across 9 lifecycle commands (/spec, /plan, /build, /build auto, /test, /constraints, /review, /webperf, /code-simplify, /ship), Web Vitals performance optimization, Chrome DevTools browser testing, and doubt-driven development. |
 | brainstorming | P0 | Explore requirements, alternatives and implementation approaches before coding. |
 | find-skills | P1 | Discover relevant skills dynamically for different tasks. |
 | writing-plans | P0 | Create structured and actionable implementation plans. |
@@ -185,6 +187,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 ## 05 UI UX Design
 
 - **Meta Astryx design system repository:** https://github.com/meta/astryx
+- **Archify repository:** https://github.com/tt-a1i/archify
 - **UI/UX Pro Max repository:** https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 - **Taste Skill (tasteskill) repository:** https://github.com/Leonxlnx/taste-skill
 - **Impeccable repository / documentation:** https://github.com/pbakaus/impeccable · https://impeccable.style/docs
@@ -192,6 +195,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 | Skill / Capability | Priority | Why |
 | --- | --- | --- |
+| archify | P0 | Turn any idea, plan, code, or architecture into explorable, interactive diagrams (architecture, sequence, workflow, data flow, ERD, state/lifecycle) rendered as standalone self-contained HTML with dark/light themes, animations, and image/SVG/WebM export (94k+ stars). |
 | astryx | P0 | Meta's agent-ready, fully customizable open-source React design system (14.5k+ stars). Evolved over 8 years powering thousands of apps inside Meta; features 150+ accessible StyleX-powered components, token-based theming (defineTheme), source ejection (swizzle), and built-in Model Context Protocol (MCP) server & CLI (@astryxdesign/cli) designed specifically to prevent AI coding assistants from hallucinating UI styles and layout tokens. |
 | ui-ux-pro-max | P0 | Comprehensive UI/UX design-intelligence skill and CLI. Generates project-specific design systems and provides searchable guidance: 79 UI styles (50 active), 192 industry/product reasoning rules and palettes, 74 font pairings, 25 chart types, 119 UX guidelines, and 22 stack-specific playbooks including Jetpack Compose and SwiftUI. Supports Antigravity, Claude Code, Codex CLI, Gemini CLI, OpenCode, Cursor, GitHub Copilot, Windsurf, Kiro and many others. Install with npm install -g ui-ux-pro-max-cli, then uipro init --ai antigravity (or the relevant host). Python 3.x required for local search script. Model-agnostic skill: works through the connected coding assistant/model; it is not an LLM or model API. MIT-licensed core is open source; separate Premium offering adds brand identity, logo, banners/slides, custom iconography, image-generation integrations and enterprise token architecture. Search/guidance does not automatically build or visually QA the product; review output and verify implementation against platform guidelines. |
 | impeccable | P1 | Design command toolkit for coding agents: critique UX, audit accessibility/performance/responsive behavior, polish and harden interfaces, and detect common UI quality issues. Complements UI/UX Pro Max and native platform guidelines. |
@@ -269,6 +273,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 ## 09 Autonomous Agents
 
+- **Understand Anything documentation / repository:** https://understand-anything.com · https://github.com/Egonex-AI/Understand-Anything
 - **Ralph repository:** https://github.com/snarktank/ralph
 - **OpenHands documentation / repository:** https://docs.openhands.dev/ · https://github.com/OpenHands/OpenHands
 - **Codex documentation / repository:** https://developers.openai.com/codex/ · https://github.com/openai/codex
@@ -280,6 +285,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 | Tool / Framework | Priority | Why |
 | --- | --- | --- |
+| understand-anything | P0 | AI-powered codebase and knowledge-base understanding suite (91k+ stars). Multi-agent pipeline analyzes repositories to build interactive visual knowledge graphs, dependency tours, domain business-process maps, and Karpathy-pattern LLM wiki graphs for Claude Code, Codex, Antigravity, and Cursor. |
 | Ralph Loop | P1 | Execute PRD-driven tasks autonomously through repeated iterations; use bounded iterations and test gates. |
 | Wiggum CLI | P2 | Explore structured autonomous development; verify the exact project and host support. |
 | OpenHands | P2 | Run independent autonomous software-development agents. |
@@ -311,9 +317,13 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Billion-Context repository:** https://github.com/ranxianglei/billion-context
 - **Anthropic Agent Skills repository:** https://github.com/anthropics/skills
 - **Google Agent Skills repository:** https://github.com/google/skills
+- **Awesome Claude Skills & Composio MCP Gateway:** https://composio.dev/ · https://github.com/ComposioHQ/awesome-claude-skills
+- **Caveman repository:** https://github.com/juliusbrussee/caveman
 
 | Tool / Service | Priority | Why | Official repository / source | Research / reference |
 | --- | --- | --- | --- | --- |
+| composio-skills | P0 | Unified MCP Gateway and curated registry of 1,000+ agent skills (79k+ stars). Connects AI coding assistants (Claude Code, Antigravity, Cursor, Codex) to 1,000+ external SaaS tools, APIs, and services (Slack, GitHub, Jira, Gmail, Calendar, Linear) with built-in OAuth authentication, RBAC, and audit logs. | https://github.com/ComposioHQ/awesome-claude-skills | https://composio.dev/ |
+| caveman | P1 | High-density token compression skill and proxy for AI coding agents (118k+ stars). Cuts input and output tokens by 33% to 65% by enforcing concise, telegraphic communication ('caveman voice') that eliminates conversational filler while preserving 100% of technical code, reasoning substance, and factual correctness. | https://github.com/juliusbrussee/caveman | https://caveman-ai.com/ |
 | billion-context | P1 | Context-compression engine for month-long single agent sessions (billions of tokens). Employs semantic context compaction allowing small 100K-token context windows to sustain prolonged development cycles while reducing token consumption by up to 5x. | https://github.com/ranxianglei/billion-context |  |
 | anthropic-skills | P0 | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku. | https://github.com/anthropics/skills | https://docs.anthropic.com/ |
 | google-skills | P0 | Google's official open collection of Agent Skills for Google developer platforms, Cloud infrastructure, and AI engineering (23k+ stars). Complements android/skills and google/agents-cli with cross-ecosystem tools for Gemini, Vertex AI, and Workspace. | https://github.com/google/skills | https://ai.google.dev/ |
@@ -452,6 +462,11 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Anthropic Agent Skills | https://docs.anthropic.com/ | https://github.com/anthropics/skills | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). |
 | Google Agent Skills | https://ai.google.dev/ | https://github.com/google/skills | Google's official open collection of Agent Skills for Google developer platforms (23k+ stars). |
 | Cloudflare Security Audit Skill | https://github.com/cloudflare/security-audit-skill | https://github.com/cloudflare/security-audit-skill | Cloudflare's coding-agent skill for multi-phase security audits with machine-readable findings (65k+ stars). |
+| Addy Osmani Agent Skills | https://addyosmani.com/ | https://github.com/addyosmani/agent-skills | Production-grade engineering skills across 9 lifecycle commands, Web Vitals, and doubt-driven development (113k+ stars). |
+| Archify | https://archify.si/ | https://github.com/tt-a1i/archify | Interactive architecture, system design, workflow, and sequence diagrams in standalone HTML (94k+ stars). |
+| Understand Anything | https://understand-anything.com/ | https://github.com/Egonex-AI/Understand-Anything | Interactive visual codebase & knowledge-base intelligence suite with onboarding tours (91k+ stars). |
+| Composio Skills & MCP Gateway | https://composio.dev/ | https://github.com/ComposioHQ/awesome-claude-skills | Unified MCP Gateway connecting agents to 1,000+ external SaaS integrations and curated skill registry (79k+ stars). |
+| Caveman | https://caveman-ai.com/ | https://github.com/juliusbrussee/caveman | High-density telegraphic token compression skill and proxy cutting 33%–65% tokens without losing code precision (118k+ stars). |
 
 ## 15 Universal Project Documentation Standard
 

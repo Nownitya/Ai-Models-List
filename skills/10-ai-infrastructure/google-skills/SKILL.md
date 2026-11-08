@@ -53,3 +53,4 @@ agy skills install google/skills
 
 - **Do NOT commit hardcoded GCP service account keys**: Use Workload Identity Federation or environment variables (`GOOGLE_APPLICATION_CREDENTIALS`).
 - **Do NOT load unneeded cloud modules**: Activate only the specific Google skills needed for your project (e.g. `gemini-api`, `android-cli`) to conserve context tokens.
+

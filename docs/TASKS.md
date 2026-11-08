@@ -23,6 +23,7 @@
 | **TASK-010** | CI Gates | Full test-suite, lockfile & parity CI validation | P0 | Verified | `.github/workflows/ci.yml` |
 | **TASK-011** | Routing | Frontier model selection matrix (Claude 3.7, R1, o3-mini) | P1 | Verified | `docs/models/MODEL-ROUTING-MATRIX.md` |
 | **TASK-012** | Catalog Expansion | Add meta/astryx, anthropics/skills, google/skills, cloudflare/security-audit-skill, billion-context | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
+| **TASK-013** | Catalog Expansion | Add addyosmani/agent-skills, tt-a1i/archify, Egonex-AI/Understand-Anything, juliusbrussee/caveman, ComposioHQ/awesome-claude-skills | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 
 ---
 
@@ -68,4 +69,13 @@
 - [x] Subtask 12.4: Synchronize live GitHub metrics across 37 upstream repositories (2.8M+ total stars).
 - [x] Subtask 12.5: Update `index.html` resolver mappings and bento telemetry fallbacks.
 - [x] Subtask 12.6: Run complete test suite and verification gates.
+
+### TASK-013: Production Workflow & Architecture Intelligence Expansion
+- [x] Subtask 13.1: Audit candidate repositories (confirmed `pbakaus/impeccable` and `Graphify-Labs/graphify` already present; analyzed `addyosmani/agent-skills` vs Superpowers/Matt Pocock and preserved purity under Law 4).
+- [x] Subtask 13.2: Author 5 standardized Law 2 `SKILL.md` packages (`addy-agent-skills`, `archify`, `understand-anything`, `caveman`, `composio-skills`).
+- [x] Subtask 13.3: Maintain Dual Matrix Parity across Sections 01, 05, 09, 10, and 14 in `.md` and `.csv`.
+- [x] Subtask 13.4: Synchronize live GitHub telemetry across 42 upstream repositories (3.3M+ combined community stars).
+- [x] Subtask 13.5: Update `index.html` `nameKeyMap` bindings and bento metrics fallbacks.
+- [x] Subtask 13.6: Execute full verification test suite.
+
 

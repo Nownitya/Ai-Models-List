@@ -46,7 +46,7 @@
 | 6 | [**DietrichGebert/ponytail**](https://github.com/DietrichGebert/ponytail) | **⭐ 186k** | `v5.3.3` | `MIT` | 2026-10-29 | ![Stars](https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat&label=stars) |
 | 7 | [**nextlevelbuilder/ui-ux-pro-max-skill**](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | **⭐ 147k** | `v2.15.0` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/nextlevelbuilder/ui-ux-pro-max-skill?style=flat&label=stars) |
 | 8 | [**Graphify-Labs/graphify**](https://github.com/Graphify-Labs/graphify) | **⭐ 144k** | `v1.0.0` | `Apache-2.0` | 2026-11-06 | ![Stars](https://img.shields.io/github/stars/Graphify-Labs/graphify?style=flat&label=stars) |
-| 9 | [**garrytan/gstack**](https://github.com/garrytan/gstack) | **⭐ 141k** | `v1.97.0.0` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars) |
+| 9 | [**garrytan/gstack**](https://github.com/garrytan/gstack) | **⭐ 141k** | `v1.97.0.0` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars) |
 | 10 | [**openai/codex**](https://github.com/openai/codex) | **⭐ 134k** | `winget-test-rust-v0.106.0-alpha.9` | `Apache-2.0` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/openai/codex?style=flat&label=stars) |
 <!-- END_LIVE_STATS -->
 

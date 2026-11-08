@@ -56,3 +56,4 @@ npx billion-context attach --window 100k
 
 - **Do NOT compact active error traces**: Ensure the most recent compiler and test failure stack traces remain uncompressed until explicitly resolved.
 - **Do NOT bypass verification gates**: Context compression is a memory efficiency optimization; it does not replace red-green TDD verification.
+

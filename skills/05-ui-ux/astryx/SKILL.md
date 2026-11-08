@@ -69,3 +69,4 @@ npx @astryxdesign/cli mcp
 - **Do NOT manually guess CSS classes**: Always query the design token registry via `@astryxdesign/cli` or MCP rather than writing arbitrary utility classes.
 - **Do NOT swizzle prematurely**: Use `defineTheme` token overrides before resorting to full source ejection via `swizzle`.
 - **Preserve accessibility invariants**: Never remove ARIA labels or focus traps provided out of the box by Astryx dialogs and modals.
+
