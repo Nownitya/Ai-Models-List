@@ -80,3 +80,4 @@ export function getTraumaOffset(trauma: number): number {
 * **Anti-Pattern:** Binding movement physics directly to frame rate without multiplying by delta time (`dt`), causing speed differences across monitor refresh rates.
 * **Anti-Pattern:** Linear screen shake with zero rotational component; rotational trauma feels significantly more organic and impactful.
 * **Warning:** Continuous collision detection (CCD) is computationally expensive; reserve CCD for high-speed projectiles and use discrete AABB for static geometry.
+

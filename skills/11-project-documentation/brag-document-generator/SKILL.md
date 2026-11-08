@@ -60,3 +60,4 @@ brag synthesize --input commits.tmp --output docs/BRAG-2026-Q3.md
 * **Anti-Pattern:** Inflating vanity metrics (e.g. "Wrote 50,000 lines of code") without demonstrating actual customer or system impact.
 * **Anti-Pattern:** Omitting collaborators and presenting collective team efforts as purely solo achievements.
 * **Warning:** Never include proprietary client data or confidential security incident details in public personal brag documents.
+

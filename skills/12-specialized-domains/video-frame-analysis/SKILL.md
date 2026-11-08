@@ -65,3 +65,4 @@ ffmpeg -i recorded-flow.mp4 -vf "fps=1,scale=320:-1,tile=4x4" -frames:v 1 contac
 * **Anti-Pattern:** Dumping thousands of full-resolution 4K frames into agent context, causing massive memory spikes and token exhaustion.
 * **Anti-Pattern:** Relying solely on static screenshots for evaluating interactive UI motion and micro-interactions.
 * **Warning:** Ensure recorded videos do not capture sensitive user passwords, auth tokens, or private PII during screen recording sessions.
+

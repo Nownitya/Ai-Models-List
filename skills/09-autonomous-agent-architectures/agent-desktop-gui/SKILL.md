@@ -67,3 +67,4 @@ agent-desktop click --image-anchor ./assets/icons/save-button.png --timeout 5000
 * **Anti-Pattern:** Blindly clicking hardcoded (x,y) screen coordinates across monitors with varying DPI scaling (e.g. 100% vs 150% scaling).
 * **Anti-Pattern:** Running unmonitored desktop mouse automation without an emergency hardware fail-safe (e.g. moving mouse to screen corner to abort).
 * **Warning:** Never allow automated desktop agents to interact with master password vaults, banking portals, or root credential managers.
+

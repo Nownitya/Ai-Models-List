@@ -65,3 +65,4 @@ description: Data visualization discipline, charting ergonomics, color scales, a
 * **Anti-Pattern:** Using 3D bar or pie charts; 3D perspective distorts relative geometric areas and impairs accurate data interpretation.
 * **Anti-Pattern:** Truncating the Y-axis zero baseline on bar charts, artificially exaggerating trivial differences.
 * **Warning:** Ensure interactive charts provide text table fallbacks (`aria-describedby`) for screen readers to comply with WCAG accessibility standards.
+

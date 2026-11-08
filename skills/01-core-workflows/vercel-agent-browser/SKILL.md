@@ -70,3 +70,4 @@ agent-browser inspect https://example.com --tree --depth 3
 * **Anti-Pattern:** Hardcoding fragile absolute pixel offsets or dynamic obfuscated class names (`.css-1a2b3c`).
 * **Anti-Pattern:** Polling with fixed sleep timers instead of explicit DOM event waiters (`waitForSelector`, `waitForNetworkIdle`).
 * **Warning:** Never use agent browser to bypass anti-bot mechanisms, CAPTCHAs, or violate website Terms of Service.
+

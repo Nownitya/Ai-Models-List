@@ -70,3 +70,4 @@ browser-act replay ./scenarios/checkout-journey.json \
 * **Anti-Pattern:** Recording tests on ephemeral test data that expires, causing replayed journeys to fail due to stale database state.
 * **Anti-Pattern:** Asserting strictly on absolute pixel coordinates instead of semantic element presence.
 * **Warning:** Never run automated synthetic payment journeys against live production Stripe/PayPal credentials; always use sandbox test cards.
+

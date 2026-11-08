@@ -226,6 +226,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `stitch-design-system` | **Stitch Design System Bridge** | `P1` | `/stitch-design-system` | Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge. |
 | `component-anatomy-specs` | **Component Anatomy Specs** | `P1` | `/component-anatomy-specs` | Design system component anatomy contracts, visual bounding boxes, and layout contracts. |
 | `data-viz-html-reports` | **Data Viz & HTML Reports** | `P1` | `/data-viz-html-reports` | Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports. |
+| `interface-feel-polish` | **Interface Feel & Tactile Physics** | `P1` | `/interface-feel-polish` | Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback. |
+| `stageshow-ui-presentation` | **Stageshow UI Presentation** | `P1` | `/stageshow-ui-presentation` | Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges. |
 
 
 ## 06 GSD
@@ -395,6 +397,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | web-quality-a11y | P0 | Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering. |
 | `hallmark-frontend-eval` | **Hallmark Frontend Evaluation** | `P1` | `/hallmark-frontend-eval` | Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment. |
 | `browser-act-testing` | **Browser Act Synthetic Testing** | `P1` | `/browser-act-testing` | Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing. |
+| `network-latency-benchmarks` | **Network Latency Benchmarks** | `P1` | `/network-latency-benchmarks` | Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking. |
 
 
 ## 12 Optional Specialized
@@ -437,6 +440,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `video-frame-analysis` | **Video Frame Analysis** | `P1` | `/video-frame-analysis` | Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection. |
 | `gamedev-mechanics` | **GameDev Physics & Mechanics** | `P1` | `/gamedev-mechanics` | Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math. |
 | `higgsfield-visual-media` | **Higgsfield Visual Media** | `P1` | `/higgsfield-visual-media` | Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition. |
+| `binance-agentic-wallet` | **Binance Agentic Wallet** | `P1` | `/binance-agentic-wallet` | Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows. |
+| `motion-sound-effects` | **Motion Sound Effects & Foley** | `P1` | `/motion-sound-effects` | Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis. |
 
 
 ## 13 Priority Summary
@@ -544,6 +549,11 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | [browser-act/skills](https://github.com/browser-act/skills) | **⭐ 6.3k** | `latest` | `MIT` | 2026-11-08 |
 | [higgsfield-ai/skills](https://github.com/higgsfield-ai/skills) | **⭐ 1.9k** | `latest` | `MIT` | 2026-11-08 |
 | [daymade/claude-code-skills](https://github.com/daymade/claude-code-skills) | **⭐ 1.5k** | `latest` | `MIT` | 2026-11-08 |
+| [jakubkrehel/make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) | **⭐ 3.9k** | `latest` | `MIT` | 2026-11-08 |
+| [jeremylongshore/tons-of-skills-marketplace](https://github.com/jeremylongshore/tons-of-skills-marketplace) | **⭐ 2.9k** | `latest` | `MIT` | 2026-11-08 |
+| [benjitaylor/skills](https://github.com/benjitaylor/skills) | **⭐ 2.5k** | `latest` | `MIT` | 2026-11-08 |
+| [binance/binance-skills-hub](https://github.com/binance/binance-skills-hub) | **⭐ 1.2k** | `latest` | `MIT` | 2026-11-08 |
+| [barty-bart/motion-graphics](https://github.com/barty-bart/motion-graphics) | **⭐ 1.1k** | `latest` | `MIT` | 2026-11-08 |
 
 
 ## 15 Universal Project Documentation Standard

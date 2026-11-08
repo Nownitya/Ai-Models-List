@@ -63,3 +63,4 @@ description: Design system component anatomy contracts, visual bounding boxes, s
 * **Anti-Pattern:** Conflating component visual structure with business logic; anatomy must remain purely presentational and headless.
 * **Anti-Pattern:** Neglecting the `loading` skeleton state in anatomical specifications, causing jarring layout shifts (CLS).
 * **Warning:** Ensure modal overlays trap keyboard focus properly and restore focus to trigger buttons on dismiss.
+

@@ -73,3 +73,4 @@ CMD ["node", "server.js"]
 * **Anti-Pattern:** Running Docker containers as `root`; always define and switch to a non-privileged `USER` in production stages.
 * **Anti-Pattern:** Leaking `.env` files or API secrets into Docker build contexts without `.dockerignore`.
 * **Warning:** Avoid overwhelming `.github/copilot-instructions.md` with redundant boilerplate; keep instructions dense, high-signal, and factual.
+

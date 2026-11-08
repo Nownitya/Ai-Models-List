@@ -75,3 +75,4 @@ higgsfield render --manifest ./photoshoot-brief.json --output ./dist/hero-produc
 * **Anti-Pattern:** Overloading prompts with conflicting camera styles (e.g. "fisheye lens" combined with "isometric telephoto").
 * **Anti-Pattern:** Neglecting cast shadow physics when compositing products onto transparent backgrounds, resulting in floating artifacts.
 * **Warning:** Ensure generated imagery complies with advertising truth-in-advertising guidelines and does not misrepresent physical product dimensions.
+
