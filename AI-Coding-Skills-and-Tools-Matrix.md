@@ -94,6 +94,11 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `vercel-agent-browser` | **Vercel Agent Browser** | `P1` | `/vercel-agent-browser` | Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation. |
 | `github-copilot-patterns` | **GitHub Copilot Patterns** | `P1` | `/github-copilot-patterns` | Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows. |
 | `brag-document-generator` | **Brag Document Generator** | `P1` | `/brag-document-generator` | Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation. |
+| `firecrawl-web-scrape` | **Firecrawl Web Scraper** | `P1` | `/firecrawl-web-scrape` | Clean LLM-ready markdown extraction, dynamic JS crawler, and structured data parsing. |
+| `convex-backend-sync` | **Convex Backend State Sync** | `P1` | `/convex-backend-sync` | Convex reactive database queries, transactional mutations, client state sync, and scheduled jobs. |
+| `scrapegraph-ai-pipeline` | **ScrapeGraphAI Pipeline** | `P1` | `/scrapegraph-ai-pipeline` | Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining. |
+| `better-auth-patterns` | **Better Auth Identity & 2FA** | `P1` | `/better-auth-patterns` | Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC. |
+| `nx-monorepo-architect` | **Nx Monorepo Architecture** | `P1` | `/nx-monorepo-architect` | Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries. |
 
 
 ## 02 Matt Pocock
@@ -228,6 +233,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `data-viz-html-reports` | **Data Viz & HTML Reports** | `P1` | `/data-viz-html-reports` | Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports. |
 | `interface-feel-polish` | **Interface Feel & Tactile Physics** | `P1` | `/interface-feel-polish` | Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback. |
 | `stageshow-ui-presentation` | **Stageshow UI Presentation** | `P1` | `/stageshow-ui-presentation` | Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges. |
+| `extract-design-tokens` | **Design Token Extractor** | `P1` | `/extract-design-tokens` | Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites. |
 
 
 ## 06 GSD
@@ -333,6 +339,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `agent-desktop-gui` | **Agent Desktop GUI** | `P1` | `/agent-desktop-gui` | Native desktop agent orchestration, operating system window management, and GUI interaction. |
 
 
+| `mastra-agent-framework` | **Mastra Agent Framework** | `P1` | `/mastra-agent-framework` | Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals. |
+
 ## 10 AI Infrastructure
 
 > 10 AI Infrastructure
@@ -398,6 +406,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `hallmark-frontend-eval` | **Hallmark Frontend Evaluation** | `P1` | `/hallmark-frontend-eval` | Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment. |
 | `browser-act-testing` | **Browser Act Synthetic Testing** | `P1` | `/browser-act-testing` | Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing. |
 | `network-latency-benchmarks` | **Network Latency Benchmarks** | `P1` | `/network-latency-benchmarks` | Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking. |
+| `continuous-review-loop` | **Continuous Review Loop** | `P1` | `/continuous-review-loop` | Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops. |
+| `momentic-visual-testing` | **Momentic Visual Testing** | `P1` | `/momentic-visual-testing` | AI-driven visual regression testing, session replay analysis, and automated test failure triage. |
 
 
 ## 12 Optional Specialized
@@ -555,6 +565,17 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | [binance/binance-skills-hub](https://github.com/binance/binance-skills-hub) | **⭐ 1.2k** | `latest` | `MIT` | 2026-11-08 |
 | [barty-bart/motion-graphics](https://github.com/barty-bart/motion-graphics) | **⭐ 1.1k** | `latest` | `MIT` | 2026-11-08 |
 
+
+| [firecrawl/cli](https://github.com/firecrawl/cli) | **⭐ 678** (663k+ Installs) | `latest` | `AGPL-3.0` | 2026-11-08 |
+| [convex/agent-skills](https://github.com/convex/agent-skills) | **⭐ 69** (666k+ Installs) | `latest` | `Apache-2.0` | 2026-11-08 |
+| [scrapegraphai/just-scrape](https://github.com/scrapegraphai/just-scrape) | **⭐ 75** (245k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+| [momentic-ai/skills](https://github.com/momentic-ai/skills) | **⭐ 17** (137k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+| [arvindrk/extract-design-system](https://github.com/arvindrk/extract-design-system) | **⭐ 272** (131k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+| [better-auth/skills](https://github.com/better-auth/skills) | **⭐ 228** (131k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+| [2dmurali/review-loop-skill](https://github.com/2dmurali/review-loop-skill) | **⭐ 7** (110k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+| [mastra-ai/skills](https://github.com/mastra-ai/skills) | **⭐ 102** (95k+ Installs) | `latest` | `Apache-2.0` | 2026-11-08 |
+| [spillwavesolutions/design-doc-mermaid](https://github.com/spillwavesolutions/design-doc-mermaid) | **⭐ 182** (92k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+| [nrwl/nx-ai-agents-config](https://github.com/nrwl/nx-ai-agents-config) | **⭐ 30** (87k+ Installs) | `latest` | `MIT` | 2026-11-08 |
 
 ## 15 Universal Project Documentation Standard
 

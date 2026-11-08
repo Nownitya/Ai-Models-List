@@ -30,6 +30,7 @@
 | **TASK-017** | Catalog Expansion (Batch 3) | Add 10 Tier 1 high-star repos from skills.sh (heygen, coreyhaines, nutlope, herdr, wshobson, larksuite, jakubkrehel, google-labs-stitch, typesafe-ai, mcollina) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-018** | Catalog Expansion (Batch 4) | Add 10 Tier 1 high-star repos from skills.sh (vercel-agent-browser, copilot, anatomy, brag, claude-video, agent-desktop, gamedev, browser-act, higgsfield, daymade) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-019** | Catalog Expansion (Batch 5 - Complete Bucket 1) | Add final 5 Tier 1 high-star repos from skills.sh (make-interfaces-feel-better, tons-of-skills, benjitaylor, binance, motion-graphics) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-020** | Catalog Expansion (Batch 6 - Bucket 2 High-Impact Tools) | Add 10 high-impact & unique developer tools from Bucket 2 with 2.2M+ installs (firecrawl, convex, scrapegraphai, momentic-ai, extract-design-system, better-auth, review-loop-skill, mastra-ai, design-doc-mermaid, nx-ai-agents-config) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 
 ---
 
@@ -126,6 +127,14 @@
 - [x] Subtask 19.3: Sync live GitHub telemetry across 85 upstream repositories (4.59M+ community stars).
 - [x] Subtask 19.4: Update `index.html` hero counters (298+ skills, 85 frameworks, 4.6M+ stars) and `nameKeyMap` bindings.
 - [x] Subtask 19.5: Verify Layer 15 governance, test gates, and push to origin main.
+
+### TASK-020: Catalog Expansion (Batch 6 - Bucket 2 High-Impact & Unique Developer Tools)
+- [x] Subtask 20.1: Author 10 standardized Law 2 `SKILL.md` packages (`firecrawl-web-scrape`, `convex-backend-sync`, `scrapegraph-ai-pipeline`, `momentic-visual-testing`, `extract-design-tokens`, `better-auth-patterns`, `continuous-review-loop`, `mastra-agent-framework`, `mermaid-design-generator`, `nx-monorepo-architect`).
+- [x] Subtask 20.2: Enforce Dual Matrix Parity across `.md` and `.csv` editions (741 lines MD, 608 rows CSV).
+- [x] Subtask 20.3: Sync live GitHub telemetry across 95 upstream repositories.
+- [x] Subtask 20.4: Update `index.html` hero counters (308+ skills, 95 frameworks, 4.6M+ stars) and `nameKeyMap` bindings.
+- [x] Subtask 20.5: Verify Layer 15 governance, test gates, and push to origin main.
+
 
 
 

@@ -54,6 +54,11 @@ fastify-backend-perf,"Fastify Backend Architecture",P1,/fastify-backend-perf,"Hi
 vercel-agent-browser,"Vercel Agent Browser",P1,/vercel-agent-browser,"Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation."
 github-copilot-patterns,"GitHub Copilot Patterns",P1,/github-copilot-patterns,"Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows."
 brag-document-generator,"Brag Document Generator",P1,/brag-document-generator,"Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation."
+firecrawl-web-scrape,"Firecrawl Web Scraper",P1,/firecrawl-web-scrape,"Clean LLM-ready markdown extraction, dynamic JS crawler, and structured data parsing."
+convex-backend-sync,"Convex Backend State Sync",P1,/convex-backend-sync,"Convex reactive database queries, transactional mutations, client state sync, and scheduled jobs."
+scrapegraph-ai-pipeline,"ScrapeGraphAI Pipeline",P1,/scrapegraph-ai-pipeline,"Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining."
+better-auth-patterns,"Better Auth Identity & 2FA",P1,/better-auth-patterns,"Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC."
+nx-monorepo-architect,"Nx Monorepo Architecture",P1,/nx-monorepo-architect,"Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,
@@ -173,6 +178,7 @@ component-anatomy-specs,"Component Anatomy Specs",P1,/component-anatomy-specs,"D
 data-viz-html-reports,"Data Viz & HTML Reports",P1,/data-viz-html-reports,"Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports."
 interface-feel-polish,"Interface Feel & Tactile Physics",P1,/interface-feel-polish,"Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback."
 stageshow-ui-presentation,"Stageshow UI Presentation",P1,/stageshow-ui-presentation,"Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges."
+extract-design-tokens,"Design Token Extractor",P1,/extract-design-tokens,"Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites."
 06 GSD,,
 Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
 Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
@@ -263,6 +269,7 @@ browser-use,P0,"Autonomous web automation and browser agent controller enabling 
 orca-agent,P0,"Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously.",https://github.com/stablyai/orca,https://useorca.com/
 herdr-orchestration,"Herdr Multi-Agent Orchestration",P1,/herdr-orchestration,"Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination."
 agent-desktop-gui,"Agent Desktop GUI",P1,/agent-desktop-gui,"Native desktop agent orchestration, operating system window management, and GUI interaction."
+mastra-agent-framework,"Mastra Agent Framework",P1,/mastra-agent-framework,"Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals."
 10 AI Infrastructure,,,,Research
 Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
 Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
@@ -320,6 +327,8 @@ web-quality-a11y,P0,"Addy Osmani's web accessibility (a11y), Core Web Vitals opt
 hallmark-frontend-eval,"Hallmark Frontend Evaluation",P1,/hallmark-frontend-eval,"Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment."
 browser-act-testing,"Browser Act Synthetic Testing",P1,/browser-act-testing,"Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing."
 network-latency-benchmarks,"Network Latency Benchmarks",P1,/network-latency-benchmarks,"Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking."
+continuous-review-loop,"Continuous Review Loop",P1,/continuous-review-loop,"Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops."
+momentic-visual-testing,"Momentic Visual Testing",P1,/momentic-visual-testing,"AI-driven visual regression testing, session replay analysis, and automated test failure triage."
 12 Optional Specialized,,
 Google Maps Platform documentation:,https://developers.google.com/maps,
 Google Maps GitHub organization:,https://github.com/googlemaps,
