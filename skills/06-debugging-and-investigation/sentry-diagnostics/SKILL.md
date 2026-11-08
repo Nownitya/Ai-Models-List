@@ -75,3 +75,4 @@ sentry-cli releases finalize "v1.4.0"
 * **Anti-Pattern:** Leaking sensitive PII (passwords, auth tokens, credit cards) into error event breadcrumbs.
 * **Anti-Pattern:** Blindly setting `traces_sample_rate=1.0` in high-throughput production without budgeting.
 * **Anti-Pattern:** Ignoring source map verification, leaving production errors unreadable.
+

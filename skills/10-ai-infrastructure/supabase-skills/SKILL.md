@@ -85,3 +85,4 @@ const { data, error } = await supabase
 
 * **Anti-Pattern:** Leaving tables without Row-Level Security enabled (`ALTER TABLE ... ENABLE ROW LEVEL SECURITY`), exposing data to the public anon key.
 * **Anti-Pattern:** Running schema modifications directly in the web dashboard SQL editor without committing version-controlled migration files.
+

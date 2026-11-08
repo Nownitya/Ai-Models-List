@@ -82,3 +82,4 @@ npx wrangler deploy
 
 * **Anti-Pattern:** Attempting to use Node.js native binary C++ add-ons on the V8 edge runtime without polyfills.
 * **Anti-Pattern:** Committing raw API secrets or private tokens in `wrangler.toml` instead of using `wrangler secret put`.
+

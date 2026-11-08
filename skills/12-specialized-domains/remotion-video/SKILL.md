@@ -86,3 +86,4 @@ npx remotion render src/index.ts TitleSequence out/video.mp4
 
 * **Anti-Pattern:** Using non-deterministic values (e.g. `Math.random()` or `Date.now()`) during frame rendering without seeded PRNG.
 * **Anti-Pattern:** Relying on unbuffered external network video assets during high-speed parallel rendering passes.
+

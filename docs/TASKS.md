@@ -26,6 +26,7 @@
 | **TASK-013** | Catalog Expansion | Add addyosmani/agent-skills, tt-a1i/archify, Egonex-AI/Understand-Anything, juliusbrussee/caveman, ComposioHQ/awesome-claude-skills | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 | **TASK-014** | Catalog Quality Pruning | Remove Adelo31/omniroute (0★), kytheros/strata (1★, stalled), and coderabbitai/antigravity-plugin (subsumed) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py` |
 | **TASK-015** | Catalog Expansion (Batch 1) | Add 11 Tier 1 high-star repos from skills.sh (browser-use, shadcn, orca, sentry, turborepo, vercel-ai, playwright, remotion, cloudflare, supabase, azure) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-016** | Catalog Expansion (Batch 2) | Add 10 Tier 1 high-star repos from skills.sh (emilkowalski, kepano, vercel-labs/skills, vercel-labs/agent-skills, googleworkspace, greensock, trailofbits, expo, addyosmani, stripe) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 
 ---
 
@@ -87,6 +88,20 @@
 - [x] Subtask 14.4: Enforce Dual Matrix Parity across `.md` and `.csv` editions (Law 1).
 - [x] Subtask 14.5: Re-synchronize GitHub telemetry across 39 verified repositories (Law 1/Live Stats).
 - [x] Subtask 14.6: Update web dashboard bento telemetry and pass full test suite.
+
+### TASK-015: Catalog Expansion (Batch 1 High-Star Repositories)
+- [x] Subtask 15.1: Create 11 standardized Law 2 `SKILL.md` packages (`browser-use`, `shadcn-ui`, `orca-agent`, `sentry-diagnostics`, `turborepo`, `vercel-ai-sdk`, `playwright-cli`, `remotion-video`, `cloudflare-skills`, `supabase-skills`, `azure-skills`).
+- [x] Subtask 15.2: Enforce Dual Matrix Parity across `.md` and `.csv` editions (650 lines MD, 530 rows CSV).
+- [x] Subtask 15.3: Sync live GitHub telemetry across 50 upstream repositories (3.82M+ community stars).
+- [x] Subtask 15.4: Bind `nameKeyMap` in `index.html` and update hero bento telemetry counters.
+- [x] Subtask 15.5: Run full verification test suite and push to origin main.
+
+### TASK-016: Catalog Expansion (Batch 2 High-Star Repositories)
+- [x] Subtask 16.1: Author 10 standardized Law 2 `SKILL.md` packages (`emil-design-eng`, `obsidian-markdown`, `find-skills`, `vercel-react-patterns`, `google-workspace-cli`, `gsap-animation`, `trailofbits-security`, `expo-mobile`, `web-quality-a11y`, `stripe-payments`).
+- [x] Subtask 16.2: Enforce Dual Matrix Parity across `.md` and `.csv` editions (670 lines MD, 549 rows CSV).
+- [x] Subtask 16.3: Sync live GitHub telemetry across 60 upstream repositories (4.06M+ community stars).
+- [x] Subtask 16.4: Update `index.html` hero counters (273+ skills, 60 frameworks, 4.0M+ stars) and `nameKeyMap` bindings.
+- [x] Subtask 16.5: Verify Layer 15 governance, test gates, and push to origin main.
 
 
 

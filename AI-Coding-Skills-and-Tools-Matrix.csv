@@ -46,6 +46,8 @@ prototype,P1,Validate ideas and technical approaches before full implementation.
 scaffold-exercises,P3,Create guided implementation exercises.
 karpathy-guidelines,P1,"Third-party Karpathy-inspired behavioral guidelines: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Promotes explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria. Includes a portable Agent Skill; README documents Claude Code plugin and Cursor rule. Not an official Andrej Karpathy project."
 playwright-cli,P0,"End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.",https://github.com/microsoft/playwright-cli,https://playwright.dev/
+obsidian-markdown,P0,"Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows.",https://github.com/kepano/obsidian-skills,https://stephango.com/file-over-app
+google-workspace-cli,P1,"Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically.",https://github.com/googleworkspace/cli,https://developers.google.com/workspace
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,
@@ -117,6 +119,7 @@ display-glasses-with-jetpack-compose-glimmer,P3,Build projected Android XR apps 
 projected-hardware,P3,Access projected Android XR hardware such as cameras and microphones.
 ink-app-builder,P2,"Build freehand drawing surfaces with Jetpack Ink and Compose, including stylus input, erasing and persistence."
 ink-custom-brush-builder,P3,"Create custom Jetpack Ink BrushFamily styles, tips, textures and dynamic brush behaviors."
+expo-mobile,P1,"Official Expo React Native mobile development workflows, custom dev clients, native module configuration, and OTA update pipelines.",https://github.com/expo/skills,https://expo.dev/
 04 Kotlin KMP,,
 Kotlin / Swift documentation:,https://kotlinlang.org/docs/home.html | https://www.swift.org/documentation/,
 Kotlin Agent Skills repository:,https://github.com/Kotlin/kotlin-agent-skills,
@@ -155,6 +158,9 @@ prototype,P1,Explore different UI concepts before implementation.
 design-consultation,P2,Develop design systems and design direction.
 Impeccable capability note,Reference,"24 design commands covering steering, critique/audit, finish/polish and planning/context setup; supports many coding agents including Antigravity per repository README. Hook availability varies by host; the detector can also run in terminal/CI."
 shadcn-ui,P0,"Accessible, composable Tailwind CSS and Radix UI component library patterns for architecting production-grade design systems and user interfaces.",https://github.com/shadcn/ui,https://ui.shadcn.com/
+emil-design-eng,P0,"Emil Kowalski's Apple-grade design engineering, fluid micro-interactions, animation vocabulary, gesture physics, and craft polish.",https://github.com/emilkowalski/skills,https://emilkowal.ski/
+vercel-react-patterns,P0,"Vercel Labs production React composition patterns, Server Components architecture, web design guidelines, and performance practices.",https://github.com/vercel-labs/agent-skills,https://vercel.com/
+gsap-animation,P1,"GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion.",https://github.com/greensock/gsap-skills,https://gsap.com/
 06 GSD,,
 Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
 Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
@@ -294,6 +300,8 @@ verification-before-completion,P0,"Run builds, tests and checks before declaring
 setup-pre-commit,P1,Catch formatting and quality issues before commits.
 Verification note,"CodeRabbit is a review service/integration, not a general-purpose coding skill. Check pricing, permissions and repository access.",
 sentry-diagnostics,P0,"Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents.",https://github.com/getsentry/sentry,https://sentry.io/
+trailofbits-security,P0,"Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification.",https://github.com/trailofbits/skills,https://www.trailofbits.com/
+web-quality-a11y,P0,"Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering.",https://github.com/addyosmani/web-quality-skills,https://addyosmani.com/
 12 Optional Specialized,,
 Google Maps Platform documentation:,https://developers.google.com/maps,
 Google Maps GitHub organization:,https://github.com/googlemaps,
@@ -392,6 +400,17 @@ remotion-video,https://www.remotion.dev/,https://github.com/remotion-dev/skills,
 cloudflare-skills,https://developers.cloudflare.com/workers/,https://github.com/cloudflare/skills,"Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars)."
 supabase-skills,https://supabase.com/docs,https://github.com/supabase/agent-skills,"Supabase Postgres database best practices, pgvector, and auth workflows (3k+ stars)."
 azure-skills,https://azure.microsoft.com/,https://github.com/microsoft/azure-skills,"Microsoft Azure cloud migration, AKS, AI Foundry, and diagnostics (1.6k+ stars)."
+emil-design-eng,https://emilkowal.ski/,https://github.com/emilkowalski/skills,"Apple design engineering, fluid micro-interactions, and animation vocabulary (54k+ stars)."
+obsidian-markdown,https://stephango.com/file-over-app,https://github.com/kepano/obsidian-skills,"Obsidian markdown architecture, file-over-app principles, and knowledge bases (50k+ stars)."
+find-skills,https://skills.sh/,https://github.com/vercel-labs/skills,Vercel Labs canonical skill discovery engine for agent skill catalogs (38k+ stars).
+vercel-react-patterns,https://vercel.com/,https://github.com/vercel-labs/agent-skills,"Vercel React composition patterns, Server Components, and web design guidelines (33k+ stars)."
+google-workspace-cli,https://developers.google.com/workspace,https://github.com/googleworkspace/cli,"Google Workspace agent automation CLI for Gmail, Drive, Docs, and Sheets (32k+ stars)."
+gsap-animation,https://gsap.com/,https://github.com/greensock/gsap-skills,GreenSock GSAP professional timeline sequencing and ScrollTrigger motion (18k+ stars).
+trailofbits-security,https://www.trailofbits.com/,https://github.com/trailofbits/skills,"Trail of Bits high-assurance code security, sharp edges, and supply-chain auditing (8k+ stars)."
+expo-mobile,https://expo.dev/,https://github.com/expo/skills,Official Expo React Native mobile development workflows and dev clients (4k+ stars).
+web-quality-a11y,https://addyosmani.com/,https://github.com/addyosmani/web-quality-skills,"Addy Osmani web accessibility (a11y), Core Web Vitals, and quality engineering (3k+ stars)."
+stripe-payments,P0,"Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades.",https://github.com/stripe/ai,https://stripe.com/docs
+stripe-payments,https://stripe.com/docs,https://github.com/stripe/ai,"Official Stripe payment integrations, Checkout sessions, and subscription lifecycles (2k+ stars)."
 15 Universal Project Documentation Standard,,,,
 Purpose:,Reusable documentation baseline for software projects built by humans and AI agents.,,,
 Operating principle:,Create only applicable documents; keep every document synchronized with implementation and verified evidence.,,,

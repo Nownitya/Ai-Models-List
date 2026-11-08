@@ -56,3 +56,4 @@ orca run "Refactor authentication middleware to use JWT with RS256 signing and v
 
 * **Anti-Pattern:** Running destructive commands (e.g. `rm -rf`, `DROP TABLE`) without interactive user confirmation.
 * **Anti-Pattern:** Running multi-agent loops without intermediate verification gates or test suites.
+

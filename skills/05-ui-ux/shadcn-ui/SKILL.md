@@ -82,3 +82,4 @@ export function ActionDialog() {
 * **Anti-Pattern:** Overriding component classes with arbitrary CSS declarations instead of extending `cn()` utility variants.
 * **Anti-Pattern:** Breaking accessibility by omitting `DialogTitle` or accessible description tags inside modals.
 * **Anti-Pattern:** Treating components as an immutable npm black box rather than owning and tailoring the source in your repo.
+

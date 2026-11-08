@@ -86,6 +86,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | scaffold-exercises | P3 | Create guided implementation exercises. |
 | karpathy-guidelines | P1 | Third-party Karpathy-inspired principles: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Encourages explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria; includes a portable Agent Skill plus documented Claude Code and Cursor integrations. |
 | playwright-cli | P0 | End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit. |
+| obsidian-markdown | P0 | Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows. |
+| google-workspace-cli | P1 | Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically. |
 
 
 ## 02 Matt Pocock
@@ -164,6 +166,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | projected-hardware | P3 | Access projected Android XR hardware such as cameras and microphones. |
 | ink-app-builder | P2 | Build freehand drawing surfaces with Jetpack Ink and Compose, including stylus input, erasing and persistence. |
 | ink-custom-brush-builder | P3 | Create custom Jetpack Ink BrushFamily styles, tips, textures and dynamic brush behaviors. |
+| expo-mobile | P1 | Official Expo React Native mobile development workflows, custom dev clients, native module configuration, and OTA update pipelines. |
+
 
 ## 04 Kotlin KMP
 
@@ -209,6 +213,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | design-consultation | P2 | Develop design systems and design direction. |
 | Impeccable capability note | Reference | 24 design commands covering steering, critique/audit, finish/polish and planning/context setup; supports many coding agents including Antigravity per repository README. Hook availability varies by host; the detector can also run in terminal/CI. |
 | shadcn-ui | P0 | Accessible, composable Tailwind CSS and Radix UI component library patterns for architecting production-grade design systems and user interfaces. |
+| emil-design-eng | P0 | Emil Kowalski's Apple-grade design engineering, fluid micro-interactions, animation vocabulary, gesture physics, and craft polish. |
+| vercel-react-patterns | P0 | Vercel Labs production React composition patterns, Server Components architecture, web design guidelines, and performance practices. |
+| gsap-animation | P1 | GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion. |
 
 
 ## 06 GSD
@@ -371,6 +378,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | setup-pre-commit | P1 | Catch formatting and quality issues before commits. |
 | Verification note | CodeRabbit is a review service/integration, not a general-purpose coding skill. Check pricing, permissions and repository access. |  |
 | sentry-diagnostics | P0 | Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents. |
+| trailofbits-security | P0 | Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification. |
+| web-quality-a11y | P0 | Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering. |
 
 
 ## 12 Optional Specialized
@@ -407,6 +416,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | dak-setup | P3 | Specialized environment setup. |
 | graphify | P2 | Visualize codebase relationships. |
 | remotion-video | P1 | Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering. |
+| stripe-payments | P0 | Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades. |
 
 
 ## 13 Priority Summary
@@ -484,6 +494,16 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | cloudflare-skills | https://developers.cloudflare.com/workers/ | https://github.com/cloudflare/skills | Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars). |
 | supabase-skills | https://supabase.com/docs | https://github.com/supabase/agent-skills | Supabase Postgres database best practices, pgvector, and auth workflows (3k+ stars). |
 | azure-skills | https://azure.microsoft.com/ | https://github.com/microsoft/azure-skills | Microsoft Azure cloud migration, AKS, AI Foundry, and diagnostics (1.6k+ stars). |
+| emil-design-eng | https://emilkowal.ski/ | https://github.com/emilkowalski/skills | Apple design engineering, fluid micro-interactions, and animation vocabulary (54k+ stars). |
+| obsidian-markdown | https://stephango.com/file-over-app | https://github.com/kepano/obsidian-skills | Obsidian markdown architecture, file-over-app principles, and knowledge bases (50k+ stars). |
+| find-skills | https://skills.sh/ | https://github.com/vercel-labs/skills | Vercel Labs canonical skill discovery engine for agent skill catalogs (38k+ stars). |
+| vercel-react-patterns | https://vercel.com/ | https://github.com/vercel-labs/agent-skills | Vercel React composition patterns, Server Components, and web design guidelines (33k+ stars). |
+| google-workspace-cli | https://developers.google.com/workspace | https://github.com/googleworkspace/cli | Google Workspace agent automation CLI for Gmail, Drive, Docs, and Sheets (32k+ stars). |
+| gsap-animation | https://gsap.com/ | https://github.com/greensock/gsap-skills | GreenSock GSAP professional timeline sequencing and ScrollTrigger motion (18k+ stars). |
+| trailofbits-security | https://www.trailofbits.com/ | https://github.com/trailofbits/skills | Trail of Bits high-assurance code security, sharp edges, and supply-chain auditing (8k+ stars). |
+| expo-mobile | https://expo.dev/ | https://github.com/expo/skills | Official Expo React Native mobile development workflows and dev clients (4k+ stars). |
+| web-quality-a11y | https://addyosmani.com/ | https://github.com/addyosmani/web-quality-skills | Addy Osmani web accessibility (a11y), Core Web Vitals, and quality engineering (3k+ stars). |
+| stripe-payments | https://stripe.com/docs | https://github.com/stripe/ai | Official Stripe payment integrations, Checkout sessions, and subscription lifecycles (2k+ stars). |
 
 
 ## 15 Universal Project Documentation Standard

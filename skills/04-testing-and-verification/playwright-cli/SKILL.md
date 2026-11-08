@@ -77,3 +77,4 @@ npx playwright codegen http://localhost:3000
 
 * **Anti-Pattern:** Using manual timeouts (`await page.waitForTimeout(5000)`) instead of locator-based web assertions (`await expect(locator).toBeVisible()`).
 * **Anti-Pattern:** Writing tests dependent on order of execution or shared test state.
+

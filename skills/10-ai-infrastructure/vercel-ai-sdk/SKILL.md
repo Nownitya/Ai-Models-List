@@ -86,3 +86,4 @@ const { object } = await generateObject({
 
 * **Anti-Pattern:** Buffering full responses on the server instead of streaming tokens to the client.
 * **Anti-Pattern:** Passing unsanitized user prompts to tools without input validation.
+

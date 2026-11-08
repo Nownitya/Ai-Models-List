@@ -69,3 +69,4 @@ asyncio.run(main())
 * **Anti-Pattern:** Attempting to click elements without waiting for DOM hydration or network idle.
 * **Anti-Pattern:** Hardcoding fragile XPath selectors instead of relying on accessibility trees or text matching.
 * **Warning:** Never bypass authentication walls or CAPTCHAs programmatically; respect rate limits and terms of service.
+

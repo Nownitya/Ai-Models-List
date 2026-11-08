@@ -84,3 +84,4 @@ print(response.choices[0].message.content)
 
 * **Anti-Pattern:** Storing Azure connection strings or client secrets in plain text instead of using Azure Key Vault and Managed Identities.
 * **Anti-Pattern:** Deploying production AKS clusters without multi-availability zone redundancy.
+
