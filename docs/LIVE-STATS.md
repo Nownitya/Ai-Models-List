@@ -1,6 +1,6 @@
 # Live Upstream Skills Radar
 
-> **Last Synchronized:** `2026-11-08 02:27:25Z` | **Tracked Repositories:** `53`
+> **Last Synchronized:** `2026-11-08 02:31:16Z` | **Tracked Repositories:** `53`
 
 Real-time tracking of community engagement, release versions, and maintenance activity across all upstream AI coding skill repositories.
 
@@ -46,7 +46,7 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 38 | [twostraws/SwiftUI-Agent-Skill](https://github.com/twostraws/SwiftUI-Agent-Skill) | **⭐ 6.5k** | `2.0.0` | `MIT` | 2026-10-26 | ![Stars](https://img.shields.io/github/stars/twostraws/SwiftUI-Agent-Skill?style=flat&label=stars) |
 | 39 | [google/agents-cli](https://github.com/google/agents-cli) | **⭐ 6.3k** | `v1.13.0` | `Apache-2.0` | 2026-11-04 | ![Stars](https://img.shields.io/github/stars/google/agents-cli?style=flat&label=stars) |
 | 40 | [microsoft/TokenEconomizer](https://github.com/microsoft/TokenEconomizer) | **⭐ 5.0k** | `v0.1.0` | `Apache-2.0` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/microsoft/TokenEconomizer?style=flat&label=stars) |
-| 41 | [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) | **⭐ 4.6k** | `v0.1.213` | `Other` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/ranxianglei/billion-context?style=flat&label=stars) |
+| 41 | [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) | **⭐ 4.7k** | `v0.1.213` | `Other` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/ranxianglei/billion-context?style=flat&label=stars) |
 | 42 | [googleapis/python-genai](https://github.com/googleapis/python-genai) | **⭐ 4.1k** | `v3.0.0` | `Apache-2.0` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/googleapis/python-genai?style=flat&label=stars) |
 | 43 | [AvdLee/SwiftUI-Agent-Skill](https://github.com/AvdLee/SwiftUI-Agent-Skill) | **⭐ 3.9k** | `5.3.0` | `MIT` | 2026-11-06 | ![Stars](https://img.shields.io/github/stars/AvdLee/SwiftUI-Agent-Skill?style=flat&label=stars) |
 | 44 | [cloudflare/skills](https://github.com/cloudflare/skills) | **⭐ 3.3k** | `latest` | `Apache-2.0` | 2026-11-06 | ![Stars](https://img.shields.io/github/stars/cloudflare/skills?style=flat&label=stars) |
