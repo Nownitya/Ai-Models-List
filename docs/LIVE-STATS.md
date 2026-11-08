@@ -1,6 +1,6 @@
 # Live Upstream Skills Radar
 
-> **Last Synchronized:** `2026-11-08 06:11:13Z` | **Tracked Repositories:** `98`
+> **Last Synchronized:** `2026-11-08 06:13:34Z` | **Tracked Repositories:** `98`
 
 Real-time tracking of community engagement, release versions, and maintenance activity across all upstream AI coding skill repositories.
 
@@ -16,7 +16,7 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 |  8 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | **⭐ 144k** | `v1.0.0` | `Apache-2.0` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/Graphify-Labs/graphify?style=flat&label=stars) |
 |  9 | [garrytan/gstack](https://github.com/garrytan/gstack) | **⭐ 141k** | `v1.97.0.0` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars) |
 | 10 | [openai/codex](https://github.com/openai/codex) | **⭐ 134k** | `winget-test-rust-v0.106.0-alpha.9` | `Apache-2.0` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/openai/codex?style=flat&label=stars) |
-| 11 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | **⭐ 128k** | `shadcn-ui@0.9.4` | `MIT` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/shadcn-ui/ui?style=flat&label=stars) |
+| 11 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | **⭐ 128k** | `shadcn-ui@0.9.4` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/shadcn-ui/ui?style=flat&label=stars) |
 | 12 | [browser-use/browser-use](https://github.com/browser-use/browser-use) | **⭐ 120k** | `0.13.14` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/browser-use/browser-use?style=flat&label=stars) |
 | 13 | [stablyai/orca](https://github.com/stablyai/orca) | **⭐ 119k** | `v1.4.253` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/stablyai/orca?style=flat&label=stars) |
 | 14 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | **⭐ 118k** | `v4.1.0` | `Apache-2.0` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&label=stars) |
