@@ -111,16 +111,16 @@ export const CommandPalette: React.FC = () => {
         </div>
 
         {/* Quick Action Chips */}
-        <div className="px-4 py-2 bg-[#08090a] border-b border-[#21262d] flex items-center gap-2 overflow-x-auto text-[11px]">
-          <span className="text-slate-500 uppercase font-bold text-[9px] shrink-0">Quick Jumps:</span>
+        <div className="px-4 py-2.5 bg-[#08090a] border-b border-[#21262d] flex items-center gap-2.5 overflow-x-auto text-xs">
+          <span className="text-slate-400 uppercase font-bold text-xs shrink-0">Quick Jumps:</span>
           <button
             onClick={() => {
               setPriority('P0')
               setCommandPaletteOpen(false)
             }}
-            className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#161b22] text-red-300 border border-red-500/30 hover:border-red-500/60 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#161b22] text-red-300 border border-red-500/30 hover:border-red-500/60 cursor-pointer font-semibold"
           >
-            <Sparkles className="w-3 h-3 text-red-400" />
+            <Sparkles className="w-3.5 h-3.5 text-red-400" />
             <span>P0 Critical</span>
           </button>
           <button
@@ -128,9 +128,9 @@ export const CommandPalette: React.FC = () => {
               setEcosystem('android')
               setCommandPaletteOpen(false)
             }}
-            className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-slate-500 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#161b22] text-slate-200 border border-[#30363d] hover:border-slate-500 cursor-pointer font-semibold"
           >
-            <Smartphone className="w-3 h-3 text-cyan-400" />
+            <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
             <span>Android Stack</span>
           </button>
           <button
@@ -138,9 +138,9 @@ export const CommandPalette: React.FC = () => {
               setEcosystem('gsd')
               setCommandPaletteOpen(false)
             }}
-            className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#161b22] text-slate-300 border border-[#30363d] hover:border-slate-500 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#161b22] text-slate-200 border border-[#30363d] hover:border-slate-500 cursor-pointer font-semibold"
           >
-            <Zap className="w-3 h-3 text-amber-400" />
+            <Zap className="w-3.5 h-3.5 text-amber-400" />
             <span>GSD Engine</span>
           </button>
         </div>
@@ -148,7 +148,7 @@ export const CommandPalette: React.FC = () => {
         {/* Results List */}
         <div className="max-h-80 overflow-y-auto p-2">
           {results.length === 0 ? (
-            <div className="py-8 text-center text-xs text-slate-500">
+            <div className="py-8 text-center text-sm text-slate-400">
               No matching skills found for "{query}".
             </div>
           ) : (
@@ -160,31 +160,31 @@ export const CommandPalette: React.FC = () => {
                   key={skill.uniqueId}
                   onClick={() => handleSelectSkill(skill)}
                   onMouseEnter={() => setSelectedIndex(index)}
-                  className={`flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-xs cursor-pointer transition-colors ${
+                  className={`flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-lg text-sm cursor-pointer transition-colors ${
                     isSelected ? 'bg-[#161b22] text-white' : 'text-slate-300 hover:bg-[#161b22]/50'
                   }`}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
                     <span
-                      className={`text-[9px] font-bold px-1.5 py-0.5 rounded border shrink-0 ${
+                      className={`text-xs font-bold px-2 py-0.5 rounded border shrink-0 ${
                         skill.priority === 'P0'
                           ? 'bg-red-950 text-red-300 border-red-500/40'
-                          : 'bg-slate-800 text-slate-400 border-slate-700'
+                          : 'bg-slate-800 text-slate-300 border-slate-700'
                       }`}
                     >
                       {skill.priority}
                     </span>
-                    <span className="font-semibold truncate">{skill.name}</span>
-                    <span className="text-[10px] font-mono text-cyan-400 truncate">
+                    <span className="font-semibold text-slate-100 truncate">{skill.name}</span>
+                    <span className="text-xs font-mono text-cyan-400 truncate">
                       /{skill.scoped}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-[10px] text-slate-500 hidden sm:inline">
+                    <span className="text-xs text-slate-400 hidden sm:inline">
                       {skill.categoryLabel}
                     </span>
-                    {isSelected && <CornerDownLeft className="w-3.5 h-3.5 text-slate-400" />}
+                    {isSelected && <CornerDownLeft className="w-4 h-4 text-slate-400" />}
                   </div>
                 </div>
               )
@@ -193,14 +193,14 @@ export const CommandPalette: React.FC = () => {
         </div>
 
         {/* Footer info */}
-        <div className="px-4 py-2 bg-[#08090a] border-t border-[#21262d] flex items-center justify-between text-[10px] text-slate-500">
+        <div className="px-4 py-2.5 bg-[#08090a] border-t border-[#21262d] flex items-center justify-between text-xs text-slate-400">
           <div className="flex items-center gap-3">
             <span>
-              Use <kbd className="font-mono bg-[#161b22] px-1 py-0.5 rounded border border-[#30363d]">↑</kbd>{' '}
-              <kbd className="font-mono bg-[#161b22] px-1 py-0.5 rounded border border-[#30363d]">↓</kbd> to navigate
+              Use <kbd className="font-mono bg-[#161b22] px-1.5 py-0.5 rounded border border-[#30363d]">↑</kbd>{' '}
+              <kbd className="font-mono bg-[#161b22] px-1.5 py-0.5 rounded border border-[#30363d]">↓</kbd> to navigate
             </span>
             <span>
-              Press <kbd className="font-mono bg-[#161b22] px-1 py-0.5 rounded border border-[#30363d]">↵</kbd> to inspect
+              Press <kbd className="font-mono bg-[#161b22] px-1.5 py-0.5 rounded border border-[#30363d]">↵</kbd> to inspect
             </span>
           </div>
           <span>SkillDock v2.0</span>

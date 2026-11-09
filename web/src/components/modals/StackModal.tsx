@@ -88,11 +88,11 @@ export const StackModal: React.FC = () => {
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-[#21262d]">
           <div>
-            <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <Terminal className="w-4 h-4 text-cyan-400" />
+            <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              <Terminal className="w-5 h-5 text-cyan-400" />
               <span>SkillDock Agent Stack ({stack.length})</span>
             </h2>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-sm text-slate-300 mt-1">
               Curate your custom engineering stack, then export to Markdown, Obsidian Second Brain, or CLI scripts.
             </p>
           </div>
@@ -107,30 +107,30 @@ export const StackModal: React.FC = () => {
         {/* Stack Items List */}
         <div className="flex-1 overflow-y-auto space-y-2 pr-1">
           {stack.length === 0 ? (
-            <div className="text-center py-12 text-slate-500 text-xs">
+            <div className="text-center py-12 text-slate-400 text-sm">
               Your stack is currently empty. Click the bookmark icon on any skill card or row to add it here.
             </div>
           ) : (
             stack.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-[#08090a] border border-[#21262d] text-xs"
+                className="flex items-center justify-between gap-3 p-3 rounded-lg bg-[#08090a] border border-[#21262d] text-sm"
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#161b22] text-slate-300 border border-[#30363d]">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#161b22] text-slate-200 border border-[#30363d]">
                     {item.priority}
                   </span>
-                  <span className="font-semibold text-slate-200 truncate">{item.name}</span>
-                  <span className="text-[11px] font-mono text-cyan-400 truncate">/{item.scoped}</span>
+                  <span className="font-semibold text-slate-100 truncate">{item.name}</span>
+                  <span className="text-xs font-mono text-cyan-400 truncate">/{item.scoped}</span>
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={() => removeFromStack(item.id)}
-                    className="p-1 rounded text-slate-500 hover:text-red-400 hover:bg-[#161b22] transition-colors cursor-pointer"
+                    className="p-1.5 rounded text-slate-400 hover:text-red-400 hover:bg-[#161b22] transition-colors cursor-pointer"
                     title="Remove from stack"
                   >
-                    <Trash2 className="w-3.5 h-3.5" />
+                    <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -140,36 +140,36 @@ export const StackModal: React.FC = () => {
 
         {/* Footer Actions */}
         {stack.length > 0 && (
-          <div className="pt-3 border-t border-[#21262d] flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div className="pt-3.5 border-t border-[#21262d] flex flex-wrap items-center justify-between gap-2.5 text-sm">
             <button
               onClick={clearStack}
-              className="text-xs text-red-400 hover:text-red-300 font-semibold px-2 py-1.5 rounded hover:bg-red-950/30 transition-colors cursor-pointer"
+              className="text-sm text-red-400 hover:text-red-300 font-semibold px-2.5 py-1.5 rounded hover:bg-red-950/30 transition-colors cursor-pointer"
             >
               Clear All ({stack.length})
             </button>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <button
                 onClick={copyInstallScript}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-slate-200 border border-[#30363d] cursor-pointer transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-slate-200 border border-[#30363d] cursor-pointer transition-colors text-sm font-semibold"
               >
-                {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {copiedScript ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 <span>Copy Batch Script</span>
               </button>
 
               <button
                 onClick={downloadObsidianNote}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-950/50 hover:bg-purple-900/50 text-purple-300 border border-purple-800/50 cursor-pointer transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-950/50 hover:bg-purple-900/50 text-purple-300 border border-purple-800/50 cursor-pointer transition-colors text-sm font-semibold"
               >
-                <Diamond className="w-3.5 h-3.5" />
+                <Diamond className="w-4 h-4" />
                 <span>Obsidian Note</span>
               </button>
 
               <button
                 onClick={downloadMarkdown}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold cursor-pointer transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold cursor-pointer transition-colors text-sm"
               >
-                <Download className="w-3.5 h-3.5" />
+                <Download className="w-4 h-4" />
                 <span>Export Markdown</span>
               </button>
             </div>

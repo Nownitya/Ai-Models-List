@@ -30,43 +30,43 @@ export const PriorityGuideModal: React.FC = () => {
           </button>
         </div>
 
-        <div className="space-y-3 text-xs">
-          <div className="p-3 rounded-xl bg-red-950/30 border border-red-500/30">
-            <div className="flex items-center gap-2 font-bold text-red-300 text-xs mb-1">
-              <ShieldAlert className="w-3.5 h-3.5 text-red-400" />
+        <div className="space-y-3.5 text-sm">
+          <div className="p-3.5 rounded-xl bg-red-950/30 border border-red-500/30">
+            <div className="flex items-center gap-2 font-bold text-red-300 text-sm mb-1.5">
+              <ShieldAlert className="w-4 h-4 text-red-400" />
               <span>Priority P0 — Critical & Essential Core</span>
             </div>
-            <p className="text-slate-300 leading-relaxed text-[11px]">
+            <p className="text-slate-300 leading-relaxed text-xs sm:text-sm">
               Foundational capabilities required for any safe, production-grade agent loop: TDD, Systematic Debugging, Paranoia Watchdogs, Repository Invariants, and Dual Matrix Parity.
             </p>
           </div>
 
-          <div className="p-3 rounded-xl bg-amber-950/30 border border-amber-500/30">
-            <div className="flex items-center gap-2 font-bold text-amber-300 text-xs mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <div className="p-3.5 rounded-xl bg-amber-950/30 border border-amber-500/30">
+            <div className="flex items-center gap-2 font-bold text-amber-300 text-sm mb-1.5">
+              <Sparkles className="w-4 h-4 text-amber-400" />
               <span>Priority P1 — High Value & Standard Workflow</span>
             </div>
-            <p className="text-slate-300 leading-relaxed text-[11px]">
+            <p className="text-slate-300 leading-relaxed text-xs sm:text-sm">
               High-frequency capabilities that accelerate daily feature delivery: Architecture modeling, Ralph execution loops, Git worktree isolation, and automated PR review gates.
             </p>
           </div>
 
-          <div className="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
-            <div className="flex items-center gap-2 font-bold text-emerald-300 text-xs mb-1">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
+            <div className="flex items-center gap-2 font-bold text-emerald-300 text-sm mb-1.5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               <span>Priority P2 — Medium Value / On-Demand Enablement</span>
             </div>
-            <p className="text-slate-300 leading-relaxed text-[11px]">
+            <p className="text-slate-300 leading-relaxed text-xs sm:text-sm">
               Specialized infrastructure tools activated when the project demands them: Benchmarking harnesses, MemPalace semantic memory, AST graph knowledge generation, and Cloud Database migrations.
             </p>
           </div>
 
-          <div className="p-3 rounded-xl bg-indigo-950/30 border border-indigo-500/30">
-            <div className="flex items-center gap-2 font-bold text-indigo-300 text-xs mb-1">
-              <Bookmark className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="p-3.5 rounded-xl bg-indigo-950/30 border border-indigo-500/30">
+            <div className="flex items-center gap-2 font-bold text-indigo-300 text-sm mb-1.5">
+              <Bookmark className="w-4 h-4 text-indigo-400" />
               <span>Priority P3 — Optional / Specialized Niche</span>
             </div>
-            <p className="text-slate-300 leading-relaxed text-[11px]">
+            <p className="text-slate-300 leading-relaxed text-xs sm:text-sm">
               Framework-specific integrations: Android Media3 Cast, CameraX hardware bridges, Wear OS Compose Material3, and specialized SDK migrations.
             </p>
           </div>
@@ -75,7 +75,7 @@ export const PriorityGuideModal: React.FC = () => {
         <div className="pt-3 border-t border-[#21262d] text-right">
           <button
             onClick={() => setPriorityGuideOpen(false)}
-            className="px-3 py-1.5 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-slate-300 text-xs font-semibold border border-[#30363d] cursor-pointer"
+            className="px-3.5 py-2 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-slate-200 text-sm font-semibold border border-[#30363d] cursor-pointer"
           >
             Understood
           </button>

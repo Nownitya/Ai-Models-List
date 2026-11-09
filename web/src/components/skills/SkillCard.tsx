@@ -41,17 +41,17 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   return (
     <div
       onClick={() => openInspect(skill)}
-      className="bg-[#0d1117] hover:bg-[#111620] border border-[#21262d] hover:border-slate-500 rounded-xl p-4 flex flex-col justify-between transition-colors cursor-pointer h-full relative group"
+      className="bg-[#0d1117] hover:bg-[#111620] border border-[#21262d] hover:border-slate-500 rounded-xl p-4 sm:p-5 flex flex-col justify-between transition-colors cursor-pointer h-full relative group"
     >
       <div>
         {/* Top Header: Category, Priority, Stack Toggle */}
         <div className="flex items-center justify-between gap-2 mb-2.5">
-          <span className="text-[10px] font-mono uppercase font-semibold text-slate-400 truncate max-w-[150px]">
+          <span className="text-xs font-mono uppercase font-semibold text-slate-400 truncate max-w-[170px]">
             {skill.categoryLabel}
           </span>
 
           <div className="flex items-center gap-1.5">
-            <span className={`px-2 py-0.5 rounded text-[10px] font-extrabold border ${priorityBadge}`}>
+            <span className={`px-2.5 py-0.5 rounded text-xs font-extrabold border ${priorityBadge}`}>
               {skill.priority}
             </span>
 
@@ -61,61 +61,61 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
                 toggleStack(skill)
               }}
               title={isSavedInStack ? 'Remove from My Stack' : 'Add to My Stack'}
-              className={`p-1 rounded transition-colors cursor-pointer ${
+              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                 isSavedInStack
                   ? 'bg-cyan-950/60 text-cyan-300 border border-cyan-800'
                   : 'bg-[#161b22] text-slate-400 border border-[#30363d] hover:text-white'
               }`}
             >
-              {isSavedInStack ? <BookmarkCheck className="w-3.5 h-3.5" /> : <Bookmark className="w-3.5 h-3.5" />}
+              {isSavedInStack ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
             </button>
           </div>
         </div>
 
         {/* Skill Name */}
-        <h3 className="text-sm font-bold text-slate-100 group-hover:text-cyan-300 transition-colors mb-1.5">
+        <h3 className="text-base sm:text-lg font-bold text-slate-100 group-hover:text-cyan-300 transition-colors mb-2">
           {skill.name}
         </h3>
 
         {/* Description */}
-        <p className="text-xs text-slate-400 line-clamp-3 mb-3 leading-relaxed">
+        <p className="text-sm text-slate-300 line-clamp-3 mb-4 leading-relaxed">
           {skill.description}
         </p>
       </div>
 
       {/* Footer Info & Actions */}
-      <div className="pt-2.5 border-t border-[#21262d] space-y-2">
+      <div className="pt-3 border-t border-[#21262d] space-y-2.5">
         <div className="flex items-center justify-between gap-2">
           {/* Scoped Slash Command Pill */}
           <button
             onClick={copySlashCommand}
             title="Click to copy slash command"
-            className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#161b22] border border-[#30363d] text-[11px] font-mono text-cyan-300 hover:border-cyan-500/50 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#161b22] border border-[#30363d] text-xs font-mono text-cyan-300 hover:border-cyan-500/50 transition-colors cursor-pointer"
           >
             <span>/{skill.scoped}</span>
-            {copiedSlash ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-slate-500" />}
+            {copiedSlash ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
           </button>
 
           {/* Upstream Stars if available */}
           {skill.stars > 0 && (
-            <span className="flex items-center gap-1 text-[11px] font-bold text-amber-400 shrink-0 font-mono">
-              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+            <span className="flex items-center gap-1 text-xs font-bold text-amber-400 shrink-0 font-mono">
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
               <span>{skill.stars >= 1000 ? `${(skill.stars / 1000).toFixed(0)}k` : skill.stars}</span>
             </span>
           )}
         </div>
 
         {/* Install CLI copy bar */}
-        <div className="flex items-center justify-between gap-1 text-[11px] text-slate-500">
+        <div className="flex items-center justify-between gap-1 text-xs text-slate-400">
           <button
             onClick={copyCliCommand}
             className="inline-flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
           >
-            <span className="text-[10px] text-slate-500 uppercase font-semibold">CLI:</span>
-            <span className="font-mono text-[10px] text-slate-300 truncate max-w-[150px]">
+            <span className="text-[11px] text-slate-500 uppercase font-semibold">CLI:</span>
+            <span className="font-mono text-xs text-slate-300 truncate max-w-[170px]">
               {skill.cli}
             </span>
-            {copiedCli ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-slate-500" />}
+            {copiedCli ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
           </button>
 
           {skill.repo && (
@@ -124,10 +124,10 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-slate-500 hover:text-slate-300 p-1"
+              className="text-slate-400 hover:text-slate-200 p-1"
               title="Open upstream repository"
             >
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
           )}
         </div>

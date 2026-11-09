@@ -31,15 +31,15 @@ export const App: React.FC = () => {
       <FilterToolbar />
 
       {/* 5. Active Results Counter */}
-      <div className="max-w-[1720px] mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-3 flex items-center justify-between text-xs text-slate-400">
+      <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-3 flex items-center justify-between text-sm text-slate-300">
         <span>
           Showing <strong>{filteredSkills.length}</strong> of <strong>{totalSkills}</strong> cataloged skills
-          <span className="text-slate-500 ml-2 font-mono">
+          <span className="text-slate-400 ml-2 font-mono">
             [{viewMode === 'grid' ? 'Grid Cards' : 'Dense Rows'}]
           </span>
         </span>
-        <span className="text-slate-500 hidden sm:inline">
-          Tip: Press <kbd className="px-1.5 py-0.5 rounded bg-[#161b22] text-slate-300 font-mono text-[10px] border border-[#30363d]">/</kbd> to search, <kbd className="px-1.5 py-0.5 rounded bg-[#161b22] text-slate-300 font-mono text-[10px] border border-[#30363d]">⌘K</kbd> for command palette
+        <span className="text-slate-400 hidden sm:inline">
+          Tip: Press <kbd className="px-2 py-0.5 rounded bg-[#161b22] text-slate-200 font-mono text-xs border border-[#30363d]">/</kbd> to search, <kbd className="px-2 py-0.5 rounded bg-[#161b22] text-slate-200 font-mono text-xs border border-[#30363d]">⌘K</kbd> for command palette
         </span>
       </div>
 

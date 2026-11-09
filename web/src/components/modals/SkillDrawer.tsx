@@ -91,22 +91,22 @@ export const SkillDrawer: React.FC = () => {
 
           {/* Skill Title & Description */}
           <div>
-            <h2 className="text-xl font-black text-white tracking-tight mb-2">
+            <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
               {inspectSkill.name}
             </h2>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed">
               {inspectSkill.description}
             </p>
           </div>
 
           {/* Quick-Run Commands */}
-          <div className="space-y-3 bg-[#08090a] p-3.5 rounded-xl border border-[#21262d]">
+          <div className="space-y-3.5 bg-[#08090a] p-4 rounded-xl border border-[#21262d]">
             <div>
-              <div className="flex items-center justify-between text-[11px] font-semibold text-slate-400 mb-1">
+              <div className="flex items-center justify-between text-xs font-semibold text-slate-300 mb-1.5">
                 <span>Slash Command</span>
-                <span className="text-[10px] text-slate-500 font-mono">Agent Chat Trigger</span>
+                <span className="text-xs text-slate-400 font-mono">Agent Chat Trigger</span>
               </div>
-              <div className="flex items-center justify-between gap-2 bg-[#161b22] px-3 py-2 rounded-lg font-mono text-xs text-cyan-300 border border-[#30363d]">
+              <div className="flex items-center justify-between gap-2 bg-[#161b22] px-3.5 py-2.5 rounded-lg font-mono text-sm text-cyan-300 border border-[#30363d]">
                 <span>/{inspectSkill.scoped}</span>
                 <button
                   onClick={copySlash}
@@ -119,11 +119,11 @@ export const SkillDrawer: React.FC = () => {
             </div>
 
             <div>
-              <div className="flex items-center justify-between text-[11px] font-semibold text-slate-400 mb-1">
+              <div className="flex items-center justify-between text-xs font-semibold text-slate-300 mb-1.5">
                 <span>CLI Installation Command</span>
-                <span className="text-[10px] text-slate-500 font-mono">Terminal Executable</span>
+                <span className="text-xs text-slate-400 font-mono">Terminal Executable</span>
               </div>
-              <div className="flex items-center justify-between gap-2 bg-[#161b22] px-3 py-2 rounded-lg font-mono text-xs text-slate-200 border border-[#30363d]">
+              <div className="flex items-center justify-between gap-2 bg-[#161b22] px-3.5 py-2.5 rounded-lg font-mono text-sm text-slate-200 border border-[#30363d]">
                 <span className="truncate">{inspectSkill.cli}</span>
                 <button
                   onClick={copyCli}
@@ -137,9 +137,9 @@ export const SkillDrawer: React.FC = () => {
           </div>
 
           {/* Metadata Specs */}
-          <div className="grid grid-cols-2 gap-3 text-xs">
+          <div className="grid grid-cols-2 gap-3 text-xs sm:text-sm">
             <div className="bg-[#08090a] p-3 rounded-lg border border-[#21262d]">
-              <span className="text-slate-500 text-[10px] uppercase font-bold block mb-1">Upstream Repo</span>
+              <span className="text-slate-400 text-xs uppercase font-bold block mb-1">Upstream Repo</span>
               {inspectSkill.repo ? (
                 <a
                   href={`https://github.com/${inspectSkill.repo}`}
@@ -148,33 +148,33 @@ export const SkillDrawer: React.FC = () => {
                   className="text-cyan-400 hover:underline flex items-center gap-1 font-mono text-xs truncate"
                 >
                   <span className="truncate">{inspectSkill.repo}</span>
-                  <ExternalLink className="w-3 h-3 shrink-0" />
+                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                 </a>
               ) : (
-                <span className="text-slate-500 font-mono">Internal Spec</span>
+                <span className="text-slate-400 font-mono">Internal Spec</span>
               )}
             </div>
 
             <div className="bg-[#08090a] p-3 rounded-lg border border-[#21262d]">
-              <span className="text-slate-500 text-[10px] uppercase font-bold block mb-1">GitHub Stars</span>
+              <span className="text-slate-400 text-xs uppercase font-bold block mb-1">GitHub Stars</span>
               {inspectSkill.stars > 0 ? (
                 <span className="text-amber-400 font-bold flex items-center gap-1">
-                  <Star className="w-3.5 h-3.5 fill-amber-400" />
+                  <Star className="w-4 h-4 fill-amber-400" />
                   {inspectSkill.stars.toLocaleString()}
                 </span>
               ) : (
-                <span className="text-slate-500 font-mono">Curated Local</span>
+                <span className="text-slate-400 font-mono">Curated Local</span>
               )}
             </div>
 
             <div className="bg-[#08090a] p-3 rounded-lg border border-[#21262d]">
-              <span className="text-slate-500 text-[10px] uppercase font-bold block mb-1">Unique Identifier</span>
-              <span className="text-slate-300 font-mono text-[11px] truncate block">{inspectSkill.uniqueId}</span>
+              <span className="text-slate-400 text-xs uppercase font-bold block mb-1">Unique Identifier</span>
+              <span className="text-slate-200 font-mono text-xs truncate block">{inspectSkill.uniqueId}</span>
             </div>
 
             <div className="bg-[#08090a] p-3 rounded-lg border border-[#21262d]">
-              <span className="text-slate-500 text-[10px] uppercase font-bold block mb-1">Law 4 Independence</span>
-              <span className="text-emerald-400 font-semibold text-[11px] flex items-center gap-1">
+              <span className="text-slate-400 text-xs uppercase font-bold block mb-1">Law 4 Independence</span>
+              <span className="text-emerald-400 font-semibold text-xs flex items-center gap-1">
                 Pure Upstream Spec
               </span>
             </div>
@@ -182,14 +182,14 @@ export const SkillDrawer: React.FC = () => {
 
           {/* Quick Guidance / Prompt Usage */}
           <div className="bg-[#08090a] p-4 rounded-xl border border-[#21262d] space-y-2">
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-300">
+            <div className="flex items-center gap-1.5 text-sm font-semibold text-slate-200">
               <Code2 className="w-4 h-4 text-cyan-400" />
               <span>Prompt Invocation Pattern</span>
             </div>
-            <p className="text-[11px] text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-300 leading-relaxed">
               To trigger this skill in Google Antigravity, Claude Code, or Codex, enter the slash command directly in your prompt or call the CLI installer to bootstrap the skill folder.
             </p>
-            <div className="font-mono text-[11px] p-2 rounded bg-[#161b22] text-slate-300 border border-[#30363d]">
+            <div className="font-mono text-xs p-3 rounded bg-[#161b22] text-slate-200 border border-[#30363d]">
               {`<system>\nActivate skill /${inspectSkill.scoped}\nFollow strict repo laws.\n</system>`}
             </div>
           </div>

@@ -50,7 +50,7 @@ export const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({ skills }) => {
   }, [skills, columnCount, viewMode])
 
   // Virtualizer configured with dynamic item estimate size
-  const estimatedRowSize = viewMode === 'rows' ? 56 : 260
+  const estimatedRowSize = viewMode === 'rows' ? 64 : 280
 
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
@@ -62,8 +62,8 @@ export const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({ skills }) => {
   if (skills.length === 0) {
     return (
       <div className="py-20 text-center">
-        <p className="text-slate-400 text-sm mb-1">No matching skills found.</p>
-        <p className="text-slate-500 text-xs">Try clearing your search query or selecting a different ecosystem preset.</p>
+        <p className="text-slate-300 text-base mb-1">No matching skills found.</p>
+        <p className="text-slate-400 text-sm">Try clearing your search query or selecting a different ecosystem preset.</p>
       </div>
     )
   }
@@ -71,7 +71,7 @@ export const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({ skills }) => {
   return (
     <div
       ref={parentRef}
-      className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mt-3 h-[calc(100vh-270px)] overflow-y-auto"
+      className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 mt-3 h-[calc(100vh-270px)] overflow-y-auto"
     >
       <div
         style={{

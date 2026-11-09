@@ -14,31 +14,31 @@ export const Header: React.FC = () => {
   return (
     <header className="border-b border-[#21262d] bg-[#08090a] sticky top-0 z-40">
       {/* Top Navigation Bar */}
-      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 h-14 flex items-center justify-between gap-4">
+      <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-16 flex items-center justify-between gap-4">
         {/* Brand & Version */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-[#161b22] border border-[#30363d] flex items-center justify-center text-slate-100 shadow-sm">
-            <Terminal className="w-4 h-4 text-cyan-400" />
+          <div className="w-9 h-9 rounded-lg bg-[#161b22] border border-[#30363d] flex items-center justify-center text-slate-100 shadow-sm">
+            <Terminal className="w-5 h-5 text-cyan-400" />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-lg font-black tracking-tight text-white">SkillDock</span>
-            <span className="text-[11px] font-mono text-slate-400 border border-[#21262d] px-1.5 py-0.2 rounded bg-[#0d1117]">
+          <div className="flex items-baseline gap-2.5">
+            <span className="text-xl font-black tracking-tight text-white">SkillDock</span>
+            <span className="text-xs font-mono text-slate-300 border border-[#21262d] px-2 py-0.5 rounded bg-[#0d1117]">
               v2.0
             </span>
           </div>
         </div>
 
         {/* Quick Actions & Navigation */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3.5">
           {/* Command Palette Trigger Button */}
           <button
             onClick={() => setCommandPaletteOpen(true)}
-            className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-xs text-slate-400 hover:text-slate-200 border border-[#21262d] transition-colors cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-sm text-slate-300 hover:text-white border border-[#21262d] transition-colors cursor-pointer"
             title="Open Command Palette (⌘K or Ctrl+K)"
           >
-            <Command className="w-3.5 h-3.5 text-slate-400" />
+            <Command className="w-4 h-4 text-slate-400" />
             <span>Search & Commands</span>
-            <kbd className="text-[10px] font-mono px-1 py-0.5 rounded bg-[#161b22] text-slate-400 border border-[#30363d]">
+            <kbd className="text-xs font-mono px-1.5 py-0.5 rounded bg-[#161b22] text-slate-300 border border-[#30363d]">
               ⌘K
             </kbd>
           </button>
@@ -46,21 +46,21 @@ export const Header: React.FC = () => {
           {/* Priority Guide Trigger */}
           <button
             onClick={() => setPriorityGuideOpen(true)}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-xs font-medium text-slate-300 border border-[#21262d] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-sm font-semibold text-slate-200 border border-[#21262d] transition-colors cursor-pointer"
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <Sparkles className="w-4 h-4 text-amber-400" />
             <span className="hidden md:inline">Priority Guide</span>
           </button>
 
           {/* My Stack Drawer Trigger */}
           <button
             onClick={() => setStackModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-950/40 hover:bg-cyan-950/70 text-xs font-semibold text-cyan-300 border border-cyan-800/60 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-cyan-950/40 hover:bg-cyan-950/70 text-sm font-bold text-cyan-300 border border-cyan-800/60 transition-colors cursor-pointer"
           >
-            <Layers className="w-3.5 h-3.5 text-cyan-400" />
+            <Layers className="w-4 h-4 text-cyan-400" />
             <span>Stack</span>
             {stack.length > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-cyan-500/20 text-cyan-300">
+              <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-cyan-500/20 text-cyan-300">
                 {stack.length}
               </span>
             )}
@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
             href="https://github.com/nownitya/Ai-Models-List"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1.5 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-slate-400 hover:text-white border border-[#21262d] transition-colors"
+            className="p-2 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-slate-300 hover:text-white border border-[#21262d] transition-colors"
             title="View on GitHub"
           >
             <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -82,49 +82,49 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Hero Subbar */}
-      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3 border-t border-[#161b22]">
+      <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3 border-t border-[#161b22]">
         <div>
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono font-medium text-slate-400">
+          <div className="flex items-center gap-2.5 mb-1">
+            <span className="text-sm font-semibold text-slate-200">
               The Launchpad for AI Coding Skills & Agent Harnesses
             </span>
-            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-800/40">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-300 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-800/50">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
               Dual-Matrix Parity Verified
             </span>
           </div>
-          <p className="text-xs text-slate-500 max-w-2xl">
+          <p className="text-sm text-slate-400 max-w-3xl leading-relaxed">
             Empirical matrix covering <strong>{meta.totalSkills} skills</strong>, isolated across Matt Pocock, Superpowers, GSD, gstack, and Android ecosystems.
           </p>
         </div>
 
         {/* Minimal High-Density Metric Badges */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <div className="px-2.5 py-1 rounded bg-[#0d1117] border border-[#21262d] text-left">
-            <span className="text-[10px] uppercase font-bold text-slate-500 block">Cataloged</span>
-            <span className="text-sm font-extrabold text-slate-100">{meta.totalSkills}</span>
+        <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
+          <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
+            <span className="text-xs uppercase font-bold text-slate-400 block">Cataloged</span>
+            <span className="text-base sm:text-lg font-black text-slate-100">{meta.totalSkills}</span>
           </div>
 
           <div
             onClick={() => setPriorityGuideOpen(true)}
-            className="px-2.5 py-1 rounded bg-[#0d1117] border border-[#21262d] text-left cursor-pointer hover:border-red-500/50 transition-colors"
+            className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left cursor-pointer hover:border-red-500/50 transition-colors"
           >
-            <span className="text-[10px] uppercase font-bold text-red-400 block">P0 Critical</span>
-            <span className="text-sm font-extrabold text-red-400">{meta.p0Count}</span>
+            <span className="text-xs uppercase font-bold text-red-400 block">P0 Critical</span>
+            <span className="text-base sm:text-lg font-black text-red-400">{meta.p0Count}</span>
           </div>
 
-          <div className="px-2.5 py-1 rounded bg-[#0d1117] border border-[#21262d] text-left">
-            <span className="text-[10px] uppercase font-bold text-amber-400 block">Upstream</span>
-            <span className="text-sm font-extrabold text-amber-400 flex items-center gap-1">
-              <Star className="w-3 h-3 fill-amber-400" />
+          <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
+            <span className="text-xs uppercase font-bold text-amber-400 block">Upstream</span>
+            <span className="text-base sm:text-lg font-black text-amber-400 flex items-center gap-1">
+              <Star className="w-3.5 h-3.5 fill-amber-400" />
               {formattedStars}M
             </span>
           </div>
 
-          <div className="px-2.5 py-1 rounded bg-[#0d1117] border border-[#21262d] text-left">
-            <span className="text-[10px] uppercase font-bold text-slate-500 block">Rules</span>
-            <span className="text-sm font-extrabold text-slate-200 flex items-center gap-1">
-              <ShieldCheck className="w-3 h-3 text-emerald-400" />
+          <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
+            <span className="text-xs uppercase font-bold text-slate-400 block">Rules</span>
+            <span className="text-base sm:text-lg font-black text-slate-200 flex items-center gap-1">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
               Pure
             </span>
           </div>

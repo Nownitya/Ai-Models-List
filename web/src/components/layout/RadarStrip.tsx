@@ -23,28 +23,28 @@ export const RadarStrip: React.FC = () => {
   if (topRepos.length === 0) return null
 
   return (
-    <div className="border-b border-[#21262d] bg-[#0d1117] overflow-hidden py-2">
-      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center gap-3">
-        <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0">
-          <Activity className="w-3.5 h-3.5 text-cyan-400" />
+    <div className="border-b border-[#21262d] bg-[#0d1117] overflow-hidden py-2.5">
+      <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center gap-3.5">
+        <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-300 shrink-0">
+          <Activity className="w-4 h-4 text-cyan-400" />
           <span>Radar:</span>
         </div>
 
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth text-xs whitespace-nowrap">
+        <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar scroll-smooth text-sm whitespace-nowrap">
           {topRepos.map((repo) => (
             <a
               key={repo.repo}
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#161b22] hover:bg-[#21262d] text-slate-300 hover:text-white transition-colors border border-[#30363d]"
+              className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-slate-200 hover:text-white transition-colors border border-[#30363d]"
             >
-              <span className="font-medium text-[11px]">{repo.name}</span>
-              <span className="flex items-center gap-0.5 text-amber-400 font-bold text-[10px]">
-                <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
+              <span className="font-semibold text-xs">{repo.name}</span>
+              <span className="flex items-center gap-1 text-amber-400 font-bold text-xs">
+                <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                 {repo.stars_formatted || repo.stars.toLocaleString()}
               </span>
-              <ExternalLink className="w-2.5 h-2.5 text-slate-500" />
+              <ExternalLink className="w-3 h-3 text-slate-400" />
             </a>
           ))}
         </div>
