@@ -72,7 +72,8 @@ class MCPServer:
     def list_presets(self) -> str:
         lines = ["=== Curated Skill Preset Bundles ==="]
         for name, data in PRESET_BUNDLES.items():
-            lines.append(f"• {name:15} -> [{data['category']}] {data['description']}")
+            cat_label = data.get("category", "curated-multi")
+            lines.append(f"• {name:15} -> [{cat_label}] {data['description']}")
         lines.append("\nTip: Use install_skill with bundle name or scripts/install-to-project.py --bundle <name>")
         return "\n".join(lines)
 
@@ -157,7 +158,7 @@ def handle_jsonrpc_request(req: dict, server: MCPServer) -> dict:
                 "tools": [
                     {
                         "name": "search_skills",
-                        "description": "Search the AI Coding Skills and Tools catalog across 228+ skills and 12 categories.",
+                        "description": "Search the AI Coding Skills and Tools catalog across 301+ skills and 22 categories.",
                         "inputSchema": {
                             "type": "object",
                             "properties": {
@@ -180,7 +181,7 @@ def handle_jsonrpc_request(req: dict, server: MCPServer) -> dict:
                     },
                     {
                         "name": "list_presets",
-                        "description": "List curated skill preset bundles (Superpowers, gstack, Matt Pocock, Docs, Core Eng).",
+                        "description": "List curated skill preset bundles (Superpowers, gstack, Matt Pocock, Docs, Core Eng, Cloud, AI Agents, UI/UX, Testing).",
                         "inputSchema": {
                             "type": "object",
                             "properties": {}
@@ -188,7 +189,7 @@ def handle_jsonrpc_request(req: dict, server: MCPServer) -> dict:
                     },
                     {
                         "name": "get_upstream_metrics",
-                        "description": "Get real-time community stars, latest release versions, and licenses for 32+ upstream agent frameworks.",
+                        "description": "Get real-time community stars, latest release versions, and licenses for 104+ upstream agent frameworks.",
                         "inputSchema": {
                             "type": "object",
                             "properties": {

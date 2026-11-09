@@ -80,6 +80,10 @@ class TestMCPServer(unittest.TestCase):
         text = res["result"]["content"][0]["text"]
         self.assertIn("superpowers", text)
         self.assertIn("gstack", text)
+        self.assertIn("cloud", text)
+        self.assertIn("ai-agents", text)
+        self.assertIn("ui-ux", text)
+        self.assertIn("testing", text)
 
     def test_tool_get_upstream_metrics(self):
         req = {

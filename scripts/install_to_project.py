@@ -20,17 +20,26 @@ if sys.stdout.encoding != "utf-8":
 
 PREFIX_MAP = {
     '01-core-engineering': 'core-',
+    '01-core-workflows': 'workflow-',
     '02-matt-pocock': 'mp-',
     '03-android': 'android-',
+    '03-android-development-skills': 'android-',
+    '03-code-review-and-quality': 'review-',
     '04-kotlin-kmp': 'kmp-',
+    '04-testing-and-verification': 'test-',
     '05-ui-ux': 'ui-',
+    '06-debugging-and-investigation': 'debug-',
     '06-gsd': 'gsd-',
     '07-gstack': 'gstack-',
     '08-superpowers': 'superpowers-',
+    '09-autonomous-agent-architectures': 'agent-',
     '09-autonomous-agents': 'agent-',
+    '09-deep-research': 'research-',
     '10-ai-infrastructure': 'infra-',
     '11-code-review': 'review-',
+    '11-project-documentation': 'doc-',
     '12-specialized': 'spec-',
+    '12-specialized-domains': 'spec-',
     'docs': 'doc-'
 }
 
@@ -41,11 +50,11 @@ PRESET_BUNDLES = {
     },
     "gstack": {
         "category": "07-gstack",
-        "description": "garrytan/gstack 16 YC review, sprint, and shipping skills"
+        "description": "garrytan/gstack 17 YC review, sprint, and shipping skills"
     },
     "mattpocock": {
         "category": "02-matt-pocock",
-        "description": "mattpocock/skills 16 TypeScript/engineering workflow skills"
+        "description": "mattpocock/skills 21 TypeScript/engineering workflow skills"
     },
     "docs": {
         "category": "docs",
@@ -54,6 +63,60 @@ PRESET_BUNDLES = {
     "core-eng": {
         "category": "01-core-engineering",
         "description": "Essential core engineering skills (TDD, debugging, safe guardrails, code quality)"
+    },
+    "cloud": {
+        "skills": [
+            "firebase-agent-suite",
+            "supabase-skills",
+            "neon-serverless-postgres",
+            "cloudflare-skills",
+            "prisma-orm-patterns",
+            "clerk-auth-identity",
+            "better-auth-patterns",
+            "azure-skills",
+            "convex-backend-sync",
+            "fastify-backend-perf"
+        ],
+        "description": "Cloud, backend, serverless database & authentication infrastructure"
+    },
+    "ai-agents": {
+        "skills": [
+            "mastra-agent-framework",
+            "orca-agent",
+            "browser-use",
+            "vercel-agent-browser",
+            "agent-desktop-gui",
+            "playwright-cli",
+            "herdr-orchestration",
+            "openhands",
+            "codex"
+        ],
+        "description": "Autonomous agents, computer use, browser automation & orchestration frameworks"
+    },
+    "ui-ux": {
+        "skills": [
+            "emil-design-eng",
+            "interface-feel-polish",
+            "typescript-tailwind-patterns",
+            "gsap-animation",
+            "extract-design-tokens",
+            "mermaid-design-generator",
+            "stageshow-ui-presentation",
+            "typography-layout-polish"
+        ],
+        "description": "Modern UI/UX design engineering, animation, micro-interactions & token extraction"
+    },
+    "testing": {
+        "skills": [
+            "momentic-visual-testing",
+            "currents-playwright-sharding",
+            "network-latency-benchmarks",
+            "benchmark",
+            "hallmark-frontend-eval",
+            "browser-act-testing",
+            "qa"
+        ],
+        "description": "Comprehensive test automation, visual regression, sharding & latency benchmarking"
     }
 }
 
@@ -98,13 +161,23 @@ def resolve_bundle_skills(bundle_name: str, skills_root: Path = None) -> list[di
         skills_root = Path(__file__).resolve().parent.parent / "skills"
 
     bundle_info = PRESET_BUNDLES[bundle_name]
-    target_cat = bundle_info["category"].lower()
+    skills_by_scoped, skills_by_base = get_available_skills(skills_root)
 
-    skills_by_scoped, _ = get_available_skills(skills_root)
-    resolved = [
-        info for info in skills_by_scoped.values()
-        if info["category"].lower() == target_cat
-    ]
+    resolved = []
+    if "category" in bundle_info:
+        target_cat = bundle_info["category"].lower()
+        resolved = [
+            info for info in skills_by_scoped.values()
+            if info["category"].lower() == target_cat
+        ]
+    elif "skills" in bundle_info:
+        for skill_id in bundle_info["skills"]:
+            req = skill_id.strip().lstrip("/")
+            if req in skills_by_scoped:
+                resolved.append(skills_by_scoped[req])
+            elif req in skills_by_base and len(skills_by_base[req]) > 0:
+                resolved.append(skills_by_base[req][0])
+
     return sorted(resolved, key=lambda x: x["name"])
 
 def main():
@@ -125,7 +198,8 @@ def main():
     if args.list_bundles:
         print("\n=== Curated Preset Bundles ===")
         for name, data in PRESET_BUNDLES.items():
-            print(f"  • {name:15} -> [{data['category']}] {data['description']}")
+            cat_label = data.get("category", "curated-multi")
+            print(f"  • {name:15} -> [{cat_label}] {data['description']}")
         print("===============================\n")
         return
 

@@ -32,8 +32,7 @@
 | **TASK-019** | Catalog Expansion (Batch 5 - Complete Bucket 1) | Add final 5 Tier 1 high-star repos from skills.sh (make-interfaces-feel-better, tons-of-skills, benjitaylor, binance, motion-graphics) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-020** | Catalog Expansion (Batch 6 - Bucket 2 High-Impact Tools) | Add 10 high-impact & unique developer tools from Bucket 2 with 2.2M+ installs (firecrawl, convex, scrapegraphai, momentic-ai, extract-design-system, better-auth, review-loop-skill, mastra-ai, design-doc-mermaid, nx-ai-agents-config) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-021** | Catalog Expansion (Batch 7 - Bucket 2 Official Developer Platforms) | Add 9 official developer platforms and ecosystem tools from Bucket 2 (firebase, elevenlabs, solana-foundation, currents-playwright, svelte5, neon-postgres, clerk, prisma, stripe-link) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
-| **TASK-020** | Catalog Expansion (Batch 6 - Bucket 2 High-Impact Tools) | Add 10 high-impact & unique developer tools from Bucket 2 with 2.2M+ installs (firecrawl, convex, scrapegraphai, momentic-ai, extract-design-system, better-auth, review-loop-skill, mastra-ai, design-doc-mermaid, nx-ai-agents-config) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
-| **TASK-021** | Catalog Expansion (Batch 7 - Bucket 2 Official Developer Platforms) | Add 9 official developer platforms and ecosystem tools from Bucket 2 (firebase, elevenlabs, solana-foundation, currents-playwright, svelte5, neon-postgres, clerk, prisma, stripe-link) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
+| **TASK-022** | Installer & Presets | Expand install preset bundles (cloud, ai-agents, ui-ux, testing) and comprehensive prefix mapping | P0 | Verified | `scripts/install_to_project.py`, `tests/test_install_to_project.py` |
 
 ---
 
@@ -145,11 +144,11 @@
 - [x] Subtask 21.4: Update `index.html` hero counters (317+ skills, 104 frameworks, 4.6M+ stars) and `nameKeyMap` bindings.
 - [x] Subtask 21.5: Verify Layer 15 governance, test gates, and push to origin main.
 
-
-
-
-
-
-
+### TASK-022: Installer & Presets Expansion
+- [x] Subtask 22.1: Expand `PREFIX_MAP` in `scripts/install_to_project.py` across all 22 domain categories ensuring 301 collision-free scoped slash commands.
+- [x] Subtask 22.2: Add curated multi-skill preset bundles (`cloud`, `ai-agents`, `ui-ux`, `testing`) to `PRESET_BUNDLES`.
+- [x] Subtask 22.3: Upgrade `resolve_bundle_skills` to support both category-scoped and curated multi-skill bundles.
+- [x] Subtask 22.4: Update MCP server tool descriptions and presets listing for 301+ skills and 104+ frameworks.
+- [x] Subtask 22.5: Expand unit tests in `tests/test_install_to_project.py` and verify all tests pass.
 
 

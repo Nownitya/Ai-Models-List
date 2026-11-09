@@ -10,12 +10,12 @@
 ## 1. Horizon Overview
 
 ```
-2026 Q3 (Shipped)               2026 Q4 (Current)                 2027 Q1 (Planned)
-[H1: Foundation & Parity] ====> [H2: Telemetry & Packaging] ====> [H3: Ecosystem & Automation]
-- Dual Matrix Parity            - GitHub Live Metrics Radar      - MCP Gateway Server
-- 186 Initial Skills            - Bento Hero Redesign (2.5M+ ⭐)   - Multi-Model LLM Benchmarking
-- Layer 15 Master Templates     - 228 Cataloged Skills           - Dynamic Package Registry
-- Automated CI Gates            - Cryptographic Lockfile CLI     - VS Code / Antigravity Ext
+2026 Q3 (Shipped)               2026 Q4 (Shipped)                 2026 Q4 / 2027 Q1 (Current)
+[H1: Foundation & Parity] ====> [H2: Telemetry & Packaging] ====> [H4: Frontier Ecosystem & Curated Bundles]
+- Dual Matrix Parity            - GitHub Live Metrics Radar      - 1,002 Skills.sh Repos Integrated
+- 186 Initial Skills            - Bento Hero Redesign (2.5M+ ⭐)   - 301 SKILL.md Packages (4.60M+ ⭐)
+- Layer 15 Master Templates     - 228 Cataloged Skills           - 9 Curated Bundles (Cloud, Agents, UI, Test)
+- Automated CI Gates            - Cryptographic Lockfile CLI     - MCP Gateway Scaled to 301+ Skills
 ```
 
 ---
@@ -42,4 +42,12 @@
 * [x] **M3.1**: Model evaluation & routing matrix modernized for frontier reasoning models (Claude 3.7 Sonnet, Gemini 2.0 Flash Thinking, o3-mini, DeepSeek R1).
 * [x] **M3.2**: Native zero-dependency Model Context Protocol (MCP) Server allowing Claude Code, Antigravity, and Cursor to discover, read, and inject skills via JSON-RPC.
 * [x] **M3.3**: Automated Pull Request verification CI bot validating Law 1, Law 2, lockfile integrity, and unit tests on every PR.
+
+### Milestone H4: Frontier Ecosystem & Curated Bundle Injector (Complete)
+* [x] **M4.1**: Comprehensive ingestion of first 1,002 skills from `skills.sh/trending` partitioned into Bucket 1 ($\ge 1,000$ stars), Bucket 2 ($< 1,000$ stars evaluated), and Bucket 3 (Enterprise domains), deployed across Batches 1 to 7 (Commits `cd43e51` to `529b804`).
+* [x] **M4.2**: 301 fully standardized Law 2 `SKILL.md` packages active in `skills/`, 104 distinct upstream repositories tracked, commanding 4,596,522 community GitHub stars (4.60M+).
+* [x] **M4.3**: Universal `PREFIX_MAP` spanning all 22 domain categories ensuring 301 collision-free repository-scoped slash commands with strict creator independence (Law 4).
+* [x] **M4.4**: 9 curated preset bundles (`superpowers`, `gstack`, `mattpocock`, `docs`, `core-eng`, `cloud`, `ai-agents`, `ui-ux`, `testing`) in `scripts/install-to-project.py` with multi-category resolution.
+* [x] **M4.5**: Web dashboard v2 (`index.html`) featuring Interactive Skill Inspector modal, tactile one-click copy feedback, 16-framework live radar strip, and instant filter resets.
+* [x] **M4.6**: Scaled zero-dependency MCP server (`scripts/mcp_server.py`) exposing search, inspect, live telemetry, and installation across all 301+ skills to coding assistants.
 
