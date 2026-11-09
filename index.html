@@ -29,6 +29,20 @@
         }
       }(window.location))
     </script>
+
+    <!-- Legacy PWA Service Worker & Cache Busting -->
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          for (var r of regs) { r.unregister(); }
+        });
+      }
+      if (window.caches) {
+        caches.keys().then(function(names) {
+          for (var name of names) { caches.delete(name); }
+        });
+      }
+    </script>
     <script type="module" crossorigin src="./assets/index-DHOPBkOH.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-WkwZ5CU-.js">
     <link rel="modulepreload" crossorigin href="./assets/vendor-icons-DZ4SWsRU.js">

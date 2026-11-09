@@ -29,6 +29,20 @@
         }
       }(window.location))
     </script>
+
+    <!-- Legacy PWA Service Worker & Cache Busting -->
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          for (var r of regs) { r.unregister(); }
+        });
+      }
+      if (window.caches) {
+        caches.keys().then(function(names) {
+          for (var name of names) { caches.delete(name); }
+        });
+      }
+    </script>
   </head>
   <body class="bg-[#08090a] text-slate-100 min-h-screen">
     <div id="root">
