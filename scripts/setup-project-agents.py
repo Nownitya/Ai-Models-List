@@ -169,6 +169,7 @@ def gather_skills_to_install():
         ("prisma-orm-patterns", SKILLS_SRC / "01-core-workflows" / "prisma-orm-patterns", "prisma/prisma", "skills/prisma-orm-patterns/SKILL.md"),
         ("svelte5-runes-patterns", SKILLS_SRC / "01-core-workflows" / "svelte5-runes-patterns", "sveltejs/svelte", "skills/svelte5-runes-patterns/SKILL.md"),
         ("firecrawl-web-scrape", SKILLS_SRC / "01-core-workflows" / "firecrawl-web-scrape", "mendableai/firecrawl", "skills/firecrawl-web-scrape/SKILL.md"),
+        ("obsidian-developer-second-brain", SKILLS_SRC / "11-project-documentation" / "obsidian-developer-second-brain", "local/project-docs", "skills/11-project-documentation/obsidian-developer-second-brain/SKILL.md"),
     ]
     for dest_name, src, repo, rel_path in extra_skills:
         if src.exists():

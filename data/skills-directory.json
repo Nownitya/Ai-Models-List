@@ -5935,6 +5935,34 @@
     "cli": "python scripts/install-to-project.py --skill doc-mermaid-design-generator",
     "repo": "spillwavesolutions/design-doc-mermaid"
   },
+  "obsidian-developer-second-brain": {
+    "name": "obsidian-developer-second-brain",
+    "category": "11-project-documentation",
+    "scoped": "doc-obsidian-developer-second-brain",
+    "cli": "python scripts/install-to-project.py --skill doc-obsidian-developer-second-brain",
+    "repo": "obsidianmd/obsidian-releases"
+  },
+  "doc-obsidian-developer-second-brain": {
+    "name": "obsidian-developer-second-brain",
+    "category": "11-project-documentation",
+    "scoped": "doc-obsidian-developer-second-brain",
+    "cli": "python scripts/install-to-project.py --skill doc-obsidian-developer-second-brain",
+    "repo": "obsidianmd/obsidian-releases"
+  },
+  "obsidian developer second brain": {
+    "name": "obsidian-developer-second-brain",
+    "category": "11-project-documentation",
+    "scoped": "doc-obsidian-developer-second-brain",
+    "cli": "python scripts/install-to-project.py --skill doc-obsidian-developer-second-brain",
+    "repo": "obsidianmd/obsidian-releases"
+  },
+  "doc obsidian developer second brain": {
+    "name": "obsidian-developer-second-brain",
+    "category": "11-project-documentation",
+    "scoped": "doc-obsidian-developer-second-brain",
+    "cli": "python scripts/install-to-project.py --skill doc-obsidian-developer-second-brain",
+    "repo": "obsidianmd/obsidian-releases"
+  },
   "obsidian-markdown": {
     "name": "obsidian-markdown",
     "category": "11-project-documentation",

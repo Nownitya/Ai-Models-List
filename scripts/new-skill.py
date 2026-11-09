@@ -214,7 +214,12 @@ def scaffold_skill(name: str, category: str, priority: str, why: str, title: str
 
     # 3. Regenerate skills directory JSON
     try:
-        from scripts.generate_skills_directory import generate_directory
+        if str(repo_root) not in sys.path:
+            sys.path.insert(0, str(repo_root))
+        try:
+            from scripts.generate_skills_directory import generate_directory
+        except ImportError:
+            from generate_skills_directory import generate_directory
         generate_directory(repo_root)
     except Exception as e:
         result["directory_warning"] = f"Failed to regenerate skills directory: {e}"
@@ -268,3 +273,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+

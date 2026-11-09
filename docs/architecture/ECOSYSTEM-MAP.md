@@ -198,3 +198,4 @@ sequenceDiagram
 | `10` | Frontend & Fullstack | `sveltejs`, `vercel/next.js`, `tailwind` | 34 | `/front-` |
 | `11` | Code Review & Quality | `coderabbitai`, `superpowers-review` | 26 | `/review-` |
 | `12` | Specialized Agents | `mastra-ai`, `firecrawl`, `better-auth` | 44 | `/special-` |
+

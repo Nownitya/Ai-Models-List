@@ -65,6 +65,7 @@ neon-serverless-postgres,"Neon Serverless Postgres",P1,/neon-serverless-postgres
 clerk-auth-identity,"Clerk Auth & Identity",P1,/clerk-auth-identity,"Clerk identity management, multi-tenant organizations, webhook signature verification, and session tokens."
 prisma-orm-patterns,"Prisma ORM Patterns",P1,/prisma-orm-patterns,"Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters."
 stripe-link-checkout,"Stripe Link 1-Click Checkout",P1,/stripe-link-checkout,"Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation."
+obsidian-developer-second-brain,"Obsidian Developer Second Brain",P0,/obsidian-developer-second-brain,"Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,

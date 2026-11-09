@@ -403,6 +403,12 @@
       "skillPath": "skills/nx-monorepo-architect/SKILL.md",
       "computedHash": "61dc7e3ec9cb2e48771ebec67c0cf5edab4d9101537553e981abc58c1ad949a6"
     },
+    "obsidian-developer-second-brain": {
+      "source": "local/project-docs",
+      "sourceType": "local",
+      "skillPath": "skills/11-project-documentation/obsidian-developer-second-brain/SKILL.md",
+      "computedHash": "5b6864505cf56933837e362ea9a02719394dbdefe60c507673d5c7c3ef2404f5"
+    },
     "office-hours": {
       "source": "garrytan/gstack",
       "sourceType": "github",

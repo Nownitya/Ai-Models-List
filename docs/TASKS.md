@@ -41,6 +41,7 @@
 | **TASK-028** | Workspace Runtime Expansion (Sprint 6.3) | Inject top 11 modern skills into `.agents/skills` and update cryptographic lockfile | P0 | Verified | `skills-lock.json`, `scripts/verify-lock.py` |
 | **TASK-029** | Skill Scaffolder CLI & Tests (Sprint 6.4) | Automated Law 1 & Law 2 CLI (`new-skill.py`) with unit test suite (`test_new_skill.py`) | P0 | Verified | `scripts/new-skill.py`, `tests/test_new_skill.py` |
 | **TASK-030** | Milestone H6 Release Signoff (Sprint 6.5) | Full multi-gate verification, Layer 15 documentation sync, and Obsidian vault mirror | P0 | Verified | Multi-gate audit pass (52/52 tests) |
+| **TASK-031** | Universal Obsidian Second Brain & Vault Restructure | Universal integration guide, plugin orchestration, standardized skill, and 01_Projects restructuring | P0 | Verified | `docs/integrations/`, `skills-lock.json`, `tests/test_obsidian_integration.py` |
 
 ---
 
@@ -186,6 +187,15 @@
 - [x] Subtask 29.2: Implement unit test suite `tests/test_new_skill.py` (5 tests passing cleanly).
 - [x] Subtask 30.1: Update Layer 15 living documentation (`docs/TASKS.md`, `docs/ROADMAP.md`, `docs/IMPLEMENTATION-STATUS.md`).
 - [x] Subtask 30.2: Execute multi-gate verification suite and mirror documentation to Obsidian Vault.
+
+### TASK-031: Universal Obsidian Second Brain & Vault Restructure
+- [x] Subtask 31.1: Author universal architecture specification `docs/integrations/OBSIDIAN-DEVELOPER-SECOND-BRAIN.md` covering the 4 integration modes and Git-first principle.
+- [x] Subtask 31.2: Author developer plugin orchestration guide `docs/integrations/OBSIDIAN-PLUGINS-FOR-DEVELOPERS.md` with Dataview dashboards and Templater scripts.
+- [x] Subtask 31.3: Author standardized skill `skills/11-project-documentation/obsidian-developer-second-brain/SKILL.md` (`/doc-obsidian-developer-second-brain`).
+- [x] Subtask 31.4: Update master Markdown and CSV matrices in dual parity and lock 100 skills in `skills-lock.json`.
+- [x] Subtask 31.5: Restructure Obsidian vault into `01_Projects/` with `AI-Ecosystem/` and `Mobile-Android/`, deploying central `INDEX.md`.
+- [x] Subtask 31.6: Update `scripts/sync-obsidian.py` to target `01_Projects/AI-Ecosystem/Ai-Models-List` and mirror architecture specs.
+- [x] Subtask 31.7: Author automated test suite `tests/test_obsidian_integration.py` (57/57 total unit tests passing).
 
 
 
