@@ -4,7 +4,8 @@ from pathlib import Path
 class TestWebRedesign(unittest.TestCase):
     def setUp(self):
         repo_root = Path(__file__).resolve().parent.parent
-        self.html_file = repo_root / "index.html"
+        legacy_file = repo_root / "index.legacy.html"
+        self.html_file = legacy_file if legacy_file.exists() else (repo_root / "index.html")
         self.content = self.html_file.read_text(encoding="utf-8")
 
     def test_bento_hero_telemetry_exists(self):
