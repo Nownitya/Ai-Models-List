@@ -58,3 +58,15 @@ jobs:
           print('[OK] Full catalog threshold satisfied!')
           "
 
+      - name: 7. Set up Node.js & Verify React 19 Build
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install & Build React Application
+        run: |
+          cd web
+          npm install
+          npm run build
+
+

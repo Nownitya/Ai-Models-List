@@ -1,0 +1,4544 @@
+{
+  "meta": {
+    "totalSkills": 274,
+    "totalStars": 1259074,
+    "categories": [
+      {
+        "id": "01-core-engineering",
+        "label": "Core Engineering",
+        "count": 30
+      },
+      {
+        "id": "02-matt-pocock",
+        "label": "Matt Pocock",
+        "count": 21
+      },
+      {
+        "id": "03-android",
+        "label": "Android Development",
+        "count": 37
+      },
+      {
+        "id": "04-kotlin-kmp",
+        "label": "Kotlin Multiplatform (KMP)",
+        "count": 11
+      },
+      {
+        "id": "05-ui-ux",
+        "label": "UI / UX Design",
+        "count": 14
+      },
+      {
+        "id": "06-gsd",
+        "label": "GSD Autonomous Engine",
+        "count": 8
+      },
+      {
+        "id": "07-gstack",
+        "label": "gstack Workflow",
+        "count": 17
+      },
+      {
+        "id": "08-superpowers",
+        "label": "Superpowers Harness",
+        "count": 10
+      },
+      {
+        "id": "09-autonomous-agents",
+        "label": "Autonomous Agents",
+        "count": 14
+      },
+      {
+        "id": "10-ai-infrastructure",
+        "label": "AI Infrastructure & MCP",
+        "count": 19
+      },
+      {
+        "id": "11-code-review",
+        "label": "Code Review & Quality",
+        "count": 11
+      },
+      {
+        "id": "12-specialized",
+        "label": "Specialized Tools",
+        "count": 25
+      },
+      {
+        "id": "docs",
+        "label": "Universal Project Documentation",
+        "count": 57
+      }
+    ],
+    "p0Count": 94,
+    "p1Count": 100,
+    "p2Count": 52,
+    "p3Count": 28,
+    "generatedAt": "2026-11-09"
+  },
+  "skills": [
+    {
+      "id": "addy-agent-skills",
+      "uniqueId": "01-core-engineering:addy-agent-skills",
+      "name": "addy-agent-skills",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Production-grade engineering skills suite by Addy Osmani (113k+ stars). Encodes senior engineering workflows across 9 lifecycle commands (/spec, /plan, /build, /build auto, /test, /constraints, /review, /webperf, /code-simplify, /ship), Web Vitals performance optimization, Chrome DevTools browser testing, and doubt-driven development.",
+      "scoped": "core-addy-agent-skills",
+      "cli": "python scripts/install-to-project.py --skill core-addy-agent-skills",
+      "repo": "addyosmani/agent-skills.git",
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "brainstorming",
+      "uniqueId": "01-core-engineering:brainstorming",
+      "name": "brainstorming",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Explore requirements, alternatives and implementation approaches before coding.",
+      "scoped": "superpowers-brainstorming",
+      "cli": "python scripts/install-to-project.py --skill superpowers-brainstorming",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "find-skills",
+      "uniqueId": "01-core-engineering:find-skills",
+      "name": "find-skills",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Discover relevant skills dynamically for different tasks.",
+      "scoped": "workflow-find-skills",
+      "cli": "python scripts/install-to-project.py --skill workflow-find-skills",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "writing-plans",
+      "uniqueId": "01-core-engineering:writing-plans",
+      "name": "writing-plans",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Create structured and actionable implementation plans.",
+      "scoped": "superpowers-writing-plans",
+      "cli": "python scripts/install-to-project.py --skill superpowers-writing-plans",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "executing-plans",
+      "uniqueId": "01-core-engineering:executing-plans",
+      "name": "executing-plans",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Execute implementation plans systematically.",
+      "scoped": "superpowers-executing-plans",
+      "cli": "python scripts/install-to-project.py --skill superpowers-executing-plans",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "systematic-debugging",
+      "uniqueId": "01-core-engineering:systematic-debugging",
+      "name": "systematic-debugging",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Identify root causes instead of guessing.",
+      "scoped": "superpowers-systematic-debugging",
+      "cli": "python scripts/install-to-project.py --skill superpowers-systematic-debugging",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "diagnosing-bugs",
+      "uniqueId": "01-core-engineering:diagnosing-bugs",
+      "name": "diagnosing-bugs",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Investigate and resolve software defects.",
+      "scoped": "mp-diagnosing-bugs",
+      "cli": "python scripts/install-to-project.py --skill mp-diagnosing-bugs",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "test-driven-development",
+      "uniqueId": "01-core-engineering:test-driven-development",
+      "name": "test-driven-development",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Follow red-green-refactor and write tests before implementation.",
+      "scoped": "superpowers-test-driven-development",
+      "cli": "python scripts/install-to-project.py --skill superpowers-test-driven-development",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers",
+        "quality"
+      ]
+    },
+    {
+      "id": "code-review",
+      "uniqueId": "01-core-engineering:code-review",
+      "name": "code-review",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Review implementation quality, correctness and maintainability.",
+      "scoped": "review-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "requesting-code-review",
+      "uniqueId": "01-core-engineering:requesting-code-review",
+      "name": "requesting-code-review",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Prepare implementation changes for independent review.",
+      "scoped": "review-requesting-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "receiving-code-review",
+      "uniqueId": "01-core-engineering:receiving-code-review",
+      "name": "receiving-code-review",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Process review feedback and improve implementation.",
+      "scoped": "review-receiving-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "verification-before-completion",
+      "uniqueId": "01-core-engineering:verification-before-completion",
+      "name": "verification-before-completion",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Verify builds, tests and deliverables before claiming completion.",
+      "scoped": "review-verification-before-completion",
+      "cli": "python scripts/install-to-project.py --skill review-verification-before-completion",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "domain-modeling",
+      "uniqueId": "01-core-engineering:domain-modeling",
+      "name": "domain-modeling",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Create robust domain models and business rules.",
+      "scoped": "mp-domain-modeling",
+      "cli": "python scripts/install-to-project.py --skill mp-domain-modeling",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "subagent-driven-development",
+      "uniqueId": "01-core-engineering:subagent-driven-development",
+      "name": "subagent-driven-development",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Delegate independent implementation tasks to subagents.",
+      "scoped": "superpowers-subagent-driven-development",
+      "cli": "python scripts/install-to-project.py --skill superpowers-subagent-driven-development",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "dispatching-parallel-agents",
+      "uniqueId": "01-core-engineering:dispatching-parallel-agents",
+      "name": "dispatching-parallel-agents",
+      "priority": "P2",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Run independent agent tasks in parallel.",
+      "scoped": "superpowers-dispatching-parallel-agents",
+      "cli": "python scripts/install-to-project.py --skill superpowers-dispatching-parallel-agents",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "using-git-worktrees",
+      "uniqueId": "01-core-engineering:using-git-worktrees",
+      "name": "using-git-worktrees",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Isolate parallel development tasks safely.",
+      "scoped": "superpowers-using-git-worktrees",
+      "cli": "python scripts/install-to-project.py --skill superpowers-using-git-worktrees",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "finishing-a-development-branch",
+      "uniqueId": "01-core-engineering:finishing-a-development-branch",
+      "name": "finishing-a-development-branch",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Complete, validate and integrate development branches.",
+      "scoped": "superpowers-finishing-a-development-branch",
+      "cli": "python scripts/install-to-project.py --skill superpowers-finishing-a-development-branch",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "setup-pre-commit",
+      "uniqueId": "01-core-engineering:setup-pre-commit",
+      "name": "setup-pre-commit",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Configure automated code-quality checks.",
+      "scoped": "review-setup-pre-commit",
+      "cli": "python scripts/install-to-project.py --skill review-setup-pre-commit",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "accidental-data-loss-prevention",
+      "uniqueId": "01-core-engineering:accidental-data-loss-prevention",
+      "name": "accidental-data-loss-prevention",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Prevent destructive operations and accidental data loss.",
+      "scoped": "core-accidental-data-loss-prevention",
+      "cli": "python scripts/install-to-project.py --skill core-accidental-data-loss-prevention",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "git-guardrails-claude-code",
+      "uniqueId": "01-core-engineering:git-guardrails-claude-code",
+      "name": "git-guardrails-claude-code",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Protect Git operations in supported Claude Code environments; host-specific.",
+      "scoped": "core-git-guardrails-claude-code",
+      "cli": "python scripts/install-to-project.py --skill core-git-guardrails-claude-code",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "writing-for-agents",
+      "uniqueId": "01-core-engineering:writing-for-agents",
+      "name": "writing-for-agents",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Create clear instructions and documentation for coding agents.",
+      "scoped": "core-writing-for-agents",
+      "cli": "python scripts/install-to-project.py --skill core-writing-for-agents",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "writing-skills",
+      "uniqueId": "01-core-engineering:writing-skills",
+      "name": "writing-skills",
+      "priority": "P2",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Create and maintain reusable agent skills.",
+      "scoped": "superpowers-writing-skills",
+      "cli": "python scripts/install-to-project.py --skill superpowers-writing-skills",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "skill-repair",
+      "uniqueId": "01-core-engineering:skill-repair",
+      "name": "skill-repair",
+      "priority": "P2",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Diagnose and repair broken skills.",
+      "scoped": "core-skill-repair",
+      "cli": "python scripts/install-to-project.py --skill core-skill-repair",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "handoff",
+      "uniqueId": "01-core-engineering:handoff",
+      "name": "handoff",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Transfer project context between sessions and agents.",
+      "scoped": "mp-handoff",
+      "cli": "python scripts/install-to-project.py --skill mp-handoff",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "prototype",
+      "uniqueId": "01-core-engineering:prototype",
+      "name": "prototype",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Validate ideas and technical approaches before full implementation.",
+      "scoped": "ui-prototype",
+      "cli": "python scripts/install-to-project.py --skill ui-prototype",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "scaffold-exercises",
+      "uniqueId": "01-core-engineering:scaffold-exercises",
+      "name": "scaffold-exercises",
+      "priority": "P3",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Create guided implementation exercises.",
+      "scoped": "core-scaffold-exercises",
+      "cli": "python scripts/install-to-project.py --skill core-scaffold-exercises",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "karpathy-guidelines",
+      "uniqueId": "01-core-engineering:karpathy-guidelines",
+      "name": "karpathy-guidelines",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Third-party Karpathy-inspired behavioral guidelines: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Promotes explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria. Includes a portable Agent Skill; README documents Claude Code plugin and Cursor rule. Not an official Andrej Karpathy project.",
+      "scoped": "core-karpathy-guidelines",
+      "cli": "python scripts/install-to-project.py --skill core-karpathy-guidelines",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "playwright-cli",
+      "uniqueId": "01-core-engineering:playwright-cli",
+      "name": "playwright-cli",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.",
+      "scoped": "test-playwright-cli",
+      "cli": "python scripts/install-to-project.py --skill test-playwright-cli",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "obsidian-markdown",
+      "uniqueId": "01-core-engineering:obsidian-markdown",
+      "name": "obsidian-markdown",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows.",
+      "scoped": "doc-obsidian-markdown",
+      "cli": "python scripts/install-to-project.py --skill doc-obsidian-markdown",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "obsidian"
+      ]
+    },
+    {
+      "id": "google-workspace-cli",
+      "uniqueId": "01-core-engineering:google-workspace-cli",
+      "name": "google-workspace-cli",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically.",
+      "scoped": "workflow-google-workspace-cli",
+      "cli": "python scripts/install-to-project.py --skill workflow-google-workspace-cli",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "grill-me",
+      "uniqueId": "02-matt-pocock:grill-me",
+      "name": "grill-me",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Ask detailed questions to uncover requirements and assumptions.",
+      "scoped": "mp-grill-me",
+      "cli": "python scripts/install-to-project.py --skill mp-grill-me",
+      "repo": "mattpocock/skills",
+      "stars": 319201,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "grill-with-docs",
+      "uniqueId": "02-matt-pocock:grill-with-docs",
+      "name": "grill-with-docs",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Explore requirements using supporting documentation.",
+      "scoped": "mp-grill-with-docs",
+      "cli": "python scripts/install-to-project.py --skill mp-grill-with-docs",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "to-spec",
+      "uniqueId": "02-matt-pocock:to-spec",
+      "name": "to-spec",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Convert discussions into technical specifications.",
+      "scoped": "mp-to-spec",
+      "cli": "python scripts/install-to-project.py --skill mp-to-spec",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "to-tickets",
+      "uniqueId": "02-matt-pocock:to-tickets",
+      "name": "to-tickets",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Break specifications into actionable development tasks.",
+      "scoped": "mp-to-tickets",
+      "cli": "python scripts/install-to-project.py --skill mp-to-tickets",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "implement",
+      "uniqueId": "02-matt-pocock:implement",
+      "name": "implement",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Implement well-defined engineering tasks.",
+      "scoped": "mp-implement",
+      "cli": "python scripts/install-to-project.py --skill mp-implement",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "tdd",
+      "uniqueId": "02-matt-pocock:tdd",
+      "name": "tdd",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Apply test-driven development practices.",
+      "scoped": "mp-tdd",
+      "cli": "python scripts/install-to-project.py --skill mp-tdd",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers",
+        "mattpocock",
+        "quality"
+      ]
+    },
+    {
+      "id": "diagnosing-bugs",
+      "uniqueId": "02-matt-pocock:diagnosing-bugs",
+      "name": "diagnosing-bugs",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Systematically investigate bugs.",
+      "scoped": "mp-diagnosing-bugs",
+      "cli": "python scripts/install-to-project.py --skill mp-diagnosing-bugs",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "code-review",
+      "uniqueId": "02-matt-pocock:code-review",
+      "name": "code-review",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Review code against requirements and engineering standards.",
+      "scoped": "review-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "mattpocock",
+        "quality"
+      ]
+    },
+    {
+      "id": "codebase-design",
+      "uniqueId": "02-matt-pocock:codebase-design",
+      "name": "codebase-design",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Maintain a well-structured and maintainable codebase.",
+      "scoped": "mp-codebase-design",
+      "cli": "python scripts/install-to-project.py --skill mp-codebase-design",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "domain-modeling",
+      "uniqueId": "02-matt-pocock:domain-modeling",
+      "name": "domain-modeling",
+      "priority": "P0",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Build reliable domain models.",
+      "scoped": "mp-domain-modeling",
+      "cli": "python scripts/install-to-project.py --skill mp-domain-modeling",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "improve-codebase-architecture",
+      "uniqueId": "02-matt-pocock:improve-codebase-architecture",
+      "name": "improve-codebase-architecture",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Identify and implement architectural improvements.",
+      "scoped": "mp-improve-codebase-architecture",
+      "cli": "python scripts/install-to-project.py --skill mp-improve-codebase-architecture",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "research",
+      "uniqueId": "02-matt-pocock:research",
+      "name": "research",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Research technical solutions and documentation.",
+      "scoped": "mp-research",
+      "cli": "python scripts/install-to-project.py --skill mp-research",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "prototype",
+      "uniqueId": "02-matt-pocock:prototype",
+      "name": "prototype",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Explore implementation approaches.",
+      "scoped": "ui-prototype",
+      "cli": "python scripts/install-to-project.py --skill ui-prototype",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "wayfinder",
+      "uniqueId": "02-matt-pocock:wayfinder",
+      "name": "wayfinder",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Navigate and organize large implementation tasks.",
+      "scoped": "mp-wayfinder",
+      "cli": "python scripts/install-to-project.py --skill mp-wayfinder",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "resolving-merge-conflicts",
+      "uniqueId": "02-matt-pocock:resolving-merge-conflicts",
+      "name": "resolving-merge-conflicts",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Resolve Git conflicts safely.",
+      "scoped": "mp-resolving-merge-conflicts",
+      "cli": "python scripts/install-to-project.py --skill mp-resolving-merge-conflicts",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "handoff",
+      "uniqueId": "02-matt-pocock:handoff",
+      "name": "handoff",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Preserve context between development sessions.",
+      "scoped": "mp-handoff",
+      "cli": "python scripts/install-to-project.py --skill mp-handoff",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "ask-matt",
+      "uniqueId": "02-matt-pocock:ask-matt",
+      "name": "ask-matt",
+      "priority": "P2",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Get guidance on choosing an appropriate engineering workflow.",
+      "scoped": "mp-ask-matt",
+      "cli": "python scripts/install-to-project.py --skill mp-ask-matt",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "setup-matt-pocock-skills",
+      "uniqueId": "02-matt-pocock:setup-matt-pocock-skills",
+      "name": "setup-matt-pocock-skills",
+      "priority": "P1",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Configure the skills collection.",
+      "scoped": "mp-setup-matt-pocock-skills",
+      "cli": "python scripts/install-to-project.py --skill mp-setup-matt-pocock-skills",
+      "repo": "mattpocock/skills",
+      "stars": 319201,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "triage",
+      "uniqueId": "02-matt-pocock:triage",
+      "name": "triage",
+      "priority": "P2",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Prioritize issues and incoming work.",
+      "scoped": "mp-triage",
+      "cli": "python scripts/install-to-project.py --skill mp-triage",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "teach",
+      "uniqueId": "02-matt-pocock:teach",
+      "name": "teach",
+      "priority": "P2",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Explain technical concepts and workflows.",
+      "scoped": "mp-teach",
+      "cli": "python scripts/install-to-project.py --skill mp-teach",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "writing-great-skills",
+      "uniqueId": "02-matt-pocock:writing-great-skills",
+      "name": "writing-great-skills",
+      "priority": "P2",
+      "categoryId": "02-matt-pocock",
+      "categoryLabel": "Matt Pocock",
+      "description": "Build reusable and effective agent skills.",
+      "scoped": "mp-writing-great-skills",
+      "cli": "python scripts/install-to-project.py --skill mp-writing-great-skills",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "mattpocock"
+      ]
+    },
+    {
+      "id": "android-cli",
+      "uniqueId": "03-android:android-cli",
+      "name": "android-cli",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Create Android projects, run apps on devices, manage virtual devices and inspect UI.",
+      "scoped": "android-cli",
+      "cli": "python scripts/install-to-project.py --skill android-cli",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "adaptive",
+      "uniqueId": "03-android:adaptive",
+      "name": "adaptive",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Build responsive Compose UIs that adapt to window sizes, device types and input methods.",
+      "scoped": "android-adaptive",
+      "cli": "python scripts/install-to-project.py --skill android-adaptive",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "navigation-3",
+      "uniqueId": "03-android:navigation-3",
+      "name": "navigation-3",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Apply recommended practices for setting up and using Navigation 3.",
+      "scoped": "android-navigation-3",
+      "cli": "python scripts/install-to-project.py --skill android-navigation-3",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "jetpack-compose-performance",
+      "uniqueId": "03-android:jetpack-compose-performance",
+      "name": "jetpack-compose-performance",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Diagnose recomposition overhead, dropped frames, UI jank and Compose performance problems.",
+      "scoped": "android-jetpack-compose-performance",
+      "cli": "python scripts/install-to-project.py --skill android-jetpack-compose-performance",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "android-profiler",
+      "uniqueId": "03-android:android-profiler",
+      "name": "android-profiler",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Record and analyze Android performance data to diagnose bottlenecks, jank and memory leaks.",
+      "scoped": "android-profiler",
+      "cli": "python scripts/install-to-project.py --skill android-profiler",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "anr-audit-and-fix",
+      "uniqueId": "03-android:anr-audit-and-fix",
+      "name": "anr-audit-and-fix",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Audit codebases for ANR risks and diagnose Application Not Responding stack dumps.",
+      "scoped": "android-anr-audit-and-fix",
+      "cli": "python scripts/install-to-project.py --skill android-anr-audit-and-fix",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "r8-analyzer",
+      "uniqueId": "03-android:r8-analyzer",
+      "name": "r8-analyzer",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Audit and optimize R8 configuration to improve app performance and release behavior.",
+      "scoped": "android-r8-analyzer",
+      "cli": "python scripts/install-to-project.py --skill android-r8-analyzer",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "android-intent-security",
+      "uniqueId": "03-android:android-intent-security",
+      "name": "android-intent-security",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Secure Android components and handle Intents safely to prevent privilege escalation and unauthorized access.",
+      "scoped": "android-intent-security",
+      "cli": "python scripts/install-to-project.py --skill android-intent-security",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "android-permissions-security",
+      "uniqueId": "03-android:android-permissions-security",
+      "name": "android-permissions-security",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Audit permissions and IPC components, identify security gaps and remediate vulnerabilities.",
+      "scoped": "android-permissions-security",
+      "cli": "python scripts/install-to-project.py --skill android-permissions-security",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "testing-setup",
+      "uniqueId": "03-android:testing-setup",
+      "name": "testing-setup",
+      "priority": "P0",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Set up a comprehensive testing strategy covering unit, UI and screenshot tests.",
+      "scoped": "android-testing-setup",
+      "cli": "python scripts/install-to-project.py --skill android-testing-setup",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "agp-9-upgrade",
+      "uniqueId": "03-android:agp-9-upgrade",
+      "name": "agp-9-upgrade",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Plan and execute upgrades to Android Gradle Plugin 9.",
+      "scoped": "android-agp-9-upgrade",
+      "cli": "python scripts/install-to-project.py --skill android-agp-9-upgrade",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "edge-to-edge",
+      "uniqueId": "03-android:edge-to-edge",
+      "name": "edge-to-edge",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Modernize app layouts with Android edge-to-edge support.",
+      "scoped": "android-edge-to-edge",
+      "cli": "python scripts/install-to-project.py --skill android-edge-to-edge",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "migrate-xml-views-to-jetpack-compose",
+      "uniqueId": "03-android:migrate-xml-views-to-jetpack-compose",
+      "name": "migrate-xml-views-to-jetpack-compose",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Plan and implement migration from legacy XML Views to Jetpack Compose.",
+      "scoped": "android-migrate-xml-views-to-jetpack-compose",
+      "cli": "python scripts/install-to-project.py --skill android-migrate-xml-views-to-jetpack-compose",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "camerax",
+      "uniqueId": "03-android:camerax",
+      "name": "camerax",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Migrate camera functionality to CameraX and apply CameraX best practices.",
+      "scoped": "android-camerax",
+      "cli": "python scripts/install-to-project.py --skill android-camerax",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "appfunctions",
+      "uniqueId": "03-android:appfunctions",
+      "name": "appfunctions",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Expose app workflows to the Android system so on-device AI agents can discover and execute them.",
+      "scoped": "android-appfunctions",
+      "cli": "python scripts/install-to-project.py --skill android-appfunctions",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents"
+      ]
+    },
+    {
+      "id": "navigation-event",
+      "uniqueId": "03-android:navigation-event",
+      "name": "navigation-event",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Use NavigationEvent to intercept back gestures and support Predictive Back animations.",
+      "scoped": "android-navigation-event",
+      "cli": "python scripts/install-to-project.py --skill android-navigation-event",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "ml-kit-genai-prompt-api",
+      "uniqueId": "03-android:ml-kit-genai-prompt-api",
+      "name": "ml-kit-genai-prompt-api",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Send natural-language requests on-device using the ML Kit GenAI Prompt API and Gemini Nano.",
+      "scoped": "android-ml-kit-genai-prompt-api",
+      "cli": "python scripts/install-to-project.py --skill android-ml-kit-genai-prompt-api",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "mlkit-agent-api",
+      "uniqueId": "03-android:mlkit-agent-api",
+      "name": "mlkit-agent-api",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Build autonomous on-device agentic workflows using the ML Kit GenAI Agent API and Gemini Nano.",
+      "scoped": "android-mlkit-agent-api",
+      "cli": "python scripts/install-to-project.py --skill android-mlkit-agent-api",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents"
+      ]
+    },
+    {
+      "id": "litert-lm",
+      "uniqueId": "03-android:litert-lm",
+      "name": "litert-lm",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Run open text LLMs on-device using the LiteRT-LM Kotlin API on CPU or GPU.",
+      "scoped": "android-litert-lm",
+      "cli": "python scripts/install-to-project.py --skill android-litert-lm",
+      "repo": "google-ai-edge/LiteRT-LM",
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "kmp"
+      ]
+    },
+    {
+      "id": "litert-runtime",
+      "uniqueId": "03-android:litert-runtime",
+      "name": "litert-runtime",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Run on-device TensorFlow Lite model inference using the LiteRT CompiledModel API.",
+      "scoped": "android-litert-runtime",
+      "cli": "python scripts/install-to-project.py --skill android-litert-runtime",
+      "repo": "google-ai-edge/litert",
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "media3-cast-integration",
+      "uniqueId": "03-android:media3-cast-integration",
+      "name": "media3-cast-integration",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Integrate Google Cast support into Android apps using Media3.",
+      "scoped": "android-media3-cast-integration",
+      "cli": "python scripts/install-to-project.py --skill android-media3-cast-integration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "play-billing-library-version-upgrade",
+      "uniqueId": "03-android:play-billing-library-version-upgrade",
+      "name": "play-billing-library-version-upgrade",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Upgrade the Google Play Billing Library to access newer features and supported versions.",
+      "scoped": "android-play-billing-library-version-upgrade",
+      "cli": "python scripts/install-to-project.py --skill android-play-billing-library-version-upgrade",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "play-policy-insights",
+      "uniqueId": "03-android:play-policy-insights",
+      "name": "play-policy-insights",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Audit apps against Google Play policies, including permissions, account deletion and data safety.",
+      "scoped": "android-play-policy-insights",
+      "cli": "python scripts/install-to-project.py --skill android-play-policy-insights",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "restore-credentials",
+      "uniqueId": "03-android:restore-credentials",
+      "name": "restore-credentials",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Implement Credential Manager Restore Credentials for silent sign-in on a new device.",
+      "scoped": "android-restore-credentials",
+      "cli": "python scripts/install-to-project.py --skill android-restore-credentials",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "verified-email",
+      "uniqueId": "03-android:verified-email",
+      "name": "verified-email",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Implement secure, OTP-less email verification using Credential Manager.",
+      "scoped": "android-verified-email",
+      "cli": "python scripts/install-to-project.py --skill android-verified-email",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "engage-sdk-integration",
+      "uniqueId": "03-android:engage-sdk-integration",
+      "name": "engage-sdk-integration",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Integrate Play Engage SDK to publish content clusters and engage users on Google Play.",
+      "scoped": "android-engage-sdk-integration",
+      "cli": "python scripts/install-to-project.py --skill android-engage-sdk-integration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "glance-appwidget-updates-and-memory",
+      "uniqueId": "03-android:glance-appwidget-updates-and-memory",
+      "name": "glance-appwidget-updates-and-memory",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Manage Glance AppWidget state updates, background sync and RemoteViews bitmap memory limits.",
+      "scoped": "android-glance-appwidget-updates-and-memory",
+      "cli": "python scripts/install-to-project.py --skill android-glance-appwidget-updates-and-memory",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "glance-canonical-layouts",
+      "uniqueId": "03-android:glance-canonical-layouts",
+      "name": "glance-canonical-layouts",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Build home-screen widgets using recommended Jetpack Glance canonical layouts.",
+      "scoped": "android-glance-canonical-layouts",
+      "cli": "python scripts/install-to-project.py --skill android-glance-canonical-layouts",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "android-for-cars-parked-apps",
+      "uniqueId": "03-android:android-for-cars-parked-apps",
+      "name": "android-for-cars-parked-apps",
+      "priority": "P3",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Adapt supported video, game and browser apps for parked-app experiences in Android Auto and Android Automotive OS.",
+      "scoped": "android-for-cars-parked-apps",
+      "cli": "python scripts/install-to-project.py --skill android-for-cars-parked-apps",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "leanback-to-compose-tv-migration",
+      "uniqueId": "03-android:leanback-to-compose-tv-migration",
+      "name": "leanback-to-compose-tv-migration",
+      "priority": "P3",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Migrate Android TV interfaces from the legacy Leanback toolkit to Compose for TV.",
+      "scoped": "android-leanback-to-compose-tv-migration",
+      "cli": "python scripts/install-to-project.py --skill android-leanback-to-compose-tv-migration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "wear-compose-m3",
+      "uniqueId": "03-android:wear-compose-m3",
+      "name": "wear-compose-m3",
+      "priority": "P3",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Build Wear OS interfaces with Compose Material 3, including scaffolding, layouts and migrations.",
+      "scoped": "android-wear-compose-m3",
+      "cli": "python scripts/install-to-project.py --skill android-wear-compose-m3",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "wear-widgets",
+      "uniqueId": "03-android:wear-widgets",
+      "name": "wear-widgets",
+      "priority": "P3",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Build, migrate, update and verify Wear OS widgets using Glance Wear and Remote Compose.",
+      "scoped": "android-wear-widgets",
+      "cli": "python scripts/install-to-project.py --skill android-wear-widgets",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "display-glasses-with-jetpack-compose-glimmer",
+      "uniqueId": "03-android:display-glasses-with-jetpack-compose-glimmer",
+      "name": "display-glasses-with-jetpack-compose-glimmer",
+      "priority": "P3",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Build projected Android XR apps for display glasses using Jetpack Compose Glimmer.",
+      "scoped": "android-display-glasses-with-jetpack-compose-glimmer",
+      "cli": "python scripts/install-to-project.py --skill android-display-glasses-with-jetpack-compose-glimmer",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "projected-hardware",
+      "uniqueId": "03-android:projected-hardware",
+      "name": "projected-hardware",
+      "priority": "P3",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Access projected Android XR hardware such as cameras and microphones.",
+      "scoped": "android-projected-hardware",
+      "cli": "python scripts/install-to-project.py --skill android-projected-hardware",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "ink-app-builder",
+      "uniqueId": "03-android:ink-app-builder",
+      "name": "ink-app-builder",
+      "priority": "P2",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Build freehand drawing surfaces with Jetpack Ink and Compose, including stylus input, erasing and persistence.",
+      "scoped": "android-ink-app-builder",
+      "cli": "python scripts/install-to-project.py --skill android-ink-app-builder",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "ink-custom-brush-builder",
+      "uniqueId": "03-android:ink-custom-brush-builder",
+      "name": "ink-custom-brush-builder",
+      "priority": "P3",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Create custom Jetpack Ink BrushFamily styles, tips, textures and dynamic brush behaviors.",
+      "scoped": "android-ink-custom-brush-builder",
+      "cli": "python scripts/install-to-project.py --skill android-ink-custom-brush-builder",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "expo-mobile",
+      "uniqueId": "03-android:expo-mobile",
+      "name": "expo-mobile",
+      "priority": "P1",
+      "categoryId": "03-android",
+      "categoryLabel": "Android Development",
+      "description": "Official Expo React Native mobile development workflows, custom dev clients, native module configuration, and OTA update pipelines.",
+      "scoped": "android-expo-mobile",
+      "cli": "python scripts/install-to-project.py --skill android-expo-mobile",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-kotlin-toolchain",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-kotlin-toolchain",
+      "name": "kotlin-tooling-kotlin-toolchain",
+      "priority": "P0",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Manage modern Kotlin toolchains.",
+      "scoped": "kmp-kotlin-tooling-kotlin-toolchain",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-kotlin-toolchain",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-agp9-migration",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-agp9-migration",
+      "name": "kotlin-tooling-agp9-migration",
+      "priority": "P1",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Migrate and troubleshoot Android Gradle Plugin 9.",
+      "scoped": "kmp-kotlin-tooling-agp9-migration",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-agp9-migration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-java-to-kotlin",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-java-to-kotlin",
+      "name": "kotlin-tooling-java-to-kotlin",
+      "priority": "P1",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Migrate Java code to Kotlin.",
+      "scoped": "kmp-kotlin-tooling-java-to-kotlin",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-java-to-kotlin",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-native-build-performance",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-native-build-performance",
+      "name": "kotlin-tooling-native-build-performance",
+      "priority": "P1",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Optimize Kotlin/Native build performance.",
+      "scoped": "kmp-kotlin-tooling-native-build-performance",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-native-build-performance",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-immutable-collections-0-5-x-migration",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-immutable-collections-0-5-x-migration",
+      "name": "kotlin-tooling-immutable-collections-0-5-x-migration",
+      "priority": "P2",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Handle immutable collections migration.",
+      "scoped": "kmp-kotlin-tooling-immutable-collections-0-5-x-migration",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-immutable-collections-0-5-x-migration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-cocoapods-spm-migration",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-cocoapods-spm-migration",
+      "name": "kotlin-tooling-cocoapods-spm-migration",
+      "priority": "P1",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Manage Kotlin Multiplatform iOS dependency integration.",
+      "scoped": "kmp-kotlin-tooling-cocoapods-spm-migration",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-cocoapods-spm-migration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-gradle-to-kotlin-toolchain-project",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-gradle-to-kotlin-toolchain-project",
+      "name": "kotlin-tooling-gradle-to-kotlin-toolchain-project",
+      "priority": "P2",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Modernize Gradle toolchain project configuration.",
+      "scoped": "kmp-kotlin-tooling-gradle-to-kotlin-toolchain-project",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-gradle-to-kotlin-toolchain-project",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-gradle-to-kotlin-toolchain-plugin",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-gradle-to-kotlin-toolchain-plugin",
+      "name": "kotlin-tooling-gradle-to-kotlin-toolchain-plugin",
+      "priority": "P2",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Modernize Gradle toolchain plugin configuration.",
+      "scoped": "kmp-kotlin-tooling-gradle-to-kotlin-toolchain-plugin",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-gradle-to-kotlin-toolchain-plugin",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "kmp"
+      ]
+    },
+    {
+      "id": "kotlin-tooling-kotlin-toolchain-plugin-authoring",
+      "uniqueId": "04-kotlin-kmp:kotlin-tooling-kotlin-toolchain-plugin-authoring",
+      "name": "kotlin-tooling-kotlin-toolchain-plugin-authoring",
+      "priority": "P3",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Develop custom Kotlin toolchain plugins.",
+      "scoped": "kmp-kotlin-tooling-kotlin-toolchain-plugin-authoring",
+      "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-kotlin-toolchain-plugin-authoring",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp"
+      ]
+    },
+    {
+      "id": "swiftui-pro-(twostraws)",
+      "uniqueId": "04-kotlin-kmp:swiftui-pro-(twostraws)",
+      "name": "swiftui-pro (twostraws)",
+      "priority": "P0",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "SwiftUI-focused agent skill targeting iOS 26+ and Swift 6.4+: modern API usage, navigation, layout, animations, state management, performance, accessibility/VoiceOver and deprecated API pitfalls. Uses the open Agent Skills format; install with npx skills add https://github.com/twostraws/swiftui-agent-skill --skill swiftui-pro. Compatible with Claude Code, Codex, Gemini, Cursor and other Agent Skills hosts. Model-agnostic: guidance is executed by the connected coding model; requires a host that supports Agent Skills. MIT licensed.",
+      "scoped": "swiftui-pro-(twostraws)",
+      "cli": "python scripts/install-to-project.py --skill swiftui-pro-(twostraws)",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp",
+        "agents"
+      ]
+    },
+    {
+      "id": "swiftui-expert-skill-(avdlee)",
+      "uniqueId": "04-kotlin-kmp:swiftui-expert-skill-(avdlee)",
+      "name": "swiftui-expert-skill (AvdLee)",
+      "priority": "P0",
+      "categoryId": "04-kotlin-kmp",
+      "categoryLabel": "Kotlin Multiplatform (KMP)",
+      "description": "Broad SwiftUI expert reference skill for state/data flow, @Observable, view composition, performance, lists/identity, navigation/sheets, Swift Charts, animations, macOS, Liquid Glass, accessibility, image optimization and current SDK migrations. Also includes Python/xctrace tooling to record and analyse Instruments traces (Time Profiler, Hangs, Animation Hitches, SwiftUI updates and cause graph). Agent Skills + portable Agent Plugin; supports Claude Code, Codex, Gemini CLI, Cursor, pi and other compatible hosts. Install: npx skills@latest add https://github.com/avdlee/swiftui-agent-skill --skill swiftui-expert-skill. Model-agnostic; MIT licensed; Xcode/xctrace needed for trace tooling.",
+      "scoped": "swiftui-expert-skill-(avdlee)",
+      "cli": "python scripts/install-to-project.py --skill swiftui-expert-skill-(avdlee)",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "kmp",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "archify",
+      "uniqueId": "05-ui-ux:archify",
+      "name": "archify",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Turn any idea, plan, code, or architecture into explorable, interactive diagrams (architecture, sequence, workflow, data flow, ERD, state/lifecycle) rendered as standalone self-contained HTML with dark/light themes, animations, and image/SVG/WebM export (94k+ stars).",
+      "scoped": "ui-archify",
+      "cli": "python scripts/install-to-project.py --skill ui-archify",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "astryx",
+      "uniqueId": "05-ui-ux:astryx",
+      "name": "astryx",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Meta's agent-ready, fully customizable open-source React design system (14.5k+ stars). Evolved over 8 years powering thousands of apps inside Meta; features 150+ accessible StyleX-powered components, token-based theming (defineTheme), source ejection (swizzle), and built-in Model Context Protocol (MCP) server & CLI (@astryxdesign/cli) designed specifically to prevent AI coding assistants from hallucinating UI styles and layout tokens.",
+      "scoped": "ui-astryx",
+      "cli": "python scripts/install-to-project.py --skill ui-astryx",
+      "repo": "meta/astryx",
+      "stars": 18539,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "uniqueId": "05-ui-ux:ui-ux-pro-max",
+      "name": "ui-ux-pro-max",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Comprehensive UI/UX design-intelligence skill and CLI. Generates project-specific design systems and provides searchable guidance: 79 UI styles (50 active), 192 industry/product reasoning rules and palettes, 74 font pairings, 25 chart types, 119 UX guidelines, and 22 stack-specific playbooks including Jetpack Compose and SwiftUI. Supports Antigravity, Claude Code, Codex CLI, Gemini CLI, OpenCode, Cursor, GitHub Copilot, Windsurf, Kiro and many others. Install with npm install -g ui-ux-pro-max-cli, then uipro init --ai antigravity (or the relevant host). Python 3.x required for local search script. Model-agnostic skill: works through the connected coding assistant/model; it is not an LLM or model API. MIT-licensed core is open source; separate Premium offering adds brand identity, logo, banners/slides, custom iconography, image-generation integrations and enterprise token architecture. Search/guidance does not automatically build or visually QA the product; review output and verify implementation against platform guidelines.",
+      "scoped": "ui-ux-pro-max",
+      "cli": "python scripts/install-to-project.py --skill ui-ux-pro-max",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "stars": 147183,
+      "ecosystems": [
+        "android",
+        "kmp",
+        "quality"
+      ]
+    },
+    {
+      "id": "impeccable",
+      "uniqueId": "05-ui-ux:impeccable",
+      "name": "impeccable",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Design command toolkit for coding agents: critique UX, audit accessibility/performance/responsive behavior, polish and harden interfaces, and detect common UI quality issues. Complements UI/UX Pro Max and native platform guidelines.",
+      "scoped": "ui-impeccable",
+      "cli": "python scripts/install-to-project.py --skill ui-impeccable",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "ui-taste",
+      "uniqueId": "05-ui-ux:ui-taste",
+      "name": "ui-taste",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Uizze UI Taste and related UI/UX agent skills. FREE: install/use the ui-taste skill from uizze.sh; the GitHub repo also provides free ui-design, anti-ui-slop and ui-radar skills, plus GitHub-native image-to-ui and uizze-ui packages. Skills work locally without a Uizze account or MCP. PAID: authenticated Uizze MCP at https://uizze.com/mcp provides find_ui_references and find_ui_materials for real app screens, flows, design systems, fonts, icons and materials. Website reference browsing is free without an account. LIMITATIONS: UI Taste/iOS Design are distributed separately from the GitHub skill packages; paid MCP exposes only two retrieval tools and may return no matches; the skills are guidance and playbooks, not a design editor or guaranteed visual QA. Third-party reference assets and branding are not automatically licensed for reuse; retain individual MIT/Apache notices.",
+      "scoped": "ui-taste",
+      "cli": "python scripts/install-to-project.py --skill ui-taste",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "ios-design",
+      "uniqueId": "05-ui-ux:ios-design",
+      "name": "ios-design",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Build platform-native iOS interfaces using Apple platform conventions.",
+      "scoped": "ui-ios-design",
+      "cli": "python scripts/install-to-project.py --skill ui-ios-design",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "taste-skill",
+      "uniqueId": "05-ui-ux:taste-skill",
+      "name": "taste-skill",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Anti-slop frontend web design skill for AI coding agents (Leonxlnx/taste-skill, 111k+ stars). Enforces figma.com/x.ai quality bar: plain authentic voice, one section per screen, equal edges, real photography, hero entrances (data-enter), quiet micro-interactions, shader/3D effects reserved strictly for tech/developer tooling, and automated browser-check finish gates. Works across React, Next.js, Vue, Svelte, Astro, Tailwind, or static HTML/CSS. Install with npx skills add https://github.com/Leonxlnx/taste-skill.",
+      "scoped": "ui-taste-skill",
+      "cli": "python scripts/install-to-project.py --skill ui-taste-skill",
+      "repo": "Leonxlnx/taste-skill",
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "compose-preview",
+      "uniqueId": "05-ui-ux:compose-preview",
+      "name": "compose-preview",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Validate Compose UI concepts and layouts visually.",
+      "scoped": "ui-compose-preview",
+      "cli": "python scripts/install-to-project.py --skill ui-compose-preview",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "prototype",
+      "uniqueId": "05-ui-ux:prototype",
+      "name": "prototype",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Explore different UI concepts before implementation.",
+      "scoped": "ui-prototype",
+      "cli": "python scripts/install-to-project.py --skill ui-prototype",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "design-consultation",
+      "uniqueId": "05-ui-ux:design-consultation",
+      "name": "design-consultation",
+      "priority": "P2",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Develop design systems and design direction.",
+      "scoped": "gstack-design-consultation",
+      "cli": "python scripts/install-to-project.py --skill gstack-design-consultation",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "shadcn-ui",
+      "uniqueId": "05-ui-ux:shadcn-ui",
+      "name": "shadcn-ui",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Accessible, composable Tailwind CSS and Radix UI component library patterns for architecting production-grade design systems and user interfaces.",
+      "scoped": "ui-shadcn-ui",
+      "cli": "python scripts/install-to-project.py --skill ui-shadcn-ui",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "emil-design-eng",
+      "uniqueId": "05-ui-ux:emil-design-eng",
+      "name": "emil-design-eng",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Emil Kowalski's Apple-grade design engineering, fluid micro-interactions, animation vocabulary, gesture physics, and craft polish.",
+      "scoped": "ui-emil-design-eng",
+      "cli": "python scripts/install-to-project.py --skill ui-emil-design-eng",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "vercel-react-patterns",
+      "uniqueId": "05-ui-ux:vercel-react-patterns",
+      "name": "vercel-react-patterns",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Vercel Labs production React composition patterns, Server Components architecture, web design guidelines, and performance practices.",
+      "scoped": "ui-vercel-react-patterns",
+      "cli": "python scripts/install-to-project.py --skill ui-vercel-react-patterns",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gsap-animation",
+      "uniqueId": "05-ui-ux:gsap-animation",
+      "name": "gsap-animation",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion.",
+      "scoped": "ui-gsap-animation",
+      "cli": "python scripts/install-to-project.py --skill ui-gsap-animation",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gsd-new-project",
+      "uniqueId": "06-gsd:gsd-new-project",
+      "name": "gsd-new-project",
+      "priority": "P0",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Initialize a new project with GSD.",
+      "scoped": "gsd-new-project",
+      "cli": "python scripts/install-to-project.py --skill gsd-new-project",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd"
+      ]
+    },
+    {
+      "id": "gsd-onboard",
+      "uniqueId": "06-gsd:gsd-onboard",
+      "name": "gsd-onboard",
+      "priority": "P0",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Onboard an existing codebase; map and understand the current project.",
+      "scoped": "gsd-onboard",
+      "cli": "python scripts/install-to-project.py --skill gsd-onboard",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd"
+      ]
+    },
+    {
+      "id": "discuss-\u2192-plan-\u2192-execute-\u2192-verify-\u2192-ship",
+      "uniqueId": "06-gsd:discuss-\u2192-plan-\u2192-execute-\u2192-verify-\u2192-ship",
+      "name": "Discuss \u2192 Plan \u2192 Execute \u2192 Verify \u2192 Ship",
+      "priority": "P0",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Core milestone lifecycle documented by current GSD Core; use its current command names and phase workflow rather than relying on legacy command lists.",
+      "scoped": "discuss-\u2192-plan-\u2192-execute-\u2192-verify-\u2192-ship",
+      "cli": "python scripts/install-to-project.py --skill discuss-\u2192-plan-\u2192-execute-\u2192-verify-\u2192-ship",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd"
+      ]
+    },
+    {
+      "id": "gsd-core-host-integration",
+      "uniqueId": "06-gsd:gsd-core-host-integration",
+      "name": "GSD Core host integration",
+      "priority": "P0",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Current Core supports multiple coding-agent runtimes through its host-integration interface; runtime support and installation mode are version-dependent.",
+      "scoped": "gsd-core-host-integration",
+      "cli": "python scripts/install-to-project.py --skill gsd-core-host-integration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd",
+        "agents"
+      ]
+    },
+    {
+      "id": "gsd-companion-mcp-server",
+      "uniqueId": "06-gsd:gsd-companion-mcp-server",
+      "name": "GSD companion MCP server",
+      "priority": "P1",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Companion MCP server provides GSD interface operations; OpenCode integration is documented in current release notes.",
+      "scoped": "gsd-companion-mcp-server",
+      "cli": "python scripts/install-to-project.py --skill gsd-companion-mcp-server",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd"
+      ]
+    },
+    {
+      "id": "gsd-pi",
+      "uniqueId": "06-gsd:gsd-pi",
+      "name": "GSD Pi",
+      "priority": "P2",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Pi-specific integration/package for using GSD in the Pi coding agent. It is a host/runtime integration, not a separate planning methodology.",
+      "scoped": "gsd-pi",
+      "cli": "python scripts/install-to-project.py --skill gsd-pi",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd",
+        "agents"
+      ]
+    },
+    {
+      "id": "gsd-capability-framework",
+      "uniqueId": "06-gsd:gsd-capability-framework",
+      "name": "GSD capability framework",
+      "priority": "P1",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Optional capabilities extend GSD workflows; evaluate only the capabilities required by the project.",
+      "scoped": "gsd-capability-framework",
+      "cli": "python scripts/install-to-project.py --skill gsd-capability-framework",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd"
+      ]
+    },
+    {
+      "id": "gsd-security-/-verification-gates",
+      "uniqueId": "06-gsd:gsd-security-/-verification-gates",
+      "name": "GSD security / verification gates",
+      "priority": "P0",
+      "categoryId": "06-gsd",
+      "categoryLabel": "GSD Autonomous Engine",
+      "description": "Use plan/verify gates, API coverage decisions, human checkpoints and lifecycle guards; check exact behavior in the installed release.",
+      "scoped": "gsd-security-/-verification-gates",
+      "cli": "python scripts/install-to-project.py --skill gsd-security-/-verification-gates",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "gsd",
+        "quality"
+      ]
+    },
+    {
+      "id": "office-hours",
+      "uniqueId": "07-gstack:office-hours",
+      "name": "office-hours",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Challenge and refine product ideas.",
+      "scoped": "gstack-office-hours",
+      "cli": "python scripts/install-to-project.py --skill gstack-office-hours",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "plan-ceo-review",
+      "uniqueId": "07-gstack:plan-ceo-review",
+      "name": "plan-ceo-review",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Review product strategy and priorities.",
+      "scoped": "gstack-plan-ceo-review",
+      "cli": "python scripts/install-to-project.py --skill gstack-plan-ceo-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "plan-eng-review",
+      "uniqueId": "07-gstack:plan-eng-review",
+      "name": "plan-eng-review",
+      "priority": "P0",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Review technical architecture.",
+      "scoped": "gstack-plan-eng-review",
+      "cli": "python scripts/install-to-project.py --skill gstack-plan-eng-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "plan-design-review",
+      "uniqueId": "07-gstack:plan-design-review",
+      "name": "plan-design-review",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Review interface direction.",
+      "scoped": "gstack-plan-design-review",
+      "cli": "python scripts/install-to-project.py --skill gstack-plan-design-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "autoplan",
+      "uniqueId": "07-gstack:autoplan",
+      "name": "autoplan",
+      "priority": "P2",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Combine planning workflows.",
+      "scoped": "gstack-autoplan",
+      "cli": "python scripts/install-to-project.py --skill gstack-autoplan",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "design-consultation",
+      "uniqueId": "07-gstack:design-consultation",
+      "name": "design-consultation",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Establish visual design direction.",
+      "scoped": "gstack-design-consultation",
+      "cli": "python scripts/install-to-project.py --skill gstack-design-consultation",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "design-review",
+      "uniqueId": "07-gstack:design-review",
+      "name": "design-review",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Evaluate UI quality.",
+      "scoped": "gstack-design-review",
+      "cli": "python scripts/install-to-project.py --skill gstack-design-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "review",
+      "uniqueId": "07-gstack:review",
+      "name": "review",
+      "priority": "P0",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Review implementation for bugs.",
+      "scoped": "gstack-review",
+      "cli": "python scripts/install-to-project.py --skill gstack-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "qa",
+      "uniqueId": "07-gstack:qa",
+      "name": "qa",
+      "priority": "P0",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Perform browser-based quality assurance.",
+      "scoped": "gstack-qa",
+      "cli": "python scripts/install-to-project.py --skill gstack-qa",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "ship",
+      "uniqueId": "07-gstack:ship",
+      "name": "ship",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Prepare changes for release.",
+      "scoped": "gstack-ship",
+      "cli": "python scripts/install-to-project.py --skill gstack-ship",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "land-and-deploy",
+      "uniqueId": "07-gstack:land-and-deploy",
+      "name": "land-and-deploy",
+      "priority": "P2",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Complete deployment workflows.",
+      "scoped": "gstack-land-and-deploy",
+      "cli": "python scripts/install-to-project.py --skill gstack-land-and-deploy",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "investigate",
+      "uniqueId": "07-gstack:investigate",
+      "name": "investigate",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Investigate bugs and production problems.",
+      "scoped": "gstack-investigate",
+      "cli": "python scripts/install-to-project.py --skill gstack-investigate",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "careful",
+      "uniqueId": "07-gstack:careful",
+      "name": "careful",
+      "priority": "P0",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Protect against risky operations.",
+      "scoped": "gstack-careful",
+      "cli": "python scripts/install-to-project.py --skill gstack-careful",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "guard",
+      "uniqueId": "07-gstack:guard",
+      "name": "guard",
+      "priority": "P1",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Apply safety guardrails.",
+      "scoped": "gstack-guard",
+      "cli": "python scripts/install-to-project.py --skill gstack-guard",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "benchmark",
+      "uniqueId": "07-gstack:benchmark",
+      "name": "benchmark",
+      "priority": "P2",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Benchmark application behavior.",
+      "scoped": "gstack-benchmark",
+      "cli": "python scripts/install-to-project.py --skill gstack-benchmark",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "retro",
+      "uniqueId": "07-gstack:retro",
+      "name": "retro",
+      "priority": "P2",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Review and improve development processes.",
+      "scoped": "gstack-retro",
+      "cli": "python scripts/install-to-project.py --skill gstack-retro",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "document-release",
+      "uniqueId": "07-gstack:document-release",
+      "name": "document-release",
+      "priority": "P2",
+      "categoryId": "07-gstack",
+      "categoryLabel": "gstack Workflow",
+      "description": "Prepare release documentation.",
+      "scoped": "gstack-document-release",
+      "cli": "python scripts/install-to-project.py --skill gstack-document-release",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "brainstorming",
+      "uniqueId": "08-superpowers:brainstorming",
+      "name": "brainstorming",
+      "priority": "P0",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Explore requirements and design options.",
+      "scoped": "superpowers-brainstorming",
+      "cli": "python scripts/install-to-project.py --skill superpowers-brainstorming",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "writing-plans",
+      "uniqueId": "08-superpowers:writing-plans",
+      "name": "writing-plans",
+      "priority": "P0",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Create implementation plans.",
+      "scoped": "superpowers-writing-plans",
+      "cli": "python scripts/install-to-project.py --skill superpowers-writing-plans",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "executing-plans",
+      "uniqueId": "08-superpowers:executing-plans",
+      "name": "executing-plans",
+      "priority": "P0",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Execute structured implementation plans.",
+      "scoped": "superpowers-executing-plans",
+      "cli": "python scripts/install-to-project.py --skill superpowers-executing-plans",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "test-driven-development",
+      "uniqueId": "08-superpowers:test-driven-development",
+      "name": "test-driven-development",
+      "priority": "P0",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Enforce TDD.",
+      "scoped": "superpowers-test-driven-development",
+      "cli": "python scripts/install-to-project.py --skill superpowers-test-driven-development",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers",
+        "quality"
+      ]
+    },
+    {
+      "id": "systematic-debugging",
+      "uniqueId": "08-superpowers:systematic-debugging",
+      "name": "systematic-debugging",
+      "priority": "P0",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Perform root-cause debugging.",
+      "scoped": "superpowers-systematic-debugging",
+      "cli": "python scripts/install-to-project.py --skill superpowers-systematic-debugging",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "subagent-driven-development",
+      "uniqueId": "08-superpowers:subagent-driven-development",
+      "name": "subagent-driven-development",
+      "priority": "P1",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Delegate independent development tasks.",
+      "scoped": "superpowers-subagent-driven-development",
+      "cli": "python scripts/install-to-project.py --skill superpowers-subagent-driven-development",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers",
+        "agents"
+      ]
+    },
+    {
+      "id": "requesting-code-review",
+      "uniqueId": "08-superpowers:requesting-code-review",
+      "name": "requesting-code-review",
+      "priority": "P1",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Request code review.",
+      "scoped": "review-requesting-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "superpowers",
+        "quality"
+      ]
+    },
+    {
+      "id": "receiving-code-review",
+      "uniqueId": "08-superpowers:receiving-code-review",
+      "name": "receiving-code-review",
+      "priority": "P1",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Address review feedback.",
+      "scoped": "review-receiving-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "superpowers",
+        "quality"
+      ]
+    },
+    {
+      "id": "using-git-worktrees",
+      "uniqueId": "08-superpowers:using-git-worktrees",
+      "name": "using-git-worktrees",
+      "priority": "P1",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Isolate development tasks.",
+      "scoped": "superpowers-using-git-worktrees",
+      "cli": "python scripts/install-to-project.py --skill superpowers-using-git-worktrees",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "finishing-a-development-branch",
+      "uniqueId": "08-superpowers:finishing-a-development-branch",
+      "name": "finishing-a-development-branch",
+      "priority": "P1",
+      "categoryId": "08-superpowers",
+      "categoryLabel": "Superpowers Harness",
+      "description": "Complete Git workflows.",
+      "scoped": "superpowers-finishing-a-development-branch",
+      "cli": "python scripts/install-to-project.py --skill superpowers-finishing-a-development-branch",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "understand-anything",
+      "uniqueId": "09-autonomous-agents:understand-anything",
+      "name": "understand-anything",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "AI-powered codebase and knowledge-base understanding suite (91k+ stars). Multi-agent pipeline analyzes repositories to build interactive visual knowledge graphs, dependency tours, domain business-process maps, and Karpathy-pattern LLM wiki graphs for Claude Code, Codex, Antigravity, and Cursor.",
+      "scoped": "research-understand-anything",
+      "cli": "python scripts/install-to-project.py --skill research-understand-anything",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "ralph-loop",
+      "uniqueId": "09-autonomous-agents:ralph-loop",
+      "name": "Ralph Loop",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Execute PRD-driven tasks autonomously through repeated iterations; use bounded iterations and test gates.",
+      "scoped": "agent-ralph-loop",
+      "cli": "python scripts/install-to-project.py --skill agent-ralph-loop",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "wiggum-cli",
+      "uniqueId": "09-autonomous-agents:wiggum-cli",
+      "name": "Wiggum CLI",
+      "priority": "P2",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Explore structured autonomous development; verify the exact project and host support.",
+      "scoped": "agent-wiggum-cli",
+      "cli": "python scripts/install-to-project.py --skill agent-wiggum-cli",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "openhands",
+      "uniqueId": "09-autonomous-agents:openhands",
+      "name": "OpenHands",
+      "priority": "P2",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Run independent autonomous software-development agents.",
+      "scoped": "agent-openhands",
+      "cli": "python scripts/install-to-project.py --skill agent-openhands",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "codex",
+      "uniqueId": "09-autonomous-agents:codex",
+      "name": "Codex",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Perform complex coding and repository tasks.",
+      "scoped": "agent-codex",
+      "cli": "python scripts/install-to-project.py --skill agent-codex",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "ponytail",
+      "uniqueId": "09-autonomous-agents:ponytail",
+      "name": "Ponytail",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Evaluate its coding workflow and implementation approach; verify exact project, features and Antigravity compatibility.",
+      "scoped": "agent-ponytail",
+      "cli": "python scripts/install-to-project.py --skill agent-ponytail",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "harness\u00b2",
+      "uniqueId": "09-autonomous-agents:harness\u00b2",
+      "name": "Harness\u00b2",
+      "priority": "P3",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Explore research on agent harness design and evaluation; not a standard daily coding plugin.",
+      "scoped": "harness\u00b2",
+      "cli": "python scripts/install-to-project.py --skill harness\u00b2",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "mempalace",
+      "uniqueId": "09-autonomous-agents:mempalace",
+      "name": "MemPalace",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Persistent local-first memory for project files and agent conversation history; supports semantic/hybrid retrieval, wake-up/context recall, MCP integration and configurable storage backends. Use for durable cross-session knowledge, not source-code relationship mapping.",
+      "scoped": "agent-mempalace",
+      "cli": "python scripts/install-to-project.py --skill agent-mempalace",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "obsidian"
+      ]
+    },
+    {
+      "id": "mempalace-data-governance-note",
+      "uniqueId": "09-autonomous-agents:mempalace-data-governance-note",
+      "name": "MemPalace data-governance note",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Before indexing private repositories or agent transcripts, define allowed data scope, retention/deletion, local/server backend, embedding model downloads and access controls.",
+      "scoped": "agent-mempalace-data-governance-note",
+      "cli": "python scripts/install-to-project.py --skill agent-mempalace-data-governance-note",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "obsidian"
+      ]
+    },
+    {
+      "id": "t3-code",
+      "uniqueId": "09-autonomous-agents:t3-code",
+      "name": "T3 Code",
+      "priority": "P2",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Open-source agent-harness control surface with mobile (iOS/Android), web and desktop clients for monitoring and controlling local coding-agent sessions. Supports Claude Code, Codex, Cursor, Grok Build, OpenCode and Google Antigravity. Useful for remote session access and orchestration visibility; it does not replace the coding agents themselves.",
+      "scoped": "agent-t3-code",
+      "cli": "python scripts/install-to-project.py --skill agent-t3-code",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents"
+      ]
+    },
+    {
+      "id": "safety-note",
+      "uniqueId": "09-autonomous-agents:safety-note",
+      "name": "Safety note",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Use isolated branches/worktrees, iteration limits, build/test gates and human approval before merges or deployments.",
+      "scoped": "agent-safety-note",
+      "cli": "python scripts/install-to-project.py --skill agent-safety-note",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "everything-claude-code-(ecc)",
+      "uniqueId": "09-autonomous-agents:everything-claude-code-(ecc)",
+      "name": "Everything Claude Code (ECC)",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Broad open-source agent-harness engineering system: 71 specialized agents, 314 skills, rules, hooks, memory/continuous learning, workflow automation and AgentShield security scanning. Covers planning \u2192 TDD/implementation \u2192 review \u2192 verification \u2192 memory/improvement. Best-supported on Claude Code; native plugin paths for Codex and Qoder; adapters exist for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity and others, but feature parity varies\u2014check platform support matrix before relying on hooks/memory/automation. Multi-harness guided installer supports Claude Code, Codex and Kimi Code; advanced adapters have separate install paths. MIT licensed. Model/provider configuration depends on host; ECC is not a model and does not supply one. Potential overlap with GSD, Superpowers, gstack, MemPalace and security/review tools\u2014select capabilities rather than loading everything.",
+      "scoped": "everything-claude-code-(ecc)",
+      "cli": "python scripts/install-to-project.py --skill everything-claude-code-(ecc)",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "gsd",
+        "superpowers",
+        "agents",
+        "obsidian",
+        "quality"
+      ]
+    },
+    {
+      "id": "browser-use",
+      "uniqueId": "09-autonomous-agents:browser-use",
+      "name": "browser-use",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows.",
+      "scoped": "workflow-browser-use",
+      "cli": "python scripts/install-to-project.py --skill workflow-browser-use",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "orca-agent",
+      "uniqueId": "09-autonomous-agents:orca-agent",
+      "name": "orca-agent",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously.",
+      "scoped": "infra-orca-agent",
+      "cli": "python scripts/install-to-project.py --skill infra-orca-agent",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "composio-skills",
+      "uniqueId": "10-ai-infrastructure:composio-skills",
+      "name": "composio-skills",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Unified MCP Gateway and curated registry of 1,000+ agent skills (79k+ stars). Connects AI coding assistants (Claude Code, Antigravity, Cursor, Codex) to 1,000+ external SaaS tools, APIs, and services (Slack, GitHub, Jira, Gmail, Calendar, Linear) with built-in OAuth authentication, RBAC, and audit logs.",
+      "scoped": "infra-composio-skills",
+      "cli": "python scripts/install-to-project.py --skill infra-composio-skills",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "caveman",
+      "uniqueId": "10-ai-infrastructure:caveman",
+      "name": "caveman",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "High-density token compression skill and proxy for AI coding agents (118k+ stars). Cuts input and output tokens by 33% to 65% by enforcing concise, telegraphic communication ('caveman voice') that eliminates conversational filler while preserving 100% of technical code, reasoning substance, and factual correctness.",
+      "scoped": "infra-caveman",
+      "cli": "python scripts/install-to-project.py --skill infra-caveman",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "billion-context",
+      "uniqueId": "10-ai-infrastructure:billion-context",
+      "name": "billion-context",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Context-compression engine for month-long single agent sessions (billions of tokens). Employs semantic context compaction allowing small 100K-token context windows to sustain prolonged development cycles while reducing token consumption by up to 5x.",
+      "scoped": "infra-billion-context",
+      "cli": "python scripts/install-to-project.py --skill infra-billion-context",
+      "repo": "ranxianglei/billion-context",
+      "stars": 5616,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "anthropic-skills",
+      "uniqueId": "10-ai-infrastructure:anthropic-skills",
+      "name": "anthropic-skills",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku.",
+      "scoped": "infra-anthropic-skills",
+      "cli": "python scripts/install-to-project.py --skill infra-anthropic-skills",
+      "repo": "anthropics/skills",
+      "stars": 190250,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "google-skills",
+      "uniqueId": "10-ai-infrastructure:google-skills",
+      "name": "google-skills",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Google's official open collection of Agent Skills for Google developer platforms, Cloud infrastructure, and AI engineering (23k+ stars). Complements android/skills and google/agents-cli with cross-ecosystem tools for Gemini, Vertex AI, and Workspace.",
+      "scoped": "infra-google-skills",
+      "cli": "python scripts/install-to-project.py --skill infra-google-skills",
+      "repo": "google/skills",
+      "stars": 23741,
+      "ecosystems": [
+        "android",
+        "agents"
+      ]
+    },
+    {
+      "id": "gemini-api",
+      "uniqueId": "10-ai-infrastructure:gemini-api",
+      "name": "Gemini API",
+      "priority": "P2",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Integrate Gemini APIs into applications and development workflows.",
+      "scoped": "infra-gemini-api",
+      "cli": "python scripts/install-to-project.py --skill infra-gemini-api",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gemini-live-api",
+      "uniqueId": "10-ai-infrastructure:gemini-live-api",
+      "name": "Gemini Live API",
+      "priority": "P2",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Build real-time Gemini applications.",
+      "scoped": "infra-gemini-live-api",
+      "cli": "python scripts/install-to-project.py --skill infra-gemini-live-api",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gemini-omni-flash-api",
+      "uniqueId": "10-ai-infrastructure:gemini-omni-flash-api",
+      "name": "Gemini Omni Flash API",
+      "priority": "P3",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Explore Gemini multimodal capabilities.",
+      "scoped": "infra-gemini-omni-flash-api",
+      "cli": "python scripts/install-to-project.py --skill infra-gemini-omni-flash-api",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "graphify",
+      "uniqueId": "10-ai-infrastructure:graphify",
+      "name": "Graphify",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Builds a local code/document knowledge graph (AST-based code relations, imports/calls, query/path/explain) so agents can navigate relationships and retrieve focused subgraphs instead of repeatedly scanning files. It is codebase-structure intelligence, not a live external library-docs service.",
+      "scoped": "spec-graphify",
+      "cli": "python scripts/install-to-project.py --skill spec-graphify",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "context7",
+      "uniqueId": "10-ai-infrastructure:context7",
+      "name": "Context7",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Retrieves current, version-aware documentation and code examples for external libraries/frameworks. Useful when implementing APIs or confirming current library usage. Complementary to Graphify, not redundant.",
+      "scoped": "infra-context7",
+      "cli": "python scripts/install-to-project.py --skill infra-context7",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "selection-guidance",
+      "uniqueId": "10-ai-infrastructure:selection-guidance",
+      "name": "Selection guidance",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Graphify answers: how is this codebase connected and where does execution/reuse flow? Context7 answers: how does this external library/API work in its current version? MemPalace answers: what durable knowledge should persist across sessions? Choose memory products based on privacy, retrieval quality, local-first needs and integrations.",
+      "scoped": "infra-selection-guidance",
+      "cli": "python scripts/install-to-project.py --skill infra-selection-guidance",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "obsidian"
+      ]
+    },
+    {
+      "id": "tokeneconomizer",
+      "uniqueId": "10-ai-infrastructure:tokeneconomizer",
+      "name": "TokenEconomizer",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Experience-driven coding-agent cost control. Learns repository-specific micro-skills from repeated sessions, prunes tools that remain unused, and detects recurring failure loops to suggest a redirect. Local learning data; supports Claude Code, Codex, GitHub Copilot CLI and Pi, with experimental OpenCode support. Evaluate on repeated work in the same repository; savings are workload-dependent.",
+      "scoped": "infra-tokeneconomizer",
+      "cli": "python scripts/install-to-project.py --skill infra-tokeneconomizer",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "google-agents-cli",
+      "uniqueId": "10-ai-infrastructure:google-agents-cli",
+      "name": "Google Agents CLI",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Google CLI + seven agent skills for building, scaffolding, coding, evaluating, deploying, publishing and observing AI agents on Google Cloud using ADK. It is a toolkit for coding assistants, not a coding agent/model. Works with Antigravity CLI, Claude Code, Codex and other coding agents; framework is ADK by default, while ADK model configuration supports Gemini natively and other providers via LiteLLM (documented examples: OpenAI GPT-4o, Anthropic Claude Sonnet, and Ollama-hosted Llama). Local create/run/eval can use Gemini AI Studio API key; cloud deployment needs Google Cloud. Useful when developing AI agents, not required for normal Android app coding.",
+      "scoped": "infra-google-agents-cli",
+      "cli": "python scripts/install-to-project.py --skill infra-google-agents-cli",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents"
+      ]
+    },
+    {
+      "id": "agent-skills-spec",
+      "uniqueId": "10-ai-infrastructure:agent-skills-spec",
+      "name": "agent-skills-spec",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Open specification and reference toolchain (skills-ref) for Agent Skills across Anthropic Claude Code, Cursor, Codex, Gemini CLI, and Antigravity. Defines the universal SKILL.md format, metadata schema, and 3-stage progressive disclosure protocol (Discovery \u2192 Activation \u2192 Execution) with built-in validation CLI.",
+      "scoped": "infra-agent-skills-spec",
+      "cli": "python scripts/install-to-project.py --skill infra-agent-skills-spec",
+      "repo": "agentskills/agentskills",
+      "stars": 27098,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "turborepo",
+      "uniqueId": "10-ai-infrastructure:turborepo",
+      "name": "turborepo",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "High-performance monorepo build orchestration, multi-package task pipeline caching, and dependency graph optimization.",
+      "scoped": "infra-turborepo",
+      "cli": "python scripts/install-to-project.py --skill infra-turborepo",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "vercel-ai-sdk",
+      "uniqueId": "10-ai-infrastructure:vercel-ai-sdk",
+      "name": "vercel-ai-sdk",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Unified TypeScript and JavaScript AI SDK for building streaming chat interfaces, generative UI, structured object generation, and multi-agent tool execution.",
+      "scoped": "infra-vercel-ai-sdk",
+      "cli": "python scripts/install-to-project.py --skill infra-vercel-ai-sdk",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "cloudflare-skills",
+      "uniqueId": "10-ai-infrastructure:cloudflare-skills",
+      "name": "cloudflare-skills",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Cloudflare Workers edge compute, serverless deployment, Wrangler CLI configuration, KV/D1 database bindings, and global edge caching.",
+      "scoped": "infra-cloudflare-skills",
+      "cli": "python scripts/install-to-project.py --skill infra-cloudflare-skills",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "supabase-skills",
+      "uniqueId": "10-ai-infrastructure:supabase-skills",
+      "name": "supabase-skills",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Supabase Postgres database design, pgvector semantic search, row-level security (RLS) policies, edge functions, and client SDK integration.",
+      "scoped": "infra-supabase-skills",
+      "cli": "python scripts/install-to-project.py --skill infra-supabase-skills",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "azure-skills",
+      "uniqueId": "10-ai-infrastructure:azure-skills",
+      "name": "azure-skills",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring.",
+      "scoped": "infra-azure-skills",
+      "cli": "python scripts/install-to-project.py --skill infra-azure-skills",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "cloudflare-security-audit",
+      "uniqueId": "11-code-review:cloudflare-security-audit",
+      "name": "cloudflare-security-audit",
+      "priority": "P0",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Cloudflare's official coding-agent skill for multi-phase security audits (65k+ stars). Conducts automated vulnerability analysis, surface scanning, and machine-readable risk reporting across dependencies, API routes, authentication gates, and edge workers with independently verified proofs.",
+      "scoped": "review-cloudflare-security-audit",
+      "cli": "python scripts/install-to-project.py --skill review-cloudflare-security-audit",
+      "repo": "cloudflare/security-audit-skill",
+      "stars": 67504,
+      "ecosystems": [
+        "android",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "coderabbit",
+      "uniqueId": "11-code-review:coderabbit",
+      "name": "CodeRabbit",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Automate pull request reviews and identify bugs, security risks and missing tests across GitHub PRs and Google Antigravity.",
+      "scoped": "review-coderabbit",
+      "cli": "python scripts/install-to-project.py --skill review-coderabbit",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "open-code-review",
+      "uniqueId": "11-code-review:open-code-review",
+      "name": "Open Code Review",
+      "priority": "P2",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Explore additional automated code-review workflows; verify exact product/repository before adoption.",
+      "scoped": "review-open-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-open-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "code-review-skill",
+      "uniqueId": "11-code-review:code-review-skill",
+      "name": "code-review skill",
+      "priority": "P0",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Perform agent-led review during implementation.",
+      "scoped": "review-code-review-skill",
+      "cli": "python scripts/install-to-project.py --skill review-code-review-skill",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "requesting-code-review",
+      "uniqueId": "11-code-review:requesting-code-review",
+      "name": "requesting-code-review",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Prepare changes for independent review.",
+      "scoped": "review-requesting-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "receiving-code-review",
+      "uniqueId": "11-code-review:receiving-code-review",
+      "name": "receiving-code-review",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Process and resolve review feedback.",
+      "scoped": "review-receiving-code-review",
+      "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "verification-before-completion",
+      "uniqueId": "11-code-review:verification-before-completion",
+      "name": "verification-before-completion",
+      "priority": "P0",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Run builds, tests and checks before declaring work complete.",
+      "scoped": "review-verification-before-completion",
+      "cli": "python scripts/install-to-project.py --skill review-verification-before-completion",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "setup-pre-commit",
+      "uniqueId": "11-code-review:setup-pre-commit",
+      "name": "setup-pre-commit",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Catch formatting and quality issues before commits.",
+      "scoped": "review-setup-pre-commit",
+      "cli": "python scripts/install-to-project.py --skill review-setup-pre-commit",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "sentry-diagnostics",
+      "uniqueId": "11-code-review:sentry-diagnostics",
+      "name": "sentry-diagnostics",
+      "priority": "P0",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents.",
+      "scoped": "debug-sentry-diagnostics",
+      "cli": "python scripts/install-to-project.py --skill debug-sentry-diagnostics",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "trailofbits-security",
+      "uniqueId": "11-code-review:trailofbits-security",
+      "name": "trailofbits-security",
+      "priority": "P0",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification.",
+      "scoped": "review-trailofbits-security",
+      "cli": "python scripts/install-to-project.py --skill review-trailofbits-security",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "web-quality-a11y",
+      "uniqueId": "11-code-review:web-quality-a11y",
+      "name": "web-quality-a11y",
+      "priority": "P0",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering.",
+      "scoped": "review-web-quality-a11y",
+      "cli": "python scripts/install-to-project.py --skill review-web-quality-a11y",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "google-maps-platform",
+      "uniqueId": "12-specialized:google-maps-platform",
+      "name": "google-maps-platform",
+      "priority": "P2",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Add Google Maps and location functionality.",
+      "scoped": "spec-google-maps-platform",
+      "cli": "python scripts/install-to-project.py --skill spec-google-maps-platform",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "agent-browser",
+      "uniqueId": "12-specialized:agent-browser",
+      "name": "agent-browser",
+      "priority": "P2",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Automate browser workflows.",
+      "scoped": "spec-agent-browser",
+      "cli": "python scripts/install-to-project.py --skill spec-agent-browser",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "managing-python-dependencies",
+      "uniqueId": "12-specialized:managing-python-dependencies",
+      "name": "managing-python-dependencies",
+      "priority": "P2",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Maintain Python tooling and dependencies.",
+      "scoped": "spec-managing-python-dependencies",
+      "cli": "python scripts/install-to-project.py --skill spec-managing-python-dependencies",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "kotlin-backend-jpa-entity-mapping",
+      "uniqueId": "12-specialized:kotlin-backend-jpa-entity-mapping",
+      "name": "kotlin-backend-jpa-entity-mapping",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Develop Kotlin Spring/JPA backends.",
+      "scoped": "spec-kotlin-backend-jpa-entity-mapping",
+      "cli": "python scripts/install-to-project.py --skill spec-kotlin-backend-jpa-entity-mapping",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "kmp"
+      ]
+    },
+    {
+      "id": "cloud-databases-onboarding",
+      "uniqueId": "12-specialized:cloud-databases-onboarding",
+      "name": "cloud-databases-onboarding",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Configure cloud databases.",
+      "scoped": "spec-cloud-databases-onboarding",
+      "cli": "python scripts/install-to-project.py --skill spec-cloud-databases-onboarding",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gcp-dataflow",
+      "uniqueId": "12-specialized:gcp-dataflow",
+      "name": "gcp-dataflow",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Develop Dataflow pipelines.",
+      "scoped": "spec-gcp-dataflow",
+      "cli": "python scripts/install-to-project.py --skill spec-gcp-dataflow",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gcp-spark",
+      "uniqueId": "12-specialized:gcp-spark",
+      "name": "gcp-spark",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Develop Spark workloads.",
+      "scoped": "spec-gcp-spark",
+      "cli": "python scripts/install-to-project.py --skill spec-gcp-spark",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gcp-spark-troubleshooting",
+      "uniqueId": "12-specialized:gcp-spark-troubleshooting",
+      "name": "gcp-spark-troubleshooting",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Diagnose Spark problems.",
+      "scoped": "spec-gcp-spark-troubleshooting",
+      "cli": "python scripts/install-to-project.py --skill spec-gcp-spark-troubleshooting",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gcp-spark-observability",
+      "uniqueId": "12-specialized:gcp-spark-observability",
+      "name": "gcp-spark-observability",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Monitor Spark workloads.",
+      "scoped": "spec-gcp-spark-observability",
+      "cli": "python scripts/install-to-project.py --skill spec-gcp-spark-observability",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gcp-pipeline-orchestration",
+      "uniqueId": "12-specialized:gcp-pipeline-orchestration",
+      "name": "gcp-pipeline-orchestration",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Orchestrate data pipelines.",
+      "scoped": "spec-gcp-pipeline-orchestration",
+      "cli": "python scripts/install-to-project.py --skill spec-gcp-pipeline-orchestration",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "gcp-data-pipelines",
+      "uniqueId": "12-specialized:gcp-data-pipelines",
+      "name": "gcp-data-pipelines",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Develop data pipelines.",
+      "scoped": "spec-gcp-data-pipelines",
+      "cli": "python scripts/install-to-project.py --skill spec-gcp-data-pipelines",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "bigquery-data-transfer-service",
+      "uniqueId": "12-specialized:bigquery-data-transfer-service",
+      "name": "bigquery-data-transfer-service",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Manage BigQuery data transfers.",
+      "scoped": "spec-bigquery-data-transfer-service",
+      "cli": "python scripts/install-to-project.py --skill spec-bigquery-data-transfer-service",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "dataform-bigquery",
+      "uniqueId": "12-specialized:dataform-bigquery",
+      "name": "dataform-bigquery",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Manage BigQuery transformations.",
+      "scoped": "spec-dataform-bigquery",
+      "cli": "python scripts/install-to-project.py --skill spec-dataform-bigquery",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "dbt-bigquery",
+      "uniqueId": "12-specialized:dbt-bigquery",
+      "name": "dbt-bigquery",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Develop dbt models.",
+      "scoped": "spec-dbt-bigquery",
+      "cli": "python scripts/install-to-project.py --skill spec-dbt-bigquery",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "notebook-guidance",
+      "uniqueId": "12-specialized:notebook-guidance",
+      "name": "notebook-guidance",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Work with notebooks.",
+      "scoped": "spec-notebook-guidance",
+      "cli": "python scripts/install-to-project.py --skill spec-notebook-guidance",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "building-data-apps",
+      "uniqueId": "12-specialized:building-data-apps",
+      "name": "building-data-apps",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Build data applications.",
+      "scoped": "spec-building-data-apps",
+      "cli": "python scripts/install-to-project.py --skill spec-building-data-apps",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "ml-best-practices",
+      "uniqueId": "12-specialized:ml-best-practices",
+      "name": "ml-best-practices",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Apply machine-learning engineering practices.",
+      "scoped": "spec-ml-best-practices",
+      "cli": "python scripts/install-to-project.py --skill spec-ml-best-practices",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "schema-mapping",
+      "uniqueId": "12-specialized:schema-mapping",
+      "name": "schema-mapping",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Map data schemas.",
+      "scoped": "spec-schema-mapping",
+      "cli": "python scripts/install-to-project.py --skill spec-schema-mapping",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "data-autocleaning",
+      "uniqueId": "12-specialized:data-autocleaning",
+      "name": "data-autocleaning",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Clean datasets.",
+      "scoped": "spec-data-autocleaning",
+      "cli": "python scripts/install-to-project.py --skill spec-data-autocleaning",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "dak-setup",
+      "uniqueId": "12-specialized:dak-setup",
+      "name": "dak-setup",
+      "priority": "P3",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Specialized environment setup.",
+      "scoped": "spec-dak-setup",
+      "cli": "python scripts/install-to-project.py --skill spec-dak-setup",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "graphify",
+      "uniqueId": "12-specialized:graphify",
+      "name": "graphify",
+      "priority": "P2",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Visualize codebase relationships.",
+      "scoped": "spec-graphify",
+      "cli": "python scripts/install-to-project.py --skill spec-graphify",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "hyperframes-media",
+      "uniqueId": "12-specialized:hyperframes-media",
+      "name": "hyperframes-media",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Declarative generative video framing, media automation, and scene composition manifests.",
+      "scoped": "spec-hyperframes-media",
+      "cli": "python scripts/install-to-project.py --skill spec-hyperframes-media",
+      "repo": "heygen-com/hyperframes",
+      "stars": 81410,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "marketing-growth-engine",
+      "uniqueId": "12-specialized:marketing-growth-engine",
+      "name": "marketing-growth-engine",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Technical SEO audits, conversion rate optimization (CRO), and copywriting heuristics.",
+      "scoped": "spec-marketing-growth-engine",
+      "cli": "python scripts/install-to-project.py --skill spec-marketing-growth-engine",
+      "repo": "coreyhaines31/marketingskills",
+      "stars": 59331,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "remotion-video",
+      "uniqueId": "12-specialized:remotion-video",
+      "name": "remotion-video",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering.",
+      "scoped": "spec-remotion-video",
+      "cli": "python scripts/install-to-project.py --skill spec-remotion-video",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "stripe-payments",
+      "uniqueId": "12-specialized:stripe-payments",
+      "name": "stripe-payments",
+      "priority": "P0",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades.",
+      "scoped": "spec-stripe-payments",
+      "cli": "python scripts/install-to-project.py --skill spec-stripe-payments",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "readme.md",
+      "uniqueId": "docs:readme.md",
+      "name": "README.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Project overview, setup, features, supported platforms, build/test commands and links to key docs.",
+      "scoped": "readme.md",
+      "cli": "python scripts/install-to-project.py --skill readme.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "license",
+      "uniqueId": "docs:license",
+      "name": "LICENSE",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Defines the project license and permitted use; select an appropriate license before public distribution.",
+      "scoped": "license",
+      "cli": "python scripts/install-to-project.py --skill license",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "contributing.md",
+      "uniqueId": "docs:contributing.md",
+      "name": "CONTRIBUTING.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Contribution workflow, coding standards, issue/PR expectations and local development steps.",
+      "scoped": "contributing.md",
+      "cli": "python scripts/install-to-project.py --skill contributing.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "changelog.md",
+      "uniqueId": "docs:changelog.md",
+      "name": "CHANGELOG.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Human-readable record of notable changes by release/version.",
+      "scoped": "changelog.md",
+      "cli": "python scripts/install-to-project.py --skill changelog.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "security.md",
+      "uniqueId": "docs:security.md",
+      "name": "SECURITY.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Supported versions, vulnerability reporting channel and responsible disclosure expectations.",
+      "scoped": "security.md",
+      "cli": "python scripts/install-to-project.py --skill security.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "code_of_conduct.md",
+      "uniqueId": "docs:code_of_conduct.md",
+      "name": "CODE_OF_CONDUCT.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Community participation and conduct expectations.",
+      "scoped": "code_of_conduct.md",
+      "cli": "python scripts/install-to-project.py --skill code_of_conduct.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "mrd.md",
+      "uniqueId": "docs:mrd.md",
+      "name": "MRD.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Market problem, target segments, competitor landscape, opportunity and positioning.",
+      "scoped": "mrd.md",
+      "cli": "python scripts/install-to-project.py --skill mrd.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "brd.md",
+      "uniqueId": "docs:brd.md",
+      "name": "BRD.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Business objectives, outcomes/KPIs, constraints, stakeholders, costs, risks and compliance needs.",
+      "scoped": "brd.md",
+      "cli": "python scripts/install-to-project.py --skill brd.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "prd.md",
+      "uniqueId": "docs:prd.md",
+      "name": "PRD.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Product vision, users, use cases, functional/non-functional requirements, UX flows and acceptance criteria.",
+      "scoped": "prd.md",
+      "cli": "python scripts/install-to-project.py --skill prd.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "roadmap.md",
+      "uniqueId": "docs:roadmap.md",
+      "name": "ROADMAP.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Phases, milestones, sequencing, release gates and scope boundaries.",
+      "scoped": "roadmap.md",
+      "cli": "python scripts/install-to-project.py --skill roadmap.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "features.md",
+      "uniqueId": "docs:features.md",
+      "name": "FEATURES.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Stable feature IDs and status: planned, in progress, implemented, verified, blocked or deprecated.",
+      "scoped": "features.md",
+      "cli": "python scripts/install-to-project.py --skill features.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "personas.md",
+      "uniqueId": "docs:personas.md",
+      "name": "PERSONAS.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "User segments, needs, contexts and accessibility considerations.",
+      "scoped": "personas.md",
+      "cli": "python scripts/install-to-project.py --skill personas.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "architecture.md",
+      "uniqueId": "docs:architecture.md",
+      "name": "ARCHITECTURE.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "System context, components, boundaries, data flows, dependencies, architectural patterns and diagrams.",
+      "scoped": "architecture.md",
+      "cli": "python scripts/install-to-project.py --skill architecture.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "trd.md",
+      "uniqueId": "docs:trd.md",
+      "name": "TRD.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Platforms, OS/API targets, toolchains, hardware constraints, performance budgets and technical limits.",
+      "scoped": "trd.md",
+      "cli": "python scripts/install-to-project.py --skill trd.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "srd.md",
+      "uniqueId": "docs:srd.md",
+      "name": "SRD.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Detailed software requirements, subsystem behavior, interfaces, error states and fallback behavior.",
+      "scoped": "srd.md",
+      "cli": "python scripts/install-to-project.py --skill srd.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "ssd.md",
+      "uniqueId": "docs:ssd.md",
+      "name": "SSD.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Module/class decomposition, runtime interactions, state machines, threading and lifecycle behavior.",
+      "scoped": "ssd.md",
+      "cli": "python scripts/install-to-project.py --skill ssd.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "tsd.md",
+      "uniqueId": "docs:tsd.md",
+      "name": "TSD.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Low-level algorithms, data formats, wire protocols, binary layouts and mathematical specifications.",
+      "scoped": "tsd.md",
+      "cli": "python scripts/install-to-project.py --skill tsd.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "api-specification.md",
+      "uniqueId": "docs:api-specification.md",
+      "name": "API-SPECIFICATION.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "API endpoints/contracts, schemas, auth, errors, versioning and examples; link to OpenAPI when used.",
+      "scoped": "api-specification.md",
+      "cli": "python scripts/install-to-project.py --skill api-specification.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "data-model.md",
+      "uniqueId": "docs:data-model.md",
+      "name": "DATA-MODEL.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Entities, relationships, ownership, persistence, validation, migrations and retention rules.",
+      "scoped": "data-model.md",
+      "cli": "python scripts/install-to-project.py --skill data-model.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "adr/",
+      "uniqueId": "docs:adr/",
+      "name": "adr/",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Numbered, append-only Architecture Decision Records: status, context, decision, consequences and alternatives.",
+      "scoped": "adr/",
+      "cli": "python scripts/install-to-project.py --skill adr/",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "agents.md",
+      "uniqueId": "docs:agents.md",
+      "name": "AGENTS.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Agent entry point: project context, non-negotiable rules, workflow, verification commands and links to detailed guidance.",
+      "scoped": "agents.md",
+      "cli": "python scripts/install-to-project.py --skill agents.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "docs/governance/rules.md",
+      "uniqueId": "docs:docs/governance/rules.md",
+      "name": "docs/governance/RULES.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Coding conventions, architecture laws, dependency rules, security constraints and prohibited patterns.",
+      "scoped": "docs/governance/rules.md",
+      "cli": "python scripts/install-to-project.py --skill docs/governance/rules.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "docs/governance/sprint-rules.md",
+      "uniqueId": "docs:docs/governance/sprint-rules.md",
+      "name": "docs/governance/SPRINT-RULES.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Story sizing, branch/commit expectations, implementation gates and sprint completion rules.",
+      "scoped": "docs/governance/sprint-rules.md",
+      "cli": "python scripts/install-to-project.py --skill docs/governance/sprint-rules.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/governance/branching.md",
+      "uniqueId": "docs:docs/governance/branching.md",
+      "name": "docs/governance/BRANCHING.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Branch naming, branch protection, merge strategy, release branches and hotfix lifecycle.",
+      "scoped": "docs/governance/branching.md",
+      "cli": "python scripts/install-to-project.py --skill docs/governance/branching.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/governance/memory.md",
+      "uniqueId": "docs:docs/governance/memory.md",
+      "name": "docs/governance/MEMORY.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Curated durable project learnings, recurring pitfalls and validated workarounds; avoid stale transient logs.",
+      "scoped": "docs/governance/memory.md",
+      "cli": "python scripts/install-to-project.py --skill docs/governance/memory.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "glossary.md",
+      "uniqueId": "docs:glossary.md",
+      "name": "GLOSSARY.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Canonical domain terms, abbreviations and definitions to keep human and agent language consistent.",
+      "scoped": "glossary.md",
+      "cli": "python scripts/install-to-project.py --skill glossary.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "docs/governance/ai-workflow.md",
+      "uniqueId": "docs:docs/governance/ai-workflow.md",
+      "name": "docs/governance/AI-WORKFLOW.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Agent roles, handoffs, tool permissions, context-loading rules, review responsibilities and escalation paths.",
+      "scoped": "docs/governance/ai-workflow.md",
+      "cli": "python scripts/install-to-project.py --skill docs/governance/ai-workflow.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "tasks/ralph/prd.json",
+      "uniqueId": "docs:tasks/ralph/prd.json",
+      "name": "tasks/ralph/prd.json",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Machine-readable atomic stories with IDs, priority, target files, acceptance criteria and pass state.",
+      "scoped": "tasks/ralph/prd.json",
+      "cli": "python scripts/install-to-project.py --skill tasks/ralph/prd.json",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers"
+      ]
+    },
+    {
+      "id": "tasks/ralph/progress.txt",
+      "uniqueId": "docs:tasks/ralph/progress.txt",
+      "name": "tasks/ralph/progress.txt",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Append-only execution journal: story progress, commits, commands, test evidence and blockers.",
+      "scoped": "tasks/ralph/progress.txt",
+      "cli": "python scripts/install-to-project.py --skill tasks/ralph/progress.txt",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "superpowers",
+        "quality"
+      ]
+    },
+    {
+      "id": "sprint-plan.md-/-sprint-plans",
+      "uniqueId": "docs:sprint-plan.md-/-sprint-plans",
+      "name": "SPRINT-PLAN.md / sprint plans",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Sprint goals, scope, dependencies, owners/agents and exit criteria.",
+      "scoped": "sprint-plan.md-/-sprint-plans",
+      "cli": "python scripts/install-to-project.py --skill sprint-plan.md-/-sprint-plans",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "docs/implementation-status.md",
+      "uniqueId": "docs:docs/implementation-status.md",
+      "name": "docs/IMPLEMENTATION-STATUS.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Truthful status of features and subsystems, with evidence and known gaps; distinguish implemented from verified.",
+      "scoped": "docs/implementation-status.md",
+      "cli": "python scripts/install-to-project.py --skill docs/implementation-status.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/testing/test-strategy.md",
+      "uniqueId": "docs:docs/testing/test-strategy.md",
+      "name": "docs/testing/TEST-STRATEGY.md",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Test pyramid, test types, environments, coverage expectations, automation and release verification.",
+      "scoped": "docs/testing/test-strategy.md",
+      "cli": "python scripts/install-to-project.py --skill docs/testing/test-strategy.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "docs/testing/test-cases.md",
+      "uniqueId": "docs:docs/testing/test-cases.md",
+      "name": "docs/testing/TEST-CASES.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Traceable scenarios, edge cases, regression cases and acceptance-test mapping.",
+      "scoped": "docs/testing/test-cases.md",
+      "cli": "python scripts/install-to-project.py --skill docs/testing/test-cases.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "docs/security/threat-model.md",
+      "uniqueId": "docs:docs/security/threat-model.md",
+      "name": "docs/security/THREAT-MODEL.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Assets, trust boundaries, threats, attack surfaces, mitigations and residual risks.",
+      "scoped": "docs/security/threat-model.md",
+      "cli": "python scripts/install-to-project.py --skill docs/security/threat-model.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "docs/security.md",
+      "uniqueId": "docs:docs/security.md",
+      "name": "docs/SECURITY.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Security architecture, secrets handling, permissions, dependency hygiene and vulnerability response.",
+      "scoped": "docs/security.md",
+      "cli": "python scripts/install-to-project.py --skill docs/security.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "docs/performance.md",
+      "uniqueId": "docs:docs/performance.md",
+      "name": "docs/PERFORMANCE.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Performance budgets, profiling approach, benchmarks and regression thresholds.",
+      "scoped": "docs/performance.md",
+      "cli": "python scripts/install-to-project.py --skill docs/performance.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "docs/accessibility.md",
+      "uniqueId": "docs:docs/accessibility.md",
+      "name": "docs/ACCESSIBILITY.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Accessibility requirements, semantics, assistive technology checks and validation approach.",
+      "scoped": "docs/accessibility.md",
+      "cli": "python scripts/install-to-project.py --skill docs/accessibility.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/reports/",
+      "uniqueId": "docs:docs/reports/",
+      "name": "docs/reports/",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Sprint/release closeout reports with build/test results, review findings, acceptance evidence and open risks.",
+      "scoped": "docs/reports/",
+      "cli": "python scripts/install-to-project.py --skill docs/reports/",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "docs/build-guide.md",
+      "uniqueId": "docs:docs/build-guide.md",
+      "name": "docs/BUILD-GUIDE.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Reproducible local/CI build steps, required tools, commands and troubleshooting.",
+      "scoped": "docs/build-guide.md",
+      "cli": "python scripts/install-to-project.py --skill docs/build-guide.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/environment.md",
+      "uniqueId": "docs:docs/environment.md",
+      "name": "docs/ENVIRONMENT.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Environment variables, configuration profiles, secrets references and setup requirements; never store secret values.",
+      "scoped": "docs/environment.md",
+      "cli": "python scripts/install-to-project.py --skill docs/environment.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/release-process.md",
+      "uniqueId": "docs:docs/release-process.md",
+      "name": "docs/RELEASE-PROCESS.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Versioning, release checklist, signing, artifact validation, rollout and rollback.",
+      "scoped": "docs/release-process.md",
+      "cli": "python scripts/install-to-project.py --skill docs/release-process.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/deployment.md",
+      "uniqueId": "docs:docs/deployment.md",
+      "name": "docs/DEPLOYMENT.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Infrastructure, deployment topology, configuration, migrations, rollout and rollback steps.",
+      "scoped": "docs/deployment.md",
+      "cli": "python scripts/install-to-project.py --skill docs/deployment.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/troubleshooting.md",
+      "uniqueId": "docs:docs/troubleshooting.md",
+      "name": "docs/TROUBLESHOOTING.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Known failures, symptoms, diagnostics, fixes and links to relevant issues.",
+      "scoped": "docs/troubleshooting.md",
+      "cli": "python scripts/install-to-project.py --skill docs/troubleshooting.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/runbook.md",
+      "uniqueId": "docs:docs/runbook.md",
+      "name": "docs/RUNBOOK.md",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Operational procedures, alerts, incident response, recovery and maintenance tasks.",
+      "scoped": "docs/runbook.md",
+      "cli": "python scripts/install-to-project.py --skill docs/runbook.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "platform-/-integration-/-privacy-documents",
+      "uniqueId": "docs:platform-/-integration-/-privacy-documents",
+      "name": "Platform / integration / privacy documents",
+      "priority": "P2",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Add platform-specific rules, offline sync, data retention, third-party integrations, observability or hardware docs as needed.",
+      "scoped": "platform-/-integration-/-privacy-documents",
+      "cli": "python scripts/install-to-project.py --skill platform-/-integration-/-privacy-documents",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/governance/decision.md",
+      "uniqueId": "docs:docs/governance/decision.md",
+      "name": "docs/governance/DECISION.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Append-only engineering decision journal for meaningful implementation choices: context, options, chosen approach, rationale, trade-offs, affected files and verification. Link formal architecture decisions to numbered ADRs.",
+      "scoped": "docs/governance/decision.md",
+      "cli": "python scripts/install-to-project.py --skill docs/governance/decision.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "docs/architecture/flow.md",
+      "uniqueId": "docs:docs/architecture/flow.md",
+      "name": "docs/architecture/FLOW.md",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Current execution-flow map showing how key user actions, events, functions, modules and files connect; include entry points, data/state transitions, API/database boundaries and error paths. Update when flows change.",
+      "scoped": "docs/architecture/flow.md",
+      "cli": "python scripts/install-to-project.py --skill docs/architecture/flow.md",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "organize-the-project-into-a-clear,-predictable-structure-with-documented-module-boundaries.",
+      "uniqueId": "docs:organize-the-project-into-a-clear,-predictable-structure-with-documented-module-boundaries.",
+      "name": "Organize the project into a clear, predictable structure with documented module boundaries.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "All projects",
+      "scoped": "organize-the-project-into-a-clear,-predictable-structure-with-documented-module-boundaries.",
+      "cli": "python scripts/install-to-project.py --skill organize-the-project-into-a-clear,-predictable-structure-with-documented-module-boundaries.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "keep-business/domain-logic-separate-from-ui,-presentation-and-framework-specific-code.",
+      "uniqueId": "docs:keep-business/domain-logic-separate-from-ui,-presentation-and-framework-specific-code.",
+      "name": "Keep business/domain logic separate from UI, presentation and framework-specific code.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "All projects",
+      "scoped": "keep-business/domain-logic-separate-from-ui,-presentation-and-framework-specific-code.",
+      "cli": "python scripts/install-to-project.py --skill keep-business/domain-logic-separate-from-ui,-presentation-and-framework-specific-code.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "remove-genuinely-unused,-unreachable-and-duplicated-code-after-checking-references,-build-variants-and-generated-code.",
+      "uniqueId": "docs:remove-genuinely-unused,-unreachable-and-duplicated-code-after-checking-references,-build-variants-and-generated-code.",
+      "name": "Remove genuinely unused, unreachable and duplicated code after checking references, build variants and generated code.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "All projects",
+      "scoped": "remove-genuinely-unused,-unreachable-and-duplicated-code-after-checking-references,-build-variants-and-generated-code.",
+      "cli": "python scripts/install-to-project.py --skill remove-genuinely-unused,-unreachable-and-duplicated-code-after-checking-references,-build-variants-and-generated-code.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "use-consistent,-descriptive-naming-for-packages,-modules,-types,-functions,-variables,-resources-and-files.",
+      "uniqueId": "docs:use-consistent,-descriptive-naming-for-packages,-modules,-types,-functions,-variables,-resources-and-files.",
+      "name": "Use consistent, descriptive naming for packages, modules, types, functions, variables, resources and files.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "All projects",
+      "scoped": "use-consistent,-descriptive-naming-for-packages,-modules,-types,-functions,-variables,-resources-and-files.",
+      "cli": "python scripts/install-to-project.py --skill use-consistent,-descriptive-naming-for-packages,-modules,-types,-functions,-variables,-resources-and-files.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "handle-expected-failures-explicitly;-preserve-useful-context,-avoid-swallowed-exceptions-and-provide-safe-user-facing-fallbacks.",
+      "uniqueId": "docs:handle-expected-failures-explicitly;-preserve-useful-context,-avoid-swallowed-exceptions-and-provide-safe-user-facing-fallbacks.",
+      "name": "Handle expected failures explicitly; preserve useful context, avoid swallowed exceptions and provide safe user-facing fallbacks.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "All projects",
+      "scoped": "handle-expected-failures-explicitly;-preserve-useful-context,-avoid-swallowed-exceptions-and-provide-safe-user-facing-fallbacks.",
+      "cli": "python scripts/install-to-project.py --skill handle-expected-failures-explicitly;-preserve-useful-context,-avoid-swallowed-exceptions-and-provide-safe-user-facing-fallbacks.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "separate-environment-specific-configuration-from-source;-validate-required-values-and-never-commit-secrets.",
+      "uniqueId": "docs:separate-environment-specific-configuration-from-source;-validate-required-values-and-never-commit-secrets.",
+      "name": "Separate environment-specific configuration from source; validate required values and never commit secrets.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "All projects",
+      "scoped": "separate-environment-specific-configuration-from-source;-validate-required-values-and-never-commit-secrets.",
+      "cli": "python scripts/install-to-project.py --skill separate-environment-specific-configuration-from-source;-validate-required-values-and-never-commit-secrets.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "extract-components-and-utilities-when-reuse-improves-consistency;-avoid-premature-abstraction-and-oversized-shared-modules.",
+      "uniqueId": "docs:extract-components-and-utilities-when-reuse-improves-consistency;-avoid-premature-abstraction-and-oversized-shared-modules.",
+      "name": "Extract components and utilities when reuse improves consistency; avoid premature abstraction and oversized shared modules.",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "When reuse is meaningful",
+      "scoped": "extract-components-and-utilities-when-reuse-improves-consistency;-avoid-premature-abstraction-and-oversized-shared-modules.",
+      "cli": "python scripts/install-to-project.py --skill extract-components-and-utilities-when-reuse-improves-consistency;-avoid-premature-abstraction-and-oversized-shared-modules.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "define-state-ownership,-lifecycle,-events,-loading/error/empty-states-and-concurrency-rules-consistently.",
+      "uniqueId": "docs:define-state-ownership,-lifecycle,-events,-loading/error/empty-states-and-concurrency-rules-consistently.",
+      "name": "Define state ownership, lifecycle, events, loading/error/empty states and concurrency rules consistently.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Stateful applications",
+      "scoped": "define-state-ownership,-lifecycle,-events,-loading/error/empty-states-and-concurrency-rules-consistently.",
+      "cli": "python scripts/install-to-project.py --skill define-state-ownership,-lifecycle,-events,-loading/error/empty-states-and-concurrency-rules-consistently.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "document-module-responsibilities,-non-obvious-logic,-public-contracts-and-important-setup/maintenance-workflows.",
+      "uniqueId": "docs:document-module-responsibilities,-non-obvious-logic,-public-contracts-and-important-setup/maintenance-workflows.",
+      "name": "Document module responsibilities, non-obvious logic, public contracts and important setup/maintenance workflows.",
+      "priority": "P0",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "All projects",
+      "scoped": "document-module-responsibilities,-non-obvious-logic,-public-contracts-and-important-setup/maintenance-workflows.",
+      "cli": "python scripts/install-to-project.py --skill document-module-responsibilities,-non-obvious-logic,-public-contracts-and-important-setup/maintenance-workflows.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "use-explicit-api-contracts,-versioning-strategy-where-needed,-consistent-error-models,-validation-and-clear-client/server-boundaries.",
+      "uniqueId": "docs:use-explicit-api-contracts,-versioning-strategy-where-needed,-consistent-error-models,-validation-and-clear-client/server-boundaries.",
+      "name": "Use explicit API contracts, versioning strategy where needed, consistent error models, validation and clear client/server boundaries.",
+      "priority": "P1",
+      "categoryId": "docs",
+      "categoryLabel": "Universal Project Documentation",
+      "description": "Projects with APIs",
+      "scoped": "use-explicit-api-contracts,-versioning-strategy-where-needed,-consistent-error-models,-validation-and-clear-client/server-boundaries.",
+      "cli": "python scripts/install-to-project.py --skill use-explicit-api-contracts,-versioning-strategy-where-needed,-consistent-error-models,-validation-and-clear-client/server-boundaries.",
+      "repo": null,
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    }
+  ]
+}

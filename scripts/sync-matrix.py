@@ -14,6 +14,8 @@ if sys.stdout.encoding != "utf-8":
 
 def main():
     root = Path(__file__).resolve().parent.parent
+    if str(root) not in sys.path:
+        sys.path.insert(0, str(root))
     md_file = root / "AI-Coding-Skills-and-Tools-Matrix.md"
     csv_file = root / "AI-Coding-Skills-and-Tools-Matrix.csv"
 
@@ -59,6 +61,13 @@ def main():
 
     print("[OK] All 16 sections validated in Markdown edition.")
     print("[OK] Dual-format matrix parity is maintained!")
+
+    # Auto-export structured JSON for React web application (Safeguard 4)
+    try:
+        from scripts.export_matrix_json import export_matrix
+        export_matrix()
+    except Exception as e:
+        print(f"[!] Warning: Failed to export web matrix JSON: {e}")
 
 if __name__ == "__main__":
     main()

@@ -19,7 +19,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Environment Files
+# Node & Web Frontend
+node_modules/
+**/node_modules/
+web/dist/
+dist/
+.pnpm-store/
+
 .env
 .env.local
 .venv/
