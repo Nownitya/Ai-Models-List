@@ -117,6 +117,15 @@ PRESET_BUNDLES = {
             "qa"
         ],
         "description": "Comprehensive test automation, visual regression, sharding & latency benchmarking"
+    },
+    "obsidian": {
+        "skills": [
+            "obsidian-developer-second-brain",
+            "obsidian-markdown",
+            "mermaid-design-generator",
+            "brag-document-generator"
+        ],
+        "description": "Universal Obsidian Developer Second Brain, Kepano markdown bases, and architecture tools"
     }
 }
 
@@ -192,6 +201,7 @@ def main():
     parser.add_argument("-t", "--target", default=".", help="Target directory (default: current directory)")
     parser.add_argument("-l", "--list", action="store_true", help="List all available skills with their slash commands")
     parser.add_argument("--dry-run", action="store_true", help="Simulate installation without copying files")
+    parser.add_argument("--export-obsidian", help="Export installed skills as an Obsidian Markdown MOC note (path to .md file)")
 
     args = parser.parse_args()
 
@@ -284,6 +294,43 @@ def main():
 
     mode = "Simulated installation of" if args.dry_run else "Successfully installed"
     print(f"[OK] {mode} {installed_count} skill(s) into {target_path}")
+
+    if args.export_obsidian:
+        obsidian_path = Path(args.export_obsidian).resolve()
+        obsidian_path.parent.mkdir(parents=True, exist_ok=True)
+        md_lines = [
+            "---",
+            f'title: "Installed Agent Stack — {target_path.name}"',
+            'tags:',
+            '  - agent-stack',
+            '  - obsidian-second-brain',
+            f"installed_skills: {len(to_install)}",
+            "---",
+            "",
+            f"# 🛠️ Installed Agent Stack — {target_path.name}",
+            "",
+            "> **Generated via `scripts/install-to-project.py`**",
+            "",
+            "## 📦 Installed Skills Ledger",
+            "",
+            "| Scoped Command | Skill Name | Category | Status |",
+            "| :--- | :--- | :--- | :---: |"
+        ]
+        for item in to_install:
+            md_lines.append(f"| `/{item['scoped_name']}` | `{item['name']}` | `{item['category']}` | `ACTIVE` |")
+        
+        md_lines.extend([
+            "",
+            "## 📊 Dataview Rollup",
+            "",
+            "```dataview",
+            'TABLE installed_skills AS "Total Skills", file.mtime AS "Updated"',
+            'FROM #agent-stack',
+            "```",
+            ""
+        ])
+        obsidian_path.write_text("\n".join(md_lines), encoding="utf-8")
+        print(f"[OK] Exported Obsidian Stack MOC note to: {obsidian_path}")
 
 if __name__ == "__main__":
     main()

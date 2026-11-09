@@ -4,9 +4,18 @@ from scripts.install_to_project import PRESET_BUNDLES, resolve_bundle_skills
 
 class TestInstallPresetBundles(unittest.TestCase):
     def test_bundles_defined(self):
-        expected_bundles = ["superpowers", "gstack", "mattpocock", "docs", "core-eng", "cloud", "ai-agents", "ui-ux", "testing"]
+        expected_bundles = ["superpowers", "gstack", "mattpocock", "docs", "core-eng", "cloud", "ai-agents", "ui-ux", "testing", "obsidian"]
         for b in expected_bundles:
             self.assertIn(b, PRESET_BUNDLES)
+
+    def test_obsidian_bundle_resolution(self):
+        skills = resolve_bundle_skills("obsidian")
+        self.assertEqual(len(skills), 4)
+        names = [s["name"] for s in skills]
+        self.assertIn("obsidian-developer-second-brain", names)
+        self.assertIn("obsidian-markdown", names)
+        self.assertIn("mermaid-design-generator", names)
+        self.assertIn("brag-document-generator", names)
 
     def test_superpowers_bundle_resolution(self):
         skills = resolve_bundle_skills("superpowers")

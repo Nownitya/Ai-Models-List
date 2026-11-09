@@ -69,5 +69,9 @@ class TestWebDashboard(unittest.TestCase):
         self.assertIn('parseUrlParams()', self.content)
         self.assertIn('updateUrlParams()', self.content)
 
+    def test_obsidian_web_integration(self):
+        self.assertIn('data-preset="obsidian"', self.content)
+        self.assertIn('exportStackObsidian()', self.content)
+
 if __name__ == "__main__":
     unittest.main()

@@ -1066,6 +1066,7 @@
         <button class="eco-btn" data-ecosystem="testing" data-preset="testing">🧪 Testing & QA</button>
         <button class="eco-btn" data-ecosystem="docs" data-preset="docs">📑 Docs & Specs</button>
         <button class="eco-btn" data-ecosystem="mobile" data-preset="mobile">📱 Android & KMP</button>
+        <button class="eco-btn" data-ecosystem="obsidian" data-preset="obsidian">💎 Obsidian Brain</button>
       </div>
     </div>
 
@@ -1266,8 +1267,9 @@
       </div>
       <div style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; flex-shrink:0;">
         <button class="action-btn" onclick="clearStack()" style="color:#f87171; border-color:rgba(239,68,68,0.4);">Clear Stack</button>
-        <div style="display:flex; gap:0.5rem;">
-          <button class="action-btn" onclick="exportStackJson()">Export JSON Manifest</button>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <button class="action-btn" onclick="exportStackJson()">Export JSON</button>
+          <button class="action-btn" onclick="exportStackObsidian()" style="color:#a78bfa; border-color:rgba(167,139,250,0.4);" title="Export stack as Obsidian Markdown note with Dataview tags">💎 Obsidian Note</button>
           <button class="action-btn primary" onclick="copyStackCombinedCli()">Copy Combined CLI</button>
         </div>
       </div>
@@ -1346,6 +1348,10 @@
       },
       'mobile': {
         categories: ['03-android', '04-kotlin-kmp', '03-android-development-skills']
+      },
+      'obsidian': {
+        categories: ['11-project-documentation'],
+        kws: ['obsidian', 'second brain', 'kepano', 'markdown', 'mermaid', 'brag']
       }
     };
 
@@ -1985,6 +1991,53 @@ Instruction: Execute the required changes following strict red-green verificatio
       a.click();
       URL.revokeObjectURL(url);
       showToast('Exported stack JSON manifest!');
+    }
+
+    function exportStackObsidian() {
+      const skillsArr = Array.from(selectedStack);
+      if (skillsArr.length === 0) {
+        showToast('Your stack is empty! Add skills first.');
+        return;
+      }
+      let md = `---
+title: "My Custom AI Agent Stack"
+generated_at: "${new Date().toISOString()}"
+tags:
+  - agent-stack
+  - ai-tools
+  - productivity
+total_skills: ${skillsArr.length}
+---
+
+# 🛠️ My Custom AI Agent Stack
+
+> **Generated from [AI Coding Skills Matrix](https://nownitya.github.io/Ai-Models-List/)**  
+> **Total Selected Skills:** ${skillsArr.length}  
+
+## 📦 Installed Skills Ledger
+
+| Skill Command | Scoped CLI Command | Status |
+| :--- | :--- | :---: |
+`;
+
+      skillsArr.forEach(cmd => {
+        md += `| \`/${cmd}\` | \`python scripts/install-to-project.py --skill ${cmd}\` | \`ACTIVE\` |\n`;
+      });
+
+      md += `\n## ⚡ Combined CLI Installation Command\n\n\`\`\`bash\npython scripts/install-to-project.py`;
+      skillsArr.forEach(cmd => {
+        md += ` --skill ${cmd}`;
+      });
+      md += `\n\`\`\`\n\n## 📊 Dataview Rollup\n\n\`\`\`dataview\nTABLE file.mtime AS "Modified"\nFROM #agent-stack\n\`\`\`\n`;
+
+      const blob = new Blob([md], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'My-Agent-Stack.md';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Exported Obsidian Markdown Note!');
     }
 
     function copyCmd(cmd, el) {
