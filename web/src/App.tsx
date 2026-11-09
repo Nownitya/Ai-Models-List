@@ -31,7 +31,7 @@ export const App: React.FC = () => {
       <FilterToolbar />
 
       {/* 5. Active Results Counter */}
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-3 flex items-center justify-between text-xs text-slate-400">
+      <div className="max-w-[1720px] mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-3 flex items-center justify-between text-xs text-slate-400">
         <span>
           Showing <strong>{filteredSkills.length}</strong> of <strong>{totalSkills}</strong> cataloged skills
           <span className="text-slate-500 ml-2 font-mono">

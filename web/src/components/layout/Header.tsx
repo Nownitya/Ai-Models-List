@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
   return (
     <header className="border-b border-[#21262d] bg-[#08090a] sticky top-0 z-40">
       {/* Top Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 h-14 flex items-center justify-between gap-4">
         {/* Brand & Version */}
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-[#161b22] border border-[#30363d] flex items-center justify-center text-slate-100 shadow-sm">
@@ -82,7 +82,7 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Hero Subbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row md:items-center justify-between gap-3 border-t border-[#161b22]">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3 border-t border-[#161b22]">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-xs font-mono font-medium text-slate-400">

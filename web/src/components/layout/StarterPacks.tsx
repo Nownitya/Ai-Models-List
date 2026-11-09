@@ -20,7 +20,7 @@ export const StarterPacks: React.FC = () => {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-5">
+    <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-4">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-amber-400" />

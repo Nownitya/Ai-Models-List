@@ -61,7 +61,7 @@ export const FilterToolbar: React.FC = () => {
     selectedSort !== 'default'
 
   return (
-    <div className="space-y-3.5 max-w-7xl mx-auto px-4 sm:px-6 pt-5">
+    <div className="space-y-3 max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-4">
       {/* Ecosystem Preset Navigation Pills */}
       <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
         {ECOSYSTEMS.map((eco) => {

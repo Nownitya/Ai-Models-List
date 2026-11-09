@@ -9,7 +9,7 @@ interface VirtualizedGridProps {
   skills: Skill[]
 }
 
-// Responsive column count for grid mode (1 on mobile, 2 on tablet, 3 on desktop)
+// Responsive column count for grid mode (1 on mobile, 2 on tablet, 3 on desktop, 4 on wide desktop)
 function useColumnCount() {
   const [columnCount, setColumnCount] = useState(3)
 
@@ -18,7 +18,8 @@ function useColumnCount() {
       const width = window.innerWidth
       if (width < 640) setColumnCount(1)
       else if (width < 1024) setColumnCount(2)
-      else setColumnCount(3)
+      else if (width < 1400) setColumnCount(3)
+      else setColumnCount(4)
     }
 
     updateColumns()
@@ -70,7 +71,7 @@ export const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({ skills }) => {
   return (
     <div
       ref={parentRef}
-      className="max-w-7xl mx-auto px-4 sm:px-6 mt-4 h-[calc(100vh-270px)] overflow-y-auto"
+      className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mt-3 h-[calc(100vh-270px)] overflow-y-auto"
     >
       <div
         style={{
@@ -96,7 +97,7 @@ export const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({ skills }) => {
               className={
                 viewMode === 'rows'
                   ? 'pb-1.5'
-                  : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pb-3.5'
+                  : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 pb-3'
               }
             >
               {rowSkills.map((skill) =>
