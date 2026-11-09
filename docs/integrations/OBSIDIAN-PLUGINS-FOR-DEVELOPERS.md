@@ -182,3 +182,4 @@ If you wish to expand your vault further, these highly rated open-source plugins
 | **Paste URL into Selection** | Highlights text, presses `Ctrl+V`, and instantly converts it to `[text](url)` without manual markdown typing. |
 | **Code Styler** | Adds syntax highlighting, line numbers, and copy buttons to code blocks inside notes. |
 | **Mermaid Tools** | Visual UI buttons to insert and validate Mermaid sequence, flowchart, and class diagrams. |
+
