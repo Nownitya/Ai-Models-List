@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star } from 'lucide-react'
+import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Skill } from '@/types'
 
@@ -14,6 +14,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
   const openInspect = useSkillStore((s) => s.openInspect)
+  const setRepo = useSkillStore((s) => s.setRepo)
 
   const isSavedInStack = stack.some((s) => s.id === skill.id)
 
@@ -73,9 +74,26 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
         </div>
 
         {/* Skill Name */}
-        <h3 className="text-base sm:text-lg font-bold text-slate-100 group-hover:text-cyan-300 transition-colors mb-2">
+        <h3 className="text-base sm:text-lg font-bold text-slate-100 group-hover:text-cyan-300 transition-colors mb-1.5">
           {skill.name}
         </h3>
+
+        {/* Upstream Repository Badge */}
+        {skill.repo && (
+          <div className="mb-2.5">
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setRepo(skill.repo!)
+              }}
+              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#161b22] hover:bg-slate-800 border border-[#30363d] hover:border-cyan-500/50 text-xs font-mono text-cyan-300 hover:text-white transition-colors cursor-pointer"
+              title={`Filter all skills from ${skill.repo}`}
+            >
+              <GitBranch className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="font-semibold">{skill.repoName || skill.repo}</span>
+            </button>
+          </div>
+        )}
 
         {/* Description */}
         <p className="text-sm text-slate-300 line-clamp-3 mb-4 leading-relaxed">

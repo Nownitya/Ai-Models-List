@@ -1,18 +1,40 @@
 import React, { useRef, useEffect } from 'react'
-import { Search, X, RotateCcw, Smartphone, Cpu, ShieldCheck, Zap, Bot, BookOpen, Diamond, Sparkles, LayoutGrid, List } from 'lucide-react'
+import {
+  Search,
+  X,
+  RotateCcw,
+  Smartphone,
+  Cpu,
+  ShieldCheck,
+  Zap,
+  Bot,
+  BookOpen,
+  Diamond,
+  Sparkles,
+  LayoutGrid,
+  List,
+  GitBranch,
+  Layers,
+  Palette,
+  Terminal,
+} from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Ecosystem, Priority, SortOption } from '@/types'
 
 const ECOSYSTEMS: { id: Ecosystem; label: string; icon: React.ReactNode }[] = [
-  { id: 'all', label: 'All Stacks', icon: <Sparkles className="w-3.5 h-3.5" /> },
-  { id: 'android', label: 'Android Mobile', icon: <Smartphone className="w-3.5 h-3.5" /> },
-  { id: 'kmp', label: 'Kotlin KMP', icon: <Cpu className="w-3.5 h-3.5" /> },
-  { id: 'gsd', label: 'GSD Engine', icon: <Zap className="w-3.5 h-3.5" /> },
-  { id: 'superpowers', label: 'Superpowers', icon: <ShieldCheck className="w-3.5 h-3.5" /> },
-  { id: 'agents', label: 'Autonomous Agents', icon: <Bot className="w-3.5 h-3.5" /> },
-  { id: 'mattpocock', label: 'Matt Pocock', icon: <BookOpen className="w-3.5 h-3.5" /> },
-  { id: 'obsidian', label: 'Obsidian Brain', icon: <Diamond className="w-3.5 h-3.5" /> },
-  { id: 'quality', label: 'Quality & Review', icon: <ShieldCheck className="w-3.5 h-3.5" /> },
+  { id: 'all', label: 'All Stacks', icon: <Sparkles className="w-4 h-4 text-cyan-400" /> },
+  { id: 'gsd', label: 'GSD Core', icon: <Zap className="w-4 h-4 text-amber-400" /> },
+  { id: 'superpowers', label: 'Superpowers', icon: <ShieldCheck className="w-4 h-4 text-emerald-400" /> },
+  { id: 'gstack', label: 'gstack', icon: <Layers className="w-4 h-4 text-blue-400" /> },
+  { id: 'ecc', label: 'ECC', icon: <Terminal className="w-4 h-4 text-purple-400" /> },
+  { id: 'ralph', label: 'Ralph Loop', icon: <RotateCcw className="w-4 h-4 text-orange-400" /> },
+  { id: 'impeccable', label: 'Impeccable', icon: <Palette className="w-4 h-4 text-pink-400" /> },
+  { id: 'mattpocock', label: 'Matt Pocock', icon: <BookOpen className="w-4 h-4 text-indigo-400" /> },
+  { id: 'android', label: 'Android Mobile', icon: <Smartphone className="w-4 h-4 text-teal-400" /> },
+  { id: 'kmp', label: 'Kotlin KMP', icon: <Cpu className="w-4 h-4 text-violet-400" /> },
+  { id: 'obsidian', label: 'Obsidian Brain', icon: <Diamond className="w-4 h-4 text-cyan-300" /> },
+  { id: 'agents', label: 'Autonomous Agents', icon: <Bot className="w-4 h-4 text-yellow-400" /> },
+  { id: 'quality', label: 'Quality & Review', icon: <ShieldCheck className="w-4 h-4 text-green-400" /> },
 ]
 
 export const FilterToolbar: React.FC = () => {
@@ -20,6 +42,7 @@ export const FilterToolbar: React.FC = () => {
   const selectedPriority = useSkillStore((s) => s.selectedPriority)
   const selectedCategory = useSkillStore((s) => s.selectedCategory)
   const selectedEcosystem = useSkillStore((s) => s.selectedEcosystem)
+  const selectedRepo = useSkillStore((s) => s.selectedRepo)
   const selectedSort = useSkillStore((s) => s.selectedSort)
   const viewMode = useSkillStore((s) => s.viewMode)
   const meta = useSkillStore((s) => s.meta)
@@ -28,6 +51,7 @@ export const FilterToolbar: React.FC = () => {
   const setPriority = useSkillStore((s) => s.setPriority)
   const setCategory = useSkillStore((s) => s.setCategory)
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
+  const setRepo = useSkillStore((s) => s.setRepo)
   const setSort = useSkillStore((s) => s.setSort)
   const setViewMode = useSkillStore((s) => s.setViewMode)
   const resetFilters = useSkillStore((s) => s.resetFilters)
@@ -58,18 +82,25 @@ export const FilterToolbar: React.FC = () => {
     selectedPriority !== 'ALL' ||
     selectedCategory !== 'ALL' ||
     selectedEcosystem !== 'all' ||
+    selectedRepo !== 'all' ||
     selectedSort !== 'default'
+
+  const activeRepoMeta = meta.repositories?.find((r) => r.repo === selectedRepo)
 
   return (
     <div className="w-full space-y-3.5 max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-4">
-      {/* Ecosystem Preset Navigation Pills */}
+      {/* Ecosystem & Upstream Framework Preset Navigation Pills */}
       <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
         {ECOSYSTEMS.map((eco) => {
           const isActive = selectedEcosystem === eco.id
           return (
             <button
               key={eco.id}
-              onClick={() => setEcosystem(eco.id)}
+              onClick={() => {
+                setEcosystem(eco.id)
+                // If selecting an ecosystem preset, clear specific repo dropdown
+                if (selectedRepo !== 'all') setRepo('all')
+              }}
               className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-blue-600 text-white border border-blue-400 shadow-sm'
@@ -83,6 +114,28 @@ export const FilterToolbar: React.FC = () => {
         })}
       </div>
 
+      {/* Active Repo Filter Indicator Banner if repo is selected */}
+      {selectedRepo !== 'all' && activeRepoMeta && (
+        <div className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-cyan-950/40 border border-cyan-800/60 text-sm">
+          <div className="flex items-center gap-2">
+            <GitBranch className="w-4 h-4 text-cyan-400" />
+            <span className="text-slate-300">
+              Filtered to repository: <strong className="text-white">{activeRepoMeta.repoName}</strong> ({activeRepoMeta.repo})
+            </span>
+            <span className="text-xs px-2 py-0.5 rounded bg-cyan-900/60 text-cyan-200 border border-cyan-700/50">
+              {activeRepoMeta.count} skills
+            </span>
+          </div>
+          <button
+            onClick={() => setRepo('all')}
+            className="inline-flex items-center gap-1 text-xs text-cyan-300 hover:text-white bg-[#0d1117] px-2.5 py-1 rounded-md border border-cyan-700/60 hover:bg-slate-800 cursor-pointer"
+          >
+            <X className="w-3.5 h-3.5" />
+            <span>Clear Repo Filter</span>
+          </button>
+        </div>
+      )}
+
       {/* Main Filter Bar */}
       <div className="bg-[#0d1117] border border-[#21262d] p-3 rounded-xl flex flex-col md:flex-row items-center gap-3">
         {/* Search Input */}
@@ -93,13 +146,13 @@ export const FilterToolbar: React.FC = () => {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search skills, slash commands (/camerax), tags, models... (Press '/' to focus)"
+            placeholder="Search skills, slash commands (/camerax), tags, models, repos... (Press '/' to focus)"
             className="w-full pl-10 pr-10 py-2.5 rounded-lg bg-[#08090a] border border-[#30363d] text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition-colors"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-1"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 p-1 cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -130,6 +183,23 @@ export const FilterToolbar: React.FC = () => {
               </button>
             )
           })}
+        </div>
+
+        {/* Upstream Repository Selector Dropdown */}
+        <div className="w-full md:w-auto shrink-0">
+          <select
+            value={selectedRepo}
+            onChange={(e) => setRepo(e.target.value)}
+            className="w-full md:w-56 px-3 py-2.5 rounded-lg bg-[#08090a] border border-[#30363d] text-sm text-slate-200 focus:outline-none focus:border-cyan-500 cursor-pointer font-medium"
+            title="Filter by Upstream GitHub Repository"
+          >
+            <option value="all">All Repositories ({meta.repositories?.length || 65})</option>
+            {meta.repositories?.map((r) => (
+              <option key={r.repo} value={r.repo}>
+                {r.repoName} ({r.count}) {r.stars > 0 ? `⭐ ${(r.stars / 1000).toFixed(0)}k` : ''}
+              </option>
+            ))}
+          </select>
         </div>
 
         {/* Category Selector */}

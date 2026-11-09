@@ -8,16 +8,19 @@ export function useFilteredSkills() {
   const selectedPriority = useSkillStore((s) => s.selectedPriority)
   const selectedCategory = useSkillStore((s) => s.selectedCategory)
   const selectedEcosystem = useSkillStore((s) => s.selectedEcosystem)
+  const selectedRepo = useSkillStore((s) => s.selectedRepo)
   const selectedSort = useSkillStore((s) => s.selectedSort)
 
   // Configure Fuse.js instance memoized over the master skills list
   const fuse = useMemo(() => {
     return new Fuse(skills, {
       keys: [
-        { name: 'name', weight: 0.4 },
-        { name: 'scoped', weight: 0.3 },
-        { name: 'description', weight: 0.2 },
-        { name: 'categoryId', weight: 0.1 },
+        { name: 'name', weight: 0.35 },
+        { name: 'repo', weight: 0.25 },
+        { name: 'repoName', weight: 0.2 },
+        { name: 'scoped', weight: 0.2 },
+        { name: 'description', weight: 0.15 },
+        { name: 'categoryLabel', weight: 0.1 },
       ],
       threshold: 0.35,
       ignoreLocation: true,
@@ -38,7 +41,8 @@ export function useFilteredSkills() {
         (s) =>
           s.name.toLowerCase() === cleanSlash.toLowerCase() ||
           s.scoped.toLowerCase() === cleanSlash.toLowerCase() ||
-          s.id.toLowerCase() === cleanSlash.toLowerCase()
+          s.id.toLowerCase() === cleanSlash.toLowerCase() ||
+          (s.repo && s.repo.toLowerCase() === cleanSlash.toLowerCase())
       )
 
       if (exactMatch.length > 0) {
@@ -58,12 +62,17 @@ export function useFilteredSkills() {
       result = result.filter((s) => s.categoryId === selectedCategory)
     }
 
-    // 4. Ecosystem Preset Filter
+    // 4. Upstream Repository Filter
+    if (selectedRepo && selectedRepo !== 'all') {
+      result = result.filter((s) => s.repo === selectedRepo)
+    }
+
+    // 5. Ecosystem Preset Filter
     if (selectedEcosystem !== 'all') {
       result = result.filter((s) => s.ecosystems.includes(selectedEcosystem))
     }
 
-    // 5. Sorting
+    // 6. Sorting
     const sorted = [...result]
     if (selectedSort === 'stars-desc') {
       sorted.sort((a, b) => b.stars - a.stars)
@@ -77,7 +86,7 @@ export function useFilteredSkills() {
     }
 
     return sorted
-  }, [skills, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort, fuse])
+  }, [skills, searchQuery, selectedPriority, selectedCategory, selectedRepo, selectedEcosystem, selectedSort, fuse])
 
   return filtered
 }

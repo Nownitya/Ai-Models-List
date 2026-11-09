@@ -1,7 +1,7 @@
 {
   "meta": {
     "totalSkills": 274,
-    "totalStars": 1259074,
+    "totalStars": 4232478,
     "categories": [
       {
         "id": "01-core-engineering",
@@ -69,6 +69,398 @@
         "count": 57
       }
     ],
+    "repositories": [
+      {
+        "repo": "agentskills/agentskills",
+        "repoName": "Agent Skills Spec",
+        "count": 65,
+        "stars": 27098
+      },
+      {
+        "repo": "android/skills",
+        "repoName": "Android SDK",
+        "count": 36,
+        "stars": 10430
+      },
+      {
+        "repo": "obra/superpowers",
+        "repoName": "Superpowers",
+        "count": 30,
+        "stars": 314860
+      },
+      {
+        "repo": "garrytan/gstack",
+        "repoName": "gstack",
+        "count": 21,
+        "stars": 140890
+      },
+      {
+        "repo": "mattpocock/skills",
+        "repoName": "Matt Pocock",
+        "count": 20,
+        "stars": 319201
+      },
+      {
+        "repo": "GoogleCloudPlatform/data-agent-kit",
+        "repoName": "Google Data Agent Kit",
+        "count": 14,
+        "stars": 0
+      },
+      {
+        "repo": "kotlin/kotlin-agent-skills",
+        "repoName": "Kotlin & KMP",
+        "count": 11,
+        "stars": 1111
+      },
+      {
+        "repo": "open-gsd/gsd-core",
+        "repoName": "GSD Core",
+        "count": 7,
+        "stars": 11374
+      },
+      {
+        "repo": "google/skills",
+        "repoName": "Google Agent Skills",
+        "count": 4,
+        "stars": 23741
+      },
+      {
+        "repo": "graphify-labs/graphify",
+        "repoName": "Graphify",
+        "count": 3,
+        "stars": 144813
+      },
+      {
+        "repo": "openhands/openhands",
+        "repoName": "OpenHands",
+        "count": 3,
+        "stars": 93028
+      },
+      {
+        "repo": "googleapis/python-genai",
+        "repoName": "Google GenAI SDK",
+        "count": 3,
+        "stars": 4058
+      },
+      {
+        "repo": "anthropics/skills",
+        "repoName": "Anthropic Skills",
+        "count": 2,
+        "stars": 190250
+      },
+      {
+        "repo": "mempalace/mempalace",
+        "repoName": "MemPalace",
+        "count": 2,
+        "stars": 60483
+      },
+      {
+        "repo": "google/agents-cli",
+        "repoName": "Google Agents CLI",
+        "count": 2,
+        "stars": 6326
+      },
+      {
+        "repo": "coderabbitai/skills",
+        "repoName": "CodeRabbit",
+        "count": 2,
+        "stars": 213
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "repoName": "ECC (Everything Claude Code)",
+        "count": 1,
+        "stars": 299956
+      },
+      {
+        "repo": "multica-ai/andrej-karpathy-skills",
+        "repoName": "Karpathy Guidelines",
+        "count": 1,
+        "stars": 231172
+      },
+      {
+        "repo": "dietrichgebert/ponytail",
+        "repoName": "Ponytail",
+        "count": 1,
+        "stars": 187282
+      },
+      {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "repoName": "UI/UX Pro Max",
+        "count": 1,
+        "stars": 147183
+      },
+      {
+        "repo": "openai/codex",
+        "repoName": "OpenAI Codex",
+        "count": 1,
+        "stars": 134219
+      },
+      {
+        "repo": "shadcn/ui",
+        "repoName": "shadcn/ui",
+        "count": 1,
+        "stars": 127698
+      },
+      {
+        "repo": "browser-use/browser-use",
+        "repoName": "browser-use",
+        "count": 1,
+        "stars": 120409
+      },
+      {
+        "repo": "stablyai/orca",
+        "repoName": "Orca Agent",
+        "count": 1,
+        "stars": 119967
+      },
+      {
+        "repo": "juliusbrussee/caveman",
+        "repoName": "Caveman",
+        "count": 1,
+        "stars": 118518
+      },
+      {
+        "repo": "addyosmani/agent-skills",
+        "repoName": "Addy Osmani",
+        "count": 1,
+        "stars": 114362
+      },
+      {
+        "repo": "leonxlnx/taste-skill",
+        "repoName": "Taste Skill",
+        "count": 1,
+        "stars": 112317
+      },
+      {
+        "repo": "pbakaus/impeccable",
+        "repoName": "Impeccable",
+        "count": 1,
+        "stars": 106570
+      },
+      {
+        "repo": "tt-a1i/archify",
+        "repoName": "Archify",
+        "count": 1,
+        "stars": 94938
+      },
+      {
+        "repo": "egonex-ai/understand-anything",
+        "repoName": "Understand Anything",
+        "count": 1,
+        "stars": 91700
+      },
+      {
+        "repo": "heygen-com/hyperframes",
+        "repoName": "Hyperframes Media",
+        "count": 1,
+        "stars": 81410
+      },
+      {
+        "repo": "composiohq/awesome-claude-skills",
+        "repoName": "Composio Gateway",
+        "count": 1,
+        "stars": 79104
+      },
+      {
+        "repo": "cloudflare/security-audit-skill",
+        "repoName": "Cloudflare Security",
+        "count": 1,
+        "stars": 67504
+      },
+      {
+        "repo": "upstash/context7",
+        "repoName": "Context7",
+        "count": 1,
+        "stars": 64411
+      },
+      {
+        "repo": "coreyhaines31/marketingskills",
+        "repoName": "Marketing Skills",
+        "count": 1,
+        "stars": 59331
+      },
+      {
+        "repo": "emilkowalski/skills",
+        "repoName": "Emil Kowalski",
+        "count": 1,
+        "stars": 55170
+      },
+      {
+        "repo": "pingdotgg/t3code",
+        "repoName": "T3 Code",
+        "count": 1,
+        "stars": 53363
+      },
+      {
+        "repo": "kepano/obsidian-skills",
+        "repoName": "Obsidian Brain",
+        "count": 1,
+        "stars": 51225
+      },
+      {
+        "repo": "vercel-labs/agent-browser",
+        "repoName": "Agent Browser",
+        "count": 1,
+        "stars": 48161
+      },
+      {
+        "repo": "getsentry/sentry",
+        "repoName": "Sentry Diagnostics",
+        "count": 1,
+        "stars": 45738
+      },
+      {
+        "repo": "vercel-labs/skills",
+        "repoName": "Vercel React Patterns",
+        "count": 1,
+        "stars": 38695
+      },
+      {
+        "repo": "googleworkspace/cli",
+        "repoName": "Google Workspace",
+        "count": 1,
+        "stars": 32202
+      },
+      {
+        "repo": "vercel/turborepo",
+        "repoName": "Turborepo",
+        "count": 1,
+        "stars": 31315
+      },
+      {
+        "repo": "vercel/ai",
+        "repoName": "Vercel AI SDK",
+        "count": 1,
+        "stars": 27830
+      },
+      {
+        "repo": "google-research/harness2",
+        "repoName": "Harness\u00b2",
+        "count": 1,
+        "stars": 23231
+      },
+      {
+        "repo": "snarktank/ralph",
+        "repoName": "Ralph Loop",
+        "count": 1,
+        "stars": 22184
+      },
+      {
+        "repo": "meta/astryx",
+        "repoName": "Meta Astryx",
+        "count": 1,
+        "stars": 18539
+      },
+      {
+        "repo": "greensock/gsap-skills",
+        "repoName": "GSAP Animation",
+        "count": 1,
+        "stars": 18150
+      },
+      {
+        "repo": "microsoft/playwright-cli",
+        "repoName": "Playwright",
+        "count": 1,
+        "stars": 15064
+      },
+      {
+        "repo": "trailofbits/skills",
+        "repoName": "Trail of Bits",
+        "count": 1,
+        "stars": 8085
+      },
+      {
+        "repo": "remotion-dev/skills",
+        "repoName": "Remotion",
+        "count": 1,
+        "stars": 6657
+      },
+      {
+        "repo": "twostraws/swiftui-agent-skill",
+        "repoName": "SwiftUI Pro",
+        "count": 1,
+        "stars": 6502
+      },
+      {
+        "repo": "ranxianglei/billion-context",
+        "repoName": "Billion-Context",
+        "count": 1,
+        "stars": 5616
+      },
+      {
+        "repo": "microsoft/tokeneconomizer",
+        "repoName": "TokenEconomizer",
+        "count": 1,
+        "stars": 5424
+      },
+      {
+        "repo": "cloudflare/skills",
+        "repoName": "Cloudflare Edge",
+        "count": 1,
+        "stars": 3321
+      },
+      {
+        "repo": "addyosmani/web-quality-skills",
+        "repoName": "Addy Osmani A11y",
+        "count": 1,
+        "stars": 3061
+      },
+      {
+        "repo": "supabase/agent-skills",
+        "repoName": "Supabase",
+        "count": 1,
+        "stars": 3036
+      },
+      {
+        "repo": "microsoft/azure-skills",
+        "repoName": "Microsoft Azure",
+        "count": 1,
+        "stars": 1628
+      },
+      {
+        "repo": "open-gsd/gsd-pi",
+        "repoName": "GSD Pi",
+        "count": 1,
+        "stars": 1364
+      },
+      {
+        "repo": "stripe/link-cli",
+        "repoName": "Stripe",
+        "count": 1,
+        "stars": 897
+      },
+      {
+        "repo": "uizze/uizze",
+        "repoName": "Uizze UI Taste",
+        "count": 1,
+        "stars": 93
+      },
+      {
+        "repo": "google-ai-edge/LiteRT-LM",
+        "repoName": "Litert Lm",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "google-ai-edge/litert",
+        "repoName": "Litert",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "apple/design-guidelines",
+        "repoName": "Apple HIG",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "pypa/packaging",
+        "repoName": "Python Packaging (PyPA)",
+        "count": 1,
+        "stars": 0
+      }
+    ],
     "p0Count": 94,
     "p1Count": 100,
     "p2Count": 52,
@@ -86,8 +478,9 @@
       "description": "Production-grade engineering skills suite by Addy Osmani (113k+ stars). Encodes senior engineering workflows across 9 lifecycle commands (/spec, /plan, /build, /build auto, /test, /constraints, /review, /webperf, /code-simplify, /ship), Web Vitals performance optimization, Chrome DevTools browser testing, and doubt-driven development.",
       "scoped": "core-addy-agent-skills",
       "cli": "python scripts/install-to-project.py --skill core-addy-agent-skills",
-      "repo": "addyosmani/agent-skills.git",
-      "stars": 0,
+      "repo": "addyosmani/agent-skills",
+      "repoName": "Addy Osmani",
+      "stars": 114362,
       "ecosystems": [
         "android",
         "agents",
@@ -104,10 +497,11 @@
       "description": "Explore requirements, alternatives and implementation approaches before coding.",
       "scoped": "superpowers-brainstorming",
       "cli": "python scripts/install-to-project.py --skill superpowers-brainstorming",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
-        "general"
+        "superpowers"
       ]
     },
     {
@@ -120,10 +514,11 @@
       "description": "Discover relevant skills dynamically for different tasks.",
       "scoped": "workflow-find-skills",
       "cli": "python scripts/install-to-project.py --skill workflow-find-skills",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
-        "general"
+        "superpowers"
       ]
     },
     {
@@ -136,10 +531,11 @@
       "description": "Create structured and actionable implementation plans.",
       "scoped": "superpowers-writing-plans",
       "cli": "python scripts/install-to-project.py --skill superpowers-writing-plans",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
-        "general"
+        "superpowers"
       ]
     },
     {
@@ -152,10 +548,11 @@
       "description": "Execute implementation plans systematically.",
       "scoped": "superpowers-executing-plans",
       "cli": "python scripts/install-to-project.py --skill superpowers-executing-plans",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
-        "general"
+        "superpowers"
       ]
     },
     {
@@ -168,8 +565,9 @@
       "description": "Identify root causes instead of guessing.",
       "scoped": "superpowers-systematic-debugging",
       "cli": "python scripts/install-to-project.py --skill superpowers-systematic-debugging",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers"
       ]
@@ -184,10 +582,11 @@
       "description": "Investigate and resolve software defects.",
       "scoped": "mp-diagnosing-bugs",
       "cli": "python scripts/install-to-project.py --skill mp-diagnosing-bugs",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
-        "general"
+        "superpowers"
       ]
     },
     {
@@ -200,8 +599,9 @@
       "description": "Follow red-green-refactor and write tests before implementation.",
       "scoped": "superpowers-test-driven-development",
       "cli": "python scripts/install-to-project.py --skill superpowers-test-driven-development",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers",
         "quality"
@@ -217,8 +617,9 @@
       "description": "Review implementation quality, correctness and maintainability.",
       "scoped": "review-code-review",
       "cli": "python scripts/install-to-project.py --skill review-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "android",
         "quality"
@@ -234,10 +635,12 @@
       "description": "Prepare implementation changes for independent review.",
       "scoped": "review-requesting-code-review",
       "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "android",
+        "superpowers",
         "quality"
       ]
     },
@@ -251,10 +654,12 @@
       "description": "Process review feedback and improve implementation.",
       "scoped": "review-receiving-code-review",
       "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "android",
+        "superpowers",
         "quality"
       ]
     },
@@ -268,9 +673,11 @@
       "description": "Verify builds, tests and deliverables before claiming completion.",
       "scoped": "review-verification-before-completion",
       "cli": "python scripts/install-to-project.py --skill review-verification-before-completion",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
+        "superpowers",
         "quality"
       ]
     },
@@ -284,8 +691,9 @@
       "description": "Create robust domain models and business rules.",
       "scoped": "mp-domain-modeling",
       "cli": "python scripts/install-to-project.py --skill mp-domain-modeling",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "general"
       ]
@@ -300,9 +708,11 @@
       "description": "Delegate independent implementation tasks to subagents.",
       "scoped": "superpowers-subagent-driven-development",
       "cli": "python scripts/install-to-project.py --skill superpowers-subagent-driven-development",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
+        "superpowers",
         "agents"
       ]
     },
@@ -316,9 +726,11 @@
       "description": "Run independent agent tasks in parallel.",
       "scoped": "superpowers-dispatching-parallel-agents",
       "cli": "python scripts/install-to-project.py --skill superpowers-dispatching-parallel-agents",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
+        "superpowers",
         "agents"
       ]
     },
@@ -332,10 +744,11 @@
       "description": "Isolate parallel development tasks safely.",
       "scoped": "superpowers-using-git-worktrees",
       "cli": "python scripts/install-to-project.py --skill superpowers-using-git-worktrees",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
-        "general"
+        "superpowers"
       ]
     },
     {
@@ -348,10 +761,11 @@
       "description": "Complete, validate and integrate development branches.",
       "scoped": "superpowers-finishing-a-development-branch",
       "cli": "python scripts/install-to-project.py --skill superpowers-finishing-a-development-branch",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
-        "general"
+        "superpowers"
       ]
     },
     {
@@ -364,10 +778,11 @@
       "description": "Configure automated code-quality checks.",
       "scoped": "review-setup-pre-commit",
       "cli": "python scripts/install-to-project.py --skill review-setup-pre-commit",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -380,10 +795,11 @@
       "description": "Prevent destructive operations and accidental data loss.",
       "scoped": "core-accidental-data-loss-prevention",
       "cli": "python scripts/install-to-project.py --skill core-accidental-data-loss-prevention",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -396,8 +812,9 @@
       "description": "Protect Git operations in supported Claude Code environments; host-specific.",
       "scoped": "core-git-guardrails-claude-code",
       "cli": "python scripts/install-to-project.py --skill core-git-guardrails-claude-code",
-      "repo": null,
-      "stars": 0,
+      "repo": "anthropics/skills",
+      "repoName": "Anthropic Skills",
+      "stars": 190250,
       "ecosystems": [
         "quality"
       ]
@@ -412,8 +829,9 @@
       "description": "Create clear instructions and documentation for coding agents.",
       "scoped": "core-writing-for-agents",
       "cli": "python scripts/install-to-project.py --skill core-writing-for-agents",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "agents"
       ]
@@ -428,8 +846,9 @@
       "description": "Create and maintain reusable agent skills.",
       "scoped": "superpowers-writing-skills",
       "cli": "python scripts/install-to-project.py --skill superpowers-writing-skills",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "agents"
       ]
@@ -444,10 +863,11 @@
       "description": "Diagnose and repair broken skills.",
       "scoped": "core-skill-repair",
       "cli": "python scripts/install-to-project.py --skill core-skill-repair",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -460,9 +880,11 @@
       "description": "Transfer project context between sessions and agents.",
       "scoped": "mp-handoff",
       "cli": "python scripts/install-to-project.py --skill mp-handoff",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
+        "superpowers",
         "agents"
       ]
     },
@@ -476,10 +898,11 @@
       "description": "Validate ideas and technical approaches before full implementation.",
       "scoped": "ui-prototype",
       "cli": "python scripts/install-to-project.py --skill ui-prototype",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -492,10 +915,11 @@
       "description": "Create guided implementation exercises.",
       "scoped": "core-scaffold-exercises",
       "cli": "python scripts/install-to-project.py --skill core-scaffold-exercises",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -508,8 +932,9 @@
       "description": "Third-party Karpathy-inspired behavioral guidelines: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Promotes explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria. Includes a portable Agent Skill; README documents Claude Code plugin and Cursor rule. Not an official Andrej Karpathy project.",
       "scoped": "core-karpathy-guidelines",
       "cli": "python scripts/install-to-project.py --skill core-karpathy-guidelines",
-      "repo": null,
-      "stars": 0,
+      "repo": "multica-ai/andrej-karpathy-skills",
+      "repoName": "Karpathy Guidelines",
+      "stars": 231172,
       "ecosystems": [
         "agents"
       ]
@@ -524,8 +949,9 @@
       "description": "End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.",
       "scoped": "test-playwright-cli",
       "cli": "python scripts/install-to-project.py --skill test-playwright-cli",
-      "repo": null,
-      "stars": 0,
+      "repo": "microsoft/playwright-cli",
+      "repoName": "Playwright",
+      "stars": 15064,
       "ecosystems": [
         "quality"
       ]
@@ -540,8 +966,9 @@
       "description": "Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows.",
       "scoped": "doc-obsidian-markdown",
       "cli": "python scripts/install-to-project.py --skill doc-obsidian-markdown",
-      "repo": null,
-      "stars": 0,
+      "repo": "kepano/obsidian-skills",
+      "repoName": "Obsidian Brain",
+      "stars": 51225,
       "ecosystems": [
         "obsidian"
       ]
@@ -556,8 +983,9 @@
       "description": "Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically.",
       "scoped": "workflow-google-workspace-cli",
       "cli": "python scripts/install-to-project.py --skill workflow-google-workspace-cli",
-      "repo": null,
-      "stars": 0,
+      "repo": "googleworkspace/cli",
+      "repoName": "Google Workspace",
+      "stars": 32202,
       "ecosystems": [
         "agents"
       ]
@@ -573,6 +1001,7 @@
       "scoped": "mp-grill-me",
       "cli": "python scripts/install-to-project.py --skill mp-grill-me",
       "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
       "stars": 319201,
       "ecosystems": [
         "mattpocock"
@@ -588,8 +1017,9 @@
       "description": "Explore requirements using supporting documentation.",
       "scoped": "mp-grill-with-docs",
       "cli": "python scripts/install-to-project.py --skill mp-grill-with-docs",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -604,8 +1034,9 @@
       "description": "Convert discussions into technical specifications.",
       "scoped": "mp-to-spec",
       "cli": "python scripts/install-to-project.py --skill mp-to-spec",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -620,8 +1051,9 @@
       "description": "Break specifications into actionable development tasks.",
       "scoped": "mp-to-tickets",
       "cli": "python scripts/install-to-project.py --skill mp-to-tickets",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -636,8 +1068,9 @@
       "description": "Implement well-defined engineering tasks.",
       "scoped": "mp-implement",
       "cli": "python scripts/install-to-project.py --skill mp-implement",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -652,8 +1085,9 @@
       "description": "Apply test-driven development practices.",
       "scoped": "mp-tdd",
       "cli": "python scripts/install-to-project.py --skill mp-tdd",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "superpowers",
         "mattpocock",
@@ -670,9 +1104,11 @@
       "description": "Systematically investigate bugs.",
       "scoped": "mp-diagnosing-bugs",
       "cli": "python scripts/install-to-project.py --skill mp-diagnosing-bugs",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
+        "superpowers",
         "mattpocock"
       ]
     },
@@ -686,8 +1122,9 @@
       "description": "Review code against requirements and engineering standards.",
       "scoped": "review-code-review",
       "cli": "python scripts/install-to-project.py --skill review-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "android",
         "mattpocock",
@@ -704,8 +1141,9 @@
       "description": "Maintain a well-structured and maintainable codebase.",
       "scoped": "mp-codebase-design",
       "cli": "python scripts/install-to-project.py --skill mp-codebase-design",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -720,8 +1158,9 @@
       "description": "Build reliable domain models.",
       "scoped": "mp-domain-modeling",
       "cli": "python scripts/install-to-project.py --skill mp-domain-modeling",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -736,8 +1175,9 @@
       "description": "Identify and implement architectural improvements.",
       "scoped": "mp-improve-codebase-architecture",
       "cli": "python scripts/install-to-project.py --skill mp-improve-codebase-architecture",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -752,8 +1192,9 @@
       "description": "Research technical solutions and documentation.",
       "scoped": "mp-research",
       "cli": "python scripts/install-to-project.py --skill mp-research",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -768,9 +1209,11 @@
       "description": "Explore implementation approaches.",
       "scoped": "ui-prototype",
       "cli": "python scripts/install-to-project.py --skill ui-prototype",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
+        "gstack",
         "mattpocock"
       ]
     },
@@ -784,8 +1227,9 @@
       "description": "Navigate and organize large implementation tasks.",
       "scoped": "mp-wayfinder",
       "cli": "python scripts/install-to-project.py --skill mp-wayfinder",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -800,8 +1244,9 @@
       "description": "Resolve Git conflicts safely.",
       "scoped": "mp-resolving-merge-conflicts",
       "cli": "python scripts/install-to-project.py --skill mp-resolving-merge-conflicts",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -816,9 +1261,11 @@
       "description": "Preserve context between development sessions.",
       "scoped": "mp-handoff",
       "cli": "python scripts/install-to-project.py --skill mp-handoff",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
+        "superpowers",
         "mattpocock"
       ]
     },
@@ -832,8 +1279,9 @@
       "description": "Get guidance on choosing an appropriate engineering workflow.",
       "scoped": "mp-ask-matt",
       "cli": "python scripts/install-to-project.py --skill mp-ask-matt",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -849,6 +1297,7 @@
       "scoped": "mp-setup-matt-pocock-skills",
       "cli": "python scripts/install-to-project.py --skill mp-setup-matt-pocock-skills",
       "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
       "stars": 319201,
       "ecosystems": [
         "mattpocock"
@@ -864,8 +1313,9 @@
       "description": "Prioritize issues and incoming work.",
       "scoped": "mp-triage",
       "cli": "python scripts/install-to-project.py --skill mp-triage",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -880,8 +1330,9 @@
       "description": "Explain technical concepts and workflows.",
       "scoped": "mp-teach",
       "cli": "python scripts/install-to-project.py --skill mp-teach",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "mattpocock"
       ]
@@ -896,8 +1347,9 @@
       "description": "Build reusable and effective agent skills.",
       "scoped": "mp-writing-great-skills",
       "cli": "python scripts/install-to-project.py --skill mp-writing-great-skills",
-      "repo": null,
-      "stars": 0,
+      "repo": "mattpocock/skills",
+      "repoName": "Matt Pocock",
+      "stars": 319201,
       "ecosystems": [
         "agents",
         "mattpocock"
@@ -913,8 +1365,9 @@
       "description": "Create Android projects, run apps on devices, manage virtual devices and inspect UI.",
       "scoped": "android-cli",
       "cli": "python scripts/install-to-project.py --skill android-cli",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -929,8 +1382,9 @@
       "description": "Build responsive Compose UIs that adapt to window sizes, device types and input methods.",
       "scoped": "android-adaptive",
       "cli": "python scripts/install-to-project.py --skill android-adaptive",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -945,8 +1399,9 @@
       "description": "Apply recommended practices for setting up and using Navigation 3.",
       "scoped": "android-navigation-3",
       "cli": "python scripts/install-to-project.py --skill android-navigation-3",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -961,8 +1416,9 @@
       "description": "Diagnose recomposition overhead, dropped frames, UI jank and Compose performance problems.",
       "scoped": "android-jetpack-compose-performance",
       "cli": "python scripts/install-to-project.py --skill android-jetpack-compose-performance",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -977,8 +1433,9 @@
       "description": "Record and analyze Android performance data to diagnose bottlenecks, jank and memory leaks.",
       "scoped": "android-profiler",
       "cli": "python scripts/install-to-project.py --skill android-profiler",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -993,8 +1450,9 @@
       "description": "Audit codebases for ANR risks and diagnose Application Not Responding stack dumps.",
       "scoped": "android-anr-audit-and-fix",
       "cli": "python scripts/install-to-project.py --skill android-anr-audit-and-fix",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "quality"
@@ -1010,8 +1468,9 @@
       "description": "Audit and optimize R8 configuration to improve app performance and release behavior.",
       "scoped": "android-r8-analyzer",
       "cli": "python scripts/install-to-project.py --skill android-r8-analyzer",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "quality"
@@ -1027,8 +1486,9 @@
       "description": "Secure Android components and handle Intents safely to prevent privilege escalation and unauthorized access.",
       "scoped": "android-intent-security",
       "cli": "python scripts/install-to-project.py --skill android-intent-security",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "quality"
@@ -1044,8 +1504,9 @@
       "description": "Audit permissions and IPC components, identify security gaps and remediate vulnerabilities.",
       "scoped": "android-permissions-security",
       "cli": "python scripts/install-to-project.py --skill android-permissions-security",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "quality"
@@ -1061,8 +1522,9 @@
       "description": "Set up a comprehensive testing strategy covering unit, UI and screenshot tests.",
       "scoped": "android-testing-setup",
       "cli": "python scripts/install-to-project.py --skill android-testing-setup",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "quality"
@@ -1078,8 +1540,9 @@
       "description": "Plan and execute upgrades to Android Gradle Plugin 9.",
       "scoped": "android-agp-9-upgrade",
       "cli": "python scripts/install-to-project.py --skill android-agp-9-upgrade",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1094,8 +1557,9 @@
       "description": "Modernize app layouts with Android edge-to-edge support.",
       "scoped": "android-edge-to-edge",
       "cli": "python scripts/install-to-project.py --skill android-edge-to-edge",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1110,8 +1574,9 @@
       "description": "Plan and implement migration from legacy XML Views to Jetpack Compose.",
       "scoped": "android-migrate-xml-views-to-jetpack-compose",
       "cli": "python scripts/install-to-project.py --skill android-migrate-xml-views-to-jetpack-compose",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1126,8 +1591,9 @@
       "description": "Migrate camera functionality to CameraX and apply CameraX best practices.",
       "scoped": "android-camerax",
       "cli": "python scripts/install-to-project.py --skill android-camerax",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1142,8 +1608,9 @@
       "description": "Expose app workflows to the Android system so on-device AI agents can discover and execute them.",
       "scoped": "android-appfunctions",
       "cli": "python scripts/install-to-project.py --skill android-appfunctions",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "agents"
@@ -1159,8 +1626,9 @@
       "description": "Use NavigationEvent to intercept back gestures and support Predictive Back animations.",
       "scoped": "android-navigation-event",
       "cli": "python scripts/install-to-project.py --skill android-navigation-event",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1175,8 +1643,9 @@
       "description": "Send natural-language requests on-device using the ML Kit GenAI Prompt API and Gemini Nano.",
       "scoped": "android-ml-kit-genai-prompt-api",
       "cli": "python scripts/install-to-project.py --skill android-ml-kit-genai-prompt-api",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1191,8 +1660,9 @@
       "description": "Build autonomous on-device agentic workflows using the ML Kit GenAI Agent API and Gemini Nano.",
       "scoped": "android-mlkit-agent-api",
       "cli": "python scripts/install-to-project.py --skill android-mlkit-agent-api",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "agents"
@@ -1209,6 +1679,7 @@
       "scoped": "android-litert-lm",
       "cli": "python scripts/install-to-project.py --skill android-litert-lm",
       "repo": "google-ai-edge/LiteRT-LM",
+      "repoName": "Litert Lm",
       "stars": 0,
       "ecosystems": [
         "android",
@@ -1226,6 +1697,7 @@
       "scoped": "android-litert-runtime",
       "cli": "python scripts/install-to-project.py --skill android-litert-runtime",
       "repo": "google-ai-edge/litert",
+      "repoName": "Litert",
       "stars": 0,
       "ecosystems": [
         "android"
@@ -1241,8 +1713,9 @@
       "description": "Integrate Google Cast support into Android apps using Media3.",
       "scoped": "android-media3-cast-integration",
       "cli": "python scripts/install-to-project.py --skill android-media3-cast-integration",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1257,8 +1730,9 @@
       "description": "Upgrade the Google Play Billing Library to access newer features and supported versions.",
       "scoped": "android-play-billing-library-version-upgrade",
       "cli": "python scripts/install-to-project.py --skill android-play-billing-library-version-upgrade",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1273,8 +1747,9 @@
       "description": "Audit apps against Google Play policies, including permissions, account deletion and data safety.",
       "scoped": "android-play-policy-insights",
       "cli": "python scripts/install-to-project.py --skill android-play-policy-insights",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "quality"
@@ -1290,8 +1765,9 @@
       "description": "Implement Credential Manager Restore Credentials for silent sign-in on a new device.",
       "scoped": "android-restore-credentials",
       "cli": "python scripts/install-to-project.py --skill android-restore-credentials",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1306,8 +1782,9 @@
       "description": "Implement secure, OTP-less email verification using Credential Manager.",
       "scoped": "android-verified-email",
       "cli": "python scripts/install-to-project.py --skill android-verified-email",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1322,8 +1799,9 @@
       "description": "Integrate Play Engage SDK to publish content clusters and engage users on Google Play.",
       "scoped": "android-engage-sdk-integration",
       "cli": "python scripts/install-to-project.py --skill android-engage-sdk-integration",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1338,8 +1816,9 @@
       "description": "Manage Glance AppWidget state updates, background sync and RemoteViews bitmap memory limits.",
       "scoped": "android-glance-appwidget-updates-and-memory",
       "cli": "python scripts/install-to-project.py --skill android-glance-appwidget-updates-and-memory",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1354,8 +1833,9 @@
       "description": "Build home-screen widgets using recommended Jetpack Glance canonical layouts.",
       "scoped": "android-glance-canonical-layouts",
       "cli": "python scripts/install-to-project.py --skill android-glance-canonical-layouts",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1370,8 +1850,9 @@
       "description": "Adapt supported video, game and browser apps for parked-app experiences in Android Auto and Android Automotive OS.",
       "scoped": "android-for-cars-parked-apps",
       "cli": "python scripts/install-to-project.py --skill android-for-cars-parked-apps",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1386,8 +1867,9 @@
       "description": "Migrate Android TV interfaces from the legacy Leanback toolkit to Compose for TV.",
       "scoped": "android-leanback-to-compose-tv-migration",
       "cli": "python scripts/install-to-project.py --skill android-leanback-to-compose-tv-migration",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1402,8 +1884,9 @@
       "description": "Build Wear OS interfaces with Compose Material 3, including scaffolding, layouts and migrations.",
       "scoped": "android-wear-compose-m3",
       "cli": "python scripts/install-to-project.py --skill android-wear-compose-m3",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1418,8 +1901,9 @@
       "description": "Build, migrate, update and verify Wear OS widgets using Glance Wear and Remote Compose.",
       "scoped": "android-wear-widgets",
       "cli": "python scripts/install-to-project.py --skill android-wear-widgets",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1434,8 +1918,9 @@
       "description": "Build projected Android XR apps for display glasses using Jetpack Compose Glimmer.",
       "scoped": "android-display-glasses-with-jetpack-compose-glimmer",
       "cli": "python scripts/install-to-project.py --skill android-display-glasses-with-jetpack-compose-glimmer",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1450,8 +1935,9 @@
       "description": "Access projected Android XR hardware such as cameras and microphones.",
       "scoped": "android-projected-hardware",
       "cli": "python scripts/install-to-project.py --skill android-projected-hardware",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1466,8 +1952,9 @@
       "description": "Build freehand drawing surfaces with Jetpack Ink and Compose, including stylus input, erasing and persistence.",
       "scoped": "android-ink-app-builder",
       "cli": "python scripts/install-to-project.py --skill android-ink-app-builder",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1482,8 +1969,9 @@
       "description": "Create custom Jetpack Ink BrushFamily styles, tips, textures and dynamic brush behaviors.",
       "scoped": "android-ink-custom-brush-builder",
       "cli": "python scripts/install-to-project.py --skill android-ink-custom-brush-builder",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1498,8 +1986,9 @@
       "description": "Official Expo React Native mobile development workflows, custom dev clients, native module configuration, and OTA update pipelines.",
       "scoped": "android-expo-mobile",
       "cli": "python scripts/install-to-project.py --skill android-expo-mobile",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android"
       ]
@@ -1514,10 +2003,12 @@
       "description": "Manage modern Kotlin toolchains.",
       "scoped": "kmp-kotlin-tooling-kotlin-toolchain",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-kotlin-toolchain",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1530,11 +2021,13 @@
       "description": "Migrate and troubleshoot Android Gradle Plugin 9.",
       "scoped": "kmp-kotlin-tooling-agp9-migration",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-agp9-migration",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
         "android",
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1547,10 +2040,12 @@
       "description": "Migrate Java code to Kotlin.",
       "scoped": "kmp-kotlin-tooling-java-to-kotlin",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-java-to-kotlin",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1563,10 +2058,12 @@
       "description": "Optimize Kotlin/Native build performance.",
       "scoped": "kmp-kotlin-tooling-native-build-performance",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-native-build-performance",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1579,10 +2076,12 @@
       "description": "Handle immutable collections migration.",
       "scoped": "kmp-kotlin-tooling-immutable-collections-0-5-x-migration",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-immutable-collections-0-5-x-migration",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1595,10 +2094,12 @@
       "description": "Manage Kotlin Multiplatform iOS dependency integration.",
       "scoped": "kmp-kotlin-tooling-cocoapods-spm-migration",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-cocoapods-spm-migration",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1611,11 +2112,13 @@
       "description": "Modernize Gradle toolchain project configuration.",
       "scoped": "kmp-kotlin-tooling-gradle-to-kotlin-toolchain-project",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-gradle-to-kotlin-toolchain-project",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
         "android",
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1628,11 +2131,13 @@
       "description": "Modernize Gradle toolchain plugin configuration.",
       "scoped": "kmp-kotlin-tooling-gradle-to-kotlin-toolchain-plugin",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-gradle-to-kotlin-toolchain-plugin",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
         "android",
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1645,10 +2150,12 @@
       "description": "Develop custom Kotlin toolchain plugins.",
       "scoped": "kmp-kotlin-tooling-kotlin-toolchain-plugin-authoring",
       "cli": "python scripts/install-to-project.py --skill kmp-kotlin-tooling-kotlin-toolchain-plugin-authoring",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -1661,8 +2168,9 @@
       "description": "SwiftUI-focused agent skill targeting iOS 26+ and Swift 6.4+: modern API usage, navigation, layout, animations, state management, performance, accessibility/VoiceOver and deprecated API pitfalls. Uses the open Agent Skills format; install with npx skills add https://github.com/twostraws/swiftui-agent-skill --skill swiftui-pro. Compatible with Claude Code, Codex, Gemini, Cursor and other Agent Skills hosts. Model-agnostic: guidance is executed by the connected coding model; requires a host that supports Agent Skills. MIT licensed.",
       "scoped": "swiftui-pro-(twostraws)",
       "cli": "python scripts/install-to-project.py --skill swiftui-pro-(twostraws)",
-      "repo": null,
-      "stars": 0,
+      "repo": "twostraws/swiftui-agent-skill",
+      "repoName": "SwiftUI Pro",
+      "stars": 6502,
       "ecosystems": [
         "kmp",
         "agents"
@@ -1678,8 +2186,9 @@
       "description": "Broad SwiftUI expert reference skill for state/data flow, @Observable, view composition, performance, lists/identity, navigation/sheets, Swift Charts, animations, macOS, Liquid Glass, accessibility, image optimization and current SDK migrations. Also includes Python/xctrace tooling to record and analyse Instruments traces (Time Profiler, Hangs, Animation Hitches, SwiftUI updates and cause graph). Agent Skills + portable Agent Plugin; supports Claude Code, Codex, Gemini CLI, Cursor, pi and other compatible hosts. Install: npx skills@latest add https://github.com/avdlee/swiftui-agent-skill --skill swiftui-expert-skill. Model-agnostic; MIT licensed; Xcode/xctrace needed for trace tooling.",
       "scoped": "swiftui-expert-skill-(avdlee)",
       "cli": "python scripts/install-to-project.py --skill swiftui-expert-skill-(avdlee)",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
         "android",
         "kmp",
@@ -1697,8 +2206,9 @@
       "description": "Turn any idea, plan, code, or architecture into explorable, interactive diagrams (architecture, sequence, workflow, data flow, ERD, state/lifecycle) rendered as standalone self-contained HTML with dark/light themes, animations, and image/SVG/WebM export (94k+ stars).",
       "scoped": "ui-archify",
       "cli": "python scripts/install-to-project.py --skill ui-archify",
-      "repo": null,
-      "stars": 0,
+      "repo": "tt-a1i/archify",
+      "repoName": "Archify",
+      "stars": 94938,
       "ecosystems": [
         "general"
       ]
@@ -1714,6 +2224,7 @@
       "scoped": "ui-astryx",
       "cli": "python scripts/install-to-project.py --skill ui-astryx",
       "repo": "meta/astryx",
+      "repoName": "Meta Astryx",
       "stars": 18539,
       "ecosystems": [
         "agents"
@@ -1730,6 +2241,7 @@
       "scoped": "ui-ux-pro-max",
       "cli": "python scripts/install-to-project.py --skill ui-ux-pro-max",
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "repoName": "UI/UX Pro Max",
       "stars": 147183,
       "ecosystems": [
         "android",
@@ -1747,9 +2259,12 @@
       "description": "Design command toolkit for coding agents: critique UX, audit accessibility/performance/responsive behavior, polish and harden interfaces, and detect common UI quality issues. Complements UI/UX Pro Max and native platform guidelines.",
       "scoped": "ui-impeccable",
       "cli": "python scripts/install-to-project.py --skill ui-impeccable",
-      "repo": null,
-      "stars": 0,
+      "repo": "pbakaus/impeccable",
+      "repoName": "Impeccable",
+      "stars": 106570,
       "ecosystems": [
+        "ecc",
+        "impeccable",
         "agents",
         "quality"
       ]
@@ -1764,8 +2279,9 @@
       "description": "Uizze UI Taste and related UI/UX agent skills. FREE: install/use the ui-taste skill from uizze.sh; the GitHub repo also provides free ui-design, anti-ui-slop and ui-radar skills, plus GitHub-native image-to-ui and uizze-ui packages. Skills work locally without a Uizze account or MCP. PAID: authenticated Uizze MCP at https://uizze.com/mcp provides find_ui_references and find_ui_materials for real app screens, flows, design systems, fonts, icons and materials. Website reference browsing is free without an account. LIMITATIONS: UI Taste/iOS Design are distributed separately from the GitHub skill packages; paid MCP exposes only two retrieval tools and may return no matches; the skills are guidance and playbooks, not a design editor or guaranteed visual QA. Third-party reference assets and branding are not automatically licensed for reuse; retain individual MIT/Apache notices.",
       "scoped": "ui-taste",
       "cli": "python scripts/install-to-project.py --skill ui-taste",
-      "repo": null,
-      "stars": 0,
+      "repo": "uizze/uizze",
+      "repoName": "Uizze UI Taste",
+      "stars": 93,
       "ecosystems": [
         "agents",
         "quality"
@@ -1781,7 +2297,8 @@
       "description": "Build platform-native iOS interfaces using Apple platform conventions.",
       "scoped": "ui-ios-design",
       "cli": "python scripts/install-to-project.py --skill ui-ios-design",
-      "repo": null,
+      "repo": "apple/design-guidelines",
+      "repoName": "Apple HIG",
       "stars": 0,
       "ecosystems": [
         "general"
@@ -1797,8 +2314,9 @@
       "description": "Anti-slop frontend web design skill for AI coding agents (Leonxlnx/taste-skill, 111k+ stars). Enforces figma.com/x.ai quality bar: plain authentic voice, one section per screen, equal edges, real photography, hero entrances (data-enter), quiet micro-interactions, shader/3D effects reserved strictly for tech/developer tooling, and automated browser-check finish gates. Works across React, Next.js, Vue, Svelte, Astro, Tailwind, or static HTML/CSS. Install with npx skills add https://github.com/Leonxlnx/taste-skill.",
       "scoped": "ui-taste-skill",
       "cli": "python scripts/install-to-project.py --skill ui-taste-skill",
-      "repo": "Leonxlnx/taste-skill",
-      "stars": 0,
+      "repo": "leonxlnx/taste-skill",
+      "repoName": "Taste Skill",
+      "stars": 112317,
       "ecosystems": [
         "agents"
       ]
@@ -1813,8 +2331,9 @@
       "description": "Validate Compose UI concepts and layouts visually.",
       "scoped": "ui-compose-preview",
       "cli": "python scripts/install-to-project.py --skill ui-compose-preview",
-      "repo": null,
-      "stars": 0,
+      "repo": "android/skills",
+      "repoName": "Android SDK",
+      "stars": 10430,
       "ecosystems": [
         "android",
         "quality"
@@ -1830,10 +2349,11 @@
       "description": "Explore different UI concepts before implementation.",
       "scoped": "ui-prototype",
       "cli": "python scripts/install-to-project.py --skill ui-prototype",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -1846,10 +2366,11 @@
       "description": "Develop design systems and design direction.",
       "scoped": "gstack-design-consultation",
       "cli": "python scripts/install-to-project.py --skill gstack-design-consultation",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -1862,8 +2383,9 @@
       "description": "Accessible, composable Tailwind CSS and Radix UI component library patterns for architecting production-grade design systems and user interfaces.",
       "scoped": "ui-shadcn-ui",
       "cli": "python scripts/install-to-project.py --skill ui-shadcn-ui",
-      "repo": null,
-      "stars": 0,
+      "repo": "shadcn/ui",
+      "repoName": "shadcn/ui",
+      "stars": 127698,
       "ecosystems": [
         "general"
       ]
@@ -1878,8 +2400,9 @@
       "description": "Emil Kowalski's Apple-grade design engineering, fluid micro-interactions, animation vocabulary, gesture physics, and craft polish.",
       "scoped": "ui-emil-design-eng",
       "cli": "python scripts/install-to-project.py --skill ui-emil-design-eng",
-      "repo": null,
-      "stars": 0,
+      "repo": "emilkowalski/skills",
+      "repoName": "Emil Kowalski",
+      "stars": 55170,
       "ecosystems": [
         "general"
       ]
@@ -1894,8 +2417,9 @@
       "description": "Vercel Labs production React composition patterns, Server Components architecture, web design guidelines, and performance practices.",
       "scoped": "ui-vercel-react-patterns",
       "cli": "python scripts/install-to-project.py --skill ui-vercel-react-patterns",
-      "repo": null,
-      "stars": 0,
+      "repo": "vercel-labs/skills",
+      "repoName": "Vercel React Patterns",
+      "stars": 38695,
       "ecosystems": [
         "general"
       ]
@@ -1910,8 +2434,9 @@
       "description": "GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion.",
       "scoped": "ui-gsap-animation",
       "cli": "python scripts/install-to-project.py --skill ui-gsap-animation",
-      "repo": null,
-      "stars": 0,
+      "repo": "greensock/gsap-skills",
+      "repoName": "GSAP Animation",
+      "stars": 18150,
       "ecosystems": [
         "general"
       ]
@@ -1926,8 +2451,9 @@
       "description": "Initialize a new project with GSD.",
       "scoped": "gsd-new-project",
       "cli": "python scripts/install-to-project.py --skill gsd-new-project",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-core",
+      "repoName": "GSD Core",
+      "stars": 11374,
       "ecosystems": [
         "gsd"
       ]
@@ -1942,8 +2468,9 @@
       "description": "Onboard an existing codebase; map and understand the current project.",
       "scoped": "gsd-onboard",
       "cli": "python scripts/install-to-project.py --skill gsd-onboard",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-core",
+      "repoName": "GSD Core",
+      "stars": 11374,
       "ecosystems": [
         "gsd"
       ]
@@ -1958,8 +2485,9 @@
       "description": "Core milestone lifecycle documented by current GSD Core; use its current command names and phase workflow rather than relying on legacy command lists.",
       "scoped": "discuss-\u2192-plan-\u2192-execute-\u2192-verify-\u2192-ship",
       "cli": "python scripts/install-to-project.py --skill discuss-\u2192-plan-\u2192-execute-\u2192-verify-\u2192-ship",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-core",
+      "repoName": "GSD Core",
+      "stars": 11374,
       "ecosystems": [
         "gsd"
       ]
@@ -1974,8 +2502,9 @@
       "description": "Current Core supports multiple coding-agent runtimes through its host-integration interface; runtime support and installation mode are version-dependent.",
       "scoped": "gsd-core-host-integration",
       "cli": "python scripts/install-to-project.py --skill gsd-core-host-integration",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-core",
+      "repoName": "GSD Core",
+      "stars": 11374,
       "ecosystems": [
         "gsd",
         "agents"
@@ -1991,8 +2520,9 @@
       "description": "Companion MCP server provides GSD interface operations; OpenCode integration is documented in current release notes.",
       "scoped": "gsd-companion-mcp-server",
       "cli": "python scripts/install-to-project.py --skill gsd-companion-mcp-server",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-core",
+      "repoName": "GSD Core",
+      "stars": 11374,
       "ecosystems": [
         "gsd"
       ]
@@ -2007,8 +2537,9 @@
       "description": "Pi-specific integration/package for using GSD in the Pi coding agent. It is a host/runtime integration, not a separate planning methodology.",
       "scoped": "gsd-pi",
       "cli": "python scripts/install-to-project.py --skill gsd-pi",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-pi",
+      "repoName": "GSD Pi",
+      "stars": 1364,
       "ecosystems": [
         "gsd",
         "agents"
@@ -2024,8 +2555,9 @@
       "description": "Optional capabilities extend GSD workflows; evaluate only the capabilities required by the project.",
       "scoped": "gsd-capability-framework",
       "cli": "python scripts/install-to-project.py --skill gsd-capability-framework",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-core",
+      "repoName": "GSD Core",
+      "stars": 11374,
       "ecosystems": [
         "gsd"
       ]
@@ -2040,8 +2572,9 @@
       "description": "Use plan/verify gates, API coverage decisions, human checkpoints and lifecycle guards; check exact behavior in the installed release.",
       "scoped": "gsd-security-/-verification-gates",
       "cli": "python scripts/install-to-project.py --skill gsd-security-/-verification-gates",
-      "repo": null,
-      "stars": 0,
+      "repo": "open-gsd/gsd-core",
+      "repoName": "GSD Core",
+      "stars": 11374,
       "ecosystems": [
         "gsd",
         "quality"
@@ -2057,10 +2590,11 @@
       "description": "Challenge and refine product ideas.",
       "scoped": "gstack-office-hours",
       "cli": "python scripts/install-to-project.py --skill gstack-office-hours",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2073,10 +2607,12 @@
       "description": "Review product strategy and priorities.",
       "scoped": "gstack-plan-ceo-review",
       "cli": "python scripts/install-to-project.py --skill gstack-plan-ceo-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
         "android",
+        "gstack",
         "quality"
       ]
     },
@@ -2090,10 +2626,12 @@
       "description": "Review technical architecture.",
       "scoped": "gstack-plan-eng-review",
       "cli": "python scripts/install-to-project.py --skill gstack-plan-eng-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
         "android",
+        "gstack",
         "quality"
       ]
     },
@@ -2107,10 +2645,12 @@
       "description": "Review interface direction.",
       "scoped": "gstack-plan-design-review",
       "cli": "python scripts/install-to-project.py --skill gstack-plan-design-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
         "android",
+        "gstack",
         "quality"
       ]
     },
@@ -2124,10 +2664,11 @@
       "description": "Combine planning workflows.",
       "scoped": "gstack-autoplan",
       "cli": "python scripts/install-to-project.py --skill gstack-autoplan",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2140,10 +2681,11 @@
       "description": "Establish visual design direction.",
       "scoped": "gstack-design-consultation",
       "cli": "python scripts/install-to-project.py --skill gstack-design-consultation",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2156,10 +2698,12 @@
       "description": "Evaluate UI quality.",
       "scoped": "gstack-design-review",
       "cli": "python scripts/install-to-project.py --skill gstack-design-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
         "android",
+        "gstack",
         "quality"
       ]
     },
@@ -2173,10 +2717,12 @@
       "description": "Review implementation for bugs.",
       "scoped": "gstack-review",
       "cli": "python scripts/install-to-project.py --skill gstack-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
         "android",
+        "gstack",
         "quality"
       ]
     },
@@ -2190,9 +2736,11 @@
       "description": "Perform browser-based quality assurance.",
       "scoped": "gstack-qa",
       "cli": "python scripts/install-to-project.py --skill gstack-qa",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
+        "gstack",
         "quality"
       ]
     },
@@ -2206,10 +2754,11 @@
       "description": "Prepare changes for release.",
       "scoped": "gstack-ship",
       "cli": "python scripts/install-to-project.py --skill gstack-ship",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2222,10 +2771,11 @@
       "description": "Complete deployment workflows.",
       "scoped": "gstack-land-and-deploy",
       "cli": "python scripts/install-to-project.py --skill gstack-land-and-deploy",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2238,10 +2788,11 @@
       "description": "Investigate bugs and production problems.",
       "scoped": "gstack-investigate",
       "cli": "python scripts/install-to-project.py --skill gstack-investigate",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2254,10 +2805,11 @@
       "description": "Protect against risky operations.",
       "scoped": "gstack-careful",
       "cli": "python scripts/install-to-project.py --skill gstack-careful",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2270,9 +2822,11 @@
       "description": "Apply safety guardrails.",
       "scoped": "gstack-guard",
       "cli": "python scripts/install-to-project.py --skill gstack-guard",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
+        "gstack",
         "quality"
       ]
     },
@@ -2286,9 +2840,11 @@
       "description": "Benchmark application behavior.",
       "scoped": "gstack-benchmark",
       "cli": "python scripts/install-to-project.py --skill gstack-benchmark",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
+        "gstack",
         "quality"
       ]
     },
@@ -2302,10 +2858,12 @@
       "description": "Review and improve development processes.",
       "scoped": "gstack-retro",
       "cli": "python scripts/install-to-project.py --skill gstack-retro",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
         "android",
+        "gstack",
         "quality"
       ]
     },
@@ -2319,10 +2877,11 @@
       "description": "Prepare release documentation.",
       "scoped": "gstack-document-release",
       "cli": "python scripts/install-to-project.py --skill gstack-document-release",
-      "repo": null,
-      "stars": 0,
+      "repo": "garrytan/gstack",
+      "repoName": "gstack",
+      "stars": 140890,
       "ecosystems": [
-        "general"
+        "gstack"
       ]
     },
     {
@@ -2335,8 +2894,9 @@
       "description": "Explore requirements and design options.",
       "scoped": "superpowers-brainstorming",
       "cli": "python scripts/install-to-project.py --skill superpowers-brainstorming",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers"
       ]
@@ -2351,8 +2911,9 @@
       "description": "Create implementation plans.",
       "scoped": "superpowers-writing-plans",
       "cli": "python scripts/install-to-project.py --skill superpowers-writing-plans",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers"
       ]
@@ -2367,8 +2928,9 @@
       "description": "Execute structured implementation plans.",
       "scoped": "superpowers-executing-plans",
       "cli": "python scripts/install-to-project.py --skill superpowers-executing-plans",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers"
       ]
@@ -2383,8 +2945,9 @@
       "description": "Enforce TDD.",
       "scoped": "superpowers-test-driven-development",
       "cli": "python scripts/install-to-project.py --skill superpowers-test-driven-development",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers",
         "quality"
@@ -2400,8 +2963,9 @@
       "description": "Perform root-cause debugging.",
       "scoped": "superpowers-systematic-debugging",
       "cli": "python scripts/install-to-project.py --skill superpowers-systematic-debugging",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers"
       ]
@@ -2416,8 +2980,9 @@
       "description": "Delegate independent development tasks.",
       "scoped": "superpowers-subagent-driven-development",
       "cli": "python scripts/install-to-project.py --skill superpowers-subagent-driven-development",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers",
         "agents"
@@ -2433,8 +2998,9 @@
       "description": "Request code review.",
       "scoped": "review-requesting-code-review",
       "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "android",
         "superpowers",
@@ -2451,8 +3017,9 @@
       "description": "Address review feedback.",
       "scoped": "review-receiving-code-review",
       "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "android",
         "superpowers",
@@ -2469,8 +3036,9 @@
       "description": "Isolate development tasks.",
       "scoped": "superpowers-using-git-worktrees",
       "cli": "python scripts/install-to-project.py --skill superpowers-using-git-worktrees",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers"
       ]
@@ -2485,8 +3053,9 @@
       "description": "Complete Git workflows.",
       "scoped": "superpowers-finishing-a-development-branch",
       "cli": "python scripts/install-to-project.py --skill superpowers-finishing-a-development-branch",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "superpowers"
       ]
@@ -2501,8 +3070,9 @@
       "description": "AI-powered codebase and knowledge-base understanding suite (91k+ stars). Multi-agent pipeline analyzes repositories to build interactive visual knowledge graphs, dependency tours, domain business-process maps, and Karpathy-pattern LLM wiki graphs for Claude Code, Codex, Antigravity, and Cursor.",
       "scoped": "research-understand-anything",
       "cli": "python scripts/install-to-project.py --skill research-understand-anything",
-      "repo": null,
-      "stars": 0,
+      "repo": "egonex-ai/understand-anything",
+      "repoName": "Understand Anything",
+      "stars": 91700,
       "ecosystems": [
         "agents"
       ]
@@ -2517,8 +3087,9 @@
       "description": "Execute PRD-driven tasks autonomously through repeated iterations; use bounded iterations and test gates.",
       "scoped": "agent-ralph-loop",
       "cli": "python scripts/install-to-project.py --skill agent-ralph-loop",
-      "repo": null,
-      "stars": 0,
+      "repo": "snarktank/ralph",
+      "repoName": "Ralph Loop",
+      "stars": 22184,
       "ecosystems": [
         "superpowers",
         "agents",
@@ -2535,8 +3106,9 @@
       "description": "Explore structured autonomous development; verify the exact project and host support.",
       "scoped": "agent-wiggum-cli",
       "cli": "python scripts/install-to-project.py --skill agent-wiggum-cli",
-      "repo": null,
-      "stars": 0,
+      "repo": "google/agents-cli",
+      "repoName": "Google Agents CLI",
+      "stars": 6326,
       "ecosystems": [
         "agents"
       ]
@@ -2551,8 +3123,9 @@
       "description": "Run independent autonomous software-development agents.",
       "scoped": "agent-openhands",
       "cli": "python scripts/install-to-project.py --skill agent-openhands",
-      "repo": null,
-      "stars": 0,
+      "repo": "openhands/openhands",
+      "repoName": "OpenHands",
+      "stars": 93028,
       "ecosystems": [
         "agents"
       ]
@@ -2567,8 +3140,9 @@
       "description": "Perform complex coding and repository tasks.",
       "scoped": "agent-codex",
       "cli": "python scripts/install-to-project.py --skill agent-codex",
-      "repo": null,
-      "stars": 0,
+      "repo": "openai/codex",
+      "repoName": "OpenAI Codex",
+      "stars": 134219,
       "ecosystems": [
         "agents"
       ]
@@ -2583,8 +3157,9 @@
       "description": "Evaluate its coding workflow and implementation approach; verify exact project, features and Antigravity compatibility.",
       "scoped": "agent-ponytail",
       "cli": "python scripts/install-to-project.py --skill agent-ponytail",
-      "repo": null,
-      "stars": 0,
+      "repo": "dietrichgebert/ponytail",
+      "repoName": "Ponytail",
+      "stars": 187282,
       "ecosystems": [
         "agents"
       ]
@@ -2599,8 +3174,9 @@
       "description": "Explore research on agent harness design and evaluation; not a standard daily coding plugin.",
       "scoped": "harness\u00b2",
       "cli": "python scripts/install-to-project.py --skill harness\u00b2",
-      "repo": null,
-      "stars": 0,
+      "repo": "google-research/harness2",
+      "repoName": "Harness\u00b2",
+      "stars": 23231,
       "ecosystems": [
         "agents"
       ]
@@ -2615,8 +3191,9 @@
       "description": "Persistent local-first memory for project files and agent conversation history; supports semantic/hybrid retrieval, wake-up/context recall, MCP integration and configurable storage backends. Use for durable cross-session knowledge, not source-code relationship mapping.",
       "scoped": "agent-mempalace",
       "cli": "python scripts/install-to-project.py --skill agent-mempalace",
-      "repo": null,
-      "stars": 0,
+      "repo": "mempalace/mempalace",
+      "repoName": "MemPalace",
+      "stars": 60483,
       "ecosystems": [
         "agents",
         "obsidian"
@@ -2632,8 +3209,9 @@
       "description": "Before indexing private repositories or agent transcripts, define allowed data scope, retention/deletion, local/server backend, embedding model downloads and access controls.",
       "scoped": "agent-mempalace-data-governance-note",
       "cli": "python scripts/install-to-project.py --skill agent-mempalace-data-governance-note",
-      "repo": null,
-      "stars": 0,
+      "repo": "mempalace/mempalace",
+      "repoName": "MemPalace",
+      "stars": 60483,
       "ecosystems": [
         "agents",
         "obsidian"
@@ -2649,8 +3227,9 @@
       "description": "Open-source agent-harness control surface with mobile (iOS/Android), web and desktop clients for monitoring and controlling local coding-agent sessions. Supports Claude Code, Codex, Cursor, Grok Build, OpenCode and Google Antigravity. Useful for remote session access and orchestration visibility; it does not replace the coding agents themselves.",
       "scoped": "agent-t3-code",
       "cli": "python scripts/install-to-project.py --skill agent-t3-code",
-      "repo": null,
-      "stars": 0,
+      "repo": "pingdotgg/t3code",
+      "repoName": "T3 Code",
+      "stars": 53363,
       "ecosystems": [
         "android",
         "agents"
@@ -2666,8 +3245,9 @@
       "description": "Use isolated branches/worktrees, iteration limits, build/test gates and human approval before merges or deployments.",
       "scoped": "agent-safety-note",
       "cli": "python scripts/install-to-project.py --skill agent-safety-note",
-      "repo": null,
-      "stars": 0,
+      "repo": "openhands/openhands",
+      "repoName": "OpenHands",
+      "stars": 93028,
       "ecosystems": [
         "agents",
         "quality"
@@ -2683,12 +3263,15 @@
       "description": "Broad open-source agent-harness engineering system: 71 specialized agents, 314 skills, rules, hooks, memory/continuous learning, workflow automation and AgentShield security scanning. Covers planning \u2192 TDD/implementation \u2192 review \u2192 verification \u2192 memory/improvement. Best-supported on Claude Code; native plugin paths for Codex and Qoder; adapters exist for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity and others, but feature parity varies\u2014check platform support matrix before relying on hooks/memory/automation. Multi-harness guided installer supports Claude Code, Codex and Kimi Code; advanced adapters have separate install paths. MIT licensed. Model/provider configuration depends on host; ECC is not a model and does not supply one. Potential overlap with GSD, Superpowers, gstack, MemPalace and security/review tools\u2014select capabilities rather than loading everything.",
       "scoped": "everything-claude-code-(ecc)",
       "cli": "python scripts/install-to-project.py --skill everything-claude-code-(ecc)",
-      "repo": null,
-      "stars": 0,
+      "repo": "affaan-m/ecc",
+      "repoName": "ECC (Everything Claude Code)",
+      "stars": 299956,
       "ecosystems": [
         "android",
         "gsd",
         "superpowers",
+        "gstack",
+        "ecc",
         "agents",
         "obsidian",
         "quality"
@@ -2704,8 +3287,9 @@
       "description": "Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows.",
       "scoped": "workflow-browser-use",
       "cli": "python scripts/install-to-project.py --skill workflow-browser-use",
-      "repo": null,
-      "stars": 0,
+      "repo": "browser-use/browser-use",
+      "repoName": "browser-use",
+      "stars": 120409,
       "ecosystems": [
         "agents"
       ]
@@ -2720,8 +3304,9 @@
       "description": "Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously.",
       "scoped": "infra-orca-agent",
       "cli": "python scripts/install-to-project.py --skill infra-orca-agent",
-      "repo": null,
-      "stars": 0,
+      "repo": "stablyai/orca",
+      "repoName": "Orca Agent",
+      "stars": 119967,
       "ecosystems": [
         "agents"
       ]
@@ -2736,8 +3321,9 @@
       "description": "Unified MCP Gateway and curated registry of 1,000+ agent skills (79k+ stars). Connects AI coding assistants (Claude Code, Antigravity, Cursor, Codex) to 1,000+ external SaaS tools, APIs, and services (Slack, GitHub, Jira, Gmail, Calendar, Linear) with built-in OAuth authentication, RBAC, and audit logs.",
       "scoped": "infra-composio-skills",
       "cli": "python scripts/install-to-project.py --skill infra-composio-skills",
-      "repo": null,
-      "stars": 0,
+      "repo": "composiohq/awesome-claude-skills",
+      "repoName": "Composio Gateway",
+      "stars": 79104,
       "ecosystems": [
         "agents",
         "quality"
@@ -2753,8 +3339,9 @@
       "description": "High-density token compression skill and proxy for AI coding agents (118k+ stars). Cuts input and output tokens by 33% to 65% by enforcing concise, telegraphic communication ('caveman voice') that eliminates conversational filler while preserving 100% of technical code, reasoning substance, and factual correctness.",
       "scoped": "infra-caveman",
       "cli": "python scripts/install-to-project.py --skill infra-caveman",
-      "repo": null,
-      "stars": 0,
+      "repo": "juliusbrussee/caveman",
+      "repoName": "Caveman",
+      "stars": 118518,
       "ecosystems": [
         "agents"
       ]
@@ -2770,6 +3357,7 @@
       "scoped": "infra-billion-context",
       "cli": "python scripts/install-to-project.py --skill infra-billion-context",
       "repo": "ranxianglei/billion-context",
+      "repoName": "Billion-Context",
       "stars": 5616,
       "ecosystems": [
         "agents"
@@ -2786,6 +3374,7 @@
       "scoped": "infra-anthropic-skills",
       "cli": "python scripts/install-to-project.py --skill infra-anthropic-skills",
       "repo": "anthropics/skills",
+      "repoName": "Anthropic Skills",
       "stars": 190250,
       "ecosystems": [
         "agents"
@@ -2802,6 +3391,7 @@
       "scoped": "infra-google-skills",
       "cli": "python scripts/install-to-project.py --skill infra-google-skills",
       "repo": "google/skills",
+      "repoName": "Google Agent Skills",
       "stars": 23741,
       "ecosystems": [
         "android",
@@ -2818,8 +3408,9 @@
       "description": "Integrate Gemini APIs into applications and development workflows.",
       "scoped": "infra-gemini-api",
       "cli": "python scripts/install-to-project.py --skill infra-gemini-api",
-      "repo": null,
-      "stars": 0,
+      "repo": "googleapis/python-genai",
+      "repoName": "Google GenAI SDK",
+      "stars": 4058,
       "ecosystems": [
         "general"
       ]
@@ -2834,8 +3425,9 @@
       "description": "Build real-time Gemini applications.",
       "scoped": "infra-gemini-live-api",
       "cli": "python scripts/install-to-project.py --skill infra-gemini-live-api",
-      "repo": null,
-      "stars": 0,
+      "repo": "googleapis/python-genai",
+      "repoName": "Google GenAI SDK",
+      "stars": 4058,
       "ecosystems": [
         "general"
       ]
@@ -2850,8 +3442,9 @@
       "description": "Explore Gemini multimodal capabilities.",
       "scoped": "infra-gemini-omni-flash-api",
       "cli": "python scripts/install-to-project.py --skill infra-gemini-omni-flash-api",
-      "repo": null,
-      "stars": 0,
+      "repo": "googleapis/python-genai",
+      "repoName": "Google GenAI SDK",
+      "stars": 4058,
       "ecosystems": [
         "general"
       ]
@@ -2866,8 +3459,9 @@
       "description": "Builds a local code/document knowledge graph (AST-based code relations, imports/calls, query/path/explain) so agents can navigate relationships and retrieve focused subgraphs instead of repeatedly scanning files. It is codebase-structure intelligence, not a live external library-docs service.",
       "scoped": "spec-graphify",
       "cli": "python scripts/install-to-project.py --skill spec-graphify",
-      "repo": null,
-      "stars": 0,
+      "repo": "graphify-labs/graphify",
+      "repoName": "Graphify",
+      "stars": 144813,
       "ecosystems": [
         "agents"
       ]
@@ -2882,8 +3476,9 @@
       "description": "Retrieves current, version-aware documentation and code examples for external libraries/frameworks. Useful when implementing APIs or confirming current library usage. Complementary to Graphify, not redundant.",
       "scoped": "infra-context7",
       "cli": "python scripts/install-to-project.py --skill infra-context7",
-      "repo": null,
-      "stars": 0,
+      "repo": "upstash/context7",
+      "repoName": "Context7",
+      "stars": 64411,
       "ecosystems": [
         "general"
       ]
@@ -2898,8 +3493,9 @@
       "description": "Graphify answers: how is this codebase connected and where does execution/reuse flow? Context7 answers: how does this external library/API work in its current version? MemPalace answers: what durable knowledge should persist across sessions? Choose memory products based on privacy, retrieval quality, local-first needs and integrations.",
       "scoped": "infra-selection-guidance",
       "cli": "python scripts/install-to-project.py --skill infra-selection-guidance",
-      "repo": null,
-      "stars": 0,
+      "repo": "graphify-labs/graphify",
+      "repoName": "Graphify",
+      "stars": 144813,
       "ecosystems": [
         "obsidian"
       ]
@@ -2914,8 +3510,9 @@
       "description": "Experience-driven coding-agent cost control. Learns repository-specific micro-skills from repeated sessions, prunes tools that remain unused, and detects recurring failure loops to suggest a redirect. Local learning data; supports Claude Code, Codex, GitHub Copilot CLI and Pi, with experimental OpenCode support. Evaluate on repeated work in the same repository; savings are workload-dependent.",
       "scoped": "infra-tokeneconomizer",
       "cli": "python scripts/install-to-project.py --skill infra-tokeneconomizer",
-      "repo": null,
-      "stars": 0,
+      "repo": "microsoft/tokeneconomizer",
+      "repoName": "TokenEconomizer",
+      "stars": 5424,
       "ecosystems": [
         "agents"
       ]
@@ -2930,8 +3527,9 @@
       "description": "Google CLI + seven agent skills for building, scaffolding, coding, evaluating, deploying, publishing and observing AI agents on Google Cloud using ADK. It is a toolkit for coding assistants, not a coding agent/model. Works with Antigravity CLI, Claude Code, Codex and other coding agents; framework is ADK by default, while ADK model configuration supports Gemini natively and other providers via LiteLLM (documented examples: OpenAI GPT-4o, Anthropic Claude Sonnet, and Ollama-hosted Llama). Local create/run/eval can use Gemini AI Studio API key; cloud deployment needs Google Cloud. Useful when developing AI agents, not required for normal Android app coding.",
       "scoped": "infra-google-agents-cli",
       "cli": "python scripts/install-to-project.py --skill infra-google-agents-cli",
-      "repo": null,
-      "stars": 0,
+      "repo": "google/agents-cli",
+      "repoName": "Google Agents CLI",
+      "stars": 6326,
       "ecosystems": [
         "android",
         "agents"
@@ -2948,6 +3546,7 @@
       "scoped": "infra-agent-skills-spec",
       "cli": "python scripts/install-to-project.py --skill infra-agent-skills-spec",
       "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
       "stars": 27098,
       "ecosystems": [
         "agents"
@@ -2963,8 +3562,9 @@
       "description": "High-performance monorepo build orchestration, multi-package task pipeline caching, and dependency graph optimization.",
       "scoped": "infra-turborepo",
       "cli": "python scripts/install-to-project.py --skill infra-turborepo",
-      "repo": null,
-      "stars": 0,
+      "repo": "vercel/turborepo",
+      "repoName": "Turborepo",
+      "stars": 31315,
       "ecosystems": [
         "general"
       ]
@@ -2979,8 +3579,9 @@
       "description": "Unified TypeScript and JavaScript AI SDK for building streaming chat interfaces, generative UI, structured object generation, and multi-agent tool execution.",
       "scoped": "infra-vercel-ai-sdk",
       "cli": "python scripts/install-to-project.py --skill infra-vercel-ai-sdk",
-      "repo": null,
-      "stars": 0,
+      "repo": "vercel/ai",
+      "repoName": "Vercel AI SDK",
+      "stars": 27830,
       "ecosystems": [
         "agents"
       ]
@@ -2995,8 +3596,9 @@
       "description": "Cloudflare Workers edge compute, serverless deployment, Wrangler CLI configuration, KV/D1 database bindings, and global edge caching.",
       "scoped": "infra-cloudflare-skills",
       "cli": "python scripts/install-to-project.py --skill infra-cloudflare-skills",
-      "repo": null,
-      "stars": 0,
+      "repo": "cloudflare/skills",
+      "repoName": "Cloudflare Edge",
+      "stars": 3321,
       "ecosystems": [
         "general"
       ]
@@ -3011,9 +3613,11 @@
       "description": "Supabase Postgres database design, pgvector semantic search, row-level security (RLS) policies, edge functions, and client SDK integration.",
       "scoped": "infra-supabase-skills",
       "cli": "python scripts/install-to-project.py --skill infra-supabase-skills",
-      "repo": null,
-      "stars": 0,
+      "repo": "supabase/agent-skills",
+      "repoName": "Supabase",
+      "stars": 3036,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -3027,8 +3631,9 @@
       "description": "Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring.",
       "scoped": "infra-azure-skills",
       "cli": "python scripts/install-to-project.py --skill infra-azure-skills",
-      "repo": null,
-      "stars": 0,
+      "repo": "microsoft/azure-skills",
+      "repoName": "Microsoft Azure",
+      "stars": 1628,
       "ecosystems": [
         "general"
       ]
@@ -3044,6 +3649,7 @@
       "scoped": "review-cloudflare-security-audit",
       "cli": "python scripts/install-to-project.py --skill review-cloudflare-security-audit",
       "repo": "cloudflare/security-audit-skill",
+      "repoName": "Cloudflare Security",
       "stars": 67504,
       "ecosystems": [
         "android",
@@ -3061,8 +3667,9 @@
       "description": "Automate pull request reviews and identify bugs, security risks and missing tests across GitHub PRs and Google Antigravity.",
       "scoped": "review-coderabbit",
       "cli": "python scripts/install-to-project.py --skill review-coderabbit",
-      "repo": null,
-      "stars": 0,
+      "repo": "coderabbitai/skills",
+      "repoName": "CodeRabbit",
+      "stars": 213,
       "ecosystems": [
         "android",
         "quality"
@@ -3078,10 +3685,12 @@
       "description": "Explore additional automated code-review workflows; verify exact product/repository before adoption.",
       "scoped": "review-open-code-review",
       "cli": "python scripts/install-to-project.py --skill review-open-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "openhands/openhands",
+      "repoName": "OpenHands",
+      "stars": 93028,
       "ecosystems": [
         "android",
+        "agents",
         "quality"
       ]
     },
@@ -3095,8 +3704,9 @@
       "description": "Perform agent-led review during implementation.",
       "scoped": "review-code-review-skill",
       "cli": "python scripts/install-to-project.py --skill review-code-review-skill",
-      "repo": null,
-      "stars": 0,
+      "repo": "coderabbitai/skills",
+      "repoName": "CodeRabbit",
+      "stars": 213,
       "ecosystems": [
         "android",
         "agents",
@@ -3113,10 +3723,12 @@
       "description": "Prepare changes for independent review.",
       "scoped": "review-requesting-code-review",
       "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "android",
+        "superpowers",
         "quality"
       ]
     },
@@ -3130,10 +3742,12 @@
       "description": "Process and resolve review feedback.",
       "scoped": "review-receiving-code-review",
       "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "android",
+        "superpowers",
         "quality"
       ]
     },
@@ -3147,10 +3761,12 @@
       "description": "Run builds, tests and checks before declaring work complete.",
       "scoped": "review-verification-before-completion",
       "cli": "python scripts/install-to-project.py --skill review-verification-before-completion",
-      "repo": null,
-      "stars": 0,
+      "repo": "obra/superpowers",
+      "repoName": "Superpowers",
+      "stars": 314860,
       "ecosystems": [
         "android",
+        "superpowers",
         "quality"
       ]
     },
@@ -3164,10 +3780,12 @@
       "description": "Catch formatting and quality issues before commits.",
       "scoped": "review-setup-pre-commit",
       "cli": "python scripts/install-to-project.py --skill review-setup-pre-commit",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "android",
+        "agents",
         "quality"
       ]
     },
@@ -3181,8 +3799,9 @@
       "description": "Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents.",
       "scoped": "debug-sentry-diagnostics",
       "cli": "python scripts/install-to-project.py --skill debug-sentry-diagnostics",
-      "repo": null,
-      "stars": 0,
+      "repo": "getsentry/sentry",
+      "repoName": "Sentry Diagnostics",
+      "stars": 45738,
       "ecosystems": [
         "android",
         "agents",
@@ -3199,8 +3818,9 @@
       "description": "Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification.",
       "scoped": "review-trailofbits-security",
       "cli": "python scripts/install-to-project.py --skill review-trailofbits-security",
-      "repo": null,
-      "stars": 0,
+      "repo": "trailofbits/skills",
+      "repoName": "Trail of Bits",
+      "stars": 8085,
       "ecosystems": [
         "android",
         "quality"
@@ -3216,8 +3836,9 @@
       "description": "Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering.",
       "scoped": "review-web-quality-a11y",
       "cli": "python scripts/install-to-project.py --skill review-web-quality-a11y",
-      "repo": null,
-      "stars": 0,
+      "repo": "addyosmani/web-quality-skills",
+      "repoName": "Addy Osmani A11y",
+      "stars": 3061,
       "ecosystems": [
         "android",
         "quality"
@@ -3233,8 +3854,9 @@
       "description": "Add Google Maps and location functionality.",
       "scoped": "spec-google-maps-platform",
       "cli": "python scripts/install-to-project.py --skill spec-google-maps-platform",
-      "repo": null,
-      "stars": 0,
+      "repo": "google/skills",
+      "repoName": "Google Agent Skills",
+      "stars": 23741,
       "ecosystems": [
         "general"
       ]
@@ -3249,8 +3871,9 @@
       "description": "Automate browser workflows.",
       "scoped": "spec-agent-browser",
       "cli": "python scripts/install-to-project.py --skill spec-agent-browser",
-      "repo": null,
-      "stars": 0,
+      "repo": "vercel-labs/agent-browser",
+      "repoName": "Agent Browser",
+      "stars": 48161,
       "ecosystems": [
         "agents"
       ]
@@ -3265,7 +3888,8 @@
       "description": "Maintain Python tooling and dependencies.",
       "scoped": "spec-managing-python-dependencies",
       "cli": "python scripts/install-to-project.py --skill spec-managing-python-dependencies",
-      "repo": null,
+      "repo": "pypa/packaging",
+      "repoName": "Python Packaging (PyPA)",
       "stars": 0,
       "ecosystems": [
         "general"
@@ -3281,10 +3905,12 @@
       "description": "Develop Kotlin Spring/JPA backends.",
       "scoped": "spec-kotlin-backend-jpa-entity-mapping",
       "cli": "python scripts/install-to-project.py --skill spec-kotlin-backend-jpa-entity-mapping",
-      "repo": null,
-      "stars": 0,
+      "repo": "kotlin/kotlin-agent-skills",
+      "repoName": "Kotlin & KMP",
+      "stars": 1111,
       "ecosystems": [
-        "kmp"
+        "kmp",
+        "agents"
       ]
     },
     {
@@ -3297,8 +3923,9 @@
       "description": "Configure cloud databases.",
       "scoped": "spec-cloud-databases-onboarding",
       "cli": "python scripts/install-to-project.py --skill spec-cloud-databases-onboarding",
-      "repo": null,
-      "stars": 0,
+      "repo": "google/skills",
+      "repoName": "Google Agent Skills",
+      "stars": 23741,
       "ecosystems": [
         "general"
       ]
@@ -3313,10 +3940,11 @@
       "description": "Develop Dataflow pipelines.",
       "scoped": "spec-gcp-dataflow",
       "cli": "python scripts/install-to-project.py --skill spec-gcp-dataflow",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3329,10 +3957,11 @@
       "description": "Develop Spark workloads.",
       "scoped": "spec-gcp-spark",
       "cli": "python scripts/install-to-project.py --skill spec-gcp-spark",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3345,10 +3974,11 @@
       "description": "Diagnose Spark problems.",
       "scoped": "spec-gcp-spark-troubleshooting",
       "cli": "python scripts/install-to-project.py --skill spec-gcp-spark-troubleshooting",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3361,10 +3991,11 @@
       "description": "Monitor Spark workloads.",
       "scoped": "spec-gcp-spark-observability",
       "cli": "python scripts/install-to-project.py --skill spec-gcp-spark-observability",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3377,10 +4008,11 @@
       "description": "Orchestrate data pipelines.",
       "scoped": "spec-gcp-pipeline-orchestration",
       "cli": "python scripts/install-to-project.py --skill spec-gcp-pipeline-orchestration",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3393,10 +4025,11 @@
       "description": "Develop data pipelines.",
       "scoped": "spec-gcp-data-pipelines",
       "cli": "python scripts/install-to-project.py --skill spec-gcp-data-pipelines",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3409,10 +4042,11 @@
       "description": "Manage BigQuery data transfers.",
       "scoped": "spec-bigquery-data-transfer-service",
       "cli": "python scripts/install-to-project.py --skill spec-bigquery-data-transfer-service",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3425,10 +4059,11 @@
       "description": "Manage BigQuery transformations.",
       "scoped": "spec-dataform-bigquery",
       "cli": "python scripts/install-to-project.py --skill spec-dataform-bigquery",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3441,10 +4076,11 @@
       "description": "Develop dbt models.",
       "scoped": "spec-dbt-bigquery",
       "cli": "python scripts/install-to-project.py --skill spec-dbt-bigquery",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3457,10 +4093,11 @@
       "description": "Work with notebooks.",
       "scoped": "spec-notebook-guidance",
       "cli": "python scripts/install-to-project.py --skill spec-notebook-guidance",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3473,10 +4110,11 @@
       "description": "Build data applications.",
       "scoped": "spec-building-data-apps",
       "cli": "python scripts/install-to-project.py --skill spec-building-data-apps",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3489,8 +4127,9 @@
       "description": "Apply machine-learning engineering practices.",
       "scoped": "spec-ml-best-practices",
       "cli": "python scripts/install-to-project.py --skill spec-ml-best-practices",
-      "repo": null,
-      "stars": 0,
+      "repo": "google/skills",
+      "repoName": "Google Agent Skills",
+      "stars": 23741,
       "ecosystems": [
         "general"
       ]
@@ -3505,10 +4144,11 @@
       "description": "Map data schemas.",
       "scoped": "spec-schema-mapping",
       "cli": "python scripts/install-to-project.py --skill spec-schema-mapping",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3521,10 +4161,11 @@
       "description": "Clean datasets.",
       "scoped": "spec-data-autocleaning",
       "cli": "python scripts/install-to-project.py --skill spec-data-autocleaning",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3537,10 +4178,11 @@
       "description": "Specialized environment setup.",
       "scoped": "spec-dak-setup",
       "cli": "python scripts/install-to-project.py --skill spec-dak-setup",
-      "repo": null,
+      "repo": "GoogleCloudPlatform/data-agent-kit",
+      "repoName": "Google Data Agent Kit",
       "stars": 0,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3553,8 +4195,9 @@
       "description": "Visualize codebase relationships.",
       "scoped": "spec-graphify",
       "cli": "python scripts/install-to-project.py --skill spec-graphify",
-      "repo": null,
-      "stars": 0,
+      "repo": "graphify-labs/graphify",
+      "repoName": "Graphify",
+      "stars": 144813,
       "ecosystems": [
         "general"
       ]
@@ -3570,6 +4213,7 @@
       "scoped": "spec-hyperframes-media",
       "cli": "python scripts/install-to-project.py --skill spec-hyperframes-media",
       "repo": "heygen-com/hyperframes",
+      "repoName": "Hyperframes Media",
       "stars": 81410,
       "ecosystems": [
         "general"
@@ -3586,6 +4230,7 @@
       "scoped": "spec-marketing-growth-engine",
       "cli": "python scripts/install-to-project.py --skill spec-marketing-growth-engine",
       "repo": "coreyhaines31/marketingskills",
+      "repoName": "Marketing Skills",
       "stars": 59331,
       "ecosystems": [
         "quality"
@@ -3601,8 +4246,9 @@
       "description": "Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering.",
       "scoped": "spec-remotion-video",
       "cli": "python scripts/install-to-project.py --skill spec-remotion-video",
-      "repo": null,
-      "stars": 0,
+      "repo": "remotion-dev/skills",
+      "repoName": "Remotion",
+      "stars": 6657,
       "ecosystems": [
         "general"
       ]
@@ -3617,8 +4263,9 @@
       "description": "Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades.",
       "scoped": "spec-stripe-payments",
       "cli": "python scripts/install-to-project.py --skill spec-stripe-payments",
-      "repo": null,
-      "stars": 0,
+      "repo": "stripe/link-cli",
+      "repoName": "Stripe",
+      "stars": 897,
       "ecosystems": [
         "general"
       ]
@@ -3633,10 +4280,12 @@
       "description": "Project overview, setup, features, supported platforms, build/test commands and links to key docs.",
       "scoped": "readme.md",
       "cli": "python scripts/install-to-project.py --skill readme.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "android",
+        "agents",
         "quality"
       ]
     },
@@ -3650,10 +4299,11 @@
       "description": "Defines the project license and permitted use; select an appropriate license before public distribution.",
       "scoped": "license",
       "cli": "python scripts/install-to-project.py --skill license",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3666,10 +4316,11 @@
       "description": "Contribution workflow, coding standards, issue/PR expectations and local development steps.",
       "scoped": "contributing.md",
       "cli": "python scripts/install-to-project.py --skill contributing.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3682,10 +4333,11 @@
       "description": "Human-readable record of notable changes by release/version.",
       "scoped": "changelog.md",
       "cli": "python scripts/install-to-project.py --skill changelog.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3698,9 +4350,11 @@
       "description": "Supported versions, vulnerability reporting channel and responsible disclosure expectations.",
       "scoped": "security.md",
       "cli": "python scripts/install-to-project.py --skill security.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -3714,10 +4368,11 @@
       "description": "Community participation and conduct expectations.",
       "scoped": "code_of_conduct.md",
       "cli": "python scripts/install-to-project.py --skill code_of_conduct.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3730,10 +4385,11 @@
       "description": "Market problem, target segments, competitor landscape, opportunity and positioning.",
       "scoped": "mrd.md",
       "cli": "python scripts/install-to-project.py --skill mrd.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3746,10 +4402,11 @@
       "description": "Business objectives, outcomes/KPIs, constraints, stakeholders, costs, risks and compliance needs.",
       "scoped": "brd.md",
       "cli": "python scripts/install-to-project.py --skill brd.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3762,10 +4419,11 @@
       "description": "Product vision, users, use cases, functional/non-functional requirements, UX flows and acceptance criteria.",
       "scoped": "prd.md",
       "cli": "python scripts/install-to-project.py --skill prd.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3778,10 +4436,11 @@
       "description": "Phases, milestones, sequencing, release gates and scope boundaries.",
       "scoped": "roadmap.md",
       "cli": "python scripts/install-to-project.py --skill roadmap.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3794,10 +4453,11 @@
       "description": "Stable feature IDs and status: planned, in progress, implemented, verified, blocked or deprecated.",
       "scoped": "features.md",
       "cli": "python scripts/install-to-project.py --skill features.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3810,10 +4470,11 @@
       "description": "User segments, needs, contexts and accessibility considerations.",
       "scoped": "personas.md",
       "cli": "python scripts/install-to-project.py --skill personas.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3826,10 +4487,11 @@
       "description": "System context, components, boundaries, data flows, dependencies, architectural patterns and diagrams.",
       "scoped": "architecture.md",
       "cli": "python scripts/install-to-project.py --skill architecture.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3842,10 +4504,11 @@
       "description": "Platforms, OS/API targets, toolchains, hardware constraints, performance budgets and technical limits.",
       "scoped": "trd.md",
       "cli": "python scripts/install-to-project.py --skill trd.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3858,10 +4521,11 @@
       "description": "Detailed software requirements, subsystem behavior, interfaces, error states and fallback behavior.",
       "scoped": "srd.md",
       "cli": "python scripts/install-to-project.py --skill srd.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3874,10 +4538,11 @@
       "description": "Module/class decomposition, runtime interactions, state machines, threading and lifecycle behavior.",
       "scoped": "ssd.md",
       "cli": "python scripts/install-to-project.py --skill ssd.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3890,10 +4555,11 @@
       "description": "Low-level algorithms, data formats, wire protocols, binary layouts and mathematical specifications.",
       "scoped": "tsd.md",
       "cli": "python scripts/install-to-project.py --skill tsd.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3906,10 +4572,11 @@
       "description": "API endpoints/contracts, schemas, auth, errors, versioning and examples; link to OpenAPI when used.",
       "scoped": "api-specification.md",
       "cli": "python scripts/install-to-project.py --skill api-specification.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3922,10 +4589,11 @@
       "description": "Entities, relationships, ownership, persistence, validation, migrations and retention rules.",
       "scoped": "data-model.md",
       "cli": "python scripts/install-to-project.py --skill data-model.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3938,10 +4606,11 @@
       "description": "Numbered, append-only Architecture Decision Records: status, context, decision, consequences and alternatives.",
       "scoped": "adr/",
       "cli": "python scripts/install-to-project.py --skill adr/",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -3954,8 +4623,9 @@
       "description": "Agent entry point: project context, non-negotiable rules, workflow, verification commands and links to detailed guidance.",
       "scoped": "agents.md",
       "cli": "python scripts/install-to-project.py --skill agents.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "agents"
       ]
@@ -3970,9 +4640,11 @@
       "description": "Coding conventions, architecture laws, dependency rules, security constraints and prohibited patterns.",
       "scoped": "docs/governance/rules.md",
       "cli": "python scripts/install-to-project.py --skill docs/governance/rules.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -3986,10 +4658,11 @@
       "description": "Story sizing, branch/commit expectations, implementation gates and sprint completion rules.",
       "scoped": "docs/governance/sprint-rules.md",
       "cli": "python scripts/install-to-project.py --skill docs/governance/sprint-rules.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4002,10 +4675,11 @@
       "description": "Branch naming, branch protection, merge strategy, release branches and hotfix lifecycle.",
       "scoped": "docs/governance/branching.md",
       "cli": "python scripts/install-to-project.py --skill docs/governance/branching.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4018,10 +4692,11 @@
       "description": "Curated durable project learnings, recurring pitfalls and validated workarounds; avoid stale transient logs.",
       "scoped": "docs/governance/memory.md",
       "cli": "python scripts/install-to-project.py --skill docs/governance/memory.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4034,8 +4709,9 @@
       "description": "Canonical domain terms, abbreviations and definitions to keep human and agent language consistent.",
       "scoped": "glossary.md",
       "cli": "python scripts/install-to-project.py --skill glossary.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "agents"
       ]
@@ -4050,8 +4726,9 @@
       "description": "Agent roles, handoffs, tool permissions, context-loading rules, review responsibilities and escalation paths.",
       "scoped": "docs/governance/ai-workflow.md",
       "cli": "python scripts/install-to-project.py --skill docs/governance/ai-workflow.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "android",
         "agents",
@@ -4068,10 +4745,12 @@
       "description": "Machine-readable atomic stories with IDs, priority, target files, acceptance criteria and pass state.",
       "scoped": "tasks/ralph/prd.json",
       "cli": "python scripts/install-to-project.py --skill tasks/ralph/prd.json",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "superpowers"
+        "superpowers",
+        "agents"
       ]
     },
     {
@@ -4084,10 +4763,12 @@
       "description": "Append-only execution journal: story progress, commits, commands, test evidence and blockers.",
       "scoped": "tasks/ralph/progress.txt",
       "cli": "python scripts/install-to-project.py --skill tasks/ralph/progress.txt",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "superpowers",
+        "agents",
         "quality"
       ]
     },
@@ -4101,8 +4782,9 @@
       "description": "Sprint goals, scope, dependencies, owners/agents and exit criteria.",
       "scoped": "sprint-plan.md-/-sprint-plans",
       "cli": "python scripts/install-to-project.py --skill sprint-plan.md-/-sprint-plans",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "agents"
       ]
@@ -4117,10 +4799,11 @@
       "description": "Truthful status of features and subsystems, with evidence and known gaps; distinguish implemented from verified.",
       "scoped": "docs/implementation-status.md",
       "cli": "python scripts/install-to-project.py --skill docs/implementation-status.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4133,9 +4816,11 @@
       "description": "Test pyramid, test types, environments, coverage expectations, automation and release verification.",
       "scoped": "docs/testing/test-strategy.md",
       "cli": "python scripts/install-to-project.py --skill docs/testing/test-strategy.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -4149,9 +4834,11 @@
       "description": "Traceable scenarios, edge cases, regression cases and acceptance-test mapping.",
       "scoped": "docs/testing/test-cases.md",
       "cli": "python scripts/install-to-project.py --skill docs/testing/test-cases.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -4165,9 +4852,11 @@
       "description": "Assets, trust boundaries, threats, attack surfaces, mitigations and residual risks.",
       "scoped": "docs/security/threat-model.md",
       "cli": "python scripts/install-to-project.py --skill docs/security/threat-model.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -4181,9 +4870,11 @@
       "description": "Security architecture, secrets handling, permissions, dependency hygiene and vulnerability response.",
       "scoped": "docs/security.md",
       "cli": "python scripts/install-to-project.py --skill docs/security.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -4197,9 +4888,11 @@
       "description": "Performance budgets, profiling approach, benchmarks and regression thresholds.",
       "scoped": "docs/performance.md",
       "cli": "python scripts/install-to-project.py --skill docs/performance.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
+        "agents",
         "quality"
       ]
     },
@@ -4213,10 +4906,11 @@
       "description": "Accessibility requirements, semantics, assistive technology checks and validation approach.",
       "scoped": "docs/accessibility.md",
       "cli": "python scripts/install-to-project.py --skill docs/accessibility.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4229,10 +4923,12 @@
       "description": "Sprint/release closeout reports with build/test results, review findings, acceptance evidence and open risks.",
       "scoped": "docs/reports/",
       "cli": "python scripts/install-to-project.py --skill docs/reports/",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
         "android",
+        "agents",
         "quality"
       ]
     },
@@ -4246,10 +4942,11 @@
       "description": "Reproducible local/CI build steps, required tools, commands and troubleshooting.",
       "scoped": "docs/build-guide.md",
       "cli": "python scripts/install-to-project.py --skill docs/build-guide.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4262,10 +4959,11 @@
       "description": "Environment variables, configuration profiles, secrets references and setup requirements; never store secret values.",
       "scoped": "docs/environment.md",
       "cli": "python scripts/install-to-project.py --skill docs/environment.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4278,10 +4976,11 @@
       "description": "Versioning, release checklist, signing, artifact validation, rollout and rollback.",
       "scoped": "docs/release-process.md",
       "cli": "python scripts/install-to-project.py --skill docs/release-process.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4294,10 +4993,11 @@
       "description": "Infrastructure, deployment topology, configuration, migrations, rollout and rollback steps.",
       "scoped": "docs/deployment.md",
       "cli": "python scripts/install-to-project.py --skill docs/deployment.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4310,10 +5010,11 @@
       "description": "Known failures, symptoms, diagnostics, fixes and links to relevant issues.",
       "scoped": "docs/troubleshooting.md",
       "cli": "python scripts/install-to-project.py --skill docs/troubleshooting.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4326,10 +5027,11 @@
       "description": "Operational procedures, alerts, incident response, recovery and maintenance tasks.",
       "scoped": "docs/runbook.md",
       "cli": "python scripts/install-to-project.py --skill docs/runbook.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4342,10 +5044,11 @@
       "description": "Add platform-specific rules, offline sync, data retention, third-party integrations, observability or hardware docs as needed.",
       "scoped": "platform-/-integration-/-privacy-documents",
       "cli": "python scripts/install-to-project.py --skill platform-/-integration-/-privacy-documents",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4358,10 +5061,11 @@
       "description": "Append-only engineering decision journal for meaningful implementation choices: context, options, chosen approach, rationale, trade-offs, affected files and verification. Link formal architecture decisions to numbered ADRs.",
       "scoped": "docs/governance/decision.md",
       "cli": "python scripts/install-to-project.py --skill docs/governance/decision.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4374,10 +5078,11 @@
       "description": "Current execution-flow map showing how key user actions, events, functions, modules and files connect; include entry points, data/state transitions, API/database boundaries and error paths. Update when flows change.",
       "scoped": "docs/architecture/flow.md",
       "cli": "python scripts/install-to-project.py --skill docs/architecture/flow.md",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4390,10 +5095,11 @@
       "description": "All projects",
       "scoped": "organize-the-project-into-a-clear,-predictable-structure-with-documented-module-boundaries.",
       "cli": "python scripts/install-to-project.py --skill organize-the-project-into-a-clear,-predictable-structure-with-documented-module-boundaries.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4406,10 +5112,11 @@
       "description": "All projects",
       "scoped": "keep-business/domain-logic-separate-from-ui,-presentation-and-framework-specific-code.",
       "cli": "python scripts/install-to-project.py --skill keep-business/domain-logic-separate-from-ui,-presentation-and-framework-specific-code.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4422,10 +5129,11 @@
       "description": "All projects",
       "scoped": "remove-genuinely-unused,-unreachable-and-duplicated-code-after-checking-references,-build-variants-and-generated-code.",
       "cli": "python scripts/install-to-project.py --skill remove-genuinely-unused,-unreachable-and-duplicated-code-after-checking-references,-build-variants-and-generated-code.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4438,10 +5146,11 @@
       "description": "All projects",
       "scoped": "use-consistent,-descriptive-naming-for-packages,-modules,-types,-functions,-variables,-resources-and-files.",
       "cli": "python scripts/install-to-project.py --skill use-consistent,-descriptive-naming-for-packages,-modules,-types,-functions,-variables,-resources-and-files.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4454,10 +5163,11 @@
       "description": "All projects",
       "scoped": "handle-expected-failures-explicitly;-preserve-useful-context,-avoid-swallowed-exceptions-and-provide-safe-user-facing-fallbacks.",
       "cli": "python scripts/install-to-project.py --skill handle-expected-failures-explicitly;-preserve-useful-context,-avoid-swallowed-exceptions-and-provide-safe-user-facing-fallbacks.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4470,10 +5180,11 @@
       "description": "All projects",
       "scoped": "separate-environment-specific-configuration-from-source;-validate-required-values-and-never-commit-secrets.",
       "cli": "python scripts/install-to-project.py --skill separate-environment-specific-configuration-from-source;-validate-required-values-and-never-commit-secrets.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4486,10 +5197,11 @@
       "description": "When reuse is meaningful",
       "scoped": "extract-components-and-utilities-when-reuse-improves-consistency;-avoid-premature-abstraction-and-oversized-shared-modules.",
       "cli": "python scripts/install-to-project.py --skill extract-components-and-utilities-when-reuse-improves-consistency;-avoid-premature-abstraction-and-oversized-shared-modules.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4502,10 +5214,11 @@
       "description": "Stateful applications",
       "scoped": "define-state-ownership,-lifecycle,-events,-loading/error/empty-states-and-concurrency-rules-consistently.",
       "cli": "python scripts/install-to-project.py --skill define-state-ownership,-lifecycle,-events,-loading/error/empty-states-and-concurrency-rules-consistently.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4518,10 +5231,11 @@
       "description": "All projects",
       "scoped": "document-module-responsibilities,-non-obvious-logic,-public-contracts-and-important-setup/maintenance-workflows.",
       "cli": "python scripts/install-to-project.py --skill document-module-responsibilities,-non-obvious-logic,-public-contracts-and-important-setup/maintenance-workflows.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     },
     {
@@ -4534,10 +5248,11 @@
       "description": "Projects with APIs",
       "scoped": "use-explicit-api-contracts,-versioning-strategy-where-needed,-consistent-error-models,-validation-and-clear-client/server-boundaries.",
       "cli": "python scripts/install-to-project.py --skill use-explicit-api-contracts,-versioning-strategy-where-needed,-consistent-error-models,-validation-and-clear-client/server-boundaries.",
-      "repo": null,
-      "stars": 0,
+      "repo": "agentskills/agentskills",
+      "repoName": "Agent Skills Spec",
+      "stars": 27098,
       "ecosystems": [
-        "general"
+        "agents"
       ]
     }
   ]

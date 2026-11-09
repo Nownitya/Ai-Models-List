@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Copy, Check, Bookmark, BookmarkCheck, Star, ExternalLink } from 'lucide-react'
+import { Copy, Check, Bookmark, BookmarkCheck, Star, GitBranch } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Skill } from '@/types'
 
@@ -13,6 +13,7 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
   const openInspect = useSkillStore((s) => s.openInspect)
+  const setRepo = useSkillStore((s) => s.setRepo)
 
   const isSavedInStack = stack.some((s) => s.id === skill.id)
 
@@ -35,17 +36,32 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
       onClick={() => openInspect(skill)}
       className="group w-full h-14 bg-[#0d1117] hover:bg-[#161b22] border border-[#21262d] hover:border-slate-500 rounded-lg px-4 flex items-center justify-between gap-3.5 transition-colors cursor-pointer text-sm"
     >
-      {/* Left: Priority, Name, Category, Description Preview */}
+      {/* Left: Priority, Name, Repo, Category, Description Preview */}
       <div className="flex items-center gap-3 min-w-0 flex-1">
         <span className={`px-2.5 py-1 rounded text-xs font-extrabold border shrink-0 ${priorityBadge}`}>
           {skill.priority}
         </span>
 
-        <span className="font-bold text-slate-100 group-hover:text-cyan-300 transition-colors truncate shrink-0 max-w-[200px] sm:max-w-[250px] text-sm sm:text-base">
+        <span className="font-bold text-slate-100 group-hover:text-cyan-300 transition-colors truncate shrink-0 max-w-[180px] sm:max-w-[220px] text-sm sm:text-base">
           {skill.name}
         </span>
 
-        <span className="hidden md:inline text-xs uppercase font-mono px-2 py-0.5 rounded bg-[#161b22] text-slate-300 border border-[#30363d] shrink-0 truncate max-w-[150px]">
+        {/* Upstream Repo Pill */}
+        {skill.repo && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setRepo(skill.repo!)
+            }}
+            className="hidden sm:inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded bg-[#161b22] hover:bg-slate-800 text-cyan-300 hover:text-white border border-[#30363d] shrink-0 truncate max-w-[140px] cursor-pointer"
+            title={`Filter by repository: ${skill.repo}`}
+          >
+            <GitBranch className="w-3 h-3 text-cyan-400" />
+            <span className="truncate">{skill.repoName || skill.repo.split('/')[1]}</span>
+          </button>
+        )}
+
+        <span className="hidden md:inline text-xs uppercase font-mono px-2 py-0.5 rounded bg-[#161b22] text-slate-300 border border-[#30363d] shrink-0 truncate max-w-[130px]">
           {skill.categoryLabel.split(' ')[1] || skill.categoryLabel}
         </span>
 
@@ -74,37 +90,22 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
           </span>
         )}
 
-        {/* Upstream Link */}
-        {skill.repo && (
-          <a
-            href={`https://github.com/${skill.repo}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="p-1 rounded text-slate-500 hover:text-slate-300 hover:bg-slate-800 transition-colors"
-            title="Open Upstream GitHub Repository"
-          >
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        )}
-
-        {/* Stack Toggle Button */}
+        {/* Bookmark Stack Toggle */}
         <button
           onClick={(e) => {
             e.stopPropagation()
             toggleStack(skill)
           }}
-          title={isSavedInStack ? 'Remove from stack' : 'Add to stack'}
-          className={`p-1 rounded transition-colors ${
+          title={isSavedInStack ? 'Remove from My Stack' : 'Save to My Stack'}
+          className={`p-1.5 rounded-lg border transition-colors cursor-pointer ${
             isSavedInStack
-              ? 'text-cyan-400 bg-cyan-950/40 border border-cyan-800/60'
-              : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800'
+              ? 'bg-cyan-950/70 text-cyan-300 border-cyan-800'
+              : 'bg-[#161b22] text-slate-400 border-[#30363d] hover:text-white'
           }`}
         >
-          {isSavedInStack ? <BookmarkCheck className="w-3.5 h-3.5" /> : <Bookmark className="w-3.5 h-3.5" />}
+          {isSavedInStack ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
         </button>
       </div>
     </div>
   )
 }
-

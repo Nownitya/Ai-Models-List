@@ -30,7 +30,7 @@ function saveStackToStorage(stack: SavedStackItem[]) {
 // Read initial URL params
 function getInitialUrlParams() {
   if (typeof window === 'undefined') {
-    return { q: '', priority: 'ALL' as Priority, cat: 'ALL', eco: 'all' as Ecosystem, sort: 'default' as SortOption }
+    return { q: '', priority: 'ALL' as Priority, cat: 'ALL', eco: 'all' as Ecosystem, repo: 'all', sort: 'default' as SortOption }
   }
   const params = new URLSearchParams(window.location.search)
   const q = params.get('q') || ''
@@ -38,14 +38,15 @@ function getInitialUrlParams() {
   const priority = ['ALL', 'P0', 'P1', 'P2', 'P3'].includes(p) ? (p as Priority) : 'ALL'
   const cat = params.get('cat') || 'ALL'
   const eco = (params.get('eco') || 'all') as Ecosystem
+  const repo = params.get('repo') || 'all'
   const sort = (params.get('sort') || 'default') as SortOption
 
-  return { q, priority, cat, eco, sort }
+  return { q, priority, cat, eco, repo, sort }
 }
 
 // Safeguard 11: Debounced URL synchronization using replaceState
 let urlSyncTimer: ReturnType<typeof setTimeout> | null = null
-function syncUrlParams(state: { searchQuery: string; priority: Priority; category: string; ecosystem: Ecosystem; sort: SortOption }) {
+function syncUrlParams(state: { searchQuery: string; priority: Priority; category: string; ecosystem: Ecosystem; repo: string; sort: SortOption }) {
   if (typeof window === 'undefined') return
   if (urlSyncTimer) clearTimeout(urlSyncTimer)
 
@@ -55,6 +56,7 @@ function syncUrlParams(state: { searchQuery: string; priority: Priority; categor
     if (state.priority !== 'ALL') params.set('priority', state.priority)
     if (state.category !== 'ALL') params.set('cat', state.category)
     if (state.ecosystem !== 'all') params.set('eco', state.ecosystem)
+    if (state.repo !== 'all') params.set('repo', state.repo)
     if (state.sort !== 'default') params.set('sort', state.sort)
 
     const newQuery = params.toString() ? `?${params.toString()}` : ''
@@ -73,6 +75,7 @@ interface SkillStoreState {
   selectedPriority: Priority
   selectedCategory: string
   selectedEcosystem: Ecosystem
+  selectedRepo: string
   selectedSort: SortOption
 
   // Stack Builder
@@ -95,6 +98,7 @@ interface SkillStoreState {
   setPriority: (priority: Priority) => void
   setCategory: (category: string) => void
   setEcosystem: (ecosystem: Ecosystem) => void
+  setRepo: (repo: string) => void
   setSort: (sort: SortOption) => void
   resetFilters: () => void
 
@@ -121,6 +125,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   selectedPriority: initialUrl.priority,
   selectedCategory: initialUrl.cat,
   selectedEcosystem: initialUrl.eco,
+  selectedRepo: initialUrl.repo,
   selectedSort: initialUrl.sort,
 
   stack: loadInitialStack(),
@@ -138,35 +143,41 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
 
   setSearchQuery: (searchQuery) => {
     set({ searchQuery })
-    const { selectedPriority, selectedCategory, selectedEcosystem, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, sort: selectedSort })
+    const { selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setPriority: (selectedPriority) => {
     set({ selectedPriority })
-    const { searchQuery, selectedCategory, selectedEcosystem, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, sort: selectedSort })
+    const { searchQuery, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setCategory: (selectedCategory) => {
     // If selecting a category, reset ecosystem preset to all
     const selectedEcosystem = selectedCategory === 'ALL' ? get().selectedEcosystem : 'all'
     set({ selectedCategory, selectedEcosystem })
-    const { searchQuery, selectedPriority, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, sort: selectedSort })
+    const { searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
+    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setEcosystem: (selectedEcosystem) => {
     // If selecting an ecosystem preset, reset category filter to ALL
     set({ selectedEcosystem, selectedCategory: 'ALL' })
-    const { searchQuery, selectedPriority, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: 'ALL', ecosystem: selectedEcosystem, sort: selectedSort })
+    const { searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
+    syncUrlParams({ searchQuery, priority: selectedPriority, category: 'ALL', ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+  },
+
+  setRepo: (selectedRepo) => {
+    set({ selectedRepo })
+    const { searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort } = get()
+    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setSort: (selectedSort) => {
     set({ selectedSort })
-    const { searchQuery, selectedPriority, selectedCategory, selectedEcosystem } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, sort: selectedSort })
+    const { searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo } = get()
+    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   resetFilters: () => {
@@ -175,9 +186,10 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       selectedPriority: 'ALL',
       selectedCategory: 'ALL',
       selectedEcosystem: 'all',
+      selectedRepo: 'all',
       selectedSort: 'default',
     })
-    syncUrlParams({ searchQuery: '', priority: 'ALL', category: 'ALL', ecosystem: 'all', sort: 'default' })
+    syncUrlParams({ searchQuery: '', priority: 'ALL', category: 'ALL', ecosystem: 'all', repo: 'all', sort: 'default' })
   },
 
   toggleStack: (skill) => {

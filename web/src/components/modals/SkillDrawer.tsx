@@ -7,6 +7,7 @@ export const SkillDrawer: React.FC = () => {
   const closeInspect = useSkillStore((s) => s.closeInspect)
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
+  const setRepo = useSkillStore((s) => s.setRepo)
 
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedCli, setCopiedCli] = useState(false)
@@ -168,8 +169,8 @@ export const SkillDrawer: React.FC = () => {
             </div>
 
             <div className="bg-[#08090a] p-3 rounded-lg border border-[#21262d]">
-              <span className="text-slate-400 text-xs uppercase font-bold block mb-1">Unique Identifier</span>
-              <span className="text-slate-200 font-mono text-xs truncate block">{inspectSkill.uniqueId}</span>
+              <span className="text-slate-400 text-xs uppercase font-bold block mb-1">Framework Origin</span>
+              <span className="text-slate-200 font-semibold text-xs truncate block">{inspectSkill.repoName || 'Agent Specification'}</span>
             </div>
 
             <div className="bg-[#08090a] p-3 rounded-lg border border-[#21262d]">
@@ -179,6 +180,19 @@ export const SkillDrawer: React.FC = () => {
               </span>
             </div>
           </div>
+
+          {/* Direct Repo Filter Button */}
+          {inspectSkill.repo && (
+            <button
+              onClick={() => {
+                setRepo(inspectSkill.repo!)
+                closeInspect()
+              }}
+              className="w-full py-2.5 px-3.5 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-cyan-300 hover:text-white border border-[#30363d] hover:border-cyan-500/50 text-xs font-semibold flex items-center justify-center gap-2 cursor-pointer transition-colors"
+            >
+              <span>View all skills from {inspectSkill.repoName || inspectSkill.repo}</span>
+            </button>
+          )}
 
           {/* Quick Guidance / Prompt Usage */}
           <div className="bg-[#08090a] p-4 rounded-xl border border-[#21262d] space-y-2">
