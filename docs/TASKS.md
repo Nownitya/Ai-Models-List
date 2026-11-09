@@ -33,6 +33,9 @@
 | **TASK-020** | Catalog Expansion (Batch 6 - Bucket 2 High-Impact Tools) | Add 10 high-impact & unique developer tools from Bucket 2 with 2.2M+ installs (firecrawl, convex, scrapegraphai, momentic-ai, extract-design-system, better-auth, review-loop-skill, mastra-ai, design-doc-mermaid, nx-ai-agents-config) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-021** | Catalog Expansion (Batch 7 - Bucket 2 Official Developer Platforms) | Add 9 official developer platforms and ecosystem tools from Bucket 2 (firebase, elevenlabs, solana-foundation, currents-playwright, svelte5, neon-postgres, clerk, prisma, stripe-link) | P0 | Verified | `scripts/sync-matrix.py`, `scripts/test-skills.py`, `scripts/sync_github_metrics.py`, `tests` |
 | **TASK-022** | Installer & Presets | Expand install preset bundles (cloud, ai-agents, ui-ux, testing) and comprehensive prefix mapping | P0 | Verified | `scripts/install_to_project.py`, `tests/test_install_to_project.py` |
+| **TASK-023** | Web & Catalog Remediation (Sprint 5.1) | Fix ecosystem mapping, automate directory index, and enforce true scoped slash commands | P0 | Verified | `index.html`, `scripts/generate_skills_directory.py`, `tests/test_web_dashboard.py` |
+| **TASK-024** | UI/UX & Engine Performance (Sprint 5.2) | 150ms search debounce, multi-token matching, batch DOM rendering, and WCAG 2.1 AA a11y | P1 | Verified | `index.html`, `tests/test_web_dashboard.py` |
+| **TASK-025** | Developer Ergonomics & Stack Builder (Sprint 5.3) | One-click CLI command, interactive priority guide, and custom agent stack basket | P1 | Verified | `index.html`, `tests/test_web_dashboard.py` |
 
 ---
 
@@ -150,5 +153,20 @@
 - [x] Subtask 22.3: Upgrade `resolve_bundle_skills` to support both category-scoped and curated multi-skill bundles.
 - [x] Subtask 22.4: Update MCP server tool descriptions and presets listing for 301+ skills and 104+ frameworks.
 - [x] Subtask 22.5: Expand unit tests in `tests/test_install_to_project.py` and verify all tests pass.
+
+### Epic H5: Web Dashboard & Ecosystem Experience Overhaul
+- [x] Subtask 23.1: Re-architect `ecosystemFilterMap` in `index.html` to accurately filter Cloud, Agents, UI/UX, Testing, and Mobile.
+- [x] Subtask 23.2: Implement `scripts/generate_skills_directory.py` compiling `data/skills-directory.json` for deterministic telemetry & scoped command resolution.
+- [x] Subtask 23.3: Enforce authentic `PREFIX_MAP` slash commands (`/core-code-review`, `/mp-code-review`, `/workflow-firebase-agent-suite`) on web cards.
+- [x] Subtask 24.1: Add 150ms search debounce and multi-token matching across title, why, category, scopedCmd, and author/repo.
+- [x] Subtask 24.2: Implement batch rendering & pagination (36 initial cards + Load More) eliminating 6,500+ DOM element bloat.
+- [x] Subtask 24.3: Implement full WCAG 2.1 AA accessibility (semantic button titles, ARIA dialog landmarks, focus trapping).
+- [x] Subtask 24.4: Enforce deterministic multi-key sorting (Primary -> Priority P0..P3 -> Name A-Z).
+- [x] Subtask 24.5: Optimize mobile layout with 2x2 compact Bento grid on <=640px and internal modal scroll container.
+- [x] Subtask 25.1: Add 1-click "Copy CLI" button generating `python scripts/install-to-project.py --skill <scoped-name>`.
+- [x] Subtask 25.2: Build interactive Priority Taxonomy Guide modal (`#priorityModal`) explaining P0, P1, P2, and P3 governance contracts.
+- [x] Subtask 25.3: Build "My Agent Stack" basket (`#stackModal`) allowing multi-skill selection, combined CLI copy, and JSON export.
+- [x] Subtask 25.4: Expand `tests/test_web_dashboard.py` to 10 automated unit tests (44/44 full test suite pass).
+
 
 

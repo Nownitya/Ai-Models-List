@@ -51,3 +51,14 @@
 * [x] **M4.5**: Web dashboard v2 (`index.html`) featuring Interactive Skill Inspector modal, tactile one-click copy feedback, 16-framework live radar strip, and instant filter resets.
 * [x] **M4.6**: Scaled zero-dependency MCP server (`scripts/mcp_server.py`) exposing search, inspect, live telemetry, and installation across all 301+ skills to coding assistants.
 
+### Milestone H5: Web Dashboard & Ecosystem Experience Overhaul (Complete)
+* [x] **M5.1**: Comprehensive 12-flaw Staff Engineer Architectural Review ([`docs/reports/AUDIT-AND-ENG-REVIEW.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/docs/reports/AUDIT-AND-ENG-REVIEW.md)) auditing design, taxonomy, UI/UX, accessibility, and performance.
+* [x] **M5.2**: Resolved ecosystem filter bug in `index.html` with robust multi-criteria mapping for Cloud, Agents, UI/UX, Testing, and Mobile.
+* [x] **M5.3**: Built `scripts/generate_skills_directory.py` and `data/skills-directory.json`, enforcing true collision-free scoped slash commands (`/core-code-review`, `/mp-code-review`, `/workflow-firebase-agent-suite`) on web cards.
+* [x] **M5.4**: Replaced synchronous 6,500+ DOM element rendering with 150ms debounced multi-token search and 36-card batch rendering / pagination.
+* [x] **M5.5**: Enforced WCAG 2.1 AA accessibility standards: semantic interactive card titles, ARIA dialog landmarks (`role="dialog"`, `aria-modal="true"`), and focus trapping.
+* [x] **M5.6**: Launched 1-click **"Copy Install CLI"** action on every card and in inspector (`python scripts/install-to-project.py --skill <scoped-cmd>`).
+* [x] **M5.7**: Deployed interactive **Priority Taxonomy Guide** modal explaining P0 (Essential), P1 (High), P2 (Medium), and P3 (Optional) contracts.
+* [x] **M5.8**: Launched **"My Agent Stack" Basket** (`#stackModal`), allowing developers to pin multiple skills, 1-click copy combined CLI commands, and export custom JSON manifests.
+
+

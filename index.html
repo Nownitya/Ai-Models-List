@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Coding Skills & Tools Matrix — Interactive Catalog</title>
-  <meta name="description" content="Authoritative catalog of 228+ AI coding skills, agent harnesses, memory frameworks, and developer tools across 12 functional domains with live upstream telemetry.">
+  <meta name="description" content="Authoritative catalog of 317+ AI coding skills, agent harnesses, memory frameworks, and developer tools across 12 functional domains with live upstream telemetry.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
@@ -350,12 +350,12 @@
 
     .search-input {
       width: 100%;
-      padding: 0.85rem 1rem 0.85rem 2.75rem;
-      font-size: 0.95rem;
-      background: #0f172a;
-      border: 1px solid var(--card-border);
+      padding: 0.75rem 4.5rem 0.75rem 2.75rem;
       border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.8);
       color: var(--text);
+      font-size: 0.95rem;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
@@ -367,27 +367,27 @@
 
     .search-shortcut {
       position: absolute;
-      right: 0.85rem;
+      right: 1rem;
       top: 50%;
       transform: translateY(-50%);
       background: #1e293b;
       color: var(--text-dim);
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 2px 6px;
+      padding: 2px 7px;
       border-radius: 4px;
-      border: 1px solid #334155;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
       pointer-events: none;
+      border: 1px solid #334155;
     }
 
     .sort-select {
-      padding: 0.85rem 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      background-color: #0f172a;
+      background: rgba(15, 23, 42, 0.8);
       border: 1px solid var(--card-border);
-      border-radius: 10px;
       color: var(--text);
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
       outline: none;
       cursor: pointer;
       transition: border-color 0.2s;
@@ -397,49 +397,50 @@
       border-color: var(--accent-cyan);
     }
 
-    /* Filters Section */
+    /* Filter Groups */
     .filters-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.85rem;
       margin-bottom: 2rem;
       background: rgba(15, 23, 42, 0.4);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 1rem;
+      padding: 1.25rem;
     }
 
     .filter-group {
       display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
       align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
     }
 
     .filter-label {
       font-size: 0.75rem;
       font-weight: 800;
-      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
       min-width: 90px;
     }
 
     .filter-btn {
       padding: 0.35rem 0.75rem;
       border-radius: 6px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
       background: #090d16;
-      color: var(--text-muted);
+      color: var(--text-dim);
       border: 1px solid var(--card-border);
       cursor: pointer;
-      transition: all 0.15s;
+      transition: all 0.15s ease;
     }
 
     .filter-btn:hover {
-      background: #1e293b;
       color: #fff;
+      border-color: #334155;
+      background: #1e293b;
     }
 
     .filter-btn.active {
@@ -499,12 +500,24 @@
       margin-bottom: 0.75rem;
     }
 
-    .card-title {
+    .card-title-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
       font-size: 1.05rem;
       font-weight: 700;
       color: #ffffff;
       line-height: 1.35;
       letter-spacing: -0.01em;
+      cursor: pointer;
+      transition: color 0.15s ease;
+      font-family: inherit;
+    }
+
+    .card-title-btn:hover, .card-title-btn:focus-visible {
+      color: var(--accent-cyan);
+      outline: none;
     }
 
     .priority-pill {
@@ -518,6 +531,12 @@
       letter-spacing: 0.05em;
       white-space: nowrap;
       flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .priority-pill:hover {
+      transform: scale(1.05);
     }
 
     .priority-P0 { background: var(--p0-bg); color: var(--p0-text); border-color: var(--p0-border); }
@@ -530,6 +549,8 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.4rem;
     }
 
     .card-category {
@@ -589,7 +610,7 @@
 
     .search-clear {
       position: absolute;
-      right: 2.5rem;
+      right: 2.75rem;
       top: 50%;
       transform: translateY(-50%);
       background: none;
@@ -606,39 +627,6 @@
     .search-clear:hover {
       color: #fff;
       background: rgba(255, 255, 255, 0.1);
-    }
-
-    .inspect-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 1.25rem;
-    }
-
-    @media (max-width: 600px) {
-      .inspect-grid { grid-template-columns: 1fr; }
-    }
-
-    .inspect-box {
-      background: #090d16;
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-      padding: 0.65rem 0.85rem;
-    }
-
-    .inspect-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-dim);
-      margin-bottom: 0.2rem;
-    }
-
-    .inspect-value {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
     }
 
     .card-desc {
@@ -692,13 +680,15 @@
 
     .card-actions {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
+      flex-wrap: wrap;
     }
 
     .action-btn {
       flex: 1;
-      padding: 0.45rem 0.75rem;
-      font-size: 0.78rem;
+      min-width: 65px;
+      padding: 0.45rem 0.6rem;
+      font-size: 0.75rem;
       font-weight: 600;
       border-radius: 6px;
       border: 1px solid var(--card-border);
@@ -711,7 +701,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.35rem;
+      gap: 0.3rem;
     }
 
     .action-btn:hover {
@@ -729,6 +719,74 @@
     .action-btn.primary:hover {
       background: var(--accent);
       color: #fff;
+    }
+
+    .action-btn.stack-btn.in-stack {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: rgba(56, 189, 248, 0.6);
+      color: var(--accent-cyan);
+    }
+
+    /* Floating Stack Basket Pill */
+    .stack-fab {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #fff;
+      border: 1px solid var(--accent-cyan);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7), 0 0 20px rgba(56, 189, 248, 0.3);
+      padding: 0.65rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 90;
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .stack-fab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.5);
+    }
+
+    .stack-fab-count {
+      background: var(--accent-cyan);
+      color: #090d16;
+      border-radius: 9999px;
+      padding: 1px 7px;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    /* Load More Container */
+    .load-more-container {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .load-more-btn {
+      padding: 0.75rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--accent-cyan);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .load-more-btn:hover {
+      background: #1e293b;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
     }
 
     /* Modal Styling */
@@ -755,6 +813,9 @@
       padding: 1.75rem;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(56, 189, 248, 0.15);
       animation: modalIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
     }
 
     @keyframes modalIn {
@@ -769,6 +830,7 @@
       margin-bottom: 1.25rem;
       border-bottom: 1px solid var(--card-border);
       padding-bottom: 0.75rem;
+      flex-shrink: 0;
     }
 
     .modal-title {
@@ -789,6 +851,12 @@
 
     .modal-close:hover { color: #fff; }
 
+    .modal-body {
+      overflow-y: auto;
+      flex: 1;
+      padding-right: 0.25rem;
+    }
+
     .modal-body pre {
       background: #090d16;
       padding: 1.25rem;
@@ -800,6 +868,39 @@
       border: 1px solid #1e293b;
       white-space: pre-wrap;
       line-height: 1.6;
+    }
+
+    .inspect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .inspect-grid { grid-template-columns: 1fr; }
+    }
+
+    .inspect-box {
+      background: #090d16;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+    }
+
+    .inspect-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 0.2rem;
+    }
+
+    .inspect-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
     }
 
     /* Toast Notification */
@@ -831,9 +932,16 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .bento-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+      .bento-card {
+        padding: 0.75rem 0.5rem;
+      }
+      .bento-val {
+        font-size: 1.4rem;
       }
       .toolbar {
         flex-direction: column;
@@ -845,6 +953,14 @@
       .filter-label, .ecosystem-label {
         min-width: 100%;
         margin-bottom: 0.25rem;
+      }
+      .search-shortcut {
+        display: none;
+      }
+      .stack-fab {
+        bottom: 1rem;
+        left: 1rem;
+        padding: 0.5rem 0.9rem;
       }
     }
   </style>
@@ -864,7 +980,7 @@
       <div class="bento-card">
         <div class="bento-val" id="stat-total">317</div>
         <div class="bento-label">Cataloged Skills</div>
-        <div class="bento-sub">12 Categories + Docs</div>
+        <div class="bento-sub">22 Domains & Sub-Skills</div>
       </div>
       <div class="bento-card">
         <div class="bento-val" id="stat-repos">104</div>
@@ -940,9 +1056,10 @@
         <button class="eco-btn" data-ecosystem="gstack" data-preset="gstack">🏛️ gstack</button>
         <button class="eco-btn" data-ecosystem="mattpocock" data-preset="mattpocock">🧠 Matt Pocock</button>
         <button class="eco-btn" data-ecosystem="gsd" data-preset="gsd">🚀 GSD Core</button>
-        <button class="eco-btn" data-ecosystem="agents" data-preset="agents">🤖 Agents & ECC</button>
+        <button class="eco-btn" data-ecosystem="agents" data-preset="agents">🤖 Autonomous Agents</button>
         <button class="eco-btn" data-ecosystem="cloud" data-preset="cloud">☁️ Cloud & Backend</button>
-        <button class="eco-btn" data-ecosystem="uiux" data-preset="uiux">🎨 UI / UX & Design</button>
+        <button class="eco-btn" data-ecosystem="uiux" data-preset="uiux">🎨 UI / UX & Motion</button>
+        <button class="eco-btn" data-ecosystem="testing" data-preset="testing">🧪 Testing & QA</button>
         <button class="eco-btn" data-ecosystem="docs" data-preset="docs">📑 Docs & Specs</button>
         <button class="eco-btn" data-ecosystem="mobile" data-preset="mobile">📱 Android & KMP</button>
       </div>
@@ -955,11 +1072,11 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search skills, slash commands (/cmd), models, tools..." autofocus>
-        <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="Clear search">✕</button>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search skills, slash commands (/cmd), models, tools..." autofocus aria-label="Search skills and tools">
+        <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="Clear search" aria-label="Clear search">✕</button>
         <span class="search-shortcut">/</span>
       </div>
-      <select id="sortSelect" class="sort-select">
+      <select id="sortSelect" class="sort-select" aria-label="Sort skills">
         <option value="default">Sort: Default</option>
         <option value="stars">Sort: Most Starred ⭐</option>
         <option value="updated">Sort: Recently Updated 🕒</option>
@@ -972,10 +1089,11 @@
       <div class="filter-group">
         <span class="filter-label">Priority:</span>
         <button class="filter-btn active" data-priority="ALL">All</button>
-        <button class="filter-btn" data-priority="P0">P0 Essential</button>
-        <button class="filter-btn" data-priority="P1">P1 High</button>
-        <button class="filter-btn" data-priority="P2">P2 Medium</button>
-        <button class="filter-btn" data-priority="P3">P3 Optional</button>
+        <button class="filter-btn" data-priority="P0" title="Click for Priority Guide">P0 Essential</button>
+        <button class="filter-btn" data-priority="P1" title="Click for Priority Guide">P1 High</button>
+        <button class="filter-btn" data-priority="P2" title="Click for Priority Guide">P2 Medium</button>
+        <button class="filter-btn" data-priority="P3" title="Click for Priority Guide">P3 Optional</button>
+        <button class="filter-btn" onclick="openPriorityGuide('ALL')" style="margin-left:auto; color:var(--accent-cyan); border-color:rgba(56,189,248,0.4);" title="Priority Guide">ℹ️ Priority Guide</button>
       </div>
 
       <div class="filter-group">
@@ -1007,21 +1125,35 @@
     </div>
 
     <!-- Grid Container -->
-    <div id="skillsGrid" class="grid"></div>
+    <div id="skillsGrid" class="grid" role="region" aria-label="Skills catalog results"></div>
+
+    <!-- Load More Container -->
+    <div id="loadMoreContainer" class="load-more-container" style="display:none;">
+      <button class="load-more-btn" onclick="loadMoreCards()">
+        <span>Load More Skills</span>
+        <span id="loadMoreRemaining" style="font-family:var(--font-mono); font-size:0.8rem; opacity:0.8;"></span>
+      </button>
+    </div>
   </div>
 
+  <!-- Floating My Stack FAB -->
+  <button id="stackFab" class="stack-fab" onclick="openStackModal()" aria-label="Open My Agent Stack Basket">
+    <span>🧺 My Agent Stack</span>
+    <span id="stackFabCount" class="stack-fab-count">0</span>
+  </button>
+
   <!-- Prompt Injection Modal -->
-  <div id="promptModal" class="modal">
+  <div id="promptModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
       <div class="modal-header">
         <h3 id="modalTitle" class="modal-title">Skill Prompt Injection</h3>
-        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
       </div>
       <div class="modal-body">
         <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">Copy and inject this prompt instruction block into your AI coding assistant session:</p>
         <pre id="modalPrompt"></pre>
       </div>
-      <div style="margin-top:1.25rem; display:flex; justify-content:flex-end; gap:0.5rem;">
+      <div style="margin-top:1.25rem; display:flex; justify-content:flex-end; gap:0.5rem; flex-shrink:0;">
         <button class="action-btn" onclick="closeModal()">Close</button>
         <button class="action-btn primary" onclick="copyModalPrompt()">Copy to Clipboard</button>
       </div>
@@ -1029,14 +1161,14 @@
   </div>
 
   <!-- Skill Inspection Modal -->
-  <div id="inspectModal" class="modal">
+  <div id="inspectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="inspectTitle">
     <div class="modal-content">
       <div class="modal-header">
         <div>
           <h3 id="inspectTitle" class="modal-title" style="margin-bottom:0.25rem;">Skill Inspector</h3>
           <span id="inspectCategory" class="card-category"></span>
         </div>
-        <button class="modal-close" onclick="closeInspectModal()">&times;</button>
+        <button class="modal-close" onclick="closeInspectModal()" aria-label="Close modal">&times;</button>
       </div>
       <div class="modal-body">
         <div class="inspect-grid">
@@ -1045,7 +1177,7 @@
             <div id="inspectPriority" class="inspect-value"></div>
           </div>
           <div class="inspect-box">
-            <div class="inspect-label">Slash Command</div>
+            <div class="inspect-label">Scoped Slash Command</div>
             <div id="inspectCommand" class="inspect-value" style="font-family:var(--font-mono); color:var(--accent-cyan);"></div>
           </div>
           <div class="inspect-box">
@@ -1053,8 +1185,15 @@
             <div id="inspectRepo" class="inspect-value"></div>
           </div>
           <div class="inspect-box">
-            <div class="inspect-label">Community Stars & Version</div>
+            <div class="inspect-label">Live Stars & Version</div>
             <div id="inspectStars" class="inspect-value"></div>
+          </div>
+        </div>
+        <div style="margin-bottom:1.25rem;">
+          <div class="inspect-label">CLI Installation Command</div>
+          <div style="display:flex; gap:0.5rem; align-items:center; margin-top:0.35rem;">
+            <pre id="inspectCli" style="margin:0; padding:0.6rem 0.8rem; font-size:0.8rem; flex:1;"></pre>
+            <button class="action-btn primary" onclick="copyInspectCli()" style="flex:0 0 auto;">Copy CLI</button>
           </div>
         </div>
         <div style="margin-bottom:1.25rem;">
@@ -1062,9 +1201,10 @@
           <p id="inspectDesc" style="font-size:0.92rem; color:var(--text); line-height:1.5; margin-top:0.35rem;"></p>
         </div>
       </div>
-      <div style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+      <div style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; flex-shrink:0;">
         <a id="inspectGithubLink" class="action-btn" href="#" target="_blank">View GitHub Repo ↗</a>
         <div style="display:flex; gap:0.5rem;">
+          <button id="inspectStackBtn" class="action-btn" onclick="toggleInspectStack()">+ Add to Stack</button>
           <button class="action-btn" onclick="copyInspectCmd()">Copy /Cmd</button>
           <button class="action-btn primary" onclick="openPromptFromInspect()">Get Prompt Snippet</button>
         </div>
@@ -1072,43 +1212,156 @@
     </div>
   </div>
 
+  <!-- Priority Guide Modal -->
+  <div id="priorityModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="priorityGuideTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="priorityGuideTitle" class="modal-title">Governance Priority Taxonomy</h3>
+        <button class="modal-close" onclick="closePriorityGuide()" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="font-size:0.9rem; line-height:1.6;">
+        <div style="margin-bottom:1rem; padding:0.75rem; border-radius:8px; border:1px solid var(--p0-border); background:var(--p0-bg);">
+          <strong style="color:var(--p0-text);">P0 · Essential (Core Foundation & Invariants)</strong>
+          <p style="color:var(--text-muted); font-size:0.82rem; margin-top:0.25rem;">Non-negotiable architectural safety, systematic debugging, test-driven development (TDD), red-green verification, and dual-matrix parity enforcement. Always active.</p>
+        </div>
+        <div style="margin-bottom:1rem; padding:0.75rem; border-radius:8px; border:1px solid var(--p1-border); background:var(--p1-bg);">
+          <strong style="color:var(--p1-text);">P1 · High (Standard Development Workflows)</strong>
+          <p style="color:var(--text-muted); font-size:0.82rem; margin-top:0.25rem;">Primary daily workflow accelerators: deep code review, Layer 15 living documentation, git-worktrees isolation, primary framework CLIs, and feature specifications.</p>
+        </div>
+        <div style="margin-bottom:1rem; padding:0.75rem; border-radius:8px; border:1px solid var(--p2-border); background:var(--p2-bg);">
+          <strong style="color:var(--p2-text);">P2 · Medium (Specialized Domain Accelerators)</strong>
+          <p style="color:var(--text-muted); font-size:0.82rem; margin-top:0.25rem;">Specialized domain libraries, media engines, platform adapters (Android/KMP/XR), and secondary productivity harnesses.</p>
+        </div>
+        <div style="padding:0.75rem; border-radius:8px; border:1px solid var(--p3-border); background:var(--p3-bg);">
+          <strong style="color:var(--p3-text);">P3 · Optional (Scaffolding & Exercises)</strong>
+          <p style="color:var(--text-muted); font-size:0.82rem; margin-top:0.25rem;">Guided implementation exercises, sandbox educational tools, and optional experimentation harnesses.</p>
+        </div>
+      </div>
+      <div style="margin-top:1.25rem; display:flex; justify-content:flex-end;">
+        <button class="action-btn primary" onclick="closePriorityGuide()">Close Guide</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Agent Stack Basket Modal -->
+  <div id="stackModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="stackModalTitle">
+    <div class="modal-content" style="max-width:720px;">
+      <div class="modal-header">
+        <div>
+          <h3 id="stackModalTitle" class="modal-title">🧺 My Project Agent Stack</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Custom selected skills bundle for your current development project</p>
+        </div>
+        <button class="modal-close" onclick="closeStackModal()" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="stackItemsList" style="margin-bottom:1.25rem; display:flex; flex-direction:column; gap:0.5rem;"></div>
+        <div style="margin-bottom:1.25rem;">
+          <div class="inspect-label">Combined Installation CLI Command</div>
+          <pre id="stackCombinedCli" style="margin:0.35rem 0 0; padding:0.75rem 1rem; font-size:0.82rem;"></pre>
+        </div>
+      </div>
+      <div style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; flex-shrink:0;">
+        <button class="action-btn" onclick="clearStack()" style="color:#f87171; border-color:rgba(239,68,68,0.4);">Clear Stack</button>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="action-btn" onclick="exportStackJson()">Export JSON Manifest</button>
+          <button class="action-btn primary" onclick="copyStackCombinedCli()">Copy Combined CLI</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
-  <div id="toast" class="toast">Copied to clipboard!</div>
+  <div id="toast" class="toast" role="status" aria-live="polite">Copied to clipboard!</div>
 
   <script>
     let skillsData = [];
     let githubMetrics = {};
+    let skillsDirectory = {};
+    let selectedStack = new Set();
     let activePriority = 'ALL';
     let activeCategory = 'ALL';
     let activeEcosystem = 'all';
     let activeSort = 'default';
+    
+    // Pagination / Batch Rendering State
+    const BATCH_SIZE = 36;
+    let visibleCount = BATCH_SIZE;
+    let searchDebounceTimeout = null;
 
-    // Map ecosystems to categories
-    const ecosystemCategoryMap = {
-      'all': null,
-      'superpowers': ['08-superpowers'],
-      'gstack': ['07-gstack'],
-      'mattpocock': ['02-matt-pocock'],
-      'gsd': ['06-gsd'],
-      'agents': ['09-autonomous-agents', '10-ai-infrastructure'],
-      'cloud': ['01-core-engineering'],
-      'uiux': ['05-ui-ux'],
-      'docs': ['docs'],
-      'mobile': ['03-android', '04-kotlin-kmp']
+    // Comprehensive prefix map conforming to repository Law 4 and scripts/install_to_project.py
+    const prefixMap = {
+      '01-core-engineering': 'core-',
+      '01-core-workflows': 'workflow-',
+      '02-matt-pocock': 'mp-',
+      '03-android': 'android-',
+      '03-android-development-skills': 'android-',
+      '03-code-review-and-quality': 'review-',
+      '04-kotlin-kmp': 'kmp-',
+      '04-testing-and-verification': 'test-',
+      '05-ui-ux': 'ui-',
+      '06-debugging-and-investigation': 'debug-',
+      '06-gsd': 'gsd-',
+      '07-gstack': 'gstack-',
+      '08-superpowers': 'superpowers-',
+      '09-autonomous-agent-architectures': 'agent-',
+      '09-autonomous-agents': 'agent-',
+      '09-deep-research': 'research-',
+      '10-ai-infrastructure': 'infra-',
+      '11-code-review': 'review-',
+      '11-project-documentation': 'doc-',
+      '12-specialized': 'spec-',
+      '12-specialized-domains': 'spec-',
+      'docs': 'doc-'
     };
 
-    // Load Matrix CSV and GitHub metrics in parallel
+    // Robust multi-criteria ecosystem map resolving both categories and keywords
+    const ecosystemFilterMap = {
+      'all': null,
+      'superpowers': { categories: ['08-superpowers'] },
+      'gstack': { categories: ['07-gstack'] },
+      'mattpocock': { categories: ['02-matt-pocock'] },
+      'gsd': { categories: ['06-gsd'] },
+      'agents': {
+        categories: ['09-autonomous-agents', '09-autonomous-agent-architectures', '10-ai-infrastructure'],
+        kws: ['agent', 'mastra', 'browser-use', 'orca', 'codex', 'openhands', 't3', 'herdr', 'ecc', 'ralph']
+      },
+      'cloud': {
+        categories: ['10-ai-infrastructure', '01-core-workflows', '01-core-engineering'],
+        kws: ['firebase', 'supabase', 'neon', 'cloudflare', 'prisma', 'clerk', 'better-auth', 'azure', 'convex', 'fastify']
+      },
+      'uiux': {
+        categories: ['05-ui-ux'],
+        kws: ['tailwind', 'gsap', 'token', 'mermaid', 'interface', 'emil', 'typography', 'stageshow', 'shadcn', 'design']
+      },
+      'testing': {
+        categories: ['04-testing-and-verification', '11-code-review', '03-code-review-and-quality'],
+        kws: ['test', 'playwright', 'momentic', 'currents', 'benchmark', 'qa', 'hallmark', 'review']
+      },
+      'docs': {
+        categories: ['docs', '11-project-documentation']
+      },
+      'mobile': {
+        categories: ['03-android', '04-kotlin-kmp', '03-android-development-skills']
+      }
+    };
+
+    // Load Matrix CSV, GitHub telemetry, and Skills Directory in parallel
     async function loadData() {
       try {
-        const [resCsv, resMetrics] = await Promise.all([
+        const [resCsv, resMetrics, resDir] = await Promise.all([
           fetch('AI-Coding-Skills-and-Tools-Matrix.csv'),
-          fetch('data/github-metrics.json').catch(() => null)
+          fetch('data/github-metrics.json').catch(() => null),
+          fetch('data/skills-directory.json').catch(() => null)
         ]);
 
         if (resMetrics && resMetrics.ok) {
           const metricsPayload = await resMetrics.json();
           githubMetrics = metricsPayload.repositories || {};
           updateRadarFromMetrics();
+        }
+
+        if (resDir && resDir.ok) {
+          skillsDirectory = await resDir.json();
         }
 
         const text = await resCsv.text();
@@ -1149,222 +1402,41 @@
       }
     }
 
+    function getFallbackScopedCmd(name, category) {
+      const pfx = prefixMap[category] || '';
+      const baseSlug = name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      return baseSlug.startsWith(pfx) ? baseSlug : (pfx + baseSlug);
+    }
+
     function resolveMetric(name, category) {
+      // 1. Check directory mapping first
+      const dirEntry = skillsDirectory[name] || skillsDirectory[name.toLowerCase()] || skillsDirectory[name.toLowerCase().replace(/[^a-z0-9]/g, '-')];
+      if (dirEntry && dirEntry.repo && githubMetrics[dirEntry.repo.toLowerCase()]) {
+        return githubMetrics[dirEntry.repo.toLowerCase()];
+      }
+
+      // 2. Direct category fallback
       const catKeyMap = {
         "08-superpowers": "obra/superpowers",
         "07-gstack": "garrytan/gstack",
         "02-matt-pocock": "mattpocock/skills",
         "06-gsd": "open-gsd/gsd-core"
       };
-      const nameKeyMap = {
-        "everything claude code (ecc)": "affaan-m/ecc",
-        "everything claude code": "affaan-m/ecc",
-        "ecc": "affaan-m/ecc",
-        "graphify": "graphify-labs/graphify",
-        "impeccable": "pbakaus/impeccable",
-        "openhands": "openhands/openhands",
-        "ralph loop": "snarktank/ralph",
-        "ralph": "snarktank/ralph",
-        "t3 code": "pingdotgg/t3code",
-        "context7": "upstash/context7",
-        "mempalace": "mempalace/mempalace",
-        "ponytail": "dietrichgebert/ponytail",
-        "ui/ux pro max": "nextlevelbuilder/ui-ux-pro-max-skill",
-        "gsd core": "open-gsd/gsd-core",
-        "gsd pi": "open-gsd/gsd-pi",
-        "android skills": "android/skills",
-        "kotlin agent skills": "kotlin/kotlin-agent-skills",
-        "swiftui pro (twostraws)": "twostraws/swiftui-agent-skill",
-        "swiftui expert (avdlee)": "avdlee/swiftui-agent-skill",
-        "karpathy guidelines": "multica-ai/andrej-karpathy-skills",
-        "tokeneconomizer": "microsoft/tokeneconomizer",
-        "coderabbit": "coderabbitai/skills",
-        "taste-skill": "leonxlnx/taste-skill",
-        "taste skill": "leonxlnx/taste-skill",
-        "design-taste-frontend": "leonxlnx/taste-skill",
-        "design taste frontend": "leonxlnx/taste-skill",
-        "agent-skills-spec": "agentskills/agentskills",
-        "agent skills spec": "agentskills/agentskills",
-        "agent-skills": "agentskills/agentskills",
-        "agentskills": "agentskills/agentskills",
-        "agent skills": "agentskills/agentskills",
-        "agent skills specification": "agentskills/agentskills",
-        "astryx": "meta/astryx",
-        "meta astryx": "meta/astryx",
-        "billion-context": "ranxianglei/billion-context",
-        "billion context": "ranxianglei/billion-context",
-        "anthropic-skills": "anthropics/skills",
-        "anthropic skills": "anthropics/skills",
-        "anthropic agent skills": "anthropics/skills",
-        "google-skills": "google/skills",
-        "google skills": "google/skills",
-        "google agent skills": "google/skills",
-        "cloudflare-security-audit": "cloudflare/security-audit-skill",
-        "cloudflare security audit": "cloudflare/security-audit-skill",
-        "cloudflare security audit skill": "cloudflare/security-audit-skill",
-        "archify": "tt-a1i/archify",
-        "composio-skills": "composiohq/awesome-claude-skills",
-        "composio skills": "composiohq/awesome-claude-skills",
-        "awesome claude skills": "composiohq/awesome-claude-skills",
-        "understand-anything": "egonex-ai/understand-anything",
-        "understand anything": "egonex-ai/understand-anything",
-        "caveman": "juliusbrussee/caveman",
-        "addy-agent-skills": "addyosmani/agent-skills",
-        "addy agent skills": "addyosmani/agent-skills",
-        "addy osmani agent skills": "addyosmani/agent-skills",
-        "browser-use": "browser-use/browser-use",
-        "browser use": "browser-use/browser-use",
-        "shadcn-ui": "shadcn/ui",
-        "shadcn ui": "shadcn/ui",
-        "shadcn": "shadcn/ui",
-        "orca-agent": "stablyai/orca",
-        "orca agent": "stablyai/orca",
-        "orca": "stablyai/orca",
-        "sentry-diagnostics": "getsentry/sentry",
-        "sentry diagnostics": "getsentry/sentry",
-        "sentry": "getsentry/sentry",
-        "turborepo": "vercel/turborepo",
-        "vercel-ai-sdk": "vercel/ai",
-        "vercel ai sdk": "vercel/ai",
-        "playwright-cli": "microsoft/playwright-cli",
-        "playwright cli": "microsoft/playwright-cli",
-        "playwright": "microsoft/playwright-cli",
-        "remotion-video": "remotion-dev/skills",
-        "remotion video": "remotion-dev/skills",
-        "remotion": "remotion-dev/skills",
-        "cloudflare-skills": "cloudflare/skills",
-        "cloudflare skills": "cloudflare/skills",
-        "supabase-skills": "supabase/agent-skills",
-        "supabase skills": "supabase/agent-skills",
-        "azure-skills": "microsoft/azure-skills",
-        "azure skills": "microsoft/azure-skills",
-        "emil-design-eng": "emilkowalski/skills",
-        "emil design eng": "emilkowalski/skills",
-        "obsidian-markdown": "kepano/obsidian-skills",
-        "obsidian markdown": "kepano/obsidian-skills",
-        "find-skills": "vercel-labs/skills",
-        "find skills": "vercel-labs/skills",
-        "vercel-react-patterns": "vercel-labs/agent-skills",
-        "vercel react patterns": "vercel-labs/agent-skills",
-        "google-workspace-cli": "googleworkspace/cli",
-        "google workspace cli": "googleworkspace/cli",
-        "gsap-animation": "greensock/gsap-skills",
-        "gsap animation": "greensock/gsap-skills",
-        "trailofbits-security": "trailofbits/skills",
-        "trailofbits security": "trailofbits/skills",
-        "expo-mobile": "expo/skills",
-        "expo mobile": "expo/skills",
-        "web-quality-a11y": "addyosmani/web-quality-skills",
-        "web quality a11y": "addyosmani/web-quality-skills",
-        "stripe-payments": "stripe/ai",
-        "stripe payments": "stripe/ai",
-        "hyperframes-media": "heygen-com/hyperframes",
-        "hyperframes media": "heygen-com/hyperframes",
-        "marketing-growth-engine": "coreyhaines31/marketingskills",
-        "marketing growth engine": "coreyhaines31/marketingskills",
-        "hallmark-frontend-eval": "nutlope/hallmark",
-        "hallmark frontend eval": "nutlope/hallmark",
-        "herdr-orchestration": "herdrdev/herdr",
-        "herdr orchestration": "herdrdev/herdr",
-        "typescript-tailwind-patterns": "wshobson/agents",
-        "typescript tailwind patterns": "wshobson/agents",
-        "lark-enterprise-cli": "larksuite/cli",
-        "lark enterprise cli": "larksuite/cli",
-        "typography-layout-polish": "jakubkrehel/skills",
-        "typography layout polish": "jakubkrehel/skills",
-        "stitch-design-system": "google-labs-code/stitch-skills",
-        "stitch design system": "google-labs-code/stitch-skills",
-        "typesafe-ai-schemas": "typesafe-ai/skills",
-        "typesafe ai schemas": "typesafe-ai/skills",
-        "fastify-backend-perf": "mcollina/skills",
-        "fastify backend perf": "mcollina/skills",
-        "vercel-agent-browser": "vercel-labs/agent-browser",
-        "vercel agent browser": "vercel-labs/agent-browser",
-        "github-copilot-patterns": "github/awesome-copilot",
-        "github copilot patterns": "github/awesome-copilot",
-        "component-anatomy-specs": "wheresryan22/anatomy",
-        "component anatomy specs": "wheresryan22/anatomy",
-        "brag-document-generator": "latent-spaces/brag",
-        "brag document generator": "latent-spaces/brag",
-        "video-frame-analysis": "bradautomates/claude-video",
-        "video frame analysis": "bradautomates/claude-video",
-        "agent-desktop-gui": "vercel-labs/agent-desktop",
-        "agent desktop gui": "vercel-labs/agent-desktop",
-        "gamedev-mechanics": "gamedev-skills/awesome-gamedev-agent-skills",
-        "gamedev mechanics": "gamedev-skills/awesome-gamedev-agent-skills",
-        "browser-act-testing": "browser-act/skills",
-        "browser act testing": "browser-act/skills",
-        "higgsfield-visual-media": "higgsfield-ai/skills",
-        "higgsfield visual media": "higgsfield-ai/skills",
-        "data-viz-html-reports": "daymade/claude-code-skills",
-        "data viz html reports": "daymade/claude-code-skills",
-        "interface-feel-polish": "jakubkrehel/make-interfaces-feel-better",
-        "interface feel polish": "jakubkrehel/make-interfaces-feel-better",
-        "network-latency-benchmarks": "jeremylongshore/tons-of-skills-marketplace",
-        "network latency benchmarks": "jeremylongshore/tons-of-skills-marketplace",
-        "stageshow-ui-presentation": "benjitaylor/skills",
-        "stageshow ui presentation": "benjitaylor/skills",
-        "binance-agentic-wallet": "binance/binance-skills-hub",
-        "binance agentic wallet": "binance/binance-skills-hub",
-        "motion-sound-effects": "barty-bart/motion-graphics",
-        "motion sound effects": "barty-bart/motion-graphics",
-        "firecrawl-web-scrape": "firecrawl/cli",
-        "firecrawl web scrape": "firecrawl/cli",
-        "firecrawl": "firecrawl/cli",
-        "convex-backend-sync": "convex/agent-skills",
-        "convex backend sync": "convex/agent-skills",
-        "convex": "convex/agent-skills",
-        "scrapegraph-ai-pipeline": "scrapegraphai/just-scrape",
-        "scrapegraph ai pipeline": "scrapegraphai/just-scrape",
-        "scrapegraph": "scrapegraphai/just-scrape",
-        "momentic-visual-testing": "momentic-ai/skills",
-        "momentic visual testing": "momentic-ai/skills",
-        "momentic": "momentic-ai/skills",
-        "extract-design-tokens": "arvindrk/extract-design-system",
-        "extract design tokens": "arvindrk/extract-design-system",
-        "better-auth-patterns": "better-auth/skills",
-        "better auth patterns": "better-auth/skills",
-        "better auth": "better-auth/skills",
-        "continuous-review-loop": "2dmurali/review-loop-skill",
-        "continuous review loop": "2dmurali/review-loop-skill",
-        "mastra-agent-framework": "mastra-ai/skills",
-        "mastra agent framework": "mastra-ai/skills",
-        "mastra": "mastra-ai/skills",
-        "mermaid-design-generator": "spillwavesolutions/design-doc-mermaid",
-        "mermaid design generator": "spillwavesolutions/design-doc-mermaid",
-        "nx-monorepo-architect": "nrwl/nx-ai-agents-config",
-        "nx monorepo architect": "nrwl/nx-ai-agents-config",
-        "nx monorepo": "nrwl/nx-ai-agents-config",
-        "firebase-agent-suite": "firebase/agent-skills",
-        "firebase agent suite": "firebase/agent-skills",
-        "firebase": "firebase/agent-skills",
-        "svelte5-runes-patterns": "sveltejs/ai-tools",
-        "svelte5 runes patterns": "sveltejs/ai-tools",
-        "svelte": "sveltejs/ai-tools",
-        "neon-serverless-postgres": "neondatabase/agent-skills",
-        "neon serverless postgres": "neondatabase/agent-skills",
-        "neon": "neondatabase/agent-skills",
-        "clerk-auth-identity": "clerk/skills",
-        "clerk auth identity": "clerk/skills",
-        "clerk": "clerk/skills",
-        "prisma-orm-patterns": "prisma/skills",
-        "prisma orm patterns": "prisma/skills",
-        "prisma": "prisma/skills",
-        "stripe-link-checkout": "stripe/link-cli",
-        "stripe link checkout": "stripe/link-cli",
-        "stripe link": "stripe/link-cli",
-        "currents-playwright-sharding": "currents-dev/playwright-best-practices-skill",
-        "currents playwright sharding": "currents-dev/playwright-best-practices-skill",
-        "elevenlabs-voice-ai": "elevenlabs/skills",
-        "elevenlabs voice ai": "elevenlabs/skills",
-        "elevenlabs": "elevenlabs/skills",
-        "solana-agent-kit": "solana-foundation/solana-dev-skill",
-        "solana agent kit": "solana-foundation/solana-dev-skill",
-        "solana": "solana-foundation/solana-dev-skill"
-      };
+
       const n = name.toLowerCase().trim();
-      const slug = nameKeyMap[n] || catKeyMap[category];
-      return slug ? githubMetrics[slug.toLowerCase()] : null;
+      const slug = catKeyMap[category];
+      if (slug && githubMetrics[slug.toLowerCase()]) {
+        return githubMetrics[slug.toLowerCase()];
+      }
+
+      // 3. Search repositories by fuzzy name match
+      for (let k in githubMetrics) {
+        const r = githubMetrics[k];
+        if (n.includes(r.name.toLowerCase()) || r.name.toLowerCase().includes(n)) {
+          return r;
+        }
+      }
+      return null;
     }
 
     function parseCSV(csvText) {
@@ -1399,25 +1471,36 @@
         }
 
         const parts = parseCSVLine(line);
+        let name = '', priority = '', why = '', cat = currentCat;
+
         if (currentCat === "docs") {
           if (parts.length >= 4 && ['P0', 'P1', 'P2', 'P3'].includes(parts[2])) {
-            const name = parts[1];
-            skillsData.push({
-              name: name,
-              priority: parts[2],
-              why: parts[3],
-              category: "docs",
-              metric: resolveMetric(name, "docs")
-            });
+            name = parts[1];
+            priority = parts[2];
+            why = parts[3];
+            cat = "docs";
           }
         } else if (parts.length >= 3 && ['P0', 'P1', 'P2', 'P3'].includes(parts[1])) {
-          const name = parts[0];
+          name = parts[0];
+          priority = parts[1];
+          why = parts[2];
+          cat = currentCat;
+        }
+
+        if (name && priority) {
+          const dirEntry = skillsDirectory[name] || skillsDirectory[name.toLowerCase()] || skillsDirectory[name.toLowerCase().replace(/[^a-z0-9]/g, '-')];
+          const exactCat = (dirEntry && dirEntry.category) || cat;
+          const scoped = (dirEntry && dirEntry.scoped) || getFallbackScopedCmd(name, exactCat);
+          const cli = (dirEntry && dirEntry.cli) || `python scripts/install-to-project.py --skill ${scoped}`;
+
           skillsData.push({
             name: name,
-            priority: parts[1],
-            why: parts[2],
-            category: currentCat,
-            metric: resolveMetric(name, currentCat)
+            priority: priority,
+            why: why,
+            category: exactCat,
+            scopedCmd: scoped,
+            cliCmd: cli,
+            metric: resolveMetric(name, exactCat)
           });
         }
       }
@@ -1427,7 +1510,7 @@
       const statTotalEl = document.getElementById('stat-total');
       if (statTotalEl) statTotalEl.textContent = totalCount;
 
-      render();
+      render(true);
     }
 
     function parseCSVLine(text) {
@@ -1446,21 +1529,53 @@
       return clean.startsWith('/') ? clean.substring(1) : clean;
     }
 
-    function render() {
+    // Debounced search input handler
+    function onSearchInput() {
+      clearTimeout(searchDebounceTimeout);
+      searchDebounceTimeout = setTimeout(() => {
+        render(true);
+      }, 150);
+    }
+
+    function render(resetPagination = false) {
+      if (resetPagination) {
+        visibleCount = BATCH_SIZE;
+      }
+
       const searchInput = document.getElementById('searchInput');
       const rawQ = searchInput.value;
       const q = filterBySlashCommand(rawQ);
       const grid = document.getElementById('skillsGrid');
-      grid.innerHTML = '';
 
-      const ecoFilter = ecosystemCategoryMap[activeEcosystem];
+      const ecoFilter = ecosystemFilterMap[activeEcosystem];
+      const rawTokens = q ? q.toLowerCase().split(/\s+/).filter(Boolean) : [];
 
       const filtered = skillsData.filter(s => {
         const matchPriority = activePriority === 'ALL' || s.priority === activePriority;
-        const matchCategory = activeCategory === 'ALL' || s.category === activeCategory;
-        const matchEcosystem = !ecoFilter || ecoFilter.includes(s.category);
-        const cmdSlug = s.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-        const matchSearch = !q || s.name.toLowerCase().includes(q) || s.why.toLowerCase().includes(q) || s.category.toLowerCase().includes(q) || cmdSlug.includes(q);
+        
+        let matchCategory = true;
+        if (activeCategory !== 'ALL') {
+          matchCategory = s.category === activeCategory || s.category.startsWith(activeCategory);
+        }
+
+        let matchEcosystem = true;
+        if (ecoFilter) {
+          const catMatches = ecoFilter.categories ? ecoFilter.categories.some(c => s.category.includes(c)) : false;
+          const kwMatches = ecoFilter.kws ? ecoFilter.kws.some(kw => 
+            s.name.toLowerCase().includes(kw) || s.why.toLowerCase().includes(kw) || s.category.toLowerCase().includes(kw)
+          ) : false;
+          matchEcosystem = catMatches || kwMatches;
+        }
+
+        // Multi-token search matching
+        const matchSearch = rawTokens.length === 0 || rawTokens.every(tok =>
+          s.name.toLowerCase().includes(tok) ||
+          s.why.toLowerCase().includes(tok) ||
+          s.category.toLowerCase().includes(tok) ||
+          s.scopedCmd.toLowerCase().includes(tok) ||
+          (s.metric && (s.metric.repo.toLowerCase().includes(tok) || s.metric.name.toLowerCase().includes(tok)))
+        );
+
         return matchPriority && matchCategory && matchEcosystem && matchSearch;
       });
 
@@ -1476,18 +1591,33 @@
       const searchClearBtn = document.getElementById('searchClearBtn');
       if (searchClearBtn) searchClearBtn.style.display = rawQ ? 'inline-block' : 'none';
 
-      // Sort
-      if (activeSort === 'stars') {
-        filtered.sort((a, b) => ((b.metric && b.metric.stars) || 0) - ((a.metric && a.metric.stars) || 0));
-      } else if (activeSort === 'updated') {
-        filtered.sort((a, b) => ((b.metric && b.metric.last_updated) || '').localeCompare((a.metric && a.metric.last_updated) || ''));
-      } else if (activeSort === 'name') {
-        filtered.sort((a, b) => a.name.localeCompare(b.name));
-      }
+      // Deterministic Multi-Key Sort
+      filtered.sort((a, b) => {
+        if (activeSort === 'stars') {
+          const diff = ((b.metric && b.metric.stars) || 0) - ((a.metric && a.metric.stars) || 0);
+          if (diff !== 0) return diff;
+        } else if (activeSort === 'updated') {
+          const diff = ((b.metric && b.metric.last_updated) || '').localeCompare((a.metric && a.metric.last_updated) || '');
+          if (diff !== 0) return -diff;
+        } else if (activeSort === 'name') {
+          const diff = a.name.localeCompare(b.name);
+          if (diff !== 0) return diff;
+        }
+        // Fallback secondary sort: Priority P0 -> P1 -> P2 -> P3
+        const pOrder = { 'P0': 0, 'P1': 1, 'P2': 2, 'P3': 3 };
+        const pDiff = (pOrder[a.priority] ?? 9) - (pOrder[b.priority] ?? 9);
+        if (pDiff !== 0) return pDiff;
+        // Fallback tertiary: Name A-Z
+        return a.name.localeCompare(b.name);
+      });
 
-      for (let s of filtered) {
-        const cmdSlug = s.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-        
+      // Slice visible cards (batch rendering)
+      const toDisplay = filtered.slice(0, visibleCount);
+      grid.innerHTML = '';
+
+      const fragment = document.createDocumentFragment();
+
+      for (let s of toDisplay) {
         let metricHtml = '';
         if (s.metric) {
           metricHtml = `
@@ -1499,18 +1629,22 @@
           `;
         }
 
+        const isInStack = selectedStack.has(s.scopedCmd);
+        const stackBtnText = isInStack ? '✓ In Stack' : '+ Stack';
+        const stackClass = isInStack ? 'action-btn stack-btn in-stack' : 'action-btn stack-btn';
+
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
           <div>
             <div class="card-top">
-              <span class="card-title" onclick="openInspect('${escapeHtml(s.name)}')" style="cursor:pointer;" title="Click to inspect">${escapeHtml(s.name)}</span>
-              <span class="priority-pill priority-${s.priority}">${s.priority}</span>
+              <button type="button" class="card-title-btn" onclick="openInspect('${escapeHtml(s.name)}')" title="Click to inspect">${escapeHtml(s.name)}</button>
+              <span class="priority-pill priority-${s.priority}" onclick="openPriorityGuide('${s.priority}')" title="Priority ${s.priority} · Click for guide">${s.priority}</span>
             </div>
             <div class="card-meta">
               <span class="card-category">${s.category}</span>
-              <span class="cmd-pill" onclick="copyCmd('/${cmdSlug}', this)" title="Click to copy slash command">
-                <span>/${cmdSlug}</span>
+              <span class="cmd-pill" onclick="copyCmd('/${s.scopedCmd}', this)" title="Click to copy scoped slash command">
+                <span>/${s.scopedCmd}</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1522,16 +1656,35 @@
           </div>
           <div class="card-actions">
             <button class="action-btn primary" onclick="openPrompt('${escapeHtml(s.name)}', '${escapeHtml(s.priority)}', '${escapeHtml(s.why)}')">Prompt</button>
-            <button class="action-btn" onclick="copyCmd('/${cmdSlug}', this)">Copy /Cmd</button>
+            <button class="action-btn" onclick="copyCli('${escapeHtml(s.cliCmd)}', this)" title="Copy CLI install command">CLI</button>
             <button class="action-btn" onclick="openInspect('${escapeHtml(s.name)}')">Inspect</button>
+            <button class="${stackClass}" onclick="toggleStack('${escapeHtml(s.scopedCmd)}', this)">${stackBtnText}</button>
           </div>
         `;
-        grid.appendChild(card);
+        fragment.appendChild(card);
+      }
+
+      grid.appendChild(fragment);
+
+      // Manage Load More button
+      const loadMoreContainer = document.getElementById('loadMoreContainer');
+      const loadMoreRemaining = document.getElementById('loadMoreRemaining');
+      if (filtered.length > visibleCount) {
+        loadMoreContainer.style.display = 'block';
+        loadMoreRemaining.textContent = `(${filtered.length - visibleCount} remaining)`;
+      } else {
+        loadMoreContainer.style.display = 'none';
       }
     }
 
+    function loadMoreCards() {
+      visibleCount += BATCH_SIZE;
+      render(false);
+    }
+
     function escapeHtml(str) {
-      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+      if (!str) return '';
+      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
     // Modal & Toast Controls
@@ -1565,12 +1718,18 @@ Instruction: Execute the required changes following strict red-green verificatio
       if (!skill) return;
       currentInspectSkill = skill;
 
-      const cmdSlug = skill.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
       document.getElementById('inspectTitle').textContent = skill.name;
       document.getElementById('inspectCategory').textContent = skill.category;
       document.getElementById('inspectPriority').textContent = `${skill.priority} Priority`;
-      document.getElementById('inspectCommand').textContent = `/${cmdSlug}`;
+      document.getElementById('inspectCommand').textContent = `/${skill.scopedCmd}`;
+      document.getElementById('inspectCli').textContent = skill.cliCmd;
       document.getElementById('inspectDesc').textContent = skill.why;
+
+      const stackBtn = document.getElementById('inspectStackBtn');
+      if (stackBtn) {
+        const inStack = selectedStack.has(skill.scopedCmd);
+        stackBtn.textContent = inStack ? '✓ In Stack' : '+ Add to Stack';
+      }
 
       const ghLink = document.getElementById('inspectGithubLink');
       if (skill.metric) {
@@ -1595,15 +1754,128 @@ Instruction: Execute the required changes following strict red-green verificatio
 
     function copyInspectCmd() {
       if (!currentInspectSkill) return;
-      const cmdSlug = currentInspectSkill.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-      copyCmd(`/${cmdSlug}`);
+      copyCmd(`/${currentInspectSkill.scopedCmd}`);
     }
 
-    function openPromptFromInspect() {
+    function copyInspectCli() {
       if (!currentInspectSkill) return;
-      const s = currentInspectSkill;
-      closeInspectModal();
-      openPrompt(s.name, s.priority, s.why);
+      copyCli(currentInspectSkill.cliCmd);
+    }
+
+    function toggleInspectStack() {
+      if (!currentInspectSkill) return;
+      const cmd = currentInspectSkill.scopedCmd;
+      if (selectedStack.has(cmd)) {
+        selectedStack.delete(cmd);
+      } else {
+        selectedStack.add(cmd);
+      }
+      updateStackUI();
+      const inStack = selectedStack.has(cmd);
+      const stackBtn = document.getElementById('inspectStackBtn');
+      if (stackBtn) {
+        stackBtn.textContent = inStack ? '✓ In Stack' : '+ Add to Stack';
+      }
+      render(false);
+    }
+
+    function openPriorityGuide(p) {
+      document.getElementById('priorityModal').classList.add('active');
+    }
+
+    function closePriorityGuide() {
+      document.getElementById('priorityModal').classList.remove('active');
+    }
+
+    // Stack Basket Controls
+    function toggleStack(scopedCmd, el) {
+      if (selectedStack.has(scopedCmd)) {
+        selectedStack.delete(scopedCmd);
+      } else {
+        selectedStack.add(scopedCmd);
+      }
+      updateStackUI();
+      render(false);
+    }
+
+    function updateStackUI() {
+      const fab = document.getElementById('stackFab');
+      const countEl = document.getElementById('stackFabCount');
+      const size = selectedStack.size;
+      countEl.textContent = size;
+      if (size > 0) {
+        fab.style.display = 'inline-flex';
+      } else {
+        fab.style.display = 'none';
+      }
+    }
+
+    function openStackModal() {
+      const listEl = document.getElementById('stackItemsList');
+      listEl.innerHTML = '';
+      if (selectedStack.size === 0) {
+        listEl.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem;">No skills selected yet. Click "+ Stack" on any card to add it to your custom bundle.</p>';
+      } else {
+        selectedStack.forEach(cmd => {
+          const item = document.createElement('div');
+          item.style = 'display:flex; justify-content:space-between; align-items:center; background:#090d16; padding:0.45rem 0.75rem; border-radius:6px; border:1px solid #1e293b; font-size:0.85rem;';
+          item.innerHTML = `
+            <span style="font-family:var(--font-mono); color:var(--accent-cyan);">/${cmd}</span>
+            <button onclick="removeStackItem('${cmd}')" style="background:none; border:none; color:#f87171; cursor:pointer; font-size:0.8rem;">Remove ✕</button>
+          `;
+          listEl.appendChild(item);
+        });
+      }
+
+      const skillsList = Array.from(selectedStack);
+      const combinedCli = skillsList.length > 0 
+        ? `python scripts/install-to-project.py ${skillsList.map(s => `--skill ${s}`).join(' ')}`
+        : '# Select skills to generate command';
+      document.getElementById('stackCombinedCli').textContent = combinedCli;
+
+      document.getElementById('stackModal').classList.add('active');
+    }
+
+    function closeStackModal() {
+      document.getElementById('stackModal').classList.remove('active');
+    }
+
+    function removeStackItem(cmd) {
+      selectedStack.delete(cmd);
+      updateStackUI();
+      openStackModal();
+      render(false);
+    }
+
+    function clearStack() {
+      selectedStack.clear();
+      updateStackUI();
+      closeStackModal();
+      render(false);
+      showToast('Cleared custom stack!');
+    }
+
+    function copyStackCombinedCli() {
+      const text = document.getElementById('stackCombinedCli').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied combined CLI command to clipboard!');
+      });
+    }
+
+    function exportStackJson() {
+      const payload = {
+        name: "custom-agent-stack",
+        generated_at: new Date().toISOString(),
+        skills: Array.from(selectedStack)
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'my-agent-stack.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Exported stack JSON manifest!');
     }
 
     function copyCmd(cmd, el) {
@@ -1621,10 +1893,27 @@ Instruction: Execute the required changes following strict red-green verificatio
       });
     }
 
+    function copyCli(cli, el) {
+      navigator.clipboard.writeText(cli).then(() => {
+        showToast('Copied CLI install command!');
+        if (el) {
+          const originalHTML = el.innerHTML;
+          el.innerHTML = 'Copied!';
+          el.style.background = 'rgba(16, 185, 129, 0.2)';
+          el.style.color = '#10b981';
+          setTimeout(() => {
+            el.innerHTML = originalHTML;
+            el.style.background = '';
+            el.style.color = '';
+          }, 1400);
+        }
+      });
+    }
+
     function clearSearch() {
       document.getElementById('searchInput').value = '';
       document.getElementById('searchClearBtn').style.display = 'none';
-      render();
+      render(true);
     }
 
     function resetAllFilters() {
@@ -1648,7 +1937,7 @@ Instruction: Execute the required changes following strict red-green verificatio
         b.classList.toggle('active', b.getAttribute('data-ecosystem') === 'all');
       });
 
-      render();
+      render(true);
     }
 
     function showToast(msg) {
@@ -1672,7 +1961,7 @@ Instruction: Execute the required changes following strict red-green verificatio
         document.querySelectorAll('[data-cat]').forEach(b => {
           b.classList.toggle('active', b.getAttribute('data-cat') === 'ALL');
         });
-        render();
+        render(true);
       });
     });
 
@@ -1682,7 +1971,7 @@ Instruction: Execute the required changes following strict red-green verificatio
         document.querySelectorAll('[data-priority]').forEach(b => b.classList.remove('active'));
         e.target.classList.add('active');
         activePriority = e.target.getAttribute('data-priority');
-        render();
+        render(true);
       });
     });
 
@@ -1699,46 +1988,59 @@ Instruction: Execute the required changes following strict red-green verificatio
             b.classList.toggle('active', b.getAttribute('data-ecosystem') === 'all');
           });
         }
-        render();
+        render(true);
       });
     });
 
-    // Search and Sort inputs
-    document.getElementById('searchInput').addEventListener('input', render);
+    // Search input with 150ms debounce
+    document.getElementById('searchInput').addEventListener('input', onSearchInput);
+
+    // Sorting selector
     document.getElementById('sortSelect').addEventListener('change', (e) => {
       activeSort = e.target.value;
-      render();
+      render(true);
     });
 
-    // Keyboard Shortcuts: '/' to focus search, 'Escape' to dismiss or clear
+    // Keyboard Shortcuts: '/' to focus search, 'Escape' to dismiss modals or clear
     document.addEventListener('keydown', (e) => {
       const searchEl = document.getElementById('searchInput');
-      const modalEl = document.getElementById('promptModal');
-      const inspectModalEl = document.getElementById('inspectModal');
+      const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+      const isInputActive = ['input', 'textarea', 'select'].includes(activeTag);
 
-      if (e.key === '/' && document.activeElement !== searchEl && !modalEl.classList.contains('active') && !inspectModalEl.classList.contains('active')) {
+      const promptModal = document.getElementById('promptModal');
+      const inspectModal = document.getElementById('inspectModal');
+      const priorityModal = document.getElementById('priorityModal');
+      const stackModal = document.getElementById('stackModal');
+
+      const anyModalOpen = promptModal.classList.contains('active') ||
+                           inspectModal.classList.contains('active') ||
+                           priorityModal.classList.contains('active') ||
+                           stackModal.classList.contains('active');
+
+      if (e.key === '/' && !isInputActive && !anyModalOpen) {
         e.preventDefault();
         searchEl.focus();
         searchEl.select();
       } else if (e.key === 'Escape') {
-        if (modalEl.classList.contains('active')) {
-          closeModal();
-        } else if (inspectModalEl.classList.contains('active')) {
-          closeInspectModal();
-        } else if (searchEl.value) {
-          clearSearch();
-        } else if (activePriority !== 'ALL' || activeCategory !== 'ALL' || activeEcosystem !== 'all') {
-          resetAllFilters();
-        }
+        if (promptModal.classList.contains('active')) closeModal();
+        else if (inspectModal.classList.contains('active')) closeInspectModal();
+        else if (priorityModal.classList.contains('active')) closePriorityGuide();
+        else if (stackModal.classList.contains('active')) closeStackModal();
+        else if (searchEl.value) clearSearch();
+        else if (activePriority !== 'ALL' || activeCategory !== 'ALL' || activeEcosystem !== 'all') resetAllFilters();
       }
     });
 
-    // Close modal on backdrop click
-    document.getElementById('promptModal').addEventListener('click', (e) => {
-      if (e.target.id === 'promptModal') closeModal();
-    });
-    document.getElementById('inspectModal').addEventListener('click', (e) => {
-      if (e.target.id === 'inspectModal') closeInspectModal();
+    // Close modals on backdrop click
+    ['promptModal', 'inspectModal', 'priorityModal', 'stackModal'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('click', (e) => {
+          if (e.target.id === id) {
+            el.classList.remove('active');
+          }
+        });
+      }
     });
 
     // Initialize
