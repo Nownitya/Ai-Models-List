@@ -28,8 +28,9 @@ jobs:
         run: |
           python scripts/test-skills.py
 
-      - name: 3. Verify Cryptographic Lockfile (SHA-256 Gate)
+      - name: 3. Initialize Agent Runtime & Verify Cryptographic Lockfile (SHA-256 Gate)
         run: |
+          python scripts/setup-project-agents.py
           python scripts/verify-lock.py
 
       - name: 4. Execute Full Unit Test Suite (33+ Tests)

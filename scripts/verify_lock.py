@@ -69,6 +69,15 @@ def main() -> int:
     lock_path = (repo_root / args.lock_file) if not Path(args.lock_file).is_absolute() else Path(args.lock_file)
     skills_root = (repo_root / args.skills_dir) if not Path(args.skills_dir).is_absolute() else Path(args.skills_dir)
 
+    if not skills_root.exists():
+        setup_script = repo_root / "scripts" / "setup-project-agents.py"
+        if setup_script.exists():
+            if not args.quiet:
+                print(f"[*] Notice: Active skills directory '{skills_root}' not found.")
+                print(f"[*] Bootstrapping agent runtime via {setup_script.name}...")
+            import subprocess
+            subprocess.run([sys.executable, str(setup_script)], check=False)
+
     if not args.quiet:
         print("=" * 80)
         print("[*] CRYPTOGRAPHIC SKILLS LOCKFILE VERIFIER")

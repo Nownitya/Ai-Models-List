@@ -29,12 +29,9 @@ AGENTS_DIR = REPO_ROOT / ".agents"
 PROJECT_SKILLS_DIR = AGENTS_DIR / "skills"
 
 def compute_sha256(file_path: Path) -> str:
-    """Compute sha256 checksum of a file."""
-    hasher = hashlib.sha256()
-    with open(file_path, "rb") as f:
-        while chunk := f.read(65536):
-            hasher.update(chunk)
-    return hasher.hexdigest()
+    """Compute sha256 checksum with LF line-ending normalization for cross-platform parity."""
+    content = file_path.read_bytes().replace(b"\r\n", b"\n")
+    return hashlib.sha256(content).hexdigest()
 
 def copy_runtime_foundation():
     """Copy .agents foundation (gsd-core, hooks, agents, rules, settings) from Intercom-Alpha if available."""
