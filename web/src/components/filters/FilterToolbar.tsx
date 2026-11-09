@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { Search, X, RotateCcw, Smartphone, Cpu, ShieldCheck, Zap, Bot, BookOpen, Diamond, Sparkles } from 'lucide-react'
+import { Search, X, RotateCcw, Smartphone, Cpu, ShieldCheck, Zap, Bot, BookOpen, Diamond, Sparkles, LayoutGrid, List } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Ecosystem, Priority, SortOption } from '@/types'
 
@@ -21,6 +21,7 @@ export const FilterToolbar: React.FC = () => {
   const selectedCategory = useSkillStore((s) => s.selectedCategory)
   const selectedEcosystem = useSkillStore((s) => s.selectedEcosystem)
   const selectedSort = useSkillStore((s) => s.selectedSort)
+  const viewMode = useSkillStore((s) => s.viewMode)
   const meta = useSkillStore((s) => s.meta)
 
   const setSearchQuery = useSkillStore((s) => s.setSearchQuery)
@@ -28,6 +29,7 @@ export const FilterToolbar: React.FC = () => {
   const setCategory = useSkillStore((s) => s.setCategory)
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
   const setSort = useSkillStore((s) => s.setSort)
+  const setViewMode = useSkillStore((s) => s.setViewMode)
   const resetFilters = useSkillStore((s) => s.resetFilters)
 
   const searchInputRef = useRef<HTMLInputElement>(null)
@@ -59,19 +61,19 @@ export const FilterToolbar: React.FC = () => {
     selectedSort !== 'default'
 
   return (
-    <div className="space-y-4 max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+    <div className="space-y-3.5 max-w-7xl mx-auto px-4 sm:px-6 pt-5">
       {/* Ecosystem Preset Navigation Pills */}
-      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+      <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
         {ECOSYSTEMS.map((eco) => {
           const isActive = selectedEcosystem === eco.id
           return (
             <button
               key={eco.id}
               onClick={() => setEcosystem(eco.id)}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                 isActive
-                  ? 'bg-blue-600 text-white shadow-[0_0_12px_rgba(59,130,246,0.4)] border border-blue-400'
-                  : 'bg-slate-900/80 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800'
+                  ? 'bg-blue-600 text-white border border-blue-400'
+                  : 'bg-[#0d1117] hover:bg-[#161b22] text-slate-400 hover:text-slate-200 border border-[#21262d]'
               }`}
             >
               {eco.icon}
@@ -82,24 +84,24 @@ export const FilterToolbar: React.FC = () => {
       </div>
 
       {/* Main Filter Bar */}
-      <div className="glass-panel p-3.5 rounded-2xl flex flex-col md:flex-row items-center gap-3">
+      <div className="bg-[#0d1117] border border-[#21262d] p-3 rounded-xl flex flex-col md:flex-row items-center gap-2.5">
         {/* Search Input */}
         <div className="relative flex-1 w-full">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             ref={searchInputRef}
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search 317+ AI skills, slash commands (/camerax), tags, models... (Press '/' to focus)"
-            className="w-full pl-10 pr-10 py-2 rounded-xl bg-slate-950/70 border border-slate-800 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors"
+            placeholder="Search skills, slash commands (/camerax), tags, models... (Press '/' to focus)"
+            className="w-full pl-10 pr-10 py-1.5 rounded-lg bg-[#08090a] border border-[#30363d] text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1"
             >
-              <X className="w-4 h-4" />
+              <X className="w-3.5 h-3.5" />
             </button>
           )}
         </div>
@@ -118,10 +120,10 @@ export const FilterToolbar: React.FC = () => {
               <button
                 key={p}
                 onClick={() => setPriority(p)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer border ${
+                className={`px-2.5 py-1.5 rounded-md text-xs font-bold transition-colors cursor-pointer border ${
                   isActive
                     ? activeColor
-                    : 'bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border-slate-800'
+                    : 'bg-[#161b22] hover:bg-slate-800 text-slate-400 hover:text-slate-200 border-[#30363d]'
                 }`}
               >
                 {p}
@@ -135,7 +137,7 @@ export const FilterToolbar: React.FC = () => {
           <select
             value={selectedCategory}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full md:w-48 px-3 py-2 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:border-cyan-500 cursor-pointer"
+            className="w-full md:w-44 px-2.5 py-1.5 rounded-lg bg-[#08090a] border border-[#30363d] text-xs text-slate-300 focus:outline-none focus:border-cyan-500 cursor-pointer"
           >
             <option value="ALL">All Categories ({meta.totalSkills})</option>
             {meta.categories.map((cat) => (
@@ -151,7 +153,7 @@ export const FilterToolbar: React.FC = () => {
           <select
             value={selectedSort}
             onChange={(e) => setSort(e.target.value as SortOption)}
-            className="w-full md:w-40 px-3 py-2 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:border-cyan-500 cursor-pointer"
+            className="w-full md:w-36 px-2.5 py-1.5 rounded-lg bg-[#08090a] border border-[#30363d] text-xs text-slate-300 focus:outline-none focus:border-cyan-500 cursor-pointer"
           >
             <option value="default">Default Order</option>
             <option value="stars-desc">Most Stars ⭐</option>
@@ -161,11 +163,37 @@ export const FilterToolbar: React.FC = () => {
           </select>
         </div>
 
+        {/* Density Switcher: Grid vs Rows */}
+        <div className="flex items-center rounded-lg bg-[#08090a] border border-[#30363d] p-0.5 shrink-0">
+          <button
+            onClick={() => setViewMode('grid')}
+            title="Grid View (Rich Cards)"
+            className={`p-1.5 rounded-md text-xs transition-colors cursor-pointer ${
+              viewMode === 'grid'
+                ? 'bg-[#21262d] text-white shadow-sm'
+                : 'text-slate-500 hover:text-slate-300'
+            }`}
+          >
+            <LayoutGrid className="w-3.5 h-3.5" />
+          </button>
+          <button
+            onClick={() => setViewMode('rows')}
+            title="Rows View (High-Density List)"
+            className={`p-1.5 rounded-md text-xs transition-colors cursor-pointer ${
+              viewMode === 'rows'
+                ? 'bg-[#21262d] text-white shadow-sm'
+                : 'text-slate-500 hover:text-slate-300'
+            }`}
+          >
+            <List className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
         {/* Reset Button */}
         {hasActiveFilters && (
           <button
             onClick={resetFilters}
-            className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors cursor-pointer border border-slate-700"
+            className="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-1 px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-colors cursor-pointer border border-slate-700"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Reset</span>

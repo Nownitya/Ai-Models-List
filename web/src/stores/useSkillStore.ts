@@ -78,6 +78,10 @@ interface SkillStoreState {
   // Stack Builder
   stack: SavedStackItem[]
 
+  // View mode & Command Palette
+  viewMode: 'grid' | 'rows'
+  isCommandPaletteOpen: boolean
+
   // Modals & Drawers
   inspectSkill: Skill | null
   promptModalSkill: Skill | null
@@ -85,6 +89,8 @@ interface SkillStoreState {
   isPriorityGuideOpen: boolean
 
   // Actions (ViewModel events)
+  setViewMode: (mode: 'grid' | 'rows') => void
+  setCommandPaletteOpen: (open: boolean) => void
   setSearchQuery: (query: string) => void
   setPriority: (priority: Priority) => void
   setCategory: (category: string) => void
@@ -93,6 +99,7 @@ interface SkillStoreState {
   resetFilters: () => void
 
   toggleStack: (skill: Skill) => void
+  addStarterPackToStack: (skillIds: string[]) => void
   removeFromStack: (skillId: string) => void
   clearStack: () => void
 
@@ -118,10 +125,16 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
 
   stack: loadInitialStack(),
 
+  viewMode: 'grid',
+  isCommandPaletteOpen: false,
+
   inspectSkill: null,
   promptModalSkill: null,
   isStackModalOpen: false,
   isPriorityGuideOpen: false,
+
+  setViewMode: (viewMode) => set({ viewMode }),
+  setCommandPaletteOpen: (isCommandPaletteOpen) => set({ isCommandPaletteOpen }),
 
   setSearchQuery: (searchQuery) => {
     set({ searchQuery })
@@ -177,6 +190,31 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     saveStackToStorage(newStack)
   },
 
+  addStarterPackToStack: (skillIds) => {
+    const { stack, skills } = get()
+    const toAdd: SavedStackItem[] = []
+    for (const id of skillIds) {
+      if (!stack.some((s) => s.id === id || s.uniqueId === id)) {
+        const match = skills.find((s) => s.id === id || s.uniqueId === id)
+        if (match) {
+          toAdd.push({
+            id: match.id,
+            uniqueId: match.uniqueId,
+            name: match.name,
+            priority: match.priority,
+            scoped: match.scoped,
+            cli: match.cli,
+          })
+        }
+      }
+    }
+    if (toAdd.length > 0) {
+      const newStack = [...stack, ...toAdd]
+      set({ stack: newStack })
+      saveStackToStorage(newStack)
+    }
+  },
+
   removeFromStack: (skillId) => {
     const { stack } = get()
     const newStack = stack.filter((s) => s.id !== skillId)
@@ -198,3 +236,4 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   setStackModalOpen: (isStackModalOpen) => set({ isStackModalOpen }),
   setPriorityGuideOpen: (isPriorityGuideOpen) => set({ isPriorityGuideOpen }),
 }))
+

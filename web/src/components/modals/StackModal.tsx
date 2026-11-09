@@ -16,7 +16,7 @@ export const StackModal: React.FC = () => {
   // 1. Export as Standard Markdown
   const downloadMarkdown = () => {
     let md = `# 🛠️ Custom AI Agent Stack\n\n`
-    md += `> Exported from [AI Coding Skills Matrix](https://nownitya.github.io/Ai-Models-List/)\n`
+    md += `> Exported from [SkillDock](https://nownitya.github.io/Ai-Models-List/)\n`
     md += `> Generated on: ${new Date().toISOString().split('T')[0]}\n\n`
     md += `## Selected Skills (${stack.length})\n\n`
     md += `| Priority | Skill Name | Slash Command | Installation Command |\n`
@@ -29,7 +29,7 @@ export const StackModal: React.FC = () => {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `My-Agent-Stack-${new Date().toISOString().split('T')[0]}.md`
+    a.download = `SkillDock-Stack-${new Date().toISOString().split('T')[0]}.md`
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -37,19 +37,19 @@ export const StackModal: React.FC = () => {
   // 2. Export as Obsidian Second Brain Note (with Dataview tags)
   const downloadObsidianNote = () => {
     let obs = `---\n`
-    obs += `title: "My Custom AI Agent Stack"\n`
+    obs += `title: "SkillDock Agent Stack"\n`
     obs += `type: agent-stack\n`
     obs += `status: active\n`
     obs += `updated: ${new Date().toISOString().split('T')[0]}\n`
-    obs += `tags: [ai-stack, second-brain, agent-skills, dataview]\n`
+    obs += `tags: [skilldock, ai-stack, second-brain, agent-skills, dataview]\n`
     obs += `---\n\n`
-    obs += `# 💎 My AI Agent Stack\n\n`
+    obs += `# 💎 SkillDock AI Agent Stack\n\n`
     obs += `> **Universal Developer Second Brain Stack Configuration**\n`
     obs += `> Cross-Model Agent Harness & MCP Tooling Suite\n\n`
     obs += `## 📋 Active Stack Registry\n\n`
     obs += `\`\`\`dataview\n`
     obs += `TABLE priority AS "Priority", scoped AS "Slash Command", cli AS "Install CLI"\n`
-    obs += `WHERE contains(file.tags, "ai-stack")\n`
+    obs += `WHERE contains(file.tags, "skilldock")\n`
     obs += `\`\`\`\n\n`
     obs += `## 🛠️ Stack Items\n\n`
     stack.forEach((s) => {
@@ -63,7 +63,7 @@ export const StackModal: React.FC = () => {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `My-Obsidian-Agent-Stack.md`
+    a.download = `SkillDock-Obsidian-Stack.md`
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -79,100 +79,98 @@ export const StackModal: React.FC = () => {
   return (
     <div
       onClick={() => setStackModalOpen(false)}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-in fade-in duration-150"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="glass-panel w-full max-w-2xl rounded-2xl p-6 sm:p-8 space-y-6 relative border border-slate-700 shadow-2xl flex flex-col max-h-[85vh]"
+        className="w-full max-w-2xl bg-[#0d1117] border border-[#21262d] rounded-2xl p-6 space-y-5 relative shadow-2xl flex flex-col max-h-[85vh]"
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div className="flex items-center justify-between pb-3 border-b border-[#21262d]">
           <div>
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <Terminal className="w-5 h-5 text-cyan-400" />
-              <span>My AI Agent Stack ({stack.length})</span>
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <Terminal className="w-4 h-4 text-cyan-400" />
+              <span>SkillDock Agent Stack ({stack.length})</span>
             </h2>
-            <p className="text-xs text-slate-400 mt-1">
-              Curate your custom engineering stack, then export to Markdown or Obsidian.
+            <p className="text-xs text-slate-400 mt-0.5">
+              Curate your custom engineering stack, then export to Markdown, Obsidian Second Brain, or CLI scripts.
             </p>
           </div>
           <button
             onClick={() => setStackModalOpen(false)}
-            className="text-slate-400 hover:text-white p-2 rounded-lg bg-slate-900 border border-slate-800"
+            className="text-slate-400 hover:text-white p-1.5 rounded-lg bg-[#161b22] border border-[#30363d] cursor-pointer"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Stack Items List */}
-        <div className="overflow-y-auto space-y-2 flex-1 pr-1">
+        <div className="flex-1 overflow-y-auto space-y-2 pr-1">
           {stack.length === 0 ? (
-            <div className="text-center py-12 text-slate-500">
-              <p className="text-sm mb-1">Your stack is currently empty.</p>
-              <p className="text-xs">Click the bookmark icon on any skill card to add it to your stack.</p>
+            <div className="text-center py-12 text-slate-500 text-xs">
+              Your stack is currently empty. Click the bookmark icon on any skill card or row to add it here.
             </div>
           ) : (
             stack.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-colors"
+                className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-[#08090a] border border-[#21262d] text-xs"
               >
-                <div className="flex items-center gap-3">
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-300">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#161b22] text-slate-300 border border-[#30363d]">
                     {item.priority}
                   </span>
-                  <div>
-                    <h4 className="text-sm font-semibold text-white">{item.name}</h4>
-                    <span className="text-xs font-mono text-cyan-400">/{item.scoped}</span>
-                  </div>
+                  <span className="font-semibold text-slate-200 truncate">{item.name}</span>
+                  <span className="text-[11px] font-mono text-cyan-400 truncate">/{item.scoped}</span>
                 </div>
 
-                <button
-                  onClick={() => removeFromStack(item.id)}
-                  className="text-slate-500 hover:text-red-400 p-1.5 transition-colors"
-                  title="Remove from stack"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    onClick={() => removeFromStack(item.id)}
+                    className="p-1 rounded text-slate-500 hover:text-red-400 hover:bg-[#161b22] transition-colors cursor-pointer"
+                    title="Remove from stack"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             ))
           )}
         </div>
 
-        {/* Action Buttons */}
+        {/* Footer Actions */}
         {stack.length > 0 && (
-          <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <div className="pt-3 border-t border-[#21262d] flex flex-wrap items-center justify-between gap-2 text-xs">
             <button
               onClick={clearStack}
-              className="text-xs text-red-400 hover:text-red-300 flex items-center gap-1 cursor-pointer"
+              className="text-xs text-red-400 hover:text-red-300 font-semibold px-2 py-1.5 rounded hover:bg-red-950/30 transition-colors cursor-pointer"
             >
-              <Trash2 className="w-3.5 h-3.5" />
-              <span>Clear All</span>
+              Clear All ({stack.length})
             </button>
 
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-2">
               <button
                 onClick={copyInstallScript}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-slate-200 border border-[#30363d] cursor-pointer transition-colors"
               >
                 {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>Copy CLI Script</span>
+                <span>Copy Batch Script</span>
               </button>
 
               <button
                 onClick={downloadObsidianNote}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-purple-950/80 hover:bg-purple-900 text-purple-200 text-xs font-semibold border border-purple-500/50 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-950/50 hover:bg-purple-900/50 text-purple-300 border border-purple-800/50 cursor-pointer transition-colors"
               >
-                <Diamond className="w-3.5 h-3.5 text-purple-400" />
+                <Diamond className="w-3.5 h-3.5" />
                 <span>Obsidian Note</span>
               </button>
 
               <button
                 onClick={downloadMarkdown}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold cursor-pointer transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span>Download .MD</span>
+                <span>Export Markdown</span>
               </button>
             </div>
           </div>
