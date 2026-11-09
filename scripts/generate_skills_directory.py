@@ -58,3 +58,4 @@ def generate_directory(repo_root: Path = None):
 
 if __name__ == "__main__":
     generate_directory()
+

@@ -15,11 +15,11 @@ SPRINT STATUS DASHBOARD:
 ┌──────────────┬──────────────────────────────────────────┬───────────┬──────────────┐
 │ Wave         │ Focus Area                               │ Points    │ Status       │
 ├──────────────┼──────────────────────────────────────────┼───────────┼──────────────┤
-│ Sprint 5.1   │ Core Data, Filter & Scoped Command Parity│ 8 pts     │ [/] IN PROGR │
-│ Sprint 5.2   │ UI/UX, Performance, Search & a11y        │ 13 pts    │ [ ] QUEUED   │
-│ Sprint 5.3   │ Developer Ergonomics & Stack Builder     │ 8 pts     │ [ ] QUEUED   │
+│ Sprint 5.1   │ Core Data, Filter & Scoped Command Parity│ 8 pts     │ [x] DONE     │
+│ Sprint 5.2   │ UI/UX, Performance, Search & a11y        │ 13 pts    │ [x] DONE     │
+│ Sprint 5.3   │ Developer Ergonomics & Stack Builder     │ 8 pts     │ [x] DONE     │
 ├──────────────┼──────────────────────────────────────────┼───────────┼──────────────┤
-│ TOTAL        │ 12 Architectural Remediation Tasks       │ 29 pts    │ ACTIVE       │
+│ TOTAL        │ 12 Architectural Remediation Tasks       │ 29 pts    │ COMPLETED    │
 └──────────────┴──────────────────────────────────────────┴───────────┴──────────────┘
 ```
 
@@ -124,3 +124,4 @@ Before closing Sprint H5, all changes must pass:
 3. `python scripts/verify-lock.py` (Cryptographic Lockfile Gate).
 4. `python -m unittest discover tests` (Unit test suite including `test_web_dashboard.py`).
 5. `python scripts/sync-obsidian.py` (Obsidian Vault Parity Gate).
+

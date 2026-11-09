@@ -25,6 +25,12 @@
       "skillPath": "skills/benchmark/SKILL.md",
       "computedHash": "e693cc599887ea7ed9fcc6e5f33b9472106ec8a857507e1765643d940344532f"
     },
+    "better-auth-patterns": {
+      "source": "better-auth/better-auth",
+      "sourceType": "github",
+      "skillPath": "skills/better-auth-patterns/SKILL.md",
+      "computedHash": "d6409c6aa9898d6bafd81b935f019bdf789796beb77679de1c0c3020f1fca3df"
+    },
     "brainstorming": {
       "source": "obra/superpowers",
       "sourceType": "github",
@@ -199,6 +205,12 @@
       "skillPath": "skills/executing-plans/SKILL.md",
       "computedHash": "e4649e59880ef2643d1da128e3d607e87e3f969410d72095a5bf65811b6036dc"
     },
+    "extract-design-tokens": {
+      "source": "local/ui-ux",
+      "sourceType": "local",
+      "skillPath": "skills/extract-design-tokens/SKILL.md",
+      "computedHash": "bf629dda6ef0ad749a9b8af92a8882d8703d42c4683a4f296024509a38b30c16"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
@@ -210,6 +222,18 @@
       "sourceType": "github",
       "skillPath": "skills/finishing-a-development-branch/SKILL.md",
       "computedHash": "8db5a922b242dd4e1bf824cb91c13b3e8d8e8a86d6ceaf7f0774eb9cce909d65"
+    },
+    "firebase-agent-suite": {
+      "source": "firebase/firebase-tools",
+      "sourceType": "github",
+      "skillPath": "skills/firebase-agent-suite/SKILL.md",
+      "computedHash": "9a94d18950e9bbf0be40236c0e2499876f1bded53058cc58d2d8f5d0ce88c84f"
+    },
+    "firecrawl-web-scrape": {
+      "source": "mendableai/firecrawl",
+      "sourceType": "github",
+      "skillPath": "skills/firecrawl-web-scrape/SKILL.md",
+      "computedHash": "1bc4539040189d4d863f93636ade291817a04495447a0600fe393b57e60afe8b"
     },
     "graphify": {
       "source": "graphify/skill",
@@ -349,6 +373,36 @@
       "skillPath": "skills/land-and-deploy/SKILL.md",
       "computedHash": "d1adafe6b24281eded42b4b96e2d6837b72bce3f77fa110e61a89eec4e12412c"
     },
+    "mastra-agent-framework": {
+      "source": "mastra-ai/mastra",
+      "sourceType": "github",
+      "skillPath": "skills/mastra-agent-framework/SKILL.md",
+      "computedHash": "29f9a88434ac365aead8be0ff3c898ff50b009cd0fdffd7474495e05340b3ce4"
+    },
+    "mermaid-design-generator": {
+      "source": "mermaid-js/mermaid",
+      "sourceType": "github",
+      "skillPath": "skills/mermaid-design-generator/SKILL.md",
+      "computedHash": "b1a3e4bae9b92ef70db5b6bdaf304b8203a0e2d21e2c82bdd81b4f75443088c9"
+    },
+    "momentic-visual-testing": {
+      "source": "momentic-ai/momentic",
+      "sourceType": "github",
+      "skillPath": "skills/momentic-visual-testing/SKILL.md",
+      "computedHash": "10ec946030c40c171fadc6b7510a240a36a1de4b9ebadefffdcd350d01f4d4ed"
+    },
+    "neon-serverless-postgres": {
+      "source": "neondatabase/serverless",
+      "sourceType": "github",
+      "skillPath": "skills/neon-serverless-postgres/SKILL.md",
+      "computedHash": "728e4eee80334635bffe06d26ef24c2eadb07e568fc197216a0e2c721a7b2fe7"
+    },
+    "nx-monorepo-architect": {
+      "source": "nrwl/nx",
+      "sourceType": "github",
+      "skillPath": "skills/nx-monorepo-architect/SKILL.md",
+      "computedHash": "61dc7e3ec9cb2e48771ebec67c0cf5edab4d9101537553e981abc58c1ad949a6"
+    },
     "office-hours": {
       "source": "garrytan/gstack",
       "sourceType": "github",
@@ -378,6 +432,12 @@
       "sourceType": "github",
       "skillPath": "skills/plan-eng-review/SKILL.md",
       "computedHash": "1b2acd12e035341bae5101f40bd8e0f68862bcb199b5cee947f8783480c3bcf0"
+    },
+    "prisma-orm-patterns": {
+      "source": "prisma/prisma",
+      "sourceType": "github",
+      "skillPath": "skills/prisma-orm-patterns/SKILL.md",
+      "computedHash": "b598cc97087608c0101e87a8909bcabb920559e26907f5f5206d78b96f656ea0"
     },
     "prototype": {
       "source": "local/core",
@@ -438,6 +498,12 @@
       "sourceType": "github",
       "skillPath": "skills/subagent-driven-development/SKILL.md",
       "computedHash": "ba41f697136cba88a7962d60c8e2f97488ba04a8688b1d0fbeb27f6953808e75"
+    },
+    "svelte5-runes-patterns": {
+      "source": "sveltejs/svelte",
+      "sourceType": "github",
+      "skillPath": "skills/svelte5-runes-patterns/SKILL.md",
+      "computedHash": "2728954103b1c1b194b596006b08f4253277726ebd434aa62e8c08f122d8f98d"
     },
     "systematic-debugging": {
       "source": "obra/superpowers",

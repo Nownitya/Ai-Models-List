@@ -158,6 +158,17 @@ def gather_skills_to_install():
         ("agent-browser", SKILLS_SRC / "12-specialized" / "agent-browser", "vercel-labs/agent-browser", "skills/agent-browser/SKILL.md"),
         ("find-skills", SKILLS_SRC / "01-core-engineering" / "find-skills", "vercel-labs/skills", "skills/find-skills/SKILL.md"),
         ("everything-claude-code", SKILLS_SRC / "09-autonomous-agents" / "everything-claude-code", "affaan-m/ecc", "skills/everything-claude-code/SKILL.md"),
+        ("mastra-agent-framework", SKILLS_SRC / "09-autonomous-agent-architectures" / "mastra-agent-framework", "mastra-ai/mastra", "skills/mastra-agent-framework/SKILL.md"),
+        ("momentic-visual-testing", SKILLS_SRC / "04-testing-and-verification" / "momentic-visual-testing", "momentic-ai/momentic", "skills/momentic-visual-testing/SKILL.md"),
+        ("extract-design-tokens", SKILLS_SRC / "05-ui-ux" / "extract-design-tokens", "local/ui-ux", "skills/extract-design-tokens/SKILL.md"),
+        ("better-auth-patterns", SKILLS_SRC / "01-core-workflows" / "better-auth-patterns", "better-auth/better-auth", "skills/better-auth-patterns/SKILL.md"),
+        ("mermaid-design-generator", SKILLS_SRC / "11-project-documentation" / "mermaid-design-generator", "mermaid-js/mermaid", "skills/mermaid-design-generator/SKILL.md"),
+        ("nx-monorepo-architect", SKILLS_SRC / "01-core-workflows" / "nx-monorepo-architect", "nrwl/nx", "skills/nx-monorepo-architect/SKILL.md"),
+        ("firebase-agent-suite", SKILLS_SRC / "01-core-workflows" / "firebase-agent-suite", "firebase/firebase-tools", "skills/firebase-agent-suite/SKILL.md"),
+        ("neon-serverless-postgres", SKILLS_SRC / "01-core-workflows" / "neon-serverless-postgres", "neondatabase/serverless", "skills/neon-serverless-postgres/SKILL.md"),
+        ("prisma-orm-patterns", SKILLS_SRC / "01-core-workflows" / "prisma-orm-patterns", "prisma/prisma", "skills/prisma-orm-patterns/SKILL.md"),
+        ("svelte5-runes-patterns", SKILLS_SRC / "01-core-workflows" / "svelte5-runes-patterns", "sveltejs/svelte", "skills/svelte5-runes-patterns/SKILL.md"),
+        ("firecrawl-web-scrape", SKILLS_SRC / "01-core-workflows" / "firecrawl-web-scrape", "mendableai/firecrawl", "skills/firecrawl-web-scrape/SKILL.md"),
     ]
     for dest_name, src, repo, rel_path in extra_skills:
         if src.exists():

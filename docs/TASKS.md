@@ -36,6 +36,11 @@
 | **TASK-023** | Web & Catalog Remediation (Sprint 5.1) | Fix ecosystem mapping, automate directory index, and enforce true scoped slash commands | P0 | Verified | `index.html`, `scripts/generate_skills_directory.py`, `tests/test_web_dashboard.py` |
 | **TASK-024** | UI/UX & Engine Performance (Sprint 5.2) | 150ms search debounce, multi-token matching, batch DOM rendering, and WCAG 2.1 AA a11y | P1 | Verified | `index.html`, `tests/test_web_dashboard.py` |
 | **TASK-025** | Developer Ergonomics & Stack Builder (Sprint 5.3) | One-click CLI command, interactive priority guide, and custom agent stack basket | P1 | Verified | `index.html`, `tests/test_web_dashboard.py` |
+| **TASK-026** | PWA & Offline Engine (Sprint 6.1) | Offline Service Worker (`sw.js`), Web App Manifest, `localStorage` stack persistence, and URL deep linking | P0 | Verified | `manifest.json`, `sw.js`, `index.html`, `tests/test_web_dashboard.py` |
+| **TASK-027** | Visual Topology & Frontier Routing (Sprint 6.2) | DeepSeek R1/Claude 3.7 reasoning matrix and comprehensive Mermaid ecosystem topology | P0 | Verified | `docs/models/MODEL-ROUTING-MATRIX.md`, `docs/architecture/ECOSYSTEM-MAP.md` |
+| **TASK-028** | Workspace Runtime Expansion (Sprint 6.3) | Inject top 11 modern skills into `.agents/skills` and update cryptographic lockfile | P0 | Verified | `skills-lock.json`, `scripts/verify-lock.py` |
+| **TASK-029** | Skill Scaffolder CLI & Tests (Sprint 6.4) | Automated Law 1 & Law 2 CLI (`new-skill.py`) with unit test suite (`test_new_skill.py`) | P0 | Verified | `scripts/new-skill.py`, `tests/test_new_skill.py` |
+| **TASK-030** | Milestone H6 Release Signoff (Sprint 6.5) | Full multi-gate verification, Layer 15 documentation sync, and Obsidian vault mirror | P0 | Verified | Multi-gate audit pass (52/52 tests) |
 
 ---
 
@@ -167,6 +172,20 @@
 - [x] Subtask 25.2: Build interactive Priority Taxonomy Guide modal (`#priorityModal`) explaining P0, P1, P2, and P3 governance contracts.
 - [x] Subtask 25.3: Build "My Agent Stack" basket (`#stackModal`) allowing multi-skill selection, combined CLI copy, and JSON export.
 - [x] Subtask 25.4: Expand `tests/test_web_dashboard.py` to 10 automated unit tests (44/44 full test suite pass).
+
+### Epic H6: Ecosystem Maturation, Visual Topology & Developer Scaffolder
+- [x] Subtask 26.1: Author root `manifest.json` and `sw.js` delivering zero-dependency PWA offline caching.
+- [x] Subtask 26.2: Implement `localStorage` stack persistence (`ai_skills_stack`) across browser sessions.
+- [x] Subtask 26.3: Implement URL deep linking (`?q=...&priority=...&cat=...&ecosystem=...&sort=...`) via `window.history.replaceState`.
+- [x] Subtask 26.4: Integrate single-edit distance fuzzy search (`fuzzyTokenMatch`) for typo tolerance.
+- [x] Subtask 27.1: Modernize `docs/models/MODEL-ROUTING-MATRIX.md` with DeepSeek R1 & Claude 3.7 reasoning guidance across 317+ skills and 104 frameworks.
+- [x] Subtask 27.2: Author comprehensive visual architecture map `docs/architecture/ECOSYSTEM-MAP.md` featuring 4 rich Mermaid topology diagrams.
+- [x] Subtask 28.1: Expand workspace `.agents/skills/` runtime with 11 top modern skills (Mastra, Momentic, Neon, Firebase, Svelte 5, Prisma, Better-Auth, Nx, Firecrawl).
+- [x] Subtask 28.2: Regenerate authoritative `skills-lock.json` locking 99 verified skills with SHA-256 integrity digests.
+- [x] Subtask 29.1: Implement `scripts/new-skill.py` CLI enforcing Law 1 (dual matrix parity) and Law 2 (standardized structure).
+- [x] Subtask 29.2: Implement unit test suite `tests/test_new_skill.py` (5 tests passing cleanly).
+- [x] Subtask 30.1: Update Layer 15 living documentation (`docs/TASKS.md`, `docs/ROADMAP.md`, `docs/IMPLEMENTATION-STATUS.md`).
+- [x] Subtask 30.2: Execute multi-gate verification suite and mirror documentation to Obsidian Vault.
 
 
 

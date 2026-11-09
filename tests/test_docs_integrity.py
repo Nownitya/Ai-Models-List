@@ -10,7 +10,8 @@ class TestDocsIntegrity(unittest.TestCase):
         required_files = [
             "PRD.md", "ARCHITECTURE.md", "ROADMAP.md", "TASKS.md",
             "BRD.md", "TRD.md", "testing/TEST-STRATEGY.md",
-            "adr/0001-dual-matrix-parity.md", "adr/0002-law-4-skill-independence.md"
+            "adr/0001-dual-matrix-parity.md", "adr/0002-law-4-skill-independence.md",
+            "models/MODEL-ROUTING-MATRIX.md", "architecture/ECOSYSTEM-MAP.md"
         ]
         for rel_path in required_files:
             file_path = self.docs_dir / rel_path

@@ -51,5 +51,23 @@ class TestWebDashboard(unittest.TestCase):
         self.assertIn('searchDebounceTimeout', self.content)
         self.assertIn('onSearchInput', self.content)
 
+    def test_pwa_and_service_worker(self):
+        repo_root = self.html_file.parent
+        manifest_file = repo_root / "manifest.json"
+        sw_file = repo_root / "sw.js"
+        self.assertTrue(manifest_file.exists(), "manifest.json must exist at repo root")
+        self.assertTrue(sw_file.exists(), "sw.js must exist at repo root")
+        self.assertIn('rel="manifest" href="manifest.json"', self.content)
+        self.assertIn("navigator.serviceWorker.register('sw.js')", self.content)
+
+    def test_fuzzy_token_search(self):
+        self.assertIn('function fuzzyTokenMatch(', self.content)
+
+    def test_stack_persistence_and_url_params(self):
+        self.assertIn('loadStackFromStorage()', self.content)
+        self.assertIn('saveStackToStorage()', self.content)
+        self.assertIn('parseUrlParams()', self.content)
+        self.assertIn('updateUrlParams()', self.content)
+
 if __name__ == "__main__":
     unittest.main()
