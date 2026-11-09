@@ -40,3 +40,4 @@ A structured evaluation was conducted across 5 primary candidates analyzing deve
 - **Branding Update**: The web catalog is branded as **SkillDock — The Launchpad for AI Coding Skills & Agent Harnesses**.
 - **CLI Commands**: CLI scripts will support the `skilldock` alias alongside existing Python scripts.
 - **Obsidian Vault**: Mirrored under project governance documentation for permanent historical tracking.
+

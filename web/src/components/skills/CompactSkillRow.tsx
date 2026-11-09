@@ -107,3 +107,4 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
     </div>
   )
 }
+

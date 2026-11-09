@@ -41,3 +41,4 @@ export const STARTER_PACKS: StarterPack[] = [
     skillIds: ['code-review', 'coderabbit', 'qa', 'plan-eng-review', 'plan-ceo-review'],
   },
 ]
+

@@ -190,7 +190,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     saveStackToStorage(newStack)
   },
 
-  addStarterPackToStack: (skillIds) => {
+  addStarterPackToStack: (skillIds: string[]) => {
     const { stack, skills } = get()
     const toAdd: SavedStackItem[] = []
     for (const id of skillIds) {
