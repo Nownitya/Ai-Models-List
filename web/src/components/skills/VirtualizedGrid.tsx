@@ -71,7 +71,7 @@ export const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({ skills }) => {
   return (
     <div
       ref={parentRef}
-      className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mt-3 h-[calc(100vh-270px)] overflow-y-auto"
+      className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mt-3 h-[calc(100vh-270px)] overflow-y-auto"
     >
       <div
         style={{

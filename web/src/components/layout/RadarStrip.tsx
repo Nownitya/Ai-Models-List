@@ -24,7 +24,7 @@ export const RadarStrip: React.FC = () => {
 
   return (
     <div className="border-b border-[#21262d] bg-[#0d1117] overflow-hidden py-2">
-      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center gap-3">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center gap-3">
         <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0">
           <Activity className="w-3.5 h-3.5 text-cyan-400" />
           <span>Radar:</span>
