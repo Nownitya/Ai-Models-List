@@ -1030,11 +1030,11 @@
       "version": "v1.0.20",
       "license": "Apache-2.0",
       "installRecipes": {
-        "antigravity": "/agy add android/skills",
-        "claude": "git clone https://github.com/android/skills.git ~/.claude/skills/skills",
-        "codex": "codex install android/skills",
+        "antigravity": "android skills add --all",
+        "claude": "/plugin marketplace add android/skills && /plugin install android-skills@android-skills",
+        "codex": "codex plugin marketplace add android/skills && codex plugin add android-skills@android-skills",
         "git": "git clone https://github.com/android/skills.git",
-        "cli": "python scripts/install-to-project.py --repo android/skills"
+        "cli": "android skills add --all"
       },
       "skills": [
         {

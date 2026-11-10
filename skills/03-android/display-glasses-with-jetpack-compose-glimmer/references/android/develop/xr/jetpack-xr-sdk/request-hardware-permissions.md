@@ -6,9 +6,8 @@ Display Glasses [](https://developer.android.com/develop/xr/devices#audio-displa
 
 <br />
 
-Just like on a phone, accessing sensitive hardware like the camera and
-microphone on audio glasses and display glasses requires explicit user consent.
-These are considered
+Just like on a phone, accessing sensitive hardware like the camera on audio
+glasses and display glasses requires explicit user consent. These are considered
 **glasses-specific permissions**, and your app must request them at runtime,
 even if it already has the corresponding permissions on the phone.
 
@@ -40,7 +39,7 @@ permissions.
 ## Permission scenarios
 
 There are different scenarios you might encounter when requesting [dangerous
-runtime permissions](https://developer.android.com/guide/topics/permissions/requesting#normal-dangerous) on audio and display glasses:
+runtime permissions](https://developer.android.com/guide/topics/permissions/overview#runtime) on audio and display glasses:
 
 - Request runtime permissions from a projected activity
 - Request runtime permissions from a phone activity

@@ -551,13 +551,22 @@ def export_matrix():
         primary_cat_label = member_skills[0]["categoryLabel"] if member_skills else "Core Engineering"
 
         # Multi-Assistant Installation Recipes
-        recipes = {
-            "antigravity": f"/agy add {repo_key}" if owner in ("android", "GoogleCloudPlatform", "googleapis", "google") else f"git clone https://github.com/{repo_key}.git ~/.gemini/antigravity/skills/{name}",
-            "claude": f"/plugin add {repo_key}" if "plugin" in name else f"git clone https://github.com/{repo_key}.git ~/.claude/skills/{name}",
-            "codex": f"codex install {repo_key}",
-            "git": f"git clone https://github.com/{repo_key}.git",
-            "cli": f"python scripts/install-to-project.py --repo {repo_key}"
-        }
+        if repo_key == "android/skills":
+            recipes = {
+                "antigravity": "android skills add --all",
+                "claude": "/plugin marketplace add android/skills && /plugin install android-skills@android-skills",
+                "codex": "codex plugin marketplace add android/skills && codex plugin add android-skills@android-skills",
+                "git": "git clone https://github.com/android/skills.git",
+                "cli": "android skills add --all"
+            }
+        else:
+            recipes = {
+                "antigravity": f"/agy add {repo_key}" if owner in ("GoogleCloudPlatform", "googleapis", "google") else f"git clone https://github.com/{repo_key}.git ~/.gemini/antigravity/skills/{name}",
+                "claude": f"/plugin add {repo_key}" if "plugin" in name else f"git clone https://github.com/{repo_key}.git ~/.claude/skills/{name}",
+                "codex": f"codex install {repo_key}",
+                "git": f"git clone https://github.com/{repo_key}.git",
+                "cli": f"python scripts/install-to-project.py --repo {repo_key}"
+            }
 
         frameworks.append({
             "id": repo_key.replace("/", "-").lower(),
