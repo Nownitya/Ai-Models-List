@@ -1,8 +1,33 @@
 import { create } from 'zustand'
 import matrixData from '@/data/matrix.json'
-import type { Ecosystem, MatrixMeta, Priority, SavedStackItem, Skill, SortOption } from '@/types'
+import type {
+  AssistantType,
+  DocTemplate,
+  Ecosystem,
+  FrameworkHub,
+  MatrixMeta,
+  PillarType,
+  Priority,
+  SavedStackItem,
+  Skill,
+  SortOption,
+  SystemPromptSuite,
+} from '@/types'
 
 const STACK_STORAGE_KEY = 'ai_skills_stack_v2'
+const ASSISTANT_STORAGE_KEY = 'skilldock_assistant_v1'
+
+function loadInitialAssistant(): AssistantType {
+  try {
+    const raw = localStorage.getItem(ASSISTANT_STORAGE_KEY)
+    if (raw && ['antigravity', 'claude', 'codex', 'git'].includes(raw)) {
+      return raw as AssistantType
+    }
+  } catch (e) {
+    console.warn('Failed to parse assistant from localStorage:', e)
+  }
+  return 'antigravity'
+}
 
 // Safeguard 12: Schema migration & safe hydration from localStorage
 function loadInitialStack(): SavedStackItem[] {
@@ -30,9 +55,19 @@ function saveStackToStorage(stack: SavedStackItem[]) {
 // Read initial URL params
 function getInitialUrlParams() {
   if (typeof window === 'undefined') {
-    return { q: '', priority: 'ALL' as Priority, cat: 'ALL', eco: 'all' as Ecosystem, repo: 'all', sort: 'default' as SortOption }
+    return {
+      pillar: 'frameworks' as PillarType,
+      q: '',
+      priority: 'ALL' as Priority,
+      cat: 'ALL',
+      eco: 'all' as Ecosystem,
+      repo: 'all',
+      sort: 'default' as SortOption,
+    }
   }
   const params = new URLSearchParams(window.location.search)
+  const pil = params.get('pillar') as PillarType
+  const pillar = ['frameworks', 'skills', 'docs', 'prompts'].includes(pil) ? pil : 'frameworks'
   const q = params.get('q') || ''
   const p = (params.get('priority') || 'ALL').toUpperCase()
   const priority = ['ALL', 'P0', 'P1', 'P2', 'P3'].includes(p) ? (p as Priority) : 'ALL'
@@ -41,17 +76,26 @@ function getInitialUrlParams() {
   const repo = params.get('repo') || 'all'
   const sort = (params.get('sort') || 'default') as SortOption
 
-  return { q, priority, cat, eco, repo, sort }
+  return { pillar, q, priority, cat, eco, repo, sort }
 }
 
 // Safeguard 11: Debounced URL synchronization using replaceState
 let urlSyncTimer: ReturnType<typeof setTimeout> | null = null
-function syncUrlParams(state: { searchQuery: string; priority: Priority; category: string; ecosystem: Ecosystem; repo: string; sort: SortOption }) {
+function syncUrlParams(state: {
+  pillar: PillarType
+  searchQuery: string
+  priority: Priority
+  category: string
+  ecosystem: Ecosystem
+  repo: string
+  sort: SortOption
+}) {
   if (typeof window === 'undefined') return
   if (urlSyncTimer) clearTimeout(urlSyncTimer)
 
   urlSyncTimer = setTimeout(() => {
     const params = new URLSearchParams()
+    if (state.pillar !== 'frameworks') params.set('pillar', state.pillar)
     if (state.searchQuery.trim()) params.set('q', state.searchQuery.trim())
     if (state.priority !== 'ALL') params.set('priority', state.priority)
     if (state.category !== 'ALL') params.set('cat', state.category)
@@ -68,7 +112,14 @@ function syncUrlParams(state: { searchQuery: string; priority: Priority; categor
 interface SkillStoreState {
   // Data
   skills: Skill[]
+  frameworks: FrameworkHub[]
+  docs: DocTemplate[]
+  prompts: SystemPromptSuite[]
   meta: MatrixMeta
+
+  // Pillar & Assistant
+  activePillar: PillarType
+  activeAssistant: AssistantType
 
   // Filters (UI State)
   searchQuery: string
@@ -87,11 +138,14 @@ interface SkillStoreState {
 
   // Modals & Drawers
   inspectSkill: Skill | null
+  inspectFramework: FrameworkHub | null
   promptModalSkill: Skill | null
   isStackModalOpen: boolean
   isPriorityGuideOpen: boolean
 
   // Actions (ViewModel events)
+  setPillar: (pillar: PillarType) => void
+  setAssistant: (assistant: AssistantType) => void
   setViewMode: (mode: 'grid' | 'rows') => void
   setCommandPaletteOpen: (open: boolean) => void
   setSearchQuery: (query: string) => void
@@ -104,11 +158,14 @@ interface SkillStoreState {
 
   toggleStack: (skill: Skill) => void
   addStarterPackToStack: (skillIds: string[]) => void
+  addFrameworkToStack: (framework: FrameworkHub) => void
   removeFromStack: (skillId: string) => void
   clearStack: () => void
 
   openInspect: (skill: Skill) => void
   closeInspect: () => void
+  openFrameworkInspect: (framework: FrameworkHub) => void
+  closeFrameworkInspect: () => void
   openPromptModal: (skill: Skill) => void
   closePromptModal: () => void
   setStackModalOpen: (open: boolean) => void
@@ -118,8 +175,14 @@ interface SkillStoreState {
 const initialUrl = getInitialUrlParams()
 
 export const useSkillStore = create<SkillStoreState>((set, get) => ({
-  skills: matrixData.skills as Skill[],
-  meta: matrixData.meta as MatrixMeta,
+  skills: ((matrixData as any).skills || []) as Skill[],
+  frameworks: ((matrixData as any).frameworks || []) as FrameworkHub[],
+  docs: ((matrixData as any).docs || []) as DocTemplate[],
+  prompts: ((matrixData as any).prompts || []) as SystemPromptSuite[],
+  meta: ((matrixData as any).meta || {}) as MatrixMeta,
+
+  activePillar: initialUrl.pillar,
+  activeAssistant: loadInitialAssistant(),
 
   searchQuery: initialUrl.q,
   selectedPriority: initialUrl.priority,
@@ -134,50 +197,64 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   isCommandPaletteOpen: false,
 
   inspectSkill: null,
+  inspectFramework: null,
   promptModalSkill: null,
   isStackModalOpen: false,
   isPriorityGuideOpen: false,
+
+  setPillar: (activePillar) => {
+    set({ activePillar })
+    const { searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+  },
+
+  setAssistant: (activeAssistant) => {
+    set({ activeAssistant })
+    try {
+      localStorage.setItem(ASSISTANT_STORAGE_KEY, activeAssistant)
+    } catch (e) {
+      console.warn('Failed to persist assistant:', e)
+    }
+  },
 
   setViewMode: (viewMode) => set({ viewMode }),
   setCommandPaletteOpen: (isCommandPaletteOpen) => set({ isCommandPaletteOpen }),
 
   setSearchQuery: (searchQuery) => {
     set({ searchQuery })
-    const { selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setPriority: (selectedPriority) => {
     set({ selectedPriority })
-    const { searchQuery, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, searchQuery, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setCategory: (selectedCategory) => {
-    // If selecting a category, reset ecosystem preset to all
     const selectedEcosystem = selectedCategory === 'ALL' ? get().selectedEcosystem : 'all'
     set({ selectedCategory, selectedEcosystem })
-    const { searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setEcosystem: (selectedEcosystem) => {
-    // If selecting an ecosystem preset, reset category filter to ALL
     set({ selectedEcosystem, selectedCategory: 'ALL' })
-    const { searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: 'ALL', ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: 'ALL', ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setRepo: (selectedRepo) => {
     set({ selectedRepo })
-    const { searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setSort: (selectedSort) => {
     set({ selectedSort })
-    const { searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo } = get()
-    syncUrlParams({ searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   resetFilters: () => {
@@ -189,7 +266,8 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       selectedRepo: 'all',
       selectedSort: 'default',
     })
-    syncUrlParams({ searchQuery: '', priority: 'ALL', category: 'ALL', ecosystem: 'all', repo: 'all', sort: 'default' })
+    const { activePillar } = get()
+    syncUrlParams({ pillar: activePillar, searchQuery: '', priority: 'ALL', category: 'ALL', ecosystem: 'all', repo: 'all', sort: 'default' })
   },
 
   toggleStack: (skill) => {
@@ -227,6 +305,28 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     }
   },
 
+  addFrameworkToStack: (framework: FrameworkHub) => {
+    const { stack } = get()
+    const toAdd: SavedStackItem[] = []
+    for (const skill of framework.skills) {
+      if (!stack.some((s) => s.id === skill.id)) {
+        toAdd.push({
+          id: skill.id,
+          uniqueId: `${framework.categoryId}:${skill.id}`,
+          name: skill.name,
+          priority: skill.priority,
+          scoped: skill.scoped,
+          cli: skill.cli,
+        })
+      }
+    }
+    if (toAdd.length > 0) {
+      const newStack = [...stack, ...toAdd]
+      set({ stack: newStack })
+      saveStackToStorage(newStack)
+    }
+  },
+
   removeFromStack: (skillId) => {
     const { stack } = get()
     const newStack = stack.filter((s) => s.id !== skillId)
@@ -239,13 +339,15 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     saveStackToStorage([])
   },
 
-  openInspect: (inspectSkill) => set({ inspectSkill }),
+  openInspect: (skill) => set({ inspectSkill: skill }),
   closeInspect: () => set({ inspectSkill: null }),
 
-  openPromptModal: (promptModalSkill) => set({ promptModalSkill }),
+  openFrameworkInspect: (inspectFramework) => set({ inspectFramework }),
+  closeFrameworkInspect: () => set({ inspectFramework: null }),
+
+  openPromptModal: (skill) => set({ promptModalSkill: skill }),
   closePromptModal: () => set({ promptModalSkill: null }),
 
   setStackModalOpen: (isStackModalOpen) => set({ isStackModalOpen }),
   setPriorityGuideOpen: (isPriorityGuideOpen) => set({ isPriorityGuideOpen }),
 }))
-

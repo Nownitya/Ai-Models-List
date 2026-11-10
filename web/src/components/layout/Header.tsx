@@ -94,14 +94,19 @@ export const Header: React.FC = () => {
             </span>
           </div>
           <p className="text-sm text-slate-400 max-w-3xl leading-relaxed">
-            Empirical matrix covering <strong>{meta.totalSkills} skills</strong>, isolated across Matt Pocock, Superpowers, GSD, gstack, and Android ecosystems.
+            Empirical launchpad covering <strong>{meta.totalFrameworks || 65} upstream frameworks</strong>, <strong>{meta.totalSkills} atomic skills</strong>, and <strong>{meta.totalDocs || 57} Layer 15 project docs</strong> with multi-assistant installation guides.
           </p>
         </div>
 
         {/* Minimal High-Density Metric Badges */}
-        <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 overflow-x-auto no-scrollbar">
           <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
-            <span className="text-xs uppercase font-bold text-slate-400 block">Cataloged</span>
+            <span className="text-xs uppercase font-bold text-cyan-400 block">Frameworks</span>
+            <span className="text-base sm:text-lg font-black text-cyan-300">{meta.totalFrameworks || 65}</span>
+          </div>
+
+          <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
+            <span className="text-xs uppercase font-bold text-slate-400 block">Skills</span>
             <span className="text-base sm:text-lg font-black text-slate-100">{meta.totalSkills}</span>
           </div>
 
@@ -114,7 +119,7 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
-            <span className="text-xs uppercase font-bold text-amber-400 block">Upstream</span>
+            <span className="text-xs uppercase font-bold text-amber-400 block">Stars</span>
             <span className="text-base sm:text-lg font-black text-amber-400 flex items-center gap-1">
               <Star className="w-3.5 h-3.5 fill-amber-400" />
               {formattedStars}M
@@ -122,10 +127,10 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
-            <span className="text-xs uppercase font-bold text-slate-400 block">Rules</span>
-            <span className="text-base sm:text-lg font-black text-slate-200 flex items-center gap-1">
+            <span className="text-xs uppercase font-bold text-emerald-400 block">Parity</span>
+            <span className="text-base sm:text-lg font-black text-emerald-300 flex items-center gap-1">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              Pure
+              100%
             </span>
           </div>
         </div>

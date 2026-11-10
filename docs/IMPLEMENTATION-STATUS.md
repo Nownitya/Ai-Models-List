@@ -6,6 +6,7 @@ Truthful tracking of features, files, and deliverables across the repository and
 | :--- | :--- | :--- | :--- |
 | **Master Markdown Matrix** | P0 | Verified | [`AI-Coding-Skills-and-Tools-Matrix.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/AI-Coding-Skills-and-Tools-Matrix.md) (758 lines) |
 | **Master CSV Matrix** | P0 | Verified | [`AI-Coding-Skills-and-Tools-Matrix.csv`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/AI-Coding-Skills-and-Tools-Matrix.csv) (615 rows) |
+| **Upstream Framework Hub & 4-Pillar Launchpad** | P0 | Verified | Unified 65 repositories into first-class Ponytail-style cards with multi-assistant installation recipes (Antigravity, Claude Code, Codex, Git/CLI), eliminated biased 6-pack strip, 4-pillar navigation (`frameworks`, `skills`, `docs`, `prompts`), slide-out `FrameworkDrawer`, and widescreen 1850px ergonomics |
 | **Dual Matrix Parity Validator** | P0 | Verified | [`scripts/sync-matrix.py`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/sync-matrix.py) (Exit code 0) |
 | **Interactive Web Dashboard (Bento & Radar Redesign)** | P0 | Verified | [`index.html`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/index.html) (Linear/Bento layout, live radar spotlight, ecosystem presets, monospaced telemetry, prompt injection modals) |
 | **Cross-Project Skill Injector CLI** | P0 | Verified | [`scripts/install-to-project.py`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/scripts/install-to-project.py) (Tested with `--dry-run`) |

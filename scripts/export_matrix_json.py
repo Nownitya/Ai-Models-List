@@ -509,8 +509,174 @@ def export_matrix():
 
     sorted_repos = sorted(repo_counts.values(), key=lambda x: (x["count"], x["stars"]), reverse=True)
 
+    # Curated fallback descriptions for repositories
+    FALLBACK_DESCRIPTIONS = {
+        'android/skills': "Official Google Android developer agent skills covering CameraX, Compose UI, Navigation 3, ANR triage, and Play Store SDKs.",
+        'GoogleCloudPlatform/data-agent-kit': "Google Cloud Platform agent toolkit for BigQuery, Dataflow, Cloud Databases, and GCP data pipelines.",
+        'coderabbitai/skills': "CodeRabbit AI automated code review and pull request intelligence harness.",
+        'pingdotgg/t3code': "Theo's T3 open-source agent harness control surface with mobile, desktop, and web clients.",
+        'google-research/harness2': "Google Research empirical coding-agent harness and evaluation benchmarking framework.",
+        'google-ai-edge/LiteRT-LM': "Google AI Edge LiteRT Large Language Model on-device runtime and mobile acceleration SDK.",
+        'google-ai-edge/litert': "Google AI Edge LiteRT (formerly TensorFlow Lite) high-performance cross-platform on-device runtime.",
+        'apple/design-guidelines': "Apple Human Interface Guidelines (HIG) and native SwiftUI 26+ design system patterns.",
+        'pypa/packaging': "Python Packaging Authority reference guidelines for dependency isolation, uv, and pyproject.toml.",
+        'agentskills/agentskills': "Universal agent skills open specification and foundational multi-agent workflow capabilities.",
+    }
+
+    # Build Framework Hub records (65 Upstream Repositories)
+    frameworks = []
+    for r in sorted_repos:
+        repo_key = r["repo"]
+        repo_display = r["repoName"]
+        repo_stars = r["stars"]
+
+        owner = repo_key.split("/")[0] if "/" in repo_key else "community"
+        name = repo_key.split("/")[-1] if "/" in repo_key else repo_key
+
+        meta_entry = metrics.get(repo_key) or metrics.get(repo_key.lower()) or {}
+        stars_formatted = meta_entry.get("stars_formatted")
+        if not stars_formatted:
+            if repo_stars >= 1_000_000:
+                stars_formatted = f"{repo_stars / 1_000_000:.1f}M"
+            elif repo_stars >= 1_000:
+                stars_formatted = f"{repo_stars // 1_000}k"
+            else:
+                stars_formatted = str(repo_stars)
+
+        desc = meta_entry.get("description") or FALLBACK_DESCRIPTIONS.get(repo_key) or f"Curated tools, workflows and capabilities from {repo_display}."
+
+        # Member skills
+        member_skills = [s for s in skills if s["repo"] == repo_key]
+        primary_category = member_skills[0]["categoryId"] if member_skills else "01-core-engineering"
+        primary_cat_label = member_skills[0]["categoryLabel"] if member_skills else "Core Engineering"
+
+        # Multi-Assistant Installation Recipes
+        recipes = {
+            "antigravity": f"/agy add {repo_key}" if owner in ("android", "GoogleCloudPlatform", "googleapis", "google") else f"git clone https://github.com/{repo_key}.git ~/.gemini/antigravity/skills/{name}",
+            "claude": f"/plugin add {repo_key}" if "plugin" in name else f"git clone https://github.com/{repo_key}.git ~/.claude/skills/{name}",
+            "codex": f"codex install {repo_key}",
+            "git": f"git clone https://github.com/{repo_key}.git",
+            "cli": f"python scripts/install-to-project.py --repo {repo_key}"
+        }
+
+        frameworks.append({
+            "id": repo_key.replace("/", "-").lower(),
+            "repo": repo_key,
+            "repoName": repo_display,
+            "author": owner,
+            "stars": repo_stars,
+            "starsFormatted": stars_formatted,
+            "description": desc,
+            "skillsCount": len(member_skills),
+            "categoryId": primary_category,
+            "categoryLabel": primary_cat_label,
+            "officialUrl": meta_entry.get("html_url") or f"https://github.com/{repo_key}",
+            "version": meta_entry.get("version", "latest"),
+            "license": meta_entry.get("license", "Open Source"),
+            "installRecipes": recipes,
+            "skills": [
+                {
+                    "id": s["id"],
+                    "name": s["name"],
+                    "priority": s["priority"],
+                    "scoped": s["scoped"],
+                    "cli": s["cli"],
+                    "description": s["description"]
+                }
+                for s in member_skills
+            ]
+        })
+
+    # Extract Layer 15 Documentation Specs
+    docs = []
+    with open(csv_path, encoding='utf-8') as f:
+        csv_rows = list(csv.reader(f))
+
+    start_idx = None
+    end_idx = None
+    for i, row in enumerate(csv_rows):
+        if len(row) > 0 and '15 Universal Project Documentation' in row[0]:
+            start_idx = i
+        elif start_idx is not None and len(row) > 0 and row[0].startswith(('16', '17', '18', 'Appendix', '14 Source Links')):
+            end_idx = i
+            break
+    if end_idx is None:
+        end_idx = len(csv_rows)
+
+    doc_rows = csv_rows[start_idx:end_idx]
+    current_layer = ''
+    seen_names = set()
+    for row in doc_rows:
+        if len(row) >= 4 and row[0] and not row[0].startswith(('15', 'Purpose', 'Operating', 'Priority', 'Repository', 'Layer')):
+            current_layer = row[0]
+        name = row[1].strip() if len(row) >= 2 else ''
+        prio = row[2].strip() if len(row) >= 3 else ''
+        purpose = row[3].strip() if len(row) >= 4 else ''
+
+        if name and prio in ('P0', 'P1', 'P2') and name not in seen_names:
+            seen_names.add(name)
+            tier = 'product'
+            lower_layer = current_layer.lower()
+            if 'foundation' in lower_layer:
+                tier = 'foundation'
+            elif 'business' in lower_layer:
+                tier = 'strategy'
+            elif 'product' in lower_layer:
+                tier = 'product'
+            elif 'architecture' in lower_layer:
+                tier = 'architecture'
+            elif 'governance' in lower_layer or 'ai' in lower_layer:
+                tier = 'governance'
+            elif 'testing' in lower_layer or 'quality' in lower_layer or 'execution' in lower_layer or 'report' in lower_layer:
+                tier = 'quality'
+
+            doc_id = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+            docs.append({
+                'id': doc_id,
+                'name': name,
+                'layer': current_layer,
+                'tier': tier,
+                'priority': prio,
+                'purpose': purpose,
+                'scaffoldCmd': f'python scripts/scaffold-project-docs.py --doc {name}',
+            })
+
+    # Extract Curated System Prompts Suites
+    prompts = []
+    prompts_dir = REPO_ROOT / 'prompts'
+    if prompts_dir.exists():
+        for p in sorted(prompts_dir.glob('*.md')):
+            text = p.read_text(encoding='utf-8')
+            title_match = re.search(r'^#\s+(.+)$', text, re.MULTILINE)
+            title = title_match.group(1) if title_match else p.stem
+            desc_match = re.search(r'^#\s+.+\n\n([^\n\-#]+)', text)
+            desc = desc_match.group(1).strip() if desc_match else ''
+
+            sections = []
+            raw_sections = re.split(r'\n##\s+', text)[1:]
+            for sec in raw_sections:
+                lines = sec.strip().split('\n')
+                sec_title = lines[0].strip()
+                code_blocks = re.findall(r'```(?:markdown|xml)?\n(.*?)```', sec, re.DOTALL)
+                content = code_blocks[0].strip() if code_blocks else '\n'.join(lines[1:]).strip()
+                sections.append({
+                    'name': sec_title,
+                    'content': content
+                })
+            prompts.append({
+                'id': p.stem,
+                'title': title,
+                'filename': p.name,
+                'description': desc,
+                'promptsCount': len(sections),
+                'sections': sections
+            })
+
     meta = {
         "totalSkills": len(skills),
+        "totalFrameworks": len(frameworks),
+        "totalDocs": len(docs),
+        "totalPrompts": len(prompts),
         "totalStars": sum(r["stars"] for r in repo_counts.values() if r["stars"] > 0),
         "categories": categories,
         "repositories": sorted_repos,
@@ -523,12 +689,15 @@ def export_matrix():
 
     payload = {
         "meta": meta,
+        "frameworks": frameworks,
         "skills": skills,
+        "docs": docs,
+        "prompts": prompts,
     }
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    print(f"[OK] Exported {len(skills)} skills across {len(sorted_repos)} repositories to {out_path} ({out_path.stat().st_size} bytes)")
+    print(f"[OK] Exported {len(skills)} skills, {len(frameworks)} frameworks, {len(docs)} docs, {len(prompts)} prompts to {out_path} ({out_path.stat().st_size} bytes)")
     return payload
 
 if __name__ == "__main__":
