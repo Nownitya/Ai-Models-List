@@ -52,15 +52,26 @@ def main():
     for d in [cat_dir, prompts_dir, gov_dir, integrations_dir]:
         d.mkdir(parents=True, exist_ok=True)
 
-    # 3. Mirror latest master markdown copy into vault as a reference sheet
+    # 3. Mirror latest master markdown copies into vault as reference sheets
     vault_matrix_copy = vault_target / "AI-Coding-Skills-and-Tools-Matrix.md"
     shutil.copy2(md_matrix, vault_matrix_copy)
     print(f"    [OK] Mirrored master matrix to {vault_matrix_copy.name} ({vault_matrix_copy.stat().st_size} bytes)")
+
+    claude_md = repo_root / "Claude-Marketplace-Plugins-Matrix.md"
+    claude_csv = repo_root / "Claude-Marketplace-Plugins-Matrix.csv"
+    if claude_md.exists():
+        shutil.copy2(claude_md, vault_target / claude_md.name)
+        print(f"    [OK] Mirrored Claude Marketplace matrix to {claude_md.name}")
+    if claude_csv.exists():
+        shutil.copy2(claude_csv, vault_target / claude_csv.name)
+        print(f"    [OK] Mirrored Claude Marketplace CSV to {claude_csv.name}")
 
     # 4. Mirror key Layer 15 architecture and integration specifications
     key_docs = [
         ("docs/models/MODEL-ROUTING-MATRIX.md", gov_dir / "MODEL-ROUTING-MATRIX.md"),
         ("docs/architecture/ECOSYSTEM-MAP.md", gov_dir / "ECOSYSTEM-MAP.md"),
+        ("docs/LIVE-STATS.md", gov_dir / "LIVE-STATS.md"),
+        ("docs/IMPLEMENTATION-STATUS.md", gov_dir / "IMPLEMENTATION-STATUS.md"),
         ("docs/integrations/OBSIDIAN-DEVELOPER-SECOND-BRAIN.md", integrations_dir / "OBSIDIAN-DEVELOPER-SECOND-BRAIN.md"),
         ("docs/integrations/OBSIDIAN-PLUGINS-FOR-DEVELOPERS.md", integrations_dir / "OBSIDIAN-PLUGINS-FOR-DEVELOPERS.md"),
         ("docs/adr/0003-project-naming-and-nomenclature-skilldock.md", gov_dir / "ADR-0003-PROJECT-NAMING-AND-NOMENCLATURE-SKILLDOCK.md"),
