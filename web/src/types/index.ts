@@ -177,3 +177,26 @@ export interface MarketplaceAgentProduct {
   marketplace_url: string
   external_links?: string[]
 }
+
+export interface MarketplaceConnector {
+  _id: string
+  title: string
+  slug: string
+  oneLiner: string
+  iconUrl?: string | null
+  iconEdgeToEdge?: boolean
+  serverUrl?: string | null
+  authorUrl?: string | null
+  author: string
+  type: 'remote' | 'local'
+  categories?: string[] | null
+  worksWith?: string[]
+  hasMcpApp?: boolean
+  isNew?: boolean
+  trending?: boolean
+  verifiedTier?: 'partner' | 'anthropic' | 'community' | null
+  directoryUrl?: string
+  popularityScore?: number | null
+  trendingScore?: number | null
+  addedAt?: string | null
+}

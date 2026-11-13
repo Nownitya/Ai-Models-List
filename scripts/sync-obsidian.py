@@ -75,6 +75,15 @@ def main():
         shutil.copy2(agents_csv, vault_target / agents_csv.name)
         print(f"    [OK] Mirrored Claude Agents & Products CSV to {agents_csv.name}")
 
+    conn_md = repo_root / "Claude-Connectors-and-Plugins-Matrix.md"
+    conn_csv = repo_root / "Claude-Connectors-and-Plugins-Matrix.csv"
+    if conn_md.exists():
+        shutil.copy2(conn_md, vault_target / conn_md.name)
+        print(f"    [OK] Mirrored Claude Connectors & Plugins matrix to {conn_md.name}")
+    if conn_csv.exists():
+        shutil.copy2(conn_csv, vault_target / conn_csv.name)
+        print(f"    [OK] Mirrored Claude Connectors & Plugins CSV to {conn_csv.name}")
+
     # 4. Mirror key Layer 15 architecture and integration specifications
     key_docs = [
         ("docs/models/MODEL-ROUTING-MATRIX.md", gov_dir / "MODEL-ROUTING-MATRIX.md"),

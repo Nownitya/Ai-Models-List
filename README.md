@@ -14,17 +14,21 @@
 1. **The Complete Skills & Tools Matrix** in two synchronized master formats:
    - 📄 [**Markdown Edition**](AI-Coding-Skills-and-Tools-Matrix.md) (`AI-Coding-Skills-and-Tools-Matrix.md`)
    - 📊 [**CSV Edition**](AI-Coding-Skills-and-Tools-Matrix.csv) (`AI-Coding-Skills-and-Tools-Matrix.csv`)
-2. **Claude Marketplace Plugins Matrix (530 Plugins)**:
+2. **Claude Marketplace Connectors & Plugins Matrix (1,126 Connectors)**:
+   - ⚡ [**Markdown Edition**](Claude-Connectors-and-Plugins-Matrix.md) (`Claude-Connectors-and-Plugins-Matrix.md`)
+   - 📊 [**CSV Edition**](Claude-Connectors-and-Plugins-Matrix.csv) (`Claude-Connectors-and-Plugins-Matrix.csv`)
+   - Authoritative directory of all 1,126 official and partner Model Context Protocol (MCP) tool connectors, 994 remote endpoints, and 132 local integrations.
+3. **Claude Marketplace Plugins Matrix (530 Plugins)**:
    - 🔌 [**Markdown Edition**](Claude-Marketplace-Plugins-Matrix.md) (`Claude-Marketplace-Plugins-Matrix.md`)
    - 📊 [**CSV Edition**](Claude-Marketplace-Plugins-Matrix.csv) (`Claude-Marketplace-Plugins-Matrix.csv`)
    - Complete directory of all 530 official Anthropic and partner plugins, with 100% verified GitHub repository source links, installation commands, compatibility flags, and verified publisher badges.
-3. **Claude Marketplace Agents & Products Matrix (33 Platforms)**:
+4. **Claude Marketplace Agents & Products Matrix (33 Platforms)**:
    - 🏢 [**Markdown Edition**](Claude-Agents-and-Products-Matrix.md) (`Claude-Agents-and-Products-Matrix.md`)
    - 📊 [**CSV Edition**](Claude-Agents-and-Products-Matrix.csv) (`Claude-Agents-and-Products-Matrix.csv`)
    - Enterprise AI agents and commercial developer platforms (Cursor, GitLab, CodeRabbit, Datadog, Fal, Vercel, Snowflake, Asana, etc.) eligible for Anthropic commitments and procurement.
-4. **Category-Wise Skill Folders** (`skills/`): Modular directories housing specific skill documentation, installation instructions, and best practice playbooks across 12 distinct functional domains.
-5. **AI Optimization Prompts** (`prompts/`): High-efficiency system prompts, reasoning architectures, few-shot templates, and verification gates designed to extract maximum performance from LLMs (Gemini, Claude, GPT, etc.).
-6. **Universal Project Documentation Standard (Layer 15)**: Standardized architecture, governance rules, security checklists, and self-review gates.
+5. **Category-Wise Skill Folders** (`skills/`): Modular directories housing specific skill documentation, installation instructions, and best practice playbooks across 12 distinct functional domains.
+6. **AI Optimization Prompts** (`prompts/`): High-efficiency system prompts, reasoning architectures, few-shot templates, and verification gates designed to extract maximum performance from LLMs (Gemini, Claude, GPT, etc.).
+7. **Universal Project Documentation Standard (Layer 15)**: Standardized architecture, governance rules, security checklists, and self-review gates.
 
 ---
 
@@ -79,6 +83,8 @@
 Ai-Models-List/
 ├── AI-Coding-Skills-and-Tools-Matrix.md      # Master workbook (Markdown format)
 ├── AI-Coding-Skills-and-Tools-Matrix.csv     # Master workbook (CSV format)
+├── Claude-Connectors-and-Plugins-Matrix.md   # Claude Marketplace 1,126 connectors (Markdown format)
+├── Claude-Connectors-and-Plugins-Matrix.csv  # Claude Marketplace 1,126 connectors (CSV format)
 ├── Claude-Marketplace-Plugins-Matrix.md      # Claude Marketplace 530 plugins (Markdown format)
 ├── Claude-Marketplace-Plugins-Matrix.csv     # Claude Marketplace 530 plugins (CSV format)
 ├── Claude-Agents-and-Products-Matrix.md      # Claude Marketplace 33 enterprise agents & products (MD)

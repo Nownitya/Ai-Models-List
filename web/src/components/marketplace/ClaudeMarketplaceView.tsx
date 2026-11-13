@@ -11,15 +11,26 @@ import {
   Bot,
   Building2,
   Globe,
-  Sparkles
+  Sparkles,
+  Server,
+  Radio
 } from 'lucide-react'
 import marketplaceData from '@/data/claude-marketplace-plugins.json'
 import agentsProductsData from '@/data/claude-agents-products.json'
-import type { MarketplacePlugin, MarketplaceAgentProduct } from '@/types'
+import connectorsData from '@/data/claude-connectors-plugins.json'
+import type { MarketplacePlugin, MarketplaceAgentProduct, MarketplaceConnector } from '@/types'
 
 export const ClaudeMarketplaceView: React.FC = () => {
-  // Mode switcher: Plugins vs Agents & Products
-  const [activeSection, setActiveSection] = useState<'plugins' | 'agents-products'>('plugins')
+  // Mode switcher: Connectors vs Plugins vs Agents & Products
+  const [activeSection, setActiveSection] = useState<'connectors' | 'plugins' | 'agents-products'>('connectors')
+
+  // --- CONNECTORS STATE ---
+  const [connectorSearch, setConnectorSearch] = useState('')
+  const [connectorTypeFilter, setConnectorTypeFilter] = useState<'all' | 'remote' | 'local'>('all')
+  const [connectorTierFilter, setConnectorTierFilter] = useState<'all' | 'anthropic' | 'partner'>('all')
+  const [connectorCompatFilter, setConnectorCompatFilter] = useState<'all' | 'claude-code' | 'claude-desktop' | 'claude-api'>('all')
+  const [connectorCategoryFilter, setConnectorCategoryFilter] = useState<string>('all')
+  const [connectorSortBy, setConnectorSortBy] = useState<'popularity' | 'name' | 'author'>('popularity')
 
   // --- PLUGINS STATE ---
   const [pluginSearch, setPluginSearch] = useState('')
@@ -27,24 +38,89 @@ export const ClaudeMarketplaceView: React.FC = () => {
   const [verifiedFilter, setVerifiedFilter] = useState<'all' | 'verified' | 'community'>('all')
   const [statusFilter, setStatusFilter] = useState<'all' | 'existing' | 'new'>('all')
   const [pluginSortBy, setPluginSortBy] = useState<'installs' | 'name' | 'publisher'>('installs')
-  const [copiedSlug, setCopiedSlug] = useState<string | null>(null)
 
   // --- AGENTS & PRODUCTS STATE ---
   const [agentSearch, setAgentSearch] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<string>('all')
 
+  const [copiedText, setCopiedText] = useState<string | null>(null)
+
+  const connectors = connectorsData as MarketplaceConnector[]
   const plugins = marketplaceData as MarketplacePlugin[]
   const agentsProducts = agentsProductsData as MarketplaceAgentProduct[]
 
-  const handleCopy = (cmd: string, slug: string) => {
-    navigator.clipboard.writeText(cmd)
-    setCopiedSlug(slug)
+  const handleCopy = (text: string, id: string) => {
+    navigator.clipboard.writeText(text)
+    setCopiedText(id)
     setTimeout(() => {
-      setCopiedSlug(null)
+      setCopiedText(null)
     }, 2000)
   }
 
-  // Filtered Plugins
+  // --- FILTERED CONNECTORS (1,126) ---
+  const connectorCategories = useMemo(() => {
+    const set = new Set<string>()
+    connectors.forEach((c) => {
+      if (c.categories) {
+        c.categories.forEach((cat) => set.add(cat))
+      }
+    })
+    return ['all', ...Array.from(set).sort()]
+  }, [connectors])
+
+  const filteredConnectors = useMemo(() => {
+    let list = [...connectors]
+
+    if (connectorSearch.trim()) {
+      const q = connectorSearch.toLowerCase().trim()
+      list = list.filter(
+        (c) =>
+          c.title.toLowerCase().includes(q) ||
+          c.slug.toLowerCase().includes(q) ||
+          c.author.toLowerCase().includes(q) ||
+          (c.oneLiner && c.oneLiner.toLowerCase().includes(q)) ||
+          (c.serverUrl && c.serverUrl.toLowerCase().includes(q))
+      )
+    }
+
+    if (connectorTypeFilter !== 'all') {
+      list = list.filter((c) => c.type === connectorTypeFilter)
+    }
+
+    if (connectorTierFilter === 'anthropic') {
+      list = list.filter((c) => c.verifiedTier === 'anthropic')
+    } else if (connectorTierFilter === 'partner') {
+      list = list.filter((c) => c.verifiedTier === 'partner')
+    }
+
+    if (connectorCompatFilter !== 'all') {
+      list = list.filter((c) => c.worksWith && c.worksWith.includes(connectorCompatFilter))
+    }
+
+    if (connectorCategoryFilter !== 'all') {
+      list = list.filter((c) => c.categories && c.categories.includes(connectorCategoryFilter))
+    }
+
+    if (connectorSortBy === 'popularity') {
+      list.sort((a, b) => (b.popularityScore || 0) - (a.popularityScore || 0))
+    } else if (connectorSortBy === 'name') {
+      list.sort((a, b) => a.title.localeCompare(b.title))
+    } else if (connectorSortBy === 'author') {
+      list.sort((a, b) => a.author.localeCompare(b.author))
+    }
+
+    return list
+  }, [
+    connectors,
+    connectorSearch,
+    connectorTypeFilter,
+    connectorTierFilter,
+    connectorCompatFilter,
+    connectorCategoryFilter,
+    connectorSortBy
+  ])
+
+  // --- FILTERED PLUGINS (530) ---
   const filteredPlugins = useMemo(() => {
     let list = [...plugins]
 
@@ -88,7 +164,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
     return list
   }, [plugins, pluginSearch, compatFilter, verifiedFilter, statusFilter, pluginSortBy])
 
-  // Unique categories for Agents & Products
+  // --- FILTERED AGENTS & PRODUCTS (33) ---
   const categories = useMemo(() => {
     const set = new Set<string>()
     agentsProducts.forEach((item) => {
@@ -97,7 +173,6 @@ export const ClaudeMarketplaceView: React.FC = () => {
     return ['all', ...Array.from(set).sort()]
   }, [agentsProducts])
 
-  // Filtered Agents & Products
   const filteredAgents = useMemo(() => {
     let list = [...agentsProducts]
 
@@ -130,6 +205,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
   const getCategoryColor = (cat: string) => {
     switch (cat.toLowerCase()) {
       case 'code':
+      case 'developer-tools':
         return 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
       case 'security':
         return 'bg-rose-500/10 text-rose-300 border-rose-500/30'
@@ -140,10 +216,12 @@ export const ClaudeMarketplaceView: React.FC = () => {
       case 'creative':
         return 'bg-fuchsia-500/10 text-fuchsia-300 border-fuchsia-500/30'
       case 'financial services':
+      case 'financial-services':
         return 'bg-amber-500/10 text-amber-300 border-amber-500/30'
       case 'legal':
         return 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30'
       case 'data':
+      case 'data-analytics':
         return 'bg-blue-500/10 text-blue-300 border-blue-500/30'
       default:
         return 'bg-slate-500/10 text-slate-300 border-slate-500/30'
@@ -158,29 +236,53 @@ export const ClaudeMarketplaceView: React.FC = () => {
           <div>
             <div className="flex flex-wrap items-center gap-2.5 mb-2">
               <span className="text-xl font-black text-white flex items-center gap-2">
-                <span>🧠</span> Claude Marketplace Hub
+                <span>🧠</span> Claude Marketplace Universal Hub
               </span>
               <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-violet-500/20 text-violet-300 border border-violet-500/40">
-                563 Cataloged Assets
+                1,689 Directory Listings
               </span>
               <span className="hidden sm:inline-flex px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
                 100% Dual-Matrix Parity Verified
               </span>
             </div>
             <p className="text-sm text-slate-300 max-w-3xl leading-relaxed">
-              Official catalog covering both the <strong>530 Claude Code & Desktop plugins</strong> and the <strong>33 Enterprise AI Agents & Commercial Platforms</strong> available through the Claude Marketplace.
+              Authoritative catalog covering <strong>1,126 MCP Connectors & Plugins</strong>, <strong>530 Claude Code Plugins</strong>, and <strong>33 Enterprise AI Platforms</strong> across the entire Claude ecosystem.
             </p>
           </div>
 
-          {/* Dual-Parity Download Buttons */}
+          {/* Quick Dual-Parity Download Buttons */}
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            {activeSection === 'plugins' ? (
+            {activeSection === 'connectors' && (
+              <>
+                <a
+                  href="Claude-Connectors-and-Plugins-Matrix.csv"
+                  download="Claude-Connectors-and-Plugins-Matrix.csv"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-sm font-semibold text-slate-200 border border-[#30363d] transition-colors shadow-sm"
+                  title="Download Connectors CSV Edition"
+                >
+                  <Download className="w-4 h-4 text-cyan-400" />
+                  <span>Download Connectors CSV</span>
+                </a>
+                <a
+                  href="Claude-Connectors-and-Plugins-Matrix.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-violet-950/60 hover:bg-violet-900/60 text-sm font-semibold text-violet-200 border border-violet-800/60 transition-colors shadow-sm"
+                  title="Open Connectors Markdown Edition"
+                >
+                  <FileText className="w-4 h-4 text-violet-400" />
+                  <span>View Connectors MD</span>
+                </a>
+              </>
+            )}
+
+            {activeSection === 'plugins' && (
               <>
                 <a
                   href="claude-marketplace-plugins.csv"
                   download="claude-marketplace-plugins.csv"
                   className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-sm font-semibold text-slate-200 border border-[#30363d] transition-colors shadow-sm"
-                  title="Download CSV Edition"
+                  title="Download Plugins CSV Edition"
                 >
                   <Download className="w-4 h-4 text-cyan-400" />
                   <span>Download Plugins CSV</span>
@@ -190,13 +292,15 @@ export const ClaudeMarketplaceView: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-violet-950/60 hover:bg-violet-900/60 text-sm font-semibold text-violet-200 border border-violet-800/60 transition-colors shadow-sm"
-                  title="Open Markdown Edition"
+                  title="Open Plugins Markdown Edition"
                 >
                   <FileText className="w-4 h-4 text-violet-400" />
                   <span>View Plugins MD</span>
                 </a>
               </>
-            ) : (
+            )}
+
+            {activeSection === 'agents-products' && (
               <>
                 <a
                   href="Claude-Agents-and-Products-Matrix.csv"
@@ -222,8 +326,23 @@ export const ClaudeMarketplaceView: React.FC = () => {
           </div>
         </div>
 
-        {/* Section Switcher Tabs */}
-        <div className="flex items-center gap-3 mt-6 pt-5 border-t border-[#30363d]/70 relative z-10">
+        {/* 3-Way Section Switcher Tabs */}
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-6 pt-5 border-t border-[#30363d]/70 relative z-10">
+          <button
+            onClick={() => setActiveSection('connectors')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all shadow-sm ${
+              activeSection === 'connectors'
+                ? 'bg-cyan-600 text-white shadow-cyan-900/50'
+                : 'bg-[#161b22] text-slate-400 hover:text-slate-200 border border-[#30363d]'
+            }`}
+          >
+            <Radio className="w-4 h-4" />
+            <span>Connectors & Plugins</span>
+            <span className="ml-1 px-2 py-0.5 rounded-full text-xs bg-black/40 text-cyan-200 font-mono">
+              1,126
+            </span>
+          </button>
+
           <button
             onClick={() => setActiveSection('plugins')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all shadow-sm ${
@@ -257,7 +376,284 @@ export const ClaudeMarketplaceView: React.FC = () => {
       </div>
 
       {/* ========================================================================= */}
-      {/* SECTION 1: MARKETPLACE PLUGINS (530)                                      */}
+      {/* SECTION 1: CONNECTORS & PLUGINS (1,126)                                   */}
+      {/* ========================================================================= */}
+      {activeSection === 'connectors' && (
+        <>
+          {/* Filter & Search Toolbar */}
+          <div className="bg-[#161b22]/70 border border-[#21262d] rounded-xl p-4 mb-6 flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-4">
+            {/* Search input */}
+            <div className="relative flex-1 min-w-[280px]">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={connectorSearch}
+                onChange={(e) => setConnectorSearch(e.target.value)}
+                placeholder="Search 1,126 connectors by name, author, endpoint, or description..."
+                className="w-full pl-10 pr-4 py-2 rounded-lg bg-[#0d1117] border border-[#30363d] text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-500/80 transition-colors"
+              />
+            </div>
+
+            {/* Filters Group */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
+              {/* Type Filter */}
+              <div className="flex items-center bg-[#0d1117] border border-[#30363d] rounded-lg p-1">
+                <button
+                  onClick={() => setConnectorTypeFilter('all')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorTypeFilter === 'all' ? 'bg-cyan-600/30 text-cyan-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  All (1,126)
+                </button>
+                <button
+                  onClick={() => setConnectorTypeFilter('remote')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorTypeFilter === 'remote' ? 'bg-cyan-600/30 text-cyan-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Remote MCP (994)
+                </button>
+                <button
+                  onClick={() => setConnectorTypeFilter('local')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorTypeFilter === 'local' ? 'bg-cyan-600/30 text-cyan-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Local MCP (132)
+                </button>
+              </div>
+
+              {/* Compatibility Filter */}
+              <div className="flex items-center bg-[#0d1117] border border-[#30363d] rounded-lg p-1">
+                <button
+                  onClick={() => setConnectorCompatFilter('all')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorCompatFilter === 'all' ? 'bg-violet-600/30 text-violet-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  All Apps
+                </button>
+                <button
+                  onClick={() => setConnectorCompatFilter('claude-code')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorCompatFilter === 'claude-code' ? 'bg-violet-600/30 text-violet-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Claude Code (847)
+                </button>
+                <button
+                  onClick={() => setConnectorCompatFilter('claude-desktop')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorCompatFilter === 'claude-desktop' ? 'bg-violet-600/30 text-violet-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Desktop (872)
+                </button>
+              </div>
+
+              {/* Tier Filter */}
+              <div className="flex items-center bg-[#0d1117] border border-[#30363d] rounded-lg p-1">
+                <button
+                  onClick={() => setConnectorTierFilter('all')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorTierFilter === 'all' ? 'bg-emerald-600/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  All Tiers
+                </button>
+                <button
+                  onClick={() => setConnectorTierFilter('anthropic')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorTierFilter === 'anthropic' ? 'bg-emerald-600/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Anthropic (10)
+                </button>
+                <button
+                  onClick={() => setConnectorTierFilter('partner')}
+                  className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                    connectorTierFilter === 'partner' ? 'bg-emerald-600/30 text-emerald-300 font-bold' : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Partner (1,115)
+                </button>
+              </div>
+
+              {/* Sort Selector */}
+              <div className="flex items-center gap-1.5 bg-[#0d1117] border border-[#30363d] px-2.5 py-1.5 rounded-lg text-slate-300">
+                <ArrowUpDown className="w-3.5 h-3.5 text-slate-400" />
+                <select
+                  value={connectorSortBy}
+                  onChange={(e) => setConnectorSortBy(e.target.value as any)}
+                  className="bg-transparent text-xs font-semibold focus:outline-none cursor-pointer"
+                >
+                  <option value="popularity" className="bg-[#161b22]">Popularity</option>
+                  <option value="name" className="bg-[#161b22]">Name (A-Z)</option>
+                  <option value="author" className="bg-[#161b22]">Author</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Category Chips Bar */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-3 mb-4 scrollbar-thin">
+            {connectorCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setConnectorCategoryFilter(cat)}
+                className={`px-3 py-1 rounded-md text-xs whitespace-nowrap transition-colors capitalize ${
+                  connectorCategoryFilter === cat
+                    ? 'bg-cyan-600 text-white font-bold'
+                    : 'bg-[#161b22] text-slate-400 hover:text-slate-200 border border-[#30363d]'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Results Header */}
+          <div className="flex items-center justify-between text-sm text-slate-400 mb-4 px-1">
+            <span>
+              Showing <strong>{filteredConnectors.length}</strong> of <strong>{connectors.length}</strong> connectors & plugins
+            </span>
+            <span className="hidden sm:inline text-xs text-slate-500">
+              Live Model Context Protocol (MCP) tool endpoints & local integrations
+            </span>
+          </div>
+
+          {/* Connectors Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {filteredConnectors.map((c) => {
+              const isCopied = copiedText === c.slug
+              const isRemote = c.type === 'remote'
+              return (
+                <div
+                  key={c.slug}
+                  className="rounded-xl border border-[#21262d] bg-[#0d1117]/90 hover:border-cyan-500/50 transition-all p-5 flex flex-col justify-between shadow-sm hover:shadow-md"
+                >
+                  <div>
+                    {/* Header Row */}
+                    <div className="flex items-start gap-3 mb-2.5">
+                      {c.iconUrl ? (
+                        <img
+                          src={c.iconUrl}
+                          alt={c.title}
+                          className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 object-contain p-1 shrink-0"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                          }}
+                        />
+                      ) : (
+                        <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center shrink-0 text-cyan-400">
+                          {isRemote ? <Radio className="w-5 h-5" /> : <Server className="w-5 h-5" />}
+                        </div>
+                      )}
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <h3 className="font-bold text-slate-100 text-base truncate" title={c.title}>
+                            {c.title}
+                          </h3>
+                          <span
+                            className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-semibold ${
+                              isRemote
+                                ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
+                                : 'bg-purple-500/15 text-purple-300 border border-purple-500/30'
+                            }`}
+                          >
+                            {isRemote ? 'Remote MCP' : 'Local MCP'}
+                          </span>
+                          {c.verifiedTier && (
+                            <span className="px-1.5 py-0.2 rounded text-[10px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 capitalize">
+                              {c.verifiedTier}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="text-xs text-slate-400 mt-0.5 truncate">
+                          by <span className="text-slate-300 font-medium">{c.author}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* OneLiner */}
+                    <p className="text-xs text-slate-300 line-clamp-2 mb-3 leading-relaxed">
+                      {c.oneLiner || 'No description provided.'}
+                    </p>
+
+                    {/* Server URL Box (for remote MCPs) */}
+                    {c.serverUrl && (
+                      <div className="mb-3">
+                        <button
+                          onClick={() => handleCopy(c.serverUrl!, c.slug)}
+                          className="w-full flex items-center justify-between gap-2 px-2.5 py-1.5 rounded bg-[#161b22] hover:bg-[#21262d] border border-[#30363d] text-xs font-mono text-cyan-300/90 transition-colors text-left group"
+                          title="Click to copy MCP endpoint URL"
+                        >
+                          <span className="truncate">{c.serverUrl}</span>
+                          {isCopied ? (
+                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          ) : (
+                            <Copy className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 shrink-0" />
+                          )}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Actions & Links Bottom Row */}
+                  <div className="pt-3 border-t border-[#21262d] flex flex-col gap-2">
+                    <div className="flex items-center justify-between text-xs">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        {c.worksWith?.map((w) => (
+                          <span
+                            key={w}
+                            className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#161b22] text-slate-400 border border-[#30363d]"
+                          >
+                            {w}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        {c.authorUrl && (
+                          <a
+                            href={c.authorUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors"
+                            title="Visit Author Website"
+                          >
+                            <span>Website</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+
+                        {c.directoryUrl && (
+                          <a
+                            href={c.directoryUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
+                            title="View on Claude Directory"
+                          >
+                            <span>Directory</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </>
+      )}
+
+      {/* ========================================================================= */}
+      {/* SECTION 2: MARKETPLACE PLUGINS (530)                                      */}
       {/* ========================================================================= */}
       {activeSection === 'plugins' && (
         <>
@@ -382,7 +778,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
           {/* Plugins Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {filteredPlugins.map((plugin) => {
-              const isCopied = copiedSlug === plugin.slug
+              const isCopied = copiedText === plugin.slug
               return (
                 <div
                   key={plugin.slug}
@@ -491,7 +887,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* SECTION 2: AGENTS & PRODUCTS (33)                                         */}
+      {/* SECTION 3: AGENTS & PRODUCTS (33)                                         */}
       {/* ========================================================================= */}
       {activeSection === 'agents-products' && (
         <>
@@ -556,7 +952,6 @@ export const ClaudeMarketplaceView: React.FC = () => {
                           alt={product.title}
                           className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 object-contain p-1 shrink-0"
                           onError={(e) => {
-                            // Fallback if image fails
                             e.currentTarget.style.display = 'none'
                           }}
                         />
