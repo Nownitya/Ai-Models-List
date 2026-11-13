@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import { X, Copy, Check, ExternalLink, Bookmark, BookmarkCheck, Star, Code2, ArrowUpRight } from 'lucide-react'
+import {
+  X,
+  Copy,
+  Check,
+  ExternalLink,
+  Bookmark,
+  BookmarkCheck,
+  Star,
+  Code2,
+  ArrowUpRight,
+  Terminal,
+  Cpu
+} from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
+
+type AssistantTab = 'antigravity' | 'claude' | 'cursor' | 'codex'
 
 export const SkillDrawer: React.FC = () => {
   const inspectSkill = useSkillStore((s) => s.inspectSkill)
@@ -9,8 +23,10 @@ export const SkillDrawer: React.FC = () => {
   const toggleStack = useSkillStore((s) => s.toggleStack)
   const setRepo = useSkillStore((s) => s.setRepo)
 
+  const [activeAssistantTab, setActiveAssistantTab] = useState<AssistantTab>('antigravity')
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedCli, setCopiedCli] = useState(false)
+  const [copiedRecipe, setCopiedRecipe] = useState(false)
 
   // Close drawer on Escape
   useEffect(() => {
@@ -37,6 +53,43 @@ export const SkillDrawer: React.FC = () => {
     navigator.clipboard.writeText(inspectSkill.cli)
     setCopiedCli(true)
     setTimeout(() => setCopiedCli(false), 1400)
+  }
+
+  const getRecipeContent = (tab: AssistantTab): { label: string; command: string; hint: string } => {
+    switch (tab) {
+      case 'antigravity':
+        return {
+          label: 'Antigravity Chat Slash Command',
+          command: `/${inspectSkill.scoped}`,
+          hint: `Run in Antigravity chat, or install via: python scripts/install-to-project.py --skill ${inspectSkill.scoped}`
+        }
+      case 'claude':
+        return {
+          label: 'Claude Code Activation',
+          command: `/${inspectSkill.id}`,
+          hint: `MCP Server endpoint: python scripts/mcp_server.py (connect with claude mcp add skilldock ...)`
+        }
+      case 'cursor':
+        return {
+          label: 'Cursor Rule Reference',
+          command: `@/${inspectSkill.id}`,
+          hint: `Configured as workspace rule: .cursor/rules/${inspectSkill.scoped}.mdc`
+        }
+      case 'codex':
+        return {
+          label: 'Codex / CLI Runtime Invocation',
+          command: `python scripts/setup-project-agents.py --skill ${inspectSkill.scoped}`,
+          hint: `Physical package: .agents/skills/${inspectSkill.categoryId}/${inspectSkill.id}/SKILL.md`
+        }
+    }
+  }
+
+  const recipe = getRecipeContent(activeAssistantTab)
+
+  const copyRecipe = () => {
+    navigator.clipboard.writeText(`${recipe.command}\n# ${recipe.hint}`)
+    setCopiedRecipe(true)
+    setTimeout(() => setCopiedRecipe(false), 1400)
   }
 
   let priorityBadge = 'bg-[#18181b] text-zinc-400 border-[#27272a]'
@@ -98,40 +151,99 @@ export const SkillDrawer: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick-Run Commands */}
-          <div className="space-y-3 bg-[#111114] p-4 rounded-xl border border-[#27272a]">
-            <div>
-              <div className="flex items-center justify-between text-xs font-semibold text-zinc-300 mb-1.5">
-                <span>Slash Command</span>
-                <span className="text-[11px] text-zinc-500 font-mono">Chat Activation</span>
+          {/* Multi-Assistant Recipe Switcher (Tabs) */}
+          <div className="rounded-xl border border-[#27272a] bg-[#111114] p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono font-semibold text-zinc-300 flex items-center gap-1.5">
+                <Cpu className="w-3.5 h-3.5 text-zinc-400" />
+                <span>Assistant Setup Recipe</span>
+              </span>
+              <span className="text-[10px] font-mono text-zinc-500">Target IDE</span>
+            </div>
+
+            {/* Assistant Tabs Ribbon */}
+            <div className="grid grid-cols-4 gap-1 p-1 bg-[#09090b] rounded-lg border border-[#27272a]">
+              {(
+                [
+                  { id: 'antigravity', label: 'Antigravity', icon: '⚡' },
+                  { id: 'claude', label: 'Claude', icon: '🧠' },
+                  { id: 'cursor', label: 'Cursor', icon: '🖱️' },
+                  { id: 'codex', label: 'Codex', icon: '🤖' },
+                ] as const
+              ).map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveAssistantTab(tab.id)}
+                  className={`py-1.5 text-center text-xs font-mono rounded-md transition-all cursor-pointer ${
+                    activeAssistantTab === tab.id
+                      ? 'bg-zinc-800 text-white font-bold border border-zinc-700 shadow-2xs'
+                      : 'text-zinc-500 hover:text-zinc-300'
+                  }`}
+                >
+                  <span className="mr-1">{tab.icon}</span>
+                  <span>{tab.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Recipe Content Box */}
+            <div className="space-y-2 pt-1">
+              <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                <span>{recipe.label}</span>
+                <button
+                  onClick={copyRecipe}
+                  className="inline-flex items-center gap-1 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                  title="Copy full setup command"
+                >
+                  {copiedRecipe ? (
+                    <>
+                      <Check className="w-3 h-3 text-emerald-400" />
+                      <span className="text-emerald-400">Copied</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3 h-3" />
+                      <span>Copy</span>
+                    </>
+                  )}
+                </button>
               </div>
+
               <div className="flex items-center justify-between gap-2 bg-[#18181b] px-3 py-2 rounded-md font-mono text-xs text-zinc-200 border border-[#27272a]">
-                <span>/{inspectSkill.scoped}</span>
+                <span className="truncate">{recipe.command}</span>
                 <button
                   onClick={copySlash}
-                  className="text-zinc-500 hover:text-white p-0.5 cursor-pointer"
-                  title="Copy Slash Command"
+                  className="text-zinc-500 hover:text-white p-0.5 cursor-pointer shrink-0"
+                  title="Copy Command"
                 >
                   {copiedSlash ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
               </div>
-            </div>
 
-            <div>
-              <div className="flex items-center justify-between text-xs font-semibold text-zinc-300 mb-1.5">
+              <p className="text-[11px] text-zinc-500 font-mono leading-relaxed">
+                {recipe.hint}
+              </p>
+            </div>
+          </div>
+
+          {/* Quick-Run Terminal Executable */}
+          <div className="space-y-2 bg-[#111114] p-4 rounded-xl border border-[#27272a]">
+            <div className="flex items-center justify-between text-xs font-semibold text-zinc-300">
+              <span className="flex items-center gap-1.5">
+                <Terminal className="w-3.5 h-3.5 text-zinc-400" />
                 <span>CLI Installation Command</span>
-                <span className="text-[11px] text-zinc-500 font-mono">Terminal Executable</span>
-              </div>
-              <div className="flex items-center justify-between gap-2 bg-[#18181b] px-3 py-2 rounded-md font-mono text-xs text-zinc-300 border border-[#27272a]">
-                <span className="truncate">{inspectSkill.cli}</span>
-                <button
-                  onClick={copyCli}
-                  className="text-zinc-500 hover:text-white p-0.5 shrink-0 cursor-pointer"
-                  title="Copy CLI Command"
-                >
-                  {copiedCli ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                </button>
-              </div>
+              </span>
+              <span className="text-[10px] text-zinc-500 font-mono">Stand-alone Script</span>
+            </div>
+            <div className="flex items-center justify-between gap-2 bg-[#18181b] px-3 py-2 rounded-md font-mono text-xs text-zinc-300 border border-[#27272a]">
+              <span className="truncate">{inspectSkill.cli}</span>
+              <button
+                onClick={copyCli}
+                className="text-zinc-500 hover:text-white p-0.5 shrink-0 cursor-pointer"
+                title="Copy CLI Command"
+              >
+                {copiedCli ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+              </button>
             </div>
           </div>
 
@@ -193,14 +305,14 @@ export const SkillDrawer: React.FC = () => {
             </button>
           )}
 
-          {/* Quick Guidance / Prompt Usage */}
+          {/* Prompt Invocation Pattern */}
           <div className="bg-[#111114] p-4 rounded-xl border border-[#27272a] space-y-2">
             <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-300">
               <Code2 className="w-3.5 h-3.5 text-zinc-400" />
               <span>Prompt Invocation Pattern</span>
             </div>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              To trigger this skill in Antigravity, Claude Code, or Codex, enter the slash command directly in your prompt.
+              To trigger this skill in any coding agent, place the slash command directly in your prompt block:
             </p>
             <div className="font-mono text-xs p-3 rounded-md bg-[#18181b] text-zinc-300 border border-[#27272a]">
               {`<system>\nActivate skill /${inspectSkill.scoped}\nFollow strict repository laws.\n</system>`}

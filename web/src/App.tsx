@@ -1,6 +1,7 @@
 import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { HeroSection } from '@/components/layout/HeroSection'
+import { StaffPicks } from '@/components/layout/StaffPicks'
 import { FilterToolbar } from '@/components/filters/FilterToolbar'
 import { FrameworkGrid } from '@/components/frameworks/FrameworkGrid'
 import { FrameworkDrawer } from '@/components/frameworks/FrameworkDrawer'
@@ -26,8 +27,13 @@ export const App: React.FC = () => {
       {/* 1. Ultra-Slim Sticky Navigation Topbar (54px) */}
       <Header />
 
-      {/* 2. Editorial Hero (Natural Document Flow - Scrolls away smoothly) */}
-      {(activePillar === 'frameworks' || activePillar === 'skills') && <HeroSection />}
+      {/* 2. Editorial Hero & Staff Picks (Natural Document Flow - Scrolls away smoothly) */}
+      {(activePillar === 'frameworks' || activePillar === 'skills') && (
+        <>
+          <HeroSection />
+          <StaffPicks />
+        </>
+      )}
 
       {/* 3. Active Pillar Viewport */}
       <main className="flex-1 pb-16">

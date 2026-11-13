@@ -22,7 +22,7 @@ export const HeroSection: React.FC = () => {
             <span className="text-zinc-400">Open Standard:</span>
             <span className="text-zinc-200 font-semibold">SKILL.md & MCP Protocol</span>
             <span className="text-zinc-500">·</span>
-            <span className="text-emerald-400 font-medium">Dual-Matrix Parity 100%</span>
+            <span className="text-emerald-400 font-medium">100% Verified Sources</span>
           </div>
 
           {/* Editorial Headline with Instrument Serif Italic Accent */}
