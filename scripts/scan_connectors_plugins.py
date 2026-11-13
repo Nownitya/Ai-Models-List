@@ -34,3 +34,4 @@ print(f"Found {len(items_pos)} 'items': [ occurrences")
 for idx, p in enumerate(items_pos):
     snippet = full_stream[max(0, p-50):min(len(full_stream), p+120)]
     print(f"[{idx:2d}] {snippet}")
+
