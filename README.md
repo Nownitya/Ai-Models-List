@@ -18,9 +18,13 @@
    - 🔌 [**Markdown Edition**](Claude-Marketplace-Plugins-Matrix.md) (`Claude-Marketplace-Plugins-Matrix.md`)
    - 📊 [**CSV Edition**](Claude-Marketplace-Plugins-Matrix.csv) (`Claude-Marketplace-Plugins-Matrix.csv`)
    - Complete directory of all 530 official Anthropic and partner plugins, with 100% verified GitHub repository source links, installation commands, compatibility flags, and verified publisher badges.
-3. **Category-Wise Skill Folders** (`skills/`): Modular directories housing specific skill documentation, installation instructions, and best practice playbooks across 12 distinct functional domains.
-4. **AI Optimization Prompts** (`prompts/`): High-efficiency system prompts, reasoning architectures, few-shot templates, and verification gates designed to extract maximum performance from LLMs (Gemini, Claude, GPT, etc.).
-5. **Universal Project Documentation Standard (Layer 15)**: Standardized architecture, governance rules, security checklists, and self-review gates.
+3. **Claude Marketplace Agents & Products Matrix (33 Platforms)**:
+   - 🏢 [**Markdown Edition**](Claude-Agents-and-Products-Matrix.md) (`Claude-Agents-and-Products-Matrix.md`)
+   - 📊 [**CSV Edition**](Claude-Agents-and-Products-Matrix.csv) (`Claude-Agents-and-Products-Matrix.csv`)
+   - Enterprise AI agents and commercial developer platforms (Cursor, GitLab, CodeRabbit, Datadog, Fal, Vercel, Snowflake, Asana, etc.) eligible for Anthropic commitments and procurement.
+4. **Category-Wise Skill Folders** (`skills/`): Modular directories housing specific skill documentation, installation instructions, and best practice playbooks across 12 distinct functional domains.
+5. **AI Optimization Prompts** (`prompts/`): High-efficiency system prompts, reasoning architectures, few-shot templates, and verification gates designed to extract maximum performance from LLMs (Gemini, Claude, GPT, etc.).
+6. **Universal Project Documentation Standard (Layer 15)**: Standardized architecture, governance rules, security checklists, and self-review gates.
 
 ---
 
@@ -77,6 +81,8 @@ Ai-Models-List/
 ├── AI-Coding-Skills-and-Tools-Matrix.csv     # Master workbook (CSV format)
 ├── Claude-Marketplace-Plugins-Matrix.md      # Claude Marketplace 530 plugins (Markdown format)
 ├── Claude-Marketplace-Plugins-Matrix.csv     # Claude Marketplace 530 plugins (CSV format)
+├── Claude-Agents-and-Products-Matrix.md      # Claude Marketplace 33 enterprise agents & products (MD)
+├── Claude-Agents-and-Products-Matrix.csv     # Claude Marketplace 33 enterprise agents & products (CSV)
 ├── README.md                                 # Project overview and navigation
 ├── AGENTS.md                                 # Agent operating instructions & governance laws
 ├── GLOSSARY.md                               # Canonical domain vocabulary & terminology

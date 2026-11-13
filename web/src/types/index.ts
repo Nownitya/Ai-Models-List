@@ -160,3 +160,20 @@ export interface MarketplacePlugin {
   already_in_repo: boolean
   marketplace_url: string
 }
+
+export interface MarketplaceAgentProduct {
+  id: string
+  title: string
+  slug: string
+  tagline: string
+  subtitle: string
+  overview: string
+  how_to_buy: string
+  use_cases: string[]
+  category: string
+  logo: string | null
+  website: string
+  github: string
+  marketplace_url: string
+  external_links?: string[]
+}

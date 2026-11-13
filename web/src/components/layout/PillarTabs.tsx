@@ -30,7 +30,7 @@ export const PillarTabs: React.FC = () => {
     {
       id: 'marketplace',
       label: 'Claude Marketplace',
-      count: 530,
+      count: 563,
       icon: <Store className="w-4 h-4" />,
       color: 'text-violet-400',
       activeBg: 'bg-violet-500/15 border-violet-500/50 text-violet-300 shadow-sm shadow-violet-950/50',
