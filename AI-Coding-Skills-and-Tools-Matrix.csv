@@ -9,7 +9,7 @@ Compatibility,"Verify current repository contents, exact skill names, licensing 
 Avoid duplication,"GSD, Superpowers, gstack and general engineering skills overlap. Assign clear responsibilities and avoid loading duplicate workflows."
 Suggested focus,"Android/Kotlin/KMP, core engineering, project planning, UI/UX, testing, debugging, security and code review."
 Project documentation,"See 15_Project_Docs for the reusable project documentation standard, engineering quality checklist, AI self-review and security checklist."
-Newly reviewed tools,Graphify = codebase relationship graph; Context7 = current external library documentation (complementary). MemPalace = persistent project/conversation memory. GSD Core + GSD Pi = core workflow + Pi host integration. Impeccable = UI design critique/audit/polish.
+Newly reviewed tools,Graphify = codebase relationship graph; Context7 = current external library documentation (complementary). MemPalace = persistent project/conversation memory. GSD Core + GSD Pi = core workflow + Pi host integration. Impeccable = UI design critique/audit/polish. Claude Marketplace = Complete 530 Claude Marketplace plugins matrix (312 Claude Code compatible) with verified GitHub sources and install commands.
 Tool distinction,Graphify = codebase relationship graph; Context7 = current external library docs; MemPalace = persistent project/conversation memory; GSD Pi = Pi integration for GSD Core.
 01 Core Engineering,,
 Reference / skill format:,https://agentskills.io/,
@@ -48,24 +48,24 @@ karpathy-guidelines,P1,"Third-party Karpathy-inspired behavioral guidelines: Thi
 playwright-cli,P0,"End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.",https://github.com/microsoft/playwright-cli,https://playwright.dev/
 obsidian-markdown,P0,"Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows.",https://github.com/kepano/obsidian-skills,https://stephango.com/file-over-app
 google-workspace-cli,P1,"Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically.",https://github.com/googleworkspace/cli,https://developers.google.com/workspace
-typescript-tailwind-patterns,"TypeScript & Tailwind Patterns",P1,/typescript-tailwind-patterns,"Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design."
-lark-enterprise-cli,"Lark & Feishu Enterprise CLI",P1,/lark-enterprise-cli,"Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable."
-fastify-backend-perf,"Fastify Backend Architecture",P1,/fastify-backend-perf,"High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging."
-vercel-agent-browser,"Vercel Agent Browser",P1,/vercel-agent-browser,"Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation."
-github-copilot-patterns,"GitHub Copilot Patterns",P1,/github-copilot-patterns,"Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows."
-brag-document-generator,"Brag Document Generator",P1,/brag-document-generator,"Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation."
-firecrawl-web-scrape,"Firecrawl Web Scraper",P1,/firecrawl-web-scrape,"Clean LLM-ready markdown extraction, dynamic JS crawler, and structured data parsing."
-convex-backend-sync,"Convex Backend State Sync",P1,/convex-backend-sync,"Convex reactive database queries, transactional mutations, client state sync, and scheduled jobs."
-scrapegraph-ai-pipeline,"ScrapeGraphAI Pipeline",P1,/scrapegraph-ai-pipeline,"Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining."
-better-auth-patterns,"Better Auth Identity & 2FA",P1,/better-auth-patterns,"Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC."
-nx-monorepo-architect,"Nx Monorepo Architecture",P1,/nx-monorepo-architect,"Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries."
-firebase-agent-suite,"Firebase Agent Suite",P1,/firebase-agent-suite,"Google Firebase backend suite, Firestore security rules audit, Cloud Functions, and Firebase Auth."
-svelte5-runes-patterns,"Svelte 5 Runes Patterns",P1,/svelte5-runes-patterns,"Svelte 5 runes reactivity ($state, $derived, $effect), SvelteKit SSR hydration, and modern component architecture."
-neon-serverless-postgres,"Neon Serverless Postgres",P1,/neon-serverless-postgres,"Neon Serverless Postgres CLI, instant database branching, schema migrations, and connection pooling."
-clerk-auth-identity,"Clerk Auth & Identity",P1,/clerk-auth-identity,"Clerk identity management, multi-tenant organizations, webhook signature verification, and session tokens."
-prisma-orm-patterns,"Prisma ORM Patterns",P1,/prisma-orm-patterns,"Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters."
-stripe-link-checkout,"Stripe Link 1-Click Checkout",P1,/stripe-link-checkout,"Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation."
-obsidian-developer-second-brain,"Obsidian Developer Second Brain",P0,/obsidian-developer-second-brain,"Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync."
+typescript-tailwind-patterns,TypeScript & Tailwind Patterns,P1,/typescript-tailwind-patterns,"Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design."
+lark-enterprise-cli,Lark & Feishu Enterprise CLI,P1,/lark-enterprise-cli,"Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable."
+fastify-backend-perf,Fastify Backend Architecture,P1,/fastify-backend-perf,"High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging."
+vercel-agent-browser,Vercel Agent Browser,P1,/vercel-agent-browser,"Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation."
+github-copilot-patterns,GitHub Copilot Patterns,P1,/github-copilot-patterns,"Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows."
+brag-document-generator,Brag Document Generator,P1,/brag-document-generator,"Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation."
+firecrawl-web-scrape,Firecrawl Web Scraper,P1,/firecrawl-web-scrape,"Clean LLM-ready markdown extraction, dynamic JS crawler, and structured data parsing."
+convex-backend-sync,Convex Backend State Sync,P1,/convex-backend-sync,"Convex reactive database queries, transactional mutations, client state sync, and scheduled jobs."
+scrapegraph-ai-pipeline,ScrapeGraphAI Pipeline,P1,/scrapegraph-ai-pipeline,"Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining."
+better-auth-patterns,Better Auth Identity & 2FA,P1,/better-auth-patterns,"Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC."
+nx-monorepo-architect,Nx Monorepo Architecture,P1,/nx-monorepo-architect,"Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries."
+firebase-agent-suite,Firebase Agent Suite,P1,/firebase-agent-suite,"Google Firebase backend suite, Firestore security rules audit, Cloud Functions, and Firebase Auth."
+svelte5-runes-patterns,Svelte 5 Runes Patterns,P1,/svelte5-runes-patterns,"Svelte 5 runes reactivity ($state, $derived, $effect), SvelteKit SSR hydration, and modern component architecture."
+neon-serverless-postgres,Neon Serverless Postgres,P1,/neon-serverless-postgres,"Neon Serverless Postgres CLI, instant database branching, schema migrations, and connection pooling."
+clerk-auth-identity,Clerk Auth & Identity,P1,/clerk-auth-identity,"Clerk identity management, multi-tenant organizations, webhook signature verification, and session tokens."
+prisma-orm-patterns,Prisma ORM Patterns,P1,/prisma-orm-patterns,"Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters."
+stripe-link-checkout,Stripe Link 1-Click Checkout,P1,/stripe-link-checkout,"Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation."
+obsidian-developer-second-brain,Obsidian Developer Second Brain,P0,/obsidian-developer-second-brain,"Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,
@@ -179,13 +179,13 @@ shadcn-ui,P0,"Accessible, composable Tailwind CSS and Radix UI component library
 emil-design-eng,P0,"Emil Kowalski's Apple-grade design engineering, fluid micro-interactions, animation vocabulary, gesture physics, and craft polish.",https://github.com/emilkowalski/skills,https://emilkowal.ski/
 vercel-react-patterns,P0,"Vercel Labs production React composition patterns, Server Components architecture, web design guidelines, and performance practices.",https://github.com/vercel-labs/agent-skills,https://vercel.com/
 gsap-animation,P1,"GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion.",https://github.com/greensock/gsap-skills,https://gsap.com/
-typography-layout-polish,"Typography & Layout Polish",P1,/typography-layout-polish,"Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers."
-stitch-design-system,"Stitch Design System Bridge",P1,/stitch-design-system,"Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge."
-component-anatomy-specs,"Component Anatomy Specs",P1,/component-anatomy-specs,"Design system component anatomy contracts, visual bounding boxes, and layout contracts."
-data-viz-html-reports,"Data Viz & HTML Reports",P1,/data-viz-html-reports,"Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports."
-interface-feel-polish,"Interface Feel & Tactile Physics",P1,/interface-feel-polish,"Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback."
-stageshow-ui-presentation,"Stageshow UI Presentation",P1,/stageshow-ui-presentation,"Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges."
-extract-design-tokens,"Design Token Extractor",P1,/extract-design-tokens,"Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites."
+typography-layout-polish,Typography & Layout Polish,P1,/typography-layout-polish,"Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers."
+stitch-design-system,Stitch Design System Bridge,P1,/stitch-design-system,"Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge."
+component-anatomy-specs,Component Anatomy Specs,P1,/component-anatomy-specs,"Design system component anatomy contracts, visual bounding boxes, and layout contracts."
+data-viz-html-reports,Data Viz & HTML Reports,P1,/data-viz-html-reports,"Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports."
+interface-feel-polish,Interface Feel & Tactile Physics,P1,/interface-feel-polish,"Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback."
+stageshow-ui-presentation,Stageshow UI Presentation,P1,/stageshow-ui-presentation,"Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges."
+extract-design-tokens,Design Token Extractor,P1,/extract-design-tokens,"Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites."
 06 GSD,,
 Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
 Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
@@ -274,9 +274,9 @@ Repository - T3 Code,Reference,https://github.com/pingdotgg/t3code
 Everything Claude Code (ECC),P1,"Broad open-source agent-harness engineering system: 71 specialized agents, 314 skills, rules, hooks, memory/continuous learning, workflow automation and AgentShield security scanning. Covers planning → TDD/implementation → review → verification → memory/improvement. Best-supported on Claude Code; native plugin paths for Codex and Qoder; adapters exist for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity and others, but feature parity varies—check platform support matrix before relying on hooks/memory/automation. Multi-harness guided installer supports Claude Code, Codex and Kimi Code; advanced adapters have separate install paths. MIT licensed. Model/provider configuration depends on host; ECC is not a model and does not supply one. Potential overlap with GSD, Superpowers, gstack, MemPalace and security/review tools—select capabilities rather than loading everything."
 browser-use,P0,"Autonomous web automation and browser agent controller enabling LLMs to navigate, inspect DOM, extract data, click, type, and automate multi-step web workflows.",https://github.com/browser-use/browser-use,https://browser-use.com/
 orca-agent,P0,"Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously.",https://github.com/stablyai/orca,https://useorca.com/
-herdr-orchestration,"Herdr Multi-Agent Orchestration",P1,/herdr-orchestration,"Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination."
-agent-desktop-gui,"Agent Desktop GUI",P1,/agent-desktop-gui,"Native desktop agent orchestration, operating system window management, and GUI interaction."
-mastra-agent-framework,"Mastra Agent Framework",P1,/mastra-agent-framework,"Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals."
+herdr-orchestration,Herdr Multi-Agent Orchestration,P1,/herdr-orchestration,"Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination."
+agent-desktop-gui,Agent Desktop GUI,P1,/agent-desktop-gui,"Native desktop agent orchestration, operating system window management, and GUI interaction."
+mastra-agent-framework,Mastra Agent Framework,P1,/mastra-agent-framework,"Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals."
 10 AI Infrastructure,,,,Research
 Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
 Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
@@ -292,6 +292,8 @@ Tool / Service,Priority,Why,,
 composio-skills,P0,"Unified MCP Gateway and curated registry of 1,000+ agent skills (79k+ stars). Connects AI coding assistants (Claude Code, Antigravity, Cursor, Codex) to 1,000+ external SaaS tools, APIs, and services (Slack, GitHub, Jira, Gmail, Calendar, Linear) with built-in OAuth authentication, RBAC, and audit logs.",https://github.com/ComposioHQ/awesome-claude-skills,https://composio.dev/
 caveman,P1,"High-density token compression skill and proxy for AI coding agents (118k+ stars). Cuts input and output tokens by 33% to 65% by enforcing concise, telegraphic communication ('caveman voice') that eliminates conversational filler while preserving 100% of technical code, reasoning substance, and factual correctness.",https://github.com/juliusbrussee/caveman,https://caveman-ai.com/
 billion-context,P1,Context-compression engine for month-long single agent sessions (billions of tokens). Employs semantic context compaction allowing small 100K-token context windows to sustain prolonged development cycles while reducing token consumption by up to 5x.,https://github.com/ranxianglei/billion-context,
+atlassian-mcp,P0,"Official Atlassian Model Context Protocol (MCP) server for Claude Code and coding agents. Provides unified context across Jira issues, Confluence documentation, and Bitbucket pull requests with live issue transition and comment workflows.",https://github.com/atlassian/atlassian-mcp-server,https://support.atlassian.com/
+huggingface-skills,P1,"Hugging Face model hub and inference integration skills for Claude Code. Enables search, evaluation, fine-tuning scripts, and API orchestration across open-source weights and datasets.",https://github.com/huggingface/skills,https://huggingface.co/docs
 anthropic-skills,P0,"Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku.",https://github.com/anthropics/skills,https://docs.anthropic.com/
 google-skills,P0,"Google's official open collection of Agent Skills for Google developer platforms, Cloud infrastructure, and AI engineering (23k+ stars). Complements android/skills and google/agents-cli with cross-ecosystem tools for Gemini, Vertex AI, and Workspace.",https://github.com/google/skills,https://ai.google.dev/
 Gemini API,P2,Integrate Gemini APIs into applications and development workflows.,,
@@ -312,13 +314,16 @@ vercel-ai-sdk,P0,"Unified TypeScript and JavaScript AI SDK for building streamin
 cloudflare-skills,P0,"Cloudflare Workers edge compute, serverless deployment, Wrangler CLI configuration, KV/D1 database bindings, and global edge caching.",https://github.com/cloudflare/skills,https://developers.cloudflare.com/workers/
 supabase-skills,P0,"Supabase Postgres database design, pgvector semantic search, row-level security (RLS) policies, edge functions, and client SDK integration.",https://github.com/supabase/agent-skills,https://supabase.com/docs
 azure-skills,P1,"Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring.",https://github.com/microsoft/azure-skills,https://azure.microsoft.com/
-typesafe-ai-schemas,"TypeSafe AI Schemas",P1,/typesafe-ai-schemas,"Strict JSON schema validation, typed function calling, and structured output invariant guards."
+typesafe-ai-schemas,TypeSafe AI Schemas,P1,/typesafe-ai-schemas,"Strict JSON schema validation, typed function calling, and structured output invariant guards."
 11 Code Review Quality,,
 Cloudflare Security Audit Skill repository:,https://github.com/cloudflare/security-audit-skill,
 CodeRabbit documentation:,https://docs.coderabbit.ai/,
 CodeRabbit skills repository:,https://github.com/coderabbitai/skills,
 ,,
 Tool / Capability,Priority,Why
+semgrep-security,P0,"Semgrep SAST security rule scanner and MCP marketplace for Claude Code (19.5k+ installs). Detects OWASP Top 10 vulnerabilities, hardcoded secrets, and semantic anti-patterns with instant autofix suggestions."
+greptile-codebase,P1,"Full-codebase semantic intelligence plugin and API for Claude Code (56.6k+ installs). Generates deep architectural context, symbol call graphs, and historical PR reasoning across entire multi-repo codebases."
+sourcegraph-search,P1,"Sourcegraph Cody and universal code search plugin for Claude Code. Performs regex, structural, and cross-repository symbol indexing to uncover architectural patterns across enterprise codebases."
 cloudflare-security-audit,P0,"Cloudflare's official coding-agent skill for multi-phase security audits (65k+ stars). Conducts automated vulnerability analysis, surface scanning, and machine-readable risk reporting across dependencies, API routes, authentication gates, and edge workers with independently verified proofs."
 CodeRabbit,P1,"Automate pull request reviews and identify bugs, security risks and missing tests across GitHub PRs and Google Antigravity."
 Open Code Review,P2,Explore additional automated code-review workflows; verify exact product/repository before adoption.
@@ -331,12 +336,12 @@ Verification note,"CodeRabbit is a review service/integration, not a general-pur
 sentry-diagnostics,P0,"Developer-first error tracking, distributed tracing, crash dump analysis, and performance monitoring diagnostics for applications and AI agents.",https://github.com/getsentry/sentry,https://sentry.io/
 trailofbits-security,P0,"Trail of Bits high-assurance code security, sharp edges detection, supply-chain risk auditing, and static analysis verification.",https://github.com/trailofbits/skills,https://www.trailofbits.com/
 web-quality-a11y,P0,"Addy Osmani's web accessibility (a11y), Core Web Vitals optimization, semantic HTML auditing, and frontend quality engineering.",https://github.com/addyosmani/web-quality-skills,https://addyosmani.com/
-hallmark-frontend-eval,"Hallmark Frontend Evaluation",P1,/hallmark-frontend-eval,"Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment."
-browser-act-testing,"Browser Act Synthetic Testing",P1,/browser-act-testing,"Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing."
-network-latency-benchmarks,"Network Latency Benchmarks",P1,/network-latency-benchmarks,"Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking."
-continuous-review-loop,"Continuous Review Loop",P1,/continuous-review-loop,"Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops."
-momentic-visual-testing,"Momentic Visual Testing",P1,/momentic-visual-testing,"AI-driven visual regression testing, session replay analysis, and automated test failure triage."
-currents-playwright-sharding,"Currents Playwright Sharding",P1,/currents-playwright-sharding,"Playwright test sharding, parallel CI optimization, flaky test mitigation, and Currents dashboard orchestration."
+hallmark-frontend-eval,Hallmark Frontend Evaluation,P1,/hallmark-frontend-eval,"Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment."
+browser-act-testing,Browser Act Synthetic Testing,P1,/browser-act-testing,"Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing."
+network-latency-benchmarks,Network Latency Benchmarks,P1,/network-latency-benchmarks,"Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking."
+continuous-review-loop,Continuous Review Loop,P1,/continuous-review-loop,"Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops."
+momentic-visual-testing,Momentic Visual Testing,P1,/momentic-visual-testing,"AI-driven visual regression testing, session replay analysis, and automated test failure triage."
+currents-playwright-sharding,Currents Playwright Sharding,P1,/currents-playwright-sharding,"Playwright test sharding, parallel CI optimization, flaky test mitigation, and Currents dashboard orchestration."
 12 Optional Specialized,,
 Google Maps Platform documentation:,https://developers.google.com/maps,
 Google Maps GitHub organization:,https://github.com/googlemaps,
@@ -346,6 +351,9 @@ Google Cloud documentation:,https://cloud.google.com/docs,
 Google Cloud repositories:,https://github.com/GoogleCloudPlatform,
 ,,
 Skill / Capability,Priority,Why
+datadog-observability,P1,"Official Datadog agent observability plugin for Claude Code. Pulls live APM traces, error tracking, infrastructure metrics, and monitors directly into coding assistant sessions for defect triage."
+posthog-analytics,P1,"Official PostHog product analytics, session replay analysis, and feature flag management plugin for Claude Code. Verifies event taxonomy and queries user funnel telemetry."
+astronomer-airflow,P1,"Astronomer Apache Airflow and data engineering agent skills for Claude Code. Scaffolds DAGs, validates task dependencies, and diagnoses pipeline runtime errors."
 google-maps-platform,P2,Add Google Maps and location functionality.
 agent-browser,P2,Automate browser workflows.
 managing-python-dependencies,P2,Maintain Python tooling and dependencies.
@@ -369,11 +377,11 @@ dak-setup,P3,Specialized environment setup.
 graphify,P2,Visualize codebase relationships.
 hyperframes-media,P1,"Declarative generative video framing, media automation, and scene composition manifests."
 marketing-growth-engine,P1,"Technical SEO audits, conversion rate optimization (CRO), and copywriting heuristics."
-video-frame-analysis,"Video Frame Analysis",P1,/video-frame-analysis,"Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection."
-gamedev-mechanics,"GameDev Physics & Mechanics",P1,/gamedev-mechanics,"Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math."
-higgsfield-visual-media,"Higgsfield Visual Media",P1,/higgsfield-visual-media,"Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition."
-binance-agentic-wallet,"Binance Agentic Wallet",P1,/binance-agentic-wallet,"Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows."
-motion-sound-effects,"Motion Sound Effects & Foley",P1,/motion-sound-effects,"Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis."
+video-frame-analysis,Video Frame Analysis,P1,/video-frame-analysis,"Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection."
+gamedev-mechanics,GameDev Physics & Mechanics,P1,/gamedev-mechanics,"Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math."
+higgsfield-visual-media,Higgsfield Visual Media,P1,/higgsfield-visual-media,"Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition."
+binance-agentic-wallet,Binance Agentic Wallet,P1,/binance-agentic-wallet,"Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows."
+motion-sound-effects,Motion Sound Effects & Foley,P1,/motion-sound-effects,"Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis."
 Priority,Meaning,Recommended action
 P0,Essential,Prioritize for the main toolkit; enable when relevant.
 P1,High,Strongly recommended for regular workflows.
@@ -423,6 +431,7 @@ Taste Skill (Leonxlnx),https://tasteskill.dev,https://github.com/Leonxlnx/taste-
 Meta Astryx,https://github.com/meta/astryx,https://github.com/meta/astryx,Meta's agent-ready open-source React design system with built-in MCP server and CLI (14.5k+ stars).
 Billion-Context,https://github.com/ranxianglei/billion-context,https://github.com/ranxianglei/billion-context,Context-compression plugin for month-long single agent sessions and token savings (4.5k+ stars).
 Anthropic Agent Skills,https://docs.anthropic.com/,https://github.com/anthropics/skills,Anthropic's official public repository for Claude Code Agent Skills (188k+ stars).
+Claude Marketplace Plugins (Complete 530 Catalog),https://claude.com/marketplace/plugins,https://github.com/anthropics/claude-plugins-official,"Complete 530 Claude Marketplace plugins directory (312 Claude Code compatible) with official GitHub source links, install commands, and verification parity. See Claude-Marketplace-Plugins-Matrix.md and Claude-Marketplace-Plugins-Matrix.csv."
 Google Agent Skills,https://ai.google.dev/,https://github.com/google/skills,Google's official open collection of Agent Skills for Google developer platforms (23k+ stars).
 Cloudflare Security Audit Skill,https://github.com/cloudflare/security-audit-skill,https://github.com/cloudflare/security-audit-skill,Cloudflare's coding-agent skill for multi-phase security audits with machine-readable findings (65k+ stars).
 Addy Osmani Agent Skills,https://addyosmani.com/,https://github.com/addyosmani/agent-skills,"Production-grade engineering skills across 9 lifecycle commands, Web Vitals, and doubt-driven development (113k+ stars)."

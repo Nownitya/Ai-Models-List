@@ -1,5 +1,5 @@
 import React from 'react'
-import { Boxes, Zap, FileText, Sparkles, Bot } from 'lucide-react'
+import { Boxes, Zap, FileText, Sparkles, Bot, Store } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { AssistantType, PillarType } from '@/types'
 
@@ -14,7 +14,7 @@ export const PillarTabs: React.FC = () => {
     {
       id: 'frameworks',
       label: 'Upstream Frameworks',
-      count: meta.totalFrameworks || 65,
+      count: meta.totalFrameworks || 73,
       icon: <Boxes className="w-4 h-4" />,
       color: 'text-cyan-400',
       activeBg: 'bg-cyan-500/15 border-cyan-500/50 text-cyan-300 shadow-sm shadow-cyan-950/50',
@@ -22,10 +22,18 @@ export const PillarTabs: React.FC = () => {
     {
       id: 'skills',
       label: 'All Skills Directory',
-      count: meta.totalSkills || 274,
+      count: meta.totalSkills || 282,
       icon: <Zap className="w-4 h-4" />,
       color: 'text-amber-400',
       activeBg: 'bg-amber-500/15 border-amber-500/50 text-amber-300 shadow-sm shadow-amber-950/50',
+    },
+    {
+      id: 'marketplace',
+      label: 'Claude Marketplace',
+      count: 530,
+      icon: <Store className="w-4 h-4" />,
+      color: 'text-violet-400',
+      activeBg: 'bg-violet-500/15 border-violet-500/50 text-violet-300 shadow-sm shadow-violet-950/50',
     },
     {
       id: 'docs',

@@ -6,6 +6,7 @@ import { FilterToolbar } from '@/components/filters/FilterToolbar'
 import { FrameworkGrid } from '@/components/frameworks/FrameworkGrid'
 import { FrameworkDrawer } from '@/components/frameworks/FrameworkDrawer'
 import { VirtualizedGrid } from '@/components/skills/VirtualizedGrid'
+import { ClaudeMarketplaceView } from '@/components/marketplace/ClaudeMarketplaceView'
 import { ProjectDocsView } from '@/components/docs/ProjectDocsView'
 import { SystemPromptsView } from '@/components/prompts/SystemPromptsView'
 import { SkillDrawer } from '@/components/modals/SkillDrawer'
@@ -58,6 +59,8 @@ export const App: React.FC = () => {
             <VirtualizedGrid skills={filteredSkills} />
           </>
         )}
+
+        {activePillar === 'marketplace' && <ClaudeMarketplaceView />}
 
         {activePillar === 'docs' && <ProjectDocsView />}
 

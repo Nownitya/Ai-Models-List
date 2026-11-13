@@ -1,6 +1,6 @@
 export type Priority = 'ALL' | 'P0' | 'P1' | 'P2' | 'P3'
 
-export type PillarType = 'frameworks' | 'skills' | 'docs' | 'prompts'
+export type PillarType = 'frameworks' | 'skills' | 'marketplace' | 'docs' | 'prompts'
 
 export type AssistantType = 'antigravity' | 'claude' | 'codex' | 'git'
 
@@ -144,4 +144,19 @@ export interface SavedStackItem {
   priority: 'P0' | 'P1' | 'P2' | 'P3'
   scoped: string
   cli: string
+}
+
+export interface MarketplacePlugin {
+  slug: string
+  title: string
+  subheading: string
+  plugin_source: string
+  docs_url: string | null
+  install_cmd: string
+  made_by: string
+  installs: number | null
+  anthropic_verified: boolean
+  works_with: string[]
+  already_in_repo: boolean
+  marketplace_url: string
 }

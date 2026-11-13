@@ -46,7 +46,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Avoid duplication | GSD, Superpowers, gstack and general engineering skills overlap. Assign clear responsibilities and avoid loading duplicate workflows. |
 | Suggested focus | Android/Kotlin/KMP, core engineering, project planning, UI/UX, testing, debugging, security and code review. |
 | Project documentation | See 15_Project_Docs for the reusable project documentation standard, engineering quality checklist, AI self-review and security checklist. |
-| Newly reviewed tools | Graphify = codebase relationship graph; Context7 = current external library documentation (complementary). MemPalace = persistent project/conversation memory. GSD Core + GSD Pi = core workflow + Pi host integration. Impeccable = UI design critique/audit/polish. |
+| Newly reviewed tools | Graphify = codebase relationship graph; Context7 = current external library documentation (complementary). MemPalace = persistent project/conversation memory. GSD Core + GSD Pi = core workflow + Pi host integration. Impeccable = UI design critique/audit/polish. Claude Marketplace = Complete 530 Claude Marketplace plugins matrix (312 Claude Code compatible) with verified GitHub sources and install commands. |
 | Tool distinction | Graphify = codebase relationship graph; Context7 = current external library docs; MemPalace = persistent project/conversation memory; GSD Pi = Pi integration for GSD Core. |
 
 ## 01 Core Engineering
@@ -365,6 +365,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | composio-skills | P0 | Unified MCP Gateway and curated registry of 1,000+ agent skills (79k+ stars). Connects AI coding assistants (Claude Code, Antigravity, Cursor, Codex) to 1,000+ external SaaS tools, APIs, and services (Slack, GitHub, Jira, Gmail, Calendar, Linear) with built-in OAuth authentication, RBAC, and audit logs. | https://github.com/ComposioHQ/awesome-claude-skills | https://composio.dev/ |
 | caveman | P1 | High-density token compression skill and proxy for AI coding agents (118k+ stars). Cuts input and output tokens by 33% to 65% by enforcing concise, telegraphic communication ('caveman voice') that eliminates conversational filler while preserving 100% of technical code, reasoning substance, and factual correctness. | https://github.com/juliusbrussee/caveman | https://caveman-ai.com/ |
 | billion-context | P1 | Context-compression engine for month-long single agent sessions (billions of tokens). Employs semantic context compaction allowing small 100K-token context windows to sustain prolonged development cycles while reducing token consumption by up to 5x. | https://github.com/ranxianglei/billion-context |  |
+| atlassian-mcp | P0 | Official Atlassian Model Context Protocol (MCP) server for Claude Code and coding agents. Provides unified context across Jira issues, Confluence documentation, and Bitbucket pull requests with live issue transition and comment workflows. | https://github.com/atlassian/atlassian-mcp-server | https://support.atlassian.com/ |
+| huggingface-skills | P1 | Hugging Face model hub and inference integration skills for Claude Code. Enables search, evaluation, fine-tuning scripts, and API orchestration across open-source weights and datasets. | https://github.com/huggingface/skills | https://huggingface.co/docs |
 | anthropic-skills | P0 | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku. | https://github.com/anthropics/skills | https://docs.anthropic.com/ |
 | google-skills | P0 | Google's official open collection of Agent Skills for Google developer platforms, Cloud infrastructure, and AI engineering (23k+ stars). Complements android/skills and google/agents-cli with cross-ecosystem tools for Gemini, Vertex AI, and Workspace. | https://github.com/google/skills | https://ai.google.dev/ |
 | Gemini API | P2 | Integrate Gemini APIs into applications and development workflows. |  |  |
@@ -397,6 +399,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 | Tool / Capability | Priority | Why |
 | --- | --- | --- |
+| semgrep-security | P0 | Semgrep SAST security rule scanner and MCP marketplace for Claude Code (19.5k+ installs). Detects OWASP Top 10 vulnerabilities, hardcoded secrets, and semantic anti-patterns with instant autofix suggestions. |
+| greptile-codebase | P1 | Full-codebase semantic intelligence plugin and API for Claude Code (56.6k+ installs). Generates deep architectural context, symbol call graphs, and historical PR reasoning across entire multi-repo codebases. |
+| sourcegraph-search | P1 | Sourcegraph Cody and universal code search plugin for Claude Code. Performs regex, structural, and cross-repository symbol indexing to uncover architectural patterns across enterprise codebases. |
 | cloudflare-security-audit | P0 | Cloudflare's official coding-agent skill for multi-phase security audits (65k+ stars). Conducts automated vulnerability analysis, surface scanning, and machine-readable risk reporting across dependencies, API routes, authentication gates, and edge workers with independently verified proofs. |
 | CodeRabbit | P1 | Automate pull request reviews and identify bugs, security risks and missing tests across GitHub PRs and Google Antigravity. |
 | Open Code Review | P2 | Explore additional automated code-review workflows; verify exact product/repository before adoption. |
@@ -429,6 +434,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 | Skill / Capability | Priority | Why |
 | --- | --- | --- |
+| datadog-observability | P1 | Official Datadog agent observability plugin for Claude Code. Pulls live APM traces, error tracking, infrastructure metrics, and monitors directly into coding assistant sessions for defect triage. |
+| posthog-analytics | P1 | Official PostHog product analytics, session replay analysis, and feature flag management plugin for Claude Code. Verifies event taxonomy and queries user funnel telemetry. |
+| astronomer-airflow | P1 | Astronomer Apache Airflow and data engineering agent skills for Claude Code. Scaffolds DAGs, validates task dependencies, and diagnoses pipeline runtime errors. |
 | google-maps-platform | P2 | Add Google Maps and location functionality. |
 | agent-browser | P2 | Automate browser workflows. |
 | managing-python-dependencies | P2 | Maintain Python tooling and dependencies. |
@@ -518,6 +526,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Meta Astryx | https://github.com/meta/astryx | https://github.com/meta/astryx | Meta's agent-ready open-source React design system with built-in MCP server and CLI (14.5k+ stars). |
 | Billion-Context | https://github.com/ranxianglei/billion-context | https://github.com/ranxianglei/billion-context | Context-compression plugin for month-long single agent sessions and token savings (4.5k+ stars). |
 | Anthropic Agent Skills | https://docs.anthropic.com/ | https://github.com/anthropics/skills | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). |
+| Claude Marketplace Plugins (Complete 530 Catalog) | https://claude.com/marketplace/plugins | https://github.com/anthropics/claude-plugins-official | Complete 530 Claude Marketplace plugins directory (312 Claude Code compatible) with official GitHub source links, install commands, and verification parity. See Claude-Marketplace-Plugins-Matrix.md and Claude-Marketplace-Plugins-Matrix.csv. |
 | Google Agent Skills | https://ai.google.dev/ | https://github.com/google/skills | Google's official open collection of Agent Skills for Google developer platforms (23k+ stars). |
 | Cloudflare Security Audit Skill | https://github.com/cloudflare/security-audit-skill | https://github.com/cloudflare/security-audit-skill | Cloudflare's coding-agent skill for multi-phase security audits with machine-readable findings (65k+ stars). |
 | Addy Osmani Agent Skills | https://addyosmani.com/ | https://github.com/addyosmani/agent-skills | Production-grade engineering skills across 9 lifecycle commands, Web Vitals, and doubt-driven development (113k+ stars). |

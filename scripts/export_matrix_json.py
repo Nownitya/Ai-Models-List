@@ -68,6 +68,16 @@ SKILL_TO_REPO = {
     'find-skills': 'obra/superpowers',
     'handoff': 'obra/superpowers',
 
+    # Curated Claude Marketplace Tools
+    'atlassian-mcp': 'atlassian/atlassian-mcp-server',
+    'huggingface-skills': 'huggingface/skills',
+    'semgrep-security': 'semgrep/mcp-marketplace',
+    'greptile-codebase': 'greptileai/claude-plugin',
+    'sourcegraph-search': 'sourcegraph-community/sourcegraph-claudecode-plugin',
+    'datadog-observability': 'datadog-labs/claude-code-plugin',
+    'posthog-analytics': 'posthog/ai-plugin',
+    'astronomer-airflow': 'astronomer/agents',
+
     # gstack Workflow
     'office-hours': 'garrytan/gstack',
     'plan-ceo-review': 'garrytan/gstack',

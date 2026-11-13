@@ -63,4 +63,13 @@ export const STARTER_PACKS: StarterPack[] = [
     description: 'Obsidian vault synchronization, MemPalace semantic memory, AST codebase graphs, and Context7 docs.',
     skillIds: ['obsidian-developer-second-brain', 'graphify', 'mempalace', 'context7', 'docs'],
   },
+  {
+    id: 'claude-marketplace-suite',
+    title: 'Claude Marketplace Essential Suite',
+    icon: '🧠',
+    badge: 'Claude Marketplace',
+    repo: 'anthropics/claude-plugins-official',
+    description: 'Top-ranked official plugins from the 530-plugin Claude Marketplace: Code Review, Context7, Playwright, Ralph Loop, and Superpowers.',
+    skillIds: ['code-review', 'context7', 'playwright-cli', 'ralph-loop', 'superpowers'],
+  },
 ]

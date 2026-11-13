@@ -8,6 +8,7 @@ export const Header: React.FC = () => {
   const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
   const setPriorityGuideOpen = useSkillStore((s) => s.setPriorityGuideOpen)
   const setCommandPaletteOpen = useSkillStore((s) => s.setCommandPaletteOpen)
+  const setPillar = useSkillStore((s) => s.setPillar)
 
   const formattedStars = (meta.totalStars / 1_000_000).toFixed(2)
 
@@ -66,6 +67,16 @@ export const Header: React.FC = () => {
             )}
           </button>
 
+          {/* Claude Marketplace 530 Plugins Matrix */}
+          <button
+            onClick={() => setPillar('marketplace')}
+            className="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 text-sm font-semibold text-violet-200 border border-violet-800/60 transition-colors cursor-pointer"
+            title="Open Claude Marketplace (530 Plugins) Interactive Directory"
+          >
+            <span>🧠</span>
+            <span>Marketplace (530)</span>
+          </button>
+
           {/* GitHub Repo Link */}
           <a
             href="https://github.com/nownitya/Ai-Models-List"
@@ -94,7 +105,7 @@ export const Header: React.FC = () => {
             </span>
           </div>
           <p className="text-sm text-slate-400 max-w-3xl leading-relaxed">
-            Empirical launchpad covering <strong>{meta.totalFrameworks || 65} upstream frameworks</strong>, <strong>{meta.totalSkills} atomic skills</strong>, and <strong>{meta.totalDocs || 57} Layer 15 project docs</strong> with multi-assistant installation guides.
+            Empirical launchpad covering <strong>{meta.totalFrameworks || 65} upstream frameworks</strong>, <strong>{meta.totalSkills} atomic skills</strong>, <strong>530 Claude marketplace plugins</strong>, and <strong>{meta.totalDocs || 57} Layer 15 project docs</strong> with multi-assistant installation guides.
           </p>
         </div>
 
@@ -108,6 +119,15 @@ export const Header: React.FC = () => {
           <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
             <span className="text-xs uppercase font-bold text-slate-400 block">Skills</span>
             <span className="text-base sm:text-lg font-black text-slate-100">{meta.totalSkills}</span>
+          </div>
+
+          <div
+            onClick={() => setPillar('marketplace')}
+            className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left hover:border-violet-500/50 transition-colors cursor-pointer"
+            title="Browse 530 Claude Marketplace Plugins"
+          >
+            <span className="text-xs uppercase font-bold text-violet-400 block">Plugins</span>
+            <span className="text-base sm:text-lg font-black text-violet-300">530</span>
           </div>
 
           <div
