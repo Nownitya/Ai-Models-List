@@ -45,5 +45,6 @@
 ---
 
 ## 📋 Next Recommended Operations
-1. [ ] Continue exploring and cataloging new emerging skills from `skills.sh/trending`.
-2. [ ] Maintain regular Obsidian sync after major project milestones.
+1. [ ] **Footer Redesign**: Implement a curated, high-craft website footer inspired by [`https://www.footer.design/`](https://www.footer.design/) (with clean ecosystem links, protocol references, GitHub telemetry, and documentation sitemap).
+2. [ ] Continue exploring and cataloging new emerging skills from `skills.sh/trending`.
+3. [ ] Maintain regular Obsidian sync after major project milestones.

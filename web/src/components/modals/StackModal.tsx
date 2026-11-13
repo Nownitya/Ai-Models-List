@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { X, Trash2, Download, Copy, Check, Diamond, Layers } from 'lucide-react'
+import { X, Trash2, Download, Copy, Check, Diamond, Layers, Terminal, Cpu } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 
 export const StackModal: React.FC = () => {
@@ -34,7 +34,58 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 2. Export as Obsidian Second Brain Note (with Dataview tags)
+  // 2. Export as Cursor Rules (.cursorrules)
+  const downloadCursorRules = () => {
+    let rules = `# .cursorrules — SkillDock Custom Agent Architecture\n\n`
+    rules += `# Generated: ${new Date().toISOString().split('T')[0]}\n`
+    rules += `# Selected Skills (${stack.length}):\n\n`
+    stack.forEach((s) => {
+      rules += `## Skill: ${s.name} (/${s.scoped})\n`
+      rules += `- Priority: ${s.priority}\n`
+      rules += `- When executing relevant tasks, activate /${s.scoped} rules and behavioral patterns.\n\n`
+    })
+    rules += `\n# General Laws:\n`
+    rules += `- Always verify parity and run tests before claiming completion.\n`
+    rules += `- Respect modular boundaries and avoid speculative generality.\n`
+
+    const blob = new Blob([rules], { type: 'text/plain;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `.cursorrules`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  // 3. Export as Claude Code Configuration (claude.json)
+  const downloadClaudeConfig = () => {
+    const config = {
+      $schema: 'https://json.schemastore.org/claude-settings.json',
+      version: '1.0',
+      customSkills: stack.map((s) => ({
+        name: s.name,
+        slashCommand: `/${s.scoped}`,
+        priority: s.priority,
+        installCommand: s.cli,
+      })),
+      mcpServers: {
+        skilldock: {
+          command: 'python',
+          args: ['scripts/mcp_server.py'],
+        },
+      },
+    }
+
+    const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `claude-skills-config.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  // 4. Export as Obsidian Second Brain Note (with Dataview tags)
   const downloadObsidianNote = () => {
     let obs = `---\n`
     obs += `title: "SkillDock Agent Stack"\n`
@@ -68,7 +119,7 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 3. Copy Batch Installation Script
+  // 5. Copy Batch Installation Script
   const copyInstallScript = () => {
     const commands = stack.map((s) => s.cli).join('\n')
     navigator.clipboard.writeText(commands)
@@ -93,7 +144,7 @@ export const StackModal: React.FC = () => {
               <span>SkillDock Stack ({stack.length})</span>
             </h2>
             <p className="text-xs text-zinc-400 mt-1">
-              Curate your custom engineering stack, then export to Markdown, Obsidian Second Brain, or CLI scripts.
+              Curate your custom engineering stack, then export directly to Cursor, Claude Code, Obsidian, or CLI scripts.
             </p>
           </div>
           <button
@@ -138,40 +189,67 @@ export const StackModal: React.FC = () => {
           )}
         </div>
 
-        {/* Footer Actions */}
+        {/* Multi-Assistant Exporters Bar */}
         {stack.length > 0 && (
-          <div className="pt-3.5 border-t border-[#27272a] flex flex-wrap items-center justify-between gap-2.5 text-xs">
-            <button
-              onClick={clearStack}
-              className="text-xs text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/20 transition-colors cursor-pointer"
-            >
-              Clear All ({stack.length})
-            </button>
+          <div className="pt-3.5 border-t border-[#27272a] space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+              <span className="text-zinc-400 font-mono text-[11px]">Export Config Bundles:</span>
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={downloadCursorRules}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export .cursorrules"
+                >
+                  <Cpu className="w-3 h-3 text-cyan-400" />
+                  <span>.cursorrules</span>
+                </button>
 
-            <div className="flex items-center gap-2">
+                <button
+                  onClick={downloadClaudeConfig}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export claude.json"
+                >
+                  <Terminal className="w-3 h-3 text-amber-400" />
+                  <span>claude.json</span>
+                </button>
+
+                <button
+                  onClick={downloadObsidianNote}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export Obsidian Dataview Note"
+                >
+                  <Diamond className="w-3 h-3 text-violet-400" />
+                  <span>Obsidian Note</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Bottom Actions */}
+            <div className="pt-2 border-t border-[#27272a]/60 flex flex-wrap items-center justify-between gap-2.5 text-xs">
               <button
-                onClick={copyInstallScript}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"
+                onClick={clearStack}
+                className="text-xs text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/20 transition-colors cursor-pointer"
               >
-                {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>Copy Batch Script</span>
+                Clear All ({stack.length})
               </button>
 
-              <button
-                onClick={downloadObsidianNote}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"
-              >
-                <Diamond className="w-3.5 h-3.5" />
-                <span>Obsidian Note</span>
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={copyInstallScript}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"
+                >
+                  {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>Copy Batch CLI</span>
+                </button>
 
-              <button
-                onClick={downloadMarkdown}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-white hover:bg-zinc-200 text-zinc-900 font-bold cursor-pointer transition-colors text-xs"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span>Export Markdown</span>
-              </button>
+                <button
+                  onClick={downloadMarkdown}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-white hover:bg-zinc-200 text-zinc-900 font-bold cursor-pointer transition-colors text-xs"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Export Markdown</span>
+                </button>
+              </div>
             </div>
           </div>
         )}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { HeroSection } from '@/components/layout/HeroSection'
 import { StaffPicks } from '@/components/layout/StaffPicks'
+import { Footer } from '@/components/layout/Footer'
 import { FilterToolbar } from '@/components/filters/FilterToolbar'
 import { FrameworkGrid } from '@/components/frameworks/FrameworkGrid'
 import { FrameworkDrawer } from '@/components/frameworks/FrameworkDrawer'
@@ -69,7 +70,10 @@ export const App: React.FC = () => {
         {activePillar === 'prompts' && <SystemPromptsView />}
       </main>
 
-      {/* 4. Drawers & Modals */}
+      {/* 4. Architectural Footer (Inspired by footer.design) */}
+      <Footer />
+
+      {/* 5. Drawers & Modals */}
       <FrameworkDrawer />
       <SkillDrawer />
       <StackModal />

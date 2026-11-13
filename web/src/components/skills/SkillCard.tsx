@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch, ArrowUpRight } from 'lucide-react'
+import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch, ArrowUpRight, Share2 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Skill } from '@/types'
 
@@ -10,6 +10,7 @@ interface SkillCardProps {
 export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedCli, setCopiedCli] = useState(false)
+  const [copiedLink, setCopiedLink] = useState(false)
 
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
@@ -30,6 +31,14 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
     navigator.clipboard.writeText(skill.cli)
     setCopiedCli(true)
     setTimeout(() => setCopiedCli(false), 1400)
+  }
+
+  const copyShareLink = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    const url = `${window.location.origin}${window.location.pathname}?pillar=skills&skill=${skill.id}`
+    navigator.clipboard.writeText(url)
+    setCopiedLink(true)
+    setTimeout(() => setCopiedLink(false), 1400)
   }
 
   // Minimalist Priority styling
@@ -54,6 +63,14 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
             <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border ${priorityBadge}`}>
               {skill.priority}
             </span>
+
+            <button
+              onClick={copyShareLink}
+              title="Copy Shareable Link"
+              className="p-1 rounded-md transition-colors cursor-pointer border bg-[#18181b] text-zinc-400 border-[#27272a] hover:text-white hover:border-zinc-500"
+            >
+              {copiedLink ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
+            </button>
 
             <button
               onClick={(e) => {

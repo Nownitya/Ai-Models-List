@@ -10,7 +10,8 @@ import {
   Code2,
   ArrowUpRight,
   Terminal,
-  Cpu
+  Cpu,
+  Share2
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 
@@ -27,6 +28,7 @@ export const SkillDrawer: React.FC = () => {
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedCli, setCopiedCli] = useState(false)
   const [copiedRecipe, setCopiedRecipe] = useState(false)
+  const [copiedLink, setCopiedLink] = useState(false)
 
   // Close drawer on Escape
   useEffect(() => {
@@ -92,6 +94,13 @@ export const SkillDrawer: React.FC = () => {
     setTimeout(() => setCopiedRecipe(false), 1400)
   }
 
+  const copyShareLink = () => {
+    const url = `${window.location.origin}${window.location.pathname}?pillar=skills&skill=${inspectSkill.id}`
+    navigator.clipboard.writeText(url)
+    setCopiedLink(true)
+    setTimeout(() => setCopiedLink(false), 1600)
+  }
+
   let priorityBadge = 'bg-[#18181b] text-zinc-400 border-[#27272a]'
   if (inspectSkill.priority === 'P0') priorityBadge = 'bg-rose-500/10 text-rose-300 border-rose-500/30'
   if (inspectSkill.priority === 'P1') priorityBadge = 'bg-amber-500/10 text-amber-300 border-amber-500/30'
@@ -119,6 +128,14 @@ export const SkillDrawer: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-2">
+              <button
+                onClick={copyShareLink}
+                title="Copy Shareable Link"
+                className="p-1.5 rounded-md bg-[#18181b] text-zinc-400 border border-[#27272a] hover:text-white hover:border-zinc-500 cursor-pointer transition-colors"
+              >
+                {copiedLink ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
+              </button>
+
               <button
                 onClick={() => toggleStack(inspectSkill)}
                 title={isSavedInStack ? 'Remove from Stack' : 'Save to Stack'}

@@ -63,11 +63,22 @@ function getInitialUrlParams() {
       eco: 'all' as Ecosystem,
       repo: 'all',
       sort: 'default' as SortOption,
+      skillId: null as string | null,
+      frameworkRepo: null as string | null,
     }
   }
   const params = new URLSearchParams(window.location.search)
   const pil = params.get('pillar') as PillarType
-  const pillar = ['frameworks', 'skills', 'docs', 'prompts'].includes(pil) ? pil : 'frameworks'
+  const initialSkillId = params.get('skill')
+  const initialFrameworkRepo = params.get('framework')
+  
+  let pillar: PillarType = 'frameworks'
+  if (initialSkillId) {
+    pillar = 'skills'
+  } else if (['frameworks', 'skills', 'marketplace', 'docs', 'prompts'].includes(pil)) {
+    pillar = pil
+  }
+
   const q = params.get('q') || ''
   const p = (params.get('priority') || 'ALL').toUpperCase()
   const priority = ['ALL', 'P0', 'P1', 'P2', 'P3'].includes(p) ? (p as Priority) : 'ALL'
@@ -76,7 +87,7 @@ function getInitialUrlParams() {
   const repo = params.get('repo') || 'all'
   const sort = (params.get('sort') || 'default') as SortOption
 
-  return { pillar, q, priority, cat, eco, repo, sort }
+  return { pillar, q, priority, cat, eco, repo, sort, skillId: initialSkillId, frameworkRepo: initialFrameworkRepo }
 }
 
 // Safeguard 11: Debounced URL synchronization using replaceState
@@ -174,10 +185,18 @@ interface SkillStoreState {
 }
 
 const initialUrl = getInitialUrlParams()
+const loadedSkills = ((matrixData as any).skills || []) as Skill[]
+const loadedFrameworks = ((matrixData as any).frameworks || []) as FrameworkHub[]
+const initialInspectSkill = initialUrl.skillId
+  ? loadedSkills.find((s) => s.id === initialUrl.skillId || s.scoped === initialUrl.skillId) || null
+  : null
+const initialInspectFramework = initialUrl.frameworkRepo
+  ? loadedFrameworks.find((f) => f.repo === initialUrl.frameworkRepo || f.repoName.toLowerCase() === initialUrl.frameworkRepo?.toLowerCase()) || null
+  : null
 
 export const useSkillStore = create<SkillStoreState>((set, get) => ({
-  skills: ((matrixData as any).skills || []) as Skill[],
-  frameworks: ((matrixData as any).frameworks || []) as FrameworkHub[],
+  skills: loadedSkills,
+  frameworks: loadedFrameworks,
   docs: ((matrixData as any).docs || []) as DocTemplate[],
   prompts: ((matrixData as any).prompts || []) as SystemPromptSuite[],
   meta: ((matrixData as any).meta || {}) as MatrixMeta,
@@ -197,8 +216,8 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   viewMode: 'grid',
   isCommandPaletteOpen: false,
 
-  inspectSkill: null,
-  inspectFramework: null,
+  inspectSkill: initialInspectSkill,
+  inspectFramework: initialInspectFramework,
   promptModalSkill: null,
   isStackModalOpen: false,
   isPriorityGuideOpen: false,
@@ -370,11 +389,43 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     saveStackToStorage([])
   },
 
-  openInspect: (skill) => set({ inspectSkill: skill }),
-  closeInspect: () => set({ inspectSkill: null }),
+  openInspect: (skill) => {
+    set({ inspectSkill: skill })
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      params.set('skill', skill.id)
+      const newQuery = params.toString() ? `?${params.toString()}` : ''
+      window.history.replaceState(null, '', `${window.location.pathname}${newQuery}${window.location.hash}`)
+    }
+  },
+  closeInspect: () => {
+    set({ inspectSkill: null })
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      params.delete('skill')
+      const newQuery = params.toString() ? `?${params.toString()}` : ''
+      window.history.replaceState(null, '', `${window.location.pathname}${newQuery}${window.location.hash}`)
+    }
+  },
 
-  openFrameworkInspect: (inspectFramework) => set({ inspectFramework }),
-  closeFrameworkInspect: () => set({ inspectFramework: null }),
+  openFrameworkInspect: (inspectFramework) => {
+    set({ inspectFramework })
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      params.set('framework', inspectFramework.repo)
+      const newQuery = params.toString() ? `?${params.toString()}` : ''
+      window.history.replaceState(null, '', `${window.location.pathname}${newQuery}${window.location.hash}`)
+    }
+  },
+  closeFrameworkInspect: () => {
+    set({ inspectFramework: null })
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      params.delete('framework')
+      const newQuery = params.toString() ? `?${params.toString()}` : ''
+      window.history.replaceState(null, '', `${window.location.pathname}${newQuery}${window.location.hash}`)
+    }
+  },
 
   openPromptModal: (skill) => set({ promptModalSkill: skill }),
   closePromptModal: () => set({ promptModalSkill: null }),

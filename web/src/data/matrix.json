@@ -4,7 +4,7 @@
     "totalFrameworks": 74,
     "totalDocs": 57,
     "totalPrompts": 3,
-    "totalStars": 4470654,
+    "totalStars": 4487250,
     "categories": [
       {
         "id": "01-core-engineering",
@@ -77,7 +77,7 @@
         "repo": "agentskills/agentskills",
         "repoName": "Agent Skills Spec",
         "count": 65,
-        "stars": 27259
+        "stars": 27261
       },
       {
         "repo": "android/skills",
@@ -89,19 +89,19 @@
         "repo": "obra/superpowers",
         "repoName": "Superpowers",
         "count": 30,
-        "stars": 317134
+        "stars": 317162
       },
       {
         "repo": "garrytan/gstack",
         "repoName": "gstack",
         "count": 21,
-        "stars": 141446
+        "stars": 141448
       },
       {
         "repo": "mattpocock/skills",
         "repoName": "Matt Pocock",
         "count": 20,
-        "stars": 323618
+        "stars": 323688
       },
       {
         "repo": "GoogleCloudPlatform/data-agent-kit",
@@ -125,31 +125,31 @@
         "repo": "google/skills",
         "repoName": "Google Agent Skills",
         "count": 4,
-        "stars": 24126
+        "stars": 24120
       },
       {
         "repo": "graphify-labs/graphify",
         "repoName": "Graphify",
         "count": 3,
-        "stars": 147129
+        "stars": 147177
       },
       {
         "repo": "openhands/openhands",
         "repoName": "OpenHands",
         "count": 3,
-        "stars": 93411
+        "stars": 93412
       },
       {
         "repo": "googleapis/python-genai",
         "repoName": "Google GenAI SDK",
         "count": 3,
-        "stars": 4067
+        "stars": 4069
       },
       {
         "repo": "anthropics/skills",
         "repoName": "Anthropic Skills",
         "count": 2,
-        "stars": 194033
+        "stars": 194065
       },
       {
         "repo": "mempalace/mempalace",
@@ -173,145 +173,145 @@
         "repo": "affaan-m/ecc",
         "repoName": "ECC (Everything Claude Code)",
         "count": 1,
-        "stars": 302333
+        "stars": 302371
       },
       {
         "repo": "multica-ai/andrej-karpathy-skills",
         "repoName": "Karpathy Guidelines",
         "count": 1,
-        "stars": 232769
+        "stars": 232793
       },
       {
         "repo": "dietrichgebert/ponytail",
         "repoName": "Ponytail",
         "count": 1,
-        "stars": 190199
+        "stars": 190253
       },
       {
         "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
         "repoName": "UI/UX Pro Max",
         "count": 1,
-        "stars": 148999
+        "stars": 149026
       },
       {
         "repo": "openai/codex",
         "repoName": "OpenAI Codex",
         "count": 1,
-        "stars": 135179
+        "stars": 135172
       },
       {
         "repo": "shadcn/ui",
         "repoName": "shadcn/ui",
         "count": 1,
-        "stars": 128101
+        "stars": 128110
       },
       {
         "repo": "stablyai/orca",
         "repoName": "Orca Agent",
         "count": 1,
-        "stars": 124203
+        "stars": 124266
       },
       {
         "repo": "browser-use/browser-use",
         "repoName": "browser-use",
         "count": 1,
-        "stars": 120923
+        "stars": 120937
       },
       {
         "repo": "juliusbrussee/caveman",
         "repoName": "Caveman",
         "count": 1,
-        "stars": 119642
+        "stars": 119655
       },
       {
         "repo": "addyosmani/agent-skills",
         "repoName": "Addy Osmani",
         "count": 1,
-        "stars": 117051
+        "stars": 117077
       },
       {
         "repo": "leonxlnx/taste-skill",
         "repoName": "Taste Skill",
         "count": 1,
-        "stars": 114831
+        "stars": 114894
       },
       {
         "repo": "pbakaus/impeccable",
         "repoName": "Impeccable",
         "count": 1,
-        "stars": 109398
+        "stars": 109450
       },
       {
         "repo": "tt-a1i/archify",
         "repoName": "Archify",
         "count": 1,
-        "stars": 96165
+        "stars": 96181
       },
       {
         "repo": "egonex-ai/understand-anything",
         "repoName": "Understand Anything",
         "count": 1,
-        "stars": 92514
+        "stars": 92526
       },
       {
         "repo": "heygen-com/hyperframes",
         "repoName": "Hyperframes Media",
         "count": 1,
-        "stars": 83790
+        "stars": 83837
       },
       {
         "repo": "composiohq/awesome-claude-skills",
         "repoName": "Composio Gateway",
         "count": 1,
-        "stars": 79411
+        "stars": 79413
       },
       {
         "repo": "cloudflare/security-audit-skill",
         "repoName": "Cloudflare Security",
         "count": 1,
-        "stars": 71684
+        "stars": 71756
       },
       {
         "repo": "upstash/context7",
         "repoName": "Context7",
         "count": 1,
-        "stars": 64750
+        "stars": 64756
       },
       {
         "repo": "coreyhaines31/marketingskills",
         "repoName": "Marketing Skills",
         "count": 1,
-        "stars": 60110
+        "stars": 60133
       },
       {
         "repo": "pingdotgg/t3code",
         "repoName": "T3 Code",
         "count": 1,
-        "stars": 59269
+        "stars": 59379
       },
       {
         "repo": "emilkowalski/skills",
         "repoName": "Emil Kowalski",
         "count": 1,
-        "stars": 56586
+        "stars": 56609
       },
       {
         "repo": "kepano/obsidian-skills",
         "repoName": "Obsidian Brain",
         "count": 1,
-        "stars": 52239
+        "stars": 52257
       },
       {
         "repo": "vercel-labs/agent-browser",
         "repoName": "Agent Browser",
         "count": 1,
-        "stars": 50614
+        "stars": 50643
       },
       {
         "repo": "getsentry/sentry",
         "repoName": "Sentry Diagnostics",
         "count": 1,
-        "stars": 45766
+        "stars": 45768
       },
       {
         "repo": "semgrep/mcp-marketplace",
@@ -323,7 +323,7 @@
         "repo": "vercel-labs/skills",
         "repoName": "Vercel React Patterns",
         "count": 1,
-        "stars": 39238
+        "stars": 39243
       },
       {
         "repo": "googleworkspace/cli",
@@ -335,7 +335,7 @@
         "repo": "vercel/turborepo",
         "repoName": "Turborepo",
         "count": 1,
-        "stars": 31335
+        "stars": 31336
       },
       {
         "repo": "greptileai/claude-plugin",
@@ -347,13 +347,13 @@
         "repo": "vercel/ai",
         "repoName": "Vercel AI SDK",
         "count": 1,
-        "stars": 27916
+        "stars": 27918
       },
       {
         "repo": "meta/astryx",
         "repoName": "Meta Astryx",
         "count": 1,
-        "stars": 27252
+        "stars": 27298
       },
       {
         "repo": "datadog-labs/claude-code-plugin",
@@ -365,7 +365,7 @@
         "repo": "google-research/harness2",
         "repoName": "Harness\u00b2",
         "count": 1,
-        "stars": 23698
+        "stars": 23704
       },
       {
         "repo": "snarktank/ralph",
@@ -389,7 +389,7 @@
         "repo": "greensock/gsap-skills",
         "repoName": "GSAP Animation",
         "count": 1,
-        "stars": 18402
+        "stars": 18407
       },
       {
         "repo": "astronomer/agents",
@@ -398,64 +398,70 @@
         "stars": 16200
       },
       {
+        "repo": "heydamir/unslop",
+        "repoName": "Unslop",
+        "count": 1,
+        "stars": 15582
+      },
+      {
         "repo": "microsoft/playwright-cli",
         "repoName": "Playwright",
         "count": 1,
-        "stars": 15174
+        "stars": 15178
       },
       {
         "repo": "huggingface/skills",
         "repoName": "Skills",
         "count": 1,
-        "stars": 11342
+        "stars": 11341
       },
       {
         "repo": "trailofbits/skills",
         "repoName": "Trail of Bits",
         "count": 1,
-        "stars": 8170
+        "stars": 8172
       },
       {
         "repo": "ranxianglei/billion-context",
         "repoName": "Billion-Context",
         "count": 1,
-        "stars": 7219
+        "stars": 7229
       },
       {
         "repo": "remotion-dev/skills",
         "repoName": "Remotion",
         "count": 1,
-        "stars": 6949
+        "stars": 6954
       },
       {
         "repo": "twostraws/swiftui-agent-skill",
         "repoName": "SwiftUI Pro",
         "count": 1,
-        "stars": 6545
+        "stars": 6546
       },
       {
         "repo": "microsoft/tokeneconomizer",
         "repoName": "TokenEconomizer",
         "count": 1,
-        "stars": 6039
+        "stars": 6049
       },
       {
         "repo": "cloudflare/skills",
         "repoName": "Cloudflare Edge",
         "count": 1,
-        "stars": 3361
+        "stars": 3362
       },
       {
         "repo": "addyosmani/web-quality-skills",
         "repoName": "Addy Osmani A11y",
         "count": 1,
-        "stars": 3080
+        "stars": 3079
       },
       {
         "repo": "supabase/agent-skills",
         "repoName": "Supabase",
         "count": 1,
-        "stars": 3051
+        "stars": 3053
       },
       {
         "repo": "microsoft/azure-skills",
@@ -485,7 +491,7 @@
         "repo": "uizze/uizze",
         "repoName": "Uizze UI Taste",
         "count": 1,
-        "stars": 98
+        "stars": 99
       },
       {
         "repo": "google-ai-edge/LiteRT-LM",
@@ -502,12 +508,6 @@
       {
         "repo": "apple/design-guidelines",
         "repoName": "Apple HIG",
-        "count": 1,
-        "stars": 0
-      },
-      {
-        "repo": "heydamir/unslop",
-        "repoName": "Unslop",
         "count": 1,
         "stars": 0
       },
@@ -530,7 +530,7 @@
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
       "author": "agentskills",
-      "stars": 27259,
+      "stars": 27261,
       "starsFormatted": "27.3k",
       "description": "Specification and documentation for Agent Skills",
       "skillsCount": 65,
@@ -1386,7 +1386,7 @@
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
       "author": "obra",
-      "stars": 317134,
+      "stars": 317162,
       "starsFormatted": "317k",
       "description": "An agentic skills framework & software development methodology that works.",
       "skillsCount": 30,
@@ -1650,7 +1650,7 @@
       "repo": "garrytan/gstack",
       "repoName": "gstack",
       "author": "garrytan",
-      "stars": 141446,
+      "stars": 141448,
       "starsFormatted": "141k",
       "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
       "skillsCount": 21,
@@ -1842,7 +1842,7 @@
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
       "author": "mattpocock",
-      "stars": 323618,
+      "stars": 323688,
       "starsFormatted": "324k",
       "description": "Skills for Real Engineers. Straight from my .agents directory.",
       "skillsCount": 20,
@@ -2354,7 +2354,7 @@
       "repo": "google/skills",
       "repoName": "Google Agent Skills",
       "author": "google",
-      "stars": 24126,
+      "stars": 24120,
       "starsFormatted": "24.1k",
       "description": "Agent Skills for Google products and technologies",
       "skillsCount": 4,
@@ -2410,7 +2410,7 @@
       "repo": "graphify-labs/graphify",
       "repoName": "Graphify",
       "author": "graphify-labs",
-      "stars": 147129,
+      "stars": 147177,
       "starsFormatted": "147k",
       "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
       "skillsCount": 3,
@@ -2458,7 +2458,7 @@
       "repo": "openhands/openhands",
       "repoName": "OpenHands",
       "author": "openhands",
-      "stars": 93411,
+      "stars": 93412,
       "starsFormatted": "93.4k",
       "description": "\ud83d\ude4c OpenHands: AI-Driven Development",
       "skillsCount": 3,
@@ -2506,7 +2506,7 @@
       "repo": "googleapis/python-genai",
       "repoName": "Google GenAI SDK",
       "author": "googleapis",
-      "stars": 4067,
+      "stars": 4069,
       "starsFormatted": "4.1k",
       "description": "Google Gen AI Python SDK provides an interface for developers to integrate Google's generative models into their Python applications.",
       "skillsCount": 3,
@@ -2554,7 +2554,7 @@
       "repo": "anthropics/skills",
       "repoName": "Anthropic Skills",
       "author": "anthropics",
-      "stars": 194033,
+      "stars": 194065,
       "starsFormatted": "194k",
       "description": "Public repository for Agent Skills",
       "skillsCount": 2,
@@ -2714,7 +2714,7 @@
       "repo": "affaan-m/ecc",
       "repoName": "ECC (Everything Claude Code)",
       "author": "affaan-m",
-      "stars": 302333,
+      "stars": 302371,
       "starsFormatted": "302k",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "skillsCount": 1,
@@ -2746,7 +2746,7 @@
       "repo": "multica-ai/andrej-karpathy-skills",
       "repoName": "Karpathy Guidelines",
       "author": "multica-ai",
-      "stars": 232769,
+      "stars": 232793,
       "starsFormatted": "233k",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
       "skillsCount": 1,
@@ -2778,7 +2778,7 @@
       "repo": "dietrichgebert/ponytail",
       "repoName": "Ponytail",
       "author": "dietrichgebert",
-      "stars": 190199,
+      "stars": 190253,
       "starsFormatted": "190k",
       "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
       "skillsCount": 1,
@@ -2810,7 +2810,7 @@
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
       "repoName": "UI/UX Pro Max",
       "author": "nextlevelbuilder",
-      "stars": 148999,
+      "stars": 149026,
       "starsFormatted": "149k",
       "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
       "skillsCount": 1,
@@ -2842,7 +2842,7 @@
       "repo": "openai/codex",
       "repoName": "OpenAI Codex",
       "author": "openai",
-      "stars": 135179,
+      "stars": 135172,
       "starsFormatted": "135k",
       "description": "Lightweight coding agent that runs in your terminal",
       "skillsCount": 1,
@@ -2874,7 +2874,7 @@
       "repo": "shadcn/ui",
       "repoName": "shadcn/ui",
       "author": "shadcn",
-      "stars": 128101,
+      "stars": 128110,
       "starsFormatted": "128k",
       "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
       "skillsCount": 1,
@@ -2906,7 +2906,7 @@
       "repo": "stablyai/orca",
       "repoName": "Orca Agent",
       "author": "stablyai",
-      "stars": 124203,
+      "stars": 124266,
       "starsFormatted": "124k",
       "description": "Orca lets you run a fleet of coding agents (e.g. Claude Code, Codex) with your own subscription. Available on desktop, mobile and remote runtime.",
       "skillsCount": 1,
@@ -2938,7 +2938,7 @@
       "repo": "browser-use/browser-use",
       "repoName": "browser-use",
       "author": "browser-use",
-      "stars": 120923,
+      "stars": 120937,
       "starsFormatted": "121k",
       "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
       "skillsCount": 1,
@@ -2970,7 +2970,7 @@
       "repo": "juliusbrussee/caveman",
       "repoName": "Caveman",
       "author": "juliusbrussee",
-      "stars": 119642,
+      "stars": 119655,
       "starsFormatted": "120k",
       "description": "\ud83e\udea8 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
       "skillsCount": 1,
@@ -3002,7 +3002,7 @@
       "repo": "addyosmani/agent-skills",
       "repoName": "Addy Osmani",
       "author": "addyosmani",
-      "stars": 117051,
+      "stars": 117077,
       "starsFormatted": "117k",
       "description": "Production-grade engineering skills for AI coding agents.",
       "skillsCount": 1,
@@ -3034,7 +3034,7 @@
       "repo": "leonxlnx/taste-skill",
       "repoName": "Taste Skill",
       "author": "leonxlnx",
-      "stars": 114831,
+      "stars": 114894,
       "starsFormatted": "115k",
       "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
       "skillsCount": 1,
@@ -3066,7 +3066,7 @@
       "repo": "pbakaus/impeccable",
       "repoName": "Impeccable",
       "author": "pbakaus",
-      "stars": 109398,
+      "stars": 109450,
       "starsFormatted": "109k",
       "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
       "skillsCount": 1,
@@ -3098,7 +3098,7 @@
       "repo": "tt-a1i/archify",
       "repoName": "Archify",
       "author": "tt-a1i",
-      "stars": 96165,
+      "stars": 96181,
       "starsFormatted": "96.2k",
       "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
       "skillsCount": 1,
@@ -3130,7 +3130,7 @@
       "repo": "egonex-ai/understand-anything",
       "repoName": "Understand Anything",
       "author": "egonex-ai",
-      "stars": 92514,
+      "stars": 92526,
       "starsFormatted": "92.5k",
       "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
       "skillsCount": 1,
@@ -3162,14 +3162,14 @@
       "repo": "heygen-com/hyperframes",
       "repoName": "Hyperframes Media",
       "author": "heygen-com",
-      "stars": 83790,
+      "stars": 83837,
       "starsFormatted": "83.8k",
       "description": "Write HTML. Render video. Built for agents.",
       "skillsCount": 1,
       "categoryId": "12-specialized",
       "categoryLabel": "Specialized Tools",
       "officialUrl": "https://github.com/heygen-com/hyperframes",
-      "version": "v0.9.41",
+      "version": "v0.9.42",
       "license": "Apache-2.0",
       "installRecipes": {
         "antigravity": "git clone https://github.com/heygen-com/hyperframes.git ~/.gemini/antigravity/skills/hyperframes",
@@ -3194,7 +3194,7 @@
       "repo": "composiohq/awesome-claude-skills",
       "repoName": "Composio Gateway",
       "author": "composiohq",
-      "stars": 79411,
+      "stars": 79413,
       "starsFormatted": "79.4k",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "skillsCount": 1,
@@ -3226,8 +3226,8 @@
       "repo": "cloudflare/security-audit-skill",
       "repoName": "Cloudflare Security",
       "author": "cloudflare",
-      "stars": 71684,
-      "starsFormatted": "71.7k",
+      "stars": 71756,
+      "starsFormatted": "71.8k",
       "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
       "skillsCount": 1,
       "categoryId": "11-code-review",
@@ -3258,7 +3258,7 @@
       "repo": "upstash/context7",
       "repoName": "Context7",
       "author": "upstash",
-      "stars": 64750,
+      "stars": 64756,
       "starsFormatted": "64.8k",
       "description": "Context7 Platform -- Up-to-date docs for AI agents",
       "skillsCount": 1,
@@ -3290,7 +3290,7 @@
       "repo": "coreyhaines31/marketingskills",
       "repoName": "Marketing Skills",
       "author": "coreyhaines31",
-      "stars": 60110,
+      "stars": 60133,
       "starsFormatted": "60.1k",
       "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
       "skillsCount": 1,
@@ -3322,8 +3322,8 @@
       "repo": "pingdotgg/t3code",
       "repoName": "T3 Code",
       "author": "pingdotgg",
-      "stars": 59269,
-      "starsFormatted": "59.3k",
+      "stars": 59379,
+      "starsFormatted": "59.4k",
       "description": "The best way to control Claude Code, Codex and more from any computer or phone",
       "skillsCount": 1,
       "categoryId": "09-autonomous-agents",
@@ -3354,7 +3354,7 @@
       "repo": "emilkowalski/skills",
       "repoName": "Emil Kowalski",
       "author": "emilkowalski",
-      "stars": 56586,
+      "stars": 56609,
       "starsFormatted": "56.6k",
       "description": "Skills for Designers and Engineers.",
       "skillsCount": 1,
@@ -3386,8 +3386,8 @@
       "repo": "kepano/obsidian-skills",
       "repoName": "Obsidian Brain",
       "author": "kepano",
-      "stars": 52239,
-      "starsFormatted": "52.2k",
+      "stars": 52257,
+      "starsFormatted": "52.3k",
       "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
       "skillsCount": 1,
       "categoryId": "01-core-engineering",
@@ -3418,7 +3418,7 @@
       "repo": "vercel-labs/agent-browser",
       "repoName": "Agent Browser",
       "author": "vercel-labs",
-      "stars": 50614,
+      "stars": 50643,
       "starsFormatted": "50.6k",
       "description": "Browser automation CLI for AI agents",
       "skillsCount": 1,
@@ -3450,7 +3450,7 @@
       "repo": "getsentry/sentry",
       "repoName": "Sentry Diagnostics",
       "author": "getsentry",
-      "stars": 45766,
+      "stars": 45768,
       "starsFormatted": "45.8k",
       "description": "Developer-first error tracking and performance monitoring",
       "skillsCount": 1,
@@ -3514,7 +3514,7 @@
       "repo": "vercel-labs/skills",
       "repoName": "Vercel React Patterns",
       "author": "vercel-labs",
-      "stars": 39238,
+      "stars": 39243,
       "starsFormatted": "39.2k",
       "description": "The open agent skills tool - npx skills",
       "skillsCount": 1,
@@ -3578,7 +3578,7 @@
       "repo": "vercel/turborepo",
       "repoName": "Turborepo",
       "author": "vercel",
-      "stars": 31335,
+      "stars": 31336,
       "starsFormatted": "31.3k",
       "description": "The build system for coding agents.",
       "skillsCount": 1,
@@ -3642,7 +3642,7 @@
       "repo": "vercel/ai",
       "repoName": "Vercel AI SDK",
       "author": "vercel",
-      "stars": 27916,
+      "stars": 27918,
       "starsFormatted": "27.9k",
       "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
       "skillsCount": 1,
@@ -3674,7 +3674,7 @@
       "repo": "meta/astryx",
       "repoName": "Meta Astryx",
       "author": "meta",
-      "stars": 27252,
+      "stars": 27298,
       "starsFormatted": "27.3k",
       "description": "An open source design system that's fully customizable and agent ready",
       "skillsCount": 1,
@@ -3738,7 +3738,7 @@
       "repo": "google-research/harness2",
       "repoName": "Harness\u00b2",
       "author": "google-research",
-      "stars": 23698,
+      "stars": 23704,
       "starsFormatted": "23.7k",
       "description": "Google Research empirical coding-agent harness and evaluation benchmarking framework.",
       "skillsCount": 1,
@@ -3866,7 +3866,7 @@
       "repo": "greensock/gsap-skills",
       "repoName": "GSAP Animation",
       "author": "greensock",
-      "stars": 18402,
+      "stars": 18407,
       "starsFormatted": "18.4k",
       "description": "Official AI skills for GSAP. These skills teach AI coding agents how to correctly use GSAP (GreenSock Animation Platform), including best practices, common animation patterns, and plugin usage.",
       "skillsCount": 1,
@@ -3926,11 +3926,43 @@
       ]
     },
     {
+      "id": "heydamir-unslop",
+      "repo": "heydamir/unslop",
+      "repoName": "Unslop",
+      "author": "heydamir",
+      "stars": 15582,
+      "starsFormatted": "15.6k",
+      "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/heydamir/unslop",
+      "version": "latest",
+      "license": "CC-BY-4.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/heydamir/unslop.git ~/.gemini/antigravity/skills/unslop",
+        "claude": "git clone https://github.com/heydamir/unslop.git ~/.claude/skills/unslop",
+        "codex": "codex install heydamir/unslop",
+        "git": "git clone https://github.com/heydamir/unslop.git",
+        "cli": "python scripts/install-to-project.py --repo heydamir/unslop"
+      },
+      "skills": [
+        {
+          "id": "unslop",
+          "name": "unslop",
+          "priority": "P1",
+          "scoped": "ui-unslop",
+          "cli": "python scripts/install-to-project.py --skill ui-unslop",
+          "description": "Anti-slop UI redline and design refactoring skill (heydamir/unslop). Audits vibecoded or AI-generated interfaces to eliminate common slop tells (purple/indigo gradients, floating glow blobs, emoji-heavy labels, shouty marketing copy, erratic spacing). Executes a structured 9-pass design review (spacing, color, icons, copy, typography, layout, details, visuals, motion) replacing cheap decorative effects with quiet chrome and domain-crafted UI. Install with npx skills add https://github.com/heydamir/unslop."
+        }
+      ]
+    },
+    {
       "id": "microsoft-playwright-cli",
       "repo": "microsoft/playwright-cli",
       "repoName": "Playwright",
       "author": "microsoft",
-      "stars": 15174,
+      "stars": 15178,
       "starsFormatted": "15.2k",
       "description": "CLI for common Playwright actions. Record and generate Playwright code, inspect selectors and take screenshots.",
       "skillsCount": 1,
@@ -3962,7 +3994,7 @@
       "repo": "huggingface/skills",
       "repoName": "Skills",
       "author": "huggingface",
-      "stars": 11342,
+      "stars": 11341,
       "starsFormatted": "11.3k",
       "description": "Give your agents the power of the Hugging Face ecosystem",
       "skillsCount": 1,
@@ -3994,7 +4026,7 @@
       "repo": "trailofbits/skills",
       "repoName": "Trail of Bits",
       "author": "trailofbits",
-      "stars": 8170,
+      "stars": 8172,
       "starsFormatted": "8.2k",
       "description": "Trail of Bits skills for security research, vulnerability detection, and audit workflows",
       "skillsCount": 1,
@@ -4026,7 +4058,7 @@
       "repo": "ranxianglei/billion-context",
       "repoName": "Billion-Context",
       "author": "ranxianglei",
-      "stars": 7219,
+      "stars": 7229,
       "starsFormatted": "7.2k",
       "description": "A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough), billion-context is all you need .",
       "skillsCount": 1,
@@ -4058,8 +4090,8 @@
       "repo": "remotion-dev/skills",
       "repoName": "Remotion",
       "author": "remotion-dev",
-      "stars": 6949,
-      "starsFormatted": "6.9k",
+      "stars": 6954,
+      "starsFormatted": "7.0k",
       "description": "Agent Skills",
       "skillsCount": 1,
       "categoryId": "12-specialized",
@@ -4090,7 +4122,7 @@
       "repo": "twostraws/swiftui-agent-skill",
       "repoName": "SwiftUI Pro",
       "author": "twostraws",
-      "stars": 6545,
+      "stars": 6546,
       "starsFormatted": "6.5k",
       "description": "SwiftUI agent skill for Claude Code, Codex, and other AI tools.",
       "skillsCount": 1,
@@ -4122,7 +4154,7 @@
       "repo": "microsoft/tokeneconomizer",
       "repoName": "TokenEconomizer",
       "author": "microsoft",
-      "stars": 6039,
+      "stars": 6049,
       "starsFormatted": "6.0k",
       "description": "Experience-Driven Black-Box Cost Control for Coding Agents",
       "skillsCount": 1,
@@ -4154,7 +4186,7 @@
       "repo": "cloudflare/skills",
       "repoName": "Cloudflare Edge",
       "author": "cloudflare",
-      "stars": 3361,
+      "stars": 3362,
       "starsFormatted": "3.4k",
       "description": "Skills for teaching agents how to build on Cloudflare.",
       "skillsCount": 1,
@@ -4186,7 +4218,7 @@
       "repo": "addyosmani/web-quality-skills",
       "repoName": "Addy Osmani A11y",
       "author": "addyosmani",
-      "stars": 3080,
+      "stars": 3079,
       "starsFormatted": "3.1k",
       "description": "Agent Skills for optimizing web quality based on Lighthouse and Core Web Vitals.",
       "skillsCount": 1,
@@ -4218,7 +4250,7 @@
       "repo": "supabase/agent-skills",
       "repoName": "Supabase",
       "author": "supabase",
-      "stars": 3051,
+      "stars": 3053,
       "starsFormatted": "3.1k",
       "description": "Agent Skills to help developers using AI agents with Supabase",
       "skillsCount": 1,
@@ -4257,7 +4289,7 @@
       "categoryId": "10-ai-infrastructure",
       "categoryLabel": "AI Infrastructure & MCP",
       "officialUrl": "https://github.com/microsoft/azure-skills",
-      "version": "v1.2.123",
+      "version": "v1.2.124",
       "license": "MIT",
       "installRecipes": {
         "antigravity": "git clone https://github.com/microsoft/azure-skills.git ~/.gemini/antigravity/skills/azure-skills",
@@ -4378,8 +4410,8 @@
       "repo": "uizze/uizze",
       "repoName": "Uizze UI Taste",
       "author": "uizze",
-      "stars": 98,
-      "starsFormatted": "98",
+      "stars": 99,
+      "starsFormatted": "99",
       "description": "Design skills for coding agents.",
       "skillsCount": 1,
       "categoryId": "05-ui-ux",
@@ -4502,38 +4534,6 @@
       ]
     },
     {
-      "id": "heydamir-unslop",
-      "repo": "heydamir/unslop",
-      "repoName": "Unslop",
-      "author": "heydamir",
-      "stars": 0,
-      "starsFormatted": "0",
-      "description": "Curated tools, workflows and capabilities from Unslop.",
-      "skillsCount": 1,
-      "categoryId": "05-ui-ux",
-      "categoryLabel": "UI / UX Design",
-      "officialUrl": "https://github.com/heydamir/unslop",
-      "version": "latest",
-      "license": "Open Source",
-      "installRecipes": {
-        "antigravity": "git clone https://github.com/heydamir/unslop.git ~/.gemini/antigravity/skills/unslop",
-        "claude": "git clone https://github.com/heydamir/unslop.git ~/.claude/skills/unslop",
-        "codex": "codex install heydamir/unslop",
-        "git": "git clone https://github.com/heydamir/unslop.git",
-        "cli": "python scripts/install-to-project.py --repo heydamir/unslop"
-      },
-      "skills": [
-        {
-          "id": "unslop",
-          "name": "unslop",
-          "priority": "P1",
-          "scoped": "ui-unslop",
-          "cli": "python scripts/install-to-project.py --skill ui-unslop",
-          "description": "Anti-slop UI redline and design refactoring skill (heydamir/unslop). Audits vibecoded or AI-generated interfaces to eliminate common slop tells (purple/indigo gradients, floating glow blobs, emoji-heavy labels, shouty marketing copy, erratic spacing). Executes a structured 9-pass design review (spacing, color, icons, copy, typography, layout, details, visuals, motion) replacing cheap decorative effects with quiet chrome and domain-crafted UI. Install with npx skills add https://github.com/heydamir/unslop."
-        }
-      ]
-    },
-    {
       "id": "pypa-packaging",
       "repo": "pypa/packaging",
       "repoName": "Python Packaging (PyPA)",
@@ -4579,7 +4579,7 @@
       "cli": "python scripts/install-to-project.py --skill core-addy-agent-skills",
       "repo": "addyosmani/agent-skills",
       "repoName": "Addy Osmani",
-      "stars": 117051,
+      "stars": 117077,
       "ecosystems": [
         "android",
         "agents",
@@ -4598,7 +4598,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-brainstorming",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4615,7 +4615,7 @@
       "cli": "python scripts/install-to-project.py --skill workflow-find-skills",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4632,7 +4632,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-writing-plans",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4649,7 +4649,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-executing-plans",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4666,7 +4666,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-systematic-debugging",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4683,7 +4683,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-diagnosing-bugs",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4700,7 +4700,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-test-driven-development",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "quality"
@@ -4718,7 +4718,7 @@
       "cli": "python scripts/install-to-project.py --skill review-code-review",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "android",
         "quality"
@@ -4736,7 +4736,7 @@
       "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "android",
         "superpowers",
@@ -4755,7 +4755,7 @@
       "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "android",
         "superpowers",
@@ -4774,7 +4774,7 @@
       "cli": "python scripts/install-to-project.py --skill review-verification-before-completion",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "quality"
@@ -4792,7 +4792,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-domain-modeling",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "general"
       ]
@@ -4809,7 +4809,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-subagent-driven-development",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "agents"
@@ -4827,7 +4827,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-dispatching-parallel-agents",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "agents"
@@ -4845,7 +4845,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-using-git-worktrees",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4862,7 +4862,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-finishing-a-development-branch",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -4879,7 +4879,7 @@
       "cli": "python scripts/install-to-project.py --skill review-setup-pre-commit",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -4896,7 +4896,7 @@
       "cli": "python scripts/install-to-project.py --skill core-accidental-data-loss-prevention",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -4913,7 +4913,7 @@
       "cli": "python scripts/install-to-project.py --skill core-git-guardrails-claude-code",
       "repo": "anthropics/skills",
       "repoName": "Anthropic Skills",
-      "stars": 194033,
+      "stars": 194065,
       "ecosystems": [
         "quality"
       ]
@@ -4930,7 +4930,7 @@
       "cli": "python scripts/install-to-project.py --skill core-writing-for-agents",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -4947,7 +4947,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-writing-skills",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -4964,7 +4964,7 @@
       "cli": "python scripts/install-to-project.py --skill core-skill-repair",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -4981,7 +4981,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-handoff",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "agents"
@@ -4999,7 +4999,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-prototype",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -5016,7 +5016,7 @@
       "cli": "python scripts/install-to-project.py --skill core-scaffold-exercises",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -5033,7 +5033,7 @@
       "cli": "python scripts/install-to-project.py --skill core-karpathy-guidelines",
       "repo": "multica-ai/andrej-karpathy-skills",
       "repoName": "Karpathy Guidelines",
-      "stars": 232769,
+      "stars": 232793,
       "ecosystems": [
         "agents"
       ]
@@ -5050,7 +5050,7 @@
       "cli": "python scripts/install-to-project.py --skill test-playwright-cli",
       "repo": "microsoft/playwright-cli",
       "repoName": "Playwright",
-      "stars": 15174,
+      "stars": 15178,
       "ecosystems": [
         "quality"
       ]
@@ -5067,7 +5067,7 @@
       "cli": "python scripts/install-to-project.py --skill doc-obsidian-markdown",
       "repo": "kepano/obsidian-skills",
       "repoName": "Obsidian Brain",
-      "stars": 52239,
+      "stars": 52257,
       "ecosystems": [
         "obsidian"
       ]
@@ -5101,7 +5101,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-grill-me",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5118,7 +5118,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-grill-with-docs",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5135,7 +5135,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-to-spec",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5152,7 +5152,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-to-tickets",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5169,7 +5169,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-implement",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5186,7 +5186,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-tdd",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "superpowers",
         "mattpocock",
@@ -5205,7 +5205,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-diagnosing-bugs",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "mattpocock"
@@ -5223,7 +5223,7 @@
       "cli": "python scripts/install-to-project.py --skill review-code-review",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "android",
         "mattpocock",
@@ -5242,7 +5242,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-codebase-design",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5259,7 +5259,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-domain-modeling",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5276,7 +5276,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-improve-codebase-architecture",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5293,7 +5293,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-research",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5310,7 +5310,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-prototype",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack",
         "mattpocock"
@@ -5328,7 +5328,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-wayfinder",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5345,7 +5345,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-resolving-merge-conflicts",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5362,7 +5362,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-handoff",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "mattpocock"
@@ -5380,7 +5380,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-ask-matt",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5397,7 +5397,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-setup-matt-pocock-skills",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5414,7 +5414,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-triage",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5431,7 +5431,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-teach",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "mattpocock"
       ]
@@ -5448,7 +5448,7 @@
       "cli": "python scripts/install-to-project.py --skill mp-writing-great-skills",
       "repo": "mattpocock/skills",
       "repoName": "Matt Pocock",
-      "stars": 323618,
+      "stars": 323688,
       "ecosystems": [
         "agents",
         "mattpocock"
@@ -6269,7 +6269,7 @@
       "cli": "python scripts/install-to-project.py --skill swiftui-pro-(twostraws)",
       "repo": "twostraws/swiftui-agent-skill",
       "repoName": "SwiftUI Pro",
-      "stars": 6545,
+      "stars": 6546,
       "ecosystems": [
         "kmp",
         "agents"
@@ -6307,7 +6307,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-archify",
       "repo": "tt-a1i/archify",
       "repoName": "Archify",
-      "stars": 96165,
+      "stars": 96181,
       "ecosystems": [
         "general"
       ]
@@ -6324,7 +6324,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-astryx",
       "repo": "meta/astryx",
       "repoName": "Meta Astryx",
-      "stars": 27252,
+      "stars": 27298,
       "ecosystems": [
         "agents"
       ]
@@ -6341,7 +6341,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-ux-pro-max",
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
       "repoName": "UI/UX Pro Max",
-      "stars": 148999,
+      "stars": 149026,
       "ecosystems": [
         "android",
         "kmp",
@@ -6360,7 +6360,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-impeccable",
       "repo": "pbakaus/impeccable",
       "repoName": "Impeccable",
-      "stars": 109398,
+      "stars": 109450,
       "ecosystems": [
         "ecc",
         "impeccable",
@@ -6380,7 +6380,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-taste",
       "repo": "uizze/uizze",
       "repoName": "Uizze UI Taste",
-      "stars": 98,
+      "stars": 99,
       "ecosystems": [
         "agents",
         "quality"
@@ -6415,7 +6415,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-taste-skill",
       "repo": "leonxlnx/taste-skill",
       "repoName": "Taste Skill",
-      "stars": 114831,
+      "stars": 114894,
       "ecosystems": [
         "agents"
       ]
@@ -6432,7 +6432,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-unslop",
       "repo": "heydamir/unslop",
       "repoName": "Unslop",
-      "stars": 0,
+      "stars": 15582,
       "ecosystems": [
         "android",
         "quality"
@@ -6468,7 +6468,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-prototype",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6485,7 +6485,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-design-consultation",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6502,7 +6502,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-shadcn-ui",
       "repo": "shadcn/ui",
       "repoName": "shadcn/ui",
-      "stars": 128101,
+      "stars": 128110,
       "ecosystems": [
         "general"
       ]
@@ -6519,7 +6519,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-emil-design-eng",
       "repo": "emilkowalski/skills",
       "repoName": "Emil Kowalski",
-      "stars": 56586,
+      "stars": 56609,
       "ecosystems": [
         "general"
       ]
@@ -6536,7 +6536,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-vercel-react-patterns",
       "repo": "vercel-labs/skills",
       "repoName": "Vercel React Patterns",
-      "stars": 39238,
+      "stars": 39243,
       "ecosystems": [
         "general"
       ]
@@ -6553,7 +6553,7 @@
       "cli": "python scripts/install-to-project.py --skill ui-gsap-animation",
       "repo": "greensock/gsap-skills",
       "repoName": "GSAP Animation",
-      "stars": 18402,
+      "stars": 18407,
       "ecosystems": [
         "general"
       ]
@@ -6709,7 +6709,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-office-hours",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6726,7 +6726,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-plan-ceo-review",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "android",
         "gstack",
@@ -6745,7 +6745,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-plan-eng-review",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "android",
         "gstack",
@@ -6764,7 +6764,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-plan-design-review",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "android",
         "gstack",
@@ -6783,7 +6783,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-autoplan",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6800,7 +6800,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-design-consultation",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6817,7 +6817,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-design-review",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "android",
         "gstack",
@@ -6836,7 +6836,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-review",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "android",
         "gstack",
@@ -6855,7 +6855,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-qa",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack",
         "quality"
@@ -6873,7 +6873,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-ship",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6890,7 +6890,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-land-and-deploy",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6907,7 +6907,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-investigate",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6924,7 +6924,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-careful",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -6941,7 +6941,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-guard",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack",
         "quality"
@@ -6959,7 +6959,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-benchmark",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack",
         "quality"
@@ -6977,7 +6977,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-retro",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "android",
         "gstack",
@@ -6996,7 +6996,7 @@
       "cli": "python scripts/install-to-project.py --skill gstack-document-release",
       "repo": "garrytan/gstack",
       "repoName": "gstack",
-      "stars": 141446,
+      "stars": 141448,
       "ecosystems": [
         "gstack"
       ]
@@ -7013,7 +7013,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-brainstorming",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -7030,7 +7030,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-writing-plans",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -7047,7 +7047,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-executing-plans",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -7064,7 +7064,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-test-driven-development",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "quality"
@@ -7082,7 +7082,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-systematic-debugging",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -7099,7 +7099,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-subagent-driven-development",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers",
         "agents"
@@ -7117,7 +7117,7 @@
       "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "android",
         "superpowers",
@@ -7136,7 +7136,7 @@
       "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "android",
         "superpowers",
@@ -7155,7 +7155,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-using-git-worktrees",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -7172,7 +7172,7 @@
       "cli": "python scripts/install-to-project.py --skill superpowers-finishing-a-development-branch",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "superpowers"
       ]
@@ -7189,7 +7189,7 @@
       "cli": "python scripts/install-to-project.py --skill research-understand-anything",
       "repo": "egonex-ai/understand-anything",
       "repoName": "Understand Anything",
-      "stars": 92514,
+      "stars": 92526,
       "ecosystems": [
         "agents"
       ]
@@ -7242,7 +7242,7 @@
       "cli": "python scripts/install-to-project.py --skill agent-openhands",
       "repo": "openhands/openhands",
       "repoName": "OpenHands",
-      "stars": 93411,
+      "stars": 93412,
       "ecosystems": [
         "agents"
       ]
@@ -7259,7 +7259,7 @@
       "cli": "python scripts/install-to-project.py --skill agent-codex",
       "repo": "openai/codex",
       "repoName": "OpenAI Codex",
-      "stars": 135179,
+      "stars": 135172,
       "ecosystems": [
         "agents"
       ]
@@ -7276,7 +7276,7 @@
       "cli": "python scripts/install-to-project.py --skill agent-ponytail",
       "repo": "dietrichgebert/ponytail",
       "repoName": "Ponytail",
-      "stars": 190199,
+      "stars": 190253,
       "ecosystems": [
         "agents"
       ]
@@ -7293,7 +7293,7 @@
       "cli": "python scripts/install-to-project.py --skill harness\u00b2",
       "repo": "google-research/harness2",
       "repoName": "Harness\u00b2",
-      "stars": 23698,
+      "stars": 23704,
       "ecosystems": [
         "agents"
       ]
@@ -7346,7 +7346,7 @@
       "cli": "python scripts/install-to-project.py --skill agent-t3-code",
       "repo": "pingdotgg/t3code",
       "repoName": "T3 Code",
-      "stars": 59269,
+      "stars": 59379,
       "ecosystems": [
         "android",
         "agents"
@@ -7364,7 +7364,7 @@
       "cli": "python scripts/install-to-project.py --skill agent-safety-note",
       "repo": "openhands/openhands",
       "repoName": "OpenHands",
-      "stars": 93411,
+      "stars": 93412,
       "ecosystems": [
         "agents",
         "quality"
@@ -7382,7 +7382,7 @@
       "cli": "python scripts/install-to-project.py --skill everything-claude-code-(ecc)",
       "repo": "affaan-m/ecc",
       "repoName": "ECC (Everything Claude Code)",
-      "stars": 302333,
+      "stars": 302371,
       "ecosystems": [
         "android",
         "gsd",
@@ -7406,7 +7406,7 @@
       "cli": "python scripts/install-to-project.py --skill workflow-browser-use",
       "repo": "browser-use/browser-use",
       "repoName": "browser-use",
-      "stars": 120923,
+      "stars": 120937,
       "ecosystems": [
         "agents"
       ]
@@ -7423,7 +7423,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-orca-agent",
       "repo": "stablyai/orca",
       "repoName": "Orca Agent",
-      "stars": 124203,
+      "stars": 124266,
       "ecosystems": [
         "agents"
       ]
@@ -7440,7 +7440,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-composio-skills",
       "repo": "composiohq/awesome-claude-skills",
       "repoName": "Composio Gateway",
-      "stars": 79411,
+      "stars": 79413,
       "ecosystems": [
         "agents",
         "quality"
@@ -7458,7 +7458,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-caveman",
       "repo": "juliusbrussee/caveman",
       "repoName": "Caveman",
-      "stars": 119642,
+      "stars": 119655,
       "ecosystems": [
         "agents"
       ]
@@ -7475,7 +7475,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-billion-context",
       "repo": "ranxianglei/billion-context",
       "repoName": "Billion-Context",
-      "stars": 7219,
+      "stars": 7229,
       "ecosystems": [
         "agents"
       ]
@@ -7509,7 +7509,7 @@
       "cli": "python scripts/install-to-project.py --skill huggingface-skills",
       "repo": "huggingface/skills",
       "repoName": "Skills",
-      "stars": 11342,
+      "stars": 11341,
       "ecosystems": [
         "general"
       ]
@@ -7526,7 +7526,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-anthropic-skills",
       "repo": "anthropics/skills",
       "repoName": "Anthropic Skills",
-      "stars": 194033,
+      "stars": 194065,
       "ecosystems": [
         "agents"
       ]
@@ -7543,7 +7543,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-google-skills",
       "repo": "google/skills",
       "repoName": "Google Agent Skills",
-      "stars": 24126,
+      "stars": 24120,
       "ecosystems": [
         "android",
         "agents"
@@ -7561,7 +7561,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-gemini-api",
       "repo": "googleapis/python-genai",
       "repoName": "Google GenAI SDK",
-      "stars": 4067,
+      "stars": 4069,
       "ecosystems": [
         "general"
       ]
@@ -7578,7 +7578,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-gemini-live-api",
       "repo": "googleapis/python-genai",
       "repoName": "Google GenAI SDK",
-      "stars": 4067,
+      "stars": 4069,
       "ecosystems": [
         "general"
       ]
@@ -7595,7 +7595,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-gemini-omni-flash-api",
       "repo": "googleapis/python-genai",
       "repoName": "Google GenAI SDK",
-      "stars": 4067,
+      "stars": 4069,
       "ecosystems": [
         "general"
       ]
@@ -7612,7 +7612,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-graphify",
       "repo": "graphify-labs/graphify",
       "repoName": "Graphify",
-      "stars": 147129,
+      "stars": 147177,
       "ecosystems": [
         "agents"
       ]
@@ -7629,7 +7629,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-context7",
       "repo": "upstash/context7",
       "repoName": "Context7",
-      "stars": 64750,
+      "stars": 64756,
       "ecosystems": [
         "general"
       ]
@@ -7646,7 +7646,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-selection-guidance",
       "repo": "graphify-labs/graphify",
       "repoName": "Graphify",
-      "stars": 147129,
+      "stars": 147177,
       "ecosystems": [
         "obsidian"
       ]
@@ -7663,7 +7663,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-tokeneconomizer",
       "repo": "microsoft/tokeneconomizer",
       "repoName": "TokenEconomizer",
-      "stars": 6039,
+      "stars": 6049,
       "ecosystems": [
         "agents"
       ]
@@ -7698,7 +7698,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-agent-skills-spec",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -7715,7 +7715,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-turborepo",
       "repo": "vercel/turborepo",
       "repoName": "Turborepo",
-      "stars": 31335,
+      "stars": 31336,
       "ecosystems": [
         "general"
       ]
@@ -7732,7 +7732,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-vercel-ai-sdk",
       "repo": "vercel/ai",
       "repoName": "Vercel AI SDK",
-      "stars": 27916,
+      "stars": 27918,
       "ecosystems": [
         "agents"
       ]
@@ -7749,7 +7749,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-cloudflare-skills",
       "repo": "cloudflare/skills",
       "repoName": "Cloudflare Edge",
-      "stars": 3361,
+      "stars": 3362,
       "ecosystems": [
         "general"
       ]
@@ -7766,7 +7766,7 @@
       "cli": "python scripts/install-to-project.py --skill infra-supabase-skills",
       "repo": "supabase/agent-skills",
       "repoName": "Supabase",
-      "stars": 3051,
+      "stars": 3053,
       "ecosystems": [
         "agents",
         "quality"
@@ -7855,7 +7855,7 @@
       "cli": "python scripts/install-to-project.py --skill review-cloudflare-security-audit",
       "repo": "cloudflare/security-audit-skill",
       "repoName": "Cloudflare Security",
-      "stars": 71684,
+      "stars": 71756,
       "ecosystems": [
         "android",
         "agents",
@@ -7892,7 +7892,7 @@
       "cli": "python scripts/install-to-project.py --skill review-open-code-review",
       "repo": "openhands/openhands",
       "repoName": "OpenHands",
-      "stars": 93411,
+      "stars": 93412,
       "ecosystems": [
         "android",
         "agents",
@@ -7930,7 +7930,7 @@
       "cli": "python scripts/install-to-project.py --skill review-requesting-code-review",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "android",
         "superpowers",
@@ -7949,7 +7949,7 @@
       "cli": "python scripts/install-to-project.py --skill review-receiving-code-review",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "android",
         "superpowers",
@@ -7968,7 +7968,7 @@
       "cli": "python scripts/install-to-project.py --skill review-verification-before-completion",
       "repo": "obra/superpowers",
       "repoName": "Superpowers",
-      "stars": 317134,
+      "stars": 317162,
       "ecosystems": [
         "android",
         "superpowers",
@@ -7987,7 +7987,7 @@
       "cli": "python scripts/install-to-project.py --skill review-setup-pre-commit",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "android",
         "agents",
@@ -8006,7 +8006,7 @@
       "cli": "python scripts/install-to-project.py --skill debug-sentry-diagnostics",
       "repo": "getsentry/sentry",
       "repoName": "Sentry Diagnostics",
-      "stars": 45766,
+      "stars": 45768,
       "ecosystems": [
         "android",
         "agents",
@@ -8025,7 +8025,7 @@
       "cli": "python scripts/install-to-project.py --skill review-trailofbits-security",
       "repo": "trailofbits/skills",
       "repoName": "Trail of Bits",
-      "stars": 8170,
+      "stars": 8172,
       "ecosystems": [
         "android",
         "quality"
@@ -8043,7 +8043,7 @@
       "cli": "python scripts/install-to-project.py --skill review-web-quality-a11y",
       "repo": "addyosmani/web-quality-skills",
       "repoName": "Addy Osmani A11y",
-      "stars": 3080,
+      "stars": 3079,
       "ecosystems": [
         "android",
         "quality"
@@ -8113,7 +8113,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-google-maps-platform",
       "repo": "google/skills",
       "repoName": "Google Agent Skills",
-      "stars": 24126,
+      "stars": 24120,
       "ecosystems": [
         "general"
       ]
@@ -8130,7 +8130,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-agent-browser",
       "repo": "vercel-labs/agent-browser",
       "repoName": "Agent Browser",
-      "stars": 50614,
+      "stars": 50643,
       "ecosystems": [
         "agents"
       ]
@@ -8182,7 +8182,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-cloud-databases-onboarding",
       "repo": "google/skills",
       "repoName": "Google Agent Skills",
-      "stars": 24126,
+      "stars": 24120,
       "ecosystems": [
         "general"
       ]
@@ -8386,7 +8386,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-ml-best-practices",
       "repo": "google/skills",
       "repoName": "Google Agent Skills",
-      "stars": 24126,
+      "stars": 24120,
       "ecosystems": [
         "general"
       ]
@@ -8454,7 +8454,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-graphify",
       "repo": "graphify-labs/graphify",
       "repoName": "Graphify",
-      "stars": 147129,
+      "stars": 147177,
       "ecosystems": [
         "general"
       ]
@@ -8471,7 +8471,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-hyperframes-media",
       "repo": "heygen-com/hyperframes",
       "repoName": "Hyperframes Media",
-      "stars": 83790,
+      "stars": 83837,
       "ecosystems": [
         "general"
       ]
@@ -8488,7 +8488,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-marketing-growth-engine",
       "repo": "coreyhaines31/marketingskills",
       "repoName": "Marketing Skills",
-      "stars": 60110,
+      "stars": 60133,
       "ecosystems": [
         "quality"
       ]
@@ -8505,7 +8505,7 @@
       "cli": "python scripts/install-to-project.py --skill spec-remotion-video",
       "repo": "remotion-dev/skills",
       "repoName": "Remotion",
-      "stars": 6949,
+      "stars": 6954,
       "ecosystems": [
         "general"
       ]
@@ -8539,7 +8539,7 @@
       "cli": "python scripts/install-to-project.py --skill readme.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "android",
         "agents",
@@ -8558,7 +8558,7 @@
       "cli": "python scripts/install-to-project.py --skill license",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8575,7 +8575,7 @@
       "cli": "python scripts/install-to-project.py --skill contributing.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8592,7 +8592,7 @@
       "cli": "python scripts/install-to-project.py --skill changelog.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8609,7 +8609,7 @@
       "cli": "python scripts/install-to-project.py --skill security.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents",
         "quality"
@@ -8627,7 +8627,7 @@
       "cli": "python scripts/install-to-project.py --skill code_of_conduct.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8644,7 +8644,7 @@
       "cli": "python scripts/install-to-project.py --skill mrd.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8661,7 +8661,7 @@
       "cli": "python scripts/install-to-project.py --skill brd.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8678,7 +8678,7 @@
       "cli": "python scripts/install-to-project.py --skill prd.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8695,7 +8695,7 @@
       "cli": "python scripts/install-to-project.py --skill roadmap.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8712,7 +8712,7 @@
       "cli": "python scripts/install-to-project.py --skill features.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8729,7 +8729,7 @@
       "cli": "python scripts/install-to-project.py --skill personas.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8746,7 +8746,7 @@
       "cli": "python scripts/install-to-project.py --skill architecture.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8763,7 +8763,7 @@
       "cli": "python scripts/install-to-project.py --skill trd.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8780,7 +8780,7 @@
       "cli": "python scripts/install-to-project.py --skill srd.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8797,7 +8797,7 @@
       "cli": "python scripts/install-to-project.py --skill ssd.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8814,7 +8814,7 @@
       "cli": "python scripts/install-to-project.py --skill tsd.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8831,7 +8831,7 @@
       "cli": "python scripts/install-to-project.py --skill api-specification.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8848,7 +8848,7 @@
       "cli": "python scripts/install-to-project.py --skill data-model.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8865,7 +8865,7 @@
       "cli": "python scripts/install-to-project.py --skill adr/",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8882,7 +8882,7 @@
       "cli": "python scripts/install-to-project.py --skill agents.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8899,7 +8899,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/governance/rules.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents",
         "quality"
@@ -8917,7 +8917,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/governance/sprint-rules.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8934,7 +8934,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/governance/branching.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8951,7 +8951,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/governance/memory.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8968,7 +8968,7 @@
       "cli": "python scripts/install-to-project.py --skill glossary.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -8985,7 +8985,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/governance/ai-workflow.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "android",
         "agents",
@@ -9004,7 +9004,7 @@
       "cli": "python scripts/install-to-project.py --skill tasks/ralph/prd.json",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "superpowers",
         "agents"
@@ -9022,7 +9022,7 @@
       "cli": "python scripts/install-to-project.py --skill tasks/ralph/progress.txt",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "superpowers",
         "agents",
@@ -9041,7 +9041,7 @@
       "cli": "python scripts/install-to-project.py --skill sprint-plan.md-/-sprint-plans",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9058,7 +9058,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/implementation-status.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9075,7 +9075,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/testing/test-strategy.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents",
         "quality"
@@ -9093,7 +9093,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/testing/test-cases.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents",
         "quality"
@@ -9111,7 +9111,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/security/threat-model.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents",
         "quality"
@@ -9129,7 +9129,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/security.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents",
         "quality"
@@ -9147,7 +9147,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/performance.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents",
         "quality"
@@ -9165,7 +9165,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/accessibility.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9182,7 +9182,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/reports/",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "android",
         "agents",
@@ -9201,7 +9201,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/build-guide.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9218,7 +9218,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/environment.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9235,7 +9235,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/release-process.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9252,7 +9252,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/deployment.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9269,7 +9269,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/troubleshooting.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9286,7 +9286,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/runbook.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9303,7 +9303,7 @@
       "cli": "python scripts/install-to-project.py --skill platform-/-integration-/-privacy-documents",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9320,7 +9320,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/governance/decision.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9337,7 +9337,7 @@
       "cli": "python scripts/install-to-project.py --skill docs/architecture/flow.md",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9354,7 +9354,7 @@
       "cli": "python scripts/install-to-project.py --skill organize-the-project-into-a-clear,-predictable-structure-with-documented-module-boundaries.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9371,7 +9371,7 @@
       "cli": "python scripts/install-to-project.py --skill keep-business/domain-logic-separate-from-ui,-presentation-and-framework-specific-code.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9388,7 +9388,7 @@
       "cli": "python scripts/install-to-project.py --skill remove-genuinely-unused,-unreachable-and-duplicated-code-after-checking-references,-build-variants-and-generated-code.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9405,7 +9405,7 @@
       "cli": "python scripts/install-to-project.py --skill use-consistent,-descriptive-naming-for-packages,-modules,-types,-functions,-variables,-resources-and-files.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9422,7 +9422,7 @@
       "cli": "python scripts/install-to-project.py --skill handle-expected-failures-explicitly;-preserve-useful-context,-avoid-swallowed-exceptions-and-provide-safe-user-facing-fallbacks.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9439,7 +9439,7 @@
       "cli": "python scripts/install-to-project.py --skill separate-environment-specific-configuration-from-source;-validate-required-values-and-never-commit-secrets.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9456,7 +9456,7 @@
       "cli": "python scripts/install-to-project.py --skill extract-components-and-utilities-when-reuse-improves-consistency;-avoid-premature-abstraction-and-oversized-shared-modules.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9473,7 +9473,7 @@
       "cli": "python scripts/install-to-project.py --skill define-state-ownership,-lifecycle,-events,-loading/error/empty-states-and-concurrency-rules-consistently.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9490,7 +9490,7 @@
       "cli": "python scripts/install-to-project.py --skill document-module-responsibilities,-non-obvious-logic,-public-contracts-and-important-setup/maintenance-workflows.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
@@ -9507,7 +9507,7 @@
       "cli": "python scripts/install-to-project.py --skill use-explicit-api-contracts,-versioning-strategy-where-needed,-consistent-error-models,-validation-and-clear-client/server-boundaries.",
       "repo": "agentskills/agentskills",
       "repoName": "Agent Skills Spec",
-      "stars": 27259,
+      "stars": 27261,
       "ecosystems": [
         "agents"
       ]
