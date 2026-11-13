@@ -9,6 +9,7 @@ export const Header: React.FC = () => {
   const setPriorityGuideOpen = useSkillStore((s) => s.setPriorityGuideOpen)
   const setCommandPaletteOpen = useSkillStore((s) => s.setCommandPaletteOpen)
   const setPillar = useSkillStore((s) => s.setPillar)
+  const goHome = useSkillStore((s) => s.goHome)
 
   const formattedStars = (meta.totalStars / 1_000_000).toFixed(2)
 
@@ -17,18 +18,25 @@ export const Header: React.FC = () => {
       {/* 1. Slim Sticky Navigation Topbar (Only 56-64px, stays accessible without blocking screen) */}
       <header className="border-b border-[#21262d] bg-[#08090a]/95 backdrop-blur-md sticky top-0 z-40">
         <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-14 sm:h-16 flex items-center justify-between gap-4">
-          {/* Brand & Version */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#161b22] border border-[#30363d] flex items-center justify-center text-slate-100 shadow-sm">
-              <Terminal className="w-5 h-5 text-cyan-400" />
+          {/* Brand & Version (Click to return Home) */}
+          <button
+            onClick={goHome}
+            className="flex items-center gap-3 group text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg p-1 -ml-1 transition-all"
+            title="Return to Home / Upstream Frameworks"
+            aria-label="SkillDock Home"
+          >
+            <div className="w-9 h-9 rounded-lg bg-[#161b22] border border-[#30363d] group-hover:border-cyan-500/60 group-hover:bg-[#1c2128] flex items-center justify-center text-slate-100 shadow-sm transition-all duration-200">
+              <Terminal className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
             </div>
             <div className="flex items-baseline gap-2.5">
-              <span className="text-xl font-black tracking-tight text-white">SkillDock</span>
-              <span className="text-xs font-mono text-slate-300 border border-[#21262d] px-2 py-0.5 rounded bg-[#0d1117]">
+              <span className="text-xl font-black tracking-tight text-white group-hover:text-cyan-300 transition-colors duration-200">
+                SkillDock
+              </span>
+              <span className="text-xs font-mono text-slate-300 border border-[#21262d] px-2 py-0.5 rounded bg-[#0d1117] group-hover:border-cyan-500/40 transition-colors">
                 v2.0
               </span>
             </div>
-          </div>
+          </button>
 
           {/* Quick Actions & Navigation */}
           <div className="flex items-center gap-2.5 sm:gap-3.5">

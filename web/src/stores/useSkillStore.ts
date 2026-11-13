@@ -155,6 +155,7 @@ interface SkillStoreState {
   setRepo: (repo: string) => void
   setSort: (sort: SortOption) => void
   resetFilters: () => void
+  goHome: () => void
 
   toggleStack: (skill: Skill) => void
   addStarterPackToStack: (skillIds: string[]) => void
@@ -268,6 +269,36 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     })
     const { activePillar } = get()
     syncUrlParams({ pillar: activePillar, searchQuery: '', priority: 'ALL', category: 'ALL', ecosystem: 'all', repo: 'all', sort: 'default' })
+  },
+
+  goHome: () => {
+    set({
+      activePillar: 'frameworks',
+      searchQuery: '',
+      selectedPriority: 'ALL',
+      selectedCategory: 'ALL',
+      selectedEcosystem: 'all',
+      selectedRepo: 'all',
+      selectedSort: 'default',
+      inspectSkill: null,
+      inspectFramework: null,
+      promptModalSkill: null,
+      isStackModalOpen: false,
+      isPriorityGuideOpen: false,
+      isCommandPaletteOpen: false,
+    })
+    syncUrlParams({
+      pillar: 'frameworks',
+      searchQuery: '',
+      priority: 'ALL',
+      category: 'ALL',
+      ecosystem: 'all',
+      repo: 'all',
+      sort: 'default',
+    })
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   },
 
   toggleStack: (skill) => {
