@@ -1,172 +1,174 @@
 import React from 'react'
-import { Terminal, Layers, Star, Sparkles, Command, ShieldCheck } from 'lucide-react'
+import { Terminal, Layers, Command, Sparkles, Boxes, Zap, Store, FileText } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
+import type { AssistantType, PillarType } from '@/types'
 
 export const Header: React.FC = () => {
-  const meta = useSkillStore((s) => s.meta)
   const stack = useSkillStore((s) => s.stack)
-  const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
-  const setPriorityGuideOpen = useSkillStore((s) => s.setPriorityGuideOpen)
-  const setCommandPaletteOpen = useSkillStore((s) => s.setCommandPaletteOpen)
+  const activePillar = useSkillStore((s) => s.activePillar)
   const setPillar = useSkillStore((s) => s.setPillar)
+  const activeAssistant = useSkillStore((s) => s.activeAssistant)
+  const setAssistant = useSkillStore((s) => s.setAssistant)
+  const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
+  const setCommandPaletteOpen = useSkillStore((s) => s.setCommandPaletteOpen)
   const goHome = useSkillStore((s) => s.goHome)
+  const meta = useSkillStore((s) => s.meta)
 
-  const formattedStars = (meta.totalStars / 1_000_000).toFixed(2)
+  const pillars: { id: PillarType; label: string; count: number; icon: React.ReactNode }[] = [
+    { id: 'frameworks', label: 'Frameworks', count: meta.totalFrameworks || 73, icon: <Boxes className="w-3.5 h-3.5" /> },
+    { id: 'skills', label: 'Skills', count: meta.totalSkills || 282, icon: <Zap className="w-3.5 h-3.5" /> },
+    { id: 'marketplace', label: 'Marketplace', count: 1689, icon: <Store className="w-3.5 h-3.5" /> },
+    { id: 'docs', label: 'Docs', count: meta.totalDocs || 57, icon: <FileText className="w-3.5 h-3.5" /> },
+    { id: 'prompts', label: 'Prompts', count: meta.totalPrompts || 3, icon: <Sparkles className="w-3.5 h-3.5" /> },
+  ]
+
+  const assistants: { id: AssistantType; label: string; icon: string }[] = [
+    { id: 'antigravity', label: 'Antigravity', icon: '⚡' },
+    { id: 'claude', label: 'Claude', icon: '🧠' },
+    { id: 'codex', label: 'Codex', icon: '🤖' },
+    { id: 'git', label: 'CLI', icon: '💻' },
+  ]
 
   return (
-    <>
-      {/* 1. Slim Sticky Navigation Topbar (Only 56-64px, stays accessible without blocking screen) */}
-      <header className="border-b border-[#21262d] bg-[#08090a]/95 backdrop-blur-md sticky top-0 z-40">
-        <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-14 sm:h-16 flex items-center justify-between gap-4">
-          {/* Brand & Version (Click to return Home) */}
+    <header className="border-b border-[#27272a] bg-[#09090b]/90 backdrop-blur-md sticky top-0 z-40">
+      <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-14 flex items-center justify-between gap-4">
+        {/* Brand Logo & Title (Click to return Home) */}
+        <div className="flex items-center gap-6 shrink-0">
           <button
             onClick={goHome}
-            className="flex items-center gap-3 group text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg p-1 -ml-1 transition-all"
-            title="Return to Home / Upstream Frameworks"
+            className="flex items-center gap-2.5 group text-left cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-zinc-400 rounded-md p-1 -ml-1 transition-all"
+            title="SkillDock Home"
             aria-label="SkillDock Home"
           >
-            <div className="w-9 h-9 rounded-lg bg-[#161b22] border border-[#30363d] group-hover:border-cyan-500/60 group-hover:bg-[#1c2128] flex items-center justify-center text-slate-100 shadow-sm transition-all duration-200">
-              <Terminal className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+            <div className="w-7 h-7 rounded-md bg-[#18181b] border border-[#27272a] group-hover:border-zinc-500 group-hover:bg-[#27272a] flex items-center justify-center text-zinc-100 shadow-2xs transition-all duration-150">
+              <Terminal className="w-4 h-4 text-zinc-300 group-hover:text-white transition-colors" />
             </div>
-            <div className="flex items-baseline gap-2.5">
-              <span className="text-xl font-black tracking-tight text-white group-hover:text-cyan-300 transition-colors duration-200">
+            <div className="flex items-baseline gap-2">
+              <span className="text-lg font-bold tracking-tight text-white group-hover:text-zinc-200 transition-colors">
                 SkillDock
               </span>
-              <span className="text-xs font-mono text-slate-300 border border-[#21262d] px-2 py-0.5 rounded bg-[#0d1117] group-hover:border-cyan-500/40 transition-colors">
-                v2.0
+              <span className="text-[10px] font-mono text-zinc-500 border border-[#27272a] px-1.5 py-0.2 rounded bg-[#121215]">
+                v3.0
               </span>
             </div>
           </button>
 
-          {/* Quick Actions & Navigation */}
-          <div className="flex items-center gap-2.5 sm:gap-3.5">
-            {/* Command Palette Trigger Button */}
-            <button
-              onClick={() => setCommandPaletteOpen(true)}
-              className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-sm text-slate-300 hover:text-white border border-[#21262d] transition-colors cursor-pointer"
-              title="Open Command Palette (⌘K or Ctrl+K)"
-            >
-              <Command className="w-4 h-4 text-slate-400" />
-              <span>Search & Commands</span>
-              <kbd className="text-xs font-mono px-1.5 py-0.5 rounded bg-[#161b22] text-slate-300 border border-[#30363d]">
-                ⌘K
-              </kbd>
-            </button>
-
-            {/* Priority Guide Trigger */}
-            <button
-              onClick={() => setPriorityGuideOpen(true)}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-sm font-semibold text-slate-200 border border-[#21262d] transition-colors cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span className="hidden md:inline">Priority Guide</span>
-            </button>
-
-            {/* My Stack Drawer Trigger */}
-            <button
-              onClick={() => setStackModalOpen(true)}
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-cyan-950/40 hover:bg-cyan-950/70 text-sm font-bold text-cyan-300 border border-cyan-800/60 transition-colors cursor-pointer"
-            >
-              <Layers className="w-4 h-4 text-cyan-400" />
-              <span>Stack</span>
-              {stack.length > 0 && (
-                <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-cyan-500/20 text-cyan-300">
-                  {stack.length}
-                </span>
-              )}
-            </button>
-
-            {/* Claude Marketplace 1,689 Assets Hub */}
-            <button
-              onClick={() => setPillar('marketplace')}
-              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-violet-950/40 hover:bg-violet-900/60 text-sm font-semibold text-violet-200 border border-violet-800/60 transition-colors cursor-pointer"
-              title="Open Claude Marketplace Hub (Connectors, Plugins, Enterprise Agents)"
-            >
-              <span>🧠</span>
-              <span>Marketplace (1,689)</span>
-            </button>
-
-            {/* GitHub Repo Link */}
-            <a
-              href="https://github.com/nownitya/Ai-Models-List"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-[#0d1117] hover:bg-[#161b22] text-slate-300 hover:text-white border border-[#21262d] transition-colors"
-              title="View on GitHub"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-              </svg>
-            </a>
-          </div>
+          {/* Integrated 5-Pillar Navigation Tabs (Desktop & Tablet) */}
+          <nav className="hidden md:flex items-center gap-1 border-l border-[#27272a] pl-4">
+            {pillars.map((p) => {
+              const isActive = activePillar === p.id
+              return (
+                <button
+                  key={p.id}
+                  onClick={() => setPillar(p.id)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer ${
+                    isActive
+                      ? 'bg-[#18181b] text-white font-semibold shadow-2xs border border-[#27272a]'
+                      : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#121215]'
+                  }`}
+                >
+                  <span className={isActive ? 'text-zinc-200' : 'text-zinc-500'}>{p.icon}</span>
+                  <span>{p.label}</span>
+                  <span
+                    className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
+                      isActive ? 'bg-[#27272a] text-zinc-200' : 'text-zinc-500'
+                    }`}
+                  >
+                    {p.count}
+                  </span>
+                </button>
+              )
+            })}
+          </nav>
         </div>
-      </header>
 
-      {/* 2. Hero Telemetry Subbar (Natural Document Flow — SCROLLS WITH THE LIST!) */}
-      <div className="border-b border-[#21262d] bg-[#08090a]">
-        <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <div>
-            <div className="flex items-center gap-2.5 mb-1">
-              <span className="text-sm font-semibold text-slate-200">
-                The Launchpad for AI Coding Skills & Agent Harnesses
-              </span>
-              <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-300 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-800/50">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                Dual-Matrix Parity Verified
-              </span>
-            </div>
-            <p className="text-sm text-slate-400 max-w-3xl leading-relaxed">
-              Empirical launchpad covering <strong>{meta.totalFrameworks || 73} upstream frameworks</strong>, <strong>{meta.totalSkills} atomic skills</strong>, <strong>1,689 Claude marketplace listings</strong>, and <strong>{meta.totalDocs || 57} Layer 15 project docs</strong> with multi-assistant installation guides.
-            </p>
+        {/* Right Side Actions: Search, Assistant Selector, Stack, GitHub */}
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Command Palette Trigger */}
+          <button
+            onClick={() => setCommandPaletteOpen(true)}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#121215] hover:bg-[#18181b] text-xs text-zinc-400 hover:text-zinc-200 border border-[#27272a] transition-colors cursor-pointer"
+            title="Search & Commands (⌘K or Ctrl+K)"
+          >
+            <Command className="w-3.5 h-3.5 text-zinc-500" />
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="text-[10px] font-mono px-1 py-0.2 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
+              ⌘K
+            </kbd>
+          </button>
+
+          {/* Target Assistant Selector Pill */}
+          <div className="hidden lg:flex items-center gap-1 bg-[#121215] border border-[#27272a] p-0.5 rounded-md text-xs">
+            {assistants.map((ast) => {
+              const isSelected = activeAssistant === ast.id
+              return (
+                <button
+                  key={ast.id}
+                  onClick={() => setAssistant(ast.id)}
+                  className={`px-2 py-1 rounded text-[11px] font-medium transition-colors cursor-pointer ${
+                    isSelected
+                      ? 'bg-zinc-800 text-white font-semibold shadow-2xs'
+                      : 'text-zinc-400 hover:text-zinc-200'
+                  }`}
+                  title={`Format install scripts for ${ast.label}`}
+                >
+                  <span className="mr-1">{ast.icon}</span>
+                  <span>{ast.label}</span>
+                </button>
+              )
+            })}
           </div>
 
-          {/* Minimal High-Density Metric Badges */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0 overflow-x-auto no-scrollbar">
-            <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
-              <span className="text-xs uppercase font-bold text-cyan-400 block">Frameworks</span>
-              <span className="text-base sm:text-lg font-black text-cyan-300">{meta.totalFrameworks || 73}</span>
-            </div>
-
-            <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
-              <span className="text-xs uppercase font-bold text-slate-400 block">Skills</span>
-              <span className="text-base sm:text-lg font-black text-slate-100">{meta.totalSkills}</span>
-            </div>
-
-            <div
-              onClick={() => setPillar('marketplace')}
-              className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left hover:border-violet-500/50 transition-colors cursor-pointer"
-              title="Browse 1,689 Claude Marketplace Listings"
-            >
-              <span className="text-xs uppercase font-bold text-violet-400 block">Marketplace</span>
-              <span className="text-base sm:text-lg font-black text-violet-300">1,689</span>
-            </div>
-
-            <div
-              onClick={() => setPriorityGuideOpen(true)}
-              className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left cursor-pointer hover:border-red-500/50 transition-colors"
-            >
-              <span className="text-xs uppercase font-bold text-red-400 block">P0 Critical</span>
-              <span className="text-base sm:text-lg font-black text-red-400">{meta.p0Count}</span>
-            </div>
-
-            <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
-              <span className="text-xs uppercase font-bold text-amber-400 block">Stars</span>
-              <span className="text-base sm:text-lg font-black text-amber-400 flex items-center gap-1">
-                <Star className="w-3.5 h-3.5 fill-amber-400" />
-                {formattedStars}M
+          {/* Stack Drawer Button */}
+          <button
+            onClick={() => setStackModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-xs font-semibold text-zinc-200 border border-[#27272a] transition-colors cursor-pointer"
+            title="Open Selected Skills Stack"
+          >
+            <Layers className="w-3.5 h-3.5 text-zinc-400" />
+            <span>Stack</span>
+            {stack.length > 0 && (
+              <span className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-white text-zinc-900 font-bold">
+                {stack.length}
               </span>
-            </div>
+            )}
+          </button>
 
-            <div className="px-3 py-1.5 rounded-lg bg-[#0d1117] border border-[#21262d] text-left">
-              <span className="text-xs uppercase font-bold text-emerald-400 block">Parity</span>
-              <span className="text-base sm:text-lg font-black text-emerald-300 flex items-center gap-1">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                100%
-              </span>
-            </div>
-          </div>
+          {/* GitHub Repo Link */}
+          <a
+            href="https://github.com/nownitya/Ai-Models-List"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-md bg-[#121215] hover:bg-[#18181b] text-zinc-400 hover:text-zinc-200 border border-[#27272a] transition-colors"
+            title="View on GitHub"
+          >
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
         </div>
       </div>
-    </>
+
+      {/* Mobile/Tablet Sub-Navigation Scroll Strip */}
+      <div className="md:hidden flex items-center gap-1 overflow-x-auto no-scrollbar px-4 py-2 border-t border-[#27272a] bg-[#09090b]">
+        {pillars.map((p) => {
+          const isActive = activePillar === p.id
+          return (
+            <button
+              key={p.id}
+              onClick={() => setPillar(p.id)}
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs whitespace-nowrap transition-colors cursor-pointer ${
+                isActive
+                  ? 'bg-zinc-800 text-white font-semibold'
+                  : 'text-zinc-400 hover:text-zinc-200'
+              }`}
+            >
+              <span>{p.label}</span>
+              <span className="text-[10px] font-mono text-zinc-500">({p.count})</span>
+            </button>
+          )
+        })}
+      </div>
+    </header>
   )
 }

@@ -90,6 +90,7 @@ def main():
         ("docs/architecture/ECOSYSTEM-MAP.md", gov_dir / "ECOSYSTEM-MAP.md"),
         ("docs/LIVE-STATS.md", gov_dir / "LIVE-STATS.md"),
         ("docs/IMPLEMENTATION-STATUS.md", gov_dir / "IMPLEMENTATION-STATUS.md"),
+        ("docs/SESSION-HANDOFF.md", vault_target / "SESSION-HANDOFF.md"),
         ("docs/integrations/OBSIDIAN-DEVELOPER-SECOND-BRAIN.md", integrations_dir / "OBSIDIAN-DEVELOPER-SECOND-BRAIN.md"),
         ("docs/integrations/OBSIDIAN-PLUGINS-FOR-DEVELOPERS.md", integrations_dir / "OBSIDIAN-PLUGINS-FOR-DEVELOPERS.md"),
         ("docs/adr/0003-project-naming-and-nomenclature-skilldock.md", gov_dir / "ADR-0003-PROJECT-NAMING-AND-NOMENCLATURE-SKILLDOCK.md"),

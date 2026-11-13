@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { X, Trash2, Download, Copy, Check, Diamond, Terminal } from 'lucide-react'
+import { X, Trash2, Download, Copy, Check, Diamond, Layers } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 
 export const StackModal: React.FC = () => {
@@ -83,22 +83,22 @@ export const StackModal: React.FC = () => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-2xl bg-[#0d1117] border border-[#21262d] rounded-2xl p-6 space-y-5 relative shadow-2xl flex flex-col max-h-[85vh]"
+        className="w-full max-w-2xl bg-[#09090b] border border-[#27272a] rounded-2xl p-6 space-y-5 relative shadow-2xl flex flex-col max-h-[85vh]"
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#21262d]">
+        <div className="flex items-center justify-between pb-3 border-b border-[#27272a]">
           <div>
-            <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-              <Terminal className="w-5 h-5 text-cyan-400" />
-              <span>SkillDock Agent Stack ({stack.length})</span>
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <Layers className="w-5 h-5 text-zinc-300" />
+              <span>SkillDock Stack ({stack.length})</span>
             </h2>
-            <p className="text-sm text-slate-300 mt-1">
+            <p className="text-xs text-zinc-400 mt-1">
               Curate your custom engineering stack, then export to Markdown, Obsidian Second Brain, or CLI scripts.
             </p>
           </div>
           <button
             onClick={() => setStackModalOpen(false)}
-            className="text-slate-400 hover:text-white p-1.5 rounded-lg bg-[#161b22] border border-[#30363d] cursor-pointer"
+            className="text-zinc-400 hover:text-white p-1.5 rounded-md bg-[#18181b] border border-[#27272a] hover:border-zinc-500 cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -107,30 +107,30 @@ export const StackModal: React.FC = () => {
         {/* Stack Items List */}
         <div className="flex-1 overflow-y-auto space-y-2 pr-1">
           {stack.length === 0 ? (
-            <div className="text-center py-12 text-slate-400 text-sm">
-              Your stack is currently empty. Click the bookmark icon on any skill card or row to add it here.
+            <div className="text-center py-12 text-zinc-500 text-xs">
+              Your stack is currently empty. Click the bookmark icon on any skill card to add it here.
             </div>
           ) : (
             stack.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between gap-3 p-3 rounded-lg bg-[#08090a] border border-[#21262d] text-sm"
+                className="flex items-center justify-between gap-3 p-3 rounded-lg bg-[#111114] border border-[#27272a] text-xs"
               >
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <span className="px-2 py-0.5 rounded text-xs font-bold bg-[#161b22] text-slate-200 border border-[#30363d]">
+                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
                     {item.priority}
                   </span>
-                  <span className="font-semibold text-slate-100 truncate">{item.name}</span>
-                  <span className="text-xs font-mono text-cyan-400 truncate">/{item.scoped}</span>
+                  <span className="font-semibold text-zinc-100 truncate">{item.name}</span>
+                  <span className="text-xs font-mono text-zinc-400 truncate">/{item.scoped}</span>
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={() => removeFromStack(item.id)}
-                    className="p-1.5 rounded text-slate-400 hover:text-red-400 hover:bg-[#161b22] transition-colors cursor-pointer"
+                    className="p-1 rounded text-zinc-500 hover:text-rose-400 hover:bg-[#18181b] transition-colors cursor-pointer"
                     title="Remove from stack"
                   >
-                    <Trash2 className="w-4 h-4" />
+                    <Trash2 className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
@@ -140,36 +140,36 @@ export const StackModal: React.FC = () => {
 
         {/* Footer Actions */}
         {stack.length > 0 && (
-          <div className="pt-3.5 border-t border-[#21262d] flex flex-wrap items-center justify-between gap-2.5 text-sm">
+          <div className="pt-3.5 border-t border-[#27272a] flex flex-wrap items-center justify-between gap-2.5 text-xs">
             <button
               onClick={clearStack}
-              className="text-sm text-red-400 hover:text-red-300 font-semibold px-2.5 py-1.5 rounded hover:bg-red-950/30 transition-colors cursor-pointer"
+              className="text-xs text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/20 transition-colors cursor-pointer"
             >
               Clear All ({stack.length})
             </button>
 
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2">
               <button
                 onClick={copyInstallScript}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#161b22] hover:bg-[#21262d] text-slate-200 border border-[#30363d] cursor-pointer transition-colors text-sm font-semibold"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"
               >
-                {copiedScript ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>Copy Batch Script</span>
               </button>
 
               <button
                 onClick={downloadObsidianNote}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-purple-950/50 hover:bg-purple-900/50 text-purple-300 border border-purple-800/50 cursor-pointer transition-colors text-sm font-semibold"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"
               >
-                <Diamond className="w-4 h-4" />
+                <Diamond className="w-3.5 h-3.5" />
                 <span>Obsidian Note</span>
               </button>
 
               <button
                 onClick={downloadMarkdown}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold cursor-pointer transition-colors text-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-white hover:bg-zinc-200 text-zinc-900 font-bold cursor-pointer transition-colors text-xs"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-3.5 h-3.5" />
                 <span>Export Markdown</span>
               </button>
             </div>

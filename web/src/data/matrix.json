@@ -1,7 +1,7 @@
 {
   "meta": {
-    "totalSkills": 282,
-    "totalFrameworks": 73,
+    "totalSkills": 283,
+    "totalFrameworks": 74,
     "totalDocs": 57,
     "totalPrompts": 3,
     "totalStars": 4470654,
@@ -29,7 +29,7 @@
       {
         "id": "05-ui-ux",
         "label": "UI / UX Design",
-        "count": 14
+        "count": 15
       },
       {
         "id": "06-gsd",
@@ -506,6 +506,12 @@
         "stars": 0
       },
       {
+        "repo": "heydamir/unslop",
+        "repoName": "Unslop",
+        "count": 1,
+        "stars": 0
+      },
+      {
         "repo": "pypa/packaging",
         "repoName": "Python Packaging (PyPA)",
         "count": 1,
@@ -513,7 +519,7 @@
       }
     ],
     "p0Count": 96,
-    "p1Count": 106,
+    "p1Count": 107,
     "p2Count": 52,
     "p3Count": 28,
     "generatedAt": "2026-11-09"
@@ -4496,6 +4502,38 @@
       ]
     },
     {
+      "id": "heydamir-unslop",
+      "repo": "heydamir/unslop",
+      "repoName": "Unslop",
+      "author": "heydamir",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Unslop.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/heydamir/unslop",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/heydamir/unslop.git ~/.gemini/antigravity/skills/unslop",
+        "claude": "git clone https://github.com/heydamir/unslop.git ~/.claude/skills/unslop",
+        "codex": "codex install heydamir/unslop",
+        "git": "git clone https://github.com/heydamir/unslop.git",
+        "cli": "python scripts/install-to-project.py --repo heydamir/unslop"
+      },
+      "skills": [
+        {
+          "id": "unslop",
+          "name": "unslop",
+          "priority": "P1",
+          "scoped": "ui-unslop",
+          "cli": "python scripts/install-to-project.py --skill ui-unslop",
+          "description": "Anti-slop UI redline and design refactoring skill (heydamir/unslop). Audits vibecoded or AI-generated interfaces to eliminate common slop tells (purple/indigo gradients, floating glow blobs, emoji-heavy labels, shouty marketing copy, erratic spacing). Executes a structured 9-pass design review (spacing, color, icons, copy, typography, layout, details, visuals, motion) replacing cheap decorative effects with quiet chrome and domain-crafted UI. Install with npx skills add https://github.com/heydamir/unslop."
+        }
+      ]
+    },
+    {
       "id": "pypa-packaging",
       "repo": "pypa/packaging",
       "repoName": "Python Packaging (PyPA)",
@@ -6380,6 +6418,24 @@
       "stars": 114831,
       "ecosystems": [
         "agents"
+      ]
+    },
+    {
+      "id": "unslop",
+      "uniqueId": "05-ui-ux:unslop",
+      "name": "unslop",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Anti-slop UI redline and design refactoring skill (heydamir/unslop). Audits vibecoded or AI-generated interfaces to eliminate common slop tells (purple/indigo gradients, floating glow blobs, emoji-heavy labels, shouty marketing copy, erratic spacing). Executes a structured 9-pass design review (spacing, color, icons, copy, typography, layout, details, visuals, motion) replacing cheap decorative effects with quiet chrome and domain-crafted UI. Install with npx skills add https://github.com/heydamir/unslop.",
+      "scoped": "ui-unslop",
+      "cli": "python scripts/install-to-project.py --skill ui-unslop",
+      "repo": "heydamir/unslop",
+      "repoName": "Unslop",
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "quality"
       ]
     },
     {

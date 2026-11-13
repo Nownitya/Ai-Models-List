@@ -3758,6 +3758,27 @@
     "cli": "python scripts/install-to-project.py --skill ui-ux-pro-max",
     "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
   },
+  "unslop": {
+    "name": "unslop",
+    "category": "05-ui-ux",
+    "scoped": "ui-unslop",
+    "cli": "python scripts/install-to-project.py --skill ui-unslop",
+    "repo": "heydamir/unslop"
+  },
+  "ui-unslop": {
+    "name": "unslop",
+    "category": "05-ui-ux",
+    "scoped": "ui-unslop",
+    "cli": "python scripts/install-to-project.py --skill ui-unslop",
+    "repo": "heydamir/unslop"
+  },
+  "ui unslop": {
+    "name": "unslop",
+    "category": "05-ui-ux",
+    "scoped": "ui-unslop",
+    "cli": "python scripts/install-to-project.py --skill ui-unslop",
+    "repo": "heydamir/unslop"
+  },
   "vercel-react-patterns": {
     "name": "vercel-react-patterns",
     "category": "05-ui-ux",

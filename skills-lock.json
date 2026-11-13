@@ -553,6 +553,12 @@
       "skillPath": "skills/ui-ux-pro-max/SKILL.md",
       "computedHash": "d8f2a9796360b9107eed77bfa417cc67ef6f5259763038cf7a3c315c878884aa"
     },
+    "unslop": {
+      "source": "heydamir/unslop",
+      "sourceType": "github",
+      "skillPath": "skills/05-ui-ux/unslop/SKILL.md",
+      "computedHash": "4ac3867d075ee40f93bf9063d022dbd4e72c006232c476063914fdd694fefb51"
+    },
     "using-git-worktrees": {
       "source": "obra/superpowers",
       "sourceType": "github",

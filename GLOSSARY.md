@@ -38,6 +38,7 @@ Canonical domain terms and definitions to ensure humans and AI agents share an u
 
 - **UI/UX Pro Max**: Design-intelligence system featuring 79 styles, 192 reasoning rules, and 22 technology-stack playbooks (including Jetpack Compose and SwiftUI).
 - **Impeccable**: A design vocabulary and review toolkit for auditing UI accessibility, performance, visual polish, and responsive behavior.
+- **Unslop**: Anti-slop UI redline and design refactoring skill created by Damir Sokolovsky (`heydamir/unslop`) executing a structured 9-pass design audit to eliminate AI interface cliches (purple gradients, glowing blobs, emoji clutter, marketing hype copy) and systematically instill quiet chrome with domain craft.
 - **KMP**: Kotlin Multiplatform — cross-platform logic sharing across Android, iOS, Desktop, and Server without sacrificing native UI.
 - **ADK**: Google Agent Development Kit for building, testing, and deploying enterprise agent workflows.
 

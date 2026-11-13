@@ -1,7 +1,6 @@
 import React from 'react'
 import { Header } from '@/components/layout/Header'
-import { PillarTabs } from '@/components/layout/PillarTabs'
-import { RadarStrip } from '@/components/layout/RadarStrip'
+import { HeroSection } from '@/components/layout/HeroSection'
 import { FilterToolbar } from '@/components/filters/FilterToolbar'
 import { FrameworkGrid } from '@/components/frameworks/FrameworkGrid'
 import { FrameworkDrawer } from '@/components/frameworks/FrameworkDrawer'
@@ -23,18 +22,15 @@ export const App: React.FC = () => {
   const viewMode = useSkillStore((s) => s.viewMode)
 
   return (
-    <div className="min-h-screen bg-[#08090a] text-slate-100 flex flex-col font-sans selection:bg-blue-600/30 selection:text-blue-200">
-      {/* 1. Header & Telemetry Topbar */}
+    <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-zinc-800 selection:text-white">
+      {/* 1. Ultra-Slim Sticky Navigation Topbar (54px) */}
       <Header />
 
-      {/* 2. Unbiased 4-Pillar Universal Switcher & Target Assistant */}
-      <PillarTabs />
+      {/* 2. Editorial Hero (Natural Document Flow - Scrolls away smoothly) */}
+      {(activePillar === 'frameworks' || activePillar === 'skills') && <HeroSection />}
 
-      {/* 3. Live Upstream Telemetry Radar Strip */}
-      <RadarStrip />
-
-      {/* 4. Active Pillar Viewport */}
-      <main className="flex-1 pb-10">
+      {/* 3. Active Pillar Viewport */}
+      <main className="flex-1 pb-16">
         {activePillar === 'frameworks' && (
           <>
             <FilterToolbar />
@@ -45,15 +41,15 @@ export const App: React.FC = () => {
         {activePillar === 'skills' && (
           <>
             <FilterToolbar />
-            <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-3 flex items-center justify-between text-sm text-slate-300">
+            <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-4 flex items-center justify-between text-xs text-zinc-400">
               <span>
                 Showing <strong>{filteredSkills.length}</strong> of <strong>{totalSkills}</strong> cataloged skills
-                <span className="text-slate-400 ml-2 font-mono">
+                <span className="text-zinc-500 ml-2 font-mono">
                   [{viewMode === 'grid' ? 'Grid Cards' : 'Dense Rows'}]
                 </span>
               </span>
-              <span className="text-slate-400 hidden sm:inline">
-                Tip: Press <kbd className="px-2 py-0.5 rounded bg-[#161b22] text-slate-200 font-mono text-xs border border-[#30363d]">/</kbd> to search, <kbd className="px-2 py-0.5 rounded bg-[#161b22] text-slate-200 font-mono text-xs border border-[#30363d]">⌘K</kbd> for command palette
+              <span className="text-zinc-500 hidden sm:inline font-mono">
+                Press <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">/</kbd> to search, <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">⌘K</kbd> for command palette
               </span>
             </div>
             <VirtualizedGrid skills={filteredSkills} />
@@ -67,7 +63,7 @@ export const App: React.FC = () => {
         {activePillar === 'prompts' && <SystemPromptsView />}
       </main>
 
-      {/* 5. Drawers & Modals */}
+      {/* 4. Drawers & Modals */}
       <FrameworkDrawer />
       <SkillDrawer />
       <StackModal />

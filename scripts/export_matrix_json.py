@@ -173,6 +173,8 @@ SKILL_TO_REPO = {
     'azure-skills': 'microsoft/azure-skills',
 
     # UI / Design
+    'unslop': 'heydamir/unslop',
+    'ui-unslop': 'heydamir/unslop',
     'astryx': 'meta/astryx',
     'archify': 'tt-a1i/archify',
     'ui-taste': 'uizze/uizze',
@@ -325,6 +327,7 @@ REPO_DISPLAY_NAMES = {
     'microsoft/azure-skills': 'Microsoft Azure',
     'tt-a1i/archify': 'Archify',
     'uizze/uizze': 'Uizze UI Taste',
+    'heydamir/unslop': 'Unslop',
     'shadcn/ui': 'shadcn/ui',
     'emilkowalski/skills': 'Emil Kowalski',
     'greensock/gsap-skills': 'GSAP Animation',

@@ -42,8 +42,18 @@ Follow the Universal Project Documentation Standard:
 | `prompts/` | Curated prompts for AI model and agent optimization |
 | `skills/` | Functional category folders (01-core to 12-specialized) |
 | `docs/` | Governance, product, architecture, and verification documentation |
+| `docs/SESSION-HANDOFF.md` | Active session continuity, recent decisions, and next steps |
 | `docs/agents/` | Matt Pocock agent skills configuration (tracker, triage, domain) |
 | `scripts/` | Tooling for GitHub CLI push and matrix synchronization |
+
+---
+
+## 🧠 Cross-Session Handoff & Memory Protocol
+At the start of any new session or when resuming work:
+* **Check Active Context**: Read [`docs/SESSION-HANDOFF.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/docs/SESSION-HANDOFF.md) for current focus, benchmarks, and pending tasks.
+* **Verify Deliverables**: Check [`docs/IMPLEMENTATION-STATUS.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/docs/IMPLEMENTATION-STATUS.md) for completed milestones.
+* **Token Compaction**: In long-running turns, utilize Billion Context principles or `/compact` to prevent context bloat.
+* **Sync Knowledge**: Run `python scripts/sync-obsidian.py` after milestone updates to keep the local Obsidian second brain synchronized.
 
 ---
 

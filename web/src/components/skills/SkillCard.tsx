@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch } from 'lucide-react'
+import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch, ArrowUpRight } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Skill } from '@/types'
 
@@ -32,27 +32,26 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
     setTimeout(() => setCopiedCli(false), 1400)
   }
 
-  // Priority color styling
-  let priorityBadge = 'bg-slate-800 text-slate-300 border-slate-700'
-  if (skill.priority === 'P0') priorityBadge = 'bg-red-950/80 text-red-300 border-red-500/40'
-  if (skill.priority === 'P1') priorityBadge = 'bg-amber-950/80 text-amber-300 border-amber-500/40'
-  if (skill.priority === 'P2') priorityBadge = 'bg-emerald-950/80 text-emerald-300 border-emerald-500/40'
-  if (skill.priority === 'P3') priorityBadge = 'bg-indigo-950/80 text-indigo-300 border-indigo-500/40'
+  // Minimalist Priority styling
+  let priorityBadge = 'bg-[#18181b] text-zinc-400 border-[#27272a]'
+  if (skill.priority === 'P0') priorityBadge = 'bg-rose-500/10 text-rose-300 border-rose-500/30'
+  if (skill.priority === 'P1') priorityBadge = 'bg-amber-500/10 text-amber-300 border-amber-500/30'
+  if (skill.priority === 'P2') priorityBadge = 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
 
   return (
     <div
       onClick={() => openInspect(skill)}
-      className="bg-[#0d1117] hover:bg-[#111620] border border-[#21262d] hover:border-slate-500 rounded-xl p-4 sm:p-5 flex flex-col justify-between transition-colors cursor-pointer h-full relative group"
+      className="group rounded-xl border border-[#27272a] bg-[#111114] hover:bg-[#16161a] hover:border-zinc-500 transition-all duration-200 p-4 sm:p-5 flex flex-col justify-between cursor-pointer relative shadow-xs"
     >
       <div>
         {/* Top Header: Category, Priority, Stack Toggle */}
-        <div className="flex items-center justify-between gap-2 mb-2.5">
-          <span className="text-xs font-mono uppercase font-semibold text-slate-400 truncate max-w-[170px]">
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 truncate max-w-[170px]">
             {skill.categoryLabel}
           </span>
 
-          <div className="flex items-center gap-1.5">
-            <span className={`px-2.5 py-0.5 rounded text-xs font-extrabold border ${priorityBadge}`}>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border ${priorityBadge}`}>
               {skill.priority}
             </span>
 
@@ -61,24 +60,27 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
                 e.stopPropagation()
                 toggleStack(skill)
               }}
-              title={isSavedInStack ? 'Remove from My Stack' : 'Add to My Stack'}
-              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
+              title={isSavedInStack ? 'Remove from Stack' : 'Save to Stack'}
+              className={`p-1 rounded-md transition-colors cursor-pointer border ${
                 isSavedInStack
-                  ? 'bg-cyan-950/60 text-cyan-300 border border-cyan-800'
-                  : 'bg-[#161b22] text-slate-400 border border-[#30363d] hover:text-white'
+                  ? 'bg-white text-zinc-900 border-white font-bold'
+                  : 'bg-[#18181b] text-zinc-400 border-[#27272a] hover:text-white hover:border-zinc-500'
               }`}
             >
-              {isSavedInStack ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+              {isSavedInStack ? <BookmarkCheck className="w-3.5 h-3.5" /> : <Bookmark className="w-3.5 h-3.5" />}
             </button>
           </div>
         </div>
 
-        {/* Skill Name */}
-        <h3 className="text-base sm:text-lg font-bold text-slate-100 group-hover:text-cyan-300 transition-colors mb-1.5">
-          {skill.name}
-        </h3>
+        {/* Skill Name & Arrow */}
+        <div className="flex items-start justify-between gap-2 mb-1.5">
+          <h3 className="text-base font-bold text-zinc-100 group-hover:text-white transition-colors">
+            {skill.name}
+          </h3>
+          <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-zinc-300 transition-colors shrink-0 mt-0.5" />
+        </div>
 
-        {/* Upstream Repository Badge */}
+        {/* Upstream Repository Tag */}
         {skill.repo && (
           <div className="mb-2.5">
             <button
@@ -86,54 +88,55 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
                 e.stopPropagation()
                 setRepo(skill.repo!)
               }}
-              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#161b22] hover:bg-slate-800 border border-[#30363d] hover:border-cyan-500/50 text-xs font-mono text-cyan-300 hover:text-white transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] hover:border-zinc-600 text-[11px] font-mono text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer"
               title={`Filter all skills from ${skill.repo}`}
             >
-              <GitBranch className="w-3.5 h-3.5 text-cyan-400" />
-              <span className="font-semibold">{skill.repoName || skill.repo}</span>
+              <GitBranch className="w-3 h-3 text-zinc-400" />
+              <span className="font-medium">{skill.repoName || skill.repo}</span>
             </button>
           </div>
         )}
 
         {/* Description */}
-        <p className="text-sm text-slate-300 line-clamp-3 mb-4 leading-relaxed">
+        <p className="text-xs sm:text-sm text-zinc-400 line-clamp-2 leading-relaxed mb-4">
           {skill.description}
         </p>
       </div>
 
-      {/* Footer Info & Actions */}
-      <div className="pt-3 border-t border-[#21262d] space-y-2.5">
+      {/* Footer Info & 1-Click Copy Commands */}
+      <div className="pt-3 border-t border-[#27272a] space-y-2">
         <div className="flex items-center justify-between gap-2">
           {/* Scoped Slash Command Pill */}
           <button
             onClick={copySlashCommand}
             title="Click to copy slash command"
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#161b22] border border-[#30363d] text-xs font-mono text-cyan-300 hover:border-cyan-500/50 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] hover:border-zinc-500 text-xs font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer"
           >
             <span>/{skill.scoped}</span>
-            {copiedSlash ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+            {copiedSlash ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-zinc-500" />}
           </button>
 
           {/* Upstream Stars if available */}
           {skill.stars > 0 && (
-            <span className="flex items-center gap-1 text-xs font-bold text-amber-400 shrink-0 font-mono">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+            <span className="flex items-center gap-1 text-xs font-mono text-zinc-400 shrink-0">
+              <Star className="w-3 h-3 fill-amber-400/80 text-amber-400" />
               <span>{skill.stars >= 1000 ? `${(skill.stars / 1000).toFixed(0)}k` : skill.stars}</span>
             </span>
           )}
         </div>
 
         {/* Install CLI copy bar */}
-        <div className="flex items-center justify-between gap-1 text-xs text-slate-400">
+        <div className="flex items-center justify-between gap-1 text-xs text-zinc-500">
           <button
             onClick={copyCliCommand}
-            className="inline-flex items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer"
+            title="Copy CLI execution syntax"
           >
-            <span className="text-[11px] text-slate-500 uppercase font-semibold">CLI:</span>
-            <span className="font-mono text-xs text-slate-300 truncate max-w-[170px]">
+            <span className="text-[10px] text-zinc-500 uppercase font-semibold">CLI:</span>
+            <span className="font-mono text-xs text-zinc-300 truncate max-w-[180px]">
               {skill.cli}
             </span>
-            {copiedCli ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+            {copiedCli ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-zinc-500" />}
           </button>
 
           {skill.repo && (
@@ -142,10 +145,10 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-slate-400 hover:text-slate-200 p-1"
+              className="text-zinc-500 hover:text-zinc-300 p-0.5"
               title="Open upstream repository"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3 h-3" />
             </a>
           )}
         </div>
