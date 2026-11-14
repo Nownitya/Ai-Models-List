@@ -6,6 +6,8 @@ export const HeroSection: React.FC = () => {
   const meta = useSkillStore((s) => s.meta)
   const setPillar = useSkillStore((s) => s.setPillar)
   const activePillar = useSkillStore((s) => s.activePillar)
+  const entityScope = useSkillStore((s) => s.entityScope)
+  const setEntityScope = useSkillStore((s) => s.setEntityScope)
 
   const formattedStars = (meta.totalStars / 1_000_000).toFixed(2)
 
@@ -34,36 +36,43 @@ export const HeroSection: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-3xl mb-8">
-            The authoritative engineering launchpad cataloging <strong>{meta.totalSkills || 282} Atomic Skills</strong>,{' '}
-            <strong>1,126 MCP Connectors</strong>, <strong>{meta.totalFrameworks || 73} Upstream Harnesses</strong>, and{' '}
+            The authoritative engineering launchpad cataloging <strong>{meta.totalSkills || 283} Atomic Skills</strong> grouped into{' '}
+            <strong>{meta.totalFrameworks || 74} Upstream Suites & Packages</strong>,{' '}
+            <strong>1,126 MCP Connectors</strong>, and{' '}
             <strong>530 Claude Plugins</strong> with multi-assistant activation guides.
           </p>
 
           {/* Live Metric Ribbon (Clean, Non-Blocking, High-Density) */}
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs font-mono text-zinc-400">
             <button
-              onClick={() => setPillar('frameworks')}
+              onClick={() => {
+                setPillar('frameworks')
+                setEntityScope('all')
+              }}
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
-                activePillar === 'frameworks'
+                (activePillar === 'frameworks' || activePillar === 'skills') && entityScope !== 'atomic'
                   ? 'bg-zinc-800 border-zinc-600 text-white font-bold'
                   : 'bg-[#121215] border-[#27272a] hover:border-zinc-700 text-zinc-300 hover:text-white'
               }`}
             >
-              <span className="text-zinc-500">Harnesses</span>
-              <span className="text-zinc-100 font-bold">{meta.totalFrameworks || 73}</span>
+              <span className="text-zinc-500">Suites & Packages</span>
+              <span className="text-zinc-100 font-bold">{meta.totalFrameworks || 74}</span>
             </button>
 
             <button
-              onClick={() => setPillar('skills')}
+              onClick={() => {
+                setPillar('frameworks')
+                setEntityScope('atomic')
+              }}
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
-                activePillar === 'skills'
+                (activePillar === 'frameworks' || activePillar === 'skills') && entityScope === 'atomic'
                   ? 'bg-zinc-800 border-zinc-600 text-white font-bold'
                   : 'bg-[#121215] border-[#27272a] hover:border-zinc-700 text-zinc-300 hover:text-white'
               }`}
             >
               <Zap className="w-3 h-3 text-amber-400" />
-              <span className="text-zinc-500">Skills</span>
-              <span className="text-zinc-100 font-bold">{meta.totalSkills || 282}</span>
+              <span className="text-zinc-500">Atomic Skills</span>
+              <span className="text-zinc-100 font-bold">{meta.totalSkills || 283}</span>
             </button>
 
             <button

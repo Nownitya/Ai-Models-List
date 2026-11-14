@@ -10,8 +10,17 @@ export const StackModal: React.FC = () => {
   const clearStack = useSkillStore((s) => s.clearStack)
 
   const [copiedScript, setCopiedScript] = useState(false)
+  const [cliFormat, setCliFormat] = useState<'npx' | 'python'>('npx')
 
   if (!isStackModalOpen) return null
+
+  // Helper to get active command
+  const getCommand = (item: typeof stack[0]) => {
+    if (cliFormat === 'npx') {
+      return item.officialCli || (item.repo ? `npx skills add ${item.repo} --skill ${item.id}` : item.cli)
+    }
+    return item.cli
+  }
 
   // 1. Export as Standard Markdown
   const downloadMarkdown = () => {
@@ -19,10 +28,11 @@ export const StackModal: React.FC = () => {
     md += `> Exported from [SkillDock](https://nownitya.github.io/Ai-Models-List/)\n`
     md += `> Generated on: ${new Date().toISOString().split('T')[0]}\n\n`
     md += `## Selected Skills (${stack.length})\n\n`
-    md += `| Priority | Skill Name | Slash Command | Installation Command |\n`
+    md += `| Priority | Skill Name | Slash Command | Official Install Command |\n`
     md += `| :--- | :--- | :--- | :--- |\n`
     stack.forEach((s) => {
-      md += `| **${s.priority}** | ${s.name} | \`/${s.scoped}\` | \`${s.cli}\` |\n`
+      const cmd = s.officialCli || (s.repo ? `npx skills add ${s.repo} --skill ${s.id}` : s.cli)
+      md += `| **${s.priority}** | ${s.name} | \`/${s.scoped}\` | \`${cmd}\` |\n`
     })
 
     const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' })
@@ -42,6 +52,8 @@ export const StackModal: React.FC = () => {
     stack.forEach((s) => {
       rules += `## Skill: ${s.name} (/${s.scoped})\n`
       rules += `- Priority: ${s.priority}\n`
+      if (s.repo) rules += `- Upstream Repo: ${s.repo}\n`
+      rules += `- Install Command: ${s.officialCli || s.cli}\n`
       rules += `- When executing relevant tasks, activate /${s.scoped} rules and behavioral patterns.\n\n`
     })
     rules += `\n# General Laws:\n`
@@ -66,7 +78,8 @@ export const StackModal: React.FC = () => {
         name: s.name,
         slashCommand: `/${s.scoped}`,
         priority: s.priority,
-        installCommand: s.cli,
+        upstreamRepo: s.repo || null,
+        installCommand: s.officialCli || s.cli,
       })),
       mcpServers: {
         skilldock: {
@@ -107,7 +120,7 @@ export const StackModal: React.FC = () => {
       obs += `### [[${s.name}]]\n`
       obs += `- **Priority**: \`${s.priority}\`\n`
       obs += `- **Command**: \`/${s.scoped}\`\n`
-      obs += `- **CLI**: \`${s.cli}\`\n\n`
+      obs += `- **Official CLI**: \`${s.officialCli || s.cli}\`\n\n`
     })
 
     const blob = new Blob([obs], { type: 'text/markdown;charset=utf-8' })
@@ -121,7 +134,7 @@ export const StackModal: React.FC = () => {
 
   // 5. Copy Batch Installation Script
   const copyInstallScript = () => {
-    const commands = stack.map((s) => s.cli).join('\n')
+    const commands = stack.map((s) => getCommand(s)).join('\n')
     navigator.clipboard.writeText(commands)
     setCopiedScript(true)
     setTimeout(() => setCopiedScript(false), 1400)
@@ -159,33 +172,44 @@ export const StackModal: React.FC = () => {
         <div className="flex-1 overflow-y-auto space-y-2 pr-1">
           {stack.length === 0 ? (
             <div className="text-center py-12 text-zinc-500 text-xs">
-              Your stack is currently empty. Click the bookmark icon on any skill card to add it here.
+              Your stack is currently empty. Click the bookmark icon or cherry-pick skills from any suite to add them here.
             </div>
           ) : (
-            stack.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center justify-between gap-3 p-3 rounded-lg bg-[#111114] border border-[#27272a] text-xs"
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
-                    {item.priority}
-                  </span>
-                  <span className="font-semibold text-zinc-100 truncate">{item.name}</span>
-                  <span className="text-xs font-mono text-zinc-400 truncate">/{item.scoped}</span>
-                </div>
+            stack.map((item) => {
+              const activeCmd = getCommand(item)
+              return (
+                <div
+                  key={item.id}
+                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-lg bg-[#111114] border border-[#27272a] text-xs"
+                >
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
+                      {item.priority}
+                    </span>
+                    <span className="font-semibold text-zinc-100 truncate">{item.name}</span>
+                    <span className="text-xs font-mono text-zinc-400 truncate">/{item.scoped}</span>
+                    {item.repo && (
+                      <span className="hidden md:inline text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.2 rounded border border-[#27272a]">
+                        {item.repo}
+                      </span>
+                    )}
+                  </div>
 
-                <div className="flex items-center gap-2 shrink-0">
-                  <button
-                    onClick={() => removeFromStack(item.id)}
-                    className="p-1 rounded text-zinc-500 hover:text-rose-400 hover:bg-[#18181b] transition-colors cursor-pointer"
-                    title="Remove from stack"
-                  >
-                    <Trash2 className="w-3.5 h-3.5" />
-                  </button>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="hidden sm:inline font-mono text-[11px] text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a] max-w-[240px] truncate select-all">
+                      {activeCmd}
+                    </span>
+                    <button
+                      onClick={() => removeFromStack(item.id)}
+                      className="p-1 rounded text-zinc-500 hover:text-rose-400 hover:bg-[#18181b] transition-colors cursor-pointer"
+                      title="Remove from stack"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))
+              )
+            })
           )}
         </div>
 
@@ -224,22 +248,47 @@ export const StackModal: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Actions */}
+            {/* Bottom Actions: CLI Format Toggle & Script Copy */}
             <div className="pt-2 border-t border-[#27272a]/60 flex flex-wrap items-center justify-between gap-2.5 text-xs">
-              <button
-                onClick={clearStack}
-                className="text-xs text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/20 transition-colors cursor-pointer"
-              >
-                Clear All ({stack.length})
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={clearStack}
+                  className="text-xs text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/20 transition-colors cursor-pointer"
+                >
+                  Clear All ({stack.length})
+                </button>
+
+                {/* CLI Command Format Toggle */}
+                <div className="inline-flex rounded-md bg-[#141417] border border-[#27272a] p-0.5 text-[11px] font-mono">
+                  <button
+                    onClick={() => setCliFormat('npx')}
+                    className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
+                      cliFormat === 'npx' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                    title="Official npx skills add open standard"
+                  >
+                    npx skills
+                  </button>
+                  <button
+                    onClick={() => setCliFormat('python')}
+                    className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
+                      cliFormat === 'python' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                    title="Local Python install script"
+                  >
+                    python CLI
+                  </button>
+                </div>
+              </div>
 
               <div className="flex items-center gap-2">
                 <button
                   onClick={copyInstallScript}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"
+                  title={`Copy batch script (${cliFormat === 'npx' ? 'npx skills add' : 'python'})`}
                 >
                   {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>Copy Batch CLI</span>
+                  <span>Copy Batch CLI ({cliFormat})</span>
                 </button>
 
                 <button

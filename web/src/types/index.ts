@@ -2,6 +2,8 @@ export type Priority = 'ALL' | 'P0' | 'P1' | 'P2' | 'P3'
 
 export type PillarType = 'frameworks' | 'skills' | 'marketplace' | 'docs' | 'prompts'
 
+export type EntityScope = 'all' | 'suites' | 'standalone' | 'atomic'
+
 export type AssistantType = 'antigravity' | 'claude' | 'codex' | 'git'
 
 export type Ecosystem =
@@ -144,6 +146,8 @@ export interface SavedStackItem {
   priority: 'P0' | 'P1' | 'P2' | 'P3'
   scoped: string
   cli: string
+  repo?: string | null
+  officialCli?: string
 }
 
 export interface MarketplacePlugin {

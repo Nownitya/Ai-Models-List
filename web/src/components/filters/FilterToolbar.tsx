@@ -6,6 +6,10 @@ import {
   LayoutGrid,
   List,
   GitBranch,
+  Boxes,
+  Layers,
+  Zap,
+  Terminal,
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Ecosystem, Priority, SortOption } from '@/types'
@@ -27,6 +31,8 @@ const ECOSYSTEMS: { id: Ecosystem; label: string }[] = [
 ]
 
 export const FilterToolbar: React.FC = () => {
+  const entityScope = useSkillStore((s) => s.entityScope)
+  const setEntityScope = useSkillStore((s) => s.setEntityScope)
   const searchQuery = useSkillStore((s) => s.searchQuery)
   const selectedPriority = useSkillStore((s) => s.selectedPriority)
   const selectedCategory = useSkillStore((s) => s.selectedCategory)
@@ -78,6 +84,74 @@ export const FilterToolbar: React.FC = () => {
 
   return (
     <div className="w-full space-y-3 max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-4">
+      {/* 1. Entity Scope Hierarchy (Parent Suites vs Standalone vs All Atomic) */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="inline-flex rounded-lg border border-[#27272a] bg-[#111114] p-1">
+          <button
+            onClick={() => setEntityScope('all')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer ${
+              entityScope === 'all'
+                ? 'bg-zinc-100 text-zinc-950 font-bold shadow-xs'
+                : 'text-zinc-400 hover:text-white hover:bg-[#18181b]'
+            }`}
+          >
+            <Boxes className="w-3.5 h-3.5" />
+            <span>All Packages</span>
+            <span className={`text-[10px] font-mono px-1 rounded ${entityScope === 'all' ? 'bg-zinc-300 text-zinc-900 font-bold' : 'bg-zinc-800 text-zinc-400'}`}>
+              74
+            </span>
+          </button>
+
+          <button
+            onClick={() => setEntityScope('suites')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer ${
+              entityScope === 'suites'
+                ? 'bg-zinc-100 text-zinc-950 font-bold shadow-xs'
+                : 'text-zinc-400 hover:text-white hover:bg-[#18181b]'
+            }`}
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span>Suites Only</span>
+            <span className={`text-[10px] font-mono px-1 rounded ${entityScope === 'suites' ? 'bg-zinc-300 text-zinc-900 font-bold' : 'bg-zinc-800 text-zinc-400'}`}>
+              16
+            </span>
+          </button>
+
+          <button
+            onClick={() => setEntityScope('standalone')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer ${
+              entityScope === 'standalone'
+                ? 'bg-zinc-100 text-zinc-950 font-bold shadow-xs'
+                : 'text-zinc-400 hover:text-white hover:bg-[#18181b]'
+            }`}
+          >
+            <Zap className="w-3.5 h-3.5" />
+            <span>Standalone</span>
+            <span className={`text-[10px] font-mono px-1 rounded ${entityScope === 'standalone' ? 'bg-zinc-300 text-zinc-900 font-bold' : 'bg-zinc-800 text-zinc-400'}`}>
+              58
+            </span>
+          </button>
+
+          <button
+            onClick={() => setEntityScope('atomic')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all cursor-pointer ${
+              entityScope === 'atomic'
+                ? 'bg-zinc-100 text-zinc-950 font-bold shadow-xs'
+                : 'text-zinc-400 hover:text-white hover:bg-[#18181b]'
+            }`}
+          >
+            <Terminal className="w-3.5 h-3.5" />
+            <span>All 283 Atomic Skills</span>
+          </button>
+        </div>
+
+        {/* Informative micro-copy */}
+        <div className="hidden lg:flex items-center gap-2 text-[11px] text-zinc-400 font-mono">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span>Suites bundle sub-skills • Standalone are 1-skill tools • Cherry-pick in drawer</span>
+        </div>
+      </div>
+
       {/* Ecosystem & Upstream Framework Preset Navigation (Border-Collapsed Strip) */}
       <div className="flex items-center overflow-x-auto no-scrollbar py-1">
         <div className="inline-flex rounded-md shadow-2xs border border-[#27272a] bg-[#111114] p-0.5">

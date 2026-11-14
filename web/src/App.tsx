@@ -19,9 +19,12 @@ import { useSkillStore } from '@/stores/useSkillStore'
 
 export const App: React.FC = () => {
   const activePillar = useSkillStore((s) => s.activePillar)
+  const entityScope = useSkillStore((s) => s.entityScope)
   const filteredSkills = useFilteredSkills()
   const totalSkills = useSkillStore((s) => s.meta.totalSkills)
   const viewMode = useSkillStore((s) => s.viewMode)
+
+  const isCatalog = activePillar === 'frameworks' || activePillar === 'skills'
 
   return (
     <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-zinc-800 selection:text-white">
@@ -29,7 +32,7 @@ export const App: React.FC = () => {
       <Header />
 
       {/* 2. Editorial Hero & Staff Picks (Natural Document Flow - Scrolls away smoothly) */}
-      {(activePillar === 'frameworks' || activePillar === 'skills') && (
+      {isCatalog && (
         <>
           <HeroSection />
           <StaffPicks />
@@ -38,28 +41,27 @@ export const App: React.FC = () => {
 
       {/* 3. Active Pillar Viewport */}
       <main className="flex-1 pb-16">
-        {activePillar === 'frameworks' && (
+        {isCatalog && (
           <>
             <FilterToolbar />
-            <FrameworkGrid />
-          </>
-        )}
-
-        {activePillar === 'skills' && (
-          <>
-            <FilterToolbar />
-            <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-4 flex items-center justify-between text-xs text-zinc-400">
-              <span>
-                Showing <strong>{filteredSkills.length}</strong> of <strong>{totalSkills}</strong> cataloged skills
-                <span className="text-zinc-500 ml-2 font-mono">
-                  [{viewMode === 'grid' ? 'Grid Cards' : 'Dense Rows'}]
-                </span>
-              </span>
-              <span className="text-zinc-500 hidden sm:inline font-mono">
-                Press <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">/</kbd> to search, <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">⌘K</kbd> for command palette
-              </span>
-            </div>
-            <VirtualizedGrid skills={filteredSkills} />
+            {entityScope === 'atomic' ? (
+              <>
+                <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 pt-4 flex items-center justify-between text-xs text-zinc-400">
+                  <span>
+                    Showing <strong>{filteredSkills.length}</strong> of <strong>{totalSkills}</strong> cataloged atomic skills
+                    <span className="text-zinc-500 ml-2 font-mono">
+                      [{viewMode === 'grid' ? 'Grid Cards' : 'Dense Rows'}]
+                    </span>
+                  </span>
+                  <span className="text-zinc-500 hidden sm:inline font-mono">
+                    Press <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">/</kbd> to search, <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">⌘K</kbd> for command palette
+                  </span>
+                </div>
+                <VirtualizedGrid skills={filteredSkills} />
+              </>
+            ) : (
+              <FrameworkGrid />
+            )}
           </>
         )}
 

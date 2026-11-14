@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { GitFork, Star, ExternalLink, Copy, Check, Plus, Layers, Terminal, ArrowUpRight, Share2 } from 'lucide-react'
+import { GitFork, Star, ExternalLink, Copy, Check, Plus, Layers, Terminal, ArrowUpRight, Share2, Zap } from 'lucide-react'
 import type { FrameworkHub } from '@/types'
 import { useSkillStore } from '@/stores/useSkillStore'
 
@@ -82,17 +82,23 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
                   ? 'bg-amber-500/10 text-amber-300 border-amber-500/30'
                   : 'bg-[#18181b] text-zinc-400 hover:text-white border-[#27272a] hover:border-zinc-500'
               }`}
-              title="Add all skills in this suite to Stack"
+              title={framework.skillsCount > 1 ? "Add all skills in this suite to Stack" : "Save skill to Stack"}
             >
               {isFullySaved ? (
                 <>
                   <Check className="w-3 h-3 text-emerald-400" />
-                  <span>Suite Saved</span>
+                  <span>{framework.skillsCount > 1 ? 'Suite Saved' : 'In Stack'}</span>
                 </>
               ) : (
                 <>
                   <Plus className="w-3 h-3" />
-                  <span>{savedCount > 0 ? `${savedCount}/${framework.skillsCount}` : 'Add Suite'}</span>
+                  <span>
+                    {framework.skillsCount > 1
+                      ? savedCount > 0
+                        ? `${savedCount}/${framework.skillsCount}`
+                        : 'Add Suite'
+                      : 'Add to Stack'}
+                  </span>
                 </>
               )}
             </button>
@@ -120,10 +126,17 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
 
         {/* Sub-Skills Badge */}
         <div className="flex items-center gap-2 mb-4">
-          <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">
-            <Layers className="w-3 h-3 text-zinc-400" />
-            <span>{framework.skillsCount} {framework.skillsCount === 1 ? 'Skill' : 'Skills'}</span>
-          </span>
+          {framework.skillsCount > 1 ? (
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">
+              <Layers className="w-3 h-3 text-indigo-400" />
+              <span>Suite · {framework.skillsCount} Skills</span>
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">
+              <Zap className="w-3 h-3 text-amber-400" />
+              <span>Standalone Skill</span>
+            </span>
+          )}
           {framework.version && (
             <span className="text-[10px] font-mono text-zinc-500 px-1.5 py-0.2 rounded bg-[#09090b] border border-[#27272a]">
               {framework.version}

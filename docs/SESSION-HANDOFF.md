@@ -53,7 +53,22 @@
    - Updated `docs/IMPLEMENTATION-STATUS.md` with verified evidence.
    - Mirrored all docs, matrices, and handoffs into the local Obsidian Second Brain (`D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`).
 
-8. **Tool & Infrastructure Verification**:
+8. **Suite & Standalone Packaging Consolidation (CEO Plan Executed)**:
+   - **Unified Navigation Header**: Merged the redundant `Frameworks (74)` and `Skills (283)` tabs in `Header.tsx` into a single authoritative tab: **`Skills & Suites (74)`**.
+   - **4-Tier Entity Scope Switcher**: Added in `FilterToolbar.tsx` with one-click toggles:
+     - `All Packages (74)`: Displays all 74 upstream bundles (16 Multi-Skill Suites + 58 Standalone Skills).
+     - `Suites Only (16)`: Displays multi-skill parent suites (`gstack`, `superpowers`, `GSD Core`, `Android SDK`, `Agent Skills Spec`).
+     - `Standalone (58)`: Displays single-skill standalone tools (`taste-skill`, `unslop`, `better-auth`, `camerax`).
+     - `All 283 Atomic Skills`: Flat list of all 283 atomic skills with Grid/Dense Rows density switcher.
+   - **Interactive Sub-Skill Cherry-Picking Engine**:
+     - Upgraded `FrameworkDrawer.tsx` with member skill checkboxes, `Select All` / `Clear`, and `Add Selected (N) to Stack`.
+     - Added 1-click copy for the canonical Linux Foundation open standard CLI: `npx skills add <repo> --skill <name>`.
+     - Eliminates agent token bloat (saving up to 80% prompt context window vs installing entire monolithic suites).
+   - **Official Open Standard Command Batching**:
+     - Upgraded `StackModal.tsx` with format toggle between `npx skills add` (official open standard) and `python scripts/install-to-project.py`.
+     - Automatically generates cherry-pick commands for multi-skill repos (`npx skills add garrytan/gstack --skill review`).
+
+9. **Tool & Infrastructure Verification**:
    - `Context7`: Active MCP server in Antigravity for live external library documentation.
    - `Graphify`: Binary installed at `C:\Users\nowni\.local\bin\graphify.exe` for internal AST codebase graphs.
    - `Billion Context`: Evaluated—not needed in Antigravity (native `/compact` and subagents handle context natively).

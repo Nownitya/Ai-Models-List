@@ -13,6 +13,7 @@ import { useSkillStore } from '@/stores/useSkillStore'
 export const Footer: React.FC = () => {
   const meta = useSkillStore((s) => s.meta)
   const setPillar = useSkillStore((s) => s.setPillar)
+  const setEntityScope = useSkillStore((s) => s.setEntityScope)
   const setCategory = useSkillStore((s) => s.setCategory)
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
   const [copiedClone, setCopiedClone] = useState(false)
@@ -86,15 +87,21 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs">
               <li>
                 <button
-                  onClick={() => setPillar('frameworks')}
+                  onClick={() => {
+                    setPillar('frameworks')
+                    setEntityScope('all')
+                  }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Framework Harnesses ({meta.totalFrameworks || 74})
+                  Suites & Packages ({meta.totalFrameworks || 74})
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => setPillar('skills')}
+                  onClick={() => {
+                    setPillar('frameworks')
+                    setEntityScope('atomic')
+                  }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Atomic Agent Skills ({meta.totalSkills || 283})

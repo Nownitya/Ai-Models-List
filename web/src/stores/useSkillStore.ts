@@ -4,6 +4,7 @@ import type {
   AssistantType,
   DocTemplate,
   Ecosystem,
+  EntityScope,
   FrameworkHub,
   MatrixMeta,
   PillarType,
@@ -57,6 +58,7 @@ function getInitialUrlParams() {
   if (typeof window === 'undefined') {
     return {
       pillar: 'frameworks' as PillarType,
+      scope: 'all' as EntityScope,
       q: '',
       priority: 'ALL' as Priority,
       cat: 'ALL',
@@ -79,6 +81,9 @@ function getInitialUrlParams() {
     pillar = pil
   }
 
+  const sc = params.get('scope') as EntityScope
+  const scope: EntityScope = ['all', 'suites', 'standalone', 'atomic'].includes(sc) ? sc : 'all'
+
   const q = params.get('q') || ''
   const p = (params.get('priority') || 'ALL').toUpperCase()
   const priority = ['ALL', 'P0', 'P1', 'P2', 'P3'].includes(p) ? (p as Priority) : 'ALL'
@@ -87,13 +92,14 @@ function getInitialUrlParams() {
   const repo = params.get('repo') || 'all'
   const sort = (params.get('sort') || 'default') as SortOption
 
-  return { pillar, q, priority, cat, eco, repo, sort, skillId: initialSkillId, frameworkRepo: initialFrameworkRepo }
+  return { pillar, scope, q, priority, cat, eco, repo, sort, skillId: initialSkillId, frameworkRepo: initialFrameworkRepo }
 }
 
 // Safeguard 11: Debounced URL synchronization using replaceState
 let urlSyncTimer: ReturnType<typeof setTimeout> | null = null
 function syncUrlParams(state: {
   pillar: PillarType
+  scope?: EntityScope
   searchQuery: string
   priority: Priority
   category: string
@@ -107,6 +113,7 @@ function syncUrlParams(state: {
   urlSyncTimer = setTimeout(() => {
     const params = new URLSearchParams()
     if (state.pillar !== 'frameworks') params.set('pillar', state.pillar)
+    if (state.scope && state.scope !== 'all') params.set('scope', state.scope)
     if (state.searchQuery.trim()) params.set('q', state.searchQuery.trim())
     if (state.priority !== 'ALL') params.set('priority', state.priority)
     if (state.category !== 'ALL') params.set('cat', state.category)
@@ -131,6 +138,9 @@ interface SkillStoreState {
   // Pillar & Assistant
   activePillar: PillarType
   activeAssistant: AssistantType
+
+  // Entity Scope Hierarchy (All Packages | Suites Only | Standalone | All Atomic Skills)
+  entityScope: EntityScope
 
   // Filters (UI State)
   searchQuery: string
@@ -157,6 +167,7 @@ interface SkillStoreState {
   // Actions (ViewModel events)
   setPillar: (pillar: PillarType) => void
   setAssistant: (assistant: AssistantType) => void
+  setEntityScope: (scope: EntityScope) => void
   setViewMode: (mode: 'grid' | 'rows') => void
   setCommandPaletteOpen: (open: boolean) => void
   setSearchQuery: (query: string) => void
@@ -171,6 +182,7 @@ interface SkillStoreState {
   toggleStack: (skill: Skill) => void
   addStarterPackToStack: (skillIds: string[]) => void
   addFrameworkToStack: (framework: FrameworkHub) => void
+  addSelectedSkillsToStack: (skills: { id: string; uniqueId: string; name: string; priority: 'P0' | 'P1' | 'P2' | 'P3'; scoped: string; cli: string; repo?: string | null; officialCli?: string }[]) => void
   removeFromStack: (skillId: string) => void
   clearStack: () => void
 
@@ -203,6 +215,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
 
   activePillar: initialUrl.pillar,
   activeAssistant: loadInitialAssistant(),
+  entityScope: initialUrl.scope,
 
   searchQuery: initialUrl.q,
   selectedPriority: initialUrl.priority,
@@ -224,8 +237,8 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
 
   setPillar: (activePillar) => {
     set({ activePillar })
-    const { searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { entityScope, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setAssistant: (activeAssistant) => {
@@ -237,48 +250,55 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     }
   },
 
+  setEntityScope: (entityScope) => {
+    set({ entityScope })
+    const { activePillar, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+  },
+
   setViewMode: (viewMode) => set({ viewMode }),
   setCommandPaletteOpen: (isCommandPaletteOpen) => set({ isCommandPaletteOpen }),
 
   setSearchQuery: (searchQuery) => {
     set({ searchQuery })
-    const { activePillar, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, entityScope, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setPriority: (selectedPriority) => {
     set({ selectedPriority })
-    const { activePillar, searchQuery, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, entityScope, searchQuery, selectedCategory, selectedEcosystem, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setCategory: (selectedCategory) => {
     const selectedEcosystem = selectedCategory === 'ALL' ? get().selectedEcosystem : 'all'
     set({ selectedCategory, selectedEcosystem })
-    const { activePillar, searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, entityScope, searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setEcosystem: (selectedEcosystem) => {
     set({ selectedEcosystem, selectedCategory: 'ALL' })
-    const { activePillar, searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: 'ALL', ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, entityScope, searchQuery, selectedPriority, selectedRepo, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: 'ALL', ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setRepo: (selectedRepo) => {
     set({ selectedRepo })
-    const { activePillar, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, entityScope, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   setSort: (selectedSort) => {
     set({ selectedSort })
-    const { activePillar, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
+    const { activePillar, entityScope, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedRepo } = get()
+    syncUrlParams({ pillar: activePillar, scope: entityScope, searchQuery, priority: selectedPriority, category: selectedCategory, ecosystem: selectedEcosystem, repo: selectedRepo, sort: selectedSort })
   },
 
   resetFilters: () => {
     set({
+      entityScope: 'all',
       searchQuery: '',
       selectedPriority: 'ALL',
       selectedCategory: 'ALL',
@@ -287,12 +307,13 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       selectedSort: 'default',
     })
     const { activePillar } = get()
-    syncUrlParams({ pillar: activePillar, searchQuery: '', priority: 'ALL', category: 'ALL', ecosystem: 'all', repo: 'all', sort: 'default' })
+    syncUrlParams({ pillar: activePillar, scope: 'all', searchQuery: '', priority: 'ALL', category: 'ALL', ecosystem: 'all', repo: 'all', sort: 'default' })
   },
 
   goHome: () => {
     set({
       activePillar: 'frameworks',
+      entityScope: 'all',
       searchQuery: '',
       selectedPriority: 'ALL',
       selectedCategory: 'ALL',
@@ -308,6 +329,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     })
     syncUrlParams({
       pillar: 'frameworks',
+      scope: 'all',
       searchQuery: '',
       priority: 'ALL',
       category: 'ALL',
@@ -323,9 +345,22 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   toggleStack: (skill) => {
     const { stack } = get()
     const exists = stack.some((s) => s.id === skill.id)
+    const officialCli = skill.repo ? `npx skills add ${skill.repo} --skill ${skill.id}` : skill.cli
     const newStack = exists
       ? stack.filter((s) => s.id !== skill.id)
-      : [...stack, { id: skill.id, uniqueId: skill.uniqueId, name: skill.name, priority: skill.priority, scoped: skill.scoped, cli: skill.cli }]
+      : [
+          ...stack,
+          {
+            id: skill.id,
+            uniqueId: skill.uniqueId,
+            name: skill.name,
+            priority: skill.priority,
+            scoped: skill.scoped,
+            cli: skill.cli,
+            repo: skill.repo,
+            officialCli,
+          },
+        ]
     set({ stack: newStack })
     saveStackToStorage(newStack)
   },
@@ -344,6 +379,8 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
             priority: match.priority,
             scoped: match.scoped,
             cli: match.cli,
+            repo: match.repo,
+            officialCli: match.repo ? `npx skills add ${match.repo} --skill ${match.id}` : match.cli,
           })
         }
       }
@@ -367,6 +404,32 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
           priority: skill.priority,
           scoped: skill.scoped,
           cli: skill.cli,
+          repo: framework.repo,
+          officialCli: `npx skills add ${framework.repo} --skill ${skill.id}`,
+        })
+      }
+    }
+    if (toAdd.length > 0) {
+      const newStack = [...stack, ...toAdd]
+      set({ stack: newStack })
+      saveStackToStorage(newStack)
+    }
+  },
+
+  addSelectedSkillsToStack: (skillsToAdd) => {
+    const { stack } = get()
+    const toAdd: SavedStackItem[] = []
+    for (const item of skillsToAdd) {
+      if (!stack.some((s) => s.id === item.id)) {
+        toAdd.push({
+          id: item.id,
+          uniqueId: item.uniqueId,
+          name: item.name,
+          priority: item.priority,
+          scoped: item.scoped,
+          cli: item.cli,
+          repo: item.repo,
+          officialCli: item.officialCli || (item.repo ? `npx skills add ${item.repo} --skill ${item.id}` : item.cli),
         })
       }
     }

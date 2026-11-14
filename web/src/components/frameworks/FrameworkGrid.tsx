@@ -7,6 +7,7 @@ const PAGE_SIZE = 20
 
 export const FrameworkGrid: React.FC = () => {
   const frameworks = useSkillStore((s) => s.frameworks)
+  const entityScope = useSkillStore((s) => s.entityScope)
   const searchQuery = useSkillStore((s) => s.searchQuery)
   const selectedCategory = useSkillStore((s) => s.selectedCategory)
   const selectedEcosystem = useSkillStore((s) => s.selectedEcosystem)
@@ -18,10 +19,17 @@ export const FrameworkGrid: React.FC = () => {
   // Reset pagination when filters change
   useEffect(() => {
     setVisibleCount(PAGE_SIZE)
-  }, [searchQuery, selectedCategory, selectedEcosystem, selectedSort])
+  }, [searchQuery, selectedCategory, selectedEcosystem, selectedSort, entityScope])
 
   const filteredFrameworks = useMemo(() => {
     let result = [...frameworks]
+
+    // 0. Entity Scope Filter (Suites vs Standalone)
+    if (entityScope === 'suites') {
+      result = result.filter((f) => f.skillsCount > 1)
+    } else if (entityScope === 'standalone') {
+      result = result.filter((f) => f.skillsCount === 1)
+    }
 
     // 1. Text Search across name, author, repo, description, and member skills
     if (searchQuery.trim()) {
@@ -75,7 +83,7 @@ export const FrameworkGrid: React.FC = () => {
     }
 
     return result
-  }, [frameworks, searchQuery, selectedCategory, selectedEcosystem, selectedSort])
+  }, [frameworks, searchQuery, selectedCategory, selectedEcosystem, selectedSort, entityScope])
 
   if (filteredFrameworks.length === 0) {
     return (
@@ -83,9 +91,9 @@ export const FrameworkGrid: React.FC = () => {
         <div className="w-16 h-16 rounded-2xl bg-[#141417] border border-[#27272a] flex items-center justify-center mb-4 text-zinc-500">
           <SearchX className="w-8 h-8" />
         </div>
-        <h3 className="text-lg font-bold text-white mb-1">No upstream frameworks found</h3>
+        <h3 className="text-lg font-bold text-white mb-1">No matching packages found</h3>
         <p className="text-sm text-zinc-400 max-w-md mb-6">
-          No frameworks match your active filters or search query &quot;{searchQuery}&quot;.
+          No upstream packages match your active filters or search query &quot;{searchQuery}&quot;.
         </p>
         <button
           onClick={resetFilters}
@@ -100,6 +108,13 @@ export const FrameworkGrid: React.FC = () => {
   const visibleFrameworks = filteredFrameworks.slice(0, visibleCount)
   const hasMore = filteredFrameworks.length > visibleCount
 
+  const scopeLabel =
+    entityScope === 'suites'
+      ? 'multi-skill suites'
+      : entityScope === 'standalone'
+      ? 'standalone skills'
+      : 'packages (suites & standalone)'
+
   return (
     <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-4">
       {/* Subheader summary */}
@@ -108,7 +123,7 @@ export const FrameworkGrid: React.FC = () => {
           <Boxes className="w-4 h-4 text-emerald-400" />
           <span>
             Showing <strong className="text-white font-semibold">{visibleFrameworks.length}</strong> of{' '}
-            <strong className="text-white font-semibold">{filteredFrameworks.length}</strong> frameworks
+            <strong className="text-white font-semibold">{filteredFrameworks.length}</strong> {scopeLabel}
           </span>
         </div>
       </div>

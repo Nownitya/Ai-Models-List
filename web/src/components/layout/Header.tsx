@@ -1,5 +1,5 @@
 import React from 'react'
-import { Terminal, Layers, Command, Sparkles, Boxes, Zap, Store, FileText } from 'lucide-react'
+import { Terminal, Layers, Command, Sparkles, Boxes, Store, FileText } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { AssistantType, PillarType } from '@/types'
 
@@ -14,13 +14,17 @@ export const Header: React.FC = () => {
   const goHome = useSkillStore((s) => s.goHome)
   const meta = useSkillStore((s) => s.meta)
 
-  const pillars: { id: PillarType; label: string; count: number; icon: React.ReactNode }[] = [
-    { id: 'frameworks', label: 'Frameworks', count: meta.totalFrameworks || 73, icon: <Boxes className="w-3.5 h-3.5" /> },
-    { id: 'skills', label: 'Skills', count: meta.totalSkills || 282, icon: <Zap className="w-3.5 h-3.5" /> },
+  const pillars: { id: PillarType; label: string; count: number | string; icon: React.ReactNode }[] = [
+    { id: 'frameworks', label: 'Skills & Suites', count: meta.totalFrameworks || 74, icon: <Boxes className="w-3.5 h-3.5" /> },
     { id: 'marketplace', label: 'Marketplace', count: 1689, icon: <Store className="w-3.5 h-3.5" /> },
     { id: 'docs', label: 'Docs', count: meta.totalDocs || 57, icon: <FileText className="w-3.5 h-3.5" /> },
     { id: 'prompts', label: 'Prompts', count: meta.totalPrompts || 3, icon: <Sparkles className="w-3.5 h-3.5" /> },
   ]
+
+  const isPillarActive = (id: PillarType) => {
+    if (id === 'frameworks') return activePillar === 'frameworks' || activePillar === 'skills'
+    return activePillar === id
+  }
 
   const assistants: { id: AssistantType; label: string; icon: string }[] = [
     { id: 'antigravity', label: 'Antigravity', icon: '⚡' },
@@ -53,10 +57,10 @@ export const Header: React.FC = () => {
             </div>
           </button>
 
-          {/* Integrated 5-Pillar Navigation Tabs (Desktop & Tablet) */}
+          {/* Integrated 4-Pillar Navigation Tabs (Desktop & Tablet) */}
           <nav className="hidden md:flex items-center gap-1 border-l border-[#27272a] pl-4">
             {pillars.map((p) => {
-              const isActive = activePillar === p.id
+              const isActive = isPillarActive(p.id)
               return (
                 <button
                   key={p.id}
@@ -152,7 +156,7 @@ export const Header: React.FC = () => {
       {/* Mobile/Tablet Sub-Navigation Scroll Strip */}
       <div className="md:hidden flex items-center gap-1 overflow-x-auto no-scrollbar px-4 py-2 border-t border-[#27272a] bg-[#09090b]">
         {pillars.map((p) => {
-          const isActive = activePillar === p.id
+          const isActive = isPillarActive(p.id)
           return (
             <button
               key={p.id}

@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { X, GitFork, Star, ExternalLink, Copy, Check, Plus, Layers, Bot, Share2 } from 'lucide-react'
+import {
+  X,
+  GitFork,
+  Star,
+  ExternalLink,
+  Copy,
+  Check,
+  Plus,
+  Layers,
+  Bot,
+  Share2,
+  Terminal,
+  Sparkles,
+} from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { AssistantType } from '@/types'
 
@@ -7,6 +20,7 @@ export const FrameworkDrawer: React.FC = () => {
   const framework = useSkillStore((s) => s.inspectFramework)
   const closeFrameworkInspect = useSkillStore((s) => s.closeFrameworkInspect)
   const addFrameworkToStack = useSkillStore((s) => s.addFrameworkToStack)
+  const addSelectedSkillsToStack = useSkillStore((s) => s.addSelectedSkillsToStack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
   const stack = useSkillStore((s) => s.stack)
   const skills = useSkillStore((s) => s.skills)
@@ -14,7 +28,14 @@ export const FrameworkDrawer: React.FC = () => {
   const [selectedAssistant, setSelectedAssistant] = useState<AssistantType>('antigravity')
   const [copiedAssistantCmd, setCopiedAssistantCmd] = useState(false)
   const [copiedSkillSlash, setCopiedSkillSlash] = useState<string | null>(null)
+  const [copiedOfficialCli, setCopiedOfficialCli] = useState<string | null>(null)
   const [copiedLink, setCopiedLink] = useState(false)
+  const [selectedSkillIds, setSelectedSkillIds] = useState<Set<string>>(new Set())
+
+  // Reset selected skills when inspecting a different framework
+  useEffect(() => {
+    setSelectedSkillIds(new Set())
+  }, [framework?.id])
 
   // Listen for Escape key to close
   useEffect(() => {
@@ -42,11 +63,53 @@ export const FrameworkDrawer: React.FC = () => {
     setTimeout(() => setCopiedSkillSlash(null), 1600)
   }
 
+  const handleCopyOfficialCli = (skillId: string) => {
+    const cmd = `npx skills add ${framework.repo} --skill ${skillId}`
+    navigator.clipboard.writeText(cmd)
+    setCopiedOfficialCli(skillId)
+    setTimeout(() => setCopiedOfficialCli(null), 1600)
+  }
+
   const handleCopyShare = () => {
     const url = `${window.location.origin}${window.location.pathname}?pillar=frameworks&framework=${encodeURIComponent(framework.repo)}`
     navigator.clipboard.writeText(url)
     setCopiedLink(true)
     setTimeout(() => setCopiedLink(false), 1600)
+  }
+
+  const toggleSelectSkill = (id: string) => {
+    setSelectedSkillIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
+  const handleSelectAll = () => {
+    setSelectedSkillIds(new Set(framework.skills.map((s) => s.id)))
+  }
+
+  const handleDeselectAll = () => {
+    setSelectedSkillIds(new Set())
+  }
+
+  const handleAddSelectedToStack = () => {
+    if (selectedSkillIds.size === 0) return
+    const toAdd = framework.skills
+      .filter((s) => selectedSkillIds.has(s.id))
+      .map((s) => ({
+        id: s.id,
+        uniqueId: `${framework.categoryId}:${s.id}`,
+        name: s.name,
+        priority: s.priority,
+        scoped: s.scoped,
+        cli: s.cli,
+        repo: framework.repo,
+        officialCli: `npx skills add ${framework.repo} --skill ${s.id}`,
+      }))
+    addSelectedSkillsToStack(toAdd)
+    setSelectedSkillIds(new Set())
   }
 
   return (
@@ -157,52 +220,130 @@ export const FrameworkDrawer: React.FC = () => {
             </div>
           </div>
 
-          {/* Member Skills Manifest */}
+          {/* Member Skills Manifest & Cherry-Picking Engine */}
           <div>
-            <div className="flex items-center justify-between mb-3">
-              <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-500 flex items-center gap-1.5">
-                <Layers className="w-3.5 h-3.5 text-zinc-400" />
-                <span>Included Skills ({framework.skillsCount})</span>
-              </h4>
-              <button
-                onClick={() => addFrameworkToStack(framework)}
-                className={`flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
-                  isFullySaved
-                    ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/30'
-                    : 'bg-[#18181b] hover:bg-zinc-800 text-zinc-300 hover:text-white border border-[#27272a] hover:border-zinc-500'
-                }`}
-              >
-                {isFullySaved ? <Check className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
-                <span>{isFullySaved ? 'All Skills in Stack' : 'Add Entire Suite'}</span>
-              </button>
+            {/* Context Saving Educational Tip */}
+            {framework.skillsCount > 1 && (
+              <div className="mb-4 p-3 rounded-lg bg-indigo-950/20 border border-indigo-500/20 text-xs text-indigo-300/90 flex items-start gap-2.5">
+                <Sparkles className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+                <div className="leading-relaxed">
+                  <strong className="text-indigo-200">Official Selective Installation:</strong> You can cherry-pick only the sub-skills your project needs instead of installing the entire monolith. Saves up to 80% prompt context window.
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3">
+              <div className="flex items-center gap-2">
+                <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-zinc-400" />
+                  <span>Included Skills ({framework.skillsCount})</span>
+                </h4>
+                {framework.skillsCount > 1 && (
+                  <div className="flex items-center gap-1 text-[11px] font-mono">
+                    <button
+                      onClick={handleSelectAll}
+                      className="px-1.5 py-0.5 rounded text-zinc-400 hover:text-white hover:bg-[#18181b] transition-colors cursor-pointer"
+                    >
+                      Select All
+                    </button>
+                    <span className="text-zinc-600">|</span>
+                    <button
+                      onClick={handleDeselectAll}
+                      className="px-1.5 py-0.5 rounded text-zinc-400 hover:text-white hover:bg-[#18181b] transition-colors cursor-pointer"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex items-center gap-2">
+                {selectedSkillIds.size > 0 && (
+                  <button
+                    onClick={handleAddSelectedToStack}
+                    className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md bg-emerald-400 hover:bg-emerald-300 text-zinc-950 font-bold transition-all shadow-xs cursor-pointer animate-in fade-in"
+                  >
+                    <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
+                    <span>Add Selected ({selectedSkillIds.size}) to Stack</span>
+                  </button>
+                )}
+
+                <button
+                  onClick={() => addFrameworkToStack(framework)}
+                  className={`flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
+                    isFullySaved
+                      ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/30'
+                      : 'bg-[#18181b] hover:bg-zinc-800 text-zinc-300 hover:text-white border border-[#27272a] hover:border-zinc-500'
+                  }`}
+                >
+                  {isFullySaved ? <Check className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                  <span>{isFullySaved ? 'All in Stack' : 'Add Entire Suite'}</span>
+                </button>
+              </div>
             </div>
 
             <div className="space-y-2">
               {framework.skills.map((skill) => {
                 const isSkillSaved = stack.some((s) => s.id === skill.id)
                 const fullSkill = skills.find((s) => s.id === skill.id)
+                const isSelected = selectedSkillIds.has(skill.id)
+
                 return (
                   <div
                     key={skill.id}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 rounded-lg bg-[#111114] border border-[#27272a] hover:border-zinc-600 transition-colors"
+                    className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 rounded-lg border transition-all ${
+                      isSelected
+                        ? 'bg-[#141419] border-emerald-500/40'
+                        : 'bg-[#111114] border-[#27272a] hover:border-zinc-600'
+                    }`}
                   >
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs sm:text-sm font-semibold text-zinc-100 truncate">{skill.name}</span>
-                        <span className="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
-                          {skill.priority}
-                        </span>
+                    <div className="flex items-start gap-2.5 min-w-0">
+                      {/* Cherry-pick selection checkbox */}
+                      <button
+                        onClick={() => toggleSelectSkill(skill.id)}
+                        className={`mt-0.5 w-4 h-4 rounded shrink-0 flex items-center justify-center transition-colors cursor-pointer border ${
+                          isSelected
+                            ? 'bg-emerald-400 border-emerald-400 text-zinc-950'
+                            : 'border-zinc-600 hover:border-zinc-400 bg-[#18181b]'
+                        }`}
+                        title={isSelected ? 'Deselect this skill' : 'Select for cherry-pick'}
+                      >
+                        {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
+                      </button>
+
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-xs sm:text-sm font-semibold text-zinc-100 truncate">{skill.name}</span>
+                          <span className="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
+                            {skill.priority}
+                          </span>
+                        </div>
+                        <p className="text-xs text-zinc-400 line-clamp-1">{skill.description}</p>
                       </div>
-                      <p className="text-xs text-zinc-500 line-clamp-1">{skill.description}</p>
                     </div>
 
-                    <div className="flex items-center gap-2 shrink-0">
+                    <div className="flex items-center gap-1.5 shrink-0 pl-6 sm:pl-0">
+                      {/* Official README CLI command: npx skills add <repo> --skill <name> */}
+                      <button
+                        onClick={() => handleCopyOfficialCli(skill.id)}
+                        className={`flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono border transition-colors cursor-pointer ${
+                          copiedOfficialCli === skill.id
+                            ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+                            : 'bg-[#18181b] hover:bg-zinc-800 text-zinc-300 border-[#27272a] hover:border-zinc-500'
+                        }`}
+                        title={`Copy official command: npx skills add ${framework.repo} --skill ${skill.id}`}
+                      >
+                        <Terminal className="w-3 h-3 text-cyan-400" />
+                        <span>{copiedOfficialCli === skill.id ? 'Copied npx!' : 'npx add'}</span>
+                      </button>
+
+                      {/* Slash command button */}
                       <button
                         onClick={() => handleCopySlash(skill.scoped)}
-                        className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#18181b] hover:bg-zinc-800 text-xs font-mono text-zinc-300 border border-[#27272a] hover:border-zinc-500 transition-colors cursor-pointer"
+                        className="flex items-center gap-1 px-2 py-1 rounded bg-[#18181b] hover:bg-zinc-800 text-xs font-mono text-zinc-300 border border-[#27272a] hover:border-zinc-500 transition-colors cursor-pointer"
                         title="Copy slash command"
                       >
-                        <span className="truncate max-w-[120px]">{skill.scoped}</span>
+                        <span className="truncate max-w-[110px]">/{skill.scoped}</span>
                         {copiedSkillSlash === skill.scoped ? (
                           <Check className="w-3 h-3 text-emerald-400" />
                         ) : (
@@ -210,12 +351,13 @@ export const FrameworkDrawer: React.FC = () => {
                         )}
                       </button>
 
+                      {/* Stack toggle */}
                       {fullSkill && (
                         <button
                           onClick={() => toggleStack(fullSkill)}
                           className={`p-1.5 rounded transition-colors cursor-pointer border ${
                             isSkillSaved
-                              ? 'bg-white text-zinc-900 border-white'
+                              ? 'bg-white text-zinc-900 border-white font-bold'
                               : 'bg-[#18181b] text-zinc-400 hover:text-white border-[#27272a] hover:border-zinc-500'
                           }`}
                           title={isSkillSaved ? 'Remove from stack' : 'Add to stack'}
