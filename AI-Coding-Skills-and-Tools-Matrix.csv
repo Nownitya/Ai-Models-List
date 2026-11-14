@@ -267,7 +267,12 @@ Ralph Loop,P1,Execute PRD-driven tasks autonomously through repeated iterations;
 Wiggum CLI,P2,Explore structured autonomous development; verify the exact project and host support.
 OpenHands,P2,Run independent autonomous software-development agents.
 Codex,P1,Perform complex coding and repository tasks.
-Ponytail,P1,"Evaluate its coding workflow and implementation approach; verify exact project, features and Antigravity compatibility."
+Ponytail,P1,"Lazy senior dev mode: the smallest complete change that fully solves the task, shortest working diff, and no speculative bloat; levels: lite, full (default), ultra."
+ponytail-review,P1,"Senior code review: 6-pillar audit (bug, risk, scale, missing test, speed, lean cuts) with plain-English findings."
+ponytail-audit,P1,"Full repository health audit: prioritizes correctness, safety, load resilience, tests, speed, and dead code/bloat deletion."
+ponytail-debt,P2,"Automated tracking of shortcut: comments into a prioritized technical debt ledger."
+ponytail-gain,P2,"Empirical benchmark scoreboard showing measured code, token, cost, and time savings."
+ponytail-help,P3,"Quick reference card for Ponytail operating levels, skills, and configuration settings."
 Harness²,P3,Explore research on agent harness design and evaluation; not a standard daily coding plugin.
 MemPalace,P1,"Persistent local-first memory for project files and agent conversation history; supports semantic/hybrid retrieval, wake-up/context recall, MCP integration and configurable storage backends. Use for durable cross-session knowledge, not source-code relationship mapping."
 MemPalace data-governance note,P1,"Before indexing private repositories or agent transcripts, define allowed data scope, retention/deletion, local/server backend, embedding model downloads and access controls."

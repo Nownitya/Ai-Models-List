@@ -189,6 +189,12 @@
     - **Ecosystem Filter Ribbon**: Evolved `ClaudeMarketplaceView.tsx` into `MarketplaceView.tsx` with a multi-ecosystem filter bar (`All Ecosystems`, `Claude & MCP`, `ChatGPT Actions / GPTs`, `Google Antigravity`, `Cursor / VS Code`), badge indicators, and 1-click action schema copy.
     - **Full-Suite Quality Gate**: 100% clean TypeScript build (`tsc -b`), all 87 Python unit tests passing, and deployed live to GitHub Pages storefront.
 
+22. **ChatGPT Custom GPT Exporter, Milestone H9/H10 Documentation & Root npx Packaging**:
+    - **ChatGPT Custom GPT Exporter**: Upgraded `web/src/components/modals/StackModal.tsx` with a green `[ChatGPT GPT]` exporter generating tailored Custom GPT System Instructions, capability mappings, slash command behaviors, and an embedded OpenAPI 3.1.0 gateway specification (`https://api.skilldock.dev/v1/skills/<id>`).
+    - **Milestone H9 & H10 Formalization**: Codified Milestone H9 (M9.1–M9.4) and Milestone H10 (M10.1–M10.4) in `docs/ROADMAP.md` and tracked delivery with TASK-033 and TASK-034 in `docs/TASKS.md`.
+    - **Global npm Distribution**: Authored root `package.json` with binary pointer `bin/skilldock.js`, standard test/e2e/build/audit scripts, allowing instant execution via `npx skilldock` from any terminal.
+    - **Adversarial QA Gate**: 100% verified across Dual Matrix Parity, 87 Python unit tests, 6 Playwright E2E browser tests, and Law 2 skill structural audits (314 packages). Staged to GitHub Pages storefront.
+
 ---
 
 ### 🧠 Current State of Repository & Metrics

@@ -3,26 +3,30 @@ import subprocess
 import sys
 import json
 import os
+import tempfile
 
 class TestSkillDockCLI(unittest.TestCase):
     def setUp(self):
         self.cli_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scripts', 'skilldock_cli.py')
-        self.stack_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.skilldock-stack.json')
-        # Ensure clean stack before each test
-        subprocess.run([sys.executable, self.cli_path, 'stack', 'clear'], capture_output=True, text=True)
+        self.temp_dir = tempfile.mkdtemp()
+        self.stack_file = os.path.join(self.temp_dir, 'test-stack.json')
+        self.env = os.environ.copy()
+        self.env['SKILLDOCK_STACK_PATH'] = self.stack_file
 
     def tearDown(self):
-        # Clean up stack file if created
-        subprocess.run([sys.executable, self.cli_path, 'stack', 'clear'], capture_output=True, text=True)
         if os.path.exists(self.stack_file):
             try:
                 os.remove(self.stack_file)
             except OSError:
                 pass
+        try:
+            os.rmdir(self.temp_dir)
+        except OSError:
+            pass
 
     def run_cli(self, args):
         cmd = [sys.executable, self.cli_path] + args
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        result = subprocess.run(cmd, capture_output=True, text=True, env=self.env)
         return result
 
     def test_01_search_keyword(self):

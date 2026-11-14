@@ -1,0 +1,45 @@
+{
+  "name": "skilldock",
+  "version": "3.0.0",
+  "description": "The Launchpad for AI Coding Skills, Agent Harnesses, and MCP Tooling across Claude, ChatGPT, Antigravity, and Cursor.",
+  "main": "bin/skilldock.js",
+  "bin": {
+    "skilldock": "bin/skilldock.js"
+  },
+  "scripts": {
+    "start": "node bin/skilldock.js",
+    "test": "python -m unittest discover tests",
+    "test:e2e": "npm --prefix web run test:e2e",
+    "build": "python scripts/deploy-skilldock.py",
+    "sync": "python scripts/sync-matrix.py",
+    "audit": "python scripts/test-skills.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nownitya/Ai-Models-List.git"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "agent-skills",
+    "mcp",
+    "model-context-protocol",
+    "claude-code",
+    "chatgpt-actions",
+    "antigravity",
+    "cursor",
+    "skilldock"
+  ],
+  "author": "Nownitya Sharma <nownitya@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "scripts/",
+    "data/",
+    "skills/",
+    "AI-Coding-Skills-and-Tools-Matrix.md",
+    "AI-Coding-Skills-and-Tools-Matrix.csv",
+    "README.md",
+    "LICENSE"
+  ]
+}

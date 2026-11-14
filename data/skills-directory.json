@@ -5205,21 +5205,161 @@
     "category": "09-autonomous-agents",
     "scoped": "agent-ponytail",
     "cli": "python scripts/install-to-project.py --skill agent-ponytail",
-    "repo": null
+    "repo": "DietrichGebert/ponytail"
   },
   "agent-ponytail": {
     "name": "ponytail",
     "category": "09-autonomous-agents",
     "scoped": "agent-ponytail",
     "cli": "python scripts/install-to-project.py --skill agent-ponytail",
-    "repo": null
+    "repo": "DietrichGebert/ponytail"
   },
   "agent ponytail": {
     "name": "ponytail",
     "category": "09-autonomous-agents",
     "scoped": "agent-ponytail",
     "cli": "python scripts/install-to-project.py --skill agent-ponytail",
-    "repo": null
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail-audit": {
+    "name": "ponytail-audit",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-audit",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-audit",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent-ponytail-audit": {
+    "name": "ponytail-audit",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-audit",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-audit",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail audit": {
+    "name": "ponytail-audit",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-audit",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-audit",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent ponytail audit": {
+    "name": "ponytail-audit",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-audit",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-audit",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail-debt": {
+    "name": "ponytail-debt",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-debt",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-debt",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent-ponytail-debt": {
+    "name": "ponytail-debt",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-debt",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-debt",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail debt": {
+    "name": "ponytail-debt",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-debt",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-debt",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent ponytail debt": {
+    "name": "ponytail-debt",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-debt",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-debt",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail-gain": {
+    "name": "ponytail-gain",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-gain",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-gain",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent-ponytail-gain": {
+    "name": "ponytail-gain",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-gain",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-gain",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail gain": {
+    "name": "ponytail-gain",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-gain",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-gain",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent ponytail gain": {
+    "name": "ponytail-gain",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-gain",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-gain",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail-help": {
+    "name": "ponytail-help",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-help",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-help",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent-ponytail-help": {
+    "name": "ponytail-help",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-help",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-help",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail help": {
+    "name": "ponytail-help",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-help",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-help",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent ponytail help": {
+    "name": "ponytail-help",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-help",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-help",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail-review": {
+    "name": "ponytail-review",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-review",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-review",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent-ponytail-review": {
+    "name": "ponytail-review",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-review",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-review",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "ponytail review": {
+    "name": "ponytail-review",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-review",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-review",
+    "repo": "DietrichGebert/ponytail"
+  },
+  "agent ponytail review": {
+    "name": "ponytail-review",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-ponytail-review",
+    "cli": "python scripts/install-to-project.py --skill agent-ponytail-review",
+    "repo": "DietrichGebert/ponytail"
   },
   "ralph-loop": {
     "name": "ralph-loop",

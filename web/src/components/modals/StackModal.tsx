@@ -155,7 +155,49 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 5. Export as Multi-Agent Swarm Manifest (Antigravity Swarm, LangGraph, Mastra)
+  // 5. Export as ChatGPT Custom GPT Configuration (OpenAPI Action Schema & Instructions)
+  const downloadChatGptCustomGpt = () => {
+    let gpt = `# ChatGPT Custom GPT Instructions & Action Manifest\n\n`
+    gpt += `## Role & Identity\n`
+    gpt += `You are an expert AI software engineer equipped with the SkillDock engineering stack (${stack.length} specialized capabilities).\n\n`
+    gpt += `## Selected Capabilities & Slash Command Behaviors:\n\n`
+    stack.forEach((s) => {
+      gpt += `### /${s.scoped} — ${s.name} [${s.priority}]\n`
+      if (s.repo) gpt += `- Ecosystem Repository: https://github.com/${s.repo}\n`
+      gpt += `- Behavior: When triggered or working on relevant tasks, enforce ${s.name} guidelines and quality invariants.\n\n`
+    })
+    gpt += `## OpenAPI Actions Reference:\n`
+    gpt += `To configure OpenAPI Actions in the GPT Builder, connect to the SkillDock MCP / OpenAPI gateway:\n`
+    gpt += `\`\`\`yaml\n`
+    gpt += `openapi: 3.1.0\n`
+    gpt += `info:\n`
+    gpt += `  title: SkillDock Custom GPT Stack Gateway\n`
+    gpt += `  version: 1.0.0\n`
+    gpt += `servers:\n`
+    gpt += `  - url: https://api.skilldock.dev/v1\n`
+    gpt += `paths:\n`
+    stack.forEach((s) => {
+      const opId = s.id.replace(/[^a-zA-Z0-9]/g, '_')
+      gpt += `  /skills/${s.id}:\n`
+      gpt += `    get:\n`
+      gpt += `      summary: Invoke ${s.name} guidelines\n`
+      gpt += `      operationId: get_${opId}\n`
+      gpt += `      responses:\n`
+      gpt += `        '200':\n`
+      gpt += `          description: OK\n`
+    })
+    gpt += `\`\`\`\n`
+
+    const blob = new Blob([gpt], { type: 'text/markdown;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `chatgpt-custom-gpt-${new Date().toISOString().split('T')[0]}.md`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  // 6. Export as Multi-Agent Swarm Manifest (Antigravity Swarm, LangGraph, Mastra)
   const downloadSwarmManifest = () => {
     const manifest = generateSwarmManifest(stack)
     const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json;charset=utf-8' })
@@ -353,6 +395,15 @@ export const StackModal: React.FC = () => {
                 >
                   <Terminal className="w-3 h-3 text-amber-400" />
                   <span>claude.json</span>
+                </button>
+
+                <button
+                  onClick={downloadChatGptCustomGpt}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#111914] hover:bg-[#16241c] text-emerald-300 border border-emerald-500/30 hover:border-emerald-500/60 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export ChatGPT Custom GPT Instructions & OpenAPI Action Manifest"
+                >
+                  <Bot className="w-3 h-3 text-emerald-400" />
+                  <span>ChatGPT GPT</span>
                 </button>
 
                 <button

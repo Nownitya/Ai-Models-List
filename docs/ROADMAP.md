@@ -88,5 +88,17 @@
 * [x] **M8.5**: WebMCP & Browser Agent JSON-RPC Bridge (`web/src/bridge/webmcp.ts` on `window.__SKILLDOCK_MCP__` and `window.__SKILLDOCK_API__`) providing programmatic discovery and execution for browser agents.
 * [x] **M8.6**: Automated GitHub Pages staging and deployment pipeline (`scripts/deploy-skilldock.py`) with 404-SPA redirection restore.
 
+### Milestone H9: Multi-Agent Swarm Orchestrator & Standalone CLI Engine (Complete)
+* [x] **M9.1**: Multi-Agent Swarm Orchestrator (`web/src/utils/swarmOrchestrator.ts`) generating `skilldock-swarm-manifest.json` and 1-click ready-to-run Swarm Briefs for Antigravity Swarm, LangGraph, and Mastra.
+* [x] **M9.2**: Standalone SkillDock CLI (`bin/skilldock.js` and `scripts/skilldock_cli.py`) supporting headless `search`, `inspect`, `starter`, `stack`, and `swarm` operations.
+* [x] **M9.3**: Automated Playwright E2E Browser Suite (`web/playwright.config.ts` and `web/e2e/skilldock.spec.ts`) locking down 6 comprehensive user interaction journeys.
+* [x] **M9.4**: Frontier Model Routing Matrix (`docs/models/MODEL-ROUTING-MATRIX.md`) mapping 12 functional skill domains to Claude 3.7 Sonnet Hybrid Reasoning, GPT-4.5, o3-mini, Gemini 2.0 Pro/Flash, and DeepSeek R1 with empirical token economics.
+
+### Milestone H10: Universal AI Marketplace & Cross-Ecosystem Bridge (Complete)
+* [x] **M10.1**: Single Canonical Entity Architecture for Marketplace items, eliminating duplicate clutter across Claude, ChatGPT, Antigravity, and Cursor.
+* [x] **M10.2**: Cross-Ecosystem Data Enrichment (`scripts/enrich_marketplace_ecosystems.py`) indexing verified OpenAPI Action schemas, official Custom GPT URLs, and Antigravity plugin identifiers across 1,689 entries.
+* [x] **M10.3**: Universal Marketplace Component (`web/src/components/marketplace/MarketplaceView.tsx`) with a 5-way Target Ecosystem filter ribbon and 1-click action schema copy.
+* [x] **M10.4**: Multi-Assistant Stack Exporter upgrade in `StackModal.tsx` adding ready-to-paste ChatGPT Custom GPT instructions and OpenAPI Action specs alongside Cursor and Claude.
+
 
 

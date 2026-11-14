@@ -26,7 +26,7 @@ from typing import List, Dict, Any, Optional
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MATRIX_JSON_PATH = os.path.join(ROOT_DIR, 'web', 'src', 'data', 'matrix.json')
-LOCAL_STACK_PATH = os.path.join(ROOT_DIR, '.skilldock-stack.json')
+LOCAL_STACK_PATH = os.environ.get('SKILLDOCK_STACK_PATH') or os.path.join(ROOT_DIR, '.skilldock-stack.json')
 
 STARTER_PACKS = [
     {

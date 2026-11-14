@@ -1,7 +1,7 @@
 {
   "meta": {
-    "totalSkills": 334,
-    "totalFrameworks": 121,
+    "totalSkills": 339,
+    "totalFrameworks": 122,
     "totalDocs": 57,
     "totalPrompts": 3,
     "totalStars": 5183727,
@@ -49,7 +49,7 @@
       {
         "id": "09-autonomous-agents",
         "label": "Autonomous Agents",
-        "count": 20
+        "count": 25
       },
       {
         "id": "10-ai-infrastructure",
@@ -120,6 +120,12 @@
         "repoName": "GSD Core",
         "count": 7,
         "stars": 11530
+      },
+      {
+        "repo": "DietrichGebert/ponytail",
+        "repoName": "Ponytail",
+        "count": 5,
+        "stars": 0
       },
       {
         "repo": "google/skills",
@@ -801,9 +807,9 @@
       }
     ],
     "p0Count": 103,
-    "p1Count": 151,
-    "p2Count": 52,
-    "p3Count": 28,
+    "p1Count": 153,
+    "p2Count": 54,
+    "p3Count": 29,
     "generatedAt": "2026-11-09"
   },
   "frameworks": [
@@ -2632,6 +2638,70 @@
       ]
     },
     {
+      "id": "dietrichgebert-ponytail",
+      "repo": "DietrichGebert/ponytail",
+      "repoName": "Ponytail",
+      "author": "DietrichGebert",
+      "stars": 0,
+      "starsFormatted": "191k",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "skillsCount": 5,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/DietrichGebert/ponytail",
+      "version": "v5.3.3",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/DietrichGebert/ponytail.git ~/.gemini/antigravity/skills/ponytail",
+        "claude": "git clone https://github.com/DietrichGebert/ponytail.git ~/.claude/skills/ponytail",
+        "codex": "codex install DietrichGebert/ponytail",
+        "git": "git clone https://github.com/DietrichGebert/ponytail.git",
+        "cli": "python scripts/install-to-project.py --repo DietrichGebert/ponytail"
+      },
+      "skills": [
+        {
+          "id": "ponytail-review",
+          "name": "ponytail-review",
+          "priority": "P1",
+          "scoped": "agent-ponytail-review",
+          "cli": "python scripts/install-to-project.py --skill agent-ponytail-review",
+          "description": "Senior code review: 6-pillar audit (bug, risk, scale, missing test, speed, lean cuts) with plain-English findings."
+        },
+        {
+          "id": "ponytail-audit",
+          "name": "ponytail-audit",
+          "priority": "P1",
+          "scoped": "agent-ponytail-audit",
+          "cli": "python scripts/install-to-project.py --skill agent-ponytail-audit",
+          "description": "Full repository health audit: prioritizes correctness, safety, load resilience, tests, speed, and dead code/bloat deletion."
+        },
+        {
+          "id": "ponytail-debt",
+          "name": "ponytail-debt",
+          "priority": "P2",
+          "scoped": "agent-ponytail-debt",
+          "cli": "python scripts/install-to-project.py --skill agent-ponytail-debt",
+          "description": "Automated tracking of shortcut: comments into a prioritized technical debt ledger."
+        },
+        {
+          "id": "ponytail-gain",
+          "name": "ponytail-gain",
+          "priority": "P2",
+          "scoped": "agent-ponytail-gain",
+          "cli": "python scripts/install-to-project.py --skill agent-ponytail-gain",
+          "description": "Empirical benchmark scoreboard showing measured code, token, cost, and time savings."
+        },
+        {
+          "id": "ponytail-help",
+          "name": "ponytail-help",
+          "priority": "P3",
+          "scoped": "agent-ponytail-help",
+          "cli": "python scripts/install-to-project.py --skill agent-ponytail-help",
+          "description": "Quick reference card for Ponytail operating levels, skills, and configuration settings."
+        }
+      ]
+    },
+    {
       "id": "google-skills",
       "repo": "google/skills",
       "repoName": "Google Agent Skills",
@@ -3211,7 +3281,7 @@
           "priority": "P1",
           "scoped": "agent-ponytail",
           "cli": "python scripts/install-to-project.py --skill agent-ponytail",
-          "description": "Evaluate its coding workflow and implementation approach; verify exact project, features and Antigravity compatibility."
+          "description": "Lazy senior dev mode: the smallest complete change that fully solves the task, shortest working diff, and no speculative bloat; levels: lite, full (default), ultra."
         }
       ]
     },
@@ -9627,12 +9697,102 @@
       "priority": "P1",
       "categoryId": "09-autonomous-agents",
       "categoryLabel": "Autonomous Agents",
-      "description": "Evaluate its coding workflow and implementation approach; verify exact project, features and Antigravity compatibility.",
+      "description": "Lazy senior dev mode: the smallest complete change that fully solves the task, shortest working diff, and no speculative bloat; levels: lite, full (default), ultra.",
       "scoped": "agent-ponytail",
       "cli": "python scripts/install-to-project.py --skill agent-ponytail",
       "repo": "dietrichgebert/ponytail",
       "repoName": "Ponytail",
       "stars": 190631,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "ponytail-review",
+      "uniqueId": "09-autonomous-agents:ponytail-review",
+      "name": "ponytail-review",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Senior code review: 6-pillar audit (bug, risk, scale, missing test, speed, lean cuts) with plain-English findings.",
+      "scoped": "agent-ponytail-review",
+      "cli": "python scripts/install-to-project.py --skill agent-ponytail-review",
+      "repo": "DietrichGebert/ponytail",
+      "repoName": "Ponytail",
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "ponytail-audit",
+      "uniqueId": "09-autonomous-agents:ponytail-audit",
+      "name": "ponytail-audit",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Full repository health audit: prioritizes correctness, safety, load resilience, tests, speed, and dead code/bloat deletion.",
+      "scoped": "agent-ponytail-audit",
+      "cli": "python scripts/install-to-project.py --skill agent-ponytail-audit",
+      "repo": "DietrichGebert/ponytail",
+      "repoName": "Ponytail",
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "ponytail-debt",
+      "uniqueId": "09-autonomous-agents:ponytail-debt",
+      "name": "ponytail-debt",
+      "priority": "P2",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Automated tracking of shortcut: comments into a prioritized technical debt ledger.",
+      "scoped": "agent-ponytail-debt",
+      "cli": "python scripts/install-to-project.py --skill agent-ponytail-debt",
+      "repo": "DietrichGebert/ponytail",
+      "repoName": "Ponytail",
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "ponytail-gain",
+      "uniqueId": "09-autonomous-agents:ponytail-gain",
+      "name": "ponytail-gain",
+      "priority": "P2",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Empirical benchmark scoreboard showing measured code, token, cost, and time savings.",
+      "scoped": "agent-ponytail-gain",
+      "cli": "python scripts/install-to-project.py --skill agent-ponytail-gain",
+      "repo": "DietrichGebert/ponytail",
+      "repoName": "Ponytail",
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "ponytail-help",
+      "uniqueId": "09-autonomous-agents:ponytail-help",
+      "name": "ponytail-help",
+      "priority": "P3",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Quick reference card for Ponytail operating levels, skills, and configuration settings.",
+      "scoped": "agent-ponytail-help",
+      "cli": "python scripts/install-to-project.py --skill agent-ponytail-help",
+      "repo": "DietrichGebert/ponytail",
+      "repoName": "Ponytail",
+      "stars": 0,
       "ecosystems": [
         "agents"
       ]

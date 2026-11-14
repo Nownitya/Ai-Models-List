@@ -206,6 +206,18 @@
 - [x] Subtask 32.5: Build client-side WebMCP & Browser Agent JSON-RPC Bridge (`web/src/bridge/webmcp.ts` on `window.__SKILLDOCK_MCP__` and `window.__SKILLDOCK_API__`).
 - [x] Subtask 32.6: Verify clean TypeScript compilation (`tsc -b`), full unit test suite (80/80 pass), and automated GitHub Pages deployment (`scripts/deploy-skilldock.py`).
 
+### TASK-033: Multi-Agent Swarm Orchestrator & Standalone CLI Engine
+- [x] Subtask 33.1: Build client-side Multi-Agent Swarm Orchestrator (`web/src/utils/swarmOrchestrator.ts`) generating `skilldock-swarm-manifest.json` and 1-click Swarm Briefs.
+- [x] Subtask 33.2: Author standalone SkillDock CLI (`bin/skilldock.js` & `scripts/skilldock_cli.py`) supporting headless search, inspection, starter packs, stack management, and swarm generation.
+- [x] Subtask 33.3: Implement Playwright E2E browser test suite (`web/e2e/skilldock.spec.ts`) locking down 6 critical user interaction scenarios.
+- [x] Subtask 33.4: Author Frontier Model Routing Matrix (`docs/models/MODEL-ROUTING-MATRIX.md`) mapping all 12 functional domains to frontier models with token benchmarks.
+
+### TASK-034: Universal AI Marketplace & Cross-Ecosystem Bridge
+- [x] Subtask 34.1: Establish Single Canonical Entity Architecture across Claude, ChatGPT, Antigravity, and Cursor to prevent duplicate card proliferation.
+- [x] Subtask 34.2: Author automated enrichment engine (`scripts/enrich_marketplace_ecosystems.py`) indexing verified OpenAPI Action schemas and official Custom GPT links across 1,689 entries.
+- [x] Subtask 34.3: Refactor Marketplace View (`web/src/components/marketplace/MarketplaceView.tsx`) with 5-way Target Ecosystem filter ribbon and 1-click OpenAPI action schema copy.
+- [x] Subtask 34.4: Expand `StackModal.tsx` exporter suite with ready-to-paste ChatGPT Custom GPT instructions and OpenAPI Action manifests.
+
 
 
 
