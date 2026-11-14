@@ -1,10 +1,10 @@
 {
   "meta": {
-    "totalSkills": 330,
-    "totalFrameworks": 116,
+    "totalSkills": 332,
+    "totalFrameworks": 118,
     "totalDocs": 57,
     "totalPrompts": 3,
-    "totalStars": 5015034,
+    "totalStars": 5126734,
     "categories": [
       {
         "id": "01-core-engineering",
@@ -49,12 +49,12 @@
       {
         "id": "09-autonomous-agents",
         "label": "Autonomous Agents",
-        "count": 19
+        "count": 20
       },
       {
         "id": "10-ai-infrastructure",
         "label": "AI Infrastructure & MCP",
-        "count": 22
+        "count": 23
       },
       {
         "id": "11-code-review",
@@ -278,6 +278,12 @@
         "stars": 84094
       },
       {
+        "repo": "unslothai/unsloth",
+        "repoName": "Unsloth AI",
+        "count": 1,
+        "stars": 79500
+      },
+      {
         "repo": "composiohq/awesome-claude-skills",
         "repoName": "Composio Gateway",
         "count": 1,
@@ -372,6 +378,12 @@
         "repoName": "Google Workspace",
         "count": 1,
         "stars": 32309
+      },
+      {
+        "repo": "garrytan/gbrain",
+        "repoName": "gbrain",
+        "count": 1,
+        "stars": 32200
       },
       {
         "repo": "vercel/turborepo",
@@ -770,8 +782,8 @@
         "stars": 0
       }
     ],
-    "p0Count": 102,
-    "p1Count": 148,
+    "p0Count": 103,
+    "p1Count": 149,
     "p2Count": 52,
     "p3Count": 28,
     "generatedAt": "2026-11-09"
@@ -3578,6 +3590,39 @@
       ]
     },
     {
+      "id": "unslothai-unsloth",
+      "repo": "unslothai/unsloth",
+      "repoName": "Unsloth AI",
+      "author": "unslothai",
+      "stars": 79500,
+      "starsFormatted": "79.5k",
+      "description": "5x faster 80% less memory LLM fine-tuning and inference engine with custom OpenAI Triton kernels for Llama 3.3, Mistral, Gemma 2, and DeepSeek.",
+      "skillsCount": 1,
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "officialUrl": "https://github.com/unslothai/unsloth",
+      "version": "2026.11",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "pip install unsloth",
+        "claude": "pip install unsloth",
+        "cursor": "pip install unsloth",
+        "codex": "pip install unsloth",
+        "git": "git clone https://github.com/unslothai/unsloth.git",
+        "cli": "pip install unsloth"
+      },
+      "skills": [
+        {
+          "id": "unsloth",
+          "name": "unsloth",
+          "priority": "P0",
+          "scoped": "infra-unsloth",
+          "cli": "python scripts/install-to-project.py --skill infra-unsloth",
+          "description": "Ultra-fast open-source LLM fine-tuning and inference engine (5x faster, 80% less VRAM with hand-written Triton kernels) for Llama 3.3, Mistral, Gemma 2, DeepSeek, Qwen 2.5, Phi-4, and LoRA/QLoRA."
+        }
+      ]
+    },
+    {
       "id": "composiohq-awesome-claude-skills",
       "repo": "composiohq/awesome-claude-skills",
       "repoName": "Composio Gateway",
@@ -4086,6 +4131,39 @@
           "scoped": "workflow-google-workspace-cli",
           "cli": "python scripts/install-to-project.py --skill workflow-google-workspace-cli",
           "description": "Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically."
+        }
+      ]
+    },
+    {
+      "id": "garrytan-gbrain",
+      "repo": "garrytan/gbrain",
+      "repoName": "gbrain",
+      "author": "garrytan",
+      "stars": 32200,
+      "starsFormatted": "32.2k",
+      "description": "Markdown-first AI agent memory system and knowledge graph with embedded Postgres (PGLite), pgvector, and MCP server support.",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/garrytan/gbrain",
+      "version": "v1.1.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/garrytan/gbrain.git ~/.gemini/antigravity/skills/gbrain",
+        "claude": "git clone https://github.com/garrytan/gbrain.git",
+        "cursor": "git clone https://github.com/garrytan/gbrain.git",
+        "codex": "git clone https://github.com/garrytan/gbrain.git",
+        "git": "git clone https://github.com/garrytan/gbrain.git",
+        "cli": "npx gbrain init"
+      },
+      "skills": [
+        {
+          "id": "gbrain",
+          "name": "gbrain",
+          "priority": "P1",
+          "scoped": "agent-gbrain",
+          "cli": "python scripts/install-to-project.py --skill agent-gbrain",
+          "description": "Garry Tan's open-source markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite), pgvector, hybrid search (BM25 + vector + RRF), and native MCP server."
         }
       ]
     },
@@ -9667,6 +9745,23 @@
       ]
     },
     {
+      "id": "gbrain",
+      "uniqueId": "09-autonomous-agents:gbrain",
+      "name": "gbrain",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Garry Tan's open-source markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite), pgvector, hybrid search (BM25 + vector + RRF), and native MCP server.",
+      "scoped": "agent-gbrain",
+      "cli": "python scripts/install-to-project.py --skill agent-gbrain",
+      "repo": "garrytan/gbrain",
+      "repoName": "gbrain",
+      "stars": 32200,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
       "id": "composio-skills",
       "uniqueId": "10-ai-infrastructure:composio-skills",
       "name": "composio-skills",
@@ -10042,6 +10137,23 @@
       "stars": 2899,
       "ecosystems": [
         "quality"
+      ]
+    },
+    {
+      "id": "unsloth",
+      "uniqueId": "10-ai-infrastructure:unsloth",
+      "name": "unsloth",
+      "priority": "P0",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Ultra-fast open-source LLM fine-tuning and inference engine (5x faster, 80% less VRAM with hand-written Triton kernels) for Llama 3.3, Mistral, Gemma 2, DeepSeek, Qwen 2.5, Phi-4, and LoRA/QLoRA.",
+      "scoped": "infra-unsloth",
+      "cli": "python scripts/install-to-project.py --skill infra-unsloth",
+      "repo": "unslothai/unsloth",
+      "repoName": "Unsloth AI",
+      "stars": 79500,
+      "ecosystems": [
+        "general"
       ]
     },
     {

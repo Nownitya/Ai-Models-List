@@ -5032,6 +5032,27 @@
     "cli": "python scripts/install-to-project.py --skill agent-everything-claude-code",
     "repo": "affaan-m/ecc"
   },
+  "gbrain": {
+    "name": "gbrain",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-gbrain",
+    "cli": "python scripts/install-to-project.py --skill agent-gbrain",
+    "repo": "garrytan/gbrain.git"
+  },
+  "agent-gbrain": {
+    "name": "gbrain",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-gbrain",
+    "cli": "python scripts/install-to-project.py --skill agent-gbrain",
+    "repo": "garrytan/gbrain.git"
+  },
+  "agent gbrain": {
+    "name": "gbrain",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-gbrain",
+    "cli": "python scripts/install-to-project.py --skill agent-gbrain",
+    "repo": "garrytan/gbrain.git"
+  },
   "harness": {
     "name": "harness",
     "category": "09-autonomous-agents",
@@ -5885,6 +5906,27 @@
     "scoped": "infra-typesafe-ai-schemas",
     "cli": "python scripts/install-to-project.py --skill infra-typesafe-ai-schemas",
     "repo": "typesafe-ai/skills"
+  },
+  "unsloth": {
+    "name": "unsloth",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-unsloth",
+    "cli": "python scripts/install-to-project.py --skill infra-unsloth",
+    "repo": "unslothai/unsloth.git"
+  },
+  "infra-unsloth": {
+    "name": "unsloth",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-unsloth",
+    "cli": "python scripts/install-to-project.py --skill infra-unsloth",
+    "repo": "unslothai/unsloth.git"
+  },
+  "infra unsloth": {
+    "name": "unsloth",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-unsloth",
+    "cli": "python scripts/install-to-project.py --skill infra-unsloth",
+    "repo": "unslothai/unsloth.git"
   },
   "vercel-ai-sdk": {
     "name": "vercel-ai-sdk",

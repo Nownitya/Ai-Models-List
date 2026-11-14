@@ -219,6 +219,8 @@ SKILL_TO_REPO = {
     '21st-magic-ui': '21st-dev/cli',
     'sellbird': 'ethanplusai/sellbird',
     'hermes-agent': 'NousResearch/hermes-agent',
+    'gbrain': 'garrytan/gbrain',
+    'unsloth': 'unslothai/unsloth',
     'agent-browser': 'vercel-labs/agent-browser',
     'agent-desktop': 'vercel-labs/agent-desktop',
     'turborepo': 'vercel/turborepo',
@@ -325,6 +327,8 @@ REPO_DISPLAY_NAMES = {
     '21st-dev/cli': '21st.dev Magic',
     'ethanplusai/sellbird': 'Sellbird',
     'NousResearch/hermes-agent': 'Hermes Agent',
+    'garrytan/gbrain': 'gbrain',
+    'unslothai/unsloth': 'Unsloth AI',
     'vercel-labs/agent-browser': 'Agent Browser',
     'vercel-labs/agent-desktop': 'Agent Desktop',
     'vercel-labs/skills': 'Vercel React Patterns',
@@ -560,6 +564,8 @@ def export_matrix():
         '21st-dev/cli': "21st.dev Magic component marketplace, AI UI generator, and MCP server for React, Tailwind CSS, and shadcn-ui agents.",
         'ethanplusai/sellbird': "Open-source autonomous AI sales and outreach engine running on local Claude / ChatGPT / Codex plans with lead enrichment and email campaigns.",
         'NousResearch/hermes-agent': "Nous Research autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution.",
+        'garrytan/gbrain': "Garry Tan's markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite) + pgvector, hybrid search, and MCP support.",
+        'unslothai/unsloth': "Ultra-fast open-source LLM fine-tuning and inference engine (5x faster, 80% less VRAM with Triton kernels) for Llama 3.3, Mistral, Gemma 2, and DeepSeek.",
     }
 
     # Build Framework Hub records (65 Upstream Repositories)
@@ -632,6 +638,24 @@ def export_matrix():
                 "codex": "git clone https://github.com/NousResearch/hermes-agent.git",
                 "git": "git clone https://github.com/NousResearch/hermes-agent.git",
                 "cli": "curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash"
+            }
+        elif repo_key == "garrytan/gbrain":
+            recipes = {
+                "antigravity": "git clone https://github.com/garrytan/gbrain.git ~/.gemini/antigravity/skills/gbrain",
+                "claude": "git clone https://github.com/garrytan/gbrain.git",
+                "cursor": "git clone https://github.com/garrytan/gbrain.git",
+                "codex": "git clone https://github.com/garrytan/gbrain.git",
+                "git": "git clone https://github.com/garrytan/gbrain.git",
+                "cli": "npx gbrain init"
+            }
+        elif repo_key == "unslothai/unsloth":
+            recipes = {
+                "antigravity": "pip install unsloth",
+                "claude": "pip install unsloth",
+                "cursor": "pip install unsloth",
+                "codex": "pip install unsloth",
+                "git": "git clone https://github.com/unslothai/unsloth.git",
+                "cli": "pip install unsloth"
             }
         elif repo_key == "microsoft/playwright":
             recipes = {

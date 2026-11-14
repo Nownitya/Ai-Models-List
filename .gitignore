@@ -52,3 +52,11 @@ graphify-out/
 .windsurf/
 **/.windsurf/
 
+# Test Artifacts & Playwright
+test-results/
+**/test-results/
+playwright-report/
+**/playwright-report/
+.skilldock-stack.json
+
+

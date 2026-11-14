@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { X, Trash2, Download, Copy, Check, Diamond, Layers, Terminal, Cpu, Share2 } from 'lucide-react'
+import { X, Trash2, Download, Copy, Check, Diamond, Layers, Terminal, Cpu, Share2, Users, Bot } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
+import { generateSwarmManifest, generateSwarmBrief } from '@/utils/swarmOrchestrator'
 
 export const StackModal: React.FC = () => {
   const isStackModalOpen = useSkillStore((s) => s.isStackModalOpen)
@@ -11,6 +12,7 @@ export const StackModal: React.FC = () => {
 
   const [copiedScript, setCopiedScript] = useState(false)
   const [copiedShareUrl, setCopiedShareUrl] = useState(false)
+  const [copiedSwarmBrief, setCopiedSwarmBrief] = useState(false)
   const [cliFormat, setCliFormat] = useState<'npx' | 'python'>('npx')
 
   const copyShareStackUrl = () => {
@@ -153,7 +155,27 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 5. Copy Batch Installation Script
+  // 5. Export as Multi-Agent Swarm Manifest (Antigravity Swarm, LangGraph, Mastra)
+  const downloadSwarmManifest = () => {
+    const manifest = generateSwarmManifest(stack)
+    const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `skilldock-swarm-manifest.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  // 6. Copy Ready-to-Run Swarm Brief
+  const copySwarmBriefText = () => {
+    const brief = generateSwarmBrief(stack)
+    navigator.clipboard.writeText(brief)
+    setCopiedSwarmBrief(true)
+    setTimeout(() => setCopiedSwarmBrief(false), 1600)
+  }
+
+  // 7. Copy Batch Installation Script
   const copyInstallScript = () => {
     const commands = stack.map((s) => getCommand(s)).join('\n')
     navigator.clipboard.writeText(commands)
@@ -341,6 +363,15 @@ export const StackModal: React.FC = () => {
                   <Diamond className="w-3 h-3 text-violet-400" />
                   <span>Obsidian Note</span>
                 </button>
+
+                <button
+                  onClick={downloadSwarmManifest}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#161324] hover:bg-[#201c34] text-purple-200 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export Multi-Agent Swarm Manifest (Antigravity Swarm, LangGraph, Mastra)"
+                >
+                  <Users className="w-3 h-3 text-purple-400" />
+                  <span>Swarm Manifest</span>
+                </button>
               </div>
             </div>
 
@@ -377,7 +408,16 @@ export const StackModal: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={copySwarmBriefText}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#161324] hover:bg-[#201c34] text-purple-200 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-semibold"
+                  title="Copy ready-to-run Multi-Agent Swarm Brief to clipboard"
+                >
+                  {copiedSwarmBrief ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Bot className="w-3.5 h-3.5 text-purple-400" />}
+                  <span>{copiedSwarmBrief ? 'Copied Swarm Brief!' : 'Copy Swarm Brief'}</span>
+                </button>
+
                 <button
                   onClick={copyInstallScript}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"

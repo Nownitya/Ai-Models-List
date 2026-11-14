@@ -330,6 +330,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Everything Claude Code (ECC) website / repository:** https://ecc.tools · https://github.com/affaan-m/ecc
 - **Sellbird repository:** https://sellbird.ai · https://github.com/ethanplusai/sellbird
 - **Hermes Agent repository:** https://hermes-agent.org · https://github.com/NousResearch/hermes-agent
+- **gbrain Agent Memory repository:** https://github.com/garrytan/gbrain
 
 | Tool / Framework | Priority | Why |
 | --- | --- | --- |
@@ -361,6 +362,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `mastra-agent-framework` | **Mastra Agent Framework** | `P1` | `/mastra-agent-framework` | Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals. |
 | `sellbird` | **Sellbird Autonomous Outreach** | `P1` | `/sellbird` | Open-source autonomous AI sales, lead enrichment, and outreach engine running on local Claude / ChatGPT / Codex plans with automated email verification and campaign triage. |
 | `hermes-agent` | **Hermes Agent** | `P1` | `/hermes-agent` | Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution. |
+| `gbrain` | **gbrain Agent Memory & Knowledge** | `P1` | `/gbrain` | Garry Tan's open-source markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite), pgvector, hybrid search (BM25 + vector + RRF), and native MCP server. |
 
 ## 10 AI Infrastructure
 
@@ -374,6 +376,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Google Agent Skills repository:** https://github.com/google/skills
 - **Awesome Claude Skills & Composio MCP Gateway:** https://composio.dev/ · https://github.com/ComposioHQ/awesome-claude-skills
 - **Caveman repository:** https://github.com/juliusbrussee/caveman
+- **Unsloth repository / documentation:** https://unsloth.ai · https://github.com/unslothai/unsloth
 
 | Tool / Service | Priority | Why | Official repository / source | Research / reference |
 | --- | --- | --- | --- | --- |
@@ -403,6 +406,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | supabase-skills | P0 | Supabase Postgres database design, pgvector semantic search, row-level security (RLS) policies, edge functions, and client SDK integration. |
 | azure-skills | P1 | Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring. |
 | `typesafe-ai-schemas` | **TypeSafe AI Schemas** | `P1` | `/typesafe-ai-schemas` | Strict JSON schema validation, typed function calling, and structured output invariant guards. |
+| `unsloth` | **Unsloth LLM Training & Inference** | `P0` | `/unsloth` | Ultra-fast open-source LLM fine-tuning and inference engine (5x faster, 80% less VRAM with hand-written Triton kernels) for Llama 3.3, Mistral, Gemma 2, DeepSeek, Qwen 2.5, Phi-4, and LoRA/QLoRA. |
 
 
 ## 11 Code Review Quality
@@ -562,6 +566,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | 21st-magic-ui | https://21st.dev/ | https://github.com/21st-dev/cli | 21st.dev design engineering component marketplace, AI UI generator, and Magic MCP server (5.4k+ stars). |
 | sellbird | https://sellbird.ai/ | https://github.com/ethanplusai/sellbird | Open-source autonomous AI sales, lead enrichment, and outreach engine running on local AI plans (4.2k+ stars). |
 | hermes-agent | https://hermes-agent.org/ | https://github.com/NousResearch/hermes-agent | Nous Research autonomous agent framework with self-improving skill loop and tiered memory (18k+ stars). |
+| gbrain | https://github.com/garrytan/gbrain | https://github.com/garrytan/gbrain | Garry Tan's open-source markdown-first AI agent memory system and self-wiring knowledge graph with PGLite and MCP (32k+ stars). |
+| unsloth | https://unsloth.ai/ | https://github.com/unslothai/unsloth | Ultra-fast open-source LLM fine-tuning and inference acceleration library with custom Triton kernels (80k+ stars). |
 | remotion-video | https://www.remotion.dev/ | https://github.com/remotion-dev/skills | Programmatic video creation and motion graphics in React (6.5k+ stars). |
 | cloudflare-skills | https://developers.cloudflare.com/workers/ | https://github.com/cloudflare/skills | Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars). |
 | supabase-skills | https://supabase.com/docs | https://github.com/supabase/agent-skills | Supabase Postgres database best practices, pgvector, and auth workflows (3k+ stars). |

@@ -66,6 +66,8 @@ export const WebMcpConsoleModal: React.FC = () => {
         return {}
       case 'export_stack_cli':
         return { assistant: assistantInput }
+      case 'export_swarm_manifest':
+        return { format: 'manifest' }
       default:
         return {}
     }
@@ -307,7 +309,7 @@ export const WebMcpConsoleModal: React.FC = () => {
                 </div>
               )}
 
-              {['get_starter_packs', 'get_stack', 'clear_stack'].includes(selectedTool) && (
+              {['get_starter_packs', 'get_stack', 'clear_stack', 'export_swarm_manifest'].includes(selectedTool) && (
                 <p className="text-[11px] text-zinc-500 font-mono">
                   No input arguments required. Endpoint executes dynamically against active catalog and store state.
                 </p>

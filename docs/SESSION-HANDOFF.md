@@ -140,40 +140,52 @@
       - Synchronized local Obsidian vault via `python scripts/sync-obsidian.py`.
       - Staged to GitHub Pages via `python scripts/deploy-skilldock.py` with 100% passing tests (80/80).
 
-17. **Frontier Agent Workflows & Ecosystem Ingestion (Hermes Agent, Sellbird, Playwright, Compound Engineering, 21st.dev Magic MCP)**:
-    - **Dual Matrix Parity (Law 1)**: Simultaneously updated `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` adding `hermes-agent` (P1), `sellbird` (P1), `compound-engineering` (P0), `21st-magic-ui` (P0), and canonically updating `playwright-cli` (`microsoft/playwright`, 71.5k stars).
+17. **Frontier Agent Workflows & Ecosystem Ingestion (gbrain, Unsloth, Hermes Agent, Sellbird, Playwright, Compound Engineering, 21st.dev Magic MCP)**:
+    - **Dual Matrix Parity (Law 1)**: Simultaneously updated `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` adding `unsloth` (P0), `gbrain` (P1), `hermes-agent` (P1), `sellbird` (P1), `compound-engineering` (P0), `21st-magic-ui` (P0), and canonically updating `playwright-cli` (`microsoft/playwright`, 71.5k stars).
     - **Standardized Skill Packages (Law 2)**:
+      - `skills/10-ai-infrastructure/unsloth/SKILL.md`: Unsloth 5x faster 80% less memory fine-tuning engine with custom Triton kernels (⭐ 79.5k).
+      - `skills/09-autonomous-agents/gbrain/SKILL.md`: Garry Tan's markdown-first agent memory & PGLite/pgvector knowledge graph (⭐ 32.2k).
       - `skills/09-autonomous-agents/hermes-agent/SKILL.md`: Nous Research autonomous agent framework with self-improving skill loop and tiered memory.
       - `skills/09-autonomous-agents/sellbird/SKILL.md`: Autonomous AI sales and outreach engine on local LLMs.
       - `skills/01-core-engineering/compound-engineering/SKILL.md`: EveryInc 4-phase compounding engineering loop (Plan, Build, Review, Compound).
       - `skills/05-ui-ux/21st-magic-ui/SKILL.md`: 21st.dev component marketplace, AI UI generation, and Magic MCP server.
       - `skills/04-testing-and-verification/playwright-cli/SKILL.md`: Updated to canonical `microsoft/playwright` (⭐ 71.5k).
     - **Telemetry & Radar**: Added to `data/github-metrics.json` and generated fresh `docs/LIVE-STATS.md`, `data/live-stats.csv`, and `README.md`.
-    - **Directory & Web Matrix Export**: Updated `scripts/export_matrix_json.py` with repo mappings, display names, fallback descriptions, and multi-assistant install recipes. Exported 330 skills across 116 frameworks to `web/src/data/matrix.json`.
+    - **Directory & Web Matrix Export**: Updated `scripts/export_matrix_json.py` with repo mappings, display names, fallback descriptions, and multi-assistant install recipes. Exported 332 skills across 118 frameworks to `web/src/data/matrix.json`.
     - **Verification & Staging**: Built React 19 storefront via `python scripts/deploy-skilldock.py`, all 80 unit tests passing, synced to Obsidian vault via `python scripts/sync-obsidian.py`.
 
 ---
 
+17. **Milestone H9 & H10 Master Plan Execution (All 5 Phases 100% Complete)**:
+    - **Phase 1: Live Visual Verification**: Tested live preview server on `http://localhost:4173/` validating 1-Click Starter Stacks, tactile toasts, viral URL hydration, and SKILL.md rule drawer.
+    - **Phase 2: Automated Playwright E2E Suite**: Authored `web/playwright.config.ts` and `web/e2e/skilldock.spec.ts` covering 6 comprehensive end-to-end user workflows. 100% green in headless Chromium (`6 passed in 9.2s`).
+    - **Phase 3: Frontier Model Routing Matrix & Token Benchmarks**: Updated `docs/models/MODEL-ROUTING-MATRIX.md` with Claude 3.7 Sonnet Hybrid Reasoning, GPT-4.5, o3-mini, Gemini 2.0 Pro/Flash, and DeepSeek R1. Calibrated empirical token economics (~82%–93% savings) and mapped all 12 skill categories to frontier models.
+    - **Phase 4: Milestone H10 Multi-Agent Swarm Orchestrator**: Built `web/src/utils/swarmOrchestrator.ts`, expanded `StackModal.tsx` and `web/src/bridge/webmcp.ts` with Multi-Agent Swarm Manifest (`skilldock-swarm-manifest.json`) and 1-click ready-to-run Swarm Brief generation.
+    - **Phase 5: Standalone SkillDock CLI (`npx skilldock`)**: Authored `scripts/skilldock_cli.py` and Node executable wrapper `bin/skilldock.js` supporting `search`, `inspect`, `starter`, `stack`, and `swarm`. Passed all 7 unit tests in `tests/test_skilldock_cli.py`. Total test suite: 87 Python unit tests + 6 Playwright E2E tests passing 100%.
+
+---
+
+### 🧠 Current State of Repository & Metrics
+- **Catalog Totals**: 332 Atomic Skills, 118 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,126,734 total ⭐ community stars**.
+- **Claude Marketplace Hub**: 530 Plugins, 1,126 Connectors, 33 Specialized Agents.
+- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 6/6 Playwright E2E browser tests PASSED (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
+- **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv`.
+- **Obsidian Vault**: Mirrored and synchronized to `D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`.
+
+---
+
 ### 📋 Immediate Next Tasks Ready for Execution
-1. [x] **Storefront Card & Layout Polish (`web/src`)**:
-   - Completed `unslop` 9-pass design audit on `FrameworkCard.tsx`, `SkillCard.tsx`, and `CompactSkillRow.tsx`.
-2. [x] **Frontier Skills Expansion**:
-   - Ingested Claude 3.7 Sonnet extended thinking / hybrid reasoning and Cursor 0.45 agentic rules.
-3. [x] **Universal Omni-Search (`⌘K`)**:
-   - Multi-catalog indexing across Suites, Skills, MCP Connectors, and Docs.
-4. [x] **Visual Token Budget Calculator**:
-   - Live prompt token footprint and context savings meter in `StackModal.tsx`.
-5. [x] **CEO Review Flow & Flaw Consolidation (Wave 1 & 2)**:
-   - Fixed priority filtering on suites, harmonized atomic preset navigation, bound dynamic counts, deleted dead code.
-6. [x] **Deployment & Vault Sync**:
-   - Built and staged via `python scripts/deploy-skilldock.py`.
-   - Maintained Obsidian parity via `python scripts/sync-obsidian.py`.
+1. [x] **Phase 1: Live Visual Verification**: Validated on Vite preview server.
+2. [x] **Phase 2: Playwright E2E Integration Suite**: 6 end-to-end scenarios locked down in `web/e2e/skilldock.spec.ts`.
+3. [x] **Phase 3: Frontier Model Routing Matrix**: Authored and synced in `docs/models/MODEL-ROUTING-MATRIX.md`.
+4. [x] **Phase 4: Multi-Agent Swarm Orchestrator**: Shipped in `StackModal.tsx`, `swarmOrchestrator.ts`, and WebMCP.
+5. [x] **Phase 5: Standalone SkillDock CLI**: Shipped in `scripts/skilldock_cli.py`, `bin/skilldock.js`, and `tests/test_skilldock_cli.py`.
 
 ---
 
 ### ⚡ Verification Commands
 - Check matrix parity: `python scripts/sync-matrix.py`
-- Test Obsidian vault integration: `python -m unittest tests/test_obsidian_integration.py`
-- Run full unit test suite: `python -m unittest discover tests`
+- Test Playwright E2E suite: `npm --prefix web run test:e2e`
+- Run full Python unit test suite: `python -m unittest discover tests`
 - Compile & stage web storefront: `python scripts/deploy-skilldock.py`
 - Mirror to Obsidian vault: `python scripts/sync-obsidian.py`

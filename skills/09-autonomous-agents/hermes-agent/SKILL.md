@@ -103,3 +103,4 @@ hermes daemon start
 > - **Unbounded Autonomous Execution**: Always configure tool confirmation boundaries for destructive commands (`rm -rf`, database drops, git push force).
 > - **Memory Poisoning**: Do not allow hallucinated facts or unverified assertions to persist into `SOUL.md` or `AGENTS.md`; audit long-term memory periodically.
 > - **API Cost Spikes**: When configuring autonomous loops with commercial cloud APIs, enforce strict per-session token budgets and maximum iteration caps.
+

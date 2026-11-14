@@ -6,6 +6,7 @@
 
 import { useSkillStore } from '@/stores/useSkillStore'
 import { STARTER_PACKS } from '@/data/starterPacks'
+import { generateSwarmManifest, generateSwarmBrief } from '@/utils/swarmOrchestrator'
 
 export interface McpToolDefinition {
   name: string
@@ -112,6 +113,20 @@ export const WEBMCP_TOOLS: McpToolDefinition[] = [
           type: 'string',
           enum: ['antigravity', 'claude', 'codex', 'git'],
           description: 'Target assistant format (defaults to current active assistant)',
+        },
+      },
+    },
+  },
+  {
+    name: 'export_swarm_manifest',
+    description: 'Generate an Antigravity Multi-Agent Swarm / LangGraph / Mastra orchestration manifest from the active stack.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        format: {
+          type: 'string',
+          enum: ['manifest', 'brief'],
+          description: 'Output format: "manifest" for JSON manifest, "brief" for markdown brief (default "manifest")',
         },
       },
     },
@@ -265,6 +280,19 @@ export function initWebMcpBridge() {
           return { content: [{ type: 'text', text: script }] }
         }
 
+        case 'export_swarm_manifest': {
+          const currentStack = store.stack
+          if (currentStack.length === 0) {
+            return { content: [{ type: 'text', text: JSON.stringify({ error: 'Stack is empty' }, null, 2) }] }
+          }
+          if (args.format === 'brief') {
+            const brief = generateSwarmBrief(currentStack)
+            return { content: [{ type: 'text', text: brief }] }
+          }
+          const manifest = generateSwarmManifest(currentStack)
+          return { content: [{ type: 'text', text: JSON.stringify(manifest, null, 2) }] }
+        }
+
         default:
           return {
             content: [{ type: 'text', text: `Unknown WebMCP tool: "${name}"` }],
@@ -291,6 +319,8 @@ export function initWebMcpBridge() {
       if (pack) useSkillStore.getState().addStarterPackToStack(pack.skillIds)
     },
     clearStack: () => useSkillStore.getState().clearStack(),
+    getSwarmManifest: () => generateSwarmManifest(useSkillStore.getState().stack),
+    getSwarmBrief: () => generateSwarmBrief(useSkillStore.getState().stack),
   }
 
   // Bind to window for DevTools and Browser Coding Agents

@@ -753,6 +753,36 @@
       "last_updated": "2026-11-14",
       "fetched_at": "2026-11-14 17:45:00Z"
     },
+    "garrytan/gbrain": {
+      "repo": "garrytan/gbrain",
+      "name": "gbrain",
+      "owner": "garrytan",
+      "html_url": "https://github.com/garrytan/gbrain",
+      "description": "Markdown-first AI agent memory system and knowledge graph with embedded Postgres (PGLite), pgvector, and MCP server support.",
+      "stars": 32200,
+      "stars_formatted": "32.2k",
+      "forks": 2400,
+      "open_issues": 28,
+      "version": "v1.1.0",
+      "license": "MIT",
+      "last_updated": "2026-11-14",
+      "fetched_at": "2026-11-14 18:00:00Z"
+    },
+    "unslothai/unsloth": {
+      "repo": "unslothai/unsloth",
+      "name": "unsloth",
+      "owner": "unslothai",
+      "html_url": "https://github.com/unslothai/unsloth",
+      "description": "5x faster 80% less memory LLM fine-tuning and inference engine with custom OpenAI Triton kernels for Llama 3.3, Mistral, Gemma 2, and DeepSeek.",
+      "stars": 79500,
+      "stars_formatted": "79.5k",
+      "forks": 5800,
+      "open_issues": 160,
+      "version": "2026.11",
+      "license": "Apache-2.0",
+      "last_updated": "2026-11-14",
+      "fetched_at": "2026-11-14 18:00:00Z"
+    },
     "everyinc/compound-engineering-plugin": {
       "repo": "everyinc/compound-engineering-plugin",
       "name": "compound-engineering-plugin",
