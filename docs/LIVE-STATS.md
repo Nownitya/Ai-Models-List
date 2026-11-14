@@ -1,6 +1,6 @@
 # Live Upstream Skills Radar
 
-> **Last Synchronized:** `2026-11-14 12:54:02Z` | **Tracked Repositories:** `134`
+> **Last Synchronized:** `2026-11-14 13:11:54Z` | **Tracked Repositories:** `135`
 
 Real-time tracking of community engagement, release versions, and maintenance activity across all upstream AI coding skill repositories.
 
@@ -25,13 +25,13 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 17 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | **⭐ 115k** | `v2.5.1` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/Leonxlnx/taste-skill?style=flat&label=stars) |
 | 18 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | **⭐ 110k** | `skill-v4.9.1` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/pbakaus/impeccable?style=flat&label=stars) |
 | 19 | [microsoft/playwright](https://github.com/microsoft/playwright) | **⭐ 100k** | `v1.65.1` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/microsoft/playwright?style=flat&label=stars) |
-| 20 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | **⭐ 96.3k** | `v3.2.0` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/tt-a1i/archify?style=flat&label=stars) |
+| 20 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | **⭐ 96.4k** | `v3.2.0` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/tt-a1i/archify?style=flat&label=stars) |
 | 21 | [OpenHands/OpenHands](https://github.com/OpenHands/OpenHands) | **⭐ 93.5k** | `v1.40.0` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/OpenHands/OpenHands?style=flat&label=stars) |
 | 22 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) | **⭐ 92.6k** | `v2.9.0` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/Egonex-AI/Understand-Anything?style=flat&label=stars) |
 | 23 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | **⭐ 84.2k** | `v0.9.45` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/heygen-com/hyperframes?style=flat&label=stars) |
 | 24 | [unslothai/unsloth](https://github.com/unslothai/unsloth) | **⭐ 79.5k** | `v0.1.917-beta` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/unslothai/unsloth?style=flat&label=stars) |
 | 25 | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | **⭐ 79.5k** | `latest` | `Other` | 2026-09-18 | ![Stars](https://img.shields.io/github/stars/ComposioHQ/awesome-claude-skills?style=flat&label=stars) |
-| 26 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | **⭐ 72.2k** | `latest` | `MIT` | 2026-09-14 | ![Stars](https://img.shields.io/github/stars/cloudflare/security-audit-skill?style=flat&label=stars) |
+| 26 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | **⭐ 72.3k** | `latest` | `MIT` | 2026-09-14 | ![Stars](https://img.shields.io/github/stars/cloudflare/security-audit-skill?style=flat&label=stars) |
 | 27 | [upstash/context7](https://github.com/upstash/context7) | **⭐ 64.8k** | `v1.0.30` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/upstash/context7?style=flat&label=stars) |
 | 28 | [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | **⭐ 60.6k** | `v3.12.0` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/MemPalace/mempalace?style=flat&label=stars) |
 | 29 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | **⭐ 60.2k** | `v2.14.12` | `MIT` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/coreyhaines31/marketingskills?style=flat&label=stars) |
@@ -110,7 +110,7 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 102 | [daymade/claude-code-skills](https://github.com/daymade/claude-code-skills) | **⭐ 1.5k** | `v3.24.0` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/daymade/claude-code-skills?style=flat&label=stars) |
 | 103 | [GoogleCloudPlatform/data-agent-kit](https://github.com/GoogleCloudPlatform/data-agent-kit) | **⭐ 1.4k** | `v0.9.4` | `Apache-2.0` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/GoogleCloudPlatform/data-agent-kit?style=flat&label=stars) |
 | 104 | [GoogleCloudPlatform/data-agent-kit](https://github.com/GoogleCloudPlatform/data-agent-kit) | **⭐ 1.4k** | `v0.9.4` | `Apache-2.0` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/GoogleCloudPlatform/data-agent-kit?style=flat&label=stars) |
-| 105 | [open-gsd/gsd-pi](https://github.com/open-gsd/gsd-pi) | **⭐ 1.4k** | `v1.23.0` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/open-gsd/gsd-pi?style=flat&label=stars) |
+| 105 | [open-gsd/gsd-pi](https://github.com/open-gsd/gsd-pi) | **⭐ 1.4k** | `v1.23.0` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/open-gsd/gsd-pi?style=flat&label=stars) |
 | 106 | [Barty-Bart/motion-graphics](https://github.com/Barty-Bart/motion-graphics) | **⭐ 1.3k** | `latest` | `Other` | 2026-10-13 | ![Stars](https://img.shields.io/github/stars/Barty-Bart/motion-graphics?style=flat&label=stars) |
 | 107 | [binance/binance-skills-hub](https://github.com/binance/binance-skills-hub) | **⭐ 1.2k** | `latest` | `Other` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/binance/binance-skills-hub?style=flat&label=stars) |
 | 108 | [atlassian/atlassian-mcp-server](https://github.com/atlassian/atlassian-mcp-server) | **⭐ 1.2k** | `latest` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/atlassian/atlassian-mcp-server?style=flat&label=stars) |
@@ -133,13 +133,14 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 125 | [prisma/skills](https://github.com/prisma/skills) | **⭐ 80** | `latest` | `MIT` | 2026-11-10 | ![Stars](https://img.shields.io/github/stars/prisma/skills?style=flat&label=stars) |
 | 126 | [ScrapeGraphAI/just-scrape](https://github.com/ScrapeGraphAI/just-scrape) | **⭐ 76** | `latest` | `MIT` | 2026-09-21 | ![Stars](https://img.shields.io/github/stars/ScrapeGraphAI/just-scrape?style=flat&label=stars) |
 | 127 | [convex/agent-skills](https://github.com/convex/agent-skills) | **⭐ 69** | `latest` | `Apache-2.0` | 2026-10-29 | ![Stars](https://img.shields.io/github/stars/convex/agent-skills?style=flat&label=stars) |
-| 128 | [nrwl/nx-ai-agents-config](https://github.com/nrwl/nx-ai-agents-config) | **⭐ 30** | `latest` | `MIT` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/nrwl/nx-ai-agents-config?style=flat&label=stars) |
-| 129 | [21st-dev/cli](https://github.com/21st-dev/cli) | **⭐ 21** | `latest` | `Other` | 2026-01-27 | ![Stars](https://img.shields.io/github/stars/21st-dev/cli?style=flat&label=stars) |
-| 130 | [momentic-ai/skills](https://github.com/momentic-ai/skills) | **⭐ 17** | `latest` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/momentic-ai/skills?style=flat&label=stars) |
-| 131 | [2dmurali/review-loop-skill](https://github.com/2dmurali/review-loop-skill) | **⭐ 7** | `latest` | `Other` | 2026-05-08 | ![Stars](https://img.shields.io/github/stars/2dmurali/review-loop-skill?style=flat&label=stars) |
-| 132 | [coderabbitai/antigravity-plugin](https://github.com/coderabbitai/antigravity-plugin) | **⭐ 3** | `latest` | `MIT` | 2026-10-30 | ![Stars](https://img.shields.io/github/stars/coderabbitai/antigravity-plugin?style=flat&label=stars) |
-| 133 | [kytheros/strata](https://github.com/kytheros/strata) | **⭐ 1** | `v2.3.0` | `Apache-2.0` | 2026-08-04 | ![Stars](https://img.shields.io/github/stars/kytheros/strata?style=flat&label=stars) |
-| 134 | [Adelo31/omniroute](https://github.com/Adelo31/omniroute) | **⭐ 0** | `latest` | `MIT` | 2026-10-14 | ![Stars](https://img.shields.io/github/stars/Adelo31/omniroute?style=flat&label=stars) |
+| 128 | [prime-skills/runcomfy-agent-skills](https://github.com/prime-skills/runcomfy-agent-skills) | **⭐ 62** | `latest` | `MIT` | 2026-05-15 | ![Stars](https://img.shields.io/github/stars/prime-skills/runcomfy-agent-skills?style=flat&label=stars) |
+| 129 | [nrwl/nx-ai-agents-config](https://github.com/nrwl/nx-ai-agents-config) | **⭐ 30** | `latest` | `MIT` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/nrwl/nx-ai-agents-config?style=flat&label=stars) |
+| 130 | [21st-dev/cli](https://github.com/21st-dev/cli) | **⭐ 21** | `latest` | `Other` | 2026-01-27 | ![Stars](https://img.shields.io/github/stars/21st-dev/cli?style=flat&label=stars) |
+| 131 | [momentic-ai/skills](https://github.com/momentic-ai/skills) | **⭐ 17** | `latest` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/momentic-ai/skills?style=flat&label=stars) |
+| 132 | [2dmurali/review-loop-skill](https://github.com/2dmurali/review-loop-skill) | **⭐ 7** | `latest` | `Other` | 2026-05-08 | ![Stars](https://img.shields.io/github/stars/2dmurali/review-loop-skill?style=flat&label=stars) |
+| 133 | [coderabbitai/antigravity-plugin](https://github.com/coderabbitai/antigravity-plugin) | **⭐ 3** | `latest` | `MIT` | 2026-10-30 | ![Stars](https://img.shields.io/github/stars/coderabbitai/antigravity-plugin?style=flat&label=stars) |
+| 134 | [kytheros/strata](https://github.com/kytheros/strata) | **⭐ 1** | `v2.3.0` | `Apache-2.0` | 2026-08-04 | ![Stars](https://img.shields.io/github/stars/kytheros/strata?style=flat&label=stars) |
+| 135 | [Adelo31/omniroute](https://github.com/Adelo31/omniroute) | **⭐ 0** | `latest` | `MIT` | 2026-10-14 | ![Stars](https://img.shields.io/github/stars/Adelo31/omniroute?style=flat&label=stars) |
 
 ---
 *Automatically synchronized via `.github/workflows/sync-metrics.yml` and `scripts/sync-github-metrics.py`.*
