@@ -1,10 +1,10 @@
 {
   "meta": {
     "totalSkills": 332,
-    "totalFrameworks": 118,
+    "totalFrameworks": 119,
     "totalDocs": 57,
     "totalPrompts": 3,
-    "totalStars": 5126734,
+    "totalStars": 5132134,
     "categories": [
       {
         "id": "01-core-engineering",
@@ -76,7 +76,7 @@
       {
         "repo": "agentskills/agentskills",
         "repoName": "Agent Skills Spec",
-        "count": 66,
+        "count": 65,
         "stars": 27275
       },
       {
@@ -566,6 +566,12 @@
         "stars": 6079
       },
       {
+        "repo": "21st-dev/cli",
+        "repoName": "21st.dev Magic",
+        "count": 1,
+        "stars": 5400
+      },
+      {
         "repo": "ethanplusai/sellbird",
         "repoName": "Sellbird",
         "count": 1,
@@ -797,7 +803,7 @@
       "stars": 27275,
       "starsFormatted": "27.3k",
       "description": "Specification and documentation for Agent Skills",
-      "skillsCount": 66,
+      "skillsCount": 65,
       "categoryId": "01-core-engineering",
       "categoryLabel": "Core Engineering",
       "officialUrl": "https://github.com/agentskills/agentskills",
@@ -858,14 +864,6 @@
           "scoped": "core-scaffold-exercises",
           "cli": "python scripts/install-to-project.py --skill core-scaffold-exercises",
           "description": "Create guided implementation exercises."
-        },
-        {
-          "id": "st-magic-ui",
-          "name": "st-magic-ui",
-          "priority": "P0",
-          "scoped": "st-magic-ui",
-          "cli": "python scripts/install-to-project.py --skill st-magic-ui",
-          "description": "21st.dev design engineering component marketplace and Magic MCP server. Search 12,000+ React, Tailwind CSS, and shadcn-ui components, generate UI with AI, and install via npx @21st-dev/cli install-skill."
         },
         {
           "id": "agent-skills-spec",
@@ -5129,6 +5127,39 @@
       ]
     },
     {
+      "id": "21st-dev-cli",
+      "repo": "21st-dev/cli",
+      "repoName": "21st.dev Magic",
+      "author": "21st-dev",
+      "stars": 5400,
+      "starsFormatted": "5.4k",
+      "description": "21st.dev Magic CLI & MCP server: search, install, and generate 12,000+ React, Tailwind CSS, and shadcn-ui components.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/21st-dev/cli",
+      "version": "v0.8.2",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "npx @21st-dev/cli install-skill",
+        "claude": "npx @21st-dev/cli install-skill",
+        "cursor": "21st init --client cursor",
+        "codex": "npx @21st-dev/cli install-skill",
+        "git": "git clone https://github.com/21st-dev/cli.git",
+        "cli": "npx @21st-dev/cli install-skill"
+      },
+      "skills": [
+        {
+          "id": "21st-magic-ui",
+          "name": "21st-magic-ui",
+          "priority": "P0",
+          "scoped": "ui-21st-magic-ui",
+          "cli": "python scripts/install-to-project.py --skill ui-21st-magic-ui",
+          "description": "21st.dev design engineering component marketplace and Magic MCP server. Search 12,000+ React, Tailwind CSS, and shadcn-ui components, generate UI with AI, and install via npx @21st-dev/cli install-skill."
+        }
+      ]
+    },
+    {
       "id": "ethanplusai-sellbird",
       "repo": "ethanplusai/sellbird",
       "repoName": "Sellbird",
@@ -8772,20 +8803,20 @@
       ]
     },
     {
-      "id": "st-magic-ui",
-      "uniqueId": "05-ui-ux:st-magic-ui",
-      "name": "st-magic-ui",
+      "id": "21st-magic-ui",
+      "uniqueId": "05-ui-ux:21st-magic-ui",
+      "name": "21st-magic-ui",
       "priority": "P0",
       "categoryId": "05-ui-ux",
       "categoryLabel": "UI / UX Design",
       "description": "21st.dev design engineering component marketplace and Magic MCP server. Search 12,000+ React, Tailwind CSS, and shadcn-ui components, generate UI with AI, and install via npx @21st-dev/cli install-skill.",
-      "scoped": "st-magic-ui",
-      "cli": "python scripts/install-to-project.py --skill st-magic-ui",
-      "repo": "agentskills/agentskills",
-      "repoName": "Agent Skills Spec",
-      "stars": 27275,
+      "scoped": "ui-21st-magic-ui",
+      "cli": "python scripts/install-to-project.py --skill ui-21st-magic-ui",
+      "repo": "21st-dev/cli",
+      "repoName": "21st.dev Magic",
+      "stars": 5400,
       "ecosystems": [
-        "agents"
+        "general"
       ]
     },
     {

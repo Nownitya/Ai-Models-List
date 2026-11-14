@@ -465,8 +465,8 @@ def export_matrix():
             if not name or not priority:
                 continue
 
-            # Clean name
-            clean_name = re.sub(r"^[0-9.]+\s*", "", name).strip()
+            # Clean name (strip leading list numbering like '01. ' or '1. ' but preserve names like '21st-magic-ui')
+            clean_name = re.sub(r"^\d+[\.\)]\s*", "", name).strip()
             skill_id = clean_name.lower().replace(" ", "-")
 
             # Look up directory metadata
