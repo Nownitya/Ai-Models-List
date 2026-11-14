@@ -50,7 +50,7 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
     >
       {/* Left: Priority, Avatar, Name, Repo, Category, Description Preview */}
       <div className="flex items-center gap-2.5 min-w-0 flex-1">
-        <span className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-bold border shrink-0 ${priorityBadge}`}>
+        <span className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold border shrink-0 ${priorityBadge}`}>
           {skill.priority}
         </span>
 
@@ -75,7 +75,7 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
               e.stopPropagation()
               setRepo(skill.repo!)
             }}
-            className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono px-1.5 py-0.2 rounded bg-[#18181b] hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-[#27272a] shrink-0 truncate max-w-[140px] cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono px-1.5 py-0.5 rounded bg-[#18181b] hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-[#27272a] shrink-0 truncate max-w-[140px] cursor-pointer"
             title={`Filter by repository: ${skill.repo}`}
           >
             <GitBranch className="w-3 h-3 text-zinc-500" />
@@ -83,7 +83,7 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
           </button>
         )}
 
-        <span className="hidden md:inline text-[10px] uppercase font-mono px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-500 border border-[#27272a] shrink-0 truncate max-w-[130px]">
+        <span className="hidden md:inline text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#18181b] text-zinc-500 border border-[#27272a] shrink-0 truncate max-w-[130px]">
           {skill.categoryLabel.split(' ')[1] || skill.categoryLabel}
         </span>
 

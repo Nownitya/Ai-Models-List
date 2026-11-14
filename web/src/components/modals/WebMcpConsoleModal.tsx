@@ -345,7 +345,7 @@ export const WebMcpConsoleModal: React.FC = () => {
                   )}
                   {responseOutput && (
                     <span
-                      className={`text-[10px] font-mono px-2 py-0.2 rounded font-semibold ${
+                      className={`text-[10px] font-mono px-2 py-0.5 rounded font-semibold ${
                         isError ? 'bg-rose-500/15 text-rose-300' : 'bg-emerald-500/15 text-emerald-300'
                       }`}
                     >

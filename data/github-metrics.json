@@ -1,7 +1,7 @@
 {
   "version": 1,
   "last_synced": "2026-11-14 13:11:54Z",
-  "total_repositories": 135,
+  "total_repositories": 136,
   "repositories": {
     "adelo31/omniroute": {
       "repo": "Adelo31/omniroute",
@@ -2027,6 +2027,21 @@
       "license": "MIT",
       "last_updated": "2026-05-15",
       "fetched_at": "2026-11-14 13:11:37Z"
+    },
+    "microsoft/react-native-windows-samples": {
+      "repo": "microsoft/react-native-windows-samples",
+      "name": "react-native-windows-samples",
+      "owner": "microsoft",
+      "html_url": "https://github.com/microsoft/react-native-windows-samples",
+      "description": "A repository showcasing React Native samples and templates for Windows, macOS, and Surface Duo.",
+      "stars": 544,
+      "stars_formatted": "544",
+      "forks": 128,
+      "open_issues": 18,
+      "version": "latest",
+      "license": "MIT",
+      "last_updated": "2026-11-14",
+      "fetched_at": "2026-11-14 13:16:00Z"
     }
   }
 }

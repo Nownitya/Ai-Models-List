@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Editorial Headline with Instrument Serif Italic Accent */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.08] mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.08] mb-4 text-balance">
             Discover the World&apos;s Best{' '}
             <span className="font-serif italic font-normal text-zinc-200 underline decoration-zinc-700/60 underline-offset-8">
               AI Agent Skills
@@ -35,9 +35,9 @@ export const HeroSection: React.FC = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-3xl mb-8">
-            The authoritative engineering launchpad cataloging <strong>{meta.totalSkills || 325} Atomic Skills</strong> grouped into{' '}
-            <strong>{meta.totalFrameworks || 112} Upstream Suites & Packages</strong>,{' '}
+          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-3xl mb-8 text-pretty">
+            The authoritative engineering launchpad cataloging <strong>{meta.totalSkills || 332} Atomic Skills</strong> grouped into{' '}
+            <strong>{meta.totalFrameworks || 118} Upstream Suites & Packages</strong>,{' '}
             <strong>1,126 MCP Connectors</strong>, and{' '}
             <strong>530 Claude Plugins</strong> with multi-assistant activation guides.
           </p>
@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
               }`}
             >
               <span className="text-zinc-500">Suites & Packages</span>
-              <span className="text-zinc-100 font-bold">{meta.totalFrameworks || 112}</span>
+              <span className="text-zinc-100 font-bold">{meta.totalFrameworks || 118}</span>
             </button>
 
             <button
@@ -70,9 +70,9 @@ export const HeroSection: React.FC = () => {
                   : 'bg-[#121215] border-[#27272a] hover:border-zinc-700 text-zinc-300 hover:text-white'
               }`}
             >
-              <Zap className="w-3 h-3 text-amber-400" />
+              <Zap className="w-3 h-3 text-amber-400 shrink-0" />
               <span className="text-zinc-500">Atomic Skills</span>
-              <span className="text-zinc-100 font-bold">{meta.totalSkills || 325}</span>
+              <span className="text-zinc-100 font-bold">{meta.totalSkills || 332}</span>
             </button>
 
             <button
@@ -83,18 +83,18 @@ export const HeroSection: React.FC = () => {
                   : 'bg-[#121215] border-[#27272a] hover:border-zinc-700 text-zinc-300 hover:text-white'
               }`}
             >
-              <Store className="w-3 h-3 text-violet-400" />
+              <Store className="w-3 h-3 text-violet-400 shrink-0" />
               <span className="text-zinc-500">MCP & Plugins</span>
               <span className="text-zinc-100 font-bold">1,689</span>
             </button>
 
             <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#121215] border border-[#27272a] text-zinc-400">
-              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+              <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
               <span>{formattedStars}M Stars</span>
             </div>
 
             <div className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#121215] border border-[#27272a] text-zinc-400">
-              <ShieldCheck className="w-3 h-3 text-emerald-400" />
+              <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" />
               <span className="text-emerald-400 font-medium">Verified Parity</span>
             </div>
           </div>

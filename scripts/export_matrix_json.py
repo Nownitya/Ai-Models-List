@@ -263,6 +263,7 @@ SKILL_TO_REPO = {
     'hyperframes-media': 'heygen-com/hyperframes',
     'marketing-growth-engine': 'coreyhaines31/marketingskills',
     'runcomfy-cli': 'prime-skills/runcomfy-agent-skills',
+    'react-native-windows': 'microsoft/react-native-windows-samples',
 }
 
 CATEGORY_FALLBACK_REPO = {
@@ -331,6 +332,7 @@ REPO_DISPLAY_NAMES = {
     'garrytan/gbrain': 'gbrain',
     'unslothai/unsloth': 'Unsloth AI',
     'prime-skills/runcomfy-agent-skills': 'RunComfy AI Media',
+    'microsoft/react-native-windows-samples': 'React Native Windows',
     'vercel-labs/agent-browser': 'Agent Browser',
     'vercel-labs/agent-desktop': 'Agent Desktop',
     'vercel-labs/skills': 'Vercel React Patterns',
@@ -569,6 +571,7 @@ def export_matrix():
         'garrytan/gbrain': "Garry Tan's markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite) + pgvector, hybrid search, and MCP support.",
         'unslothai/unsloth': "Ultra-fast open-source LLM fine-tuning and inference engine (5x faster, 80% less VRAM with Triton kernels) for Llama 3.3, Mistral, Gemma 2, and DeepSeek.",
         'prime-skills/runcomfy-agent-skills': "Unified CLI and agent skills for 100+ hosted diffusion and generative video models (Kling 3.0, Wan 2.1, FLUX 2, GPT Image 2, inpainting, face-swap).",
+        'microsoft/react-native-windows-samples': "Microsoft official React Native for Windows & macOS architecture samples, native C++/WinRT modules, WinUI 3 desktop controls, and XAML styling patterns.",
     }
 
     # Build Framework Hub records (65 Upstream Repositories)
@@ -668,6 +671,15 @@ def export_matrix():
                 "codex": "npm i -g @runcomfy/cli",
                 "git": "git clone https://github.com/prime-skills/runcomfy-agent-skills.git",
                 "cli": "npm i -g @runcomfy/cli"
+            }
+        elif repo_key == "microsoft/react-native-windows-samples":
+            recipes = {
+                "antigravity": "git clone https://github.com/microsoft/react-native-windows-samples.git",
+                "claude": "git clone https://github.com/microsoft/react-native-windows-samples.git",
+                "cursor": "npx react-native-windows-init --overwrite",
+                "codex": "npx react-native-windows-init --overwrite",
+                "git": "git clone https://github.com/microsoft/react-native-windows-samples.git",
+                "cli": "npx react-native-windows-init --overwrite"
             }
         elif repo_key == "microsoft/playwright":
             recipes = {

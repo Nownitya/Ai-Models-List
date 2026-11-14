@@ -251,6 +251,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `extract-design-tokens` | **Design Token Extractor** | `P1` | `/extract-design-tokens` | Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites. |
 | `modern-web-guidance` | **Google Chrome Modern Web Guidance** | `P0` | `/modern-web-guidance` | Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan). |
 | `21st-magic-ui` | **21st.dev Magic UI & MCP** | `P0` | `/21st-magic-ui` | 21st.dev design engineering component marketplace and Magic MCP server. Search 12,000+ React, Tailwind CSS, and shadcn-ui components, generate UI with AI, and install via npx @21st-dev/cli install-skill. |
+| `react-native-windows` | **React Native for Windows & Desktop Samples** | `P1` | `/react-native-windows` | Microsoft official React Native for Windows & macOS architecture samples, native C++/WinRT modules, WinUI 3 desktop controls, and XAML styling patterns. |
 
 
 ## 06 GSD
@@ -631,6 +632,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | [prisma/skills](https://github.com/prisma/skills) | **⭐ 79** | `latest` | `Apache-2.0` | 2026-11-08 |
 | [stripe/link-cli](https://github.com/stripe/link-cli) | **⭐ 894** (1.3k+ Installs) | `latest` | `MIT` | 2026-11-08 |
 | [prime-skills/runcomfy-agent-skills](https://github.com/prime-skills/runcomfy-agent-skills) | **⭐ 62** | `latest` | `MIT` | 2026-11-14 |
+| [microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples) | **⭐ 544** (17.4k+ Parent) | `latest` | `MIT` | 2026-11-14 |
 
 ## 15 Universal Project Documentation Standard
 

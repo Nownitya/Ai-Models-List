@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
   }, [stack.length])
 
   const pillars: { id: PillarType; label: string; count: number | string; icon: React.ReactNode }[] = [
-    { id: 'frameworks', label: 'Skills & Suites', count: meta.totalFrameworks || 112, icon: <Boxes className="w-3.5 h-3.5" /> },
+    { id: 'frameworks', label: 'Skills & Suites', count: meta.totalFrameworks || 118, icon: <Boxes className="w-3.5 h-3.5" /> },
     { id: 'marketplace', label: 'Marketplace', count: 1689, icon: <Store className="w-3.5 h-3.5" /> },
     { id: 'docs', label: 'Docs', count: meta.totalDocs || 57, icon: <FileText className="w-3.5 h-3.5" /> },
     { id: 'prompts', label: 'Prompts', count: meta.totalPrompts || 3, icon: <Sparkles className="w-3.5 h-3.5" /> },
@@ -60,11 +60,11 @@ export const Header: React.FC = () => {
             <div className="w-7 h-7 rounded-md bg-[#18181b] border border-[#27272a] group-hover:border-zinc-500 group-hover:bg-[#27272a] flex items-center justify-center text-zinc-100 shadow-2xs transition-all duration-150">
               <Terminal className="w-4 h-4 text-zinc-300 group-hover:text-white transition-colors" />
             </div>
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-center gap-2">
               <span className="text-lg font-bold tracking-tight text-white group-hover:text-zinc-200 transition-colors">
                 SkillDock
               </span>
-              <span className="text-[10px] font-mono text-zinc-500 border border-[#27272a] px-1.5 py-0.2 rounded bg-[#121215]">
+              <span className="text-[10px] font-mono text-zinc-500 border border-[#27272a] px-1.5 py-0.5 rounded bg-[#121215] leading-none">
                 v3.0
               </span>
             </div>
@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
                   <span className={isActive ? 'text-zinc-200' : 'text-zinc-500'}>{p.icon}</span>
                   <span>{p.label}</span>
                   <span
-                    className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
+                    className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
                       isActive ? 'bg-[#27272a] text-zinc-200' : 'text-zinc-500'
                     }`}
                   >
@@ -109,7 +109,7 @@ export const Header: React.FC = () => {
           >
             <Command className="w-3.5 h-3.5 text-zinc-500" />
             <span className="hidden sm:inline">Search</span>
-            <kbd className="text-[10px] font-mono px-1 py-0.2 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
+            <kbd className="text-[10px] font-mono px-1 py-0.5 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
               ⌘K
             </kbd>
           </button>
@@ -146,7 +146,7 @@ export const Header: React.FC = () => {
             <span>Stack</span>
             {stack.length > 0 && (
               <span
-                className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-bold transition-all duration-300 ${
+                className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold transition-all duration-300 ${
                   pulse
                     ? 'bg-blue-400 text-blue-950 scale-125 ring-2 ring-blue-400/50 shadow-md shadow-blue-500/50'
                     : 'bg-white text-zinc-900'

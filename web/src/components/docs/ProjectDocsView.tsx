@@ -80,7 +80,7 @@ export const ProjectDocsView: React.FC = () => {
                 }`}
               >
                 <span>{t.label}</span>
-                <span className="text-[10px] font-mono px-1 py-0.2 rounded bg-[#09090b] text-zinc-400">
+                <span className="text-[10px] font-mono px-1 py-0.5 rounded bg-[#09090b] text-zinc-400">
                   {t.count}
                 </span>
               </button>
@@ -115,7 +115,7 @@ export const ProjectDocsView: React.FC = () => {
                   {doc.layer}
                 </span>
                 <span
-                  className={`text-[10px] font-mono font-bold px-1.5 py-0.2 rounded border ${
+                  className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded border ${
                     doc.priority === 'P0'
                       ? 'bg-rose-500/10 text-rose-300 border-rose-500/30'
                       : doc.priority === 'P1'

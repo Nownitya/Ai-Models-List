@@ -81,3 +81,4 @@ runcomfy whoami
 - **Do Not Run Indefinite Unbounded Polls**: Always set a reasonable polling timeout for long video generation jobs (e.g. 5–10 minutes maximum).
 - **Beware of Large File Quotas**: The CLI automatically caps downloads at 2 GiB per artifact to prevent local disk exhaustion; ensure destination paths have sufficient free storage.
 - **Avoid Overlapping Local GPU Dependencies**: Do not install heavy PyTorch or CUDA dependencies locally when utilizing `runcomfy-cli`; computation runs remotely in cloud serverless clusters.
+

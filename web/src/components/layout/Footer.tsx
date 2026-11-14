@@ -40,11 +40,11 @@ export const Footer: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-[#141417] border border-[#27272a] flex items-center justify-center text-zinc-100 shadow-xs">
                 <Terminal className="w-4 h-4 text-emerald-400" />
               </div>
-              <div className="flex items-baseline gap-2">
+              <div className="flex items-center gap-2">
                 <span className="text-xl font-bold tracking-tight text-white font-sans">
                   SkillDock
                 </span>
-                <span className="text-[10px] font-mono text-zinc-500 border border-[#27272a] px-1.5 py-0.2 rounded bg-[#111114]">
+                <span className="text-[10px] font-mono text-zinc-500 border border-[#27272a] px-1.5 py-0.5 rounded bg-[#111114] leading-none">
                   v3.0
                 </span>
               </div>
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-zinc-300 font-medium">All Systems Operational</span>
               <span className="text-zinc-600">·</span>
-              <span className="text-zinc-400">{meta.totalSkills || 283} Skills Active</span>
+              <span className="text-zinc-400">{meta.totalSkills || 332} Skills Active</span>
             </div>
 
             {/* Quick Git Clone Snippet */}
@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
                 className="group flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#111114] hover:bg-[#18181b] border border-[#27272a] hover:border-zinc-500 text-xs font-mono text-zinc-400 hover:text-zinc-200 transition-all cursor-pointer"
                 title="Click to copy git clone command"
               >
-                <GitBranch className="w-3.5 h-3.5 text-zinc-500 group-hover:text-emerald-400 transition-colors" />
+                <GitBranch className="w-3.5 h-3.5 text-zinc-500 group-hover:text-emerald-400 transition-colors shrink-0" />
                 <span className="truncate">git clone Ai-Models-List.git</span>
                 {copiedClone ? (
                   <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 ml-1" />
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Suites & Packages ({meta.totalFrameworks || 74})
+                  Suites & Packages ({meta.totalFrameworks || 118})
                 </button>
               </li>
               <li>
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Atomic Agent Skills ({meta.totalSkills || 325})
+                  Atomic Agent Skills ({meta.totalSkills || 332})
                 </button>
               </li>
               <li>
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                   className="hover:text-white transition-colors cursor-pointer text-left flex items-center gap-1.5"
                 >
                   <span>Claude Marketplace</span>
-                  <span className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
                     1,689
                   </span>
                 </button>

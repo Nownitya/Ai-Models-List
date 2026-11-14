@@ -320,7 +320,7 @@ export const FrameworkDrawer: React.FC = () => {
                       <div className="min-w-0">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-xs sm:text-sm font-semibold text-zinc-100 truncate">{skill.name}</span>
-                          <span className="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
+                          <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
                             {skill.priority}
                           </span>
                         </div>

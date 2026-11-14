@@ -151,30 +151,30 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
           <button
             onClick={copySlashCommand}
             title="Click to copy slash command"
-            className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] hover:border-zinc-500 text-xs font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] hover:border-zinc-500 text-xs font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer min-w-0"
           >
-            <span>/{skill.scoped}</span>
-            {copiedSlash ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-zinc-500" />}
+            <span className="truncate">/{skill.scoped}</span>
+            {copiedSlash ? <Check className="w-3 h-3 text-emerald-400 shrink-0" /> : <Copy className="w-3 h-3 text-zinc-500 shrink-0" />}
           </button>
 
           {/* Upstream Stars if available */}
           {skill.stars > 0 && (
             <span className="flex items-center gap-1 text-xs font-mono text-zinc-400 shrink-0">
-              <Star className="w-3 h-3 fill-amber-400/80 text-amber-400" />
+              <Star className="w-3 h-3 fill-amber-400/80 text-amber-400 shrink-0" />
               <span>{skill.stars >= 1000 ? `${(skill.stars / 1000).toFixed(0)}k` : skill.stars}</span>
             </span>
           )}
         </div>
 
         {/* Official Open Standard CLI copy bar */}
-        <div className="flex items-center justify-between gap-1 text-xs text-zinc-500">
+        <div className="flex items-center justify-between gap-2 text-xs text-zinc-500">
           <button
             onClick={copyCliCommand}
-            className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer font-mono text-[11px]"
+            className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer font-mono text-[11px] min-w-0 flex-1 text-left"
             title={`Copy ${activeAssistant} command: ${activeAssistantCmd}`}
           >
             <Terminal className="w-3 h-3 text-cyan-400 shrink-0" />
-            <span className="truncate max-w-[200px]">{activeAssistantCmd}</span>
+            <span className="truncate">{activeAssistantCmd}</span>
             {copiedCli ? <Check className="w-3 h-3 text-emerald-400 shrink-0" /> : <Copy className="w-3 h-3 text-zinc-500 shrink-0" />}
           </button>
 
@@ -184,7 +184,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-zinc-500 hover:text-zinc-300 p-0.5 transition-colors"
+              className="text-zinc-500 hover:text-zinc-300 p-0.5 transition-colors shrink-0"
               title="Open upstream repository"
             >
               <ExternalLink className="w-3 h-3" />

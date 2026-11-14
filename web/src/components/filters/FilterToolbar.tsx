@@ -192,7 +192,7 @@ export const FilterToolbar: React.FC = () => {
             <span className="text-zinc-300">
               Filtered repository: <strong className="text-white">{activeRepoMeta.repoName}</strong> ({activeRepoMeta.repo})
             </span>
-            <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
               {activeRepoMeta.count} skills
             </span>
           </div>

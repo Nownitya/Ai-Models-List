@@ -56,7 +56,7 @@ export const App: React.FC = () => {
                     </span>
                   </span>
                   <span className="text-zinc-500 hidden sm:inline font-mono">
-                    Press <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">/</kbd> to search, <kbd className="px-1.5 py-0.2 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">⌘K</kbd> for command palette
+                    Press <kbd className="px-1.5 py-0.5 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">/</kbd> to search, <kbd className="px-1.5 py-0.5 rounded bg-[#18181b] text-zinc-300 border border-[#27272a]">⌘K</kbd> for command palette
                   </span>
                 </div>
                 <VirtualizedGrid skills={filteredSkills} />

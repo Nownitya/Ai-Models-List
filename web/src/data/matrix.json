@@ -1,10 +1,10 @@
 {
   "meta": {
-    "totalSkills": 333,
-    "totalFrameworks": 120,
+    "totalSkills": 334,
+    "totalFrameworks": 121,
     "totalDocs": 57,
     "totalPrompts": 3,
-    "totalStars": 5182832,
+    "totalStars": 5183376,
     "categories": [
       {
         "id": "01-core-engineering",
@@ -29,7 +29,7 @@
       {
         "id": "05-ui-ux",
         "label": "UI / UX Design",
-        "count": 24
+        "count": 25
       },
       {
         "id": "06-gsd",
@@ -686,6 +686,12 @@
         "stars": 684
       },
       {
+        "repo": "microsoft/react-native-windows-samples",
+        "repoName": "React Native Windows",
+        "count": 1,
+        "stars": 544
+      },
+      {
         "repo": "firebase/agent-skills",
         "repoName": "Firebase Agent Suite",
         "count": 1,
@@ -795,7 +801,7 @@
       }
     ],
     "p0Count": 103,
-    "p1Count": 150,
+    "p1Count": 151,
     "p2Count": 52,
     "p3Count": 28,
     "generatedAt": "2026-11-09"
@@ -5774,6 +5780,39 @@
       ]
     },
     {
+      "id": "microsoft-react-native-windows-samples",
+      "repo": "microsoft/react-native-windows-samples",
+      "repoName": "React Native Windows",
+      "author": "microsoft",
+      "stars": 544,
+      "starsFormatted": "544",
+      "description": "A repository showcasing React Native samples and templates for Windows, macOS, and Surface Duo.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/microsoft/react-native-windows-samples",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/microsoft/react-native-windows-samples.git",
+        "claude": "git clone https://github.com/microsoft/react-native-windows-samples.git",
+        "cursor": "npx react-native-windows-init --overwrite",
+        "codex": "npx react-native-windows-init --overwrite",
+        "git": "git clone https://github.com/microsoft/react-native-windows-samples.git",
+        "cli": "npx react-native-windows-init --overwrite"
+      },
+      "skills": [
+        {
+          "id": "react-native-windows",
+          "name": "react-native-windows",
+          "priority": "P1",
+          "scoped": "ui-react-native-windows",
+          "cli": "python scripts/install-to-project.py --skill ui-react-native-windows",
+          "description": "Microsoft official React Native for Windows & macOS architecture samples, native C++/WinRT modules, WinUI 3 desktop controls, and XAML styling patterns."
+        }
+      ]
+    },
+    {
       "id": "firebase-agent-skills",
       "repo": "firebase/agent-skills",
       "repoName": "Firebase Agent Suite",
@@ -8854,6 +8893,23 @@
       "repo": "21st-dev/cli",
       "repoName": "21st.dev Magic",
       "stars": 21,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "react-native-windows",
+      "uniqueId": "05-ui-ux:react-native-windows",
+      "name": "react-native-windows",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Microsoft official React Native for Windows & macOS architecture samples, native C++/WinRT modules, WinUI 3 desktop controls, and XAML styling patterns.",
+      "scoped": "ui-react-native-windows",
+      "cli": "python scripts/install-to-project.py --skill ui-react-native-windows",
+      "repo": "microsoft/react-native-windows-samples",
+      "repoName": "React Native Windows",
+      "stars": 544,
       "ecosystems": [
         "general"
       ]

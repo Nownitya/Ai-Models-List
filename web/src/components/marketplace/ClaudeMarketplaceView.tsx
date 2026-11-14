@@ -343,7 +343,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
             >
               <Radio className="w-3.5 h-3.5" />
               <span>Connectors & Plugins</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${activeSection === 'connectors' ? 'bg-zinc-300 text-zinc-900' : 'bg-[#18181b] text-zinc-400'}`}>
+              <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${activeSection === 'connectors' ? 'bg-zinc-300 text-zinc-900' : 'bg-[#18181b] text-zinc-400'}`}>
                 1,126
               </span>
             </button>
@@ -358,7 +358,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
             >
               <Bot className="w-3.5 h-3.5" />
               <span>Marketplace Plugins</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${activeSection === 'plugins' ? 'bg-zinc-300 text-zinc-900' : 'bg-[#18181b] text-zinc-400'}`}>
+              <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${activeSection === 'plugins' ? 'bg-zinc-300 text-zinc-900' : 'bg-[#18181b] text-zinc-400'}`}>
                 530
               </span>
             </button>
@@ -373,7 +373,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
             >
               <Building2 className="w-3.5 h-3.5" />
               <span>Agents & Products</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${activeSection === 'agents-products' ? 'bg-zinc-300 text-zinc-900' : 'bg-[#18181b] text-zinc-400'}`}>
+              <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${activeSection === 'agents-products' ? 'bg-zinc-300 text-zinc-900' : 'bg-[#18181b] text-zinc-400'}`}>
                 33
               </span>
             </button>
@@ -562,11 +562,11 @@ export const ClaudeMarketplaceView: React.FC = () => {
                           <h3 className="font-bold text-zinc-100 text-sm truncate" title={c.title}>
                             {c.title}
                           </h3>
-                          <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-medium bg-[#18181b] text-zinc-300 border border-[#27272a]">
+                          <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-[#18181b] text-zinc-300 border border-[#27272a]">
                             {isRemote ? 'Remote' : 'Local'}
                           </span>
                           {c.verifiedTier && (
-                            <span className="px-1.5 py-0.2 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 capitalize">
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 capitalize">
                               {c.verifiedTier}
                             </span>
                           )}
@@ -608,7 +608,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
                       {c.worksWith?.map((w) => (
                         <span
                           key={w}
-                          className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-[#18181b] text-zinc-500 border border-[#27272a]"
+                          className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#18181b] text-zinc-500 border border-[#27272a]"
                         >
                           {w}
                         </span>
@@ -818,7 +818,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
                             {plugin.title}
                           </h3>
                           {plugin.anthropic_verified && (
-                            <span className="px-1.5 py-0.2 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
                               Verified
                             </span>
                           )}
@@ -974,7 +974,7 @@ export const ClaudeMarketplaceView: React.FC = () => {
                         <h3 className="font-bold text-zinc-100 text-sm truncate" title={product.title}>
                           {product.title}
                         </h3>
-                        <span className="px-1.5 py-0.2 rounded text-[10px] font-medium bg-[#18181b] text-zinc-300 border border-[#27272a]">
+                        <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-[#18181b] text-zinc-300 border border-[#27272a]">
                           {product.category}
                         </span>
                       </div>

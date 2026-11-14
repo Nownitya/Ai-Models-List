@@ -194,6 +194,7 @@ stageshow-ui-presentation,Stageshow UI Presentation,P1,/stageshow-ui-presentatio
 extract-design-tokens,Design Token Extractor,P1,/extract-design-tokens,"Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites."
 modern-web-guidance,Google Chrome Modern Web Guidance,P0,/modern-web-guidance,"Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan)."
 21st-magic-ui,21st.dev Magic UI & MCP,P0,/21st-magic-ui,"21st.dev design engineering component marketplace and Magic MCP server. Search 12,000+ React, Tailwind CSS, and shadcn-ui components, generate UI with AI, and install via npx @21st-dev/cli install-skill."
+react-native-windows,React Native for Windows & Desktop Samples,P1,/react-native-windows,"Microsoft official React Native for Windows & macOS architecture samples, native C++/WinRT modules, WinUI 3 desktop controls, and XAML styling patterns."
 06 GSD,,
 Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
 Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
@@ -509,6 +510,7 @@ stageshow-ui-presentation,https://github.com/benjitaylor/skills,https://github.c
 binance-agentic-wallet,https://github.com/binance/binance-skills-hub,https://github.com/binance/binance-skills-hub,"Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows."
 motion-sound-effects,https://github.com/barty-bart/motion-graphics,https://github.com/barty-bart/motion-graphics,"Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis."
 runcomfy-cli,https://www.runcomfy.com/,https://github.com/prime-skills/runcomfy-agent-skills,"Unified CLI and agent skills for 100+ hosted diffusion and generative video models (Kling 3.0, Wan 2.1, FLUX 2, GPT Image 2, inpainting, face-swap)."
+react-native-windows,https://microsoft.github.io/react-native-windows/,https://github.com/microsoft/react-native-windows-samples,"Microsoft official React Native for Windows & macOS architecture samples, native C++/WinRT modules, WinUI 3 desktop controls, and XAML styling patterns."
 15 Universal Project Documentation Standard,,,,
 Purpose:,Reusable documentation baseline for software projects built by humans and AI agents.,,,
 Operating principle:,Create only applicable documents; keep every document synchronized with implementation and verified evidence.,,,

@@ -3730,6 +3730,34 @@
     "cli": "python scripts/install-to-project.py --skill ui-prototype",
     "repo": null
   },
+  "react-native-windows": {
+    "name": "react-native-windows",
+    "category": "05-ui-ux",
+    "scoped": "ui-react-native-windows",
+    "cli": "python scripts/install-to-project.py --skill ui-react-native-windows",
+    "repo": "microsoft/react-native-windows-samples.git"
+  },
+  "ui-react-native-windows": {
+    "name": "react-native-windows",
+    "category": "05-ui-ux",
+    "scoped": "ui-react-native-windows",
+    "cli": "python scripts/install-to-project.py --skill ui-react-native-windows",
+    "repo": "microsoft/react-native-windows-samples.git"
+  },
+  "react native windows": {
+    "name": "react-native-windows",
+    "category": "05-ui-ux",
+    "scoped": "ui-react-native-windows",
+    "cli": "python scripts/install-to-project.py --skill ui-react-native-windows",
+    "repo": "microsoft/react-native-windows-samples.git"
+  },
+  "ui react native windows": {
+    "name": "react-native-windows",
+    "category": "05-ui-ux",
+    "scoped": "ui-react-native-windows",
+    "cli": "python scripts/install-to-project.py --skill ui-react-native-windows",
+    "repo": "microsoft/react-native-windows-samples.git"
+  },
   "shadcn-ui": {
     "name": "shadcn-ui",
     "category": "05-ui-ux",

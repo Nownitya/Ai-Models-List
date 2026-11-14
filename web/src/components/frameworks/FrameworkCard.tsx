@@ -169,7 +169,7 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
             </span>
           )}
           {framework.version && (
-            <span className="text-[10px] font-mono text-zinc-500 px-1.5 py-0.2 rounded bg-[#09090b] border border-[#27272a]">
+            <span className="text-[10px] font-mono text-zinc-500 px-1.5 py-0.5 rounded bg-[#09090b] border border-[#27272a]">
               {framework.version}
             </span>
           )}

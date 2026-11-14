@@ -60,7 +60,7 @@ export const SystemPromptsView: React.FC = () => {
               >
                 <Brain className="w-3.5 h-3.5 text-zinc-400" />
                 <span>{suite.title}</span>
-                <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-[#09090b] text-zinc-400">
+                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#09090b] text-zinc-400">
                   {suite.promptsCount}
                 </span>
               </button>

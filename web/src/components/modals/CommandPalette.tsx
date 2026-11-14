@@ -413,7 +413,7 @@ export const CommandPalette: React.FC = () => {
                         <span className="font-semibold text-zinc-100 truncate text-[13px]">{item.title}</span>
                         {'priority' in item && item.priority && (
                           <span
-                            className={`text-[9px] font-mono font-bold px-1.5 py-0.2 rounded border shrink-0 ${
+                            className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded border shrink-0 ${
                               item.priority === 'P0'
                                 ? 'bg-rose-500/10 text-rose-300 border-rose-500/30'
                                 : 'bg-[#18181b] text-zinc-400 border-[#27272a]'
@@ -422,7 +422,7 @@ export const CommandPalette: React.FC = () => {
                             {item.priority}
                           </span>
                         )}
-                        <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider bg-zinc-900 px-1.5 py-0.2 rounded border border-zinc-800 shrink-0">
+                        <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider bg-zinc-900 px-1.5 py-0.5 rounded border border-zinc-800 shrink-0">
                           {item.type.replace('-', ' ')}
                         </span>
                       </div>

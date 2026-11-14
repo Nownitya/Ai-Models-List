@@ -102,14 +102,14 @@ export const StaffPicks: React.FC = () => {
 
                 {/* Bottom Action Row */}
                 <div className="pt-3 border-t border-[#27272a]/80 flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5 font-mono text-xs text-zinc-300 bg-[#18181b] px-2.5 py-1 rounded-md border border-[#27272a] max-w-[190px] truncate">
-                    <span className="text-zinc-500">/</span>
+                  <div className="flex items-center gap-1.5 font-mono text-xs text-zinc-300 bg-[#18181b] px-2.5 py-1 rounded-md border border-[#27272a] min-w-0 flex-1 truncate">
+                    <span className="text-zinc-500 shrink-0">/</span>
                     <span className="truncate">{skill.scoped}</span>
                   </div>
 
                   <button
                     onClick={(e) => handleCopySlash(e, skill)}
-                    className="p-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-400 hover:text-white border border-[#27272a] transition-colors cursor-pointer"
+                    className="p-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-400 hover:text-white border border-[#27272a] transition-colors cursor-pointer shrink-0"
                     title="Copy Slash Command"
                   >
                     {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -150,14 +150,14 @@ export const StaffPicks: React.FC = () => {
                   className="rounded-lg border border-[#27272a] bg-[#101014] hover:border-zinc-500 p-3.5 flex flex-col justify-between transition-all group"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-1.5 mb-1.5">
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-base">{pack.icon}</span>
-                        <span className="text-xs font-semibold text-white group-hover:text-blue-300 transition-colors">
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <span className="text-base shrink-0">{pack.icon}</span>
+                        <span className="text-xs font-semibold text-white group-hover:text-blue-300 transition-colors truncate">
                           {pack.title}
                         </span>
                       </div>
-                      <span className="text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a]">
+                      <span className="text-[10px] font-mono text-zinc-400 bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a] shrink-0 leading-none">
                         {pack.skillIds.length} skills
                       </span>
                     </div>

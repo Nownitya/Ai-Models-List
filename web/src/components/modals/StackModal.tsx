@@ -292,13 +292,13 @@ export const StackModal: React.FC = () => {
                   className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-lg bg-[#111114] border border-[#27272a] text-xs"
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
                       {item.priority}
                     </span>
                     <span className="font-semibold text-zinc-100 truncate">{item.name}</span>
                     <span className="text-xs font-mono text-zinc-400 truncate">/{item.scoped}</span>
                     {item.repo && (
-                      <span className="hidden md:inline text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.2 rounded border border-[#27272a]">
+                      <span className="hidden md:inline text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a]">
                         {item.repo}
                       </span>
                     )}
