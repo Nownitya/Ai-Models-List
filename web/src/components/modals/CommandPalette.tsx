@@ -159,7 +159,7 @@ export const CommandPalette: React.FC = () => {
         id: `cn-${c._id}`,
         title: c.title,
         subtitle: `${c.author} • ${c.oneLiner?.slice(0, 65) || 'Official MCP Server'}`,
-        tag: `MCP (${c.type})`,
+        tag: c.ecosystems?.includes('chatgpt') ? 'MCP • ChatGPT Action' : `MCP (${c.type})`,
         data: c,
       }))
 

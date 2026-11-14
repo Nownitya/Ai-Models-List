@@ -150,6 +150,8 @@ export interface SavedStackItem {
   officialCli?: string
 }
 
+export type TargetEcosystem = 'all' | 'claude' | 'chatgpt' | 'antigravity' | 'cursor' | 'mcp'
+
 export interface MarketplacePlugin {
   slug: string
   title: string
@@ -163,6 +165,10 @@ export interface MarketplacePlugin {
   works_with: string[]
   already_in_repo: boolean
   marketplace_url: string
+  ecosystems?: TargetEcosystem[]
+  chatgpt_action_url?: string | null
+  chatgpt_gpt_url?: string | null
+  antigravity_plugin_id?: string | null
 }
 
 export interface MarketplaceAgentProduct {
@@ -180,6 +186,10 @@ export interface MarketplaceAgentProduct {
   github: string
   marketplace_url: string
   external_links?: string[]
+  ecosystems?: TargetEcosystem[]
+  chatgpt_action_url?: string | null
+  chatgpt_gpt_url?: string | null
+  antigravity_plugin_id?: string | null
 }
 
 export interface MarketplaceConnector {
@@ -203,4 +213,8 @@ export interface MarketplaceConnector {
   popularityScore?: number | null
   trendingScore?: number | null
   addedAt?: string | null
+  ecosystems?: TargetEcosystem[]
+  chatgpt_action_url?: string | null
+  chatgpt_gpt_url?: string | null
+  antigravity_plugin_id?: string | null
 }

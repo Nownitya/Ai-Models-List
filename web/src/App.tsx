@@ -7,7 +7,7 @@ import { FilterToolbar } from '@/components/filters/FilterToolbar'
 import { FrameworkGrid } from '@/components/frameworks/FrameworkGrid'
 import { FrameworkDrawer } from '@/components/frameworks/FrameworkDrawer'
 import { VirtualizedGrid } from '@/components/skills/VirtualizedGrid'
-import { ClaudeMarketplaceView } from '@/components/marketplace/ClaudeMarketplaceView'
+import { MarketplaceView } from '@/components/marketplace/MarketplaceView'
 import { ProjectDocsView } from '@/components/docs/ProjectDocsView'
 import { SystemPromptsView } from '@/components/prompts/SystemPromptsView'
 import { SkillDrawer } from '@/components/modals/SkillDrawer'
@@ -67,7 +67,7 @@ export const App: React.FC = () => {
           </>
         )}
 
-        {activePillar === 'marketplace' && <ClaudeMarketplaceView />}
+        {activePillar === 'marketplace' && <MarketplaceView />}
 
         {activePillar === 'docs' && <ProjectDocsView />}
 

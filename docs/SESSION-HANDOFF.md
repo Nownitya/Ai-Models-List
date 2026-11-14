@@ -182,11 +182,18 @@
     - **Balanced Headlines**: Added `text-balance` to `HeroSection.tsx` `h1` and `text-pretty` to subtitles to eliminate ragged orphans.
     - **End-to-End Test Verification**: All 6 Playwright E2E browser tests passing cleanly in 5.6s (`npm --prefix web run test:e2e`). All 87 Python unit tests passing in 5.8s. React 19 production bundle staged to root for GitHub Pages live storefront.
 
+21. **Universal AI Marketplace & Cross-Ecosystem Bridge (Claude • ChatGPT Actions • Antigravity • Cursor)**:
+    - **Single Canonical Entity Architecture**: Resolved marketplace duplication between Claude and ChatGPT. Instead of duplicating cards for universal tools (GitHub, Slack, Linear, Notion, Wolfram, Zapier, Canva, Sentry, Stripe, etc.), unified them into a single card with multi-ecosystem target bridges.
+    - **Schema & Type Expansion**: Added `TargetEcosystem` ('claude' | 'chatgpt' | 'antigravity' | 'cursor' | 'mcp'), `chatgpt_action_url`, `chatgpt_gpt_url`, and `antigravity_plugin_id` to `web/src/types/index.ts`.
+    - **Automated Data Enrichment**: Authored `scripts/enrich_marketplace_ecosystems.py` and enriched all 1,126 MCP Connectors, 530 Plugins, and 33 Enterprise Platforms with verified action schemas, official GPT links, and Antigravity plugin IDs.
+    - **Ecosystem Filter Ribbon**: Evolved `ClaudeMarketplaceView.tsx` into `MarketplaceView.tsx` with a multi-ecosystem filter bar (`All Ecosystems`, `Claude & MCP`, `ChatGPT Actions / GPTs`, `Google Antigravity`, `Cursor / VS Code`), badge indicators, and 1-click action schema copy.
+    - **Full-Suite Quality Gate**: 100% clean TypeScript build (`tsc -b`), all 87 Python unit tests passing, and deployed live to GitHub Pages storefront.
+
 ---
 
 ### 🧠 Current State of Repository & Metrics
 - **Catalog Totals**: 334 Atomic Skills, 121 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,183,603 total ⭐ community stars**.
-- **Claude Marketplace Hub**: 530 Plugins, 1,126 Connectors, 33 Specialized Agents.
+- **Marketplace Hub**: 1,126 MCP Connectors, 530 Plugins, 33 Specialized Platforms across Claude, ChatGPT, Antigravity, and Cursor.
 - **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 6/6 Playwright E2E browser tests PASSED (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
 - **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv`.
 - **Obsidian Vault**: Mirrored and synchronized to `D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`.

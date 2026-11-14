@@ -25,7 +25,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.airops.com",
-    "github": "https://github.com/airopshq"
+    "github": "https://github.com/airopshq",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "31b98f0c-5677-4f78-bdd8-3eaf801f1e0f",
@@ -53,7 +60,15 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://asana.com",
-    "github": "https://github.com/Asana"
+    "github": "https://github.com/Asana",
+    "ecosystems": [
+      "claude",
+      "chatgpt",
+      "mcp"
+    ],
+    "chatgpt_action_url": "https://raw.githubusercontent.com/Asana/openapi/master/defs/asana_oas.yaml",
+    "chatgpt_gpt_url": "https://chatgpt.com/g/g-asana",
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a16a8650effbb60924514a9",
@@ -81,7 +96,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.augmentcode.com",
-    "github": "https://github.com/augmentcode"
+    "github": "https://github.com/augmentcode",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a39eefb40d3615d8e571d24",
@@ -109,7 +131,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://base44.com",
-    "github": "https://github.com/base44"
+    "github": "https://github.com/base44",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "3a9aad53-aab4-44a0-8d30-77b67940349c",
@@ -137,7 +166,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.blackline.com",
-    "github": "https://github.com/blackline"
+    "github": "https://github.com/blackline",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "dcbb2086-d656-4e27-b49d-34531effd490",
@@ -165,7 +201,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.chainguard.dev",
-    "github": "https://github.com/chainguard-dev"
+    "github": "https://github.com/chainguard-dev",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "4e3f389c-0f1a-44d4-bdb6-3f873d2786f5",
@@ -193,7 +236,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://checkmarx.com",
-    "github": "https://github.com/Checkmarx"
+    "github": "https://github.com/Checkmarx",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a16a8b4531ab0693beb6178",
@@ -221,7 +271,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://coderabbit.ai",
-    "github": "https://github.com/coderabbitai"
+    "github": "https://github.com/coderabbitai",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a920123e2df2c6b16ef7c61",
@@ -249,7 +306,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.crowdstrike.com",
-    "github": "https://github.com/CrowdStrike"
+    "github": "https://github.com/CrowdStrike",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a99c731021926e94fba06ec",
@@ -277,7 +341,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.cursor.com",
-    "github": "https://github.com/getcursor"
+    "github": "https://github.com/getcursor",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "6b417a7b-27c5-4299-8de0-3c25d1fdf749",
@@ -305,7 +376,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.cyera.io",
-    "github": "https://github.com/cyera"
+    "github": "https://github.com/cyera",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "151c4243-30e6-4b65-adaf-0ab46ba2e8b6",
@@ -333,7 +411,17 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.datadoghq.com",
-    "github": "https://github.com/DataDog"
+    "github": "https://github.com/DataDog",
+    "ecosystems": [
+      "claude",
+      "chatgpt",
+      "antigravity",
+      "cursor",
+      "mcp"
+    ],
+    "chatgpt_action_url": "https://api.datadoghq.com/api/v2",
+    "chatgpt_gpt_url": "https://chatgpt.com/g/g-datadog",
+    "antigravity_plugin_id": "antigravity-plugins-partners/plugin/datadog"
   },
   {
     "id": "wf.6a91fec4a92a490dabdfc0c4",
@@ -361,7 +449,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://factory.ai",
-    "github": "https://github.com/Factory-AI"
+    "github": "https://github.com/Factory-AI",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "44ab51f2-b14b-4150-96a5-09d510acc2db",
@@ -389,7 +484,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://fal.ai",
-    "github": "https://github.com/fal-ai"
+    "github": "https://github.com/fal-ai",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a91fda38a94d8bb9103b06c",
@@ -417,7 +519,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://gamma.app",
-    "github": "https://github.com/gamma-app"
+    "github": "https://github.com/gamma-app",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a4bdac54082b2cdda0d51a7",
@@ -445,7 +554,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://gitlab.com",
-    "github": "https://github.com/gitlabhq"
+    "github": "https://github.com/gitlabhq",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "101491f4-e499-47fe-a4a5-1c5c9ebf96f5",
@@ -473,7 +589,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.glean.com",
-    "github": "https://github.com/askglean"
+    "github": "https://github.com/askglean",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a4bf8a6358c45c751162a45",
@@ -501,7 +624,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.harvey.ai",
-    "github": "https://github.com/harvey-ai"
+    "github": "https://github.com/harvey-ai",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a16a8caf3113b05b24a0cf9",
@@ -529,7 +659,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.hebbia.ai",
-    "github": "https://github.com/hebbia"
+    "github": "https://github.com/hebbia",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "42e3cad5-7373-4375-88e8-42eafc017d85",
@@ -557,7 +694,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://higgsfield.ai",
-    "github": "https://github.com/higgsfield-ai"
+    "github": "https://github.com/higgsfield-ai",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a16a89c19d64adee696c1f3",
@@ -585,7 +729,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://legora.com",
-    "github": "https://github.com/legora-ai"
+    "github": "https://github.com/legora-ai",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a4bf668b8e67c6d1b5a98a2",
@@ -614,7 +765,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://lovable.dev",
-    "github": "https://github.com/lovable-dev"
+    "github": "https://github.com/lovable-dev",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "1e294c02-7fc1-4718-9a97-d92b6f5141af",
@@ -642,7 +800,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://monday.com",
-    "github": "https://github.com/mondaycom"
+    "github": "https://github.com/mondaycom",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "8285ac66-4857-442b-a794-f3f18d0dbff4",
@@ -670,7 +835,17 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.netlify.com",
-    "github": "https://github.com/netlify"
+    "github": "https://github.com/netlify",
+    "ecosystems": [
+      "claude",
+      "chatgpt",
+      "antigravity",
+      "cursor",
+      "mcp"
+    ],
+    "chatgpt_action_url": "https://api.netlify.com/api/v1/openapi.json",
+    "chatgpt_gpt_url": "https://chatgpt.com/g/g-netlify",
+    "antigravity_plugin_id": "antigravity-plugins-partners/plugin/netlify"
   },
   {
     "id": "wf.699dfadcd72a2b5f59d5054b",
@@ -698,7 +873,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://rogo.ai",
-    "github": "https://github.com/rogo-ai"
+    "github": "https://github.com/rogo-ai",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "5e450d9f-8fb5-4488-9f73-f26a57b67ea2",
@@ -726,7 +908,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.rubrik.com",
-    "github": "https://github.com/rubrikinc"
+    "github": "https://github.com/rubrikinc",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "9ed9ca95-c449-4121-aba1-4b6cb895d3ef",
@@ -754,7 +943,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://runwayml.com",
-    "github": "https://github.com/runwayml"
+    "github": "https://github.com/runwayml",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a4bf7fcd1f543273bf55b42",
@@ -782,7 +978,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.snowflake.com",
-    "github": "https://github.com/snowflakedb"
+    "github": "https://github.com/snowflakedb",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "0fbe85a4-343b-46d1-8627-2ab169ee791a",
@@ -810,7 +1013,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://www.tanium.com",
-    "github": "https://github.com/tanium"
+    "github": "https://github.com/tanium",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "wf.6a91fcee4c2390262d01cf7d",
@@ -838,7 +1048,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://vercel.com",
-    "github": "https://github.com/vercel"
+    "github": "https://github.com/vercel",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "a57c0717-0ce9-46c4-bc7c-cda96e26a5c5",
@@ -866,7 +1083,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://webflow.com",
-    "github": "https://github.com/webflow"
+    "github": "https://github.com/webflow",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "b9888c4b-9cf3-4d4e-8200-aaad9d6b2f1f",
@@ -894,7 +1118,14 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://zocks.io",
-    "github": "https://github.com/zocks-io"
+    "github": "https://github.com/zocks-io",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   },
   {
     "id": "9d5448e9-6cec-463d-be3e-593910f395d5",
@@ -922,6 +1153,13 @@
       "https://en.wikipedia.org/wiki/Anthropic"
     ],
     "website": "https://zoom.us",
-    "github": "https://github.com/zoom"
+    "github": "https://github.com/zoom",
+    "ecosystems": [
+      "claude",
+      "mcp"
+    ],
+    "chatgpt_action_url": null,
+    "chatgpt_gpt_url": null,
+    "antigravity_plugin_id": null
   }
 ]
