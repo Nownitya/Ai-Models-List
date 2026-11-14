@@ -12,7 +12,8 @@ import {
   Globe,
   Server,
   Radio,
-  ChevronDown
+  ChevronDown,
+  Share2
 } from 'lucide-react'
 import marketplaceData from '@/data/claude-marketplace-plugins.json'
 import agentsProductsData from '@/data/claude-agents-products.json'
@@ -64,6 +65,15 @@ export const ClaudeMarketplaceView: React.FC = () => {
   const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text)
     setCopiedText(id)
+    setTimeout(() => {
+      setCopiedText(null)
+    }, 1800)
+  }
+
+  const handleCopyShare = (term: string) => {
+    const url = `${window.location.origin}${window.location.pathname}?pillar=marketplace&q=${encodeURIComponent(term)}`
+    navigator.clipboard.writeText(url)
+    setCopiedText(`share:${term}`)
     setTimeout(() => {
       setCopiedText(null)
     }, 1800)
@@ -605,7 +615,19 @@ export const ClaudeMarketplaceView: React.FC = () => {
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5">
+                      <button
+                        onClick={() => handleCopyShare(c.title)}
+                        className="p-1 rounded text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                        title="Copy Shareable Link"
+                      >
+                        {copiedText === `share:${c.title}` ? (
+                          <Check className="w-3.5 h-3.5 text-emerald-400" />
+                        ) : (
+                          <Share2 className="w-3.5 h-3.5" />
+                        )}
+                      </button>
+
                       {c.authorUrl && (
                         <a
                           href={c.authorUrl}
@@ -822,15 +844,29 @@ export const ClaudeMarketplaceView: React.FC = () => {
                     <span className="font-mono text-[11px]">
                       {formatInstalls(plugin.installs || 0)} installs
                     </span>
-                    <a
-                      href={plugin.marketplace_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[11px] text-zinc-400 hover:text-white transition-colors"
-                    >
-                      <span>Claude Hub</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
+                    <div className="flex items-center gap-2.5">
+                      <button
+                        onClick={() => handleCopyShare(plugin.title)}
+                        className="p-1 rounded text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                        title="Copy Shareable Link"
+                      >
+                        {copiedText === `share:${plugin.title}` ? (
+                          <Check className="w-3.5 h-3.5 text-emerald-400" />
+                        ) : (
+                          <Share2 className="w-3.5 h-3.5" />
+                        )}
+                      </button>
+
+                      <a
+                        href={plugin.marketplace_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] text-zinc-400 hover:text-white transition-colors"
+                      >
+                        <span>Claude Hub</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               )

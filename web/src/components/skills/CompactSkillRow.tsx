@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Copy, Check, Bookmark, BookmarkCheck, Star, GitBranch } from 'lucide-react'
+import { Copy, Check, Bookmark, BookmarkCheck, Star, GitBranch, Share2 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Skill } from '@/types'
 
@@ -9,6 +9,7 @@ interface CompactSkillRowProps {
 
 export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
   const [copiedSlash, setCopiedSlash] = useState(false)
+  const [copiedLink, setCopiedLink] = useState(false)
 
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
@@ -22,6 +23,14 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
     navigator.clipboard.writeText(`/${skill.scoped}`)
     setCopiedSlash(true)
     setTimeout(() => setCopiedSlash(false), 1400)
+  }
+
+  const copyShareLink = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    const url = `${window.location.origin}${window.location.pathname}?pillar=skills&skill=${skill.id}`
+    navigator.clipboard.writeText(url)
+    setCopiedLink(true)
+    setTimeout(() => setCopiedLink(false), 1400)
   }
 
   // Priority badge styling
@@ -86,6 +95,14 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
             <span>{skill.stars >= 1000 ? `${(skill.stars / 1000).toFixed(0)}k` : skill.stars}</span>
           </span>
         )}
+
+        <button
+          onClick={copyShareLink}
+          title="Copy Shareable Link"
+          className="p-1 rounded border transition-colors cursor-pointer bg-[#18181b] text-zinc-500 hover:text-white border-[#27272a] hover:border-zinc-500"
+        >
+          {copiedLink ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
+        </button>
 
         <button
           onClick={(e) => {

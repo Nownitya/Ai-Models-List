@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { GitFork, Star, ExternalLink, Copy, Check, Plus, Layers, Terminal, ArrowUpRight } from 'lucide-react'
+import { GitFork, Star, ExternalLink, Copy, Check, Plus, Layers, Terminal, ArrowUpRight, Share2 } from 'lucide-react'
 import type { FrameworkHub } from '@/types'
 import { useSkillStore } from '@/stores/useSkillStore'
 
@@ -15,6 +15,7 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
 
   const [copiedCmd, setCopiedCmd] = useState(false)
   const [copiedSlash, setCopiedSlash] = useState(false)
+  const [copiedShare, setCopiedShare] = useState(false)
 
   const activeRecipe = framework.installRecipes[activeAssistant] || framework.installRecipes.git
 
@@ -39,6 +40,14 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
     setTimeout(() => setCopiedSlash(false), 1600)
   }
 
+  const handleCopyShare = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    const url = `${window.location.origin}${window.location.pathname}?pillar=frameworks&framework=${encodeURIComponent(framework.repo)}`
+    navigator.clipboard.writeText(url)
+    setCopiedShare(true)
+    setTimeout(() => setCopiedShare(false), 1600)
+  }
+
   const handleAddSuite = (e: React.MouseEvent) => {
     e.stopPropagation()
     addFrameworkToStack(framework)
@@ -56,6 +65,14 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
             {framework.categoryLabel}
           </span>
           <div className="flex items-center gap-1.5">
+            <button
+              onClick={handleCopyShare}
+              title="Copy Shareable Link"
+              className="p-1 rounded bg-[#18181b] text-zinc-400 hover:text-white border border-[#27272a] hover:border-zinc-500 transition-colors cursor-pointer"
+            >
+              {copiedShare ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
+            </button>
+
             <button
               onClick={handleAddSuite}
               className={`flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border transition-colors cursor-pointer ${

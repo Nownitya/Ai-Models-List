@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { X, GitFork, Star, ExternalLink, Copy, Check, Plus, Layers, Bot } from 'lucide-react'
+import { X, GitFork, Star, ExternalLink, Copy, Check, Plus, Layers, Bot, Share2 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { AssistantType } from '@/types'
 
@@ -14,6 +14,7 @@ export const FrameworkDrawer: React.FC = () => {
   const [selectedAssistant, setSelectedAssistant] = useState<AssistantType>('antigravity')
   const [copiedAssistantCmd, setCopiedAssistantCmd] = useState(false)
   const [copiedSkillSlash, setCopiedSkillSlash] = useState<string | null>(null)
+  const [copiedLink, setCopiedLink] = useState(false)
 
   // Listen for Escape key to close
   useEffect(() => {
@@ -39,6 +40,13 @@ export const FrameworkDrawer: React.FC = () => {
     navigator.clipboard.writeText(slash)
     setCopiedSkillSlash(slash)
     setTimeout(() => setCopiedSkillSlash(null), 1600)
+  }
+
+  const handleCopyShare = () => {
+    const url = `${window.location.origin}${window.location.pathname}?pillar=frameworks&framework=${encodeURIComponent(framework.repo)}`
+    navigator.clipboard.writeText(url)
+    setCopiedLink(true)
+    setTimeout(() => setCopiedLink(false), 1600)
   }
 
   return (
@@ -74,6 +82,14 @@ export const FrameworkDrawer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopyShare}
+              className="p-1.5 rounded-md bg-[#18181b] text-zinc-400 hover:text-white border border-[#27272a] hover:border-zinc-500 transition-colors cursor-pointer"
+              title="Copy shareable link"
+            >
+              {copiedLink ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
+            </button>
+
             <a
               href={framework.officialUrl}
               target="_blank"

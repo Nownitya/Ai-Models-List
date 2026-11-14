@@ -36,8 +36,9 @@
 ---
 
 ## 🔄 Recent Operations & Verification
-* **Staff Picks & Assistant Setup Tabs**: Added `web/src/components/layout/StaffPicks.tsx` and tabbed assistant switcher in `web/src/components/modals/SkillDrawer.tsx`.
-* **Build & Promotion**: Compiled React 19 bundle in 345ms; deployed to repository root `index.html` and `assets/` via `python scripts/deploy-skilldock.py`.
+* **Architectural Footer & Deep Linking**: Implemented `footer.design` inspired architectural footer (`Footer.tsx`), URL deep linking (`?skill=...`, `?framework=...`), and universal 1-click sharing across all cards (Skill cards, row views, Framework cards, Framework drawer, and Claude Marketplace connectors).
+* **Multi-Assistant Config Exporter**: Added `.cursorrules`, `claude.json`, Obsidian Dataview notes, and batch CLI scripts export to `StackModal.tsx`.
+* **Build & Promotion**: Compiled React 19 bundle in 368ms; deployed to repository root `index.html` and `assets/` via `python scripts/deploy-skilldock.py`.
 * **Obsidian Vault Sync**: Ran `python scripts/sync-obsidian.py` mirroring all matrices, Claude datasets, and Layer 15 governance docs to the local Obsidian vault.
 * **Automated Unit Tests**: Ran `python -m unittest discover tests` &rarr; 80/80 tests passing (100% green).
 * **Parity & Skill Audits**: Verified Dual Matrix Parity (`sync-matrix.py`) and Law 2 structure (`test-skills.py`, 0 errors).
@@ -45,6 +46,5 @@
 ---
 
 ## 📋 Next Recommended Operations
-1. [ ] **Footer Redesign**: Implement a curated, high-craft website footer inspired by [`https://www.footer.design/`](https://www.footer.design/) (with clean ecosystem links, protocol references, GitHub telemetry, and documentation sitemap).
-2. [ ] Continue exploring and cataloging new emerging skills from `skills.sh/trending`.
-3. [ ] Maintain regular Obsidian sync after major project milestones.
+1. [ ] Continue exploring and cataloging new emerging skills from `skills.sh/trending`.
+2. [ ] Maintain regular Obsidian sync after major project milestones.
