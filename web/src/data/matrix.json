@@ -4532,8 +4532,8 @@
           "id": "hermes-agent",
           "name": "hermes-agent",
           "priority": "P1",
-          "scoped": "hermes-agent",
-          "cli": "python scripts/install-to-project.py --skill hermes-agent",
+          "scoped": "agent-hermes-agent",
+          "cli": "python scripts/install-to-project.py --skill agent-hermes-agent",
           "description": "Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution."
         }
       ]
@@ -9657,8 +9657,8 @@
       "categoryId": "09-autonomous-agents",
       "categoryLabel": "Autonomous Agents",
       "description": "Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution.",
-      "scoped": "hermes-agent",
-      "cli": "python scripts/install-to-project.py --skill hermes-agent",
+      "scoped": "agent-hermes-agent",
+      "cli": "python scripts/install-to-project.py --skill agent-hermes-agent",
       "repo": "NousResearch/hermes-agent",
       "repoName": "Hermes Agent",
       "stars": 18500,
