@@ -1,6 +1,6 @@
 # Live Upstream Skills Radar
 
-> **Last Synchronized:** `2026-11-14 13:20:50Z` | **Tracked Repositories:** `136`
+> **Last Synchronized:** `2026-11-14 14:04:41Z` | **Tracked Repositories:** `136`
 
 Real-time tracking of community engagement, release versions, and maintenance activity across all upstream AI coding skill repositories.
 
@@ -14,7 +14,7 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 |  6 | [anthropics/skills](https://github.com/anthropics/skills) | **⭐ 194k** | `latest` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/anthropics/skills?style=flat&label=stars) |
 |  7 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | **⭐ 191k** | `v5.3.3` | `MIT` | 2026-10-29 | ![Stars](https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat&label=stars) |
 |  8 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | **⭐ 149k** | `v2.15.0` | `MIT` | 2026-11-10 | ![Stars](https://img.shields.io/github/stars/nextlevelbuilder/ui-ux-pro-max-skill?style=flat&label=stars) |
-|  9 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | **⭐ 147k** | `v1.0.0` | `Apache-2.0` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/Graphify-Labs/graphify?style=flat&label=stars) |
+|  9 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | **⭐ 148k** | `v1.0.0` | `Apache-2.0` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/Graphify-Labs/graphify?style=flat&label=stars) |
 | 10 | [garrytan/gstack](https://github.com/garrytan/gstack) | **⭐ 142k** | `v1.99.3.0` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/garrytan/gstack?style=flat&label=stars) |
 | 11 | [openai/codex](https://github.com/openai/codex) | **⭐ 135k** | `winget-test-rust-v0.106.0-alpha.9` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/openai/codex?style=flat&label=stars) |
 | 12 | [shadcn-ui/ui](https://github.com/shadcn-ui/ui) | **⭐ 128k** | `shadcn-ui@0.9.4` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/shadcn-ui/ui?style=flat&label=stars) |
@@ -34,8 +34,8 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 26 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | **⭐ 72.3k** | `latest` | `MIT` | 2026-09-14 | ![Stars](https://img.shields.io/github/stars/cloudflare/security-audit-skill?style=flat&label=stars) |
 | 27 | [upstash/context7](https://github.com/upstash/context7) | **⭐ 64.8k** | `v1.0.30` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/upstash/context7?style=flat&label=stars) |
 | 28 | [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | **⭐ 60.6k** | `v3.12.0` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/MemPalace/mempalace?style=flat&label=stars) |
-| 29 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | **⭐ 60.2k** | `v2.14.12` | `MIT` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/coreyhaines31/marketingskills?style=flat&label=stars) |
-| 30 | [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | **⭐ 60.1k** | `v0.1.10-preview.20261111.4547` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/pingdotgg/t3code?style=flat&label=stars) |
+| 29 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | **⭐ 60.3k** | `v2.14.12` | `MIT` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/coreyhaines31/marketingskills?style=flat&label=stars) |
+| 30 | [pingdotgg/t3code](https://github.com/pingdotgg/t3code) | **⭐ 60.2k** | `v0.1.10-preview.20261111.4547` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/pingdotgg/t3code?style=flat&label=stars) |
 | 31 | [emilkowalski/skills](https://github.com/emilkowalski/skills) | **⭐ 56.8k** | `latest` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/emilkowalski/skills?style=flat&label=stars) |
 | 32 | [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | **⭐ 54.8k** | `latest` | `MIT` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/Nutlope/hallmark?style=flat&label=stars) |
 | 33 | [obsidianmd/obsidian-skills](https://github.com/obsidianmd/obsidian-skills) | **⭐ 52.4k** | `1.1.0` | `MIT` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/obsidianmd/obsidian-skills?style=flat&label=stars) |
@@ -46,7 +46,7 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 38 | [getsentry/sentry](https://github.com/getsentry/sentry) | **⭐ 45.8k** | `v1.13.5` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/getsentry/sentry?style=flat&label=stars) |
 | 39 | [wshobson/agents](https://github.com/wshobson/agents) | **⭐ 42.5k** | `latest` | `MIT` | 2026-11-09 | ![Stars](https://img.shields.io/github/stars/wshobson/agents?style=flat&label=stars) |
 | 40 | [semgrep/mcp-marketplace](https://github.com/semgrep/mcp-marketplace) | **⭐ 42k** | `v2.4.0` | `LGPL-2.1` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/semgrep/mcp-marketplace?style=flat&label=stars) |
-| 41 | [github/awesome-copilot](https://github.com/github/awesome-copilot) | **⭐ 41.1k** | `latest` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/github/awesome-copilot?style=flat&label=stars) |
+| 41 | [github/awesome-copilot](https://github.com/github/awesome-copilot) | **⭐ 41.2k** | `latest` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/github/awesome-copilot?style=flat&label=stars) |
 | 42 | [vercel-labs/skills](https://github.com/vercel-labs/skills) | **⭐ 39.3k** | `v1.8.1` | `MIT` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/vercel-labs/skills?style=flat&label=stars) |
 | 43 | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | **⭐ 34.0k** | `agent-skills-dd089a8c752c966dee8bf0f27cb625ba193ffd9e` | `Other` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/vercel-labs/agent-skills?style=flat&label=stars) |
 | 44 | [garrytan/gbrain](https://github.com/garrytan/gbrain) | **⭐ 32.9k** | `v0.60.720.0` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/garrytan/gbrain?style=flat&label=stars) |
@@ -60,7 +60,7 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 52 | [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) | **⭐ 26.1k** | `v2.42.0` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/EveryInc/compound-engineering-plugin?style=flat&label=stars) |
 | 53 | [datadog-labs/claude-code-plugin](https://github.com/datadog-labs/claude-code-plugin) | **⭐ 24.5k** | `v1.0.4` | `Apache-2.0` | 2026-11-07 | ![Stars](https://img.shields.io/github/stars/datadog-labs/claude-code-plugin?style=flat&label=stars) |
 | 54 | [google/skills](https://github.com/google/skills) | **⭐ 24.2k** | `latest` | `Apache-2.0` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/google/skills?style=flat&label=stars) |
-| 55 | [google-research/harness2](https://github.com/google-research/harness2) | **⭐ 23.8k** | `latest` | `Apache-2.0` | 2026-11-02 | ![Stars](https://img.shields.io/github/stars/google-research/harness2?style=flat&label=stars) |
+| 55 | [google-research/harness2](https://github.com/google-research/harness2) | **⭐ 23.9k** | `latest` | `Apache-2.0` | 2026-11-02 | ![Stars](https://img.shields.io/github/stars/google-research/harness2?style=flat&label=stars) |
 | 56 | [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop) | **⭐ 23.6k** | `v1.3.1` | `Apache-2.0` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/vercel-labs/agent-desktop?style=flat&label=stars) |
 | 57 | [snarktank/ralph](https://github.com/snarktank/ralph) | **⭐ 22.2k** | `latest` | `MIT` | 2026-02-02 | ![Stars](https://img.shields.io/github/stars/snarktank/ralph?style=flat&label=stars) |
 | 58 | [latent-spaces/brag](https://github.com/latent-spaces/brag) | **⭐ 21.5k** | `v0.5.0` | `MIT` | 2026-10-23 | ![Stars](https://img.shields.io/github/stars/latent-spaces/brag?style=flat&label=stars) |
@@ -81,7 +81,7 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 73 | [gamedev-skills/awesome-gamedev-agent-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills) | **⭐ 8.8k** | `v2.0.0` | `Apache-2.0` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/gamedev-skills/awesome-gamedev-agent-skills?style=flat&label=stars) |
 | 74 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | **⭐ 8.8k** | `v1.0` | `Apache-2.0` | 2026-08-17 | ![Stars](https://img.shields.io/github/stars/google-labs-code/stitch-skills?style=flat&label=stars) |
 | 75 | [trailofbits/skills](https://github.com/trailofbits/skills) | **⭐ 8.2k** | `latest` | `CC-BY-SA-4.0` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/trailofbits/skills?style=flat&label=stars) |
-| 76 | [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) | **⭐ 7.3k** | `v0.1.214` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/ranxianglei/billion-context?style=flat&label=stars) |
+| 76 | [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) | **⭐ 7.4k** | `v0.1.214` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/ranxianglei/billion-context?style=flat&label=stars) |
 | 77 | [remotion-dev/skills](https://github.com/remotion-dev/skills) | **⭐ 7.0k** | `latest` | `Other` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/remotion-dev/skills?style=flat&label=stars) |
 | 78 | [google-ai-edge/litert](https://github.com/google-ai-edge/litert) | **⭐ 6.9k** | `v1.4.0` | `Apache-2.0` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/google-ai-edge/litert?style=flat&label=stars) |
 | 79 | [twostraws/SwiftUI-Agent-Skill](https://github.com/twostraws/SwiftUI-Agent-Skill) | **⭐ 6.6k** | `2.0.0` | `MIT` | 2026-10-26 | ![Stars](https://img.shields.io/github/stars/twostraws/SwiftUI-Agent-Skill?style=flat&label=stars) |
