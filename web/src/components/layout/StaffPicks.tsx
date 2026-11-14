@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import { Sparkles, Star, Copy, Check, ArrowRight, Zap, Shield, Smartphone, Bot, Palette } from 'lucide-react'
+import { Sparkles, Star, Copy, Check, ArrowRight, Zap, Shield, Smartphone, Bot, Palette, Plus, CheckCircle2 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
+import { STARTER_PACKS } from '@/data/starterPacks'
 import type { Skill } from '@/types'
 
 export const StaffPicks: React.FC = () => {
   const skills = useSkillStore((s) => s.skills)
+  const stack = useSkillStore((s) => s.stack)
   const openInspect = useSkillStore((s) => s.openInspect)
+  const addStarterPackToStack = useSkillStore((s) => s.addStarterPackToStack)
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
   const setCategory = useSkillStore((s) => s.setCategory)
   const setPillar = useSkillStore((s) => s.setPillar)
@@ -26,7 +29,7 @@ export const StaffPicks: React.FC = () => {
     setTimeout(() => setCopiedId(null), 1800)
   }
 
-  const quickStacks = [
+  const quickCategories = [
     { label: 'Autonomous Agents', icon: <Bot className="w-3.5 h-3.5 text-blue-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('agents') } },
     { label: 'UI/UX Craft & Anti-Slop', icon: <Palette className="w-3.5 h-3.5 text-pink-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setCategory('05-ui-ux') } },
     { label: 'Code Review & Security', icon: <Shield className="w-3.5 h-3.5 text-emerald-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('quality') } },
@@ -62,7 +65,7 @@ export const StaffPicks: React.FC = () => {
         </div>
 
         {/* 4 Flagship Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-7">
           {featuredSkills.map((skill) => {
             const isCopied = copiedId === skill.uniqueId
             return (
@@ -117,10 +120,85 @@ export const StaffPicks: React.FC = () => {
           })}
         </div>
 
+        {/* 1-Click Starter Stacks (Editorial Suites with Token Conservation) */}
+        <div className="pt-5 border-t border-[#27272a]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <div className="flex items-center gap-2">
+              <Zap className="w-4 h-4 text-amber-400" />
+              <h3 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
+                1-Click Starter Stacks
+              </h3>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300">
+                8 Curated Suites • ~82% Context Savings
+              </span>
+            </div>
+            <span className="text-xs text-zinc-500 hidden sm:inline">
+              Pre-configured high-performance bundles ready to export or run
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {STARTER_PACKS.map((pack) => {
+              const matchedCount = pack.skillIds.filter((id) =>
+                stack.some((s) => s.id === id || s.uniqueId === id)
+              ).length
+              const isFullyLoaded = matchedCount === pack.skillIds.length && pack.skillIds.length > 0
+
+              return (
+                <div
+                  key={pack.id}
+                  className="rounded-lg border border-[#27272a] bg-[#101014] hover:border-zinc-500 p-3.5 flex flex-col justify-between transition-all group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-1.5 mb-1.5">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-base">{pack.icon}</span>
+                        <span className="text-xs font-semibold text-white group-hover:text-blue-300 transition-colors">
+                          {pack.title}
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a]">
+                        {pack.skillIds.length} skills
+                      </span>
+                    </div>
+
+                    <p className="text-[11px] text-zinc-400 leading-relaxed line-clamp-2 mb-3">
+                      {pack.description}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => addStarterPackToStack(pack.skillIds)}
+                    className={`w-full py-1.5 px-2.5 rounded-md text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                      isFullyLoaded
+                        ? 'bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-900/60'
+                        : 'bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/30 text-blue-200 hover:text-white'
+                    }`}
+                  >
+                    {isFullyLoaded ? (
+                      <>
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Loaded in Stack</span>
+                      </>
+                    ) : (
+                      <>
+                        <Plus className="w-3.5 h-3.5" />
+                        <span>
+                          {matchedCount > 0 ? `Add Remaining (+${pack.skillIds.length - matchedCount})` : '1-Click Load Stack'}
+                        </span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
         {/* Quick Stacks Launcher Ribbon */}
-        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#27272a]/60">
-          <span className="text-xs font-mono text-zinc-500 mr-1">Curated Stacks:</span>
-          {quickStacks.map((stk) => (
+        <div className="flex flex-wrap items-center gap-2 mt-5 pt-4 border-t border-[#27272a]/60">
+          <span className="text-xs font-mono text-zinc-500 mr-1">Browse by Domain:</span>
+          {quickCategories.map((stk) => (
             <button
               key={stk.label}
               onClick={stk.action}
@@ -135,4 +213,3 @@ export const StaffPicks: React.FC = () => {
     </section>
   )
 }
-

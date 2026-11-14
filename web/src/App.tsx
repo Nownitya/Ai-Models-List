@@ -14,6 +14,7 @@ import { SkillDrawer } from '@/components/modals/SkillDrawer'
 import { StackModal } from '@/components/modals/StackModal'
 import { PriorityGuideModal } from '@/components/modals/PriorityGuideModal'
 import { CommandPalette } from '@/components/modals/CommandPalette'
+import { ToastNotification } from '@/components/layout/ToastNotification'
 import { useFilteredSkills } from '@/hooks/useFilteredSkills'
 import { useSkillStore } from '@/stores/useSkillStore'
 
@@ -81,6 +82,7 @@ export const App: React.FC = () => {
       <StackModal />
       <PriorityGuideModal />
       <CommandPalette />
+      <ToastNotification />
     </div>
   )
 }

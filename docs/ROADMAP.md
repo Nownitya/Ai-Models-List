@@ -10,12 +10,13 @@
 ## 1. Horizon Overview
 
 ```
-2026 Q3 (Shipped)               2026 Q4 (Shipped)                 2026 Q4 / 2027 Q1 (Current)
-[H1: Foundation & Parity] ====> [H2: Telemetry & Packaging] ====> [H4: Frontier Ecosystem & Curated Bundles]
-- Dual Matrix Parity            - GitHub Live Metrics Radar      - 1,002 Skills.sh Repos Integrated
-- 186 Initial Skills            - Bento Hero Redesign (2.5M+ ⭐)   - 301 SKILL.md Packages (4.60M+ ⭐)
-- Layer 15 Master Templates     - 228 Cataloged Skills           - 9 Curated Bundles (Cloud, Agents, UI, Test)
-- Automated CI Gates            - Cryptographic Lockfile CLI     - MCP Gateway Scaled to 301+ Skills
+2026 Q3 (Shipped)               2026 Q4 (Shipped)                 2026 Q4 / 2027 Q1 (Shipped)       2027 Q1 / Active (Current)
+[H1: Foundation & Parity] ====> [H2: Telemetry & Packaging] ====> [H4: Frontier Ecosystem & Bundles] ====> [H8: SkillDock Web 3.0 Platform]
+- Dual Matrix Parity            - GitHub Live Metrics Radar      - 1,002 Skills.sh Repos Integrated - React 19 + Vite Multi-Pillar Web SPA
+- 186 Initial Skills            - Bento Hero Redesign (2.5M+ ⭐)   - 301 SKILL.md Packages (4.60M+ ⭐) - 8 Curated 1-Click Starter Stacks
+- Layer 15 Master Templates     - 228 Cataloged Skills           - 9 Curated Bundles                - Tactile Toast & Animated Pulse Stack
+- Automated CI Gates            - Cryptographic Lockfile CLI     - MCP Gateway Scaled to 301+       - Dual-Mode Live SKILL.md Rule Previewer
+                                                                                                    - WebMCP & Browser Agent JSON-RPC Bridge
 ```
 
 ---
@@ -78,5 +79,14 @@
 * [x] **M7.4**: Restructured `D:\ObsidianVault\Vault1\ObsidianVault` into unified `01_Projects/` with `AI-Ecosystem/` and `Mobile-Android/` domains and central `INDEX.md` dashboard.
 * [x] **M7.5**: Updated `scripts/sync-obsidian.py` to mirror matrices and Layer 15 architecture docs automatically to the new vault hierarchy.
 * [x] **M7.6**: Authored unit test suite `tests/test_obsidian_integration.py` (57/57 full test suite pass, 100 skills locked).
+
+### Milestone H8: SkillDock Web 3.0 Platform, 1-Click Starter Stacks & WebMCP Bridge (Complete)
+* [x] **M8.1**: Modernized React 19 + TypeScript + Vite + Tailwind CSS Single Page Application (`web/`) with virtualized multi-pillar browsing across 113 frameworks, 326 atomic skills, 1,689 marketplace items, and 57 project docs.
+* [x] **M8.2**: 8 Curated 1-Click Starter Stacks (`STARTER_PACKS` from `web/src/data/starterPacks.ts`) delivering ~82% context token savings vs monolithic suites.
+* [x] **M8.3**: Tactile Toast Notification System (`ToastNotification.tsx`) with instant action triggers, automatic dismissal, and animated bouncing pulse topbar Stack badge.
+* [x] **M8.4**: Dual-Mode Live `SKILL.md` Rule & Prompt Previewer in Drawers (`SkillDrawer.tsx` `[Setup Recipes]` ⇄ `[Instructions (SKILL.md)]`) with 1-click YAML & markdown copy.
+* [x] **M8.5**: WebMCP & Browser Agent JSON-RPC Bridge (`web/src/bridge/webmcp.ts` on `window.__SKILLDOCK_MCP__` and `window.__SKILLDOCK_API__`) providing programmatic discovery and execution for browser agents.
+* [x] **M8.6**: Automated GitHub Pages staging and deployment pipeline (`scripts/deploy-skilldock.py`) with 404-SPA redirection restore.
+
 
 

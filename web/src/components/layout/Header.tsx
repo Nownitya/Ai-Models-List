@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Terminal, Layers, Command, Sparkles, Boxes, Store, FileText } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { AssistantType, PillarType } from '@/types'
@@ -13,6 +13,18 @@ export const Header: React.FC = () => {
   const setCommandPaletteOpen = useSkillStore((s) => s.setCommandPaletteOpen)
   const goHome = useSkillStore((s) => s.goHome)
   const meta = useSkillStore((s) => s.meta)
+
+  const [pulse, setPulse] = useState(false)
+  const prevStackLen = useRef(stack.length)
+
+  useEffect(() => {
+    if (stack.length > prevStackLen.current) {
+      setPulse(true)
+      const timer = setTimeout(() => setPulse(false), 800)
+      return () => clearTimeout(timer)
+    }
+    prevStackLen.current = stack.length
+  }, [stack.length])
 
   const pillars: { id: PillarType; label: string; count: number | string; icon: React.ReactNode }[] = [
     { id: 'frameworks', label: 'Skills & Suites', count: meta.totalFrameworks || 112, icon: <Boxes className="w-3.5 h-3.5" /> },
@@ -132,7 +144,13 @@ export const Header: React.FC = () => {
             <Layers className="w-3.5 h-3.5 text-zinc-400" />
             <span>Stack</span>
             {stack.length > 0 && (
-              <span className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-white text-zinc-900 font-bold">
+              <span
+                className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-bold transition-all duration-300 ${
+                  pulse
+                    ? 'bg-blue-400 text-blue-950 scale-125 ring-2 ring-blue-400/50 shadow-md shadow-blue-500/50'
+                    : 'bg-white text-zinc-900'
+                }`}
+              >
                 {stack.length}
               </span>
             )}

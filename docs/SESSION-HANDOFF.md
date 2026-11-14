@@ -115,12 +115,30 @@
     - **Wave 1 (P0: Flow, Filter & Counter Parity)**:
       - Fixed `FrameworkGrid.tsx` priority filter: suites now filter dynamically when `selectedPriority !== 'ALL'` based on member skills (`f.skills.some(s => s.priority === selectedPriority)`), and pagination resets cleanly.
       - Fixed navigation flow disconnect in `StaffPicks.tsx` and `Footer.tsx`: clicking ecosystem presets now properly sets both `setPillar('skills')` AND `setEntityScope('atomic')` so atomic skills render immediately.
-      - Replaced all stale hardcoded counts (`74`, `283`, `1656`) with dynamic bindings in `FilterToolbar.tsx`, `HeroSection.tsx`, `Header.tsx`, and `Footer.tsx` (reflecting 112 frameworks, 325 skills, 1,689 marketplace items).
+      - Replaced all stale hardcoded counts (`74`, `283`, `1656`) with dynamic bindings in `FilterToolbar.tsx`, `HeroSection.tsx`, `Header.tsx`, and `Footer.tsx` (reflecting 113 frameworks, 326 skills, 1,689 marketplace items).
       - Synchronized `SkillDrawer.tsx` with global `activeAssistant` from `useSkillStore` across Antigravity, Claude Code, Codex, and Git/CLI.
     - **Wave 2 (P1: Scope Amputation & Codebase Hygiene)**:
       - Deleted orphaned/unreferenced components: `RadarStrip.tsx` and `PillarTabs.tsx`.
       - Purged dead store state (`promptModalSkill`, `openPromptModal`, `closePromptModal`) from `useSkillStore.ts`.
       - 100% clean build (`tsc -b && vite build` in 397ms), all 80 unit tests passing, staged to root `/`.
+
+16. **Milestone H8: 1-Click Starter Stacks, Live SKILL.md Previewer & WebMCP Bridge (Shipped)**:
+    - **Phase 1 (1-Click Starter Stacks & Tactile Toast Feedback)**:
+      - 8 curated production starter packs in `web/src/data/starterPacks.ts` (`GSD Autonomous Wave`, `Superpowers Engineering`, `gstack Founder`, `ECC & Ralph Loop`, `Android & KMP`, `Second Brain`, `Claude Marketplace`, `Modern Web & Anti-Slop`).
+      - Interactive 1-click loading ribbon in `StaffPicks.tsx` with status check (`✓ Loaded in Stack` vs `+ Add Remaining`).
+      - Tactile floating toast notification banner (`web/src/components/layout/ToastNotification.tsx`) with instant action triggers, automatic dismissal, and context token savings callouts (~82% savings).
+      - Animated bouncing pulse badge on the topbar `Stack` counter in `Header.tsx` triggering on every skill addition.
+    - **Phase 2 (Live SKILL.md Rule & Prompt Previewer)**:
+      - Dual-mode drawer tab switcher in `SkillDrawer.tsx`: `[Setup Recipes]` ⇄ `[Instructions (SKILL.md)]`.
+      - Canonical markdown preview with YAML frontmatter, When to Use, Core Capabilities, Delimited Prompt Invocation, and Architectural Invariants.
+      - 1-click `Copy SKILL.md` button allowing developers to export complete compliant skill files directly.
+    - **Phase 3 (WebMCP & Browser Agent JSON-RPC Bridge)**:
+      - Client-side MCP interface in `web/src/bridge/webmcp.ts` exposing `search_skills`, `get_skill`, `list_frameworks`, `get_starter_packs`, `get_stack`, `add_to_stack`, `load_starter_pack`, `clear_stack`, and `export_stack_cli`.
+      - Mounted on `window.__SKILLDOCK_MCP__` and `window.__SKILLDOCK_API__` with postMessage JSON-RPC support for Chrome DevTools, browser coding agents, and testing automation.
+    - **Phase 4 (Milestone Formalization & Parity)**:
+      - Formalized Milestone H8 in `docs/ROADMAP.md` and `docs/TASKS.md` (TASK-032).
+      - Synchronized local Obsidian vault via `python scripts/sync-obsidian.py`.
+      - Staged to GitHub Pages via `python scripts/deploy-skilldock.py` with 100% passing tests (80/80).
 
 ---
 

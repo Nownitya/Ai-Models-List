@@ -127,6 +127,16 @@ function syncUrlParams(state: {
   }, 150)
 }
 
+let toastDismissTimer: ReturnType<typeof setTimeout> | null = null
+
+export interface ToastNotificationState {
+  id: number
+  message: string
+  subtext?: string
+  actionLabel?: string
+  onAction?: () => void
+}
+
 interface SkillStoreState {
   // Data
   skills: Skill[]
@@ -162,6 +172,7 @@ interface SkillStoreState {
   inspectFramework: FrameworkHub | null
   isStackModalOpen: boolean
   isPriorityGuideOpen: boolean
+  toast: ToastNotificationState | null
 
   // Actions (ViewModel events)
   setPillar: (pillar: PillarType) => void
@@ -177,6 +188,8 @@ interface SkillStoreState {
   setSort: (sort: SortOption) => void
   resetFilters: () => void
   goHome: () => void
+  showToast: (message: string, subtext?: string, actionLabel?: string, onAction?: () => void) => void
+  hideToast: () => void
 
   toggleStack: (skill: Skill) => void
   addStarterPackToStack: (skillIds: string[]) => void
@@ -230,6 +243,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   inspectFramework: initialInspectFramework,
   isStackModalOpen: false,
   isPriorityGuideOpen: false,
+  toast: null,
 
   setPillar: (activePillar) => {
     set({ activePillar })
@@ -337,6 +351,27 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     }
   },
 
+  showToast: (message, subtext, actionLabel, onAction) => {
+    if (toastDismissTimer) clearTimeout(toastDismissTimer)
+    set({
+      toast: {
+        id: Date.now(),
+        message,
+        subtext,
+        actionLabel,
+        onAction,
+      },
+    })
+    toastDismissTimer = setTimeout(() => {
+      set({ toast: null })
+    }, 4500)
+  },
+
+  hideToast: () => {
+    if (toastDismissTimer) clearTimeout(toastDismissTimer)
+    set({ toast: null })
+  },
+
   toggleStack: (skill) => {
     const { stack } = get()
     const exists = stack.some((s) => s.id === skill.id)
@@ -358,6 +393,16 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
         ]
     set({ stack: newStack })
     saveStackToStorage(newStack)
+    if (exists) {
+      get().showToast(`Removed "${skill.name}" from Stack`, `${newStack.length} skills in stack`)
+    } else {
+      get().showToast(
+        `Added "${skill.name}" to Stack`,
+        `${newStack.length} skills in stack • Ready to export`,
+        'View Stack',
+        () => get().setStackModalOpen(true)
+      )
+    }
   },
 
   addStarterPackToStack: (skillIds: string[]) => {
@@ -384,6 +429,19 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       const newStack = [...stack, ...toAdd]
       set({ stack: newStack })
       saveStackToStorage(newStack)
+      get().showToast(
+        `Loaded Starter Pack (+${toAdd.length} skills)`,
+        `${newStack.length} total in stack • ~82% token savings active`,
+        'View Stack',
+        () => get().setStackModalOpen(true)
+      )
+    } else {
+      get().showToast(
+        `Starter Pack already in Stack`,
+        `All ${skillIds.length} skills are already selected in your stack.`,
+        'View Stack',
+        () => get().setStackModalOpen(true)
+      )
     }
   },
 
@@ -408,6 +466,19 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       const newStack = [...stack, ...toAdd]
       set({ stack: newStack })
       saveStackToStorage(newStack)
+      get().showToast(
+        `Loaded ${framework.repoName} (+${toAdd.length} skills)`,
+        `${newStack.length} total in stack`,
+        'View Stack',
+        () => get().setStackModalOpen(true)
+      )
+    } else {
+      get().showToast(
+        `All ${framework.skills.length} skills already in Stack`,
+        undefined,
+        'View Stack',
+        () => get().setStackModalOpen(true)
+      )
     }
   },
 
@@ -432,19 +503,31 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       const newStack = [...stack, ...toAdd]
       set({ stack: newStack })
       saveStackToStorage(newStack)
+      get().showToast(
+        `Added ${toAdd.length} skills to Stack`,
+        `${newStack.length} skills in stack`,
+        'View Stack',
+        () => get().setStackModalOpen(true)
+      )
     }
   },
 
   removeFromStack: (skillId) => {
     const { stack } = get()
+    const target = stack.find((s) => s.id === skillId)
     const newStack = stack.filter((s) => s.id !== skillId)
     set({ stack: newStack })
     saveStackToStorage(newStack)
+    get().showToast(
+      `Removed ${target ? `"${target.name}"` : 'skill'} from Stack`,
+      `${newStack.length} skills remaining`
+    )
   },
 
   clearStack: () => {
     set({ stack: [] })
     saveStackToStorage([])
+    get().showToast('Stack cleared', 'All skills removed from your custom stack')
   },
 
   openInspect: (skill) => {

@@ -42,6 +42,7 @@
 | **TASK-029** | Skill Scaffolder CLI & Tests (Sprint 6.4) | Automated Law 1 & Law 2 CLI (`new-skill.py`) with unit test suite (`test_new_skill.py`) | P0 | Verified | `scripts/new-skill.py`, `tests/test_new_skill.py` |
 | **TASK-030** | Milestone H6 Release Signoff (Sprint 6.5) | Full multi-gate verification, Layer 15 documentation sync, and Obsidian vault mirror | P0 | Verified | Multi-gate audit pass (52/52 tests) |
 | **TASK-031** | Universal Obsidian Second Brain & Vault Restructure | Universal integration guide, plugin orchestration, standardized skill, and 01_Projects restructuring | P0 | Verified | `docs/integrations/`, `skills-lock.json`, `tests/test_obsidian_integration.py` |
+| **TASK-032** | SkillDock Web 3.0 Platform | React 19 SPA, 1-Click Starter Stacks, tactile toasts, live SKILL.md previewer, and WebMCP agent bridge | P0 | Verified | `npm --prefix web run build`, `scripts/deploy-skilldock.py` |
 
 ---
 
@@ -196,6 +197,15 @@
 - [x] Subtask 31.5: Restructure Obsidian vault into `01_Projects/` with `AI-Ecosystem/` and `Mobile-Android/`, deploying central `INDEX.md`.
 - [x] Subtask 31.6: Update `scripts/sync-obsidian.py` to target `01_Projects/AI-Ecosystem/Ai-Models-List` and mirror architecture specs.
 - [x] Subtask 31.7: Author automated test suite `tests/test_obsidian_integration.py` (57/57 total unit tests passing).
+
+### TASK-032: SkillDock Web 3.0 Platform, 1-Click Starter Stacks & WebMCP Agent Bridge
+- [x] Subtask 32.1: Implement React 19 + TypeScript + Vite + Tailwind CSS high-performance SPA (`web/`) with 4 pillars, virtualized scrolling, and Zustand state synchronization.
+- [x] Subtask 32.2: Add 8 Curated 1-Click Starter Stacks (`web/src/data/starterPacks.ts`) in `StaffPicks.tsx` delivering ~82% context token savings.
+- [x] Subtask 32.3: Build Tactile Toast Notification System (`ToastNotification.tsx`) with animated bounce/pulse Stack counter in `Header.tsx`.
+- [x] Subtask 32.4: Implement dual-mode Live `SKILL.md` Rule & Prompt Previewer in `SkillDrawer.tsx` (`[Setup Recipes]` ⇄ `[Instructions (SKILL.md)]`).
+- [x] Subtask 32.5: Build client-side WebMCP & Browser Agent JSON-RPC Bridge (`web/src/bridge/webmcp.ts` on `window.__SKILLDOCK_MCP__` and `window.__SKILLDOCK_API__`).
+- [x] Subtask 32.6: Verify clean TypeScript compilation (`tsc -b`), full unit test suite (80/80 pass), and automated GitHub Pages deployment (`scripts/deploy-skilldock.py`).
+
 
 
 
