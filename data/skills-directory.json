@@ -132,6 +132,34 @@
     "cli": "python scripts/install-to-project.py --skill core-code-review",
     "repo": null
   },
+  "compound-engineering": {
+    "name": "compound-engineering",
+    "category": "01-core-engineering",
+    "scoped": "core-compound-engineering",
+    "cli": "python scripts/install-to-project.py --skill core-compound-engineering",
+    "repo": null
+  },
+  "core-compound-engineering": {
+    "name": "compound-engineering",
+    "category": "01-core-engineering",
+    "scoped": "core-compound-engineering",
+    "cli": "python scripts/install-to-project.py --skill core-compound-engineering",
+    "repo": null
+  },
+  "compound engineering": {
+    "name": "compound-engineering",
+    "category": "01-core-engineering",
+    "scoped": "core-compound-engineering",
+    "cli": "python scripts/install-to-project.py --skill core-compound-engineering",
+    "repo": null
+  },
+  "core compound engineering": {
+    "name": "compound-engineering",
+    "category": "01-core-engineering",
+    "scoped": "core-compound-engineering",
+    "cli": "python scripts/install-to-project.py --skill core-compound-engineering",
+    "repo": null
+  },
   "cursor-0-45-agentic-rules": {
     "name": "cursor-0-45-agentic-rules",
     "category": "01-core-engineering",
@@ -3289,6 +3317,34 @@
     "cli": "python scripts/install-to-project.py --skill test-playwright-cli",
     "repo": null
   },
+  "21st-magic-ui": {
+    "name": "21st-magic-ui",
+    "category": "05-ui-ux",
+    "scoped": "ui-21st-magic-ui",
+    "cli": "python scripts/install-to-project.py --skill ui-21st-magic-ui",
+    "repo": null
+  },
+  "ui-21st-magic-ui": {
+    "name": "21st-magic-ui",
+    "category": "05-ui-ux",
+    "scoped": "ui-21st-magic-ui",
+    "cli": "python scripts/install-to-project.py --skill ui-21st-magic-ui",
+    "repo": null
+  },
+  "21st magic ui": {
+    "name": "21st-magic-ui",
+    "category": "05-ui-ux",
+    "scoped": "ui-21st-magic-ui",
+    "cli": "python scripts/install-to-project.py --skill ui-21st-magic-ui",
+    "repo": null
+  },
+  "ui 21st magic ui": {
+    "name": "21st-magic-ui",
+    "category": "05-ui-ux",
+    "scoped": "ui-21st-magic-ui",
+    "cli": "python scripts/install-to-project.py --skill ui-21st-magic-ui",
+    "repo": null
+  },
   "archify": {
     "name": "archify",
     "category": "05-ui-ux",
@@ -5143,6 +5199,27 @@
     "scoped": "agent-safety-note",
     "cli": "python scripts/install-to-project.py --skill agent-safety-note",
     "repo": null
+  },
+  "sellbird": {
+    "name": "sellbird",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-sellbird",
+    "cli": "python scripts/install-to-project.py --skill agent-sellbird",
+    "repo": "ethanplusai/sellbird.git"
+  },
+  "agent-sellbird": {
+    "name": "sellbird",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-sellbird",
+    "cli": "python scripts/install-to-project.py --skill agent-sellbird",
+    "repo": "ethanplusai/sellbird.git"
+  },
+  "agent sellbird": {
+    "name": "sellbird",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-sellbird",
+    "cli": "python scripts/install-to-project.py --skill agent-sellbird",
+    "repo": "ethanplusai/sellbird.git"
   },
   "t3-code": {
     "name": "t3-code",

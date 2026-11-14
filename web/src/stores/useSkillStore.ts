@@ -30,8 +30,32 @@ function loadInitialAssistant(): AssistantType {
   return 'antigravity'
 }
 
-// Safeguard 12: Schema migration & safe hydration from localStorage
-function loadInitialStack(): SavedStackItem[] {
+// Safeguard 12: Schema migration & safe hydration from localStorage and URL
+function loadInitialStack(skills: Skill[], urlStackIds: string[]): SavedStackItem[] {
+  // If URL has ?stack=..., prioritize hydrating those skills
+  if (urlStackIds.length > 0) {
+    const fromUrl: SavedStackItem[] = []
+    for (const id of urlStackIds) {
+      const match = skills.find((s) => s.id === id || s.scoped === id || s.uniqueId === id)
+      if (match && !fromUrl.some((s) => s.id === match.id)) {
+        fromUrl.push({
+          id: match.id,
+          uniqueId: match.uniqueId,
+          name: match.name,
+          priority: match.priority,
+          scoped: match.scoped,
+          cli: match.cli,
+          repo: match.repo,
+          officialCli: match.repo ? `npx skills add ${match.repo} --skill ${match.id}` : match.cli,
+        })
+      }
+    }
+    if (fromUrl.length > 0) {
+      saveStackToStorage(fromUrl)
+      return fromUrl
+    }
+  }
+
   try {
     const raw = localStorage.getItem(STACK_STORAGE_KEY)
     if (!raw) return []
@@ -67,12 +91,15 @@ function getInitialUrlParams() {
       sort: 'default' as SortOption,
       skillId: null as string | null,
       frameworkRepo: null as string | null,
+      stackIds: [] as string[],
     }
   }
   const params = new URLSearchParams(window.location.search)
   const pil = params.get('pillar') as PillarType
   const initialSkillId = params.get('skill')
   const initialFrameworkRepo = params.get('framework')
+  const stackParam = params.get('stack')
+  const stackIds = stackParam ? stackParam.split(',').map((s) => s.trim()).filter(Boolean) : []
   
   let pillar: PillarType = 'frameworks'
   if (initialSkillId) {
@@ -92,7 +119,19 @@ function getInitialUrlParams() {
   const repo = params.get('repo') || 'all'
   const sort = (params.get('sort') || 'default') as SortOption
 
-  return { pillar, scope, q, priority, cat, eco, repo, sort, skillId: initialSkillId, frameworkRepo: initialFrameworkRepo }
+  return {
+    pillar,
+    scope,
+    q,
+    priority,
+    cat,
+    eco,
+    repo,
+    sort,
+    skillId: initialSkillId,
+    frameworkRepo: initialFrameworkRepo,
+    stackIds,
+  }
 }
 
 // Safeguard 11: Debounced URL synchronization using replaceState
@@ -172,6 +211,7 @@ interface SkillStoreState {
   inspectFramework: FrameworkHub | null
   isStackModalOpen: boolean
   isPriorityGuideOpen: boolean
+  isWebMcpModalOpen: boolean
   toast: ToastNotificationState | null
 
   // Actions (ViewModel events)
@@ -204,17 +244,31 @@ interface SkillStoreState {
   closeFrameworkInspect: () => void
   setStackModalOpen: (open: boolean) => void
   setPriorityGuideOpen: (open: boolean) => void
+  setWebMcpModalOpen: (open: boolean) => void
 }
 
 const initialUrl = getInitialUrlParams()
 const loadedSkills = ((matrixData as any).skills || []) as Skill[]
 const loadedFrameworks = ((matrixData as any).frameworks || []) as FrameworkHub[]
+const initialStack = loadInitialStack(loadedSkills, initialUrl.stackIds)
 const initialInspectSkill = initialUrl.skillId
   ? loadedSkills.find((s) => s.id === initialUrl.skillId || s.scoped === initialUrl.skillId) || null
   : null
 const initialInspectFramework = initialUrl.frameworkRepo
   ? loadedFrameworks.find((f) => f.repo === initialUrl.frameworkRepo || f.repoName.toLowerCase() === initialUrl.frameworkRepo?.toLowerCase()) || null
   : null
+const initialToast: ToastNotificationState | null =
+  initialUrl.stackIds.length > 0 && initialStack.length > 0
+    ? {
+        id: Date.now(),
+        message: `Loaded Shared Stack (${initialStack.length} skills)`,
+        subtext: `${initialStack.length} skills active from link • Token savings ready`,
+        actionLabel: 'View Stack',
+        onAction: () => {
+          useSkillStore.getState().setStackModalOpen(true)
+        },
+      }
+    : null
 
 export const useSkillStore = create<SkillStoreState>((set, get) => ({
   skills: loadedSkills,
@@ -234,7 +288,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   selectedRepo: initialUrl.repo,
   selectedSort: initialUrl.sort,
 
-  stack: loadInitialStack(),
+  stack: initialStack,
 
   viewMode: 'grid',
   isCommandPaletteOpen: false,
@@ -243,7 +297,8 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   inspectFramework: initialInspectFramework,
   isStackModalOpen: false,
   isPriorityGuideOpen: false,
-  toast: null,
+  isWebMcpModalOpen: false,
+  toast: initialToast,
 
   setPillar: (activePillar) => {
     set({ activePillar })
@@ -334,6 +389,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       inspectFramework: null,
       isStackModalOpen: false,
       isPriorityGuideOpen: false,
+      isWebMcpModalOpen: false,
       isCommandPaletteOpen: false,
     })
     syncUrlParams({
@@ -570,4 +626,5 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
 
   setStackModalOpen: (isStackModalOpen) => set({ isStackModalOpen }),
   setPriorityGuideOpen: (isPriorityGuideOpen) => set({ isPriorityGuideOpen }),
+  setWebMcpModalOpen: (isWebMcpModalOpen) => set({ isWebMcpModalOpen }),
 }))

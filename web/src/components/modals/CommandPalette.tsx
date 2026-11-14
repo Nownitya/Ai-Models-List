@@ -7,19 +7,23 @@ import {
   Zap,
   FileText,
   Plug,
-  Smartphone
+  Smartphone,
+  Terminal,
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
+import { STARTER_PACKS, type StarterPack } from '@/data/starterPacks'
 import connectorsData from '@/data/claude-connectors-plugins.json'
 import type { Skill, FrameworkHub, DocTemplate, MarketplaceConnector } from '@/types'
 
-type PaletteTab = 'all' | 'frameworks' | 'skills' | 'connectors' | 'docs'
+type PaletteTab = 'all' | 'packs' | 'frameworks' | 'skills' | 'connectors' | 'docs'
 
 type SearchResultItem =
+  | { type: 'starter-pack'; id: string; title: string; subtitle: string; tag: string; data: StarterPack }
   | { type: 'framework'; id: string; title: string; subtitle: string; tag: string; priority?: string; data: FrameworkHub }
   | { type: 'skill'; id: string; title: string; subtitle: string; tag: string; priority?: string; data: Skill }
   | { type: 'connector'; id: string; title: string; subtitle: string; tag: string; priority?: string; data: MarketplaceConnector }
   | { type: 'doc'; id: string; title: string; subtitle: string; tag: string; priority?: string; data: DocTemplate }
+  | { type: 'action'; id: string; title: string; subtitle: string; tag: string; onAction: () => void }
 
 export const CommandPalette: React.FC = () => {
   const isCommandPaletteOpen = useSkillStore((s) => s.isCommandPaletteOpen)
@@ -27,9 +31,14 @@ export const CommandPalette: React.FC = () => {
   const skills = useSkillStore((s) => s.skills)
   const frameworks = useSkillStore((s) => s.frameworks)
   const docs = useSkillStore((s) => s.docs)
+  const meta = useSkillStore((s) => s.meta)
   const setPillar = useSkillStore((s) => s.setPillar)
   const openInspect = useSkillStore((s) => s.openInspect)
   const openFrameworkInspect = useSkillStore((s) => s.openFrameworkInspect)
+  const addStarterPackToStack = useSkillStore((s) => s.addStarterPackToStack)
+  const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
+  const setPriorityGuideOpen = useSkillStore((s) => s.setPriorityGuideOpen)
+  const setWebMcpModalOpen = useSkillStore((s) => s.setWebMcpModalOpen)
   const setPriority = useSkillStore((s) => s.setPriority)
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
 
@@ -63,9 +72,30 @@ export const CommandPalette: React.FC = () => {
     }
   }, [isCommandPaletteOpen])
 
-  // Filter items across 4 catalogs
+  // Filter items across 5 catalogs + system actions
   const results = useMemo<SearchResultItem[]>(() => {
     const q = query.toLowerCase().trim()
+
+    // 0. Starter Stacks
+    const matchedPacks: SearchResultItem[] = STARTER_PACKS.filter((p) => {
+      if (!q) return true
+      return (
+        p.title.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q) ||
+        p.badge.toLowerCase().includes(q) ||
+        p.repo.toLowerCase().includes(q) ||
+        p.skillIds.some((id) => id.toLowerCase().includes(q))
+      )
+    })
+      .slice(0, activeTab === 'packs' ? 8 : q ? 4 : 2)
+      .map((p) => ({
+        type: 'starter-pack',
+        id: `pack-${p.id}`,
+        title: `${p.icon} ${p.title}`,
+        subtitle: `${p.badge} • ${p.skillIds.length} skills • ~82% token savings (Press Enter to load)`,
+        tag: 'Starter Stack',
+        data: p,
+      }))
 
     // 1. Frameworks / Suites
     const matchedFrameworks: SearchResultItem[] = frameworks
@@ -86,7 +116,7 @@ export const CommandPalette: React.FC = () => {
         title: f.repoName,
         subtitle: f.description.slice(0, 75) + (f.description.length > 75 ? '...' : ''),
         tag: `${f.skillsCount} skills • ⭐ ${f.starsFormatted}`,
-        data: f
+        data: f,
       }))
 
     // 2. Atomic Skills
@@ -109,7 +139,7 @@ export const CommandPalette: React.FC = () => {
         subtitle: `/${s.scoped} — ${s.description.slice(0, 65)}...`,
         tag: s.categoryLabel,
         priority: s.priority,
-        data: s
+        data: s,
       }))
 
     // 3. MCP Connectors
@@ -130,7 +160,7 @@ export const CommandPalette: React.FC = () => {
         title: c.title,
         subtitle: `${c.author} • ${c.oneLiner?.slice(0, 65) || 'Official MCP Server'}`,
         tag: `MCP (${c.type})`,
-        data: c
+        data: c,
       }))
 
     // 4. Docs Templates
@@ -152,12 +182,47 @@ export const CommandPalette: React.FC = () => {
         subtitle: `${d.layer} • ${d.purpose.slice(0, 65)}...`,
         tag: `Doc (${d.tier})`,
         priority: d.priority,
-        data: d
+        data: d,
       }))
+
+    // 5. System Quick Actions
+    const actions: SearchResultItem[] = []
+    if (q.includes('mcp') || q.includes('console') || q.includes('tool') || q.includes('bridge') || q.includes('agent')) {
+      actions.push({
+        type: 'action',
+        id: 'action-webmcp',
+        title: 'Open WebMCP Live Agent Console',
+        subtitle: 'Inspect client-side tools and test JSON-RPC calls live in browser',
+        tag: 'Developer Tool',
+        onAction: () => setWebMcpModalOpen(true),
+      })
+    }
+    if (q.includes('stack') || q.includes('basket') || q.includes('export')) {
+      actions.push({
+        type: 'action',
+        id: 'action-stack',
+        title: 'View Active Stack & Token Budget',
+        subtitle: 'Inspect cherry-picked skills and export Cursor, Claude, or Obsidian configs',
+        tag: 'Stack Action',
+        onAction: () => setStackModalOpen(true),
+      })
+    }
+    if (q.includes('priority') || q.includes('guide') || q.includes('p0') || q.includes('tax')) {
+      actions.push({
+        type: 'action',
+        id: 'action-priority',
+        title: 'Open Priority Taxonomy Guide',
+        subtitle: 'Explanation of P0 (Essential), P1 (High), P2 (Medium), and P3 contracts',
+        tag: 'Governance',
+        onAction: () => setPriorityGuideOpen(true),
+      })
+    }
 
     let aggregated: SearchResultItem[] = []
     if (activeTab === 'all') {
-      aggregated = [...matchedFrameworks, ...matchedSkills, ...matchedConnectors, ...matchedDocs]
+      aggregated = [...actions, ...matchedPacks, ...matchedFrameworks, ...matchedSkills, ...matchedConnectors, ...matchedDocs]
+    } else if (activeTab === 'packs') {
+      aggregated = matchedPacks
     } else if (activeTab === 'frameworks') {
       aggregated = matchedFrameworks
     } else if (activeTab === 'skills') {
@@ -169,7 +234,7 @@ export const CommandPalette: React.FC = () => {
     }
 
     return aggregated
-  }, [query, activeTab, frameworks, skills, docs])
+  }, [query, activeTab, frameworks, skills, docs, setWebMcpModalOpen, setStackModalOpen, setPriorityGuideOpen])
 
   const handleInputKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown') {
@@ -188,7 +253,11 @@ export const CommandPalette: React.FC = () => {
 
   const handleSelectItem = (item: SearchResultItem) => {
     setCommandPaletteOpen(false)
-    if (item.type === 'framework') {
+    if (item.type === 'starter-pack') {
+      addStarterPackToStack(item.data.skillIds)
+    } else if (item.type === 'action') {
+      item.onAction()
+    } else if (item.type === 'framework') {
       openFrameworkInspect(item.data)
     } else if (item.type === 'skill') {
       openInspect(item.data)
@@ -222,10 +291,10 @@ export const CommandPalette: React.FC = () => {
               setSelectedIndex(0)
             }}
             onKeyDown={handleInputKeyDown}
-            placeholder="Omni-search 74 suites, 283 skills, 1,126 MCPs, 57 docs..."
-            className="w-full bg-transparent text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none font-medium"
+            placeholder="Search 8 starter packs, 113 suites, 326 skills, 1,126 MCPs, docs, or actions..."
+            className="w-full bg-transparent text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none"
           />
-          <kbd className="hidden sm:inline-flex text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
+          <kbd className="hidden sm:inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]">
             ESC
           </kbd>
         </div>
@@ -234,11 +303,12 @@ export const CommandPalette: React.FC = () => {
         <div className="px-3 py-2 bg-[#111114] border-b border-[#27272a] flex items-center justify-between gap-1 overflow-x-auto text-xs">
           <div className="flex items-center gap-1">
             {[
-              { id: 'all', label: 'All Catalog' },
-              { id: 'frameworks', label: 'Suites (74)' },
-              { id: 'skills', label: 'Skills (283)' },
+              { id: 'all', label: 'All' },
+              { id: 'packs', label: 'Starter Stacks (8)' },
+              { id: 'frameworks', label: `Suites (${meta.totalFrameworks || 113})` },
+              { id: 'skills', label: `Skills (${meta.totalSkills || 326})` },
               { id: 'connectors', label: 'MCPs (1,126)' },
-              { id: 'docs', label: 'Docs (57)' }
+              { id: 'docs', label: `Docs (${meta.totalDocs || 57})` },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -246,7 +316,7 @@ export const CommandPalette: React.FC = () => {
                   setActiveTab(tab.id as PaletteTab)
                   setSelectedIndex(0)
                 }}
-                className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-colors cursor-pointer whitespace-nowrap ${
                   activeTab === tab.id
                     ? 'bg-zinc-100 text-zinc-950 font-semibold'
                     : 'text-zinc-400 hover:text-zinc-200 hover:bg-[#18181b]'
@@ -308,14 +378,20 @@ export const CommandPalette: React.FC = () => {
                   onClick={() => handleSelectItem(item)}
                   onMouseEnter={() => setSelectedIndex(index)}
                   className={`flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-xs cursor-pointer transition-colors ${
-                    isSelected ? 'bg-[#18181b] text-white border border-[#3f3f46]' : 'text-zinc-300 hover:bg-[#18181b]/50 border border-transparent'
+                    isSelected
+                      ? 'bg-[#18181b] text-white border border-[#3f3f46]'
+                      : 'text-zinc-300 hover:bg-[#18181b]/50 border border-transparent'
                   }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     {/* Entity Icon Badge */}
                     <div
                       className={`w-7 h-7 rounded-md flex items-center justify-center shrink-0 border ${
-                        item.type === 'framework'
+                        item.type === 'starter-pack'
+                          ? 'bg-blue-500/15 text-blue-400 border-blue-500/30'
+                          : item.type === 'action'
+                          ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                          : item.type === 'framework'
                           ? 'bg-amber-500/10 text-amber-400 border-amber-500/20'
                           : item.type === 'skill'
                           ? 'bg-sky-500/10 text-sky-400 border-sky-500/20'
@@ -324,6 +400,8 @@ export const CommandPalette: React.FC = () => {
                           : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                       }`}
                     >
+                      {item.type === 'starter-pack' && <Sparkles className="w-3.5 h-3.5" />}
+                      {item.type === 'action' && <Terminal className="w-3.5 h-3.5" />}
                       {item.type === 'framework' && <Boxes className="w-3.5 h-3.5" />}
                       {item.type === 'skill' && <Zap className="w-3.5 h-3.5" />}
                       {item.type === 'connector' && <Plug className="w-3.5 h-3.5" />}
@@ -333,7 +411,7 @@ export const CommandPalette: React.FC = () => {
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-semibold text-zinc-100 truncate text-[13px]">{item.title}</span>
-                        {item.priority && (
+                        {'priority' in item && item.priority && (
                           <span
                             className={`text-[9px] font-mono font-bold px-1.5 py-0.2 rounded border shrink-0 ${
                               item.priority === 'P0'
@@ -345,7 +423,7 @@ export const CommandPalette: React.FC = () => {
                           </span>
                         )}
                         <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider bg-zinc-900 px-1.5 py-0.2 rounded border border-zinc-800 shrink-0">
-                          {item.type}
+                          {item.type.replace('-', ' ')}
                         </span>
                       </div>
                       <p className="text-[11px] text-zinc-400 truncate mt-0.5">{item.subtitle}</p>
@@ -372,10 +450,10 @@ export const CommandPalette: React.FC = () => {
               <kbd className="bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a] text-zinc-400">↓</kbd> to navigate
             </span>
             <span>
-              <kbd className="bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a] text-zinc-400">↵</kbd> to inspect
+              <kbd className="bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a] text-zinc-400">↵</kbd> to execute
             </span>
           </div>
-          <span className="text-zinc-600">SkillDock Omni-Search • 4 Unified Catalogs</span>
+          <span className="text-zinc-600">SkillDock Omni-Search • 5 Unified Catalogs</span>
         </div>
       </div>
     </div>

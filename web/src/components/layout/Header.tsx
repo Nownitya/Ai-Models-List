@@ -11,6 +11,7 @@ export const Header: React.FC = () => {
   const setAssistant = useSkillStore((s) => s.setAssistant)
   const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
   const setCommandPaletteOpen = useSkillStore((s) => s.setCommandPaletteOpen)
+  const setWebMcpModalOpen = useSkillStore((s) => s.setWebMcpModalOpen)
   const goHome = useSkillStore((s) => s.goHome)
   const meta = useSkillStore((s) => s.meta)
 
@@ -154,6 +155,16 @@ export const Header: React.FC = () => {
                 {stack.length}
               </span>
             )}
+          </button>
+
+          {/* WebMCP Agent Console Trigger */}
+          <button
+            onClick={() => setWebMcpModalOpen(true)}
+            className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#121215] hover:bg-[#18181b] text-xs font-mono text-emerald-400 border border-emerald-500/30 hover:border-emerald-500/60 transition-colors cursor-pointer"
+            title="Open WebMCP Agent Diagnostic Console"
+          >
+            <Terminal className="w-3.5 h-3.5 text-emerald-400" />
+            <span>WebMCP</span>
           </button>
 
           {/* GitHub Repo Link */}

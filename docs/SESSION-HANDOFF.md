@@ -140,6 +140,17 @@
       - Synchronized local Obsidian vault via `python scripts/sync-obsidian.py`.
       - Staged to GitHub Pages via `python scripts/deploy-skilldock.py` with 100% passing tests (80/80).
 
+17. **Frontier Agent Workflows & Ecosystem Ingestion (Sellbird, Playwright, Compound Engineering, 21st.dev Magic MCP)**:
+    - **Dual Matrix Parity (Law 1)**: Simultaneously updated `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` adding `sellbird` (P1), `compound-engineering` (P0), `21st-magic-ui` (P0), and canonically updating `playwright-cli` (`microsoft/playwright`, 71.5k stars).
+    - **Standardized Skill Packages (Law 2)**:
+      - `skills/09-autonomous-agents/sellbird/SKILL.md`: Autonomous AI sales and outreach engine on local LLMs.
+      - `skills/01-core-engineering/compound-engineering/SKILL.md`: EveryInc 4-phase compounding engineering loop (Plan, Build, Review, Compound).
+      - `skills/05-ui-ux/21st-magic-ui/SKILL.md`: 21st.dev component marketplace, AI UI generation, and Magic MCP server.
+      - `skills/04-testing-and-verification/playwright-cli/SKILL.md`: Updated to canonical `microsoft/playwright` (⭐ 71.5k).
+    - **Telemetry & Radar**: Added to `data/github-metrics.json` and generated fresh `docs/LIVE-STATS.md`, `data/live-stats.csv`, and `README.md`.
+    - **Directory & Web Matrix Export**: Updated `scripts/export_matrix_json.py` with repo mappings, display names, fallback descriptions, and multi-assistant install recipes. Exported 329 skills across 115 frameworks to `web/src/data/matrix.json`.
+    - **Verification & Staging**: Built React 19 storefront via `python scripts/deploy-skilldock.py`, all 80 unit tests passing, synced to Obsidian vault via `python scripts/sync-obsidian.py`.
+
 ---
 
 ### 📋 Immediate Next Tasks Ready for Execution

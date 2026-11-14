@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { X, Trash2, Download, Copy, Check, Diamond, Layers, Terminal, Cpu } from 'lucide-react'
+import { X, Trash2, Download, Copy, Check, Diamond, Layers, Terminal, Cpu, Share2 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 
 export const StackModal: React.FC = () => {
@@ -10,7 +10,16 @@ export const StackModal: React.FC = () => {
   const clearStack = useSkillStore((s) => s.clearStack)
 
   const [copiedScript, setCopiedScript] = useState(false)
+  const [copiedShareUrl, setCopiedShareUrl] = useState(false)
   const [cliFormat, setCliFormat] = useState<'npx' | 'python'>('npx')
+
+  const copyShareStackUrl = () => {
+    const ids = stack.map((s) => s.id).join(',')
+    const url = `${window.location.origin}${window.location.pathname}?stack=${encodeURIComponent(ids)}`
+    navigator.clipboard.writeText(url)
+    setCopiedShareUrl(true)
+    setTimeout(() => setCopiedShareUrl(false), 1600)
+  }
 
   // Token budget estimation
   const estimatedTokens = stack.length * 800
@@ -172,12 +181,24 @@ export const StackModal: React.FC = () => {
               Curate your custom engineering stack, then export directly to Cursor, Claude Code, Obsidian, or CLI scripts.
             </p>
           </div>
-          <button
-            onClick={() => setStackModalOpen(false)}
-            className="text-zinc-400 hover:text-white p-1.5 rounded-md bg-[#18181b] border border-[#27272a] hover:border-zinc-500 cursor-pointer"
-          >
-            <X className="w-4 h-4" />
-          </button>
+          <div className="flex items-center gap-2">
+            {stack.length > 0 && (
+              <button
+                onClick={copyShareStackUrl}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-md bg-blue-500/15 hover:bg-blue-500/30 text-blue-300 border border-blue-500/30 transition-colors cursor-pointer"
+                title="Copy shareable link with this exact stack"
+              >
+                {copiedShareUrl ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
+                <span>{copiedShareUrl ? 'Copied Link!' : 'Share Stack Link'}</span>
+              </button>
+            )}
+            <button
+              onClick={() => setStackModalOpen(false)}
+              className="text-zinc-400 hover:text-white p-1.5 rounded-md bg-[#18181b] border border-[#27272a] hover:border-zinc-500 cursor-pointer"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* Visual Token Budget & Context Savings Meter */}
@@ -292,6 +313,15 @@ export const StackModal: React.FC = () => {
                 >
                   <Cpu className="w-3 h-3 text-cyan-400" />
                   <span>.cursorrules</span>
+                </button>
+
+                <button
+                  onClick={downloadMarkdown}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export Markdown Stack Table"
+                >
+                  <Download className="w-3 h-3 text-emerald-400" />
+                  <span>Stack.md</span>
                 </button>
 
                 <button

@@ -3,9 +3,9 @@ name: playwright-cli
 description: End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.
 ---
 
-# Playwright Test & Automation CLI (`microsoft/playwright-cli`)
+# Playwright Test & Automation Framework (`microsoft/playwright`)
 
-> **Priority:** `P0` | **Framework:** `microsoft/playwright-cli` | **Domain:** `04-testing-and-verification` | **Stars:** `⭐ 15k+`
+> **Priority:** `P0` | **Framework:** `microsoft/playwright` | **Domain:** `04-testing-and-verification` | **Stars:** `⭐ 71k+`
 
 End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.
 

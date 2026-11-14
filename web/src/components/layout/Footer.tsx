@@ -16,6 +16,7 @@ export const Footer: React.FC = () => {
   const setEntityScope = useSkillStore((s) => s.setEntityScope)
   const setCategory = useSkillStore((s) => s.setCategory)
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
+  const setWebMcpModalOpen = useSkillStore((s) => s.setWebMcpModalOpen)
   const [copiedClone, setCopiedClone] = useState(false)
 
   const handleCopyClone = () => {
@@ -218,6 +219,15 @@ export const Footer: React.FC = () => {
                   <span>Read AGENTS.md</span>
                   <ExternalLink className="w-3 h-3 text-zinc-500" />
                 </a>
+              </li>
+              <li className="pt-1">
+                <button
+                  onClick={() => setWebMcpModalOpen(true)}
+                  className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors cursor-pointer text-xs"
+                >
+                  <Terminal className="w-3.5 h-3.5" />
+                  <span>WebMCP Diagnostic Console</span>
+                </button>
               </li>
               <li className="pt-1">
                 <a

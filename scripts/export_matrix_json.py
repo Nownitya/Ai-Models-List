@@ -213,7 +213,12 @@ SKILL_TO_REPO = {
     'stripe-agent-toolkit': 'stripe/link-cli',
     'stripe-link-cli': 'stripe/link-cli',
     'stripe-payments': 'stripe/link-cli',
-    'playwright-cli': 'microsoft/playwright-cli',
+    'playwright-cli': 'microsoft/playwright',
+    'playwright': 'microsoft/playwright',
+    'compound-engineering': 'everyinc/compound-engineering-plugin',
+    '21st-magic-ui': '21st-dev/cli',
+    'sellbird': 'ethanplusai/sellbird',
+    'hermes-agent': 'NousResearch/hermes-agent',
     'agent-browser': 'vercel-labs/agent-browser',
     'agent-desktop': 'vercel-labs/agent-desktop',
     'turborepo': 'vercel/turborepo',
@@ -314,7 +319,12 @@ REPO_DISPLAY_NAMES = {
     'clerk/skills': 'Clerk Auth',
     'sveltejs/ai-tools': 'Svelte 5 Runes',
     'stripe/link-cli': 'Stripe',
-    'microsoft/playwright-cli': 'Playwright',
+    'microsoft/playwright': 'Playwright',
+    'microsoft/playwright-cli': 'Playwright CLI',
+    'everyinc/compound-engineering-plugin': 'Compound Engineering',
+    '21st-dev/cli': '21st.dev Magic',
+    'ethanplusai/sellbird': 'Sellbird',
+    'NousResearch/hermes-agent': 'Hermes Agent',
     'vercel-labs/agent-browser': 'Agent Browser',
     'vercel-labs/agent-desktop': 'Agent Desktop',
     'vercel-labs/skills': 'Vercel React Patterns',
@@ -545,6 +555,11 @@ def export_matrix():
         'pypa/packaging': "Python Packaging Authority reference guidelines for dependency isolation, uv, and pyproject.toml.",
         'agentskills/agentskills': "Universal agent skills open specification and foundational multi-agent workflow capabilities.",
         'getcursor/cursor': "Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc) and autonomous agent execution harness.",
+        'microsoft/playwright': "Fast and reliable end-to-end testing, tracing, snapshot comparison, and headless browser automation for Chromium, Firefox, and WebKit.",
+        'everyinc/compound-engineering-plugin': "EveryInc's 4-phase compounding engineering loop (Plan, Build, Review, Compound) capturing reusable architectural patterns and repo memory.",
+        '21st-dev/cli': "21st.dev Magic component marketplace, AI UI generator, and MCP server for React, Tailwind CSS, and shadcn-ui agents.",
+        'ethanplusai/sellbird': "Open-source autonomous AI sales and outreach engine running on local Claude / ChatGPT / Codex plans with lead enrichment and email campaigns.",
+        'NousResearch/hermes-agent': "Nous Research autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution.",
     }
 
     # Build Framework Hub records (65 Upstream Repositories)
@@ -582,6 +597,40 @@ def export_matrix():
                 "codex": "codex plugin marketplace add android/skills && codex plugin add android-skills@android-skills",
                 "git": "git clone https://github.com/android/skills.git",
                 "cli": "android skills add --all"
+            }
+        elif repo_key == "everyinc/compound-engineering-plugin":
+            recipes = {
+                "antigravity": "git clone https://github.com/everyinc/compound-engineering-plugin.git ~/.gemini/antigravity/skills/compound-engineering",
+                "claude": "/plugin marketplace add EveryInc/compound-engineering-plugin && /plugin install compound-engineering",
+                "cursor": "/add-plugin compound-engineering",
+                "codex": "codex plugin marketplace add EveryInc/compound-engineering-plugin",
+                "git": "git clone https://github.com/everyinc/compound-engineering-plugin.git",
+                "cli": "npx skills add everyinc/compound-engineering-plugin"
+            }
+        elif repo_key == "21st-dev/cli":
+            recipes = {
+                "antigravity": "npx @21st-dev/cli install-skill",
+                "claude": "npx @21st-dev/cli install-skill",
+                "cursor": "21st init --client cursor",
+                "codex": "npx @21st-dev/cli install-skill",
+                "git": "git clone https://github.com/21st-dev/cli.git",
+                "cli": "npx @21st-dev/cli install-skill"
+            }
+        elif repo_key == "ethanplusai/sellbird":
+            recipes = {
+                "antigravity": "git clone https://github.com/ethanplusai/sellbird.git ~/.gemini/antigravity/skills/sellbird",
+                "claude": "git clone https://github.com/ethanplusai/sellbird.git",
+                "codex": "git clone https://github.com/ethanplusai/sellbird.git",
+                "git": "git clone https://github.com/ethanplusai/sellbird.git",
+                "cli": "pip install sellbird && sellbird setup"
+            }
+        elif repo_key == "microsoft/playwright":
+            recipes = {
+                "antigravity": "npx playwright install --with-deps",
+                "claude": "npx playwright install --with-deps",
+                "codex": "npx playwright install --with-deps",
+                "git": "git clone https://github.com/microsoft/playwright.git",
+                "cli": "npm init playwright@latest"
             }
         else:
             recipes = {

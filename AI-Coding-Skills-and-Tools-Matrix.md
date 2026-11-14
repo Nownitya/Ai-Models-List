@@ -55,6 +55,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Superpowers repository:** https://github.com/obra/superpowers
 - **Matt Pocock skills repository:** https://github.com/mattpocock/skills
 - **Addy Osmani Agent Skills repository:** https://github.com/addyosmani/agent-skills
+- **EveryInc Compound Engineering Plugin repository:** https://every.to · https://github.com/everyinc/compound-engineering-plugin
+- **Microsoft Playwright repository:** https://playwright.dev/ · https://github.com/microsoft/playwright
 
 | Skill | Priority | Why |
 | --- | --- | --- |
@@ -85,7 +87,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | prototype | P1 | Validate ideas and technical approaches before full implementation. |
 | scaffold-exercises | P3 | Create guided implementation exercises. |
 | karpathy-guidelines | P1 | Third-party Karpathy-inspired principles: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Encourages explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria; includes a portable Agent Skill plus documented Claude Code and Cursor integrations. |
-| playwright-cli | P0 | End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit. |
+| `playwright-cli` | **Playwright Test & Automation** | `P0` | `/playwright-cli` | Fast, reliable cross-browser end-to-end testing, tracing, snapshot comparison, and headless browser automation for Chromium, Firefox, and WebKit. |
 | obsidian-markdown | P0 | Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows. |
 | google-workspace-cli | P1 | Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically. |
 | `typescript-tailwind-patterns` | **TypeScript & Tailwind Patterns** | `P1` | `/typescript-tailwind-patterns` | Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design. |
@@ -108,6 +110,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `obsidian-developer-second-brain` | **Obsidian Developer Second Brain** | `P0` | `/obsidian-developer-second-brain` | Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync. |
 | `claude-3-7-hybrid-reasoning` | **Claude 3.7 Hybrid Reasoning** | `P0` | `/claude-3-7-hybrid-reasoning` | Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet. |
 | `cursor-0-45-agentic-rules` | **Cursor 0.45 Agentic Rules** | `P0` | `/cursor-0-45-agentic-rules` | Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits. |
+| `compound-engineering` | **Compound Engineering Plugin** | `P0` | `/compound-engineering` | EveryInc's 4-phase compounding engineering loop (Plan → Build → Review → Compound) capturing reusable patterns and repo memory so future development compounds in velocity. |
 
 ## 02 Matt Pocock
 
@@ -219,6 +222,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Impeccable repository / documentation:** https://github.com/pbakaus/impeccable · https://impeccable.style/docs
 - **Apple Human Interface Guidelines:** https://developer.apple.com/design/human-interface-guidelines/
 - **Google Chrome Modern Web Guidance:** https://developer.chrome.com/docs/modern-web-guidance · https://github.com/GoogleChrome/modern-web-guidance-src
+- **21st.dev Magic UI & MCP repository:** https://21st.dev · https://github.com/21st-dev/cli
 
 | Skill / Capability | Priority | Why |
 | --- | --- | --- |
@@ -246,6 +250,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `stageshow-ui-presentation` | **Stageshow UI Presentation** | `P1` | `/stageshow-ui-presentation` | Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges. |
 | `extract-design-tokens` | **Design Token Extractor** | `P1` | `/extract-design-tokens` | Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites. |
 | `modern-web-guidance` | **Google Chrome Modern Web Guidance** | `P0` | `/modern-web-guidance` | Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan). |
+| `21st-magic-ui` | **21st.dev Magic UI & MCP** | `P0` | `/21st-magic-ui` | 21st.dev design engineering component marketplace and Magic MCP server. Search 12,000+ React, Tailwind CSS, and shadcn-ui components, generate UI with AI, and install via npx @21st-dev/cli install-skill. |
 
 
 ## 06 GSD
@@ -323,6 +328,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **MemPalace repository:** https://github.com/MemPalace/mempalace
 - **T3 Code documentation / repository:** https://github.com/pingdotgg/t3code
 - **Everything Claude Code (ECC) website / repository:** https://ecc.tools · https://github.com/affaan-m/ecc
+- **Sellbird repository:** https://sellbird.ai · https://github.com/ethanplusai/sellbird
 
 | Tool / Framework | Priority | Why |
 | --- | --- | --- |
@@ -352,6 +358,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 
 | `mastra-agent-framework` | **Mastra Agent Framework** | `P1` | `/mastra-agent-framework` | Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals. |
+| `sellbird` | **Sellbird Autonomous Outreach** | `P1` | `/sellbird` | Open-source autonomous AI sales, lead enrichment, and outreach engine running on local Claude / ChatGPT / Codex plans with automated email verification and campaign triage. |
 
 ## 10 AI Infrastructure
 
@@ -548,7 +555,10 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | sentry-diagnostics | https://sentry.io/ | https://github.com/getsentry/sentry | Developer-first error tracking, crash reporting, and tracing platform (45k+ stars). |
 | turborepo | https://turbo.build/repo | https://github.com/vercel/turborepo | High-performance monorepo build system and task caching (31k+ stars). |
 | vercel-ai-sdk | https://sdk.vercel.ai/docs | https://github.com/vercel/ai | Unified TypeScript/JavaScript AI SDK for streaming and tool calling (27k+ stars). |
-| playwright-cli | https://playwright.dev/ | https://github.com/microsoft/playwright-cli | Microsoft cross-browser end-to-end testing and automation CLI (15k+ stars). |
+| playwright-cli | https://playwright.dev/ | https://github.com/microsoft/playwright | Microsoft cross-browser end-to-end testing, tracing, snapshot comparison, and headless automation framework (71k+ stars). |
+| compound-engineering | https://every.to | https://github.com/everyinc/compound-engineering-plugin | EveryInc's compounding engineering loop and agentic skills for Claude Code, Cursor, and AI assistants (2.8k+ stars). |
+| 21st-magic-ui | https://21st.dev/ | https://github.com/21st-dev/cli | 21st.dev design engineering component marketplace, AI UI generator, and Magic MCP server (5.4k+ stars). |
+| sellbird | https://sellbird.ai/ | https://github.com/ethanplusai/sellbird | Open-source autonomous AI sales, lead enrichment, and outreach engine running on local AI plans (4.2k+ stars). |
 | remotion-video | https://www.remotion.dev/ | https://github.com/remotion-dev/skills | Programmatic video creation and motion graphics in React (6.5k+ stars). |
 | cloudflare-skills | https://developers.cloudflare.com/workers/ | https://github.com/cloudflare/skills | Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars). |
 | supabase-skills | https://supabase.com/docs | https://github.com/supabase/agent-skills | Supabase Postgres database best practices, pgvector, and auth workflows (3k+ stars). |

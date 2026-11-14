@@ -45,7 +45,7 @@ handoff,P1,Transfer project context between sessions and agents.
 prototype,P1,Validate ideas and technical approaches before full implementation.
 scaffold-exercises,P3,Create guided implementation exercises.
 karpathy-guidelines,P1,"Third-party Karpathy-inspired behavioral guidelines: Think Before Coding, Simplicity First, Surgical Changes and Goal-Driven Execution. Promotes explicit assumptions, minimal solutions, request-scoped edits and verifiable success criteria. Includes a portable Agent Skill; README documents Claude Code plugin and Cursor rule. Not an official Andrej Karpathy project."
-playwright-cli,P0,"End-to-end browser testing, tracing, snapshot comparison, and headless browser automation CLI for Chromium, Firefox, and WebKit.",https://github.com/microsoft/playwright-cli,https://playwright.dev/
+playwright-cli,Playwright Test & Automation,P0,/playwright-cli,"Fast, reliable cross-browser end-to-end testing, tracing, snapshot comparison, and headless browser automation for Chromium, Firefox, and WebKit."
 obsidian-markdown,P0,"Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows.",https://github.com/kepano/obsidian-skills,https://stephango.com/file-over-app
 google-workspace-cli,P1,"Google Workspace agent automation CLI for managing Gmail, Google Drive, Docs, Sheets, and Calendar tasks programmatically.",https://github.com/googleworkspace/cli,https://developers.google.com/workspace
 typescript-tailwind-patterns,TypeScript & Tailwind Patterns,P1,/typescript-tailwind-patterns,"Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design."
@@ -68,6 +68,7 @@ stripe-link-checkout,Stripe Link 1-Click Checkout,P1,/stripe-link-checkout,"Stri
 obsidian-developer-second-brain,Obsidian Developer Second Brain,P0,/obsidian-developer-second-brain,"Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync."
 claude-3-7-hybrid-reasoning,Claude 3.7 Hybrid Reasoning,P0,/claude-3-7-hybrid-reasoning,"Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet."
 cursor-0-45-agentic-rules,Cursor 0.45 Agentic Rules,P0,/cursor-0-45-agentic-rules,"Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits."
+compound-engineering,Compound Engineering Plugin,P0,/compound-engineering,"EveryInc's 4-phase compounding engineering loop (Plan → Build → Review → Compound) capturing reusable patterns and repo memory so future development compounds in velocity."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,
@@ -192,6 +193,7 @@ interface-feel-polish,Interface Feel & Tactile Physics,P1,/interface-feel-polish
 stageshow-ui-presentation,Stageshow UI Presentation,P1,/stageshow-ui-presentation,"Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges."
 extract-design-tokens,Design Token Extractor,P1,/extract-design-tokens,"Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites."
 modern-web-guidance,Google Chrome Modern Web Guidance,P0,/modern-web-guidance,"Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan)."
+21st-magic-ui,21st.dev Magic UI & MCP,P0,/21st-magic-ui,"21st.dev design engineering component marketplace and Magic MCP server. Search 12,000+ React, Tailwind CSS, and shadcn-ui components, generate UI with AI, and install via npx @21st-dev/cli install-skill."
 06 GSD,,
 Current official repository:,https://github.com/open-gsd/gsd-core (default branch: next),
 Current documentation:,https://github.com/open-gsd/gsd-core/tree/next/docs,
@@ -283,6 +285,7 @@ orca-agent,P0,"Multi-agent computer-use CLI and orchestration framework for exec
 herdr-orchestration,Herdr Multi-Agent Orchestration,P1,/herdr-orchestration,"Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination."
 agent-desktop-gui,Agent Desktop GUI,P1,/agent-desktop-gui,"Native desktop agent orchestration, operating system window management, and GUI interaction."
 mastra-agent-framework,Mastra Agent Framework,P1,/mastra-agent-framework,"Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals."
+sellbird,Sellbird Autonomous Outreach,P1,/sellbird,"Open-source autonomous AI sales, lead enrichment, and outreach engine running on local Claude / ChatGPT / Codex plans with automated email verification and campaign triage."
 10 AI Infrastructure,,,,Research
 Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
 Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
@@ -453,7 +456,10 @@ orca-agent,https://useorca.com/,https://github.com/stablyai/orca,Multi-agent orc
 sentry-diagnostics,https://sentry.io/,https://github.com/getsentry/sentry,"Developer-first error tracking, crash reporting, and tracing platform (45k+ stars)."
 turborepo,https://turbo.build/repo,https://github.com/vercel/turborepo,High-performance monorepo build system and task caching (31k+ stars).
 vercel-ai-sdk,https://sdk.vercel.ai/docs,https://github.com/vercel/ai,Unified TypeScript/JavaScript AI SDK for streaming and tool calling (27k+ stars).
-playwright-cli,https://playwright.dev/,https://github.com/microsoft/playwright-cli,Microsoft cross-browser end-to-end testing and automation CLI (15k+ stars).
+playwright-cli,https://playwright.dev/,https://github.com/microsoft/playwright,"Microsoft cross-browser end-to-end testing, tracing, snapshot comparison, and headless automation framework (71k+ stars)."
+compound-engineering,https://every.to,https://github.com/everyinc/compound-engineering-plugin,"EveryInc's compounding engineering loop and agentic skills for Claude Code, Cursor, and AI assistants (2.8k+ stars)."
+21st-magic-ui,https://21st.dev/,https://github.com/21st-dev/cli,"21st.dev design engineering component marketplace, AI UI generator, and Magic MCP server (5.4k+ stars)."
+sellbird,https://sellbird.ai/,https://github.com/ethanplusai/sellbird,"Open-source autonomous AI sales, lead enrichment, and outreach engine running on local AI plans (4.2k+ stars)."
 remotion-video,P1,"Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering.",https://github.com/remotion-dev/skills,https://www.remotion.dev/
 remotion-video,https://www.remotion.dev/,https://github.com/remotion-dev/skills,Programmatic video creation and motion graphics in React (6.5k+ stars).
 cloudflare-skills,https://developers.cloudflare.com/workers/,https://github.com/cloudflare/skills,"Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars)."
