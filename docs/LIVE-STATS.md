@@ -1,6 +1,6 @@
 # Live Upstream Skills Radar
 
-> **Last Synchronized:** `2026-11-14 13:11:54Z` | **Tracked Repositories:** `135`
+> **Last Synchronized:** `2026-11-14 13:20:50Z` | **Tracked Repositories:** `136`
 
 Real-time tracking of community engagement, release versions, and maintenance activity across all upstream AI coding skill repositories.
 
@@ -119,28 +119,29 @@ Real-time tracking of community engagement, release versions, and maintenance ac
 | 111 | [firecrawl/cli](https://github.com/firecrawl/cli) | **⭐ 684** | `v1.29.0` | `Other` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/firecrawl/cli?style=flat&label=stars) |
 | 112 | [solana-foundation/solana-dev-skill](https://github.com/solana-foundation/solana-dev-skill) | **⭐ 590** | `v2.8.0` | `MIT` | 2026-11-04 | ![Stars](https://img.shields.io/github/stars/solana-foundation/solana-dev-skill?style=flat&label=stars) |
 | 113 | [elevenlabs/skills](https://github.com/elevenlabs/skills) | **⭐ 565** | `latest` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/elevenlabs/skills?style=flat&label=stars) |
-| 114 | [firebase/agent-skills](https://github.com/firebase/agent-skills) | **⭐ 513** | `latest` | `Apache-2.0` | 2026-11-09 | ![Stars](https://img.shields.io/github/stars/firebase/agent-skills?style=flat&label=stars) |
-| 115 | [currents-dev/playwright-best-practices-skill](https://github.com/currents-dev/playwright-best-practices-skill) | **⭐ 430** | `latest` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/currents-dev/playwright-best-practices-skill?style=flat&label=stars) |
-| 116 | [sveltejs/ai-tools](https://github.com/sveltejs/ai-tools) | **⭐ 339** | `@sveltejs/pi@0.1.0` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/sveltejs/ai-tools?style=flat&label=stars) |
-| 117 | [arvindrk/extract-design-system](https://github.com/arvindrk/extract-design-system) | **⭐ 290** | `v0.1.11` | `MIT` | 2026-09-05 | ![Stars](https://img.shields.io/github/stars/arvindrk/extract-design-system?style=flat&label=stars) |
-| 118 | [better-auth/skills](https://github.com/better-auth/skills) | **⭐ 231** | `latest` | `Other` | 2026-10-19 | ![Stars](https://img.shields.io/github/stars/better-auth/skills?style=flat&label=stars) |
-| 119 | [coderabbitai/skills](https://github.com/coderabbitai/skills) | **⭐ 216** | `v1.2.2` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/coderabbitai/skills?style=flat&label=stars) |
-| 120 | [SpillwaveSolutions/design-doc-mermaid](https://github.com/SpillwaveSolutions/design-doc-mermaid) | **⭐ 186** | `v1.1.1` | `Other` | 2026-08-24 | ![Stars](https://img.shields.io/github/stars/SpillwaveSolutions/design-doc-mermaid?style=flat&label=stars) |
-| 121 | [neondatabase/agent-skills](https://github.com/neondatabase/agent-skills) | **⭐ 113** | `latest` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/neondatabase/agent-skills?style=flat&label=stars) |
-| 122 | [mastra-ai/skills](https://github.com/mastra-ai/skills) | **⭐ 104** | `latest` | `Other` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/mastra-ai/skills?style=flat&label=stars) |
-| 123 | [uizze/uizze](https://github.com/uizze/uizze) | **⭐ 101** | `v1.3.1` | `MIT` | 2026-11-01 | ![Stars](https://img.shields.io/github/stars/uizze/uizze?style=flat&label=stars) |
-| 124 | [clerk/skills](https://github.com/clerk/skills) | **⭐ 94** | `latest` | `Other` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/clerk/skills?style=flat&label=stars) |
-| 125 | [prisma/skills](https://github.com/prisma/skills) | **⭐ 80** | `latest` | `MIT` | 2026-11-10 | ![Stars](https://img.shields.io/github/stars/prisma/skills?style=flat&label=stars) |
-| 126 | [ScrapeGraphAI/just-scrape](https://github.com/ScrapeGraphAI/just-scrape) | **⭐ 76** | `latest` | `MIT` | 2026-09-21 | ![Stars](https://img.shields.io/github/stars/ScrapeGraphAI/just-scrape?style=flat&label=stars) |
-| 127 | [convex/agent-skills](https://github.com/convex/agent-skills) | **⭐ 69** | `latest` | `Apache-2.0` | 2026-10-29 | ![Stars](https://img.shields.io/github/stars/convex/agent-skills?style=flat&label=stars) |
-| 128 | [prime-skills/runcomfy-agent-skills](https://github.com/prime-skills/runcomfy-agent-skills) | **⭐ 62** | `latest` | `MIT` | 2026-05-15 | ![Stars](https://img.shields.io/github/stars/prime-skills/runcomfy-agent-skills?style=flat&label=stars) |
-| 129 | [nrwl/nx-ai-agents-config](https://github.com/nrwl/nx-ai-agents-config) | **⭐ 30** | `latest` | `MIT` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/nrwl/nx-ai-agents-config?style=flat&label=stars) |
-| 130 | [21st-dev/cli](https://github.com/21st-dev/cli) | **⭐ 21** | `latest` | `Other` | 2026-01-27 | ![Stars](https://img.shields.io/github/stars/21st-dev/cli?style=flat&label=stars) |
-| 131 | [momentic-ai/skills](https://github.com/momentic-ai/skills) | **⭐ 17** | `latest` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/momentic-ai/skills?style=flat&label=stars) |
-| 132 | [2dmurali/review-loop-skill](https://github.com/2dmurali/review-loop-skill) | **⭐ 7** | `latest` | `Other` | 2026-05-08 | ![Stars](https://img.shields.io/github/stars/2dmurali/review-loop-skill?style=flat&label=stars) |
-| 133 | [coderabbitai/antigravity-plugin](https://github.com/coderabbitai/antigravity-plugin) | **⭐ 3** | `latest` | `MIT` | 2026-10-30 | ![Stars](https://img.shields.io/github/stars/coderabbitai/antigravity-plugin?style=flat&label=stars) |
-| 134 | [kytheros/strata](https://github.com/kytheros/strata) | **⭐ 1** | `v2.3.0` | `Apache-2.0` | 2026-08-04 | ![Stars](https://img.shields.io/github/stars/kytheros/strata?style=flat&label=stars) |
-| 135 | [Adelo31/omniroute](https://github.com/Adelo31/omniroute) | **⭐ 0** | `latest` | `MIT` | 2026-10-14 | ![Stars](https://img.shields.io/github/stars/Adelo31/omniroute?style=flat&label=stars) |
+| 114 | [microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples) | **⭐ 544** | `latest` | `MIT` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/microsoft/react-native-windows-samples?style=flat&label=stars) |
+| 115 | [firebase/agent-skills](https://github.com/firebase/agent-skills) | **⭐ 513** | `latest` | `Apache-2.0` | 2026-11-09 | ![Stars](https://img.shields.io/github/stars/firebase/agent-skills?style=flat&label=stars) |
+| 116 | [currents-dev/playwright-best-practices-skill](https://github.com/currents-dev/playwright-best-practices-skill) | **⭐ 430** | `latest` | `MIT` | 2026-11-08 | ![Stars](https://img.shields.io/github/stars/currents-dev/playwright-best-practices-skill?style=flat&label=stars) |
+| 117 | [sveltejs/ai-tools](https://github.com/sveltejs/ai-tools) | **⭐ 339** | `@sveltejs/pi@0.1.0` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/sveltejs/ai-tools?style=flat&label=stars) |
+| 118 | [arvindrk/extract-design-system](https://github.com/arvindrk/extract-design-system) | **⭐ 290** | `v0.1.11` | `MIT` | 2026-09-05 | ![Stars](https://img.shields.io/github/stars/arvindrk/extract-design-system?style=flat&label=stars) |
+| 119 | [better-auth/skills](https://github.com/better-auth/skills) | **⭐ 231** | `latest` | `Other` | 2026-10-19 | ![Stars](https://img.shields.io/github/stars/better-auth/skills?style=flat&label=stars) |
+| 120 | [coderabbitai/skills](https://github.com/coderabbitai/skills) | **⭐ 216** | `v1.2.2` | `MIT` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/coderabbitai/skills?style=flat&label=stars) |
+| 121 | [SpillwaveSolutions/design-doc-mermaid](https://github.com/SpillwaveSolutions/design-doc-mermaid) | **⭐ 186** | `v1.1.1` | `Other` | 2026-08-24 | ![Stars](https://img.shields.io/github/stars/SpillwaveSolutions/design-doc-mermaid?style=flat&label=stars) |
+| 122 | [neondatabase/agent-skills](https://github.com/neondatabase/agent-skills) | **⭐ 113** | `latest` | `Apache-2.0` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/neondatabase/agent-skills?style=flat&label=stars) |
+| 123 | [mastra-ai/skills](https://github.com/mastra-ai/skills) | **⭐ 104** | `latest` | `Other` | 2026-11-11 | ![Stars](https://img.shields.io/github/stars/mastra-ai/skills?style=flat&label=stars) |
+| 124 | [uizze/uizze](https://github.com/uizze/uizze) | **⭐ 101** | `v1.3.1` | `MIT` | 2026-11-01 | ![Stars](https://img.shields.io/github/stars/uizze/uizze?style=flat&label=stars) |
+| 125 | [clerk/skills](https://github.com/clerk/skills) | **⭐ 94** | `latest` | `Other` | 2026-11-13 | ![Stars](https://img.shields.io/github/stars/clerk/skills?style=flat&label=stars) |
+| 126 | [prisma/skills](https://github.com/prisma/skills) | **⭐ 80** | `latest` | `MIT` | 2026-11-10 | ![Stars](https://img.shields.io/github/stars/prisma/skills?style=flat&label=stars) |
+| 127 | [ScrapeGraphAI/just-scrape](https://github.com/ScrapeGraphAI/just-scrape) | **⭐ 76** | `latest` | `MIT` | 2026-09-21 | ![Stars](https://img.shields.io/github/stars/ScrapeGraphAI/just-scrape?style=flat&label=stars) |
+| 128 | [convex/agent-skills](https://github.com/convex/agent-skills) | **⭐ 69** | `latest` | `Apache-2.0` | 2026-10-29 | ![Stars](https://img.shields.io/github/stars/convex/agent-skills?style=flat&label=stars) |
+| 129 | [prime-skills/runcomfy-agent-skills](https://github.com/prime-skills/runcomfy-agent-skills) | **⭐ 62** | `latest` | `MIT` | 2026-05-15 | ![Stars](https://img.shields.io/github/stars/prime-skills/runcomfy-agent-skills?style=flat&label=stars) |
+| 130 | [nrwl/nx-ai-agents-config](https://github.com/nrwl/nx-ai-agents-config) | **⭐ 30** | `latest` | `MIT` | 2026-11-12 | ![Stars](https://img.shields.io/github/stars/nrwl/nx-ai-agents-config?style=flat&label=stars) |
+| 131 | [21st-dev/cli](https://github.com/21st-dev/cli) | **⭐ 21** | `latest` | `Other` | 2026-01-27 | ![Stars](https://img.shields.io/github/stars/21st-dev/cli?style=flat&label=stars) |
+| 132 | [momentic-ai/skills](https://github.com/momentic-ai/skills) | **⭐ 17** | `latest` | `Other` | 2026-11-14 | ![Stars](https://img.shields.io/github/stars/momentic-ai/skills?style=flat&label=stars) |
+| 133 | [2dmurali/review-loop-skill](https://github.com/2dmurali/review-loop-skill) | **⭐ 7** | `latest` | `Other` | 2026-05-08 | ![Stars](https://img.shields.io/github/stars/2dmurali/review-loop-skill?style=flat&label=stars) |
+| 134 | [coderabbitai/antigravity-plugin](https://github.com/coderabbitai/antigravity-plugin) | **⭐ 3** | `latest` | `MIT` | 2026-10-30 | ![Stars](https://img.shields.io/github/stars/coderabbitai/antigravity-plugin?style=flat&label=stars) |
+| 135 | [kytheros/strata](https://github.com/kytheros/strata) | **⭐ 1** | `v2.3.0` | `Apache-2.0` | 2026-08-04 | ![Stars](https://img.shields.io/github/stars/kytheros/strata?style=flat&label=stars) |
+| 136 | [Adelo31/omniroute](https://github.com/Adelo31/omniroute) | **⭐ 0** | `latest` | `MIT` | 2026-10-14 | ![Stars](https://img.shields.io/github/stars/Adelo31/omniroute?style=flat&label=stars) |
 
 ---
 *Automatically synchronized via `.github/workflows/sync-metrics.yml` and `scripts/sync-github-metrics.py`.*
