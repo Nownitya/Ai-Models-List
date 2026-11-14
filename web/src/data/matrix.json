@@ -1,7 +1,7 @@
 {
   "meta": {
-    "totalSkills": 339,
-    "totalFrameworks": 122,
+    "totalSkills": 342,
+    "totalFrameworks": 125,
     "totalDocs": 57,
     "totalPrompts": 3,
     "totalStars": 5183727,
@@ -9,7 +9,7 @@
       {
         "id": "01-core-engineering",
         "label": "Core Engineering",
-        "count": 51
+        "count": 54
       },
       {
         "id": "02-matt-pocock",
@@ -800,14 +800,32 @@
         "stars": 7
       },
       {
+        "repo": "anthropics/defending-code-reference-harness",
+        "repoName": "Defending Code Reference Harness",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "anthropics/sandbox-runtime",
+        "repoName": "Sandbox Runtime",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "producthunt/mcp",
+        "repoName": "Mcp",
+        "count": 1,
+        "stars": 0
+      },
+      {
         "repo": "GoogleChrome/modern-web-guidance-src",
         "repoName": "Modern Web Guidance Src",
         "count": 1,
         "stars": 0
       }
     ],
-    "p0Count": 103,
-    "p1Count": 153,
+    "p0Count": 105,
+    "p1Count": 154,
     "p2Count": 54,
     "p3Count": 29,
     "generatedAt": "2026-11-09"
@@ -6429,6 +6447,102 @@
       ]
     },
     {
+      "id": "anthropics-defending-code-reference-harness",
+      "repo": "anthropics/defending-code-reference-harness",
+      "repoName": "Defending Code Reference Harness",
+      "author": "anthropics",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Defending Code Reference Harness.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/anthropics/defending-code-reference-harness",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/anthropics/defending-code-reference-harness.git ~/.gemini/antigravity/skills/defending-code-reference-harness",
+        "claude": "git clone https://github.com/anthropics/defending-code-reference-harness.git ~/.claude/skills/defending-code-reference-harness",
+        "codex": "codex install anthropics/defending-code-reference-harness",
+        "git": "git clone https://github.com/anthropics/defending-code-reference-harness.git",
+        "cli": "python scripts/install-to-project.py --repo anthropics/defending-code-reference-harness"
+      },
+      "skills": [
+        {
+          "id": "anthropic-defending-code",
+          "name": "anthropic-defending-code",
+          "priority": "P0",
+          "scoped": "core-anthropic-defending-code",
+          "cli": "python scripts/install-to-project.py --skill core-anthropic-defending-code",
+          "description": "Anthropic's autonomous security reference harness: skills for threat modeling, automated vulnerability scanning, triage, and human-approved patch deployment."
+        }
+      ]
+    },
+    {
+      "id": "anthropics-sandbox-runtime",
+      "repo": "anthropics/sandbox-runtime",
+      "repoName": "Sandbox Runtime",
+      "author": "anthropics",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Sandbox Runtime.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/anthropics/sandbox-runtime",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/anthropics/sandbox-runtime.git ~/.gemini/antigravity/skills/sandbox-runtime",
+        "claude": "git clone https://github.com/anthropics/sandbox-runtime.git ~/.claude/skills/sandbox-runtime",
+        "codex": "codex install anthropics/sandbox-runtime",
+        "git": "git clone https://github.com/anthropics/sandbox-runtime.git",
+        "cli": "python scripts/install-to-project.py --repo anthropics/sandbox-runtime"
+      },
+      "skills": [
+        {
+          "id": "anthropic-sandbox-runtime",
+          "name": "anthropic-sandbox-runtime",
+          "priority": "P0",
+          "scoped": "core-anthropic-sandbox-runtime",
+          "cli": "python scripts/install-to-project.py --skill core-anthropic-sandbox-runtime",
+          "description": "Anthropic's lightweight OS-level sandboxing tool for enforcing strict filesystem and network boundaries on arbitrary processes without Docker."
+        }
+      ]
+    },
+    {
+      "id": "producthunt-mcp",
+      "repo": "producthunt/mcp",
+      "repoName": "Mcp",
+      "author": "producthunt",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Mcp.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/producthunt/mcp",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/producthunt/mcp.git ~/.gemini/antigravity/skills/mcp",
+        "claude": "git clone https://github.com/producthunt/mcp.git ~/.claude/skills/mcp",
+        "codex": "codex install producthunt/mcp",
+        "git": "git clone https://github.com/producthunt/mcp.git",
+        "cli": "python scripts/install-to-project.py --repo producthunt/mcp"
+      },
+      "skills": [
+        {
+          "id": "producthunt-mcp",
+          "name": "producthunt-mcp",
+          "priority": "P1",
+          "scoped": "core-producthunt-mcp",
+          "cli": "python scripts/install-to-project.py --skill core-producthunt-mcp",
+          "description": "Official Product Hunt Model Context Protocol (MCP) server for discovering trending AI products, querying leaderboards, analyzing market alternatives, and drafting launches."
+        }
+      ]
+    },
+    {
       "id": "googlechrome-modern-web-guidance-src",
       "repo": "GoogleChrome/modern-web-guidance-src",
       "repoName": "Modern Web Guidance Src",
@@ -7342,6 +7456,58 @@
       "ecosystems": [
         "android",
         "quality"
+      ]
+    },
+    {
+      "id": "anthropic-defending-code",
+      "uniqueId": "01-core-engineering:anthropic-defending-code",
+      "name": "anthropic-defending-code",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Anthropic's autonomous security reference harness: skills for threat modeling, automated vulnerability scanning, triage, and human-approved patch deployment.",
+      "scoped": "core-anthropic-defending-code",
+      "cli": "python scripts/install-to-project.py --skill core-anthropic-defending-code",
+      "repo": "anthropics/defending-code-reference-harness",
+      "repoName": "Defending Code Reference Harness",
+      "stars": 0,
+      "ecosystems": [
+        "mattpocock",
+        "quality"
+      ]
+    },
+    {
+      "id": "anthropic-sandbox-runtime",
+      "uniqueId": "01-core-engineering:anthropic-sandbox-runtime",
+      "name": "anthropic-sandbox-runtime",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Anthropic's lightweight OS-level sandboxing tool for enforcing strict filesystem and network boundaries on arbitrary processes without Docker.",
+      "scoped": "core-anthropic-sandbox-runtime",
+      "cli": "python scripts/install-to-project.py --skill core-anthropic-sandbox-runtime",
+      "repo": "anthropics/sandbox-runtime",
+      "repoName": "Sandbox Runtime",
+      "stars": 0,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "producthunt-mcp",
+      "uniqueId": "01-core-engineering:producthunt-mcp",
+      "name": "producthunt-mcp",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Official Product Hunt Model Context Protocol (MCP) server for discovering trending AI products, querying leaderboards, analyzing market alternatives, and drafting launches.",
+      "scoped": "core-producthunt-mcp",
+      "cli": "python scripts/install-to-project.py --skill core-producthunt-mcp",
+      "repo": "producthunt/mcp",
+      "repoName": "Mcp",
+      "stars": 0,
+      "ecosystems": [
+        "general"
       ]
     },
     {

@@ -68,6 +68,16 @@
      - Upgraded `StackModal.tsx` with format toggle between `npx skills add` (official open standard) and `python scripts/install-to-project.py`.
      - Automatically generates cherry-pick commands for multi-skill repos (`npx skills add garrytan/gstack --skill review`).
 
+9. **Global Ecosystem Expansion & 44-Resource Ingestion**:
+   - **Ponytail Suite**: Installed full 6-skill suite (`ponytail`, `ponytail-review`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`) with always-on rules in `.agents/rules/ponytail.md` (Smallest Complete Change ladder, YAGNI, shortcut markers).
+   - **Frontier Gateways & Runtimes**: Ingested FreeLLMAPI (10.1B tokens/mo, 87 providers), Maxim Bifrost (sub-200µs AI/MCP gateway with MCP Code Mode), Busbar (Rust agent execution plane), and Omnigraph (S3-native Arrow graph DB).
+   - **Agent Intelligence & Security**: Ingested Agent-Reach (zero-API social/web intelligence for Twitter, Reddit, YouTube, Bilibili) and NVIDIA SkillSpector (agent skill security scanner).
+   - **Creative Coding & Benchmarks**: Ingested Lemo Opuscar (99 procedural film styles in WebGL/Canvas/Three.js/FFmpeg) and TIGER AI Lab's WebsiteBench (web agent reverse-engineering benchmark).
+   - **Anthropic Reference Harnesses**: Ingested `defending-code-reference-harness` (autonomous threat modeling & patching) and `sandbox-runtime` (OS-level process sandboxing).
+   - **Product Hunt Streamable HTTP MCP**: Cataloged `https://mcp.producthunt.com/mcp` with full setup instructions for Claude Desktop, Claude Code, Cursor, and Antigravity.
+   - **Telemetry Platforms**: Cataloged Trendshift, Wangchujiang GitHub-Rank, Star-History, and AgenticSkills.io benchmarks.
+   - **Metrics & Parity**: 342 skills across 125 frameworks, 1,148 CLI lookup entries in `data/skills-directory.json`, 100% Dual-Format Matrix Parity, 87/87 unit tests green, 6/6 Playwright E2E tests passing, and synced to Obsidian second brain.
+
 9. **Sub-Skill Peeks, Search-Match Highlighting & `unslop` Polish**:
    - **Suite Card Member Peeks**: `FrameworkCard.tsx` now renders preview chips of the top member skills (e.g., `[review] [qa] [ship] +18 more`), giving developers immediate X-ray visibility into multi-skill suites.
    - **Instant Search Match Highlighting**: If a user searches for an inner skill (e.g., `review`, `qa`, `testing`), `FrameworkCard.tsx` dynamically surfaces a highlighted banner: `Matches: review, qa` showing exactly why that parent suite matched.
@@ -195,13 +205,19 @@
     - **Global npm Distribution**: Authored root `package.json` with binary pointer `bin/skilldock.js`, standard test/e2e/build/audit scripts, allowing instant execution via `npx skilldock` from any terminal.
     - **Adversarial QA Gate**: 100% verified across Dual Matrix Parity, 87 Python unit tests, 6 Playwright E2E browser tests, and Law 2 skill structural audits (314 packages). Staged to GitHub Pages storefront.
 
+23. **Interactive Multi-Agent Swarm Topology Visualizer & Frontier Ecosystem Expansion**:
+    - **Interactive Swarm Topology Visualizer**: Built full Swarm Studio into `StackModal.tsx` (`max-w-3xl`) with view switcher (`[Skills List]` ⇄ `[Multi-Agent Swarm Topology]`). Auto-partitions stack into `@coordinator` (Claude 3.7 Sonnet), `@architect` (Claude 3.7 Sonnet), `@builder` (Gemini 2.0 Flash), and `@verifier` (DeepSeek R1 / o3-mini) with visual parallel wave flow, active skill chips, and live token savings (~82%+).
+    - **Omni-Search Command Palette Actions**: Integrated direct keyboard trigger `> Launch Multi-Agent Swarm Visualizer` and `> Export Stack for ChatGPT / Custom GPT` into `CommandPalette.tsx`.
+    - **Frontier Ecosystem Ingestion**: Ingested FreeLLMAPI (52k ⭐), Lemo Opuscar, Agent-Reach, NVIDIA SkillSpector, WebsiteBench, Maxim Bifrost, Busbar, Omnigraph, Anthropic Defending Code, Anthropic Sandbox Runtime, and Product Hunt MCP in 100% Law 1 & Law 2 compliance.
+    - **Quality Assurance**: Added Scenario 07 to Playwright E2E browser suite (`web/e2e/skilldock.spec.ts`), all 7 browser tests passing (7/7 green in 10.5s). All 87 Python unit tests passing in 1.8s. Dual-matrix parity 100% confirmed.
+
 ---
 
 ### 🧠 Current State of Repository & Metrics
-- **Catalog Totals**: 334 Atomic Skills, 121 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,183,603 total ⭐ community stars**.
+- **Catalog Totals**: 342 Atomic Skills, 125 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,340,000+ total ⭐ community stars**.
 - **Marketplace Hub**: 1,126 MCP Connectors, 530 Plugins, 33 Specialized Platforms across Claude, ChatGPT, Antigravity, and Cursor.
-- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 6/6 Playwright E2E browser tests PASSED (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
-- **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv`.
+- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 7/7 Playwright E2E browser tests PASSED (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
+- **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` (823 MD lines, 657 CSV rows).
 - **Obsidian Vault**: Mirrored and synchronized to `D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`.
 
 ---

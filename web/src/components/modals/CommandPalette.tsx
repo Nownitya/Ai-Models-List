@@ -197,14 +197,34 @@ export const CommandPalette: React.FC = () => {
         onAction: () => setWebMcpModalOpen(true),
       })
     }
+    if (q.includes('swarm') || q.includes('team') || q.includes('orchestrat') || q.includes('worker') || q.includes('topology')) {
+      actions.push({
+        type: 'action',
+        id: 'action-swarm',
+        title: 'Launch Multi-Agent Swarm Visualizer',
+        subtitle: 'Interactive Coordinator ⇄ Workers topology, partitioned roles, and Swarm Briefs',
+        tag: 'Swarm Studio',
+        onAction: () => setStackModalOpen(true, 'swarm'),
+      })
+    }
     if (q.includes('stack') || q.includes('basket') || q.includes('export')) {
       actions.push({
         type: 'action',
         id: 'action-stack',
         title: 'View Active Stack & Token Budget',
-        subtitle: 'Inspect cherry-picked skills and export Cursor, Claude, or Obsidian configs',
+        subtitle: 'Inspect cherry-picked skills and export Cursor, Claude, ChatGPT, or Obsidian configs',
         tag: 'Stack Action',
-        onAction: () => setStackModalOpen(true),
+        onAction: () => setStackModalOpen(true, 'items'),
+      })
+    }
+    if (q.includes('gpt') || q.includes('chatgpt') || q.includes('custom gpt') || q.includes('action schema')) {
+      actions.push({
+        type: 'action',
+        id: 'action-chatgpt',
+        title: 'Export Stack for ChatGPT / Custom GPT',
+        subtitle: 'Generate OpenAPI 3.1.0 gateway schemas and Custom GPT instructions',
+        tag: 'OpenAI Action',
+        onAction: () => setStackModalOpen(true, 'items'),
       })
     }
     if (q.includes('priority') || q.includes('guide') || q.includes('p0') || q.includes('tax')) {

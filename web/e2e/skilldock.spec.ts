@@ -144,4 +144,40 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     // Close modal
     await page.keyboard.press('Escape')
   })
+
+  test('07: Interactive Multi-Agent Swarm Topology Visualizer & Role Partitioning', async ({ page }) => {
+    await page.goto('/?stack=taste-skill,unslop,systematic-debugging,writing-plans')
+
+    // Open Stack Modal
+    const stackBtn = page.locator('header').getByRole('button', { name: /Stack/i })
+    await stackBtn.click()
+
+    // Switch to Multi-Agent Swarm Topology View
+    const swarmTab = page.getByRole('button', { name: /Multi-Agent Swarm Topology/i })
+    await expect(swarmTab).toBeVisible()
+    await swarmTab.click()
+
+    // Verify Coordinator card
+    await expect(page.getByText('@coordinator')).toBeVisible()
+    await expect(page.getByText('claude-3-7-sonnet').first()).toBeVisible()
+
+    // Verify 3 Worker columns
+    await expect(page.getByText('@architect')).toBeVisible()
+    await expect(page.getByText('@builder')).toBeVisible()
+    await expect(page.getByText('@verifier')).toBeVisible()
+
+    // Verify skills are partitioned into the cards inside the modal
+    const modal = page.locator('.fixed.inset-0')
+    await expect(modal.getByText('/superpowers-systematic-debugging')).toBeVisible()
+    await expect(modal.getByText('/superpowers-writing-plans')).toBeVisible()
+
+    // Switch back to Skills List
+    const listTab = page.getByRole('button', { name: /Skills List/i })
+    await expect(listTab).toBeVisible()
+    await listTab.click()
+    await expect(modal.getByText('/ui-taste-skill')).toBeVisible()
+
+    // Close modal
+    await page.keyboard.press('Escape')
+  })
 })

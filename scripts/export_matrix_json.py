@@ -28,6 +28,21 @@ CAT_MAP = {
 }
 
 SKILL_TO_REPO = {
+    # Newly Ingested Ecosystems
+    'freellmapi': 'tashfeenahmed/freellmapi',
+    'lemo-opuscar': 'lemomo-ai/lemo-opuscar',
+    'agent-reach': 'Panniantong/Agent-Reach',
+    'skillspector': 'NVIDIA/SkillSpector',
+    'website-bench': 'TIGER-AI-Lab/WebsiteBench',
+    'omnigraph': 'ModernRelay/omnigraph',
+    'bifrost': 'maximhq/bifrost',
+    'busbar': 'GetBusbar/busbar',
+    'anthropic-defending-code': 'anthropics/defending-code-reference-harness',
+    'anthropic-sandbox-runtime': 'anthropics/sandbox-runtime',
+    'producthunt-mcp': 'producthunt/mcp',
+    'freecodecamp': 'freeCodeCamp/freeCodeCamp',
+    'star-history': 'star-history/star-history',
+
     # GSD Autonomous Engine
     'gsd-core': 'open-gsd/gsd-core',
     'gsd-new-project': 'open-gsd/gsd-core',

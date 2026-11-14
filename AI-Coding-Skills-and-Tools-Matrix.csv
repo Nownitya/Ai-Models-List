@@ -69,6 +69,9 @@ obsidian-developer-second-brain,Obsidian Developer Second Brain,P0,/obsidian-dev
 claude-3-7-hybrid-reasoning,Claude 3.7 Hybrid Reasoning,P0,/claude-3-7-hybrid-reasoning,"Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet."
 cursor-0-45-agentic-rules,Cursor 0.45 Agentic Rules,P0,/cursor-0-45-agentic-rules,"Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits."
 compound-engineering,Compound Engineering Plugin,P0,/compound-engineering,"EveryInc's 4-phase compounding engineering loop (Plan → Build → Review → Compound) capturing reusable patterns and repo memory so future development compounds in velocity."
+anthropic-defending-code,Anthropic Defending Code,P0,/anthropic-defending-code,"Anthropic's autonomous security reference harness: skills for threat modeling, automated vulnerability scanning, triage, and human-approved patch deployment."
+anthropic-sandbox-runtime,Anthropic Sandbox Runtime,P0,/anthropic-sandbox-runtime,"Anthropic's lightweight OS-level sandboxing tool for enforcing strict filesystem and network boundaries on arbitrary processes without Docker."
+producthunt-mcp,Product Hunt MCP,P1,/producthunt-mcp,"Official Product Hunt Model Context Protocol (MCP) server for discovering trending AI products, querying leaderboards, analyzing market alternatives, and drafting launches."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
 Official site:,https://aihero.dev/,

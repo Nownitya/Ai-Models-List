@@ -1,11 +1,32 @@
 import React, { useState } from 'react'
-import { X, Trash2, Download, Copy, Check, Diamond, Layers, Terminal, Cpu, Share2, Users, Bot } from 'lucide-react'
+import {
+  X,
+  Trash2,
+  Download,
+  Copy,
+  Check,
+  Diamond,
+  Layers,
+  Terminal,
+  Cpu,
+  Share2,
+  Users,
+  Bot,
+  Network,
+  ShieldCheck,
+  Hammer,
+  Compass,
+  ArrowDown,
+  Sparkles,
+} from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
-import { generateSwarmManifest, generateSwarmBrief } from '@/utils/swarmOrchestrator'
+import { generateSwarmManifest, generateSwarmBrief, partitionStackIntoSwarm } from '@/utils/swarmOrchestrator'
 
 export const StackModal: React.FC = () => {
   const isStackModalOpen = useSkillStore((s) => s.isStackModalOpen)
   const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
+  const stackModalView = useSkillStore((s) => s.stackModalView)
+  const setStackModalView = useSkillStore((s) => s.setStackModalView)
   const stack = useSkillStore((s) => s.stack)
   const removeFromStack = useSkillStore((s) => s.removeFromStack)
   const clearStack = useSkillStore((s) => s.clearStack)
@@ -34,6 +55,8 @@ export const StackModal: React.FC = () => {
   const p0Count = stack.filter((s) => s.priority === 'P0').length
   const p1Count = stack.filter((s) => s.priority === 'P1').length
   const otherCount = stack.length - p0Count - p1Count
+
+  const { plannerSkills, builderSkills, verifierSkills } = partitionStackIntoSwarm(stack)
 
   if (!isStackModalOpen) return null
 
@@ -232,7 +255,7 @@ export const StackModal: React.FC = () => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-2xl bg-[#09090b] border border-[#27272a] rounded-2xl p-6 space-y-5 relative shadow-2xl flex flex-col max-h-[85vh]"
+        className={`w-full ${stackModalView === 'swarm' ? 'max-w-3xl' : 'max-w-2xl'} bg-[#09090b] border border-[#27272a] rounded-2xl p-6 space-y-5 relative shadow-2xl flex flex-col max-h-[85vh] transition-all duration-200`}
       >
         {/* Header */}
         <div className="flex items-center justify-between pb-3 border-b border-[#27272a]">
@@ -319,50 +342,257 @@ export const StackModal: React.FC = () => {
           </div>
         )}
 
-        {/* Stack Items List */}
-        <div className="flex-1 overflow-y-auto space-y-2 pr-1">
-          {stack.length === 0 ? (
-            <div className="text-center py-12 text-zinc-500 text-xs">
-              Your stack is currently empty. Click the bookmark icon or cherry-pick skills from any suite to add them here.
-            </div>
-          ) : (
-            stack.map((item) => {
-              const activeCmd = getCommand(item)
-              return (
-                <div
-                  key={item.id}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-lg bg-[#111114] border border-[#27272a] text-xs"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
-                      {item.priority}
-                    </span>
-                    <span className="font-semibold text-zinc-100 truncate">{item.name}</span>
-                    <span className="text-xs font-mono text-zinc-400 truncate">/{item.scoped}</span>
-                    {item.repo && (
-                      <span className="hidden md:inline text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a]">
-                        {item.repo}
-                      </span>
-                    )}
-                  </div>
+        {/* View Switcher: Cherry-Picked List vs Swarm Visualizer */}
+        {stack.length > 0 && (
+          <div className="flex items-center gap-1 p-1 bg-[#141417] rounded-lg border border-[#27272a] text-xs font-mono shrink-0">
+            <button
+              onClick={() => setStackModalView('items')}
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-md transition-colors cursor-pointer ${
+                stackModalView === 'items'
+                  ? 'bg-[#27272a] text-white font-semibold shadow-xs'
+                  : 'text-zinc-400 hover:text-zinc-200'
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5" />
+              <span>Skills List ({stack.length})</span>
+            </button>
+            <button
+              onClick={() => setStackModalView('swarm')}
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-md transition-colors cursor-pointer ${
+                stackModalView === 'swarm'
+                  ? 'bg-purple-950/40 text-purple-200 border border-purple-500/40 font-semibold shadow-xs'
+                  : 'text-zinc-400 hover:text-purple-300'
+              }`}
+            >
+              <Bot className="w-3.5 h-3.5 text-purple-400" />
+              <span>Multi-Agent Swarm Topology</span>
+              <span className="px-1.5 py-0.5 leading-none rounded-full text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                Interactive
+              </span>
+            </button>
+          </div>
+        )}
 
-                  <div className="flex items-center gap-2 shrink-0">
-                    <span className="hidden sm:inline font-mono text-[11px] text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a] max-w-[240px] truncate select-all">
-                      {activeCmd}
+        {/* Main Content Area */}
+        {stackModalView === 'swarm' ? (
+          <div className="flex-1 overflow-y-auto space-y-4 pr-1">
+            {stack.length === 0 ? (
+              <div className="text-center py-12 text-zinc-500 text-xs">
+                Your stack is currently empty. Add skills to your stack to auto-partition them into an autonomous multi-agent sprint team.
+              </div>
+            ) : (
+              <div className="space-y-4 text-xs">
+                {/* Swarm Architecture Banner */}
+                <div className="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-lg bg-[#141417] border border-[#27272a] font-mono text-[11px]">
+                  <div className="flex items-center gap-2 text-zinc-300">
+                    <Network className="w-3.5 h-3.5 text-purple-400" />
+                    <span className="font-semibold text-white">SkillDock Multi-Agent Sprint Topology</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-zinc-400">
+                    <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20 text-[10px]">
+                      Antigravity Swarm
                     </span>
-                    <button
-                      onClick={() => removeFromStack(item.id)}
-                      className="p-1 rounded text-zinc-500 hover:text-rose-400 hover:bg-[#18181b] transition-colors cursor-pointer"
-                      title="Remove from stack"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
+                    <span className="px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20 text-[10px]">
+                      LangGraph
+                    </span>
+                    <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[10px]">
+                      Mastra
+                    </span>
                   </div>
                 </div>
-              )
-            })
-          )}
-        </div>
+
+                {/* Level 1: Coordinator Node */}
+                <div className="p-3.5 rounded-xl bg-gradient-to-b from-[#11161d] to-[#0d1117] border border-blue-500/30 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                      <span className="font-bold text-white text-xs font-mono">@coordinator</span>
+                      <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                        claude-3-7-sonnet
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono text-zinc-400">Release Gate & Board Host</span>
+                  </div>
+                  <p className="text-[11px] text-zinc-300 leading-relaxed">
+                    Owns end-to-end milestone delivery, shared message board dispatching, task wave sequencing, and final verification sign-off before shipping.
+                  </p>
+                </div>
+
+                {/* Connecting Flow Indicator */}
+                <div className="flex items-center justify-center gap-2 text-zinc-500 font-mono text-[10px]">
+                  <span className="h-px w-12 bg-[#27272a]" />
+                  <div className="flex items-center gap-1 text-purple-400 bg-[#141417] px-2 py-0.5 rounded border border-[#27272a]">
+                    <ArrowDown className="w-3 h-3" />
+                    <span>Parallel Wave Delegation</span>
+                  </div>
+                  <span className="h-px w-12 bg-[#27272a]" />
+                </div>
+
+                {/* Level 2: 3 Specialized Worker Columns */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  {/* Worker 1: Architect */}
+                  <div className="p-3 rounded-xl bg-[#111114] border border-amber-500/20 flex flex-col justify-between space-y-2.5">
+                    <div className="space-y-1.5">
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold text-white text-xs font-mono flex items-center gap-1.5">
+                          <Compass className="w-3.5 h-3.5 text-amber-400" />
+                          <span>@architect</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-[#18181b] text-amber-300 border border-amber-500/30">
+                          claude-3-7
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-zinc-400">ADRs, architecture, and task wave decomposition</p>
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-mono text-zinc-500">
+                        Assigned Skills ({plannerSkills.length}):
+                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {plannerSkills.length === 0 ? (
+                          <span className="text-[10px] text-zinc-600 italic">No planning skills</span>
+                        ) : (
+                          plannerSkills.map((s) => (
+                            <span
+                              key={s.id}
+                              className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#18181b] text-zinc-300 border border-[#27272a]"
+                            >
+                              /{s.scoped}
+                            </span>
+                          ))
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Worker 2: Builder */}
+                  <div className="p-3 rounded-xl bg-[#111114] border border-emerald-500/20 flex flex-col justify-between space-y-2.5">
+                    <div className="space-y-1.5">
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold text-white text-xs font-mono flex items-center gap-1.5">
+                          <Hammer className="w-3.5 h-3.5 text-emerald-400" />
+                          <span>@builder</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-[#18181b] text-emerald-300 border border-emerald-500/30">
+                          gemini-2.0
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-zinc-400">Surgical implementation and design token alignment</p>
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-mono text-zinc-500">
+                        Assigned Skills ({builderSkills.length}):
+                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {builderSkills.length === 0 ? (
+                          <span className="text-[10px] text-zinc-600 italic">No builder skills</span>
+                        ) : (
+                          builderSkills.map((s) => (
+                            <span
+                              key={s.id}
+                              className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#18181b] text-zinc-300 border border-[#27272a]"
+                            >
+                              /{s.scoped}
+                            </span>
+                          ))
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Worker 3: Verifier */}
+                  <div className="p-3 rounded-xl bg-[#111114] border border-rose-500/20 flex flex-col justify-between space-y-2.5">
+                    <div className="space-y-1.5">
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold text-white text-xs font-mono flex items-center gap-1.5">
+                          <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />
+                          <span>@verifier</span>
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-[#18181b] text-rose-300 border border-rose-500/30">
+                          deepseek-r1
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-zinc-400">Adversarial QA, test gates, and Law 1 parity</p>
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-mono text-zinc-500">
+                        Assigned Skills ({verifierSkills.length}):
+                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {verifierSkills.length === 0 ? (
+                          <span className="text-[10px] text-zinc-600 italic">No verifier skills</span>
+                        ) : (
+                          verifierSkills.map((s) => (
+                            <span
+                              key={s.id}
+                              className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#18181b] text-zinc-300 border border-[#27272a]"
+                            >
+                              /{s.scoped}
+                            </span>
+                          ))
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footprint Note */}
+                <div className="p-2.5 rounded-lg bg-[#0e0e11] border border-[#27272a] text-[10px] font-mono text-zinc-400 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span>Partitioned Context: ~{estimatedTokens.toLocaleString()} tokens/agent vs ~{monolithicBaseline.toLocaleString()} monolithic baseline.</span>
+                  </div>
+                  <span className="text-emerald-400 font-bold hidden sm:inline">~{savingsPercent}% token savings</span>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          /* Stack Items List */
+          <div className="flex-1 overflow-y-auto space-y-2 pr-1">
+            {stack.length === 0 ? (
+              <div className="text-center py-12 text-zinc-500 text-xs">
+                Your stack is currently empty. Click the bookmark icon or cherry-pick skills from any suite to add them here.
+              </div>
+            ) : (
+              stack.map((item) => {
+                const activeCmd = getCommand(item)
+                return (
+                  <div
+                    key={item.id}
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-lg bg-[#111114] border border-[#27272a] text-xs"
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
+                        {item.priority}
+                      </span>
+                      <span className="font-semibold text-zinc-100 truncate">{item.name}</span>
+                      <span className="text-xs font-mono text-zinc-400 truncate">/{item.scoped}</span>
+                      {item.repo && (
+                        <span className="hidden md:inline text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a]">
+                          {item.repo}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="hidden sm:inline font-mono text-[11px] text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a] max-w-[240px] truncate select-all">
+                        {activeCmd}
+                      </span>
+                      <button
+                        onClick={() => removeFromStack(item.id)}
+                        className="p-1 rounded text-zinc-500 hover:text-rose-400 hover:bg-[#18181b] transition-colors cursor-pointer"
+                        title="Remove from stack"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                )
+              })
+            )}
+          </div>
+        )}
 
         {/* Multi-Assistant Exporters Bar */}
         {stack.length > 0 && (

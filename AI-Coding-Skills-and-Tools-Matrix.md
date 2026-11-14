@@ -111,6 +111,9 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `claude-3-7-hybrid-reasoning` | **Claude 3.7 Hybrid Reasoning** | `P0` | `/claude-3-7-hybrid-reasoning` | Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet. |
 | `cursor-0-45-agentic-rules` | **Cursor 0.45 Agentic Rules** | `P0` | `/cursor-0-45-agentic-rules` | Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits. |
 | `compound-engineering` | **Compound Engineering Plugin** | `P0` | `/compound-engineering` | EveryInc's 4-phase compounding engineering loop (Plan → Build → Review → Compound) capturing reusable patterns and repo memory so future development compounds in velocity. |
+| `anthropic-defending-code` | **Anthropic Defending Code** | `P0` | `/anthropic-defending-code` | Anthropic's autonomous security reference harness: skills for threat modeling, automated vulnerability scanning, triage, and human-approved patch deployment. |
+| `anthropic-sandbox-runtime` | **Anthropic Sandbox Runtime** | `P0` | `/anthropic-sandbox-runtime` | Anthropic's lightweight OS-level sandboxing tool for enforcing strict filesystem and network boundaries on arbitrary processes without Docker. |
+| `producthunt-mcp` | **Product Hunt MCP** | `P1` | `/producthunt-mcp` | Official Product Hunt Model Context Protocol (MCP) server for discovering trending AI products, querying leaderboards, analyzing market alternatives, and drafting launches. |
 
 ## 02 Matt Pocock
 
@@ -363,6 +366,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | orca-agent | P0 | Multi-agent computer-use CLI and orchestration framework for executing local terminal, desktop, and API actions autonomously. |
 | `herdr-orchestration` | **Herdr Multi-Agent Orchestration** | `P1` | `/herdr-orchestration` | Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination. |
 | `agent-desktop-gui` | **Agent Desktop GUI** | `P1` | `/agent-desktop-gui` | Native desktop agent orchestration, operating system window management, and GUI interaction. |
+| `agent-reach` | **Agent-Reach Web & Social Intelligence** | `P0` | `/agent-reach` | Give AI agents eyes to read and search the entire internet across Twitter/X, Reddit, YouTube transcripts, GitHub, Bilibili, and XiaoHongShu via one unified CLI and MCP server with zero API fees. |
 
 
 | `mastra-agent-framework` | **Mastra Agent Framework** | `P1` | `/mastra-agent-framework` | Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals. |
@@ -538,6 +542,22 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | GSD Pi | https://github.com/open-gsd/gsd-core/tree/next | https://github.com/open-gsd/gsd-pi | Pi integration for GSD Core; runtime-specific host integration, not a separate GSD framework. |
 | MemPalace | https://github.com/MemPalace/mempalace#readme | https://github.com/MemPalace/mempalace | Persistent local-first memory for project sources and agent conversations; MCP and configurable storage backends. |
 | Graphify | https://docs.graphify.com/ | https://github.com/Graphify-Labs/graphify | Local code/document knowledge graph; AST-based structural indexing and graph queries. Cloud offering is separate. |
+| FreeLLMAPI | https://github.com/tashfeenahmed/freellmapi | https://github.com/tashfeenahmed/freellmapi | 10.1B tokens/mo, 87 free providers, 1,313 endpoints via single OpenAI-compatible /v1 endpoint. |
+| Lemo Opuscar | https://github.com/lemomo-ai/lemo-opuscar | https://github.com/lemomo-ai/lemo-opuscar | 99 procedural film, motion graphics, and animation styles in code for Claude Code. |
+| Agent-Reach | https://github.com/Panniantong/Agent-Reach | https://github.com/Panniantong/Agent-Reach | Universal social & web intelligence CLI/MCP for Twitter, Reddit, YouTube, GitHub, Bilibili. |
+| NVIDIA SkillSpector | https://github.com/NVIDIA/SkillSpector | https://github.com/NVIDIA/SkillSpector | Security scanner for AI agent skills detecting prompt injection, data exfiltration, and supply-chain risks. |
+| WebsiteBench | https://github.com/TIGER-AI-Lab/WebsiteBench | https://github.com/TIGER-AI-Lab/WebsiteBench | Full-stack web agent reverse engineering & reconstruction benchmark. |
+| Maxim Bifrost | https://bifrost.maxim.io | https://github.com/maximhq/bifrost | Sub-200µs AI & MCP gateway with semantic cache, failover, and MCP Code Mode. |
+| Busbar | https://github.com/GetBusbar/busbar | https://github.com/GetBusbar/busbar | Rust execution control plane for AI agents governing model requests, MCP tools, and A2A delegation. |
+| Omnigraph | https://github.com/ModernRelay/omnigraph | https://github.com/ModernRelay/omnigraph | Object-storage native graph database with Git-style branching and typed ontologies. |
+| Anthropic Defending Code | https://github.com/anthropics/defending-code-reference-harness | https://github.com/anthropics/defending-code-reference-harness | Autonomous threat modeling, scanning, triage, and patching reference harness. |
+| Anthropic Sandbox Runtime | https://github.com/anthropics/sandbox-runtime | https://github.com/anthropics/sandbox-runtime | Lightweight OS-level filesystem and network process sandboxing without Docker. |
+| Product Hunt MCP | https://mcp.producthunt.com/mcp | https://github.com/producthunt/mcp | Official Product Hunt MCP server for discovery, leaderboards, and launch staging. |
+| freeCodeCamp | https://www.freecodecamp.org | https://github.com/freeCodeCamp/freeCodeCamp | Global open-source curriculum and interactive coding challenges. |
+| Star History | https://star-history.com | https://github.com/star-history/star-history | De facto GitHub star history graph and ecosystem trajectory tracker. |
+| Trendshift | https://trendshift.io | https://trendshift.io | Developer ecosystem tracking daily, weekly, monthly, and yearly trending repositories. |
+| GitHub-Rank | https://wangchujiang.com/github-rank/ | https://github.com/jaywcjlove/github-rank | Curated rankings and trajectory analysis of GitHub open-source repositories. |
+| AgenticSkills.io | https://agenticskills.io | https://agenticskills.io | Direct niche benchmark for agent skills, MCP tools, workflows, and learning guides. |
 | Context7 | https://context7.com/ | https://github.com/upstash/context7 | Version-aware library/framework docs retrieval; complementary to codebase graph tools. |
 | T3 Code | https://github.com/pingdotgg/t3code | https://github.com/pingdotgg/t3code | Open-source agent-harness control surface; mobile, web and desktop control for supported local coding agents. |
 | TokenEconomizer | https://github.com/microsoft/TokenEconomizer | https://arxiv.org/abs/2610.22732 |  |

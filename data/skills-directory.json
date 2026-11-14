@@ -55,6 +55,62 @@
     "cli": "python scripts/install-to-project.py --skill core-addy-agent-skills",
     "repo": "addyosmani/agent-skills.git"
   },
+  "anthropic-defending-code": {
+    "name": "anthropic-defending-code",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-defending-code",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-defending-code",
+    "repo": "anthropics/defending-code-reference-harness"
+  },
+  "core-anthropic-defending-code": {
+    "name": "anthropic-defending-code",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-defending-code",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-defending-code",
+    "repo": "anthropics/defending-code-reference-harness"
+  },
+  "anthropic defending code": {
+    "name": "anthropic-defending-code",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-defending-code",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-defending-code",
+    "repo": "anthropics/defending-code-reference-harness"
+  },
+  "core anthropic defending code": {
+    "name": "anthropic-defending-code",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-defending-code",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-defending-code",
+    "repo": "anthropics/defending-code-reference-harness"
+  },
+  "anthropic-sandbox-runtime": {
+    "name": "anthropic-sandbox-runtime",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-sandbox-runtime",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-sandbox-runtime",
+    "repo": "anthropics/sandbox-runtime"
+  },
+  "core-anthropic-sandbox-runtime": {
+    "name": "anthropic-sandbox-runtime",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-sandbox-runtime",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-sandbox-runtime",
+    "repo": "anthropics/sandbox-runtime"
+  },
+  "anthropic sandbox runtime": {
+    "name": "anthropic-sandbox-runtime",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-sandbox-runtime",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-sandbox-runtime",
+    "repo": "anthropics/sandbox-runtime"
+  },
+  "core anthropic sandbox runtime": {
+    "name": "anthropic-sandbox-runtime",
+    "category": "01-core-engineering",
+    "scoped": "core-anthropic-sandbox-runtime",
+    "cli": "python scripts/install-to-project.py --skill core-anthropic-sandbox-runtime",
+    "repo": "anthropics/sandbox-runtime"
+  },
   "brainstorming": {
     "name": "brainstorming",
     "category": "08-superpowers",
@@ -431,6 +487,34 @@
     "category": "01-core-engineering",
     "scoped": "core-karpathy-guidelines",
     "cli": "python scripts/install-to-project.py --skill core-karpathy-guidelines",
+    "repo": null
+  },
+  "producthunt-mcp": {
+    "name": "producthunt-mcp",
+    "category": "01-core-engineering",
+    "scoped": "core-producthunt-mcp",
+    "cli": "python scripts/install-to-project.py --skill core-producthunt-mcp",
+    "repo": null
+  },
+  "core-producthunt-mcp": {
+    "name": "producthunt-mcp",
+    "category": "01-core-engineering",
+    "scoped": "core-producthunt-mcp",
+    "cli": "python scripts/install-to-project.py --skill core-producthunt-mcp",
+    "repo": null
+  },
+  "producthunt mcp": {
+    "name": "producthunt-mcp",
+    "category": "01-core-engineering",
+    "scoped": "core-producthunt-mcp",
+    "cli": "python scripts/install-to-project.py --skill core-producthunt-mcp",
+    "repo": null
+  },
+  "core producthunt mcp": {
+    "name": "producthunt-mcp",
+    "category": "01-core-engineering",
+    "scoped": "core-producthunt-mcp",
+    "cli": "python scripts/install-to-project.py --skill core-producthunt-mcp",
     "repo": null
   },
   "prototype": {
@@ -2785,6 +2869,27 @@
     "cli": "python scripts/install-to-project.py --skill review-continuous-review-loop",
     "repo": "2dmurali/review-loop-skill"
   },
+  "skillspector": {
+    "name": "skillspector",
+    "category": "03-code-review-and-quality",
+    "scoped": "review-skillspector",
+    "cli": "python scripts/install-to-project.py --skill review-skillspector",
+    "repo": "NVIDIA/SkillSpector"
+  },
+  "review-skillspector": {
+    "name": "skillspector",
+    "category": "03-code-review-and-quality",
+    "scoped": "review-skillspector",
+    "cli": "python scripts/install-to-project.py --skill review-skillspector",
+    "repo": "NVIDIA/SkillSpector"
+  },
+  "review skillspector": {
+    "name": "skillspector",
+    "category": "03-code-review-and-quality",
+    "scoped": "review-skillspector",
+    "cli": "python scripts/install-to-project.py --skill review-skillspector",
+    "repo": "NVIDIA/SkillSpector"
+  },
   "trailofbits-security": {
     "name": "trailofbits-security",
     "category": "03-code-review-and-quality",
@@ -3317,6 +3422,34 @@
     "cli": "python scripts/install-to-project.py --skill test-playwright-cli",
     "repo": null
   },
+  "website-bench": {
+    "name": "website-bench",
+    "category": "04-testing-and-verification",
+    "scoped": "test-website-bench",
+    "cli": "python scripts/install-to-project.py --skill test-website-bench",
+    "repo": "TIGER-AI-Lab/WebsiteBench"
+  },
+  "test-website-bench": {
+    "name": "website-bench",
+    "category": "04-testing-and-verification",
+    "scoped": "test-website-bench",
+    "cli": "python scripts/install-to-project.py --skill test-website-bench",
+    "repo": "TIGER-AI-Lab/WebsiteBench"
+  },
+  "website bench": {
+    "name": "website-bench",
+    "category": "04-testing-and-verification",
+    "scoped": "test-website-bench",
+    "cli": "python scripts/install-to-project.py --skill test-website-bench",
+    "repo": "TIGER-AI-Lab/WebsiteBench"
+  },
+  "test website bench": {
+    "name": "website-bench",
+    "category": "04-testing-and-verification",
+    "scoped": "test-website-bench",
+    "cli": "python scripts/install-to-project.py --skill test-website-bench",
+    "repo": "TIGER-AI-Lab/WebsiteBench"
+  },
   "21st-magic-ui": {
     "name": "21st-magic-ui",
     "category": "05-ui-ux",
@@ -3687,6 +3820,34 @@
     "scoped": "ui-ios-design",
     "cli": "python scripts/install-to-project.py --skill ui-ios-design",
     "repo": null
+  },
+  "lemo-opuscar": {
+    "name": "lemo-opuscar",
+    "category": "05-ui-ux",
+    "scoped": "ui-lemo-opuscar",
+    "cli": "python scripts/install-to-project.py --skill ui-lemo-opuscar",
+    "repo": "lemomo-ai/lemo-opuscar"
+  },
+  "ui-lemo-opuscar": {
+    "name": "lemo-opuscar",
+    "category": "05-ui-ux",
+    "scoped": "ui-lemo-opuscar",
+    "cli": "python scripts/install-to-project.py --skill ui-lemo-opuscar",
+    "repo": "lemomo-ai/lemo-opuscar"
+  },
+  "lemo opuscar": {
+    "name": "lemo-opuscar",
+    "category": "05-ui-ux",
+    "scoped": "ui-lemo-opuscar",
+    "cli": "python scripts/install-to-project.py --skill ui-lemo-opuscar",
+    "repo": "lemomo-ai/lemo-opuscar"
+  },
+  "ui lemo opuscar": {
+    "name": "lemo-opuscar",
+    "category": "05-ui-ux",
+    "scoped": "ui-lemo-opuscar",
+    "cli": "python scripts/install-to-project.py --skill ui-lemo-opuscar",
+    "repo": "lemomo-ai/lemo-opuscar"
   },
   "modern-web-guidance": {
     "name": "modern-web-guidance",
@@ -5011,6 +5172,20 @@
     "cli": "python scripts/install-to-project.py --skill agent-mastra-agent-framework",
     "repo": "mastra-ai/skills"
   },
+  "agent-reach": {
+    "name": "agent-reach",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-reach",
+    "cli": "python scripts/install-to-project.py --skill agent-reach",
+    "repo": "Panniantong/Agent-Reach"
+  },
+  "agent reach": {
+    "name": "agent-reach",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-reach",
+    "cli": "python scripts/install-to-project.py --skill agent-reach",
+    "repo": "Panniantong/Agent-Reach"
+  },
   "codex": {
     "name": "codex",
     "category": "09-autonomous-agents",
@@ -5606,6 +5781,27 @@
     "cli": "python scripts/install-to-project.py --skill infra-azure-skills",
     "repo": null
   },
+  "bifrost": {
+    "name": "bifrost",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-bifrost",
+    "cli": "python scripts/install-to-project.py --skill infra-bifrost",
+    "repo": "maximhq/bifrost"
+  },
+  "infra-bifrost": {
+    "name": "bifrost",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-bifrost",
+    "cli": "python scripts/install-to-project.py --skill infra-bifrost",
+    "repo": "maximhq/bifrost"
+  },
+  "infra bifrost": {
+    "name": "bifrost",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-bifrost",
+    "cli": "python scripts/install-to-project.py --skill infra-bifrost",
+    "repo": "maximhq/bifrost"
+  },
   "billion-context": {
     "name": "billion-context",
     "category": "10-ai-infrastructure",
@@ -5633,6 +5829,27 @@
     "scoped": "infra-billion-context",
     "cli": "python scripts/install-to-project.py --skill infra-billion-context",
     "repo": "ranxianglei/billion-context"
+  },
+  "busbar": {
+    "name": "busbar",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-busbar",
+    "cli": "python scripts/install-to-project.py --skill infra-busbar",
+    "repo": "GetBusbar/busbar"
+  },
+  "infra-busbar": {
+    "name": "busbar",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-busbar",
+    "cli": "python scripts/install-to-project.py --skill infra-busbar",
+    "repo": "GetBusbar/busbar"
+  },
+  "infra busbar": {
+    "name": "busbar",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-busbar",
+    "cli": "python scripts/install-to-project.py --skill infra-busbar",
+    "repo": "GetBusbar/busbar"
   },
   "caveman": {
     "name": "caveman",
@@ -5731,6 +5948,27 @@
     "scoped": "infra-context7",
     "cli": "python scripts/install-to-project.py --skill infra-context7",
     "repo": null
+  },
+  "freellmapi": {
+    "name": "freellmapi",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-freellmapi",
+    "cli": "python scripts/install-to-project.py --skill infra-freellmapi",
+    "repo": "tashfeenahmed/freellmapi"
+  },
+  "infra-freellmapi": {
+    "name": "freellmapi",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-freellmapi",
+    "cli": "python scripts/install-to-project.py --skill infra-freellmapi",
+    "repo": "tashfeenahmed/freellmapi"
+  },
+  "infra freellmapi": {
+    "name": "freellmapi",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-freellmapi",
+    "cli": "python scripts/install-to-project.py --skill infra-freellmapi",
+    "repo": "tashfeenahmed/freellmapi"
   },
   "gemini-api": {
     "name": "gemini-api",
@@ -5892,6 +6130,27 @@
     "scoped": "infra-graphify",
     "cli": "python scripts/install-to-project.py --skill infra-graphify",
     "repo": "Graphify-Labs/graphify"
+  },
+  "omnigraph": {
+    "name": "omnigraph",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-omnigraph",
+    "cli": "python scripts/install-to-project.py --skill infra-omnigraph",
+    "repo": "ModernRelay/omnigraph"
+  },
+  "infra-omnigraph": {
+    "name": "omnigraph",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-omnigraph",
+    "cli": "python scripts/install-to-project.py --skill infra-omnigraph",
+    "repo": "ModernRelay/omnigraph"
+  },
+  "infra omnigraph": {
+    "name": "omnigraph",
+    "category": "10-ai-infrastructure",
+    "scoped": "infra-omnigraph",
+    "cli": "python scripts/install-to-project.py --skill infra-omnigraph",
+    "repo": "ModernRelay/omnigraph"
   },
   "orca-agent": {
     "name": "orca-agent",

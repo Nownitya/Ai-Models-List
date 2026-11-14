@@ -210,6 +210,7 @@ interface SkillStoreState {
   inspectSkill: Skill | null
   inspectFramework: FrameworkHub | null
   isStackModalOpen: boolean
+  stackModalView: 'items' | 'swarm'
   isPriorityGuideOpen: boolean
   isWebMcpModalOpen: boolean
   toast: ToastNotificationState | null
@@ -242,7 +243,8 @@ interface SkillStoreState {
   closeInspect: () => void
   openFrameworkInspect: (framework: FrameworkHub) => void
   closeFrameworkInspect: () => void
-  setStackModalOpen: (open: boolean) => void
+  setStackModalOpen: (open: boolean, view?: 'items' | 'swarm') => void
+  setStackModalView: (view: 'items' | 'swarm') => void
   setPriorityGuideOpen: (open: boolean) => void
   setWebMcpModalOpen: (open: boolean) => void
 }
@@ -296,6 +298,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   inspectSkill: initialInspectSkill,
   inspectFramework: initialInspectFramework,
   isStackModalOpen: false,
+  stackModalView: 'items',
   isPriorityGuideOpen: false,
   isWebMcpModalOpen: false,
   toast: initialToast,
@@ -624,7 +627,12 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
     }
   },
 
-  setStackModalOpen: (isStackModalOpen) => set({ isStackModalOpen }),
+  setStackModalOpen: (isStackModalOpen, view) =>
+    set((s) => ({
+      isStackModalOpen,
+      stackModalView: view !== undefined ? view : s.stackModalView,
+    })),
+  setStackModalView: (stackModalView) => set({ stackModalView }),
   setPriorityGuideOpen: (isPriorityGuideOpen) => set({ isPriorityGuideOpen }),
   setWebMcpModalOpen: (isWebMcpModalOpen) => set({ isWebMcpModalOpen }),
 }))
