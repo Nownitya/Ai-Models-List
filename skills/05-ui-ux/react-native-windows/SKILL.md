@@ -73,3 +73,4 @@ npx react-native run-windows
 - **Do Not Block the UI Thread in Native Modules**: Long-running WinRT or C++ native operations must execute on background threads via `std::async` or `winrt::resume_background()`; blocking the XAML UI thread causes desktop application freezing and window unresponsiveness.
 - **Avoid Heavy C++ Recompiles in JS-Only Cycles**: When modifying pure TypeScript/JavaScript application logic, rely on React Native Fast Refresh (`npx react-native start`) instead of repeatedly rebuilding the heavy native Visual Studio C++ solution.
 - **Validate Target SDK Matrix**: Ensure NuGet dependencies and Windows App SDK versions match the target Windows OS build requirements across enterprise client machines.
+
