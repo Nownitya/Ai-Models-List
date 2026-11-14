@@ -9,6 +9,7 @@ export const StaffPicks: React.FC = () => {
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
   const setCategory = useSkillStore((s) => s.setCategory)
   const setPillar = useSkillStore((s) => s.setPillar)
+  const setEntityScope = useSkillStore((s) => s.setEntityScope)
   const [copiedId, setCopiedId] = useState<string | null>(null)
 
   // Identify our 4 flagship featured skills
@@ -26,12 +27,12 @@ export const StaffPicks: React.FC = () => {
   }
 
   const quickStacks = [
-    { label: 'Autonomous Agents', icon: <Bot className="w-3.5 h-3.5 text-blue-400" />, action: () => { setPillar('skills'); setEcosystem('agents') } },
-    { label: 'UI/UX Craft & Anti-Slop', icon: <Palette className="w-3.5 h-3.5 text-pink-400" />, action: () => { setPillar('skills'); setCategory('05-ui-ux') } },
-    { label: 'Code Review & Security', icon: <Shield className="w-3.5 h-3.5 text-emerald-400" />, action: () => { setPillar('skills'); setEcosystem('quality') } },
-    { label: 'Android & Mobile', icon: <Smartphone className="w-3.5 h-3.5 text-violet-400" />, action: () => { setPillar('skills'); setEcosystem('android') } },
-    { label: 'GSD Wave Engine', icon: <Zap className="w-3.5 h-3.5 text-amber-400" />, action: () => { setPillar('skills'); setEcosystem('gsd') } },
-    { label: 'Superpowers TDD', icon: <Sparkles className="w-3.5 h-3.5 text-cyan-400" />, action: () => { setPillar('skills'); setEcosystem('superpowers') } },
+    { label: 'Autonomous Agents', icon: <Bot className="w-3.5 h-3.5 text-blue-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('agents') } },
+    { label: 'UI/UX Craft & Anti-Slop', icon: <Palette className="w-3.5 h-3.5 text-pink-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setCategory('05-ui-ux') } },
+    { label: 'Code Review & Security', icon: <Shield className="w-3.5 h-3.5 text-emerald-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('quality') } },
+    { label: 'Android & Mobile', icon: <Smartphone className="w-3.5 h-3.5 text-violet-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('android') } },
+    { label: 'GSD Wave Engine', icon: <Zap className="w-3.5 h-3.5 text-amber-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('gsd') } },
+    { label: 'Superpowers TDD', icon: <Sparkles className="w-3.5 h-3.5 text-cyan-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('superpowers') } },
   ]
 
   if (featuredSkills.length === 0) return null

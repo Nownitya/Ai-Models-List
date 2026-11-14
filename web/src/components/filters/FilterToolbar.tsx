@@ -41,6 +41,13 @@ export const FilterToolbar: React.FC = () => {
   const selectedSort = useSkillStore((s) => s.selectedSort)
   const viewMode = useSkillStore((s) => s.viewMode)
   const meta = useSkillStore((s) => s.meta)
+  const frameworks = useSkillStore((s) => s.frameworks)
+  const skills = useSkillStore((s) => s.skills)
+
+  const totalPackagesCount = meta.totalFrameworks || frameworks.length || 112
+  const suitesCount = frameworks.filter((f) => f.skillsCount > 1).length || 24
+  const standaloneCount = frameworks.filter((f) => f.skillsCount === 1).length || 88
+  const atomicSkillsCount = meta.totalSkills || skills.length || 325
 
   const setSearchQuery = useSkillStore((s) => s.setSearchQuery)
   const setPriority = useSkillStore((s) => s.setPriority)
@@ -98,7 +105,7 @@ export const FilterToolbar: React.FC = () => {
             <Boxes className="w-3.5 h-3.5" />
             <span>All Packages</span>
             <span className={`text-[10px] font-mono px-1 rounded ${entityScope === 'all' ? 'bg-zinc-300 text-zinc-900 font-bold' : 'bg-zinc-800 text-zinc-400'}`}>
-              74
+              {totalPackagesCount}
             </span>
           </button>
 
@@ -113,7 +120,7 @@ export const FilterToolbar: React.FC = () => {
             <Layers className="w-3.5 h-3.5" />
             <span>Suites Only</span>
             <span className={`text-[10px] font-mono px-1 rounded ${entityScope === 'suites' ? 'bg-zinc-300 text-zinc-900 font-bold' : 'bg-zinc-800 text-zinc-400'}`}>
-              16
+              {suitesCount}
             </span>
           </button>
 
@@ -128,7 +135,7 @@ export const FilterToolbar: React.FC = () => {
             <Zap className="w-3.5 h-3.5" />
             <span>Standalone</span>
             <span className={`text-[10px] font-mono px-1 rounded ${entityScope === 'standalone' ? 'bg-zinc-300 text-zinc-900 font-bold' : 'bg-zinc-800 text-zinc-400'}`}>
-              58
+              {standaloneCount}
             </span>
           </button>
 
@@ -141,7 +148,7 @@ export const FilterToolbar: React.FC = () => {
             }`}
           >
             <Terminal className="w-3.5 h-3.5" />
-            <span>All 283 Atomic Skills</span>
+            <span>All {atomicSkillsCount} Atomic Skills</span>
           </button>
         </div>
 

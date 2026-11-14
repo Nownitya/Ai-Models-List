@@ -14,8 +14,7 @@ import {
   Share2
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
-
-type AssistantTab = 'antigravity' | 'claude' | 'cursor' | 'codex'
+import type { AssistantType } from '@/types'
 
 export const SkillDrawer: React.FC = () => {
   const inspectSkill = useSkillStore((s) => s.inspectSkill)
@@ -23,12 +22,18 @@ export const SkillDrawer: React.FC = () => {
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
   const setRepo = useSkillStore((s) => s.setRepo)
+  const activeAssistant = useSkillStore((s) => s.activeAssistant)
 
-  const [activeAssistantTab, setActiveAssistantTab] = useState<AssistantTab>('antigravity')
+  const [activeAssistantTab, setActiveAssistantTab] = useState<AssistantType>(activeAssistant)
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedCli, setCopiedCli] = useState(false)
   const [copiedRecipe, setCopiedRecipe] = useState(false)
   const [copiedLink, setCopiedLink] = useState(false)
+
+  // Sync with global assistant selector from header
+  useEffect(() => {
+    setActiveAssistantTab(activeAssistant)
+  }, [activeAssistant])
 
   // Close drawer on Escape
   useEffect(() => {
@@ -57,7 +62,11 @@ export const SkillDrawer: React.FC = () => {
     setTimeout(() => setCopiedCli(false), 1400)
   }
 
-  const getRecipeContent = (tab: AssistantTab): { label: string; command: string; hint: string } => {
+  const officialNpx = inspectSkill.repo
+    ? `npx skills add ${inspectSkill.repo} --skill ${inspectSkill.id}`
+    : `python scripts/install-to-project.py --skill ${inspectSkill.scoped}`
+
+  const getRecipeContent = (tab: AssistantType): { label: string; command: string; hint: string } => {
     switch (tab) {
       case 'antigravity':
         return {
@@ -68,20 +77,20 @@ export const SkillDrawer: React.FC = () => {
       case 'claude':
         return {
           label: 'Claude Code Activation',
-          command: `/${inspectSkill.id}`,
-          hint: `MCP Server endpoint: python scripts/mcp_server.py (connect with claude mcp add skilldock ...)`
-        }
-      case 'cursor':
-        return {
-          label: 'Cursor Rule Reference',
-          command: `@/${inspectSkill.id}`,
-          hint: `Configured as workspace rule: .cursor/rules/${inspectSkill.scoped}.mdc`
+          command: officialNpx,
+          hint: `Linux Foundation open standard CLI or MCP Server: python scripts/mcp_server.py`
         }
       case 'codex':
         return {
-          label: 'Codex / CLI Runtime Invocation',
+          label: 'Codex / Cursor Agent Execution',
           command: `python scripts/setup-project-agents.py --skill ${inspectSkill.scoped}`,
-          hint: `Physical package: .agents/skills/${inspectSkill.categoryId}/${inspectSkill.id}/SKILL.md`
+          hint: `Configured in .agents/skills/${inspectSkill.categoryId}/${inspectSkill.id}/SKILL.md`
+        }
+      case 'git':
+        return {
+          label: 'Official Open Standard CLI',
+          command: officialNpx,
+          hint: `Run directly in terminal to install this skill into your local workspace.`
         }
     }
   }
@@ -184,8 +193,8 @@ export const SkillDrawer: React.FC = () => {
                 [
                   { id: 'antigravity', label: 'Antigravity', icon: '⚡' },
                   { id: 'claude', label: 'Claude', icon: '🧠' },
-                  { id: 'cursor', label: 'Cursor', icon: '🖱️' },
                   { id: 'codex', label: 'Codex', icon: '🤖' },
+                  { id: 'git', label: 'CLI', icon: '💻' },
                 ] as const
               ).map((tab) => (
                 <button

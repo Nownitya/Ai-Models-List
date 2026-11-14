@@ -10,6 +10,7 @@ export const FrameworkGrid: React.FC = () => {
   const entityScope = useSkillStore((s) => s.entityScope)
   const searchQuery = useSkillStore((s) => s.searchQuery)
   const selectedCategory = useSkillStore((s) => s.selectedCategory)
+  const selectedPriority = useSkillStore((s) => s.selectedPriority)
   const selectedEcosystem = useSkillStore((s) => s.selectedEcosystem)
   const selectedSort = useSkillStore((s) => s.selectedSort)
   const resetFilters = useSkillStore((s) => s.resetFilters)
@@ -19,7 +20,7 @@ export const FrameworkGrid: React.FC = () => {
   // Reset pagination when filters change
   useEffect(() => {
     setVisibleCount(PAGE_SIZE)
-  }, [searchQuery, selectedCategory, selectedEcosystem, selectedSort, entityScope])
+  }, [searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort, entityScope])
 
   const filteredFrameworks = useMemo(() => {
     let result = [...frameworks]
@@ -44,12 +45,17 @@ export const FrameworkGrid: React.FC = () => {
       )
     }
 
-    // 2. Category Filter
+    // 2. Priority Filter (Matches suites that contain skills of selected priority)
+    if (selectedPriority !== 'ALL') {
+      result = result.filter((f) => f.skills.some((s) => s.priority === selectedPriority))
+    }
+
+    // 3. Category Filter
     if (selectedCategory !== 'ALL') {
       result = result.filter((f) => f.categoryId === selectedCategory)
     }
 
-    // 3. Ecosystem Filter
+    // 4. Ecosystem Filter
     if (selectedEcosystem !== 'all') {
       const eco = selectedEcosystem.toLowerCase()
       result = result.filter((f) => {
@@ -83,7 +89,7 @@ export const FrameworkGrid: React.FC = () => {
     }
 
     return result
-  }, [frameworks, searchQuery, selectedCategory, selectedEcosystem, selectedSort, entityScope])
+  }, [frameworks, searchQuery, selectedPriority, selectedCategory, selectedEcosystem, selectedSort, entityScope])
 
   if (filteredFrameworks.length === 0) {
     return (

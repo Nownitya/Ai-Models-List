@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
   const meta = useSkillStore((s) => s.meta)
 
   const pillars: { id: PillarType; label: string; count: number | string; icon: React.ReactNode }[] = [
-    { id: 'frameworks', label: 'Skills & Suites', count: meta.totalFrameworks || 74, icon: <Boxes className="w-3.5 h-3.5" /> },
+    { id: 'frameworks', label: 'Skills & Suites', count: meta.totalFrameworks || 112, icon: <Boxes className="w-3.5 h-3.5" /> },
     { id: 'marketplace', label: 'Marketplace', count: 1689, icon: <Store className="w-3.5 h-3.5" /> },
     { id: 'docs', label: 'Docs', count: meta.totalDocs || 57, icon: <FileText className="w-3.5 h-3.5" /> },
     { id: 'prompts', label: 'Prompts', count: meta.totalPrompts || 3, icon: <Sparkles className="w-3.5 h-3.5" /> },

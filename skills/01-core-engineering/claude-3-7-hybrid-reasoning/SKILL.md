@@ -43,3 +43,4 @@ npx skills add anthropics/skills --skill claude-3-7-hybrid-reasoning
 - **Thinking Token Bloat**: Never allocate 16k tokens to trivial one-line typo fixes or routine documentation formatting.
 - **Speculative Hallucination**: Do not accept unverified assumptions inside the thinking block without live code or test evidence.
 - **Leaked Scratchpad**: Never allow raw, unstructured thinking scratchpads to bleed into public user responses or commit messages.
+

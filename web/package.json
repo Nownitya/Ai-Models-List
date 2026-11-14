@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "mwg:scan": "npx modern-web-guidance@latest legacy-scan .",
+    "mwg:search": "npx modern-web-guidance@latest search"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",

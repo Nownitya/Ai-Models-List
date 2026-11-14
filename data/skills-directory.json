@@ -76,6 +76,34 @@
     "cli": "python scripts/install-to-project.py --skill core-brainstorming",
     "repo": null
   },
+  "claude-3-7-hybrid-reasoning": {
+    "name": "claude-3-7-hybrid-reasoning",
+    "category": "01-core-engineering",
+    "scoped": "core-claude-3-7-hybrid-reasoning",
+    "cli": "python scripts/install-to-project.py --skill core-claude-3-7-hybrid-reasoning",
+    "repo": null
+  },
+  "core-claude-3-7-hybrid-reasoning": {
+    "name": "claude-3-7-hybrid-reasoning",
+    "category": "01-core-engineering",
+    "scoped": "core-claude-3-7-hybrid-reasoning",
+    "cli": "python scripts/install-to-project.py --skill core-claude-3-7-hybrid-reasoning",
+    "repo": null
+  },
+  "claude 3 7 hybrid reasoning": {
+    "name": "claude-3-7-hybrid-reasoning",
+    "category": "01-core-engineering",
+    "scoped": "core-claude-3-7-hybrid-reasoning",
+    "cli": "python scripts/install-to-project.py --skill core-claude-3-7-hybrid-reasoning",
+    "repo": null
+  },
+  "core claude 3 7 hybrid reasoning": {
+    "name": "claude-3-7-hybrid-reasoning",
+    "category": "01-core-engineering",
+    "scoped": "core-claude-3-7-hybrid-reasoning",
+    "cli": "python scripts/install-to-project.py --skill core-claude-3-7-hybrid-reasoning",
+    "repo": null
+  },
   "code-review": {
     "name": "code-review",
     "category": "11-code-review",
@@ -102,6 +130,34 @@
     "category": "01-core-engineering",
     "scoped": "core-code-review",
     "cli": "python scripts/install-to-project.py --skill core-code-review",
+    "repo": null
+  },
+  "cursor-0-45-agentic-rules": {
+    "name": "cursor-0-45-agentic-rules",
+    "category": "01-core-engineering",
+    "scoped": "core-cursor-0-45-agentic-rules",
+    "cli": "python scripts/install-to-project.py --skill core-cursor-0-45-agentic-rules",
+    "repo": null
+  },
+  "core-cursor-0-45-agentic-rules": {
+    "name": "cursor-0-45-agentic-rules",
+    "category": "01-core-engineering",
+    "scoped": "core-cursor-0-45-agentic-rules",
+    "cli": "python scripts/install-to-project.py --skill core-cursor-0-45-agentic-rules",
+    "repo": null
+  },
+  "cursor 0 45 agentic rules": {
+    "name": "cursor-0-45-agentic-rules",
+    "category": "01-core-engineering",
+    "scoped": "core-cursor-0-45-agentic-rules",
+    "cli": "python scripts/install-to-project.py --skill core-cursor-0-45-agentic-rules",
+    "repo": null
+  },
+  "core cursor 0 45 agentic rules": {
+    "name": "cursor-0-45-agentic-rules",
+    "category": "01-core-engineering",
+    "scoped": "core-cursor-0-45-agentic-rules",
+    "cli": "python scripts/install-to-project.py --skill core-cursor-0-45-agentic-rules",
     "repo": null
   },
   "diagnosing-bugs": {
@@ -3575,6 +3631,34 @@
     "scoped": "ui-ios-design",
     "cli": "python scripts/install-to-project.py --skill ui-ios-design",
     "repo": null
+  },
+  "modern-web-guidance": {
+    "name": "modern-web-guidance",
+    "category": "05-ui-ux",
+    "scoped": "ui-modern-web-guidance",
+    "cli": "python scripts/install-to-project.py --skill ui-modern-web-guidance",
+    "repo": "GoogleChrome/modern-web-guidance-src"
+  },
+  "ui-modern-web-guidance": {
+    "name": "modern-web-guidance",
+    "category": "05-ui-ux",
+    "scoped": "ui-modern-web-guidance",
+    "cli": "python scripts/install-to-project.py --skill ui-modern-web-guidance",
+    "repo": "GoogleChrome/modern-web-guidance-src"
+  },
+  "modern web guidance": {
+    "name": "modern-web-guidance",
+    "category": "05-ui-ux",
+    "scoped": "ui-modern-web-guidance",
+    "cli": "python scripts/install-to-project.py --skill ui-modern-web-guidance",
+    "repo": "GoogleChrome/modern-web-guidance-src"
+  },
+  "ui modern web guidance": {
+    "name": "modern-web-guidance",
+    "category": "05-ui-ux",
+    "scoped": "ui-modern-web-guidance",
+    "cli": "python scripts/install-to-project.py --skill ui-modern-web-guidance",
+    "repo": "GoogleChrome/modern-web-guidance-src"
   },
   "ui-prototype": {
     "name": "prototype",

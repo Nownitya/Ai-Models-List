@@ -36,8 +36,8 @@ export const HeroSection: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-3xl mb-8">
-            The authoritative engineering launchpad cataloging <strong>{meta.totalSkills || 283} Atomic Skills</strong> grouped into{' '}
-            <strong>{meta.totalFrameworks || 74} Upstream Suites & Packages</strong>,{' '}
+            The authoritative engineering launchpad cataloging <strong>{meta.totalSkills || 325} Atomic Skills</strong> grouped into{' '}
+            <strong>{meta.totalFrameworks || 112} Upstream Suites & Packages</strong>,{' '}
             <strong>1,126 MCP Connectors</strong>, and{' '}
             <strong>530 Claude Plugins</strong> with multi-assistant activation guides.
           </p>
@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
               }`}
             >
               <span className="text-zinc-500">Suites & Packages</span>
-              <span className="text-zinc-100 font-bold">{meta.totalFrameworks || 74}</span>
+              <span className="text-zinc-100 font-bold">{meta.totalFrameworks || 112}</span>
             </button>
 
             <button
@@ -72,7 +72,7 @@ export const HeroSection: React.FC = () => {
             >
               <Zap className="w-3 h-3 text-amber-400" />
               <span className="text-zinc-500">Atomic Skills</span>
-              <span className="text-zinc-100 font-bold">{meta.totalSkills || 283}</span>
+              <span className="text-zinc-100 font-bold">{meta.totalSkills || 325}</span>
             </button>
 
             <button

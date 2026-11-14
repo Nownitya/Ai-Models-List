@@ -48,3 +48,4 @@ npx skills add getcursor/cursor --skill cursor-0-45-agentic-rules
 - **Monolithic Bloat**: Avoid dumping 500 lines of disparate rules into a single `.cursorrules` file. Use focused `.mdc` files.
 - **Overly Broad Globs**: Never set `globs: ["*"]` or `alwaysApply: true` on niche library guidelines (e.g. SQLite, Compose, Docker).
 - **Silent Rule Drifts**: Ensure rules are audited against live test suites and code conventions during every sprint.
+

@@ -72,4 +72,13 @@ export const STARTER_PACKS: StarterPack[] = [
     description: 'Top-ranked official plugins from the 530-plugin Claude Marketplace: Code Review, Context7, Playwright, Ralph Loop, and Superpowers.',
     skillIds: ['code-review', 'context7', 'playwright-cli', 'ralph-loop', 'superpowers'],
   },
+  {
+    id: 'modern-web-anti-slop',
+    title: 'Modern Web & Anti-Slop Suite',
+    icon: '🌐',
+    badge: 'Chrome / Web Standards',
+    repo: 'GoogleChrome/modern-web-guidance-src',
+    description: 'Google Chrome Modern Web Guidance, Taste Skill, and Unslop for high-performance native browser APIs, accessibility, and craft UI.',
+    skillIds: ['modern-web-guidance', 'taste-skill', 'unslop', 'shadcn-ui', 'extract-design-tokens'],
+  },
 ]

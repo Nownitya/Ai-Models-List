@@ -98,6 +98,30 @@
    - `Billion Context`: Evaluated—not needed in Antigravity (native `/compact` and subagents handle context natively).
    - `unslop`: Active skill (`skills/05-ui-ux/unslop/SKILL.md`) for 9-pass anti-AI-slop UI audits.
 
+14. **Google Chrome Modern Web Guidance Integration (Chrome, Edge, Firefox, MDN)**:
+   - **Catalog & Dual-Matrix Parity (Law 1)**: Added `modern-web-guidance` (`P0`) to Section `05 UI UX Design` and Section `14 Source Links` in both `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` with verified links to [developer.chrome.com/docs/modern-web-guidance](https://developer.chrome.com/docs/modern-web-guidance) and [GoogleChrome/modern-web-guidance-src](https://github.com/GoogleChrome/modern-web-guidance-src).
+   - **Standardized Skill Package (Law 2)**: Authored `skills/05-ui-ux/modern-web-guidance/SKILL.md` covering offline local search/retrieve, `legacy-scan`, top layer overlays (`<dialog>`, `popover`), fluid typography, native dark-mode theming, Web Vitals optimization, and WebMCP agentic forms/tools.
+   - **Agent Runtime & Cryptographic Lock**: Registered in `scripts/setup-project-agents.py` with 102 locked skills, verified with `python scripts/verify-lock.py`.
+   - **GitHub Pages Performance & Modern Web Standards**:
+     - Applied `color-scheme: dark;` to `:root` and `<meta name="color-scheme" content="dark light">` in `web/index.html` and `web/src/index.css`.
+     - Added cross-browser Baseline standard scrollbar styling (`scrollbar-color: #27272a #09090b; scrollbar-width: thin;`).
+     - Added modern typography balancing (`text-wrap: balance` on headlines, `text-wrap: pretty` on paragraphs).
+     - Inlined critical CSS in `<head>` to prevent FOUC and optimize Critical Rendering Path (CRP).
+     - Added `modern-web-anti-slop` starter pack to `web/src/data/starterPacks.ts` and linked in `Footer.tsx`.
+     - Scanned with `npx modern-web-guidance@latest legacy-scan web` (0 findings from 33 qualified guides).
+     - Compiled and staged for GitHub Pages via `python scripts/deploy-skilldock.py`. All 80 unit tests passing.
+
+15. **CEO Strategy Review Execution (Wave 1 & Wave 2 Shipped)**:
+    - **Wave 1 (P0: Flow, Filter & Counter Parity)**:
+      - Fixed `FrameworkGrid.tsx` priority filter: suites now filter dynamically when `selectedPriority !== 'ALL'` based on member skills (`f.skills.some(s => s.priority === selectedPriority)`), and pagination resets cleanly.
+      - Fixed navigation flow disconnect in `StaffPicks.tsx` and `Footer.tsx`: clicking ecosystem presets now properly sets both `setPillar('skills')` AND `setEntityScope('atomic')` so atomic skills render immediately.
+      - Replaced all stale hardcoded counts (`74`, `283`, `1656`) with dynamic bindings in `FilterToolbar.tsx`, `HeroSection.tsx`, `Header.tsx`, and `Footer.tsx` (reflecting 112 frameworks, 325 skills, 1,689 marketplace items).
+      - Synchronized `SkillDrawer.tsx` with global `activeAssistant` from `useSkillStore` across Antigravity, Claude Code, Codex, and Git/CLI.
+    - **Wave 2 (P1: Scope Amputation & Codebase Hygiene)**:
+      - Deleted orphaned/unreferenced components: `RadarStrip.tsx` and `PillarTabs.tsx`.
+      - Purged dead store state (`promptModalSkill`, `openPromptModal`, `closePromptModal`) from `useSkillStore.ts`.
+      - 100% clean build (`tsc -b && vite build` in 397ms), all 80 unit tests passing, staged to root `/`.
+
 ---
 
 ### 📋 Immediate Next Tasks Ready for Execution
@@ -109,7 +133,9 @@
    - Multi-catalog indexing across Suites, Skills, MCP Connectors, and Docs.
 4. [x] **Visual Token Budget Calculator**:
    - Live prompt token footprint and context savings meter in `StackModal.tsx`.
-5. [x] **Deployment & Vault Sync**:
+5. [x] **CEO Review Flow & Flaw Consolidation (Wave 1 & 2)**:
+   - Fixed priority filtering on suites, harmonized atomic preset navigation, bound dynamic counts, deleted dead code.
+6. [x] **Deployment & Vault Sync**:
    - Built and staged via `python scripts/deploy-skilldock.py`.
    - Maintained Obsidian parity via `python scripts/sync-obsidian.py`.
 

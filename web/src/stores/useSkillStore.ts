@@ -160,7 +160,6 @@ interface SkillStoreState {
   // Modals & Drawers
   inspectSkill: Skill | null
   inspectFramework: FrameworkHub | null
-  promptModalSkill: Skill | null
   isStackModalOpen: boolean
   isPriorityGuideOpen: boolean
 
@@ -190,8 +189,6 @@ interface SkillStoreState {
   closeInspect: () => void
   openFrameworkInspect: (framework: FrameworkHub) => void
   closeFrameworkInspect: () => void
-  openPromptModal: (skill: Skill) => void
-  closePromptModal: () => void
   setStackModalOpen: (open: boolean) => void
   setPriorityGuideOpen: (open: boolean) => void
 }
@@ -231,7 +228,6 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
 
   inspectSkill: initialInspectSkill,
   inspectFramework: initialInspectFramework,
-  promptModalSkill: null,
   isStackModalOpen: false,
   isPriorityGuideOpen: false,
 
@@ -322,7 +318,6 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       selectedSort: 'default',
       inspectSkill: null,
       inspectFramework: null,
-      promptModalSkill: null,
       isStackModalOpen: false,
       isPriorityGuideOpen: false,
       isCommandPaletteOpen: false,
@@ -489,9 +484,6 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       window.history.replaceState(null, '', `${window.location.pathname}${newQuery}${window.location.hash}`)
     }
   },
-
-  openPromptModal: (skill) => set({ promptModalSkill: skill }),
-  closePromptModal: () => set({ promptModalSkill: null }),
 
   setStackModalOpen: (isStackModalOpen) => set({ isStackModalOpen }),
   setPriorityGuideOpen: (isPriorityGuideOpen) => set({ isPriorityGuideOpen }),

@@ -8,6 +8,7 @@
 
 @layer base {
   :root {
+    color-scheme: dark;
     --bg-main: #09090b;
     --bg-subtle: #121215;
     --card-bg: #111114;
@@ -27,6 +28,31 @@
     min-height: 100vh;
     overflow-x: hidden;
     letter-spacing: -0.01em;
+  }
+}
+
+/* Modern Typography Balancing & Legibility (Google Chrome Modern Web Guidance) */
+h1, h2, h3, h4, .font-editorial {
+  text-wrap: balance;
+}
+
+p, li {
+  text-wrap: pretty;
+}
+
+/* Cross-Browser Standard Scrollbar Styling (Baseline 2024 / Modern Web Guidance) */
+* {
+  scrollbar-color: #27272a #09090b;
+  scrollbar-width: thin;
+}
+
+/* Accessibility: Respect Operating System & User Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

@@ -168,6 +168,7 @@ def gather_skills_to_install():
         ("firecrawl-web-scrape", SKILLS_SRC / "01-core-workflows" / "firecrawl-web-scrape", "mendableai/firecrawl", "skills/firecrawl-web-scrape/SKILL.md"),
         ("obsidian-developer-second-brain", SKILLS_SRC / "11-project-documentation" / "obsidian-developer-second-brain", "local/project-docs", "skills/11-project-documentation/obsidian-developer-second-brain/SKILL.md"),
         ("unslop", SKILLS_SRC / "05-ui-ux" / "unslop", "heydamir/unslop", "skills/05-ui-ux/unslop/SKILL.md"),
+        ("modern-web-guidance", SKILLS_SRC / "05-ui-ux" / "modern-web-guidance", "GoogleChrome/modern-web-guidance-src", "skills/05-ui-ux/modern-web-guidance/SKILL.md"),
     ]
     for dest_name, src, repo, rel_path in extra_skills:
         if src.exists():

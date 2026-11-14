@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
                   }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Atomic Agent Skills ({meta.totalSkills || 283})
+                  Atomic Agent Skills ({meta.totalSkills || 325})
                 </button>
               </li>
               <li>
@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
                 >
                   <span>Claude Marketplace</span>
                   <span className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                    1,656
+                    1,689
                   </span>
                 </button>
               </li>
@@ -145,7 +145,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs">
               <li>
                 <button
-                  onClick={() => { setPillar('skills'); setEcosystem('agents') }}
+                  onClick={() => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('agents') }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Autonomous Agents (Superpowers, GSD)
@@ -153,15 +153,15 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => { setPillar('skills'); setCategory('05-ui-ux') }}
+                  onClick={() => { setPillar('skills'); setEntityScope('atomic'); setCategory('05-ui-ux') }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  UI/UX Craft & Anti-Slop (Taste, Unslop)
+                  UI/UX & Modern Web (Chrome, Taste, Unslop)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => { setPillar('skills'); setEcosystem('quality') }}
+                  onClick={() => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('quality') }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Code Review & Security Audits
@@ -169,7 +169,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => { setPillar('skills'); setEcosystem('android') }}
+                  onClick={() => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('android') }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Android, Jetpack & Kotlin KMP
@@ -177,7 +177,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => { setPillar('skills'); setEcosystem('obsidian') }}
+                  onClick={() => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('obsidian') }}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Obsidian Developer Second Brain
@@ -216,6 +216,18 @@ export const Footer: React.FC = () => {
                   className="inline-flex items-center gap-1 text-zinc-300 hover:text-white transition-colors"
                 >
                   <span>Read AGENTS.md</span>
+                  <ExternalLink className="w-3 h-3 text-zinc-500" />
+                </a>
+              </li>
+              <li className="pt-1">
+                <a
+                  href="https://developer.chrome.com/docs/modern-web-guidance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-zinc-300 hover:text-white transition-colors"
+                  title="Google Chrome Modern Web Guidance"
+                >
+                  <span>Modern Web Guidance</span>
                   <ExternalLink className="w-3 h-3 text-zinc-500" />
                 </a>
               </li>

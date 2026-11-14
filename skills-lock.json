@@ -385,6 +385,12 @@
       "skillPath": "skills/mermaid-design-generator/SKILL.md",
       "computedHash": "d6a4c6321c37f7d2158acf410784ad71a0f3990bf73943baff499d9957205e02"
     },
+    "modern-web-guidance": {
+      "source": "GoogleChrome/modern-web-guidance-src",
+      "sourceType": "github",
+      "skillPath": "skills/05-ui-ux/modern-web-guidance/SKILL.md",
+      "computedHash": "4d84296a8d544bea4c98691ddb900d9b3695429920690fa2129d86833e0f0e44"
+    },
     "momentic-visual-testing": {
       "source": "momentic-ai/momentic",
       "sourceType": "github",

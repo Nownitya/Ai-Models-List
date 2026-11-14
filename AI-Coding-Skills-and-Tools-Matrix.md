@@ -218,6 +218,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Unslop repository:** https://github.com/heydamir/unslop
 - **Impeccable repository / documentation:** https://github.com/pbakaus/impeccable · https://impeccable.style/docs
 - **Apple Human Interface Guidelines:** https://developer.apple.com/design/human-interface-guidelines/
+- **Google Chrome Modern Web Guidance:** https://developer.chrome.com/docs/modern-web-guidance · https://github.com/GoogleChrome/modern-web-guidance-src
 
 | Skill / Capability | Priority | Why |
 | --- | --- | --- |
@@ -244,6 +245,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `interface-feel-polish` | **Interface Feel & Tactile Physics** | `P1` | `/interface-feel-polish` | Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback. |
 | `stageshow-ui-presentation` | **Stageshow UI Presentation** | `P1` | `/stageshow-ui-presentation` | Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges. |
 | `extract-design-tokens` | **Design Token Extractor** | `P1` | `/extract-design-tokens` | Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites. |
+| `modern-web-guidance` | **Google Chrome Modern Web Guidance** | `P0` | `/modern-web-guidance` | Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan). |
 
 
 ## 06 GSD
@@ -528,6 +530,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | Karpathy Guidelines | https://github.com/multica-ai/andrej-karpathy-skills | https://github.com/multica-ai/andrej-karpathy-skills | Third-party Karpathy-inspired four-principle coding guide; skill metadata declares MIT. Includes portable Agent Skill plus documented Claude Code plugin and Cursor rule. README's plugin install commands point to forrestchang/andrej-karpathy-skills; verify intended install source. |
 | Taste Skill (Leonxlnx) | https://tasteskill.dev | https://github.com/Leonxlnx/taste-skill | Anti-slop frontend design skill with browser verification, art direction, and 111k+ stars. |
 | Unslop (heydamir) | https://heydamir.design/unslop | https://github.com/heydamir/unslop | Anti-AI-slop UI redline and design refactoring agent skill across 9 structured passes. |
+| Google Chrome Modern Web Guidance | https://developer.chrome.com/docs/modern-web-guidance | https://github.com/GoogleChrome/modern-web-guidance-src | Official cross-browser modern web platform guidance and agent skills stewarded by Chrome, Edge, Firefox, and MDN with local search, retrieval, and legacy code scanning CLI. |
 | Meta Astryx | https://github.com/meta/astryx | https://github.com/meta/astryx | Meta's agent-ready open-source React design system with built-in MCP server and CLI (14.5k+ stars). |
 | Billion-Context | https://github.com/ranxianglei/billion-context | https://github.com/ranxianglei/billion-context | Context-compression plugin for month-long single agent sessions and token savings (4.5k+ stars). |
 | Anthropic Agent Skills | https://docs.anthropic.com/ | https://github.com/anthropics/skills | Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). |

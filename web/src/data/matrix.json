@@ -1,7 +1,7 @@
 {
   "meta": {
-    "totalSkills": 325,
-    "totalFrameworks": 112,
+    "totalSkills": 326,
+    "totalFrameworks": 113,
     "totalDocs": 57,
     "totalPrompts": 3,
     "totalStars": 4846573,
@@ -29,7 +29,7 @@
       {
         "id": "05-ui-ux",
         "label": "UI / UX Design",
-        "count": 22
+        "count": 23
       },
       {
         "id": "06-gsd",
@@ -740,13 +740,19 @@
         "stars": 0
       },
       {
+        "repo": "GoogleChrome/modern-web-guidance-src",
+        "repoName": "Modern Web Guidance Src",
+        "count": 1,
+        "stars": 0
+      },
+      {
         "repo": "pypa/packaging",
         "repoName": "Python Packaging (PyPA)",
         "count": 1,
         "stars": 0
       }
     ],
-    "p0Count": 99,
+    "p0Count": 100,
     "p1Count": 146,
     "p2Count": 52,
     "p3Count": 28,
@@ -2667,8 +2673,8 @@
           "id": "claude-3-7-hybrid-reasoning",
           "name": "claude-3-7-hybrid-reasoning",
           "priority": "P0",
-          "scoped": "claude-3-7-hybrid-reasoning",
-          "cli": "python scripts/install-to-project.py --skill claude-3-7-hybrid-reasoning",
+          "scoped": "core-claude-3-7-hybrid-reasoning",
+          "cli": "python scripts/install-to-project.py --skill core-claude-3-7-hybrid-reasoning",
           "description": "Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet."
         },
         {
@@ -5907,8 +5913,8 @@
           "id": "cursor-0-45-agentic-rules",
           "name": "cursor-0-45-agentic-rules",
           "priority": "P0",
-          "scoped": "cursor-0-45-agentic-rules",
-          "cli": "python scripts/install-to-project.py --skill cursor-0-45-agentic-rules",
+          "scoped": "core-cursor-0-45-agentic-rules",
+          "cli": "python scripts/install-to-project.py --skill core-cursor-0-45-agentic-rules",
           "description": "Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits."
         }
       ]
@@ -6006,6 +6012,38 @@
           "scoped": "ui-ios-design",
           "cli": "python scripts/install-to-project.py --skill ui-ios-design",
           "description": "Build platform-native iOS interfaces using Apple platform conventions."
+        }
+      ]
+    },
+    {
+      "id": "googlechrome-modern-web-guidance-src",
+      "repo": "GoogleChrome/modern-web-guidance-src",
+      "repoName": "Modern Web Guidance Src",
+      "author": "GoogleChrome",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Modern Web Guidance Src.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/GoogleChrome/modern-web-guidance-src.git ~/.gemini/antigravity/skills/modern-web-guidance-src",
+        "claude": "git clone https://github.com/GoogleChrome/modern-web-guidance-src.git ~/.claude/skills/modern-web-guidance-src",
+        "codex": "codex install GoogleChrome/modern-web-guidance-src",
+        "git": "git clone https://github.com/GoogleChrome/modern-web-guidance-src.git",
+        "cli": "python scripts/install-to-project.py --repo GoogleChrome/modern-web-guidance-src"
+      },
+      "skills": [
+        {
+          "id": "modern-web-guidance",
+          "name": "modern-web-guidance",
+          "priority": "P0",
+          "scoped": "ui-modern-web-guidance",
+          "cli": "python scripts/install-to-project.py --skill ui-modern-web-guidance",
+          "description": "Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan)."
         }
       ]
     },
@@ -6881,8 +6919,8 @@
       "categoryId": "01-core-engineering",
       "categoryLabel": "Core Engineering",
       "description": "Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet.",
-      "scoped": "claude-3-7-hybrid-reasoning",
-      "cli": "python scripts/install-to-project.py --skill claude-3-7-hybrid-reasoning",
+      "scoped": "core-claude-3-7-hybrid-reasoning",
+      "cli": "python scripts/install-to-project.py --skill core-claude-3-7-hybrid-reasoning",
       "repo": "anthropics/skills",
       "repoName": "Anthropic Skills",
       "stars": 194065,
@@ -6898,8 +6936,8 @@
       "categoryId": "01-core-engineering",
       "categoryLabel": "Core Engineering",
       "description": "Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits.",
-      "scoped": "cursor-0-45-agentic-rules",
-      "cli": "python scripts/install-to-project.py --skill cursor-0-45-agentic-rules",
+      "scoped": "core-cursor-0-45-agentic-rules",
+      "cli": "python scripts/install-to-project.py --skill core-cursor-0-45-agentic-rules",
       "repo": "getcursor/cursor",
       "repoName": "Cursor Agentic Rules",
       "stars": 0,
@@ -8493,6 +8531,24 @@
       "stars": 290,
       "ecosystems": [
         "general"
+      ]
+    },
+    {
+      "id": "modern-web-guidance",
+      "uniqueId": "05-ui-ux:modern-web-guidance",
+      "name": "modern-web-guidance",
+      "priority": "P0",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan).",
+      "scoped": "ui-modern-web-guidance",
+      "cli": "python scripts/install-to-project.py --skill ui-modern-web-guidance",
+      "repo": "GoogleChrome/modern-web-guidance-src",
+      "repoName": "Modern Web Guidance Src",
+      "stars": 0,
+      "ecosystems": [
+        "android",
+        "agents"
       ]
     },
     {

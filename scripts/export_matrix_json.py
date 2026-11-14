@@ -175,6 +175,8 @@ SKILL_TO_REPO = {
     # UI / Design
     'unslop': 'heydamir/unslop',
     'ui-unslop': 'heydamir/unslop',
+    'modern-web-guidance': 'GoogleChrome/modern-web-guidance-src',
+    'ui-modern-web-guidance': 'GoogleChrome/modern-web-guidance-src',
     'astryx': 'meta/astryx',
     'archify': 'tt-a1i/archify',
     'ui-taste': 'uizze/uizze',
@@ -330,6 +332,7 @@ REPO_DISPLAY_NAMES = {
     'tt-a1i/archify': 'Archify',
     'uizze/uizze': 'Uizze UI Taste',
     'heydamir/unslop': 'Unslop',
+    'googlechrome/modern-web-guidance-src': 'Modern Web Guidance',
     'shadcn/ui': 'shadcn/ui',
     'emilkowalski/skills': 'Emil Kowalski',
     'greensock/gsap-skills': 'GSAP Animation',
