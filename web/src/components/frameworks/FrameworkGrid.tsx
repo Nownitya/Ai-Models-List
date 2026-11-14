@@ -1,7 +1,9 @@
-import React, { useMemo } from 'react'
-import { Boxes, SearchX } from 'lucide-react'
+import React, { useMemo, useState, useEffect } from 'react'
+import { Boxes, SearchX, ChevronDown } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import { FrameworkCard } from './FrameworkCard'
+
+const PAGE_SIZE = 20
 
 export const FrameworkGrid: React.FC = () => {
   const frameworks = useSkillStore((s) => s.frameworks)
@@ -10,6 +12,13 @@ export const FrameworkGrid: React.FC = () => {
   const selectedEcosystem = useSkillStore((s) => s.selectedEcosystem)
   const selectedSort = useSkillStore((s) => s.selectedSort)
   const resetFilters = useSkillStore((s) => s.resetFilters)
+
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+
+  // Reset pagination when filters change
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [searchQuery, selectedCategory, selectedEcosystem, selectedSort])
 
   const filteredFrameworks = useMemo(() => {
     let result = [...frameworks]
@@ -62,7 +71,6 @@ export const FrameworkGrid: React.FC = () => {
     } else if (selectedSort === 'name-asc') {
       result.sort((a, b) => a.repoName.localeCompare(b.repoName))
     } else {
-      // Default: By skills count and stars
       result.sort((a, b) => (b.skillsCount - a.skillsCount) || (b.stars - a.stars))
     }
 
@@ -72,16 +80,16 @@ export const FrameworkGrid: React.FC = () => {
   if (filteredFrameworks.length === 0) {
     return (
       <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-16 flex flex-col items-center justify-center text-center">
-        <div className="w-16 h-16 rounded-2xl bg-[#161b22] border border-[#30363d] flex items-center justify-center mb-4 text-[#8b949e]">
+        <div className="w-16 h-16 rounded-2xl bg-[#141417] border border-[#27272a] flex items-center justify-center mb-4 text-zinc-500">
           <SearchX className="w-8 h-8" />
         </div>
-        <h3 className="text-lg font-bold text-[#f0f6fc] mb-1">No upstream frameworks found</h3>
-        <p className="text-sm text-[#8b949e] max-w-md mb-6">
+        <h3 className="text-lg font-bold text-white mb-1">No upstream frameworks found</h3>
+        <p className="text-sm text-zinc-400 max-w-md mb-6">
           No frameworks match your active filters or search query &quot;{searchQuery}&quot;.
         </p>
         <button
           onClick={resetFilters}
-          className="px-4 py-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-sm font-semibold transition-colors cursor-pointer"
+          className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-600 text-xs font-semibold transition-colors cursor-pointer"
         >
           Reset All Filters
         </button>
@@ -89,26 +97,61 @@ export const FrameworkGrid: React.FC = () => {
     )
   }
 
+  const visibleFrameworks = filteredFrameworks.slice(0, visibleCount)
+  const hasMore = filteredFrameworks.length > visibleCount
+
   return (
     <div className="w-full max-w-[1850px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-4">
       {/* Subheader summary */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2 text-sm text-[#8b949e]">
-          <Boxes className="w-4 h-4 text-cyan-400" />
+      <div className="flex items-center justify-between mb-4 text-xs text-zinc-400 font-mono">
+        <div className="flex items-center gap-2">
+          <Boxes className="w-4 h-4 text-emerald-400" />
           <span>
-            Showing <strong className="text-[#f0f6fc] font-semibold">{filteredFrameworks.length}</strong> of{' '}
-            <strong className="text-[#f0f6fc] font-semibold">{frameworks.length}</strong> upstream repositories
+            Showing <strong className="text-white font-semibold">{visibleFrameworks.length}</strong> of{' '}
+            <strong className="text-white font-semibold">{filteredFrameworks.length}</strong> frameworks
           </span>
         </div>
       </div>
 
       {/* Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-        {filteredFrameworks.map((framework) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3.5">
+        {visibleFrameworks.map((framework) => (
           <FrameworkCard key={framework.id} framework={framework} />
         ))}
       </div>
+
+      {/* Progressive Load More (+20) */}
+      {hasMore && (
+        <div className="mt-8 mb-8 flex flex-col items-center justify-center gap-2.5">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <button
+              onClick={() => setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, filteredFrameworks.length))}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18181b] hover:bg-[#27272a] text-zinc-100 hover:text-white border border-[#27272a] hover:border-zinc-500 font-semibold text-xs transition-all shadow-xs cursor-pointer group"
+            >
+              <ChevronDown className="w-4 h-4 text-zinc-400 group-hover:text-white group-hover:translate-y-0.5 transition-transform" />
+              <span>Load More Frameworks (+{PAGE_SIZE})</span>
+            </button>
+
+            <button
+              onClick={() => setVisibleCount(filteredFrameworks.length)}
+              className="px-4 py-2.5 rounded-xl bg-transparent hover:bg-[#18181b] text-zinc-400 hover:text-zinc-200 border border-[#27272a] text-xs font-mono transition-colors cursor-pointer"
+            >
+              Show All ({filteredFrameworks.length})
+            </button>
+          </div>
+
+          <p className="text-center text-[11px] font-mono text-zinc-500">
+            Showing <strong className="text-zinc-300">{visibleFrameworks.length}</strong> of{' '}
+            <strong className="text-zinc-300">{filteredFrameworks.length}</strong> frameworks
+          </p>
+        </div>
+      )}
+
+      {!hasMore && filteredFrameworks.length > PAGE_SIZE && (
+        <p className="text-center text-xs font-mono text-zinc-500 mt-8 mb-8">
+          All {filteredFrameworks.length} frameworks loaded · Scroll down for directory links and system status
+        </p>
+      )}
     </div>
   )
 }
-

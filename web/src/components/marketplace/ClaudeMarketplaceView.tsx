@@ -20,7 +20,7 @@ import agentsProductsData from '@/data/claude-agents-products.json'
 import connectorsData from '@/data/claude-connectors-plugins.json'
 import type { MarketplacePlugin, MarketplaceAgentProduct, MarketplaceConnector } from '@/types'
 
-const PAGE_SIZE = 48
+const PAGE_SIZE = 20
 
 export const ClaudeMarketplaceView: React.FC = () => {
   // Mode switcher: Connectors vs Plugins vs Agents & Products
@@ -662,14 +662,26 @@ export const ClaudeMarketplaceView: React.FC = () => {
 
           {/* Progressive Load More Button */}
           {filteredConnectors.length > visibleConnectors.length && (
-            <div className="mt-8 text-center">
-              <button
-                onClick={() => setConnectorLimit((prev) => prev + PAGE_SIZE)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#18181b] hover:bg-zinc-800 text-xs font-semibold text-zinc-200 border border-[#27272a] hover:border-zinc-500 transition-colors cursor-pointer"
-              >
-                <ChevronDown className="w-4 h-4 text-zinc-400" />
-                <span>Load More Connectors (+{Math.min(PAGE_SIZE, filteredConnectors.length - visibleConnectors.length)})</span>
-              </button>
+            <div className="mt-8 mb-6 flex flex-col items-center justify-center gap-2">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <button
+                  onClick={() => setConnectorLimit((prev) => prev + PAGE_SIZE)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#18181b] hover:bg-[#27272a] text-xs font-semibold text-zinc-100 hover:text-white border border-[#27272a] hover:border-zinc-500 transition-all cursor-pointer group"
+                >
+                  <ChevronDown className="w-4 h-4 text-zinc-400 group-hover:text-white group-hover:translate-y-0.5 transition-transform" />
+                  <span>Load More Connectors (+{Math.min(PAGE_SIZE, filteredConnectors.length - visibleConnectors.length)})</span>
+                </button>
+
+                <button
+                  onClick={() => setConnectorLimit(filteredConnectors.length)}
+                  className="px-4 py-2.5 rounded-lg bg-transparent hover:bg-[#18181b] text-zinc-400 hover:text-zinc-200 border border-[#27272a] text-xs font-mono transition-colors cursor-pointer"
+                >
+                  Show All ({filteredConnectors.length})
+                </button>
+              </div>
+              <p className="text-[11px] font-mono text-zinc-500">
+                Showing {visibleConnectors.length} of {filteredConnectors.length} connectors
+              </p>
             </div>
           )}
         </>
@@ -875,14 +887,26 @@ export const ClaudeMarketplaceView: React.FC = () => {
 
           {/* Progressive Load More Button */}
           {filteredPlugins.length > visiblePlugins.length && (
-            <div className="mt-8 text-center">
-              <button
-                onClick={() => setPluginLimit((prev) => prev + PAGE_SIZE)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#18181b] hover:bg-zinc-800 text-xs font-semibold text-zinc-200 border border-[#27272a] hover:border-zinc-500 transition-colors cursor-pointer"
-              >
-                <ChevronDown className="w-4 h-4 text-zinc-400" />
-                <span>Load More Plugins (+{Math.min(PAGE_SIZE, filteredPlugins.length - visiblePlugins.length)})</span>
-              </button>
+            <div className="mt-8 mb-6 flex flex-col items-center justify-center gap-2">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <button
+                  onClick={() => setPluginLimit((prev) => prev + PAGE_SIZE)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#18181b] hover:bg-[#27272a] text-xs font-semibold text-zinc-100 hover:text-white border border-[#27272a] hover:border-zinc-500 transition-all cursor-pointer group"
+                >
+                  <ChevronDown className="w-4 h-4 text-zinc-400 group-hover:text-white group-hover:translate-y-0.5 transition-transform" />
+                  <span>Load More Plugins (+{Math.min(PAGE_SIZE, filteredPlugins.length - visiblePlugins.length)})</span>
+                </button>
+
+                <button
+                  onClick={() => setPluginLimit(filteredPlugins.length)}
+                  className="px-4 py-2.5 rounded-lg bg-transparent hover:bg-[#18181b] text-zinc-400 hover:text-zinc-200 border border-[#27272a] text-xs font-mono transition-colors cursor-pointer"
+                >
+                  Show All ({filteredPlugins.length})
+                </button>
+              </div>
+              <p className="text-[11px] font-mono text-zinc-500">
+                Showing {visiblePlugins.length} of {filteredPlugins.length} plugins
+              </p>
             </div>
           )}
         </>
