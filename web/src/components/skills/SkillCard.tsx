@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch, ArrowUpRight, Share2 } from 'lucide-react'
+import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch, ArrowUpRight, Share2, Terminal } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Skill } from '@/types'
 
@@ -11,6 +11,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedCli, setCopiedCli] = useState(false)
   const [copiedLink, setCopiedLink] = useState(false)
+  const [avatarError, setAvatarError] = useState(false)
 
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
@@ -18,6 +19,11 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   const setRepo = useSkillStore((s) => s.setRepo)
 
   const isSavedInStack = stack.some((s) => s.id === skill.id)
+
+  const owner = skill.repo && skill.repo.includes('/') ? skill.repo.split('/')[0] : null
+  const avatarUrl = owner ? `https://github.com/${owner}.png?size=48` : null
+
+  const officialNpxCmd = skill.repo ? `npx skills add ${skill.repo} --skill ${skill.id}` : skill.cli
 
   const copySlashCommand = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -28,7 +34,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
 
   const copyCliCommand = (e: React.MouseEvent) => {
     e.stopPropagation()
-    navigator.clipboard.writeText(skill.cli)
+    navigator.clipboard.writeText(officialNpxCmd)
     setCopiedCli(true)
     setTimeout(() => setCopiedCli(false), 1400)
   }
@@ -89,11 +95,22 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
           </div>
         </div>
 
-        {/* Skill Name & Arrow */}
+        {/* Skill Name, Avatar & Arrow */}
         <div className="flex items-start justify-between gap-2 mb-1.5">
-          <h3 className="text-base font-bold text-zinc-100 group-hover:text-white transition-colors">
-            {skill.name}
-          </h3>
+          <div className="flex items-center gap-2 min-w-0">
+            {avatarUrl && !avatarError ? (
+              <img
+                src={avatarUrl}
+                alt={owner || ''}
+                onError={() => setAvatarError(true)}
+                className="w-4 h-4 rounded-full border border-[#27272a] bg-[#18181b] shrink-0"
+                loading="lazy"
+              />
+            ) : null}
+            <h3 className="text-base font-bold text-zinc-100 group-hover:text-white transition-colors truncate">
+              {skill.name}
+            </h3>
+          </div>
           <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-zinc-300 transition-colors shrink-0 mt-0.5" />
         </div>
 
@@ -142,18 +159,16 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
           )}
         </div>
 
-        {/* Install CLI copy bar */}
+        {/* Official Open Standard CLI copy bar */}
         <div className="flex items-center justify-between gap-1 text-xs text-zinc-500">
           <button
             onClick={copyCliCommand}
-            className="inline-flex items-center gap-1 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer"
-            title="Copy CLI execution syntax"
+            className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer font-mono text-[11px]"
+            title={`Copy official CLI: ${officialNpxCmd}`}
           >
-            <span className="text-[10px] text-zinc-500 uppercase font-semibold">CLI:</span>
-            <span className="font-mono text-xs text-zinc-300 truncate max-w-[180px]">
-              {skill.cli}
-            </span>
-            {copiedCli ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-zinc-500" />}
+            <Terminal className="w-3 h-3 text-cyan-400 shrink-0" />
+            <span className="truncate max-w-[200px]">{officialNpxCmd}</span>
+            {copiedCli ? <Check className="w-3 h-3 text-emerald-400 shrink-0" /> : <Copy className="w-3 h-3 text-zinc-500 shrink-0" />}
           </button>
 
           {skill.repo && (
@@ -162,7 +177,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-zinc-500 hover:text-zinc-300 p-0.5"
+              className="text-zinc-500 hover:text-zinc-300 p-0.5 transition-colors"
               title="Open upstream repository"
             >
               <ExternalLink className="w-3 h-3" />

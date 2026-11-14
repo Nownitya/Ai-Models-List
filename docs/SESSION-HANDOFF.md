@@ -68,7 +68,14 @@
      - Upgraded `StackModal.tsx` with format toggle between `npx skills add` (official open standard) and `python scripts/install-to-project.py`.
      - Automatically generates cherry-pick commands for multi-skill repos (`npx skills add garrytan/gstack --skill review`).
 
-9. **Tool & Infrastructure Verification**:
+9. **Sub-Skill Peeks, Search-Match Highlighting & `unslop` Polish (CEO Review Approved)**:
+   - **Suite Card Member Peeks**: `FrameworkCard.tsx` now renders preview chips of the top 3 member skills (e.g., `[review] [qa] [ship] +18 more`), giving developers immediate X-ray visibility into multi-skill suites.
+   - **Instant Search Match Highlighting**: If a user searches for an inner skill (e.g., `review`, `qa`, `testing`), `FrameworkCard.tsx` dynamically surfaces a highlighted banner: `Matches: review, qa` showing exactly why that parent suite matched.
+   - **Authentic GitHub Vendor Avatars**: Embedded dynamic GitHub owner avatars (`https://github.com/<owner>.png?size=64`) with fallback across `FrameworkCard.tsx`, `SkillCard.tsx`, and `CompactSkillRow.tsx`.
+   - **Official CLI Copy on Atomic Cards**: Upgraded `SkillCard.tsx` to directly feature the official open standard `npx skills add <repo> --skill <id>` copy bar alongside slash commands.
+   - **Anti-Slop Craft**: Applied quiet dark surfaces (`#09090b` canvas, `#111114` card surface), hairline borders (`#27272a`), and monospaced telemetry.
+
+10. **Tool & Infrastructure Verification**:
    - `Context7`: Active MCP server in Antigravity for live external library documentation.
    - `Graphify`: Binary installed at `C:\Users\nowni\.local\bin\graphify.exe` for internal AST codebase graphs.
    - `Billion Context`: Evaluated—not needed in Antigravity (native `/compact` and subagents handle context natively).
@@ -77,13 +84,13 @@
 ---
 
 ### 📋 Immediate Next Tasks Ready for Execution
-1. [ ] **Storefront Card & Layout Polish (`web/src`)**:
-   - Continue applying the `unslop` 9-pass design audit to `web/src/components/skills/SkillCard.tsx` and `CompactSkillRow.tsx` (cleaner padding, subtle borders, authentic vendor logos).
-2. [ ] **Catalog Emerging Trending Skills**:
-   - Scan `skills.sh/trending` and GitHub for new frontier agent skills to expand the catalog.
-3. [ ] **Deployment & Vault Sync**:
-   - Build and stage via `python scripts/deploy-skilldock.py`.
-   - Maintain Obsidian parity via `python scripts/sync-obsidian.py`.
+1. [x] **Storefront Card & Layout Polish (`web/src`)**:
+   - Completed `unslop` 9-pass design audit on `FrameworkCard.tsx`, `SkillCard.tsx`, and `CompactSkillRow.tsx` (sub-skill peeks, search match highlight, GitHub avatars, official npx copy).
+2. [ ] **Frontier Skills Expansion**:
+   - Ingest curated frontier agent skills (e.g. Claude 3.7 Sonnet extended thinking / hybrid reasoning patterns).
+3. [x] **Deployment & Vault Sync**:
+   - Built and staged via `python scripts/deploy-skilldock.py`.
+   - Maintained Obsidian parity via `python scripts/sync-obsidian.py`.
 
 ---
 

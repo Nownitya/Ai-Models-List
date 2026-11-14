@@ -9,6 +9,7 @@ interface FrameworkCardProps {
 
 export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
   const activeAssistant = useSkillStore((s) => s.activeAssistant)
+  const searchQuery = useSkillStore((s) => s.searchQuery)
   const openFrameworkInspect = useSkillStore((s) => s.openFrameworkInspect)
   const addFrameworkToStack = useSkillStore((s) => s.addFrameworkToStack)
   const stack = useSkillStore((s) => s.stack)
@@ -16,6 +17,23 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
   const [copiedCmd, setCopiedCmd] = useState(false)
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedShare, setCopiedShare] = useState(false)
+  const [avatarError, setAvatarError] = useState(false)
+
+  const owner = framework.repo.includes('/') ? framework.repo.split('/')[0] : framework.author
+  const avatarUrl = `https://github.com/${owner}.png?size=64`
+
+  // Dynamic matching skills when text search is active
+  const matchingSkills = searchQuery.trim() && framework.skillsCount > 1
+    ? framework.skills.filter((s) => {
+        const q = searchQuery.toLowerCase().trim()
+        return (
+          s.name.toLowerCase().includes(q) ||
+          s.scoped.toLowerCase().includes(q) ||
+          s.id.toLowerCase().includes(q) ||
+          s.description.toLowerCase().includes(q)
+        )
+      })
+    : []
 
   const activeRecipe = framework.installRecipes[activeAssistant] || framework.installRecipes.git
 
@@ -105,12 +123,25 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
           </div>
         </div>
 
-        {/* Title & Upstream Repo Pill */}
+        {/* Title, Vendor Avatar & Upstream Repo Pill */}
         <div className="space-y-1 mb-2.5">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="text-base font-bold text-zinc-100 group-hover:text-white transition-colors leading-tight">
-              {framework.repoName}
-            </h3>
+            <div className="flex items-center gap-2.5 min-w-0">
+              {!avatarError ? (
+                <img
+                  src={avatarUrl}
+                  alt={owner}
+                  onError={() => setAvatarError(true)}
+                  className="w-5 h-5 rounded-full border border-[#27272a] bg-[#18181b] shrink-0"
+                  loading="lazy"
+                />
+              ) : (
+                <GitFork className="w-4 h-4 text-zinc-500 shrink-0" />
+              )}
+              <h3 className="text-base font-bold text-zinc-100 group-hover:text-white transition-colors leading-tight truncate">
+                {framework.repoName}
+              </h3>
+            </div>
             <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-zinc-300 transition-colors shrink-0 mt-0.5" />
           </div>
           <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono bg-[#18181b] text-zinc-400 border border-[#27272a]">
@@ -125,7 +156,7 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
         </p>
 
         {/* Sub-Skills Badge */}
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-2.5">
           {framework.skillsCount > 1 ? (
             <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">
               <Layers className="w-3 h-3 text-indigo-400" />
@@ -143,6 +174,33 @@ export const FrameworkCard: React.FC<FrameworkCardProps> = ({ framework }) => {
             </span>
           )}
         </div>
+
+        {/* Dynamic Search Match Highlighting or Member Skill Peeks */}
+        {matchingSkills.length > 0 ? (
+          <div className="flex items-center gap-1.5 mb-3 px-2 py-1 rounded bg-emerald-950/20 border border-emerald-500/20 text-[11px] font-mono text-emerald-300">
+            <Check className="w-3 h-3 text-emerald-400 shrink-0" />
+            <span className="truncate">
+              Matches: {matchingSkills.slice(0, 3).map((m) => m.name).join(', ')}
+              {matchingSkills.length > 3 ? ` +${matchingSkills.length - 3}` : ''}
+            </span>
+          </div>
+        ) : framework.skillsCount > 1 ? (
+          <div className="flex flex-wrap items-center gap-1 mb-3">
+            {framework.skills.slice(0, 3).map((s) => (
+              <span
+                key={s.id}
+                className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#18181b] text-zinc-400 border border-[#27272a]"
+              >
+                {s.name}
+              </span>
+            ))}
+            {framework.skillsCount > 3 && (
+              <span className="text-[10px] font-mono text-zinc-500 px-1">
+                +{framework.skillsCount - 3} more
+              </span>
+            )}
+          </div>
+        ) : null}
       </div>
 
       {/* Card Footer: Slash command, Stars, Copyable Install Command */}

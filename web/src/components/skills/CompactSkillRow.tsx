@@ -10,6 +10,7 @@ interface CompactSkillRowProps {
 export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedLink, setCopiedLink] = useState(false)
+  const [avatarError, setAvatarError] = useState(false)
 
   const stack = useSkillStore((s) => s.stack)
   const toggleStack = useSkillStore((s) => s.toggleStack)
@@ -17,6 +18,9 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
   const setRepo = useSkillStore((s) => s.setRepo)
 
   const isSavedInStack = stack.some((s) => s.id === skill.id)
+
+  const owner = skill.repo && skill.repo.includes('/') ? skill.repo.split('/')[0] : null
+  const avatarUrl = owner ? `https://github.com/${owner}.png?size=32` : null
 
   const copySlashCommand = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -44,11 +48,21 @@ export const CompactSkillRow: React.FC<CompactSkillRowProps> = ({ skill }) => {
       onClick={() => openInspect(skill)}
       className="group w-full h-12 bg-[#111114] hover:bg-[#16161a] border border-[#27272a] hover:border-zinc-500 rounded-lg px-3.5 flex items-center justify-between gap-3 transition-colors cursor-pointer text-xs"
     >
-      {/* Left: Priority, Name, Repo, Category, Description Preview */}
+      {/* Left: Priority, Avatar, Name, Repo, Category, Description Preview */}
       <div className="flex items-center gap-2.5 min-w-0 flex-1">
         <span className={`px-1.5 py-0.2 rounded text-[10px] font-mono font-bold border shrink-0 ${priorityBadge}`}>
           {skill.priority}
         </span>
+
+        {avatarUrl && !avatarError ? (
+          <img
+            src={avatarUrl}
+            alt=""
+            onError={() => setAvatarError(true)}
+            className="w-4 h-4 rounded-full border border-[#27272a] bg-[#18181b] shrink-0 hidden sm:inline"
+            loading="lazy"
+          />
+        ) : null}
 
         <span className="font-bold text-zinc-100 group-hover:text-white transition-colors truncate shrink-0 max-w-[180px] sm:max-w-[220px] text-xs sm:text-sm">
           {skill.name}
