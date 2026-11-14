@@ -12,6 +12,18 @@ export const StackModal: React.FC = () => {
   const [copiedScript, setCopiedScript] = useState(false)
   const [cliFormat, setCliFormat] = useState<'npx' | 'python'>('npx')
 
+  // Token budget estimation
+  const estimatedTokens = stack.length * 800
+  const monolithicBaseline = Math.max(18000, stack.length * 2800)
+  const savingsPercent =
+    stack.length === 0
+      ? 0
+      : Math.max(0, Math.round(((monolithicBaseline - estimatedTokens) / monolithicBaseline) * 100))
+
+  const p0Count = stack.filter((s) => s.priority === 'P0').length
+  const p1Count = stack.filter((s) => s.priority === 'P1').length
+  const otherCount = stack.length - p0Count - p1Count
+
   if (!isStackModalOpen) return null
 
   // Helper to get active command
@@ -167,6 +179,60 @@ export const StackModal: React.FC = () => {
             <X className="w-4 h-4" />
           </button>
         </div>
+
+        {/* Visual Token Budget & Context Savings Meter */}
+        {stack.length > 0 && (
+          <div className="p-3.5 rounded-xl bg-[#111114] border border-[#27272a] space-y-2.5 shrink-0">
+            <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-semibold text-zinc-200">Active Token Footprint</span>
+                <span className="font-mono text-[11px] text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a]">
+                  ~{estimatedTokens.toLocaleString()} tokens
+                </span>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-[11px]">
+                <span className="text-emerald-400 font-semibold">~{savingsPercent}% savings</span>
+                <span className="text-zinc-500 hidden sm:inline">vs monolithic suites</span>
+              </div>
+            </div>
+
+            {/* Visual Token Meter Bar */}
+            <div className="space-y-1">
+              <div className="h-1.5 w-full bg-[#18181b] rounded-full overflow-hidden flex">
+                <div
+                  className="h-full bg-emerald-500 transition-all duration-300"
+                  style={{ width: `${Math.min(100, Math.max(5, (estimatedTokens / monolithicBaseline) * 100))}%` }}
+                />
+              </div>
+              <div className="flex items-center justify-between text-[10px] text-zinc-500 font-mono">
+                <span>Cherry-Picked: ~{estimatedTokens.toLocaleString()} tokens</span>
+                <span>Monolithic suite baseline: ~{monolithicBaseline.toLocaleString()} tokens</span>
+              </div>
+            </div>
+
+            {/* Priority Distribution */}
+            <div className="pt-2 border-t border-[#27272a]/60 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+              <div className="flex items-center gap-3">
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+                  <span>P0 Critical: <strong className="text-zinc-200">{p0Count}</strong></span>
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span>P1 High: <strong className="text-zinc-200">{p1Count}</strong></span>
+                </span>
+                {otherCount > 0 && (
+                  <span className="flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
+                    <span>Other: <strong className="text-zinc-200">{otherCount}</strong></span>
+                  </span>
+                )}
+              </div>
+              <span className="text-[10px] text-zinc-500 hidden sm:inline">Modular SKILL.md Standard</span>
+            </div>
+          </div>
+        )}
 
         {/* Stack Items List */}
         <div className="flex-1 overflow-y-auto space-y-2 pr-1">

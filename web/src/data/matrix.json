@@ -1,15 +1,15 @@
 {
   "meta": {
-    "totalSkills": 283,
-    "totalFrameworks": 74,
+    "totalSkills": 325,
+    "totalFrameworks": 112,
     "totalDocs": 57,
     "totalPrompts": 3,
-    "totalStars": 4487250,
+    "totalStars": 4846573,
     "categories": [
       {
         "id": "01-core-engineering",
         "label": "Core Engineering",
-        "count": 30
+        "count": 50
       },
       {
         "id": "02-matt-pocock",
@@ -29,7 +29,7 @@
       {
         "id": "05-ui-ux",
         "label": "UI / UX Design",
-        "count": 15
+        "count": 22
       },
       {
         "id": "06-gsd",
@@ -49,22 +49,22 @@
       {
         "id": "09-autonomous-agents",
         "label": "Autonomous Agents",
-        "count": 14
+        "count": 17
       },
       {
         "id": "10-ai-infrastructure",
         "label": "AI Infrastructure & MCP",
-        "count": 21
+        "count": 22
       },
       {
         "id": "11-code-review",
         "label": "Code Review & Quality",
-        "count": 14
+        "count": 20
       },
       {
         "id": "12-specialized",
         "label": "Specialized Tools",
-        "count": 28
+        "count": 33
       },
       {
         "id": "docs",
@@ -128,6 +128,12 @@
         "stars": 24120
       },
       {
+        "repo": "anthropics/skills",
+        "repoName": "Anthropic Skills",
+        "count": 3,
+        "stars": 194065
+      },
+      {
         "repo": "graphify-labs/graphify",
         "repoName": "Graphify",
         "count": 3,
@@ -146,22 +152,34 @@
         "stars": 4069
       },
       {
-        "repo": "anthropics/skills",
-        "repoName": "Anthropic Skills",
-        "count": 2,
-        "stars": 194065
-      },
-      {
         "repo": "mempalace/mempalace",
         "repoName": "MemPalace",
         "count": 2,
         "stars": 60546
       },
       {
+        "repo": "kepano/obsidian-skills",
+        "repoName": "Obsidian Brain",
+        "count": 2,
+        "stars": 52257
+      },
+      {
+        "repo": "vercel-labs/agent-browser",
+        "repoName": "Agent Browser",
+        "count": 2,
+        "stars": 50643
+      },
+      {
         "repo": "google/agents-cli",
         "repoName": "Google Agents CLI",
         "count": 2,
         "stars": 6346
+      },
+      {
+        "repo": "stripe/link-cli",
+        "repoName": "Stripe",
+        "count": 2,
+        "stars": 906
       },
       {
         "repo": "coderabbitai/skills",
@@ -296,16 +314,16 @@
         "stars": 56609
       },
       {
-        "repo": "kepano/obsidian-skills",
-        "repoName": "Obsidian Brain",
+        "repo": "nutlope/hallmark",
+        "repoName": "Hallmark",
         "count": 1,
-        "stars": 52257
+        "stars": 54421
       },
       {
-        "repo": "vercel-labs/agent-browser",
-        "repoName": "Agent Browser",
+        "repo": "herdrdev/herdr",
+        "repoName": "Herdr",
         "count": 1,
-        "stars": 50643
+        "stars": 50808
       },
       {
         "repo": "getsentry/sentry",
@@ -314,10 +332,22 @@
         "stars": 45768
       },
       {
+        "repo": "wshobson/agents",
+        "repoName": "Agents",
+        "count": 1,
+        "stars": 42482
+      },
+      {
         "repo": "semgrep/mcp-marketplace",
         "repoName": "Mcp Marketplace",
         "count": 1,
         "stars": 42000
+      },
+      {
+        "repo": "github/awesome-copilot",
+        "repoName": "Awesome Copilot",
+        "count": 1,
+        "stars": 41127
       },
       {
         "repo": "vercel-labs/skills",
@@ -356,6 +386,12 @@
         "stars": 27298
       },
       {
+        "repo": "wheresryan22/anatomy",
+        "repoName": "Anatomy",
+        "count": 1,
+        "stars": 27096
+      },
+      {
         "repo": "datadog-labs/claude-code-plugin",
         "repoName": "Claude Code Plugin",
         "count": 1,
@@ -368,16 +404,34 @@
         "stars": 23704
       },
       {
+        "repo": "vercel-labs/agent-desktop",
+        "repoName": "Agent Desktop",
+        "count": 1,
+        "stars": 23211
+      },
+      {
         "repo": "snarktank/ralph",
         "repoName": "Ralph Loop",
         "count": 1,
         "stars": 22225
       },
       {
+        "repo": "latent-spaces/brag",
+        "repoName": "Brag",
+        "count": 1,
+        "stars": 21368
+      },
+      {
         "repo": "posthog/ai-plugin",
         "repoName": "Ai Plugin",
         "count": 1,
         "stars": 21300
+      },
+      {
+        "repo": "bradautomates/claude-video",
+        "repoName": "Claude Video",
+        "count": 1,
+        "stars": 20703
       },
       {
         "repo": "sourcegraph-community/sourcegraph-claudecode-plugin",
@@ -390,6 +444,12 @@
         "repoName": "GSAP Animation",
         "count": 1,
         "stars": 18407
+      },
+      {
+        "repo": "larksuite/cli",
+        "repoName": "Cli",
+        "count": 1,
+        "stars": 18098
       },
       {
         "repo": "astronomer/agents",
@@ -410,10 +470,28 @@
         "stars": 15178
       },
       {
+        "repo": "jakubkrehel/skills",
+        "repoName": "Skills",
+        "count": 1,
+        "stars": 12117
+      },
+      {
         "repo": "huggingface/skills",
         "repoName": "Skills",
         "count": 1,
         "stars": 11341
+      },
+      {
+        "repo": "google-labs-code/stitch-skills",
+        "repoName": "Stitch Skills",
+        "count": 1,
+        "stars": 8766
+      },
+      {
+        "repo": "gamedev-skills/awesome-gamedev-agent-skills",
+        "repoName": "Awesome Gamedev Agent Skills",
+        "count": 1,
+        "stars": 8734
       },
       {
         "repo": "trailofbits/skills",
@@ -440,16 +518,34 @@
         "stars": 6546
       },
       {
+        "repo": "browser-act/skills",
+        "repoName": "Skills",
+        "count": 1,
+        "stars": 6349
+      },
+      {
         "repo": "microsoft/tokeneconomizer",
         "repoName": "TokenEconomizer",
         "count": 1,
         "stars": 6049
       },
       {
+        "repo": "jakubkrehel/make-interfaces-feel-better",
+        "repoName": "Make Interfaces Feel Better",
+        "count": 1,
+        "stars": 4007
+      },
+      {
         "repo": "cloudflare/skills",
         "repoName": "Cloudflare Edge",
         "count": 1,
         "stars": 3362
+      },
+      {
+        "repo": "benjitaylor/skills",
+        "repoName": "Skills",
+        "count": 1,
+        "stars": 3256
       },
       {
         "repo": "addyosmani/web-quality-skills",
@@ -464,10 +560,40 @@
         "stars": 3053
       },
       {
+        "repo": "jeremylongshore/tons-of-skills-marketplace",
+        "repoName": "Tons Of Skills Marketplace",
+        "count": 1,
+        "stars": 2918
+      },
+      {
+        "repo": "typesafe-ai/skills",
+        "repoName": "Skills",
+        "count": 1,
+        "stars": 2897
+      },
+      {
+        "repo": "higgsfield-ai/skills",
+        "repoName": "Skills",
+        "count": 1,
+        "stars": 1975
+      },
+      {
+        "repo": "mcollina/skills",
+        "repoName": "Skills",
+        "count": 1,
+        "stars": 1970
+      },
+      {
         "repo": "microsoft/azure-skills",
         "repoName": "Microsoft Azure",
         "count": 1,
         "stars": 1638
+      },
+      {
+        "repo": "daymade/claude-code-skills",
+        "repoName": "Claude Code Skills",
+        "count": 1,
+        "stars": 1530
       },
       {
         "repo": "open-gsd/gsd-pi",
@@ -476,22 +602,124 @@
         "stars": 1367
       },
       {
+        "repo": "barty-bart/motion-graphics",
+        "repoName": "Motion Graphics",
+        "count": 1,
+        "stars": 1247
+      },
+      {
+        "repo": "binance/binance-skills-hub",
+        "repoName": "Binance Skills Hub",
+        "count": 1,
+        "stars": 1168
+      },
+      {
         "repo": "atlassian/atlassian-mcp-server",
         "repoName": "Atlassian Mcp Server",
         "count": 1,
         "stars": 1161
       },
       {
-        "repo": "stripe/link-cli",
-        "repoName": "Stripe",
+        "repo": "firecrawl/cli",
+        "repoName": "Firecrawl",
         "count": 1,
-        "stars": 906
+        "stars": 684
+      },
+      {
+        "repo": "firebase/agent-skills",
+        "repoName": "Firebase Agent Suite",
+        "count": 1,
+        "stars": 512
+      },
+      {
+        "repo": "currents-dev/playwright-best-practices-skill",
+        "repoName": "Playwright Best Practices Skill",
+        "count": 1,
+        "stars": 429
+      },
+      {
+        "repo": "sveltejs/ai-tools",
+        "repoName": "Svelte 5 Runes",
+        "count": 1,
+        "stars": 339
+      },
+      {
+        "repo": "arvindrk/extract-design-system",
+        "repoName": "Extract Design",
+        "count": 1,
+        "stars": 290
+      },
+      {
+        "repo": "better-auth/skills",
+        "repoName": "Better Auth",
+        "count": 1,
+        "stars": 231
+      },
+      {
+        "repo": "neondatabase/agent-skills",
+        "repoName": "Neon Postgres",
+        "count": 1,
+        "stars": 113
+      },
+      {
+        "repo": "mastra-ai/skills",
+        "repoName": "Mastra AI",
+        "count": 1,
+        "stars": 104
       },
       {
         "repo": "uizze/uizze",
         "repoName": "Uizze UI Taste",
         "count": 1,
         "stars": 99
+      },
+      {
+        "repo": "clerk/skills",
+        "repoName": "Clerk Auth",
+        "count": 1,
+        "stars": 94
+      },
+      {
+        "repo": "prisma/skills",
+        "repoName": "Prisma ORM",
+        "count": 1,
+        "stars": 80
+      },
+      {
+        "repo": "scrapegraphai/just-scrape",
+        "repoName": "Just Scrape",
+        "count": 1,
+        "stars": 76
+      },
+      {
+        "repo": "convex/agent-skills",
+        "repoName": "Convex",
+        "count": 1,
+        "stars": 69
+      },
+      {
+        "repo": "nrwl/nx-ai-agents-config",
+        "repoName": "Nx Monorepo",
+        "count": 1,
+        "stars": 30
+      },
+      {
+        "repo": "momentic-ai/skills",
+        "repoName": "Momentic AI",
+        "count": 1,
+        "stars": 17
+      },
+      {
+        "repo": "2dmurali/review-loop-skill",
+        "repoName": "Review Loop Skill",
+        "count": 1,
+        "stars": 7
+      },
+      {
+        "repo": "getcursor/cursor",
+        "repoName": "Cursor Agentic Rules",
+        "count": 1,
+        "stars": 0
       },
       {
         "repo": "google-ai-edge/LiteRT-LM",
@@ -518,8 +746,8 @@
         "stars": 0
       }
     ],
-    "p0Count": 96,
-    "p1Count": 107,
+    "p0Count": 99,
+    "p1Count": 146,
     "p2Count": 52,
     "p3Count": 28,
     "generatedAt": "2026-11-09"
@@ -2406,6 +2634,54 @@
       ]
     },
     {
+      "id": "anthropics-skills",
+      "repo": "anthropics/skills",
+      "repoName": "Anthropic Skills",
+      "author": "anthropics",
+      "stars": 194065,
+      "starsFormatted": "194k",
+      "description": "Public repository for Agent Skills",
+      "skillsCount": 3,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/anthropics/skills",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/anthropics/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/anthropics/skills.git ~/.claude/skills/skills",
+        "codex": "codex install anthropics/skills",
+        "git": "git clone https://github.com/anthropics/skills.git",
+        "cli": "python scripts/install-to-project.py --repo anthropics/skills"
+      },
+      "skills": [
+        {
+          "id": "git-guardrails-claude-code",
+          "name": "git-guardrails-claude-code",
+          "priority": "P1",
+          "scoped": "core-git-guardrails-claude-code",
+          "cli": "python scripts/install-to-project.py --skill core-git-guardrails-claude-code",
+          "description": "Protect Git operations in supported Claude Code environments; host-specific."
+        },
+        {
+          "id": "claude-3-7-hybrid-reasoning",
+          "name": "claude-3-7-hybrid-reasoning",
+          "priority": "P0",
+          "scoped": "claude-3-7-hybrid-reasoning",
+          "cli": "python scripts/install-to-project.py --skill claude-3-7-hybrid-reasoning",
+          "description": "Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet."
+        },
+        {
+          "id": "anthropic-skills",
+          "name": "anthropic-skills",
+          "priority": "P0",
+          "scoped": "infra-anthropic-skills",
+          "cli": "python scripts/install-to-project.py --skill infra-anthropic-skills",
+          "description": "Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku."
+        }
+      ]
+    },
+    {
       "id": "graphify-labs-graphify",
       "repo": "graphify-labs/graphify",
       "repoName": "Graphify",
@@ -2550,46 +2826,6 @@
       ]
     },
     {
-      "id": "anthropics-skills",
-      "repo": "anthropics/skills",
-      "repoName": "Anthropic Skills",
-      "author": "anthropics",
-      "stars": 194065,
-      "starsFormatted": "194k",
-      "description": "Public repository for Agent Skills",
-      "skillsCount": 2,
-      "categoryId": "01-core-engineering",
-      "categoryLabel": "Core Engineering",
-      "officialUrl": "https://github.com/anthropics/skills",
-      "version": "latest",
-      "license": "Other",
-      "installRecipes": {
-        "antigravity": "git clone https://github.com/anthropics/skills.git ~/.gemini/antigravity/skills/skills",
-        "claude": "git clone https://github.com/anthropics/skills.git ~/.claude/skills/skills",
-        "codex": "codex install anthropics/skills",
-        "git": "git clone https://github.com/anthropics/skills.git",
-        "cli": "python scripts/install-to-project.py --repo anthropics/skills"
-      },
-      "skills": [
-        {
-          "id": "git-guardrails-claude-code",
-          "name": "git-guardrails-claude-code",
-          "priority": "P1",
-          "scoped": "core-git-guardrails-claude-code",
-          "cli": "python scripts/install-to-project.py --skill core-git-guardrails-claude-code",
-          "description": "Protect Git operations in supported Claude Code environments; host-specific."
-        },
-        {
-          "id": "anthropic-skills",
-          "name": "anthropic-skills",
-          "priority": "P0",
-          "scoped": "infra-anthropic-skills",
-          "cli": "python scripts/install-to-project.py --skill infra-anthropic-skills",
-          "description": "Anthropic's official public repository for Claude Code Agent Skills (188k+ stars). Provides production-grade system prompts, multi-turn tool calling workflows, architectural reasoning scaffolds, and specialized domain skills tailored for Claude 3.7 Sonnet and Claude 3.5 Haiku."
-        }
-      ]
-    },
-    {
       "id": "mempalace-mempalace",
       "repo": "mempalace/mempalace",
       "repoName": "MemPalace",
@@ -2630,6 +2866,86 @@
       ]
     },
     {
+      "id": "kepano-obsidian-skills",
+      "repo": "kepano/obsidian-skills",
+      "repoName": "Obsidian Brain",
+      "author": "kepano",
+      "stars": 52257,
+      "starsFormatted": "52.3k",
+      "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
+      "skillsCount": 2,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/obsidianmd/obsidian-skills",
+      "version": "1.1.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/kepano/obsidian-skills.git ~/.gemini/antigravity/skills/obsidian-skills",
+        "claude": "git clone https://github.com/kepano/obsidian-skills.git ~/.claude/skills/obsidian-skills",
+        "codex": "codex install kepano/obsidian-skills",
+        "git": "git clone https://github.com/kepano/obsidian-skills.git",
+        "cli": "python scripts/install-to-project.py --repo kepano/obsidian-skills"
+      },
+      "skills": [
+        {
+          "id": "obsidian-markdown",
+          "name": "obsidian-markdown",
+          "priority": "P0",
+          "scoped": "doc-obsidian-markdown",
+          "cli": "python scripts/install-to-project.py --skill doc-obsidian-markdown",
+          "description": "Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows."
+        },
+        {
+          "id": "obsidian-developer-second-brain",
+          "name": "obsidian-developer-second-brain",
+          "priority": "P0",
+          "scoped": "doc-obsidian-developer-second-brain",
+          "cli": "python scripts/install-to-project.py --skill doc-obsidian-developer-second-brain",
+          "description": "Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync."
+        }
+      ]
+    },
+    {
+      "id": "vercel-labs-agent-browser",
+      "repo": "vercel-labs/agent-browser",
+      "repoName": "Agent Browser",
+      "author": "vercel-labs",
+      "stars": 50643,
+      "starsFormatted": "50.6k",
+      "description": "Browser automation CLI for AI agents",
+      "skillsCount": 2,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/vercel-labs/agent-browser",
+      "version": "v0.43.0",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/vercel-labs/agent-browser.git ~/.gemini/antigravity/skills/agent-browser",
+        "claude": "git clone https://github.com/vercel-labs/agent-browser.git ~/.claude/skills/agent-browser",
+        "codex": "codex install vercel-labs/agent-browser",
+        "git": "git clone https://github.com/vercel-labs/agent-browser.git",
+        "cli": "python scripts/install-to-project.py --repo vercel-labs/agent-browser"
+      },
+      "skills": [
+        {
+          "id": "vercel-agent-browser",
+          "name": "vercel-agent-browser",
+          "priority": "P1",
+          "scoped": "workflow-vercel-agent-browser",
+          "cli": "python scripts/install-to-project.py --skill workflow-vercel-agent-browser",
+          "description": "Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation."
+        },
+        {
+          "id": "agent-browser",
+          "name": "agent-browser",
+          "priority": "P2",
+          "scoped": "spec-agent-browser",
+          "cli": "python scripts/install-to-project.py --skill spec-agent-browser",
+          "description": "Automate browser workflows."
+        }
+      ]
+    },
+    {
       "id": "google-agents-cli",
       "repo": "google/agents-cli",
       "repoName": "Google Agents CLI",
@@ -2666,6 +2982,46 @@
           "scoped": "infra-google-agents-cli",
           "cli": "python scripts/install-to-project.py --skill infra-google-agents-cli",
           "description": "Google CLI + seven agent skills for building, scaffolding, coding, evaluating, deploying, publishing and observing AI agents on Google Cloud using ADK. It is a toolkit for coding assistants, not a coding agent/model. Works with Antigravity CLI, Claude Code, Codex and other coding agents; framework is ADK by default, while ADK model configuration supports Gemini natively and other providers via LiteLLM (documented examples: OpenAI GPT-4o, Anthropic Claude Sonnet, and Ollama-hosted Llama). Local create/run/eval can use Gemini AI Studio API key; cloud deployment needs Google Cloud. Useful when developing AI agents, not required for normal Android app coding."
+        }
+      ]
+    },
+    {
+      "id": "stripe-link-cli",
+      "repo": "stripe/link-cli",
+      "repoName": "Stripe",
+      "author": "stripe",
+      "stars": 906,
+      "starsFormatted": "906",
+      "description": "Let your agents spend on your behalf. Your payment credentials are never exposed. You approve every purchase.",
+      "skillsCount": 2,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/stripe/link-cli",
+      "version": "@stripe/link-sdk@3.1.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/stripe/link-cli.git ~/.gemini/antigravity/skills/link-cli",
+        "claude": "git clone https://github.com/stripe/link-cli.git ~/.claude/skills/link-cli",
+        "codex": "codex install stripe/link-cli",
+        "git": "git clone https://github.com/stripe/link-cli.git",
+        "cli": "python scripts/install-to-project.py --repo stripe/link-cli"
+      },
+      "skills": [
+        {
+          "id": "stripe-link-checkout",
+          "name": "stripe-link-checkout",
+          "priority": "P1",
+          "scoped": "workflow-stripe-link-checkout",
+          "cli": "python scripts/install-to-project.py --skill workflow-stripe-link-checkout",
+          "description": "Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation."
+        },
+        {
+          "id": "stripe-payments",
+          "name": "stripe-payments",
+          "priority": "P0",
+          "scoped": "spec-stripe-payments",
+          "cli": "python scripts/install-to-project.py --skill spec-stripe-payments",
+          "description": "Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades."
         }
       ]
     },
@@ -3382,66 +3738,66 @@
       ]
     },
     {
-      "id": "kepano-obsidian-skills",
-      "repo": "kepano/obsidian-skills",
-      "repoName": "Obsidian Brain",
-      "author": "kepano",
-      "stars": 52257,
-      "starsFormatted": "52.3k",
-      "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
+      "id": "nutlope-hallmark",
+      "repo": "nutlope/hallmark",
+      "repoName": "Hallmark",
+      "author": "nutlope",
+      "stars": 54421,
+      "starsFormatted": "54.4k",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
       "skillsCount": 1,
-      "categoryId": "01-core-engineering",
-      "categoryLabel": "Core Engineering",
-      "officialUrl": "https://github.com/obsidianmd/obsidian-skills",
-      "version": "1.1.0",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "officialUrl": "https://github.com/Nutlope/hallmark",
+      "version": "latest",
       "license": "MIT",
       "installRecipes": {
-        "antigravity": "git clone https://github.com/kepano/obsidian-skills.git ~/.gemini/antigravity/skills/obsidian-skills",
-        "claude": "git clone https://github.com/kepano/obsidian-skills.git ~/.claude/skills/obsidian-skills",
-        "codex": "codex install kepano/obsidian-skills",
-        "git": "git clone https://github.com/kepano/obsidian-skills.git",
-        "cli": "python scripts/install-to-project.py --repo kepano/obsidian-skills"
+        "antigravity": "git clone https://github.com/nutlope/hallmark.git ~/.gemini/antigravity/skills/hallmark",
+        "claude": "git clone https://github.com/nutlope/hallmark.git ~/.claude/skills/hallmark",
+        "codex": "codex install nutlope/hallmark",
+        "git": "git clone https://github.com/nutlope/hallmark.git",
+        "cli": "python scripts/install-to-project.py --repo nutlope/hallmark"
       },
       "skills": [
         {
-          "id": "obsidian-markdown",
-          "name": "obsidian-markdown",
-          "priority": "P0",
-          "scoped": "doc-obsidian-markdown",
-          "cli": "python scripts/install-to-project.py --skill doc-obsidian-markdown",
-          "description": "Steph Ango's (kepano) Obsidian markdown bases, file-over-app principles, knowledge vault architecture, and CLI workflows."
+          "id": "hallmark-frontend-eval",
+          "name": "hallmark-frontend-eval",
+          "priority": "P1",
+          "scoped": "test-hallmark-frontend-eval",
+          "cli": "python scripts/install-to-project.py --skill test-hallmark-frontend-eval",
+          "description": "Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment."
         }
       ]
     },
     {
-      "id": "vercel-labs-agent-browser",
-      "repo": "vercel-labs/agent-browser",
-      "repoName": "Agent Browser",
-      "author": "vercel-labs",
-      "stars": 50643,
-      "starsFormatted": "50.6k",
-      "description": "Browser automation CLI for AI agents",
+      "id": "herdrdev-herdr",
+      "repo": "herdrdev/herdr",
+      "repoName": "Herdr",
+      "author": "herdrdev",
+      "stars": 50808,
+      "starsFormatted": "50.8k",
+      "description": "the runtime your coding agents live on",
       "skillsCount": 1,
-      "categoryId": "12-specialized",
-      "categoryLabel": "Specialized Tools",
-      "officialUrl": "https://github.com/vercel-labs/agent-browser",
-      "version": "v0.43.0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/herdrdev/herdr",
+      "version": "v0.9.5",
       "license": "Apache-2.0",
       "installRecipes": {
-        "antigravity": "git clone https://github.com/vercel-labs/agent-browser.git ~/.gemini/antigravity/skills/agent-browser",
-        "claude": "git clone https://github.com/vercel-labs/agent-browser.git ~/.claude/skills/agent-browser",
-        "codex": "codex install vercel-labs/agent-browser",
-        "git": "git clone https://github.com/vercel-labs/agent-browser.git",
-        "cli": "python scripts/install-to-project.py --repo vercel-labs/agent-browser"
+        "antigravity": "git clone https://github.com/herdrdev/herdr.git ~/.gemini/antigravity/skills/herdr",
+        "claude": "git clone https://github.com/herdrdev/herdr.git ~/.claude/skills/herdr",
+        "codex": "codex install herdrdev/herdr",
+        "git": "git clone https://github.com/herdrdev/herdr.git",
+        "cli": "python scripts/install-to-project.py --repo herdrdev/herdr"
       },
       "skills": [
         {
-          "id": "agent-browser",
-          "name": "agent-browser",
-          "priority": "P2",
-          "scoped": "spec-agent-browser",
-          "cli": "python scripts/install-to-project.py --skill spec-agent-browser",
-          "description": "Automate browser workflows."
+          "id": "herdr-orchestration",
+          "name": "herdr-orchestration",
+          "priority": "P1",
+          "scoped": "agent-herdr-orchestration",
+          "cli": "python scripts/install-to-project.py --skill agent-herdr-orchestration",
+          "description": "Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination."
         }
       ]
     },
@@ -3478,6 +3834,38 @@
       ]
     },
     {
+      "id": "wshobson-agents",
+      "repo": "wshobson/agents",
+      "repoName": "Agents",
+      "author": "wshobson",
+      "stars": 42482,
+      "starsFormatted": "42.5k",
+      "description": "Plugins, agents, skills, and commands for Claude Code, Codex CLI, Cursor, OpenCode, Antigravity CLI, GitHub Copilot, and Pi, written once in Markdown and adapted to each tool by generators with validation and evals.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/wshobson/agents",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/wshobson/agents.git ~/.gemini/antigravity/skills/agents",
+        "claude": "git clone https://github.com/wshobson/agents.git ~/.claude/skills/agents",
+        "codex": "codex install wshobson/agents",
+        "git": "git clone https://github.com/wshobson/agents.git",
+        "cli": "python scripts/install-to-project.py --repo wshobson/agents"
+      },
+      "skills": [
+        {
+          "id": "typescript-tailwind-patterns",
+          "name": "typescript-tailwind-patterns",
+          "priority": "P1",
+          "scoped": "workflow-typescript-tailwind-patterns",
+          "cli": "python scripts/install-to-project.py --skill workflow-typescript-tailwind-patterns",
+          "description": "Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design."
+        }
+      ]
+    },
+    {
       "id": "semgrep-mcp-marketplace",
       "repo": "semgrep/mcp-marketplace",
       "repoName": "Mcp Marketplace",
@@ -3506,6 +3894,38 @@
           "scoped": "semgrep-security",
           "cli": "python scripts/install-to-project.py --skill semgrep-security",
           "description": "Semgrep SAST security rule scanner and MCP marketplace for Claude Code (19.5k+ installs). Detects OWASP Top 10 vulnerabilities, hardcoded secrets, and semantic anti-patterns with instant autofix suggestions."
+        }
+      ]
+    },
+    {
+      "id": "github-awesome-copilot",
+      "repo": "github/awesome-copilot",
+      "repoName": "Awesome Copilot",
+      "author": "github",
+      "stars": 41127,
+      "starsFormatted": "41.1k",
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/github/awesome-copilot",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/github/awesome-copilot.git ~/.gemini/antigravity/skills/awesome-copilot",
+        "claude": "git clone https://github.com/github/awesome-copilot.git ~/.claude/skills/awesome-copilot",
+        "codex": "codex install github/awesome-copilot",
+        "git": "git clone https://github.com/github/awesome-copilot.git",
+        "cli": "python scripts/install-to-project.py --repo github/awesome-copilot"
+      },
+      "skills": [
+        {
+          "id": "github-copilot-patterns",
+          "name": "github-copilot-patterns",
+          "priority": "P1",
+          "scoped": "workflow-github-copilot-patterns",
+          "cli": "python scripts/install-to-project.py --skill workflow-github-copilot-patterns",
+          "description": "Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows."
         }
       ]
     },
@@ -3702,6 +4122,38 @@
       ]
     },
     {
+      "id": "wheresryan22-anatomy",
+      "repo": "wheresryan22/anatomy",
+      "repoName": "Anatomy",
+      "author": "wheresryan22",
+      "stars": 27096,
+      "starsFormatted": "27.1k",
+      "description": "An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generates polished SVGs with optional WebGL shaders and 3D effects.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/wheresryan22/anatomy",
+      "version": "v1.1.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/wheresryan22/anatomy.git ~/.gemini/antigravity/skills/anatomy",
+        "claude": "git clone https://github.com/wheresryan22/anatomy.git ~/.claude/skills/anatomy",
+        "codex": "codex install wheresryan22/anatomy",
+        "git": "git clone https://github.com/wheresryan22/anatomy.git",
+        "cli": "python scripts/install-to-project.py --repo wheresryan22/anatomy"
+      },
+      "skills": [
+        {
+          "id": "component-anatomy-specs",
+          "name": "component-anatomy-specs",
+          "priority": "P1",
+          "scoped": "ui-component-anatomy-specs",
+          "cli": "python scripts/install-to-project.py --skill ui-component-anatomy-specs",
+          "description": "Design system component anatomy contracts, visual bounding boxes, and layout contracts."
+        }
+      ]
+    },
+    {
       "id": "datadog-labs-claude-code-plugin",
       "repo": "datadog-labs/claude-code-plugin",
       "repoName": "Claude Code Plugin",
@@ -3766,6 +4218,38 @@
       ]
     },
     {
+      "id": "vercel-labs-agent-desktop",
+      "repo": "vercel-labs/agent-desktop",
+      "repoName": "Agent Desktop",
+      "author": "vercel-labs",
+      "stars": 23211,
+      "starsFormatted": "23.2k",
+      "description": "Computer use CLI for AI agents",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/vercel-labs/agent-desktop",
+      "version": "v1.3.0",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/vercel-labs/agent-desktop.git ~/.gemini/antigravity/skills/agent-desktop",
+        "claude": "git clone https://github.com/vercel-labs/agent-desktop.git ~/.claude/skills/agent-desktop",
+        "codex": "codex install vercel-labs/agent-desktop",
+        "git": "git clone https://github.com/vercel-labs/agent-desktop.git",
+        "cli": "python scripts/install-to-project.py --repo vercel-labs/agent-desktop"
+      },
+      "skills": [
+        {
+          "id": "agent-desktop-gui",
+          "name": "agent-desktop-gui",
+          "priority": "P1",
+          "scoped": "agent-desktop-gui",
+          "cli": "python scripts/install-to-project.py --skill agent-desktop-gui",
+          "description": "Native desktop agent orchestration, operating system window management, and GUI interaction."
+        }
+      ]
+    },
+    {
       "id": "snarktank-ralph",
       "repo": "snarktank/ralph",
       "repoName": "Ralph Loop",
@@ -3798,6 +4282,38 @@
       ]
     },
     {
+      "id": "latent-spaces-brag",
+      "repo": "latent-spaces/brag",
+      "repoName": "Brag",
+      "author": "latent-spaces",
+      "stars": 21368,
+      "starsFormatted": "21.4k",
+      "description": "You built it. Now brag. Turn the project you just created into a short, shareable launch video with one command.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/latent-spaces/brag",
+      "version": "v0.5.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/latent-spaces/brag.git ~/.gemini/antigravity/skills/brag",
+        "claude": "git clone https://github.com/latent-spaces/brag.git ~/.claude/skills/brag",
+        "codex": "codex install latent-spaces/brag",
+        "git": "git clone https://github.com/latent-spaces/brag.git",
+        "cli": "python scripts/install-to-project.py --repo latent-spaces/brag"
+      },
+      "skills": [
+        {
+          "id": "brag-document-generator",
+          "name": "brag-document-generator",
+          "priority": "P1",
+          "scoped": "doc-brag-document-generator",
+          "cli": "python scripts/install-to-project.py --skill doc-brag-document-generator",
+          "description": "Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation."
+        }
+      ]
+    },
+    {
       "id": "posthog-ai-plugin",
       "repo": "posthog/ai-plugin",
       "repoName": "Ai Plugin",
@@ -3826,6 +4342,38 @@
           "scoped": "posthog-analytics",
           "cli": "python scripts/install-to-project.py --skill posthog-analytics",
           "description": "Official PostHog product analytics, session replay analysis, and feature flag management plugin for Claude Code. Verifies event taxonomy and queries user funnel telemetry."
+        }
+      ]
+    },
+    {
+      "id": "bradautomates-claude-video",
+      "repo": "bradautomates/claude-video",
+      "repoName": "Claude Video",
+      "author": "bradautomates",
+      "stars": 20703,
+      "starsFormatted": "20.7k",
+      "description": "Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude.",
+      "skillsCount": 1,
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "officialUrl": "https://github.com/bradautomates/claude-video",
+      "version": "v0.3.2",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/bradautomates/claude-video.git ~/.gemini/antigravity/skills/claude-video",
+        "claude": "git clone https://github.com/bradautomates/claude-video.git ~/.claude/skills/claude-video",
+        "codex": "codex install bradautomates/claude-video",
+        "git": "git clone https://github.com/bradautomates/claude-video.git",
+        "cli": "python scripts/install-to-project.py --repo bradautomates/claude-video"
+      },
+      "skills": [
+        {
+          "id": "video-frame-analysis",
+          "name": "video-frame-analysis",
+          "priority": "P1",
+          "scoped": "spec-video-frame-analysis",
+          "cli": "python scripts/install-to-project.py --skill spec-video-frame-analysis",
+          "description": "Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection."
         }
       ]
     },
@@ -3890,6 +4438,38 @@
           "scoped": "ui-gsap-animation",
           "cli": "python scripts/install-to-project.py --skill ui-gsap-animation",
           "description": "GreenSock Animation Platform (GSAP) professional timeline sequencing, ScrollTrigger scroll-driven animations, SVG morphing, and high-performance DOM motion."
+        }
+      ]
+    },
+    {
+      "id": "larksuite-cli",
+      "repo": "larksuite/cli",
+      "repoName": "Cli",
+      "author": "larksuite",
+      "stars": 18098,
+      "starsFormatted": "18.1k",
+      "description": "The official Lark/\u98de\u4e66 CLI tool, maintained by the larksuite team \u2014 built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meetings, and more, with 200+ commands and 20+ AI Agent Skills.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/larksuite/cli",
+      "version": "v1.0.100",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/larksuite/cli.git ~/.gemini/antigravity/skills/cli",
+        "claude": "git clone https://github.com/larksuite/cli.git ~/.claude/skills/cli",
+        "codex": "codex install larksuite/cli",
+        "git": "git clone https://github.com/larksuite/cli.git",
+        "cli": "python scripts/install-to-project.py --repo larksuite/cli"
+      },
+      "skills": [
+        {
+          "id": "lark-enterprise-cli",
+          "name": "lark-enterprise-cli",
+          "priority": "P1",
+          "scoped": "workflow-lark-enterprise-cli",
+          "cli": "python scripts/install-to-project.py --skill workflow-lark-enterprise-cli",
+          "description": "Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable."
         }
       ]
     },
@@ -3990,6 +4570,38 @@
       ]
     },
     {
+      "id": "jakubkrehel-skills",
+      "repo": "jakubkrehel/skills",
+      "repoName": "Skills",
+      "author": "jakubkrehel",
+      "stars": 12117,
+      "starsFormatted": "12.1k",
+      "description": "A collection of agent skills that help you build great interfaces.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/jakubkrehel/skills",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/jakubkrehel/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/jakubkrehel/skills.git ~/.claude/skills/skills",
+        "codex": "codex install jakubkrehel/skills",
+        "git": "git clone https://github.com/jakubkrehel/skills.git",
+        "cli": "python scripts/install-to-project.py --repo jakubkrehel/skills"
+      },
+      "skills": [
+        {
+          "id": "typography-layout-polish",
+          "name": "typography-layout-polish",
+          "priority": "P1",
+          "scoped": "ui-typography-layout-polish",
+          "cli": "python scripts/install-to-project.py --skill ui-typography-layout-polish",
+          "description": "Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers."
+        }
+      ]
+    },
+    {
       "id": "huggingface-skills",
       "repo": "huggingface/skills",
       "repoName": "Skills",
@@ -4018,6 +4630,70 @@
           "scoped": "huggingface-skills",
           "cli": "python scripts/install-to-project.py --skill huggingface-skills",
           "description": "Hugging Face model hub and inference integration skills for Claude Code. Enables search, evaluation, fine-tuning scripts, and API orchestration across open-source weights and datasets."
+        }
+      ]
+    },
+    {
+      "id": "google-labs-code-stitch-skills",
+      "repo": "google-labs-code/stitch-skills",
+      "repoName": "Stitch Skills",
+      "author": "google-labs-code",
+      "stars": 8766,
+      "starsFormatted": "8.8k",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/google-labs-code/stitch-skills",
+      "version": "v1.0",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/google-labs-code/stitch-skills.git ~/.gemini/antigravity/skills/stitch-skills",
+        "claude": "git clone https://github.com/google-labs-code/stitch-skills.git ~/.claude/skills/stitch-skills",
+        "codex": "codex install google-labs-code/stitch-skills",
+        "git": "git clone https://github.com/google-labs-code/stitch-skills.git",
+        "cli": "python scripts/install-to-project.py --repo google-labs-code/stitch-skills"
+      },
+      "skills": [
+        {
+          "id": "stitch-design-system",
+          "name": "stitch-design-system",
+          "priority": "P1",
+          "scoped": "ui-stitch-design-system",
+          "cli": "python scripts/install-to-project.py --skill ui-stitch-design-system",
+          "description": "Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge."
+        }
+      ]
+    },
+    {
+      "id": "gamedev-skills-awesome-gamedev-agent-skills",
+      "repo": "gamedev-skills/awesome-gamedev-agent-skills",
+      "repoName": "Awesome Gamedev Agent Skills",
+      "author": "gamedev-skills",
+      "stars": 8734,
+      "starsFormatted": "8.7k",
+      "description": "Make games with your AI coding agent: 79 game-dev skills and a router for Godot, Unity, Unreal, Roblox, three.js, Phaser and 6 more engines. Checked on the real engines.",
+      "skillsCount": 1,
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "officialUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+      "version": "v2.0.0",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/gamedev-skills/awesome-gamedev-agent-skills.git ~/.gemini/antigravity/skills/awesome-gamedev-agent-skills",
+        "claude": "git clone https://github.com/gamedev-skills/awesome-gamedev-agent-skills.git ~/.claude/skills/awesome-gamedev-agent-skills",
+        "codex": "codex install gamedev-skills/awesome-gamedev-agent-skills",
+        "git": "git clone https://github.com/gamedev-skills/awesome-gamedev-agent-skills.git",
+        "cli": "python scripts/install-to-project.py --repo gamedev-skills/awesome-gamedev-agent-skills"
+      },
+      "skills": [
+        {
+          "id": "gamedev-mechanics",
+          "name": "gamedev-mechanics",
+          "priority": "P1",
+          "scoped": "spec-gamedev-mechanics",
+          "cli": "python scripts/install-to-project.py --skill spec-gamedev-mechanics",
+          "description": "Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math."
         }
       ]
     },
@@ -4150,6 +4826,38 @@
       ]
     },
     {
+      "id": "browser-act-skills",
+      "repo": "browser-act/skills",
+      "repoName": "Skills",
+      "author": "browser-act",
+      "stars": 6349,
+      "starsFormatted": "6.3k",
+      "description": "Browser automation CLI built for AI agents. Break through anti-bot walls, hand off to humans across platforms when stuck. Parallel multi-task execution, independent multi-session operation, isolated multi-account browsing.",
+      "skillsCount": 1,
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "officialUrl": "https://github.com/browser-act/skills",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/browser-act/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/browser-act/skills.git ~/.claude/skills/skills",
+        "codex": "codex install browser-act/skills",
+        "git": "git clone https://github.com/browser-act/skills.git",
+        "cli": "python scripts/install-to-project.py --repo browser-act/skills"
+      },
+      "skills": [
+        {
+          "id": "browser-act-testing",
+          "name": "browser-act-testing",
+          "priority": "P1",
+          "scoped": "test-browser-act-testing",
+          "cli": "python scripts/install-to-project.py --skill test-browser-act-testing",
+          "description": "Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing."
+        }
+      ]
+    },
+    {
       "id": "microsoft-tokeneconomizer",
       "repo": "microsoft/tokeneconomizer",
       "repoName": "TokenEconomizer",
@@ -4182,6 +4890,38 @@
       ]
     },
     {
+      "id": "jakubkrehel-make-interfaces-feel-better",
+      "repo": "jakubkrehel/make-interfaces-feel-better",
+      "repoName": "Make Interfaces Feel Better",
+      "author": "jakubkrehel",
+      "stars": 4007,
+      "starsFormatted": "4.0k",
+      "description": "An agent skill that helps make your interface feel better.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/jakubkrehel/make-interfaces-feel-better",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/jakubkrehel/make-interfaces-feel-better.git ~/.gemini/antigravity/skills/make-interfaces-feel-better",
+        "claude": "git clone https://github.com/jakubkrehel/make-interfaces-feel-better.git ~/.claude/skills/make-interfaces-feel-better",
+        "codex": "codex install jakubkrehel/make-interfaces-feel-better",
+        "git": "git clone https://github.com/jakubkrehel/make-interfaces-feel-better.git",
+        "cli": "python scripts/install-to-project.py --repo jakubkrehel/make-interfaces-feel-better"
+      },
+      "skills": [
+        {
+          "id": "interface-feel-polish",
+          "name": "interface-feel-polish",
+          "priority": "P1",
+          "scoped": "ui-interface-feel-polish",
+          "cli": "python scripts/install-to-project.py --skill ui-interface-feel-polish",
+          "description": "Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback."
+        }
+      ]
+    },
+    {
       "id": "cloudflare-skills",
       "repo": "cloudflare/skills",
       "repoName": "Cloudflare Edge",
@@ -4210,6 +4950,38 @@
           "scoped": "infra-cloudflare-skills",
           "cli": "python scripts/install-to-project.py --skill infra-cloudflare-skills",
           "description": "Cloudflare Workers edge compute, serverless deployment, Wrangler CLI configuration, KV/D1 database bindings, and global edge caching."
+        }
+      ]
+    },
+    {
+      "id": "benjitaylor-skills",
+      "repo": "benjitaylor/skills",
+      "repoName": "Skills",
+      "author": "benjitaylor",
+      "stars": 3256,
+      "starsFormatted": "3.3k",
+      "description": "Skills for AI coding agents.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/benjitaylor/skills",
+      "version": "stageshow-v1.1.1",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/benjitaylor/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/benjitaylor/skills.git ~/.claude/skills/skills",
+        "codex": "codex install benjitaylor/skills",
+        "git": "git clone https://github.com/benjitaylor/skills.git",
+        "cli": "python scripts/install-to-project.py --repo benjitaylor/skills"
+      },
+      "skills": [
+        {
+          "id": "stageshow-ui-presentation",
+          "name": "stageshow-ui-presentation",
+          "priority": "P1",
+          "scoped": "ui-stageshow-ui-presentation",
+          "cli": "python scripts/install-to-project.py --skill ui-stageshow-ui-presentation",
+          "description": "Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges."
         }
       ]
     },
@@ -4278,6 +5050,134 @@
       ]
     },
     {
+      "id": "jeremylongshore-tons-of-skills-marketplace",
+      "repo": "jeremylongshore/tons-of-skills-marketplace",
+      "repoName": "Tons Of Skills Marketplace",
+      "author": "jeremylongshore",
+      "stars": 2918,
+      "starsFormatted": "2.9k",
+      "description": "Model-agnostic agent-skills platform with a harness-free canonical layer, verified adapters, and the ccpi package manager. Explore at tonsofskills.com.",
+      "skillsCount": 1,
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "officialUrl": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+      "version": "v4.33.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/jeremylongshore/tons-of-skills-marketplace.git ~/.gemini/antigravity/skills/tons-of-skills-marketplace",
+        "claude": "git clone https://github.com/jeremylongshore/tons-of-skills-marketplace.git ~/.claude/skills/tons-of-skills-marketplace",
+        "codex": "codex install jeremylongshore/tons-of-skills-marketplace",
+        "git": "git clone https://github.com/jeremylongshore/tons-of-skills-marketplace.git",
+        "cli": "python scripts/install-to-project.py --repo jeremylongshore/tons-of-skills-marketplace"
+      },
+      "skills": [
+        {
+          "id": "network-latency-benchmarks",
+          "name": "network-latency-benchmarks",
+          "priority": "P1",
+          "scoped": "test-network-latency-benchmarks",
+          "cli": "python scripts/install-to-project.py --skill test-network-latency-benchmarks",
+          "description": "Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking."
+        }
+      ]
+    },
+    {
+      "id": "typesafe-ai-skills",
+      "repo": "typesafe-ai/skills",
+      "repoName": "Skills",
+      "author": "typesafe-ai",
+      "stars": 2897,
+      "starsFormatted": "2.9k",
+      "description": "Agent skills for building with TypeSafe's System One API",
+      "skillsCount": 1,
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "officialUrl": "https://github.com/typesafe-ai/skills",
+      "version": "v0.6.2",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/typesafe-ai/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/typesafe-ai/skills.git ~/.claude/skills/skills",
+        "codex": "codex install typesafe-ai/skills",
+        "git": "git clone https://github.com/typesafe-ai/skills.git",
+        "cli": "python scripts/install-to-project.py --repo typesafe-ai/skills"
+      },
+      "skills": [
+        {
+          "id": "typesafe-ai-schemas",
+          "name": "typesafe-ai-schemas",
+          "priority": "P1",
+          "scoped": "infra-typesafe-ai-schemas",
+          "cli": "python scripts/install-to-project.py --skill infra-typesafe-ai-schemas",
+          "description": "Strict JSON schema validation, typed function calling, and structured output invariant guards."
+        }
+      ]
+    },
+    {
+      "id": "higgsfield-ai-skills",
+      "repo": "higgsfield-ai/skills",
+      "repoName": "Skills",
+      "author": "higgsfield-ai",
+      "stars": 1975,
+      "starsFormatted": "2.0k",
+      "description": "Curated tools, workflows and capabilities from Skills.",
+      "skillsCount": 1,
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "officialUrl": "https://github.com/higgsfield-ai/skills",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/higgsfield-ai/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/higgsfield-ai/skills.git ~/.claude/skills/skills",
+        "codex": "codex install higgsfield-ai/skills",
+        "git": "git clone https://github.com/higgsfield-ai/skills.git",
+        "cli": "python scripts/install-to-project.py --repo higgsfield-ai/skills"
+      },
+      "skills": [
+        {
+          "id": "higgsfield-visual-media",
+          "name": "higgsfield-visual-media",
+          "priority": "P1",
+          "scoped": "spec-higgsfield-visual-media",
+          "cli": "python scripts/install-to-project.py --skill spec-higgsfield-visual-media",
+          "description": "Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition."
+        }
+      ]
+    },
+    {
+      "id": "mcollina-skills",
+      "repo": "mcollina/skills",
+      "repoName": "Skills",
+      "author": "mcollina",
+      "stars": 1970,
+      "starsFormatted": "2.0k",
+      "description": "My own collection of skills for modern Node.js development",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/mcollina/skills",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/mcollina/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/mcollina/skills.git ~/.claude/skills/skills",
+        "codex": "codex install mcollina/skills",
+        "git": "git clone https://github.com/mcollina/skills.git",
+        "cli": "python scripts/install-to-project.py --repo mcollina/skills"
+      },
+      "skills": [
+        {
+          "id": "fastify-backend-perf",
+          "name": "fastify-backend-perf",
+          "priority": "P1",
+          "scoped": "workflow-fastify-backend-perf",
+          "cli": "python scripts/install-to-project.py --skill workflow-fastify-backend-perf",
+          "description": "High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging."
+        }
+      ]
+    },
+    {
       "id": "microsoft-azure-skills",
       "repo": "microsoft/azure-skills",
       "repoName": "Microsoft Azure",
@@ -4306,6 +5206,38 @@
           "scoped": "infra-azure-skills",
           "cli": "python scripts/install-to-project.py --skill infra-azure-skills",
           "description": "Microsoft Azure enterprise cloud architecture, AKS Kubernetes deployment, Azure AI Foundry SDK integration, cost optimization, and diagnostic monitoring."
+        }
+      ]
+    },
+    {
+      "id": "daymade-claude-code-skills",
+      "repo": "daymade/claude-code-skills",
+      "repoName": "Claude Code Skills",
+      "author": "daymade",
+      "stars": 1530,
+      "starsFormatted": "1.5k",
+      "description": "Professional Claude Code skills marketplace featuring production-ready skills for enhanced development workflows.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/daymade/claude-code-skills",
+      "version": "v3.24.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/daymade/claude-code-skills.git ~/.gemini/antigravity/skills/claude-code-skills",
+        "claude": "git clone https://github.com/daymade/claude-code-skills.git ~/.claude/skills/claude-code-skills",
+        "codex": "codex install daymade/claude-code-skills",
+        "git": "git clone https://github.com/daymade/claude-code-skills.git",
+        "cli": "python scripts/install-to-project.py --repo daymade/claude-code-skills"
+      },
+      "skills": [
+        {
+          "id": "data-viz-html-reports",
+          "name": "data-viz-html-reports",
+          "priority": "P1",
+          "scoped": "ui-data-viz-html-reports",
+          "cli": "python scripts/install-to-project.py --skill ui-data-viz-html-reports",
+          "description": "Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports."
         }
       ]
     },
@@ -4342,6 +5274,70 @@
       ]
     },
     {
+      "id": "barty-bart-motion-graphics",
+      "repo": "barty-bart/motion-graphics",
+      "repoName": "Motion Graphics",
+      "author": "barty-bart",
+      "stars": 1247,
+      "starsFormatted": "1.2k",
+      "description": "Motion-graphics skills for Claude Code and Codex.",
+      "skillsCount": 1,
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "officialUrl": "https://github.com/Barty-Bart/motion-graphics",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/barty-bart/motion-graphics.git ~/.gemini/antigravity/skills/motion-graphics",
+        "claude": "git clone https://github.com/barty-bart/motion-graphics.git ~/.claude/skills/motion-graphics",
+        "codex": "codex install barty-bart/motion-graphics",
+        "git": "git clone https://github.com/barty-bart/motion-graphics.git",
+        "cli": "python scripts/install-to-project.py --repo barty-bart/motion-graphics"
+      },
+      "skills": [
+        {
+          "id": "motion-sound-effects",
+          "name": "motion-sound-effects",
+          "priority": "P1",
+          "scoped": "spec-motion-sound-effects",
+          "cli": "python scripts/install-to-project.py --skill spec-motion-sound-effects",
+          "description": "Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis."
+        }
+      ]
+    },
+    {
+      "id": "binance-binance-skills-hub",
+      "repo": "binance/binance-skills-hub",
+      "repoName": "Binance Skills Hub",
+      "author": "binance",
+      "stars": 1168,
+      "starsFormatted": "1.2k",
+      "description": "Binance Skills Hub is an open skills marketplace that gives AI agents native access to crypto",
+      "skillsCount": 1,
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "officialUrl": "https://github.com/binance/binance-skills-hub",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/binance/binance-skills-hub.git ~/.gemini/antigravity/skills/binance-skills-hub",
+        "claude": "git clone https://github.com/binance/binance-skills-hub.git ~/.claude/skills/binance-skills-hub",
+        "codex": "codex install binance/binance-skills-hub",
+        "git": "git clone https://github.com/binance/binance-skills-hub.git",
+        "cli": "python scripts/install-to-project.py --repo binance/binance-skills-hub"
+      },
+      "skills": [
+        {
+          "id": "binance-agentic-wallet",
+          "name": "binance-agentic-wallet",
+          "priority": "P1",
+          "scoped": "spec-binance-agentic-wallet",
+          "cli": "python scripts/install-to-project.py --skill spec-binance-agentic-wallet",
+          "description": "Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows."
+        }
+      ]
+    },
+    {
       "id": "atlassian-atlassian-mcp-server",
       "repo": "atlassian/atlassian-mcp-server",
       "repoName": "Atlassian Mcp Server",
@@ -4374,34 +5370,258 @@
       ]
     },
     {
-      "id": "stripe-link-cli",
-      "repo": "stripe/link-cli",
-      "repoName": "Stripe",
-      "author": "stripe",
-      "stars": 906,
-      "starsFormatted": "906",
-      "description": "Let your agents spend on your behalf. Your payment credentials are never exposed. You approve every purchase.",
+      "id": "firecrawl-cli",
+      "repo": "firecrawl/cli",
+      "repoName": "Firecrawl",
+      "author": "firecrawl",
+      "stars": 684,
+      "starsFormatted": "684",
+      "description": "Firecrawl CLI and agent skills: search, scrape, and interact with the web from your terminal or any coding agent, plus parse, crawl, map, Agent and Monitor. Firecrawl is the context API for AI agents.",
       "skillsCount": 1,
-      "categoryId": "12-specialized",
-      "categoryLabel": "Specialized Tools",
-      "officialUrl": "https://github.com/stripe/link-cli",
-      "version": "@stripe/link-sdk@3.1.0",
-      "license": "MIT",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/firecrawl/cli",
+      "version": "v1.29.0",
+      "license": "Other",
       "installRecipes": {
-        "antigravity": "git clone https://github.com/stripe/link-cli.git ~/.gemini/antigravity/skills/link-cli",
-        "claude": "git clone https://github.com/stripe/link-cli.git ~/.claude/skills/link-cli",
-        "codex": "codex install stripe/link-cli",
-        "git": "git clone https://github.com/stripe/link-cli.git",
-        "cli": "python scripts/install-to-project.py --repo stripe/link-cli"
+        "antigravity": "git clone https://github.com/firecrawl/cli.git ~/.gemini/antigravity/skills/cli",
+        "claude": "git clone https://github.com/firecrawl/cli.git ~/.claude/skills/cli",
+        "codex": "codex install firecrawl/cli",
+        "git": "git clone https://github.com/firecrawl/cli.git",
+        "cli": "python scripts/install-to-project.py --repo firecrawl/cli"
       },
       "skills": [
         {
-          "id": "stripe-payments",
-          "name": "stripe-payments",
-          "priority": "P0",
-          "scoped": "spec-stripe-payments",
-          "cli": "python scripts/install-to-project.py --skill spec-stripe-payments",
-          "description": "Official Stripe payment integrations, Checkout sessions, webhook verification, subscription lifecycles, and API upgrades."
+          "id": "firecrawl-web-scrape",
+          "name": "firecrawl-web-scrape",
+          "priority": "P1",
+          "scoped": "workflow-firecrawl-web-scrape",
+          "cli": "python scripts/install-to-project.py --skill workflow-firecrawl-web-scrape",
+          "description": "Clean LLM-ready markdown extraction, dynamic JS crawler, and structured data parsing."
+        }
+      ]
+    },
+    {
+      "id": "firebase-agent-skills",
+      "repo": "firebase/agent-skills",
+      "repoName": "Firebase Agent Suite",
+      "author": "firebase",
+      "stars": 512,
+      "starsFormatted": "512",
+      "description": "Agent Skills for Firebase",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/firebase/agent-skills",
+      "version": "latest",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/firebase/agent-skills.git ~/.gemini/antigravity/skills/agent-skills",
+        "claude": "git clone https://github.com/firebase/agent-skills.git ~/.claude/skills/agent-skills",
+        "codex": "codex install firebase/agent-skills",
+        "git": "git clone https://github.com/firebase/agent-skills.git",
+        "cli": "python scripts/install-to-project.py --repo firebase/agent-skills"
+      },
+      "skills": [
+        {
+          "id": "firebase-agent-suite",
+          "name": "firebase-agent-suite",
+          "priority": "P1",
+          "scoped": "workflow-firebase-agent-suite",
+          "cli": "python scripts/install-to-project.py --skill workflow-firebase-agent-suite",
+          "description": "Google Firebase backend suite, Firestore security rules audit, Cloud Functions, and Firebase Auth."
+        }
+      ]
+    },
+    {
+      "id": "currents-dev-playwright-best-practices-skill",
+      "repo": "currents-dev/playwright-best-practices-skill",
+      "repoName": "Playwright Best Practices Skill",
+      "author": "currents-dev",
+      "stars": 429,
+      "starsFormatted": "429",
+      "description": "AI Skill for Playwright Best Practices\u2014made by Currents.dev",
+      "skillsCount": 1,
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "officialUrl": "https://github.com/currents-dev/playwright-best-practices-skill",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/currents-dev/playwright-best-practices-skill.git ~/.gemini/antigravity/skills/playwright-best-practices-skill",
+        "claude": "git clone https://github.com/currents-dev/playwright-best-practices-skill.git ~/.claude/skills/playwright-best-practices-skill",
+        "codex": "codex install currents-dev/playwright-best-practices-skill",
+        "git": "git clone https://github.com/currents-dev/playwright-best-practices-skill.git",
+        "cli": "python scripts/install-to-project.py --repo currents-dev/playwright-best-practices-skill"
+      },
+      "skills": [
+        {
+          "id": "currents-playwright-sharding",
+          "name": "currents-playwright-sharding",
+          "priority": "P1",
+          "scoped": "test-currents-playwright-sharding",
+          "cli": "python scripts/install-to-project.py --skill test-currents-playwright-sharding",
+          "description": "Playwright test sharding, parallel CI optimization, flaky test mitigation, and Currents dashboard orchestration."
+        }
+      ]
+    },
+    {
+      "id": "sveltejs-ai-tools",
+      "repo": "sveltejs/ai-tools",
+      "repoName": "Svelte 5 Runes",
+      "author": "sveltejs",
+      "stars": 339,
+      "starsFormatted": "339",
+      "description": "The official svelte MCP for all your agentic needs.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/sveltejs/ai-tools",
+      "version": "@sveltejs/pi@0.1.0",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/sveltejs/ai-tools.git ~/.gemini/antigravity/skills/ai-tools",
+        "claude": "git clone https://github.com/sveltejs/ai-tools.git ~/.claude/skills/ai-tools",
+        "codex": "codex install sveltejs/ai-tools",
+        "git": "git clone https://github.com/sveltejs/ai-tools.git",
+        "cli": "python scripts/install-to-project.py --repo sveltejs/ai-tools"
+      },
+      "skills": [
+        {
+          "id": "svelte5-runes-patterns",
+          "name": "svelte5-runes-patterns",
+          "priority": "P1",
+          "scoped": "workflow-svelte5-runes-patterns",
+          "cli": "python scripts/install-to-project.py --skill workflow-svelte5-runes-patterns",
+          "description": "Svelte 5 runes reactivity ($state, $derived, $effect), SvelteKit SSR hydration, and modern component architecture."
+        }
+      ]
+    },
+    {
+      "id": "arvindrk-extract-design-system",
+      "repo": "arvindrk/extract-design-system",
+      "repoName": "Extract Design",
+      "author": "arvindrk",
+      "stars": 290,
+      "starsFormatted": "290",
+      "description": "Extract design tokens (colors, typography, spacing, border radius, shadows) from any public website. Generates JSON and CSS custom properties for local projects. Available as an AI agent skill (Claude, Cursor, Codex) and standalone CLI.",
+      "skillsCount": 1,
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "officialUrl": "https://github.com/arvindrk/extract-design-system",
+      "version": "v0.1.11",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/arvindrk/extract-design-system.git ~/.gemini/antigravity/skills/extract-design-system",
+        "claude": "git clone https://github.com/arvindrk/extract-design-system.git ~/.claude/skills/extract-design-system",
+        "codex": "codex install arvindrk/extract-design-system",
+        "git": "git clone https://github.com/arvindrk/extract-design-system.git",
+        "cli": "python scripts/install-to-project.py --repo arvindrk/extract-design-system"
+      },
+      "skills": [
+        {
+          "id": "extract-design-tokens",
+          "name": "extract-design-tokens",
+          "priority": "P1",
+          "scoped": "ui-extract-design-tokens",
+          "cli": "python scripts/install-to-project.py --skill ui-extract-design-tokens",
+          "description": "Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites."
+        }
+      ]
+    },
+    {
+      "id": "better-auth-skills",
+      "repo": "better-auth/skills",
+      "repoName": "Better Auth",
+      "author": "better-auth",
+      "stars": 231,
+      "starsFormatted": "231",
+      "description": "Curated tools, workflows and capabilities from Better Auth.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/better-auth/skills",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/better-auth/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/better-auth/skills.git ~/.claude/skills/skills",
+        "codex": "codex install better-auth/skills",
+        "git": "git clone https://github.com/better-auth/skills.git",
+        "cli": "python scripts/install-to-project.py --repo better-auth/skills"
+      },
+      "skills": [
+        {
+          "id": "better-auth-patterns",
+          "name": "better-auth-patterns",
+          "priority": "P1",
+          "scoped": "workflow-better-auth-patterns",
+          "cli": "python scripts/install-to-project.py --skill workflow-better-auth-patterns",
+          "description": "Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC."
+        }
+      ]
+    },
+    {
+      "id": "neondatabase-agent-skills",
+      "repo": "neondatabase/agent-skills",
+      "repoName": "Neon Postgres",
+      "author": "neondatabase",
+      "stars": 113,
+      "starsFormatted": "113",
+      "description": "Agent Skills for Neon Severless Postgres",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/neondatabase/agent-skills",
+      "version": "latest",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/neondatabase/agent-skills.git ~/.gemini/antigravity/skills/agent-skills",
+        "claude": "git clone https://github.com/neondatabase/agent-skills.git ~/.claude/skills/agent-skills",
+        "codex": "codex install neondatabase/agent-skills",
+        "git": "git clone https://github.com/neondatabase/agent-skills.git",
+        "cli": "python scripts/install-to-project.py --repo neondatabase/agent-skills"
+      },
+      "skills": [
+        {
+          "id": "neon-serverless-postgres",
+          "name": "neon-serverless-postgres",
+          "priority": "P1",
+          "scoped": "workflow-neon-serverless-postgres",
+          "cli": "python scripts/install-to-project.py --skill workflow-neon-serverless-postgres",
+          "description": "Neon Serverless Postgres CLI, instant database branching, schema migrations, and connection pooling."
+        }
+      ]
+    },
+    {
+      "id": "mastra-ai-skills",
+      "repo": "mastra-ai/skills",
+      "repoName": "Mastra AI",
+      "author": "mastra-ai",
+      "stars": 104,
+      "starsFormatted": "104",
+      "description": "Official agent skills for coding agents working with the Mastra AI framework",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/mastra-ai/skills",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/mastra-ai/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/mastra-ai/skills.git ~/.claude/skills/skills",
+        "codex": "codex install mastra-ai/skills",
+        "git": "git clone https://github.com/mastra-ai/skills.git",
+        "cli": "python scripts/install-to-project.py --repo mastra-ai/skills"
+      },
+      "skills": [
+        {
+          "id": "mastra-agent-framework",
+          "name": "mastra-agent-framework",
+          "priority": "P1",
+          "scoped": "agent-mastra-agent-framework",
+          "cli": "python scripts/install-to-project.py --skill agent-mastra-agent-framework",
+          "description": "Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals."
         }
       ]
     },
@@ -4434,6 +5654,262 @@
           "scoped": "ui-taste",
           "cli": "python scripts/install-to-project.py --skill ui-taste",
           "description": "Uizze UI Taste and related UI/UX agent skills. FREE: install/use the ui-taste skill from uizze.sh; the GitHub repo also provides free ui-design, anti-ui-slop and ui-radar skills, plus GitHub-native image-to-ui and uizze-ui packages. Skills work locally without a Uizze account or MCP. PAID: authenticated Uizze MCP at https://uizze.com/mcp provides find_ui_references and find_ui_materials for real app screens, flows, design systems, fonts, icons and materials. Website reference browsing is free without an account. LIMITATIONS: UI Taste/iOS Design are distributed separately from the GitHub skill packages; paid MCP exposes only two retrieval tools and may return no matches; the skills are guidance and playbooks, not a design editor or guaranteed visual QA. Third-party reference assets and branding are not automatically licensed for reuse; retain individual MIT/Apache notices."
+        }
+      ]
+    },
+    {
+      "id": "clerk-skills",
+      "repo": "clerk/skills",
+      "repoName": "Clerk Auth",
+      "author": "clerk",
+      "stars": 94,
+      "starsFormatted": "94",
+      "description": "AI Skills to enhance working with Clerk",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/clerk/skills",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/clerk/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/clerk/skills.git ~/.claude/skills/skills",
+        "codex": "codex install clerk/skills",
+        "git": "git clone https://github.com/clerk/skills.git",
+        "cli": "python scripts/install-to-project.py --repo clerk/skills"
+      },
+      "skills": [
+        {
+          "id": "clerk-auth-identity",
+          "name": "clerk-auth-identity",
+          "priority": "P1",
+          "scoped": "workflow-clerk-auth-identity",
+          "cli": "python scripts/install-to-project.py --skill workflow-clerk-auth-identity",
+          "description": "Clerk identity management, multi-tenant organizations, webhook signature verification, and session tokens."
+        }
+      ]
+    },
+    {
+      "id": "prisma-skills",
+      "repo": "prisma/skills",
+      "repoName": "Prisma ORM",
+      "author": "prisma",
+      "stars": 80,
+      "starsFormatted": "80",
+      "description": "Curated tools, workflows and capabilities from Prisma ORM.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/prisma/skills",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/prisma/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/prisma/skills.git ~/.claude/skills/skills",
+        "codex": "codex install prisma/skills",
+        "git": "git clone https://github.com/prisma/skills.git",
+        "cli": "python scripts/install-to-project.py --repo prisma/skills"
+      },
+      "skills": [
+        {
+          "id": "prisma-orm-patterns",
+          "name": "prisma-orm-patterns",
+          "priority": "P1",
+          "scoped": "workflow-prisma-orm-patterns",
+          "cli": "python scripts/install-to-project.py --skill workflow-prisma-orm-patterns",
+          "description": "Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters."
+        }
+      ]
+    },
+    {
+      "id": "scrapegraphai-just-scrape",
+      "repo": "scrapegraphai/just-scrape",
+      "repoName": "Just Scrape",
+      "author": "scrapegraphai",
+      "stars": 76,
+      "starsFormatted": "76",
+      "description": "CLI for AI-powered web scraping, structured data extraction, web search, multi-page crawling, and scheduled   page-change monitoring  powered by the ScrapeGraph AI API. Turn any URL into markdown, HTML, screenshots,  links, images, summaries, or brand assets; pull structured JSON with a prompt + schema; watch pages on a cron  with webhook alert",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/ScrapeGraphAI/just-scrape",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/scrapegraphai/just-scrape.git ~/.gemini/antigravity/skills/just-scrape",
+        "claude": "git clone https://github.com/scrapegraphai/just-scrape.git ~/.claude/skills/just-scrape",
+        "codex": "codex install scrapegraphai/just-scrape",
+        "git": "git clone https://github.com/scrapegraphai/just-scrape.git",
+        "cli": "python scripts/install-to-project.py --repo scrapegraphai/just-scrape"
+      },
+      "skills": [
+        {
+          "id": "scrapegraph-ai-pipeline",
+          "name": "scrapegraph-ai-pipeline",
+          "priority": "P1",
+          "scoped": "workflow-scrapegraph-ai-pipeline",
+          "cli": "python scripts/install-to-project.py --skill workflow-scrapegraph-ai-pipeline",
+          "description": "Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining."
+        }
+      ]
+    },
+    {
+      "id": "convex-agent-skills",
+      "repo": "convex/agent-skills",
+      "repoName": "Convex",
+      "author": "convex",
+      "stars": 69,
+      "starsFormatted": "69",
+      "description": "Convex Skills for Agents",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/convex/agent-skills",
+      "version": "latest",
+      "license": "Apache-2.0",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/convex/agent-skills.git ~/.gemini/antigravity/skills/agent-skills",
+        "claude": "git clone https://github.com/convex/agent-skills.git ~/.claude/skills/agent-skills",
+        "codex": "codex install convex/agent-skills",
+        "git": "git clone https://github.com/convex/agent-skills.git",
+        "cli": "python scripts/install-to-project.py --repo convex/agent-skills"
+      },
+      "skills": [
+        {
+          "id": "convex-backend-sync",
+          "name": "convex-backend-sync",
+          "priority": "P1",
+          "scoped": "workflow-convex-backend-sync",
+          "cli": "python scripts/install-to-project.py --skill workflow-convex-backend-sync",
+          "description": "Convex reactive database queries, transactional mutations, client state sync, and scheduled jobs."
+        }
+      ]
+    },
+    {
+      "id": "nrwl-nx-ai-agents-config",
+      "repo": "nrwl/nx-ai-agents-config",
+      "repoName": "Nx Monorepo",
+      "author": "nrwl",
+      "stars": 30,
+      "starsFormatted": "30",
+      "description": "Curated tools, workflows and capabilities from Nx Monorepo.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/nrwl/nx-ai-agents-config",
+      "version": "latest",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/nrwl/nx-ai-agents-config.git ~/.gemini/antigravity/skills/nx-ai-agents-config",
+        "claude": "git clone https://github.com/nrwl/nx-ai-agents-config.git ~/.claude/skills/nx-ai-agents-config",
+        "codex": "codex install nrwl/nx-ai-agents-config",
+        "git": "git clone https://github.com/nrwl/nx-ai-agents-config.git",
+        "cli": "python scripts/install-to-project.py --repo nrwl/nx-ai-agents-config"
+      },
+      "skills": [
+        {
+          "id": "nx-monorepo-architect",
+          "name": "nx-monorepo-architect",
+          "priority": "P1",
+          "scoped": "workflow-nx-monorepo-architect",
+          "cli": "python scripts/install-to-project.py --skill workflow-nx-monorepo-architect",
+          "description": "Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries."
+        }
+      ]
+    },
+    {
+      "id": "momentic-ai-skills",
+      "repo": "momentic-ai/skills",
+      "repoName": "Momentic AI",
+      "author": "momentic-ai",
+      "stars": 17,
+      "starsFormatted": "17",
+      "description": "Agent skills and MCP servers that teach coding agents to write, run, and repair Momentic tests.",
+      "skillsCount": 1,
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "officialUrl": "https://github.com/momentic-ai/skills",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/momentic-ai/skills.git ~/.gemini/antigravity/skills/skills",
+        "claude": "git clone https://github.com/momentic-ai/skills.git ~/.claude/skills/skills",
+        "codex": "codex install momentic-ai/skills",
+        "git": "git clone https://github.com/momentic-ai/skills.git",
+        "cli": "python scripts/install-to-project.py --repo momentic-ai/skills"
+      },
+      "skills": [
+        {
+          "id": "momentic-visual-testing",
+          "name": "momentic-visual-testing",
+          "priority": "P1",
+          "scoped": "test-momentic-visual-testing",
+          "cli": "python scripts/install-to-project.py --skill test-momentic-visual-testing",
+          "description": "AI-driven visual regression testing, session replay analysis, and automated test failure triage."
+        }
+      ]
+    },
+    {
+      "id": "2dmurali-review-loop-skill",
+      "repo": "2dmurali/review-loop-skill",
+      "repoName": "Review Loop Skill",
+      "author": "2dmurali",
+      "stars": 7,
+      "starsFormatted": "7",
+      "description": "Curated tools, workflows and capabilities from Review Loop Skill.",
+      "skillsCount": 1,
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "officialUrl": "https://github.com/2dmurali/review-loop-skill",
+      "version": "latest",
+      "license": "Other",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/2dmurali/review-loop-skill.git ~/.gemini/antigravity/skills/review-loop-skill",
+        "claude": "git clone https://github.com/2dmurali/review-loop-skill.git ~/.claude/skills/review-loop-skill",
+        "codex": "codex install 2dmurali/review-loop-skill",
+        "git": "git clone https://github.com/2dmurali/review-loop-skill.git",
+        "cli": "python scripts/install-to-project.py --repo 2dmurali/review-loop-skill"
+      },
+      "skills": [
+        {
+          "id": "continuous-review-loop",
+          "name": "continuous-review-loop",
+          "priority": "P1",
+          "scoped": "review-continuous-review-loop",
+          "cli": "python scripts/install-to-project.py --skill review-continuous-review-loop",
+          "description": "Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops."
+        }
+      ]
+    },
+    {
+      "id": "getcursor-cursor",
+      "repo": "getcursor/cursor",
+      "repoName": "Cursor Agentic Rules",
+      "author": "getcursor",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc) and autonomous agent execution harness.",
+      "skillsCount": 1,
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "officialUrl": "https://github.com/getcursor/cursor",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/getcursor/cursor.git ~/.gemini/antigravity/skills/cursor",
+        "claude": "git clone https://github.com/getcursor/cursor.git ~/.claude/skills/cursor",
+        "codex": "codex install getcursor/cursor",
+        "git": "git clone https://github.com/getcursor/cursor.git",
+        "cli": "python scripts/install-to-project.py --repo getcursor/cursor"
+      },
+      "skills": [
+        {
+          "id": "cursor-0-45-agentic-rules",
+          "name": "cursor-0-45-agentic-rules",
+          "priority": "P0",
+          "scoped": "cursor-0-45-agentic-rules",
+          "cli": "python scripts/install-to-project.py --skill cursor-0-45-agentic-rules",
+          "description": "Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits."
         }
       ]
     },
@@ -5085,6 +6561,348 @@
       "repo": "googleworkspace/cli",
       "repoName": "Google Workspace",
       "stars": 32299,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "typescript-tailwind-patterns",
+      "uniqueId": "01-core-engineering:typescript-tailwind-patterns",
+      "name": "typescript-tailwind-patterns",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Advanced TypeScript typing acrobatics, strict branded primitives, and CVA Tailwind token design.",
+      "scoped": "workflow-typescript-tailwind-patterns",
+      "cli": "python scripts/install-to-project.py --skill workflow-typescript-tailwind-patterns",
+      "repo": "wshobson/agents",
+      "repoName": "Agents",
+      "stars": 42482,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "lark-enterprise-cli",
+      "uniqueId": "01-core-engineering:lark-enterprise-cli",
+      "name": "lark-enterprise-cli",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Official Lark Suite and Feishu enterprise automation CLI for Docs, Drive, and Bitable.",
+      "scoped": "workflow-lark-enterprise-cli",
+      "cli": "python scripts/install-to-project.py --skill workflow-lark-enterprise-cli",
+      "repo": "larksuite/cli",
+      "repoName": "Cli",
+      "stars": 18098,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "fastify-backend-perf",
+      "uniqueId": "01-core-engineering:fastify-backend-perf",
+      "name": "fastify-backend-perf",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "High-throughput Node.js Fastify backend architecture, schema compilation, and Pino structured logging.",
+      "scoped": "workflow-fastify-backend-perf",
+      "cli": "python scripts/install-to-project.py --skill workflow-fastify-backend-perf",
+      "repo": "mcollina/skills",
+      "repoName": "Skills",
+      "stars": 1970,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "vercel-agent-browser",
+      "uniqueId": "01-core-engineering:vercel-agent-browser",
+      "name": "vercel-agent-browser",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Vercel Labs headless browser agent automation, DOM inspection, and semantic accessibility navigation.",
+      "scoped": "workflow-vercel-agent-browser",
+      "cli": "python scripts/install-to-project.py --skill workflow-vercel-agent-browser",
+      "repo": "vercel-labs/agent-browser",
+      "repoName": "Agent Browser",
+      "stars": 50643,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "github-copilot-patterns",
+      "uniqueId": "01-core-engineering:github-copilot-patterns",
+      "name": "github-copilot-patterns",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Official GitHub Copilot engineering patterns, instruction steering, and multi-stage Docker workflows.",
+      "scoped": "workflow-github-copilot-patterns",
+      "cli": "python scripts/install-to-project.py --skill workflow-github-copilot-patterns",
+      "repo": "github/awesome-copilot",
+      "repoName": "Awesome Copilot",
+      "stars": 41127,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "brag-document-generator",
+      "uniqueId": "01-core-engineering:brag-document-generator",
+      "name": "brag-document-generator",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Automated engineering accomplishment tracking, sprint achievement synthesis, and PR evidence compilation.",
+      "scoped": "doc-brag-document-generator",
+      "cli": "python scripts/install-to-project.py --skill doc-brag-document-generator",
+      "repo": "latent-spaces/brag",
+      "repoName": "Brag",
+      "stars": 21368,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "firecrawl-web-scrape",
+      "uniqueId": "01-core-engineering:firecrawl-web-scrape",
+      "name": "firecrawl-web-scrape",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Clean LLM-ready markdown extraction, dynamic JS crawler, and structured data parsing.",
+      "scoped": "workflow-firecrawl-web-scrape",
+      "cli": "python scripts/install-to-project.py --skill workflow-firecrawl-web-scrape",
+      "repo": "firecrawl/cli",
+      "repoName": "Firecrawl",
+      "stars": 684,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "convex-backend-sync",
+      "uniqueId": "01-core-engineering:convex-backend-sync",
+      "name": "convex-backend-sync",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Convex reactive database queries, transactional mutations, client state sync, and scheduled jobs.",
+      "scoped": "workflow-convex-backend-sync",
+      "cli": "python scripts/install-to-project.py --skill workflow-convex-backend-sync",
+      "repo": "convex/agent-skills",
+      "repoName": "Convex",
+      "stars": 69,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "scrapegraph-ai-pipeline",
+      "uniqueId": "01-core-engineering:scrapegraph-ai-pipeline",
+      "name": "scrapegraph-ai-pipeline",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Graph-based AI web scraping pipelines, LLM-driven structured extraction, and layout-independent web data mining.",
+      "scoped": "workflow-scrapegraph-ai-pipeline",
+      "cli": "python scripts/install-to-project.py --skill workflow-scrapegraph-ai-pipeline",
+      "repo": "scrapegraphai/just-scrape",
+      "repoName": "Just Scrape",
+      "stars": 76,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "better-auth-patterns",
+      "uniqueId": "01-core-engineering:better-auth-patterns",
+      "name": "better-auth-patterns",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Modern TypeScript authentication, passkeys/WebAuthn, 2FA, session management, and RBAC.",
+      "scoped": "workflow-better-auth-patterns",
+      "cli": "python scripts/install-to-project.py --skill workflow-better-auth-patterns",
+      "repo": "better-auth/skills",
+      "repoName": "Better Auth",
+      "stars": 231,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "nx-monorepo-architect",
+      "uniqueId": "01-core-engineering:nx-monorepo-architect",
+      "name": "nx-monorepo-architect",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Nrwl Nx monorepo management, computation caching, affected task pipelines, and project graph boundaries.",
+      "scoped": "workflow-nx-monorepo-architect",
+      "cli": "python scripts/install-to-project.py --skill workflow-nx-monorepo-architect",
+      "repo": "nrwl/nx-ai-agents-config",
+      "repoName": "Nx Monorepo",
+      "stars": 30,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "firebase-agent-suite",
+      "uniqueId": "01-core-engineering:firebase-agent-suite",
+      "name": "firebase-agent-suite",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Google Firebase backend suite, Firestore security rules audit, Cloud Functions, and Firebase Auth.",
+      "scoped": "workflow-firebase-agent-suite",
+      "cli": "python scripts/install-to-project.py --skill workflow-firebase-agent-suite",
+      "repo": "firebase/agent-skills",
+      "repoName": "Firebase Agent Suite",
+      "stars": 512,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "svelte5-runes-patterns",
+      "uniqueId": "01-core-engineering:svelte5-runes-patterns",
+      "name": "svelte5-runes-patterns",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Svelte 5 runes reactivity ($state, $derived, $effect), SvelteKit SSR hydration, and modern component architecture.",
+      "scoped": "workflow-svelte5-runes-patterns",
+      "cli": "python scripts/install-to-project.py --skill workflow-svelte5-runes-patterns",
+      "repo": "sveltejs/ai-tools",
+      "repoName": "Svelte 5 Runes",
+      "stars": 339,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "neon-serverless-postgres",
+      "uniqueId": "01-core-engineering:neon-serverless-postgres",
+      "name": "neon-serverless-postgres",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Neon Serverless Postgres CLI, instant database branching, schema migrations, and connection pooling.",
+      "scoped": "workflow-neon-serverless-postgres",
+      "cli": "python scripts/install-to-project.py --skill workflow-neon-serverless-postgres",
+      "repo": "neondatabase/agent-skills",
+      "repoName": "Neon Postgres",
+      "stars": 113,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "clerk-auth-identity",
+      "uniqueId": "01-core-engineering:clerk-auth-identity",
+      "name": "clerk-auth-identity",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Clerk identity management, multi-tenant organizations, webhook signature verification, and session tokens.",
+      "scoped": "workflow-clerk-auth-identity",
+      "cli": "python scripts/install-to-project.py --skill workflow-clerk-auth-identity",
+      "repo": "clerk/skills",
+      "repoName": "Clerk Auth",
+      "stars": 94,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "prisma-orm-patterns",
+      "uniqueId": "01-core-engineering:prisma-orm-patterns",
+      "name": "prisma-orm-patterns",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters.",
+      "scoped": "workflow-prisma-orm-patterns",
+      "cli": "python scripts/install-to-project.py --skill workflow-prisma-orm-patterns",
+      "repo": "prisma/skills",
+      "repoName": "Prisma ORM",
+      "stars": 80,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "stripe-link-checkout",
+      "uniqueId": "01-core-engineering:stripe-link-checkout",
+      "name": "stripe-link-checkout",
+      "priority": "P1",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation.",
+      "scoped": "workflow-stripe-link-checkout",
+      "cli": "python scripts/install-to-project.py --skill workflow-stripe-link-checkout",
+      "repo": "stripe/link-cli",
+      "repoName": "Stripe",
+      "stars": 906,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "obsidian-developer-second-brain",
+      "uniqueId": "01-core-engineering:obsidian-developer-second-brain",
+      "name": "obsidian-developer-second-brain",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync.",
+      "scoped": "doc-obsidian-developer-second-brain",
+      "cli": "python scripts/install-to-project.py --skill doc-obsidian-developer-second-brain",
+      "repo": "kepano/obsidian-skills",
+      "repoName": "Obsidian Brain",
+      "stars": 52257,
+      "ecosystems": [
+        "android",
+        "obsidian"
+      ]
+    },
+    {
+      "id": "claude-3-7-hybrid-reasoning",
+      "uniqueId": "01-core-engineering:claude-3-7-hybrid-reasoning",
+      "name": "claude-3-7-hybrid-reasoning",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet.",
+      "scoped": "claude-3-7-hybrid-reasoning",
+      "cli": "python scripts/install-to-project.py --skill claude-3-7-hybrid-reasoning",
+      "repo": "anthropics/skills",
+      "repoName": "Anthropic Skills",
+      "stars": 194065,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "cursor-0-45-agentic-rules",
+      "uniqueId": "01-core-engineering:cursor-0-45-agentic-rules",
+      "name": "cursor-0-45-agentic-rules",
+      "priority": "P0",
+      "categoryId": "01-core-engineering",
+      "categoryLabel": "Core Engineering",
+      "description": "Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits.",
+      "scoped": "cursor-0-45-agentic-rules",
+      "cli": "python scripts/install-to-project.py --skill cursor-0-45-agentic-rules",
+      "repo": "getcursor/cursor",
+      "repoName": "Cursor Agentic Rules",
+      "stars": 0,
       "ecosystems": [
         "agents"
       ]
@@ -6559,6 +8377,125 @@
       ]
     },
     {
+      "id": "typography-layout-polish",
+      "uniqueId": "05-ui-ux:typography-layout-polish",
+      "name": "typography-layout-polish",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Fluid type scales (clamp()), optical margin alignment, visual rhythm, and tabular numbers.",
+      "scoped": "ui-typography-layout-polish",
+      "cli": "python scripts/install-to-project.py --skill ui-typography-layout-polish",
+      "repo": "jakubkrehel/skills",
+      "repoName": "Skills",
+      "stars": 12117,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "stitch-design-system",
+      "uniqueId": "05-ui-ux:stitch-design-system",
+      "name": "stitch-design-system",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Google Labs Stitch design-md UI scaffolding, screen generation, and token compilation bridge.",
+      "scoped": "ui-stitch-design-system",
+      "cli": "python scripts/install-to-project.py --skill ui-stitch-design-system",
+      "repo": "google-labs-code/stitch-skills",
+      "repoName": "Stitch Skills",
+      "stars": 8766,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "component-anatomy-specs",
+      "uniqueId": "05-ui-ux:component-anatomy-specs",
+      "name": "component-anatomy-specs",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Design system component anatomy contracts, visual bounding boxes, and layout contracts.",
+      "scoped": "ui-component-anatomy-specs",
+      "cli": "python scripts/install-to-project.py --skill ui-component-anatomy-specs",
+      "repo": "wheresryan22/anatomy",
+      "repoName": "Anatomy",
+      "stars": 27096,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "data-viz-html-reports",
+      "uniqueId": "05-ui-ux:data-viz-html-reports",
+      "name": "data-viz-html-reports",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Data visualization discipline, charting ergonomics, color scales, and self-contained interactive HTML reports.",
+      "scoped": "ui-data-viz-html-reports",
+      "cli": "python scripts/install-to-project.py --skill ui-data-viz-html-reports",
+      "repo": "daymade/claude-code-skills",
+      "repoName": "Claude Code Skills",
+      "stars": 1530,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "interface-feel-polish",
+      "uniqueId": "05-ui-ux:interface-feel-polish",
+      "name": "interface-feel-polish",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Interface feel heuristics, tactile micro-physics, spring dynamics, and subtle sensory feedback.",
+      "scoped": "ui-interface-feel-polish",
+      "cli": "python scripts/install-to-project.py --skill ui-interface-feel-polish",
+      "repo": "jakubkrehel/make-interfaces-feel-better",
+      "repoName": "Make Interfaces Feel Better",
+      "stars": 4007,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "stageshow-ui-presentation",
+      "uniqueId": "05-ui-ux:stageshow-ui-presentation",
+      "name": "stageshow-ui-presentation",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges.",
+      "scoped": "ui-stageshow-ui-presentation",
+      "cli": "python scripts/install-to-project.py --skill ui-stageshow-ui-presentation",
+      "repo": "benjitaylor/skills",
+      "repoName": "Skills",
+      "stars": 3256,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "extract-design-tokens",
+      "uniqueId": "05-ui-ux:extract-design-tokens",
+      "name": "extract-design-tokens",
+      "priority": "P1",
+      "categoryId": "05-ui-ux",
+      "categoryLabel": "UI / UX Design",
+      "description": "Automated extraction of design tokens, color swatches, typography scales, and CSS variables from live websites.",
+      "scoped": "ui-extract-design-tokens",
+      "cli": "python scripts/install-to-project.py --skill ui-extract-design-tokens",
+      "repo": "arvindrk/extract-design-system",
+      "repoName": "Extract Design",
+      "stars": 290,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
       "id": "gsd-new-project",
       "uniqueId": "06-gsd:gsd-new-project",
       "name": "gsd-new-project",
@@ -7429,6 +9366,57 @@
       ]
     },
     {
+      "id": "herdr-orchestration",
+      "uniqueId": "09-autonomous-agents:herdr-orchestration",
+      "name": "herdr-orchestration",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Multi-agent fleet orchestration, distributed task dispatch, and consensus coordination.",
+      "scoped": "agent-herdr-orchestration",
+      "cli": "python scripts/install-to-project.py --skill agent-herdr-orchestration",
+      "repo": "herdrdev/herdr",
+      "repoName": "Herdr",
+      "stars": 50808,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "agent-desktop-gui",
+      "uniqueId": "09-autonomous-agents:agent-desktop-gui",
+      "name": "agent-desktop-gui",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Native desktop agent orchestration, operating system window management, and GUI interaction.",
+      "scoped": "agent-desktop-gui",
+      "cli": "python scripts/install-to-project.py --skill agent-desktop-gui",
+      "repo": "vercel-labs/agent-desktop",
+      "repoName": "Agent Desktop",
+      "stars": 23211,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "mastra-agent-framework",
+      "uniqueId": "09-autonomous-agents:mastra-agent-framework",
+      "name": "mastra-agent-framework",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals.",
+      "scoped": "agent-mastra-agent-framework",
+      "cli": "python scripts/install-to-project.py --skill agent-mastra-agent-framework",
+      "repo": "mastra-ai/skills",
+      "repoName": "Mastra AI",
+      "stars": 104,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
       "id": "composio-skills",
       "uniqueId": "10-ai-infrastructure:composio-skills",
       "name": "composio-skills",
@@ -7790,6 +9778,23 @@
       ]
     },
     {
+      "id": "typesafe-ai-schemas",
+      "uniqueId": "10-ai-infrastructure:typesafe-ai-schemas",
+      "name": "typesafe-ai-schemas",
+      "priority": "P1",
+      "categoryId": "10-ai-infrastructure",
+      "categoryLabel": "AI Infrastructure & MCP",
+      "description": "Strict JSON schema validation, typed function calling, and structured output invariant guards.",
+      "scoped": "infra-typesafe-ai-schemas",
+      "cli": "python scripts/install-to-project.py --skill infra-typesafe-ai-schemas",
+      "repo": "typesafe-ai/skills",
+      "repoName": "Skills",
+      "stars": 2897,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
       "id": "semgrep-security",
       "uniqueId": "11-code-review:semgrep-security",
       "name": "semgrep-security",
@@ -8044,6 +10049,115 @@
       "repo": "addyosmani/web-quality-skills",
       "repoName": "Addy Osmani A11y",
       "stars": 3079,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "hallmark-frontend-eval",
+      "uniqueId": "11-code-review:hallmark-frontend-eval",
+      "name": "hallmark-frontend-eval",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Automated frontend design fidelity evaluation, pixel-level visual regression, and AI component assessment.",
+      "scoped": "test-hallmark-frontend-eval",
+      "cli": "python scripts/install-to-project.py --skill test-hallmark-frontend-eval",
+      "repo": "nutlope/hallmark",
+      "repoName": "Hallmark",
+      "stars": 54421,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "browser-act-testing",
+      "uniqueId": "11-code-review:browser-act-testing",
+      "name": "browser-act-testing",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Autonomous browser actor simulation, synthetic end-to-end user journeys, and session replay testing.",
+      "scoped": "test-browser-act-testing",
+      "cli": "python scripts/install-to-project.py --skill test-browser-act-testing",
+      "repo": "browser-act/skills",
+      "repoName": "Skills",
+      "stars": 6349,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "network-latency-benchmarks",
+      "uniqueId": "11-code-review:network-latency-benchmarks",
+      "name": "network-latency-benchmarks",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Network latency analysis, DNS/TCP/TLS handshake profiling, TTFB breakdown, and API benchmarking.",
+      "scoped": "test-network-latency-benchmarks",
+      "cli": "python scripts/install-to-project.py --skill test-network-latency-benchmarks",
+      "repo": "jeremylongshore/tons-of-skills-marketplace",
+      "repoName": "Tons Of Skills Marketplace",
+      "stars": 2918,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "continuous-review-loop",
+      "uniqueId": "11-code-review:continuous-review-loop",
+      "name": "continuous-review-loop",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Continuous autonomous code review iteration, diff analysis, and auto-remediation convergence loops.",
+      "scoped": "review-continuous-review-loop",
+      "cli": "python scripts/install-to-project.py --skill review-continuous-review-loop",
+      "repo": "2dmurali/review-loop-skill",
+      "repoName": "Review Loop Skill",
+      "stars": 7,
+      "ecosystems": [
+        "android",
+        "quality"
+      ]
+    },
+    {
+      "id": "momentic-visual-testing",
+      "uniqueId": "11-code-review:momentic-visual-testing",
+      "name": "momentic-visual-testing",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "AI-driven visual regression testing, session replay analysis, and automated test failure triage.",
+      "scoped": "test-momentic-visual-testing",
+      "cli": "python scripts/install-to-project.py --skill test-momentic-visual-testing",
+      "repo": "momentic-ai/skills",
+      "repoName": "Momentic AI",
+      "stars": 17,
+      "ecosystems": [
+        "android",
+        "mattpocock",
+        "quality"
+      ]
+    },
+    {
+      "id": "currents-playwright-sharding",
+      "uniqueId": "11-code-review:currents-playwright-sharding",
+      "name": "currents-playwright-sharding",
+      "priority": "P1",
+      "categoryId": "11-code-review",
+      "categoryLabel": "Code Review & Quality",
+      "description": "Playwright test sharding, parallel CI optimization, flaky test mitigation, and Currents dashboard orchestration.",
+      "scoped": "test-currents-playwright-sharding",
+      "cli": "python scripts/install-to-project.py --skill test-currents-playwright-sharding",
+      "repo": "currents-dev/playwright-best-practices-skill",
+      "repoName": "Playwright Best Practices Skill",
+      "stars": 429,
       "ecosystems": [
         "android",
         "quality"
@@ -8491,6 +10605,91 @@
       "stars": 60133,
       "ecosystems": [
         "quality"
+      ]
+    },
+    {
+      "id": "video-frame-analysis",
+      "uniqueId": "12-specialized:video-frame-analysis",
+      "name": "video-frame-analysis",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Computer vision video frame extraction, timeline scene sampling, and automated video QA inspection.",
+      "scoped": "spec-video-frame-analysis",
+      "cli": "python scripts/install-to-project.py --skill spec-video-frame-analysis",
+      "repo": "bradautomates/claude-video",
+      "repoName": "Claude Video",
+      "stars": 20703,
+      "ecosystems": [
+        "quality"
+      ]
+    },
+    {
+      "id": "gamedev-mechanics",
+      "uniqueId": "12-specialized:gamedev-mechanics",
+      "name": "gamedev-mechanics",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Game development physics simulations, custom shaders, tactile game-feel heuristics, and 3D math.",
+      "scoped": "spec-gamedev-mechanics",
+      "cli": "python scripts/install-to-project.py --skill spec-gamedev-mechanics",
+      "repo": "gamedev-skills/awesome-gamedev-agent-skills",
+      "repoName": "Awesome Gamedev Agent Skills",
+      "stars": 8734,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "higgsfield-visual-media",
+      "uniqueId": "12-specialized:higgsfield-visual-media",
+      "name": "higgsfield-visual-media",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition.",
+      "scoped": "spec-higgsfield-visual-media",
+      "cli": "python scripts/install-to-project.py --skill spec-higgsfield-visual-media",
+      "repo": "higgsfield-ai/skills",
+      "repoName": "Skills",
+      "stars": 1975,
+      "ecosystems": [
+        "general"
+      ]
+    },
+    {
+      "id": "binance-agentic-wallet",
+      "uniqueId": "12-specialized:binance-agentic-wallet",
+      "name": "binance-agentic-wallet",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows.",
+      "scoped": "spec-binance-agentic-wallet",
+      "cli": "python scripts/install-to-project.py --skill spec-binance-agentic-wallet",
+      "repo": "binance/binance-skills-hub",
+      "repoName": "Binance Skills Hub",
+      "stars": 1168,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "motion-sound-effects",
+      "uniqueId": "12-specialized:motion-sound-effects",
+      "name": "motion-sound-effects",
+      "priority": "P1",
+      "categoryId": "12-specialized",
+      "categoryLabel": "Specialized Tools",
+      "description": "Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis.",
+      "scoped": "spec-motion-sound-effects",
+      "cli": "python scripts/install-to-project.py --skill spec-motion-sound-effects",
+      "repo": "barty-bart/motion-graphics",
+      "repoName": "Motion Graphics",
+      "stars": 1247,
+      "ecosystems": [
+        "general"
       ]
     },
     {

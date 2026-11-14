@@ -54,28 +54,45 @@
    - Mirrored all docs, matrices, and handoffs into the local Obsidian Second Brain (`D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`).
 
 8. **Suite & Standalone Packaging Consolidation (CEO Plan Executed)**:
-   - **Unified Navigation Header**: Merged the redundant `Frameworks (74)` and `Skills (283)` tabs in `Header.tsx` into a single authoritative tab: **`Skills & Suites (74)`**.
+   - **Unified Navigation Header**: Merged the redundant `Frameworks` and `Skills` tabs in `Header.tsx` into a single authoritative tab: **`Skills & Suites`**.
    - **4-Tier Entity Scope Switcher**: Added in `FilterToolbar.tsx` with one-click toggles:
-     - `All Packages (74)`: Displays all 74 upstream bundles (16 Multi-Skill Suites + 58 Standalone Skills).
-     - `Suites Only (16)`: Displays multi-skill parent suites (`gstack`, `superpowers`, `GSD Core`, `Android SDK`, `Agent Skills Spec`).
-     - `Standalone (58)`: Displays single-skill standalone tools (`taste-skill`, `unslop`, `better-auth`, `camerax`).
-     - `All 283 Atomic Skills`: Flat list of all 283 atomic skills with Grid/Dense Rows density switcher.
+     - `All Packages`: Displays all upstream bundles (Multi-Skill Suites + Standalone Skills).
+     - `Suites Only`: Displays multi-skill parent suites (`gstack`, `superpowers`, `GSD Core`, `Android SDK`, `Agent Skills Spec`).
+     - `Standalone`: Displays single-skill standalone tools (`taste-skill`, `unslop`, `better-auth`, `camerax`).
+     - `All Atomic Skills`: Flat list of all atomic skills with Grid/Dense Rows density switcher.
    - **Interactive Sub-Skill Cherry-Picking Engine**:
      - Upgraded `FrameworkDrawer.tsx` with member skill checkboxes, `Select All` / `Clear`, and `Add Selected (N) to Stack`.
      - Added 1-click copy for the canonical Linux Foundation open standard CLI: `npx skills add <repo> --skill <name>`.
-     - Eliminates agent token bloat (saving up to 80% prompt context window vs installing entire monolithic suites).
+     - Eliminates agent token bloat (saving up to 80%+ prompt context window vs installing entire monolithic suites).
    - **Official Open Standard Command Batching**:
      - Upgraded `StackModal.tsx` with format toggle between `npx skills add` (official open standard) and `python scripts/install-to-project.py`.
      - Automatically generates cherry-pick commands for multi-skill repos (`npx skills add garrytan/gstack --skill review`).
 
-9. **Sub-Skill Peeks, Search-Match Highlighting & `unslop` Polish (CEO Review Approved)**:
-   - **Suite Card Member Peeks**: `FrameworkCard.tsx` now renders preview chips of the top 3 member skills (e.g., `[review] [qa] [ship] +18 more`), giving developers immediate X-ray visibility into multi-skill suites.
+9. **Sub-Skill Peeks, Search-Match Highlighting & `unslop` Polish**:
+   - **Suite Card Member Peeks**: `FrameworkCard.tsx` now renders preview chips of the top member skills (e.g., `[review] [qa] [ship] +18 more`), giving developers immediate X-ray visibility into multi-skill suites.
    - **Instant Search Match Highlighting**: If a user searches for an inner skill (e.g., `review`, `qa`, `testing`), `FrameworkCard.tsx` dynamically surfaces a highlighted banner: `Matches: review, qa` showing exactly why that parent suite matched.
    - **Authentic GitHub Vendor Avatars**: Embedded dynamic GitHub owner avatars (`https://github.com/<owner>.png?size=64`) with fallback across `FrameworkCard.tsx`, `SkillCard.tsx`, and `CompactSkillRow.tsx`.
    - **Official CLI Copy on Atomic Cards**: Upgraded `SkillCard.tsx` to directly feature the official open standard `npx skills add <repo> --skill <id>` copy bar alongside slash commands.
    - **Anti-Slop Craft**: Applied quiet dark surfaces (`#09090b` canvas, `#111114` card surface), hairline borders (`#27272a`), and monospaced telemetry.
 
-10. **Tool & Infrastructure Verification**:
+10. **Universal Omni-Search Command Palette (`⌘K`)**:
+   - Upgraded `web/src/components/modals/CommandPalette.tsx` into a true omni-search engine querying across 4 unified catalogs:
+     - 📦 **Suites & Packages** (112 frameworks)
+     - ⚡ **Atomic Skills** (325 skills)
+     - 🔌 **Marketplace MCP Connectors** (1,126 connectors)
+     - 📄 **Layer 15 Docs** (57 templates)
+   - Added catalog-scoped filter tabs (`All`, `Suites`, `Skills`, `MCPs`, `Docs`), keyboard navigation (`↑`, `↓`, `Enter`, `ESC`), and quick jump chips (`P0 Critical`, `Android`, `GSD`).
+
+11. **Frontier Agent Skills Ingestion (Law 1 & Law 2 Compliant)**:
+   - Added `claude-3-7-hybrid-reasoning` (P0) and `cursor-0-45-agentic-rules` (P0) simultaneously to `AI-Coding-Skills-and-Tools-Matrix.md` and `AI-Coding-Skills-and-Tools-Matrix.csv`.
+   - Created standardized `SKILL.md` packages with complete YAML frontmatter, When to Use, Core Capabilities, Activation Commands, Prerequisites, and Anti-Patterns in `skills/01-core-engineering/`.
+   - Enhanced `scripts/export_matrix_json.py` to seamlessly parse both 3-column and 5-column matrix schemas, exporting 325 verified skills across 112 frameworks.
+
+12. **Visual Stack Inspector & Token Budget Calculator**:
+   - Integrated real-time prompt token footprint calculation (~800 tokens/atomic skill vs ~20,000 monolithic baseline) into `web/src/components/modals/StackModal.tsx`.
+   - Displays live context efficiency percentage (~80-87% context window savings), visual 2-tone progress meter, and priority distribution counter (P0/P1/other).
+
+13. **Tool & Infrastructure Verification**:
    - `Context7`: Active MCP server in Antigravity for live external library documentation.
    - `Graphify`: Binary installed at `C:\Users\nowni\.local\bin\graphify.exe` for internal AST codebase graphs.
    - `Billion Context`: Evaluated—not needed in Antigravity (native `/compact` and subagents handle context natively).
@@ -85,10 +102,14 @@
 
 ### 📋 Immediate Next Tasks Ready for Execution
 1. [x] **Storefront Card & Layout Polish (`web/src`)**:
-   - Completed `unslop` 9-pass design audit on `FrameworkCard.tsx`, `SkillCard.tsx`, and `CompactSkillRow.tsx` (sub-skill peeks, search match highlight, GitHub avatars, official npx copy).
-2. [ ] **Frontier Skills Expansion**:
-   - Ingest curated frontier agent skills (e.g. Claude 3.7 Sonnet extended thinking / hybrid reasoning patterns).
-3. [x] **Deployment & Vault Sync**:
+   - Completed `unslop` 9-pass design audit on `FrameworkCard.tsx`, `SkillCard.tsx`, and `CompactSkillRow.tsx`.
+2. [x] **Frontier Skills Expansion**:
+   - Ingested Claude 3.7 Sonnet extended thinking / hybrid reasoning and Cursor 0.45 agentic rules.
+3. [x] **Universal Omni-Search (`⌘K`)**:
+   - Multi-catalog indexing across Suites, Skills, MCP Connectors, and Docs.
+4. [x] **Visual Token Budget Calculator**:
+   - Live prompt token footprint and context savings meter in `StackModal.tsx`.
+5. [x] **Deployment & Vault Sync**:
    - Built and staged via `python scripts/deploy-skilldock.py`.
    - Maintained Obsidian parity via `python scripts/sync-obsidian.py`.
 

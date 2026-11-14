@@ -106,6 +106,8 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `prisma-orm-patterns` | **Prisma ORM Patterns** | `P1` | `/prisma-orm-patterns` | Prisma ORM schema modeling, type-safe queries, database migrations, and relation filters. |
 | `stripe-link-checkout` | **Stripe Link 1-Click Checkout** | `P1` | `/stripe-link-checkout` | Stripe Link 1-click checkout, payment credentials auto-fill, identity verification, and Link CLI automation. |
 | `obsidian-developer-second-brain` | **Obsidian Developer Second Brain** | `P0` | `/obsidian-developer-second-brain` | Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync. |
+| `claude-3-7-hybrid-reasoning` | **Claude 3.7 Hybrid Reasoning** | `P0` | `/claude-3-7-hybrid-reasoning` | Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet. |
+| `cursor-0-45-agentic-rules` | **Cursor 0.45 Agentic Rules** | `P0` | `/cursor-0-45-agentic-rules` | Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits. |
 
 ## 02 Matt Pocock
 

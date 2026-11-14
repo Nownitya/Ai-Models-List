@@ -224,6 +224,8 @@ SKILL_TO_REPO = {
     'domain-modeling': 'mattpocock/skills',
     'accidental-data-loss-prevention': 'agentskills/agentskills',
     'git-guardrails-claude-code': 'anthropics/skills',
+    'claude-3-7-hybrid-reasoning': 'anthropics/skills',
+    'cursor-0-45-agentic-rules': 'getcursor/cursor',
     'writing-for-agents': 'agentskills/agentskills',
     'writing-skills': 'agentskills/agentskills',
     'skill-repair': 'agentskills/agentskills',
@@ -347,6 +349,7 @@ REPO_DISPLAY_NAMES = {
     'trailofbits/skills': 'Trail of Bits',
     'getsentry/sentry': 'Sentry Diagnostics',
     'apple/design-guidelines': 'Apple HIG',
+    'getcursor/cursor': 'Cursor Agentic Rules',
 }
 
 ECOSYSTEM_RULES = [
@@ -437,6 +440,10 @@ def export_matrix():
                     name = parts[0]
                     priority = parts[1]
                     why = parts[2]
+                elif len(parts) >= 3 and parts[2] in ["P0", "P1", "P2", "P3"]:
+                    name = parts[0]
+                    priority = parts[2]
+                    why = parts[4] if len(parts) >= 5 else parts[3]
 
             if not name or not priority:
                 continue
@@ -534,6 +541,7 @@ def export_matrix():
         'apple/design-guidelines': "Apple Human Interface Guidelines (HIG) and native SwiftUI 26+ design system patterns.",
         'pypa/packaging': "Python Packaging Authority reference guidelines for dependency isolation, uv, and pyproject.toml.",
         'agentskills/agentskills': "Universal agent skills open specification and foundational multi-agent workflow capabilities.",
+        'getcursor/cursor': "Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc) and autonomous agent execution harness.",
     }
 
     # Build Framework Hub records (65 Upstream Repositories)
