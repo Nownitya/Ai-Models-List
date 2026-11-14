@@ -1,10 +1,10 @@
 {
   "meta": {
-    "totalSkills": 329,
-    "totalFrameworks": 115,
+    "totalSkills": 330,
+    "totalFrameworks": 116,
     "totalDocs": 57,
     "totalPrompts": 3,
-    "totalStars": 4996534,
+    "totalStars": 5015034,
     "categories": [
       {
         "id": "01-core-engineering",
@@ -49,7 +49,7 @@
       {
         "id": "09-autonomous-agents",
         "label": "Autonomous Agents",
-        "count": 18
+        "count": 19
       },
       {
         "id": "10-ai-infrastructure",
@@ -452,6 +452,12 @@
         "stars": 19400
       },
       {
+        "repo": "NousResearch/hermes-agent",
+        "repoName": "Hermes Agent",
+        "count": 1,
+        "stars": 18500
+      },
+      {
         "repo": "greensock/gsap-skills",
         "repoName": "GSAP Animation",
         "count": 1,
@@ -765,7 +771,7 @@
       }
     ],
     "p0Count": 102,
-    "p1Count": 147,
+    "p1Count": 148,
     "p2Count": 52,
     "p3Count": 28,
     "generatedAt": "2026-11-09"
@@ -4496,6 +4502,39 @@
           "scoped": "sourcegraph-search",
           "cli": "python scripts/install-to-project.py --skill sourcegraph-search",
           "description": "Sourcegraph Cody and universal code search plugin for Claude Code. Performs regex, structural, and cross-repository symbol indexing to uncover architectural patterns across enterprise codebases."
+        }
+      ]
+    },
+    {
+      "id": "nousresearch-hermes-agent",
+      "repo": "NousResearch/hermes-agent",
+      "repoName": "Hermes Agent",
+      "author": "NousResearch",
+      "stars": 18500,
+      "starsFormatted": "18.5k",
+      "description": "Nous Research autonomous agent framework with self-improving skill loop, tiered memory, and model-agnostic execution.",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/NousResearch/hermes-agent",
+      "version": "v0.5.2",
+      "license": "MIT",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/NousResearch/hermes-agent.git ~/.gemini/antigravity/skills/hermes-agent",
+        "claude": "git clone https://github.com/NousResearch/hermes-agent.git",
+        "cursor": "git clone https://github.com/NousResearch/hermes-agent.git",
+        "codex": "git clone https://github.com/NousResearch/hermes-agent.git",
+        "git": "git clone https://github.com/NousResearch/hermes-agent.git",
+        "cli": "curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash"
+      },
+      "skills": [
+        {
+          "id": "hermes-agent",
+          "name": "hermes-agent",
+          "priority": "P1",
+          "scoped": "hermes-agent",
+          "cli": "python scripts/install-to-project.py --skill hermes-agent",
+          "description": "Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution."
         }
       ]
     },
@@ -9608,6 +9647,23 @@
       "ecosystems": [
         "agents",
         "mattpocock"
+      ]
+    },
+    {
+      "id": "hermes-agent",
+      "uniqueId": "09-autonomous-agents:hermes-agent",
+      "name": "hermes-agent",
+      "priority": "P1",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution.",
+      "scoped": "hermes-agent",
+      "cli": "python scripts/install-to-project.py --skill hermes-agent",
+      "repo": "NousResearch/hermes-agent",
+      "repoName": "Hermes Agent",
+      "stars": 18500,
+      "ecosystems": [
+        "agents"
       ]
     },
     {

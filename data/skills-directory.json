@@ -5053,6 +5053,34 @@
     "cli": "python scripts/install-to-project.py --skill agent-harness",
     "repo": null
   },
+  "hermes-agent": {
+    "name": "hermes-agent",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-hermes-agent",
+    "cli": "python scripts/install-to-project.py --skill agent-hermes-agent",
+    "repo": "NousResearch/hermes-agent.git"
+  },
+  "agent-hermes-agent": {
+    "name": "hermes-agent",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-hermes-agent",
+    "cli": "python scripts/install-to-project.py --skill agent-hermes-agent",
+    "repo": "NousResearch/hermes-agent.git"
+  },
+  "hermes agent": {
+    "name": "hermes-agent",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-hermes-agent",
+    "cli": "python scripts/install-to-project.py --skill agent-hermes-agent",
+    "repo": "NousResearch/hermes-agent.git"
+  },
+  "agent hermes agent": {
+    "name": "hermes-agent",
+    "category": "09-autonomous-agents",
+    "scoped": "agent-hermes-agent",
+    "cli": "python scripts/install-to-project.py --skill agent-hermes-agent",
+    "repo": "NousResearch/hermes-agent.git"
+  },
   "mempalace": {
     "name": "mempalace",
     "category": "09-autonomous-agents",

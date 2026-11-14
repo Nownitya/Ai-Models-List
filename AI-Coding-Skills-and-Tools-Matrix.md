@@ -329,6 +329,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **T3 Code documentation / repository:** https://github.com/pingdotgg/t3code
 - **Everything Claude Code (ECC) website / repository:** https://ecc.tools · https://github.com/affaan-m/ecc
 - **Sellbird repository:** https://sellbird.ai · https://github.com/ethanplusai/sellbird
+- **Hermes Agent repository:** https://hermes-agent.org · https://github.com/NousResearch/hermes-agent
 
 | Tool / Framework | Priority | Why |
 | --- | --- | --- |
@@ -359,6 +360,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 
 | `mastra-agent-framework` | **Mastra Agent Framework** | `P1` | `/mastra-agent-framework` | Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals. |
 | `sellbird` | **Sellbird Autonomous Outreach** | `P1` | `/sellbird` | Open-source autonomous AI sales, lead enrichment, and outreach engine running on local Claude / ChatGPT / Codex plans with automated email verification and campaign triage. |
+| `hermes-agent` | **Hermes Agent** | `P1` | `/hermes-agent` | Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution. |
 
 ## 10 AI Infrastructure
 
@@ -559,6 +561,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | compound-engineering | https://every.to | https://github.com/everyinc/compound-engineering-plugin | EveryInc's compounding engineering loop and agentic skills for Claude Code, Cursor, and AI assistants (2.8k+ stars). |
 | 21st-magic-ui | https://21st.dev/ | https://github.com/21st-dev/cli | 21st.dev design engineering component marketplace, AI UI generator, and Magic MCP server (5.4k+ stars). |
 | sellbird | https://sellbird.ai/ | https://github.com/ethanplusai/sellbird | Open-source autonomous AI sales, lead enrichment, and outreach engine running on local AI plans (4.2k+ stars). |
+| hermes-agent | https://hermes-agent.org/ | https://github.com/NousResearch/hermes-agent | Nous Research autonomous agent framework with self-improving skill loop and tiered memory (18k+ stars). |
 | remotion-video | https://www.remotion.dev/ | https://github.com/remotion-dev/skills | Programmatic video creation and motion graphics in React (6.5k+ stars). |
 | cloudflare-skills | https://developers.cloudflare.com/workers/ | https://github.com/cloudflare/skills | Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars). |
 | supabase-skills | https://supabase.com/docs | https://github.com/supabase/agent-skills | Supabase Postgres database best practices, pgvector, and auth workflows (3k+ stars). |

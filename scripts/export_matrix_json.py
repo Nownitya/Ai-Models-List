@@ -624,6 +624,15 @@ def export_matrix():
                 "git": "git clone https://github.com/ethanplusai/sellbird.git",
                 "cli": "pip install sellbird && sellbird setup"
             }
+        elif repo_key == "NousResearch/hermes-agent":
+            recipes = {
+                "antigravity": "git clone https://github.com/NousResearch/hermes-agent.git ~/.gemini/antigravity/skills/hermes-agent",
+                "claude": "git clone https://github.com/NousResearch/hermes-agent.git",
+                "cursor": "git clone https://github.com/NousResearch/hermes-agent.git",
+                "codex": "git clone https://github.com/NousResearch/hermes-agent.git",
+                "git": "git clone https://github.com/NousResearch/hermes-agent.git",
+                "cli": "curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash"
+            }
         elif repo_key == "microsoft/playwright":
             recipes = {
                 "antigravity": "npx playwright install --with-deps",

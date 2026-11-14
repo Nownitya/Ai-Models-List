@@ -286,6 +286,7 @@ herdr-orchestration,Herdr Multi-Agent Orchestration,P1,/herdr-orchestration,"Mul
 agent-desktop-gui,Agent Desktop GUI,P1,/agent-desktop-gui,"Native desktop agent orchestration, operating system window management, and GUI interaction."
 mastra-agent-framework,Mastra Agent Framework,P1,/mastra-agent-framework,"Mastra TypeScript AI agent framework, graph workflows, tool calling, memory management, and evals."
 sellbird,Sellbird Autonomous Outreach,P1,/sellbird,"Open-source autonomous AI sales, lead enrichment, and outreach engine running on local Claude / ChatGPT / Codex plans with automated email verification and campaign triage."
+hermes-agent,Hermes Agent,P1,/hermes-agent,"Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution."
 10 AI Infrastructure,,,,Research
 Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
 Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
@@ -460,6 +461,7 @@ playwright-cli,https://playwright.dev/,https://github.com/microsoft/playwright,"
 compound-engineering,https://every.to,https://github.com/everyinc/compound-engineering-plugin,"EveryInc's compounding engineering loop and agentic skills for Claude Code, Cursor, and AI assistants (2.8k+ stars)."
 21st-magic-ui,https://21st.dev/,https://github.com/21st-dev/cli,"21st.dev design engineering component marketplace, AI UI generator, and Magic MCP server (5.4k+ stars)."
 sellbird,https://sellbird.ai/,https://github.com/ethanplusai/sellbird,"Open-source autonomous AI sales, lead enrichment, and outreach engine running on local AI plans (4.2k+ stars)."
+hermes-agent,https://hermes-agent.org/,https://github.com/NousResearch/hermes-agent,"Nous Research autonomous agent framework with self-improving skill loop and tiered memory (18k+ stars)."
 remotion-video,P1,"Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering.",https://github.com/remotion-dev/skills,https://www.remotion.dev/
 remotion-video,https://www.remotion.dev/,https://github.com/remotion-dev/skills,Programmatic video creation and motion graphics in React (6.5k+ stars).
 cloudflare-skills,https://developers.cloudflare.com/workers/,https://github.com/cloudflare/skills,"Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars)."
