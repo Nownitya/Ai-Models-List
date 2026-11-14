@@ -18,12 +18,19 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   const openInspect = useSkillStore((s) => s.openInspect)
   const setRepo = useSkillStore((s) => s.setRepo)
 
+  const activeAssistant = useSkillStore((s) => s.activeAssistant)
   const isSavedInStack = stack.some((s) => s.id === skill.id)
 
   const owner = skill.repo && skill.repo.includes('/') ? skill.repo.split('/')[0] : null
   const avatarUrl = owner ? `https://github.com/${owner}.png?size=48` : null
 
-  const officialNpxCmd = skill.repo ? `npx skills add ${skill.repo} --skill ${skill.id}` : skill.cli
+  // Format install command dynamically based on active assistant
+  let activeAssistantCmd = skill.repo ? `npx skills add ${skill.repo} --skill ${skill.id}` : skill.cli
+  if (activeAssistant === 'antigravity') {
+    activeAssistantCmd = `python scripts/install-to-project.py --skill ${skill.scoped}`
+  } else if (activeAssistant === 'codex' && skill.repo) {
+    activeAssistantCmd = `codex install ${skill.repo}`
+  }
 
   const copySlashCommand = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -34,7 +41,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
 
   const copyCliCommand = (e: React.MouseEvent) => {
     e.stopPropagation()
-    navigator.clipboard.writeText(officialNpxCmd)
+    navigator.clipboard.writeText(activeAssistantCmd)
     setCopiedCli(true)
     setTimeout(() => setCopiedCli(false), 1400)
   }
@@ -164,10 +171,10 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
           <button
             onClick={copyCliCommand}
             className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer font-mono text-[11px]"
-            title={`Copy official CLI: ${officialNpxCmd}`}
+            title={`Copy ${activeAssistant} command: ${activeAssistantCmd}`}
           >
             <Terminal className="w-3 h-3 text-cyan-400 shrink-0" />
-            <span className="truncate max-w-[200px]">{officialNpxCmd}</span>
+            <span className="truncate max-w-[200px]">{activeAssistantCmd}</span>
             {copiedCli ? <Check className="w-3 h-3 text-emerald-400 shrink-0" /> : <Copy className="w-3 h-3 text-zinc-500 shrink-0" />}
           </button>
 

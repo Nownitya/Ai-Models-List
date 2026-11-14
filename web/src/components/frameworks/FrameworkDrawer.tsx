@@ -25,12 +25,18 @@ export const FrameworkDrawer: React.FC = () => {
   const stack = useSkillStore((s) => s.stack)
   const skills = useSkillStore((s) => s.skills)
 
-  const [selectedAssistant, setSelectedAssistant] = useState<AssistantType>('antigravity')
+  const activeAssistant = useSkillStore((s) => s.activeAssistant)
+  const [selectedAssistant, setSelectedAssistant] = useState<AssistantType>(activeAssistant)
   const [copiedAssistantCmd, setCopiedAssistantCmd] = useState(false)
   const [copiedSkillSlash, setCopiedSkillSlash] = useState<string | null>(null)
   const [copiedOfficialCli, setCopiedOfficialCli] = useState<string | null>(null)
   const [copiedLink, setCopiedLink] = useState(false)
   const [selectedSkillIds, setSelectedSkillIds] = useState<Set<string>>(new Set())
+
+  // Sync with global assistant selector from header
+  useEffect(() => {
+    setSelectedAssistant(activeAssistant)
+  }, [activeAssistant])
 
   // Reset selected skills when inspecting a different framework
   useEffect(() => {
