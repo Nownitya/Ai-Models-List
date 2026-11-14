@@ -394,6 +394,7 @@ gamedev-mechanics,GameDev Physics & Mechanics,P1,/gamedev-mechanics,"Game develo
 higgsfield-visual-media,Higgsfield Visual Media,P1,/higgsfield-visual-media,"Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition."
 binance-agentic-wallet,Binance Agentic Wallet,P1,/binance-agentic-wallet,"Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows."
 motion-sound-effects,Motion Sound Effects & Foley,P1,/motion-sound-effects,"Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis."
+runcomfy-cli,RunComfy CLI & Generative Media,P1,/runcomfy-cli,"Unified CLI and agent skills for 100+ hosted diffusion and generative video models (Kling 3.0, Wan 2.1, FLUX 2, GPT Image 2, inpainting, face-swap)."
 Priority,Meaning,Recommended action
 P0,Essential,Prioritize for the main toolkit; enable when relevant.
 P1,High,Strongly recommended for regular workflows.
@@ -507,6 +508,7 @@ network-latency-benchmarks,https://github.com/jeremylongshore/tons-of-skills-mar
 stageshow-ui-presentation,https://github.com/benjitaylor/skills,https://github.com/benjitaylor/skills,"Stageshow interactive UI demo orchestration, live presentation states, and slide deck code bridges."
 binance-agentic-wallet,https://github.com/binance/binance-skills-hub,https://github.com/binance/binance-skills-hub,"Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows."
 motion-sound-effects,https://github.com/barty-bart/motion-graphics,https://github.com/barty-bart/motion-graphics,"Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis."
+runcomfy-cli,https://www.runcomfy.com/,https://github.com/prime-skills/runcomfy-agent-skills,"Unified CLI and agent skills for 100+ hosted diffusion and generative video models (Kling 3.0, Wan 2.1, FLUX 2, GPT Image 2, inpainting, face-swap)."
 15 Universal Project Documentation Standard,,,,
 Purpose:,Reusable documentation baseline for software projects built by humans and AI agents.,,,
 Operating principle:,Create only applicable documents; keep every document synchronized with implementation and verified evidence.,,,

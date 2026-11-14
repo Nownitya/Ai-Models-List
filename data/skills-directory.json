@@ -7041,6 +7041,34 @@
     "cli": "python scripts/install-to-project.py --skill spec-remotion-video",
     "repo": null
   },
+  "runcomfy-cli": {
+    "name": "runcomfy-cli",
+    "category": "12-specialized-domains",
+    "scoped": "spec-runcomfy-cli",
+    "cli": "python scripts/install-to-project.py --skill spec-runcomfy-cli",
+    "repo": null
+  },
+  "spec-runcomfy-cli": {
+    "name": "runcomfy-cli",
+    "category": "12-specialized-domains",
+    "scoped": "spec-runcomfy-cli",
+    "cli": "python scripts/install-to-project.py --skill spec-runcomfy-cli",
+    "repo": null
+  },
+  "runcomfy cli": {
+    "name": "runcomfy-cli",
+    "category": "12-specialized-domains",
+    "scoped": "spec-runcomfy-cli",
+    "cli": "python scripts/install-to-project.py --skill spec-runcomfy-cli",
+    "repo": null
+  },
+  "spec runcomfy cli": {
+    "name": "runcomfy-cli",
+    "category": "12-specialized-domains",
+    "scoped": "spec-runcomfy-cli",
+    "cli": "python scripts/install-to-project.py --skill spec-runcomfy-cli",
+    "repo": null
+  },
   "solana-agent-kit": {
     "name": "solana-agent-kit",
     "category": "12-specialized-domains",

@@ -262,6 +262,7 @@ SKILL_TO_REPO = {
     'dak-setup': 'GoogleCloudPlatform/data-agent-kit',
     'hyperframes-media': 'heygen-com/hyperframes',
     'marketing-growth-engine': 'coreyhaines31/marketingskills',
+    'runcomfy-cli': 'prime-skills/runcomfy-agent-skills',
 }
 
 CATEGORY_FALLBACK_REPO = {
@@ -329,6 +330,7 @@ REPO_DISPLAY_NAMES = {
     'NousResearch/hermes-agent': 'Hermes Agent',
     'garrytan/gbrain': 'gbrain',
     'unslothai/unsloth': 'Unsloth AI',
+    'prime-skills/runcomfy-agent-skills': 'RunComfy AI Media',
     'vercel-labs/agent-browser': 'Agent Browser',
     'vercel-labs/agent-desktop': 'Agent Desktop',
     'vercel-labs/skills': 'Vercel React Patterns',
@@ -566,6 +568,7 @@ def export_matrix():
         'NousResearch/hermes-agent': "Nous Research autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution.",
         'garrytan/gbrain': "Garry Tan's markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite) + pgvector, hybrid search, and MCP support.",
         'unslothai/unsloth': "Ultra-fast open-source LLM fine-tuning and inference engine (5x faster, 80% less VRAM with Triton kernels) for Llama 3.3, Mistral, Gemma 2, and DeepSeek.",
+        'prime-skills/runcomfy-agent-skills': "Unified CLI and agent skills for 100+ hosted diffusion and generative video models (Kling 3.0, Wan 2.1, FLUX 2, GPT Image 2, inpainting, face-swap).",
     }
 
     # Build Framework Hub records (65 Upstream Repositories)
@@ -656,6 +659,15 @@ def export_matrix():
                 "codex": "pip install unsloth",
                 "git": "git clone https://github.com/unslothai/unsloth.git",
                 "cli": "pip install unsloth"
+            }
+        elif repo_key == "prime-skills/runcomfy-agent-skills":
+            recipes = {
+                "antigravity": "npx skills add agentspace-so/runcomfy-agent-skills -g",
+                "claude": "npx skills add agentspace-so/runcomfy-agent-skills -g",
+                "cursor": "npx skills add agentspace-so/runcomfy-agent-skills -g",
+                "codex": "npm i -g @runcomfy/cli",
+                "git": "git clone https://github.com/prime-skills/runcomfy-agent-skills.git",
+                "cli": "npm i -g @runcomfy/cli"
             }
         elif repo_key == "microsoft/playwright":
             recipes = {

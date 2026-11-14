@@ -486,6 +486,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `higgsfield-visual-media` | **Higgsfield Visual Media** | `P1` | `/higgsfield-visual-media` | Generative image framing, studio lighting presets, product photoshoot staging, and visual media composition. |
 | `binance-agentic-wallet` | **Binance Agentic Wallet** | `P1` | `/binance-agentic-wallet` | Binance agentic wallet management, transaction signing, liquidity queries, and blockchain workflows. |
 | `motion-sound-effects` | **Motion Sound Effects & Foley** | `P1` | `/motion-sound-effects` | Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis. |
+| `runcomfy-cli` | **RunComfy CLI & Generative Media** | `P1` | `/runcomfy-cli` | Unified CLI and agent skills for 100+ hosted diffusion and generative video models (Kling 3.0, Wan 2.1, FLUX 2, GPT Image 2, inpainting, face-swap). |
 
 
 ## 13 Priority Summary
@@ -629,6 +630,7 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | [clerk/skills](https://github.com/clerk/skills) | **⭐ 93** | `latest` | `MIT` | 2026-11-08 |
 | [prisma/skills](https://github.com/prisma/skills) | **⭐ 79** | `latest` | `Apache-2.0` | 2026-11-08 |
 | [stripe/link-cli](https://github.com/stripe/link-cli) | **⭐ 894** (1.3k+ Installs) | `latest` | `MIT` | 2026-11-08 |
+| [prime-skills/runcomfy-agent-skills](https://github.com/prime-skills/runcomfy-agent-skills) | **⭐ 62** | `latest` | `MIT` | 2026-11-14 |
 
 ## 15 Universal Project Documentation Standard
 

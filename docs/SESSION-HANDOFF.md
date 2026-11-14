@@ -163,10 +163,16 @@
     - **Phase 4: Milestone H10 Multi-Agent Swarm Orchestrator**: Built `web/src/utils/swarmOrchestrator.ts`, expanded `StackModal.tsx` and `web/src/bridge/webmcp.ts` with Multi-Agent Swarm Manifest (`skilldock-swarm-manifest.json`) and 1-click ready-to-run Swarm Brief generation.
     - **Phase 5: Standalone SkillDock CLI (`npx skilldock`)**: Authored `scripts/skilldock_cli.py` and Node executable wrapper `bin/skilldock.js` supporting `search`, `inspect`, `starter`, `stack`, and `swarm`. Passed all 7 unit tests in `tests/test_skilldock_cli.py`. Total test suite: 87 Python unit tests + 6 Playwright E2E tests passing 100%.
 
+18. **Cloud Generative Media Ingestion (`runcomfy-cli`) & Web Catalog Expansion**:
+    - **Dual Matrix Parity (Law 1)**: Simultaneously updated `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` adding `runcomfy-cli` (`prime-skills/runcomfy-agent-skills`, P1) in Section 12 and Section 14.
+    - **Standardized Skill Structure (Law 2)**: Authored [`skills/12-specialized-domains/runcomfy-cli/SKILL.md`](file:///d:/Codes/Antigravity/Project4/Ai-Models-List/skills/12-specialized-domains/runcomfy-cli/SKILL.md) with full YAML frontmatter, execution lifecycle (Submit, Poll, Download), cancellation grace, and security rules. Passed Law 2 audit on 313 packages (`python scripts/test-skills.py`).
+    - **Directory & Web Matrix**: Generated 1,087 CLI lookup entries in `data/skills-directory.json`. Exported **333 cataloged skills across 120 frameworks**, 57 docs, and 3 prompts to `web/src/data/matrix.json`. Fixed numerical slug parser in `export_matrix_json.py` to preserve IDs like `21st-magic-ui`.
+    - **Live Deployment & Testing**: Recompiled React 19 storefront via `python scripts/deploy-skilldock.py`, passing all 87 unit tests cleanly. Staged to root `/index.html` and `./assets/`.
+
 ---
 
 ### 🧠 Current State of Repository & Metrics
-- **Catalog Totals**: 332 Atomic Skills, 118 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,126,734 total ⭐ community stars**.
+- **Catalog Totals**: 333 Atomic Skills, 120 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,126,796 total ⭐ community stars**.
 - **Claude Marketplace Hub**: 530 Plugins, 1,126 Connectors, 33 Specialized Agents.
 - **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 6/6 Playwright E2E browser tests PASSED (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
 - **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv`.
