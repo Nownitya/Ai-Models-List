@@ -12,8 +12,16 @@ export const Header: React.FC = () => {
   const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
   const setCommandPaletteOpen = useSkillStore((s) => s.setCommandPaletteOpen)
   const setWebMcpModalOpen = useSkillStore((s) => s.setWebMcpModalOpen)
+  const setRecommenderOpen = useSkillStore((s) => s.setRecommenderOpen)
   const goHome = useSkillStore((s) => s.goHome)
   const meta = useSkillStore((s) => s.meta)
+
+  // Real dollar savings calculation (Claude 3.7 benchmark vs 26.4k token baseline)
+  const estTokens = stack.length * 800
+  const baselineTokens = 26400
+  const estDollarSavings = stack.length > 0 
+    ? Math.max(0, Math.round(((baselineTokens - estTokens) * 1000 / 1000000) * 3.0))
+    : 0
 
   const [pulse, setPulse] = useState(false)
   const prevStackLen = useRef(stack.length)
@@ -136,26 +144,46 @@ export const Header: React.FC = () => {
             })}
           </div>
 
-          {/* Stack Drawer Button */}
+          {/* Project Auto-Stack Recommender Trigger */}
           <button
-            onClick={() => setStackModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-xs font-semibold text-zinc-200 border border-[#27272a] transition-colors cursor-pointer"
-            title="Open Selected Skills Stack"
+            onClick={() => setRecommenderOpen(true)}
+            className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-purple-500/10 hover:bg-purple-500/20 text-xs font-semibold text-purple-300 border border-purple-500/30 hover:border-purple-500/50 transition-colors cursor-pointer"
+            title="Auto-Recommend Stack from Project Manifest (package.json, build.gradle, pyproject.toml)"
           >
-            <Layers className="w-3.5 h-3.5 text-zinc-400" />
-            <span>Stack</span>
-            {stack.length > 0 && (
+            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+            <span className="hidden md:inline">Auto-Stack</span>
+          </button>
+
+          {/* Stack Drawer Button */}
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setStackModalOpen(true)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-xs font-semibold text-zinc-200 border border-[#27272a] transition-colors cursor-pointer"
+              title="Open Selected Skills Stack"
+            >
+              <Layers className="w-3.5 h-3.5 text-zinc-400" />
+              <span>Stack</span>
+              {stack.length > 0 && (
+                <span
+                  className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold transition-all duration-300 ${
+                    pulse
+                      ? 'bg-blue-400 text-blue-950 scale-125 ring-2 ring-blue-400/50 shadow-md shadow-blue-500/50'
+                      : 'bg-white text-zinc-900'
+                  }`}
+                >
+                  {stack.length}
+                </span>
+              )}
+            </button>
+            {stack.length > 0 && estDollarSavings > 0 && (
               <span
-                className={`px-1.5 py-0.5 rounded text-[10px] font-mono font-bold transition-all duration-300 ${
-                  pulse
-                    ? 'bg-blue-400 text-blue-950 scale-125 ring-2 ring-blue-400/50 shadow-md shadow-blue-500/50'
-                    : 'bg-white text-zinc-900'
-                }`}
+                className="hidden xl:inline-flex items-center gap-1 px-1.5 py-1 rounded text-[10px] font-mono font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20"
+                title={`Estimated ~$${estDollarSavings} saved per 1,000 developer turns vs monolithic rules`}
               >
-                {stack.length}
+                -${estDollarSavings}/1k
               </span>
             )}
-          </button>
+          </div>
 
           {/* WebMCP Agent Console Trigger */}
           <button

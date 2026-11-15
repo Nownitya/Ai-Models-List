@@ -39,6 +39,7 @@ export const CommandPalette: React.FC = () => {
   const setStackModalOpen = useSkillStore((s) => s.setStackModalOpen)
   const setPriorityGuideOpen = useSkillStore((s) => s.setPriorityGuideOpen)
   const setWebMcpModalOpen = useSkillStore((s) => s.setWebMcpModalOpen)
+  const setRecommenderOpen = useSkillStore((s) => s.setRecommenderOpen)
   const setPriority = useSkillStore((s) => s.setPriority)
   const setEcosystem = useSkillStore((s) => s.setEcosystem)
 
@@ -187,6 +188,16 @@ export const CommandPalette: React.FC = () => {
 
     // 5. System Quick Actions
     const actions: SearchResultItem[] = []
+    if (!q || q.includes('auto') || q.includes('recommend') || q.includes('project') || q.includes('manifest') || q.includes('package') || q.includes('gradle')) {
+      actions.push({
+        type: 'action',
+        id: 'action-recommender',
+        title: 'Auto-Recommend Stack from Project Manifest',
+        subtitle: 'Drop or paste package.json, build.gradle, or pyproject.toml to auto-assemble stack',
+        tag: 'Auto-Stack',
+        onAction: () => setRecommenderOpen(true),
+      })
+    }
     if (q.includes('mcp') || q.includes('console') || q.includes('tool') || q.includes('bridge') || q.includes('agent')) {
       actions.push({
         type: 'action',

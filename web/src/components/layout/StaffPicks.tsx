@@ -13,6 +13,7 @@ export const StaffPicks: React.FC = () => {
   const setCategory = useSkillStore((s) => s.setCategory)
   const setPillar = useSkillStore((s) => s.setPillar)
   const setEntityScope = useSkillStore((s) => s.setEntityScope)
+  const setRecommenderOpen = useSkillStore((s) => s.setRecommenderOpen)
   const [copiedId, setCopiedId] = useState<string | null>(null)
 
   // Identify our 4 flagship featured skills
@@ -123,7 +124,7 @@ export const StaffPicks: React.FC = () => {
         {/* 1-Click Starter Stacks (Editorial Suites with Token Conservation) */}
         <div className="pt-5 border-t border-[#27272a]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <Zap className="w-4 h-4 text-amber-400" />
               <h3 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
                 1-Click Starter Stacks
@@ -131,6 +132,14 @@ export const StaffPicks: React.FC = () => {
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300">
                 8 Curated Suites • ~82% Context Savings
               </span>
+              <button
+                onClick={() => setRecommenderOpen(true)}
+                className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/15 hover:bg-purple-500/25 text-[11px] font-mono font-semibold text-purple-300 border border-purple-500/30 transition-colors cursor-pointer"
+                title="Have an existing repository? Drop your manifest to auto-recommend a stack"
+              >
+                <Sparkles className="w-3 h-3 text-purple-400" />
+                <span>🪄 Auto-Stack My Project</span>
+              </button>
             </div>
             <span className="text-xs text-zinc-500 hidden sm:inline">
               Pre-configured high-performance bundles ready to export or run

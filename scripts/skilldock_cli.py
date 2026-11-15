@@ -339,10 +339,11 @@ def cmd_stack_list(args: argparse.Namespace) -> None:
         return
 
     estimated_tokens = len(stack) * 800
-    baseline = max(18000, len(stack) * 2800)
+    baseline = 26400
     savings = round(((baseline - estimated_tokens) / baseline) * 100)
+    dollar_savings = round(((baseline - estimated_tokens) * 1000 / 1000000) * 3.0, 2)
 
-    print(f"\n🛠️  Active SkillDock Stack ({len(stack)} skills | ~{estimated_tokens:,} tokens | ~{savings}% savings):\n")
+    print(f"\n🛠️  Active SkillDock Stack ({len(stack)} skills | ~{estimated_tokens:,} tokens | ~{savings}% savings | ~${dollar_savings} saved/1k turns):\n")
     print(f"{'PRIORITY':<10} {'SLASH COMMAND':<28} {'NAME & REPO'}")
     print("-" * 70)
     for s in stack:
@@ -435,6 +436,57 @@ def cmd_stack_export(args: argparse.Namespace) -> None:
             }
         }
         output_content = json.dumps(config, indent=2)
+
+    elif fmt in ('windsurf', 'windsurfrules'):
+        output_content = f"# .windsurfrules — SkillDock Custom Cascade AI Rules\n# Generated: {__import__('datetime').date.today()}\n\n"
+        output_content += "## Core Directives\n- When solving engineering tasks, strictly adhere to the following specialized skill contracts.\n- Verify code parity and execute unit tests before asserting completion.\n- Avoid speculative over-engineering; keep implementations minimal, surgical, and robust.\n\n## Active Skill Contracts\n\n"
+        for s in stack:
+            output_content += f"### Skill: {s.get('name')} (/{s.get('scoped')})\n"
+            output_content += f"- Priority: {s.get('priority')}\n"
+            if s.get('repo'):
+                output_content += f"- Upstream: https://github.com/{s.get('repo')}\n"
+            output_content += f"- Activation: /{s.get('scoped')}\n"
+            output_content += f"- Command: {s.get('cli')}\n\n"
+
+    elif fmt in ('cline', 'clinerules'):
+        output_content = f"# .clinerules — SkillDock Autonomous Coding Agent System Rules\n# Generated: {__import__('datetime').date.today()}\n\n"
+        output_content += "You are an expert autonomous software engineer operating under the SkillDock engineering framework.\n\n"
+        output_content += "## Non-Negotiable Operating Laws:\n1. Think before coding: Plan changes, inspect codebase, and verify contracts first.\n2. Evidence before assertions: Always run tests before declaring success.\n3. Surgical changes: Touch only what is necessary.\n\n## Active Skill Directives:\n\n"
+        for s in stack:
+            output_content += f"### [{s.get('priority')}] {s.get('name')} (/{s.get('scoped')})\n"
+            output_content += f"- Trigger: When working with {s.get('name', '').lower()} workflows or /{s.get('scoped')}.\n"
+            output_content += f"- Directive: Enforce {s.get('name')} specification standards.\n\n"
+
+    elif fmt == 'copilot':
+        output_content = f"# GitHub Copilot Custom Repository Instructions\n# Place at: .github/copilot-instructions.md\n# Generated: {__import__('datetime').date.today()}\n\n"
+        output_content += f"## Active Skill Constraints ({len(stack)} Active Skills)\n\n"
+        for s in stack:
+            output_content += f"### {s.get('name')} (/{s.get('scoped')}) — Priority: {s.get('priority')}\n"
+            output_content += f"- Enforce {s.get('name')} rules and conventions.\n\n"
+
+    elif fmt == 'antigravity':
+        manifest = {
+            "$schema": "https://schema.antigravity.google/v1/workspace-skills.json",
+            "version": "1.0.0",
+            "generator": "SkillDock CLI v3.0",
+            "skills": [
+                {
+                    "id": s.get('id'),
+                    "name": s.get('name'),
+                    "scopedCommand": f"/{s.get('scoped')}",
+                    "priority": s.get('priority'),
+                    "skillPath": f".agents/skills/{s.get('id')}/SKILL.md",
+                    "installCli": s.get('cli')
+                } for s in stack
+            ],
+            "repoLaws": [
+                "Law 1: Parity - Always verify parity before claiming completion.",
+                "Law 2: Standard Structure - All skills must follow standard SKILL.md format.",
+                "Law 3: Evidence Before Assertions - Run tests and verification commands before declaring success.",
+                "Law 4: Creator Independence - Preserve unique methodology across distinct upstream frameworks."
+            ]
+        }
+        output_content = json.dumps(manifest, indent=2)
 
     elif fmt == 'swarm':
         output_content = json.dumps(generate_swarm_manifest(stack), indent=2)
@@ -549,6 +601,122 @@ def cmd_swarm_brief(args: argparse.Namespace) -> None:
         print(brief)
 
 
+def cmd_recommend(args: argparse.Namespace) -> None:
+    manifest_path = args.path
+    if not manifest_path:
+        candidates = ['package.json', 'build.gradle.kts', 'build.gradle', 'pyproject.toml', 'requirements.txt', 'Cargo.toml']
+        for cand in candidates:
+            if os.path.exists(cand):
+                manifest_path = cand
+                break
+
+    if not manifest_path or not os.path.exists(manifest_path):
+        print("Error: No manifest found. Please provide a path to package.json, build.gradle.kts, pyproject.toml, etc.", file=sys.stderr)
+        sys.exit(1)
+
+    target_filename = os.path.basename(manifest_path)
+    with open(manifest_path, 'r', encoding='utf-8', errors='ignore') as f:
+        content = f.read()
+
+    # Rule-based detection
+    detected_tech = []
+    recommended_ids = []
+    c_lower = content.lower()
+
+    if 'react' in c_lower or 'next' in c_lower:
+        detected_tech.append("React / Next.js")
+        recommended_ids.extend(['taste-skill', 'unslop'])
+    if 'tailwind' in c_lower:
+        detected_tech.append("Tailwind CSS")
+        if 'taste-skill' not in recommended_ids:
+            recommended_ids.append('taste-skill')
+    if 'svelte' in c_lower:
+        detected_tech.append("Svelte 5")
+        recommended_ids.extend(['svelte5-runes-patterns', 'taste-skill'])
+    if 'prisma' in c_lower:
+        detected_tech.append("Prisma ORM")
+        recommended_ids.extend(['prisma-orm-patterns', 'neon-serverless-postgres'])
+    if 'better-auth' in c_lower or 'next-auth' in c_lower or 'auth' in c_lower:
+        detected_tech.append("Authentication")
+        recommended_ids.append('better-auth-patterns')
+    if 'fastapi' in c_lower or 'langchain' in c_lower or 'openai' in c_lower or 'anthropic' in c_lower:
+        detected_tech.append("AI Agents / Python")
+        recommended_ids.extend(['bifrost', 'freellmapi', 'systematic-debugging'])
+    if 'compose' in c_lower or 'androidx' in c_lower or 'camerax' in c_lower:
+        detected_tech.append("Android / Jetpack Compose")
+        recommended_ids.extend(['compose-preview', 'navigation-3', 'camerax', 'anr-audit-and-fix'])
+    if 'playwright' in c_lower or 'jest' in c_lower or 'vitest' in c_lower or 'pytest' in c_lower:
+        detected_tech.append("Testing & Quality")
+        recommended_ids.extend(['tdd', 'systematic-debugging', 'momentic-visual-testing'])
+
+    # Always ensure general engineering excellence
+    for baseline in ['karpathy-guidelines', 'ponytail']:
+        if baseline not in recommended_ids:
+            recommended_ids.append(baseline)
+
+    matrix = load_matrix()
+    skills = matrix.get('skills', [])
+    matched_skills = []
+    seen = set()
+    for sid in recommended_ids:
+        match = find_skill(sid, skills)
+        if match and match['id'] not in seen:
+            matched_skills.append(match)
+            seen.add(match['id'])
+
+    # Token & Dollar economics
+    est_tokens = len(matched_skills) * 800
+    baseline_tokens = 26400
+    savings = round(((baseline_tokens - est_tokens) / baseline_tokens) * 100) if matched_skills else 0
+    dollar_savings = round(((baseline_tokens - est_tokens) * 1000 / 1000000) * 3.0, 2)
+
+    if args.json:
+        res = {
+            "manifest": manifest_path,
+            "detectedTechnologies": detected_tech,
+            "recommendedSkills": [
+                {
+                    "id": s['id'],
+                    "name": s['name'],
+                    "priority": s['priority'],
+                    "scoped": s['scoped'],
+                    "cli": s['cli']
+                } for s in matched_skills
+            ],
+            "tokenEstimate": est_tokens,
+            "monolithicBaseline": baseline_tokens,
+            "tokenSavingsPercent": savings,
+            "estimatedDollarSavingsPer1kTurnsClaude37": dollar_savings
+        }
+        print(json.dumps(res, indent=2))
+        return
+
+    print(f"\n✨ SkillDock Auto-Stack Recommendation for {target_filename}:")
+    print(f"📦 Detected Technologies: {', '.join(detected_tech) if detected_tech else 'Standard Full-Stack'}")
+    print(f"⚡ Token Footprint: ~{est_tokens:,} tokens (~{savings}% savings vs 26.4k baseline)")
+    print(f"💰 Real Dollar Economics: Saves ~${dollar_savings}/1,000 Claude 3.7 turns\n")
+
+    print(f"{'PRIORITY':<10} {'SLASH COMMAND':<28} {'NAME & CATEGORY'}")
+    print("-" * 70)
+    for s in matched_skills:
+        print(f"{s.get('priority', 'P1'):<10} /{s.get('scoped'):<27} {s.get('name')} ({s.get('categoryLabel', '')})")
+
+    if args.apply:
+        stack = load_local_stack()
+        existing_ids = {s['id'] for s in stack}
+        added = 0
+        for s in matched_skills:
+            if s['id'] not in existing_ids:
+                stack.append(s)
+                existing_ids.add(s['id'])
+                added += 1
+        save_local_stack(stack)
+        print(f"\n✅ Successfully applied recommendation! Added {added} skills to active stack. Total: {len(stack)}.")
+        print(f"Tip: Run 'skilldock stack export --format cursorrules' to write rules to your project.\n")
+    else:
+        print(f"\nTip: Run 'skilldock recommend {manifest_path} --apply' to immediately load this stack.\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="skilldock",
@@ -600,9 +768,16 @@ def main() -> None:
     p_sk_clr.set_defaults(func=cmd_stack_clear)
 
     p_sk_exp = stack_subs.add_parser("export", help="Export stack configuration")
-    p_sk_exp.add_argument("--format", choices=["markdown", "cursorrules", "claude", "swarm", "cli"], default="markdown")
+    p_sk_exp.add_argument("--format", choices=["markdown", "cursorrules", "windsurfrules", "windsurf", "clinerules", "cline", "copilot", "antigravity", "claude", "swarm", "cli"], default="markdown")
     p_sk_exp.add_argument("--output", "-o", help="Target output file")
     p_sk_exp.set_defaults(func=cmd_stack_export)
+
+    # Recommend (Project Auto-Stack)
+    p_rec = subparsers.add_parser("recommend", help="Auto-recommend 10x skill stack from project manifest (package.json, build.gradle, etc.)")
+    p_rec.add_argument("path", nargs="?", default="", help="Path to manifest file")
+    p_rec.add_argument("--apply", action="store_true", help="Automatically load recommended skills into local stack")
+    p_rec.add_argument("--json", action="store_true", help="Output JSON recommendation")
+    p_rec.set_defaults(func=cmd_recommend)
 
     # Swarm
     p_swarm = subparsers.add_parser("swarm", help="Multi-agent swarm orchestrator")

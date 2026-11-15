@@ -213,6 +213,7 @@ interface SkillStoreState {
   stackModalView: 'items' | 'swarm'
   isPriorityGuideOpen: boolean
   isWebMcpModalOpen: boolean
+  isRecommenderOpen: boolean
   toast: ToastNotificationState | null
 
   // Actions (ViewModel events)
@@ -247,6 +248,7 @@ interface SkillStoreState {
   setStackModalView: (view: 'items' | 'swarm') => void
   setPriorityGuideOpen: (open: boolean) => void
   setWebMcpModalOpen: (open: boolean) => void
+  setRecommenderOpen: (open: boolean) => void
 }
 
 const initialUrl = getInitialUrlParams()
@@ -301,6 +303,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   stackModalView: 'items',
   isPriorityGuideOpen: false,
   isWebMcpModalOpen: false,
+  isRecommenderOpen: false,
   toast: initialToast,
 
   setPillar: (activePillar) => {
@@ -393,6 +396,7 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
       isStackModalOpen: false,
       isPriorityGuideOpen: false,
       isWebMcpModalOpen: false,
+      isRecommenderOpen: false,
       isCommandPaletteOpen: false,
     })
     syncUrlParams({
@@ -635,4 +639,5 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
   setStackModalView: (stackModalView) => set({ stackModalView }),
   setPriorityGuideOpen: (isPriorityGuideOpen) => set({ isPriorityGuideOpen }),
   setWebMcpModalOpen: (isWebMcpModalOpen) => set({ isWebMcpModalOpen }),
+  setRecommenderOpen: (isRecommenderOpen) => set({ isRecommenderOpen }),
 }))

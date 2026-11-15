@@ -15,6 +15,7 @@ import { StackModal } from '@/components/modals/StackModal'
 import { PriorityGuideModal } from '@/components/modals/PriorityGuideModal'
 import { CommandPalette } from '@/components/modals/CommandPalette'
 import { WebMcpConsoleModal } from '@/components/modals/WebMcpConsoleModal'
+import { ProjectRecommenderModal } from '@/components/modals/ProjectRecommenderModal'
 import { ToastNotification } from '@/components/layout/ToastNotification'
 import { useFilteredSkills } from '@/hooks/useFilteredSkills'
 import { useSkillStore } from '@/stores/useSkillStore'
@@ -84,6 +85,7 @@ export const App: React.FC = () => {
       <PriorityGuideModal />
       <CommandPalette />
       <WebMcpConsoleModal />
+      <ProjectRecommenderModal />
       <ToastNotification />
     </div>
   )

@@ -17,7 +17,17 @@
 
 ### 📌 What Was Accomplished Across Sessions
 
-1. **Competitive Benchmark (`agenticskills.io` vs. `SkillDock`)**:
+1. **CEO Strategy Review & High-Leverage Horizon Execution (`/plan-ceo-review`)**:
+   - Conducted rigorous YC-style CEO critique across the 4 proposed horizons + newly discovered vectors.
+   - Amputated low-ROI vanity features (heavy in-browser prompt simulator, service-worker PWA offline caching).
+   - Approved and sequentially shipped 5 high-impact epics:
+     - **Epic 1: Universal Multi-IDE & Desktop Config Exporters**: Added 1-click generators for Windsurf Cascade (`.windsurfrules`), Cline & Roo Code (`.clinerules`), GitHub Copilot (`copilot-instructions.md`), and Claude Desktop MCP (`claude_desktop_config.json`).
+     - **Epic 2: Project Auto-Stack Recommender ("Zero Guesswork")**: Built `web/src/utils/projectRecommender.ts` and `ProjectRecommenderModal.tsx` allowing developers to drop a `package.json`, `build.gradle.kts`, or `pyproject.toml` to instantly auto-assemble their optimal 10x skill stack (~80-93% token savings).
+     - **Epic 4: Visual "Before vs After" Prompt Impact Showcase**: Built `web/src/utils/promptImpact.ts` and added an interactive 3-way view switcher in `SkillDrawer.tsx` (`[Recipes]` ⇄ `[Before / After]` ⇄ `[Instructions (SKILL.md)]`) displaying concrete before-and-after code diffs and token efficiency.
+     - **Epic 6: Real Dollar & Token Economics Ribbon**: Added live dollar calculations across Claude 3.7 Sonnet ($3.00/1M), Gemini 2.0 Flash ($0.10/1M), and DeepSeek R1 ($0.55/1M) in `StackModal.tsx`, Header (`-$X/1k` badge), and terminal CLI.
+     - **Epic 7: Antigravity Workspace Packager**: Added 1-click `antigravity-skills-lock.json` bundle export in `StackModal.tsx` and CLI.
+     - **Epic 3: Standalone NPM CLI Expansion**: Enhanced `bin/skilldock.js` and `scripts/skilldock_cli.py` with `skilldock recommend <manifest> [--apply] [--json]` and multi-IDE exporters.
+   - Locked down with 11 Playwright E2E browser scenarios (100% green in 11.8s) and 87 Python unit tests (100% green in 2.1s). Production bundle staged for GitHub Pages.
    - Confirmed 100% direct niche match (Agent Skills `SKILL.md` + MCP servers for Claude Code, Cursor, Codex, Antigravity).
    - **Our Data Moat**: 283 skills across 74 frameworks, 1,126 MCP connectors, 530 Claude marketplace plugins, 33 enterprise agents, live telemetry for 115 repos vs. their 195 skills and 141 MCP servers (8× more MCP data, 4× more skills).
    - **UI/UX Direction**: Upgraded web dashboard from a dense developer/terminal cockpit to an editorial, anti-slop SaaS storefront inspired by `agenticskills.io` and Linear.

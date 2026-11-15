@@ -7,6 +7,7 @@
 import { useSkillStore } from '@/stores/useSkillStore'
 import { STARTER_PACKS } from '@/data/starterPacks'
 import { generateSwarmManifest, generateSwarmBrief } from '@/utils/swarmOrchestrator'
+import { analyzeProjectManifest } from '@/utils/projectRecommender'
 
 export interface McpToolDefinition {
   name: string
@@ -129,6 +130,19 @@ export const WEBMCP_TOOLS: McpToolDefinition[] = [
           description: 'Output format: "manifest" for JSON manifest, "brief" for markdown brief (default "manifest")',
         },
       },
+    },
+  },
+  {
+    name: 'recommend_stack_from_manifest',
+    description: 'Auto-detect project dependencies and recommend the optimal 10x AI agent skills stack from a package.json, build.gradle, or pyproject.toml.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        content: { type: 'string', description: 'Raw manifest file content' },
+        filename: { type: 'string', description: 'Manifest filename (e.g. package.json, build.gradle.kts)' },
+        applyToStack: { type: 'boolean', description: 'Whether to automatically load the recommended skills into the active stack' },
+      },
+      required: ['content'],
     },
   },
 ]
@@ -291,6 +305,31 @@ export function initWebMcpBridge() {
           }
           const manifest = generateSwarmManifest(currentStack)
           return { content: [{ type: 'text', text: JSON.stringify(manifest, null, 2) }] }
+        }
+
+        case 'recommend_stack_from_manifest': {
+          const content = String(args.content || '')
+          const filename = args.filename ? String(args.filename) : undefined
+          const result = analyzeProjectManifest(content, filename, store.skills)
+
+          if (args.applyToStack && result.recommendedSkillIds.length > 0) {
+            const skillsToAdd = result.recommendedSkillIds
+              .map((id) => store.skills.find((s) => s.id === id || s.scoped === id))
+              .filter((s): s is NonNullable<typeof s> => !!s)
+              .map((s) => ({
+                id: s.id,
+                uniqueId: s.uniqueId,
+                name: s.name,
+                priority: s.priority,
+                scoped: s.scoped,
+                cli: s.cli,
+                repo: s.repo,
+                officialCli: s.repo ? `npx skills add ${s.repo} --skill ${s.id}` : s.cli,
+              }))
+            store.addSelectedSkillsToStack(skillsToAdd)
+          }
+
+          return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] }
         }
 
         default:

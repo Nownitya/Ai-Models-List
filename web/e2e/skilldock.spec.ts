@@ -35,7 +35,7 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     await expect(toast).toContainText('~82% token savings active')
 
     // Verify Topbar Stack Counter Badge
-    const stackBadge = page.locator('header').getByRole('button', { name: /Stack/i }).locator('span').filter({ hasText: '5' })
+    const stackBadge = page.locator('header').getByRole('button', { name: /^Stack/i }).locator('span').filter({ hasText: '5' })
     await expect(stackBadge).toBeVisible()
 
     // Button should now show "Loaded in Stack"
@@ -52,7 +52,7 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     await expect(toast).toContainText('Loaded Shared Stack (3 skills)')
 
     // Verify Topbar Stack counter displays 3
-    const stackBadge = page.locator('header').getByRole('button', { name: /Stack/i }).locator('span').filter({ hasText: '3' })
+    const stackBadge = page.locator('header').getByRole('button', { name: /^Stack/i }).locator('span').filter({ hasText: '3' })
     await expect(stackBadge).toBeVisible()
   })
 
@@ -126,7 +126,7 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     expect(swarmJson.orchestration.antigravity.coordinator.name).toBe('coordinator')
 
     // Open Stack Modal from topbar
-    const stackBtn = page.locator('header').getByRole('button', { name: /Stack/i })
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
     await stackBtn.click()
 
     // Verify Swarm Manifest download button exists
@@ -149,7 +149,7 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     await page.goto('/?stack=taste-skill,unslop,systematic-debugging,writing-plans')
 
     // Open Stack Modal
-    const stackBtn = page.locator('header').getByRole('button', { name: /Stack/i })
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
     await stackBtn.click()
 
     // Switch to Multi-Agent Swarm Topology View
@@ -185,7 +185,7 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     await page.goto('/?stack=taste-skill,unslop,systematic-debugging')
 
     // 1. Verify Stack Modal Multi-IDE Exporters
-    const stackBtn = page.locator('header').getByRole('button', { name: /Stack/i })
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
     await stackBtn.click()
 
     await expect(page.getByRole('button', { name: /\.windsurfrules/i })).toBeVisible()
@@ -203,5 +203,141 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     // Verify individual Desktop JSON snippet copy button
     const snippetBtn = page.getByRole('button', { name: /Desktop JSON/i }).first()
     await expect(snippetBtn).toBeVisible()
+  })
+
+  test('09: Universal Marketplace Discovery, 5-Way Ecosystem Filtering & Live Connector Search', async ({ page }) => {
+    await page.goto('/')
+
+    // 1. Click Marketplace tab in header
+    const marketplaceBtn = page.getByRole('button', { name: /Marketplace/i }).first()
+    await expect(marketplaceBtn).toBeVisible()
+    await marketplaceBtn.click()
+
+    // 2. Verify Marketplace Directory Header & Listings Counter
+    await expect(page.getByText('Universal AI Marketplace Directory')).toBeVisible()
+    await expect(page.getByText('1,689 Listings')).toBeVisible()
+
+    // 3. Test 5-Way Target Ecosystem Filter Ribbon
+    const claudeFilter = page.getByRole('button', { name: /Claude & MCP/i })
+    await expect(claudeFilter).toBeVisible()
+    await claudeFilter.click()
+    await expect(claudeFilter).toHaveClass(/border-orange-500/)
+
+    const chatgptFilter = page.getByRole('button', { name: /ChatGPT Actions/i })
+    await expect(chatgptFilter).toBeVisible()
+    await chatgptFilter.click()
+    await expect(chatgptFilter).toHaveClass(/border-emerald-500/)
+
+    const antigravityFilter = page.getByRole('button', { name: /Google Antigravity/i })
+    await expect(antigravityFilter).toBeVisible()
+    await antigravityFilter.click()
+    await expect(antigravityFilter).toHaveClass(/border-blue-500/)
+
+    // Reset back to All Ecosystems
+    const allEcosystems = page.getByRole('button', { name: /All Ecosystems/i })
+    await allEcosystems.click()
+
+    // 4. Test 3 Sub-Tabs: MCP Connectors, Coding Plugins, AI Agents & Platforms
+    const pluginsTab = page.getByRole('button', { name: /Coding Plugins/i })
+    await pluginsTab.click()
+    await expect(page.getByPlaceholder(/Search 530 plugins/i)).toBeVisible()
+
+    const agentsTab = page.getByRole('button', { name: /AI Agents & Platforms/i })
+    await agentsTab.click()
+    await expect(page.getByPlaceholder(/Search 33 enterprise AI platforms/i)).toBeVisible()
+
+    const connectorsTab = page.getByRole('button', { name: /MCP Connectors/i })
+    await connectorsTab.click()
+    await expect(page.getByPlaceholder(/Search 1,126 MCP servers/i)).toBeVisible()
+
+    // 5. Test Live Connector Search (e.g. Google Drive)
+    const searchInput = page.getByPlaceholder(/Search 1,126 MCP servers/i)
+    await searchInput.fill('Google Drive')
+    await expect(page.getByRole('heading', { name: 'Google Drive', level: 3 })).toBeVisible()
+    await expect(page.getByText('drivemcp.googleapis.com')).toBeVisible()
+
+    // Verify Desktop JSON button exists for Google Drive
+    const driveCard = page.locator('div.rounded-lg').filter({ hasText: 'Google Drive' }).first()
+    await expect(driveCard.getByRole('button', { name: /Desktop JSON/i })).toBeVisible()
+
+    // Clear search
+    await searchInput.fill('')
+  })
+
+  test('10: Project Auto-Stack Recommender & Zero-Guesswork Stack Assembly', async ({ page }) => {
+    await page.goto('/')
+
+    // Clear previous stack
+    await page.evaluate(() => localStorage.removeItem('ai_skills_stack_v2'))
+    await page.reload()
+
+    // 1. Open Recommender Modal via Header button
+    const autoStackBtn = page.locator('header').getByRole('button', { name: /Auto-Stack/i })
+    await expect(autoStackBtn).toBeVisible()
+    await autoStackBtn.click()
+
+    // 2. Verify Modal Title & Subtitle
+    await expect(page.getByText('Project Auto-Stack Recommender')).toBeVisible()
+    await expect(page.getByText('Zero Guesswork')).toBeVisible()
+
+    // 3. Load Sample Preset: Next.js + Tailwind + Prisma
+    const nextPreset = page.getByRole('button', { name: /Next\.js \+ Tailwind \+ Prisma/i })
+    await expect(nextPreset).toBeVisible()
+    await nextPreset.click()
+
+    // 4. Verify Detected Tech Badges
+    await expect(page.getByText('React / Next.js', { exact: true })).toBeVisible()
+    await expect(page.getByText('Tailwind CSS', { exact: true })).toBeVisible()
+    await expect(page.getByText('Prisma ORM', { exact: true })).toBeVisible()
+
+    // 5. Verify Recommended Skills List
+    await expect(page.getByText('/ui-taste-skill').first()).toBeVisible()
+    await expect(page.getByText('/ui-unslop').first()).toBeVisible()
+
+    // 6. Apply Stack
+    const applyBtn = page.getByRole('button', { name: /Apply Stack/i })
+    await expect(applyBtn).toBeVisible()
+    await applyBtn.click()
+
+    // 7. Verify Toast Feedback
+    const toast = page.locator('div[role="status"]')
+    await expect(toast).toBeVisible()
+    await expect(toast).toContainText('Auto-Recommended Skills')
+
+    // 8. Verify Header Stack Counter is updated
+    const stackBadge = page.locator('header button[title="Open Selected Skills Stack"]')
+    await expect(stackBadge).toBeVisible()
+  })
+
+  test('11: Visual Before-vs-After Prompt Impact & Antigravity Workspace Packager', async ({ page }) => {
+    // 1. Inspect unslop skill via deep link
+    await page.goto('/?pillar=skills&skill=unslop')
+    await expect(page.getByRole('heading', { name: 'unslop', level: 2 })).toBeVisible()
+
+    // 2. Switch to "Before / After" Prompt Impact Tab
+    const impactTab = page.getByRole('button', { name: /Before \/ After/i })
+    await expect(impactTab).toBeVisible()
+    await impactTab.click()
+
+    // 3. Assert Visual Comparison & Economics are rendered
+    await expect(page.getByText('❌ WITHOUT SKILL')).toBeVisible()
+    await expect(page.getByText('✅ WITH /ui-unslop')).toBeVisible()
+    await expect(page.getByText('Token Efficiency')).toBeVisible()
+
+    // Close drawer
+    await page.keyboard.press('Escape')
+
+    // 4. Open Stack Modal with sample skills
+    await page.goto('/?stack=taste-skill,unslop,systematic-debugging')
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
+    await stackBtn.click()
+
+    // 5. Verify Antigravity Bundle export button
+    const antigravityBtn = page.getByRole('button', { name: /Antigravity Bundle/i })
+    await expect(antigravityBtn).toBeVisible()
+
+    // 6. Verify Real Dollar Economics ribbon
+    await expect(page.getByText('Real Dollar Economics')).toBeVisible()
+    await expect(page.getByText('Claude 3.7 Sonnet')).toBeVisible()
   })
 })

@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { AssistantType } from '@/types'
+import { getPromptImpactForSkill } from '@/utils/promptImpact'
 
 export const SkillDrawer: React.FC = () => {
   const inspectSkill = useSkillStore((s) => s.inspectSkill)
@@ -26,7 +27,7 @@ export const SkillDrawer: React.FC = () => {
   const setRepo = useSkillStore((s) => s.setRepo)
   const activeAssistant = useSkillStore((s) => s.activeAssistant)
 
-  const [drawerView, setDrawerView] = useState<'recipe' | 'skillmd'>('recipe')
+  const [drawerView, setDrawerView] = useState<'recipe' | 'impact' | 'skillmd'>('recipe')
   const [activeAssistantTab, setActiveAssistantTab] = useState<AssistantType>(activeAssistant)
   const [copiedSlash, setCopiedSlash] = useState(false)
   const [copiedCli, setCopiedCli] = useState(false)
@@ -54,6 +55,7 @@ export const SkillDrawer: React.FC = () => {
   if (!inspectSkill) return null
 
   const isSavedInStack = stack.some((s) => s.id === inspectSkill.id)
+  const promptImpact = getPromptImpactForSkill(inspectSkill)
 
   const copySlash = () => {
     navigator.clipboard.writeText(`/${inspectSkill.scoped}`)
@@ -228,7 +230,7 @@ ${promptTemplate}
             </p>
           </div>
 
-          {/* View Mode Switcher: [Setup Recipes] ⇄ [Instructions (SKILL.md)] */}
+          {/* View Mode Switcher: [Setup Recipes] ⇄ [Before vs After Impact] ⇄ [Instructions (SKILL.md)] */}
           <div className="flex items-center gap-1.5 p-1 bg-[#121215] rounded-lg border border-[#27272a]">
             <button
               onClick={() => setDrawerView('recipe')}
@@ -239,7 +241,18 @@ ${promptTemplate}
               }`}
             >
               <Cpu className="w-3.5 h-3.5 text-blue-400" />
-              <span>Setup Recipes</span>
+              <span>Recipes</span>
+            </button>
+            <button
+              onClick={() => setDrawerView('impact')}
+              className={`flex-1 py-1.5 text-xs font-semibold rounded-md transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+                drawerView === 'impact'
+                  ? 'bg-[#27272a] text-white shadow-xs border border-zinc-600'
+                  : 'text-zinc-400 hover:text-zinc-200'
+              }`}
+            >
+              <Zap className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Before / After</span>
             </button>
             <button
               onClick={() => setDrawerView('skillmd')}
@@ -414,7 +427,76 @@ ${promptTemplate}
             </div>
           )}
 
-          {/* TAB 2: Live SKILL.md Instructions & Rule Previewer */}
+          {/* TAB 2: Visual "Before vs After" Prompt Impact Card */}
+          {drawerView === 'impact' && (
+            <div className="space-y-4 animate-in fade-in duration-150">
+              <div className="bg-[#111114] p-3.5 rounded-xl border border-[#27272a] space-y-1.5">
+                <div className="flex items-center justify-between text-xs font-bold text-white">
+                  <span className="flex items-center gap-1.5">
+                    <Zap className="w-4 h-4 text-emerald-400" />
+                    <span>{promptImpact.title}</span>
+                  </span>
+                  <span className="text-[10px] font-mono font-normal text-zinc-500">
+                    Live Impact Analysis
+                  </span>
+                </div>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  {promptImpact.keyTakeaway}
+                </p>
+              </div>
+
+              {/* Bad: Without Skill */}
+              <div className="p-3.5 rounded-xl bg-[#140f12] border border-rose-900/40 space-y-2">
+                <div className="flex items-center justify-between text-xs font-semibold text-rose-300">
+                  <span className="flex items-center gap-1.5">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                      ❌ WITHOUT SKILL
+                    </span>
+                    <span className="text-[11px] text-zinc-400 font-normal">Generic LLM Guesswork</span>
+                  </span>
+                </div>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  {promptImpact.badPromptSummary}
+                </p>
+                <div className="relative">
+                  <pre className="p-3 rounded-lg bg-[#0c080a] border border-rose-950 text-rose-200/90 font-mono text-[11px] leading-relaxed overflow-x-auto whitespace-pre">
+                    {promptImpact.badCodeSnippet}
+                  </pre>
+                </div>
+              </div>
+
+              {/* Good: With Skill */}
+              <div className="p-3.5 rounded-xl bg-[#0f1412] border border-emerald-900/40 space-y-2">
+                <div className="flex items-center justify-between text-xs font-semibold text-emerald-300">
+                  <span className="flex items-center gap-1.5">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                      ✅ WITH /{inspectSkill.scoped}
+                    </span>
+                    <span className="text-[11px] text-zinc-400 font-normal">Surgical Contract Enforced</span>
+                  </span>
+                </div>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  {promptImpact.goodPromptSummary}
+                </p>
+                <div className="relative">
+                  <pre className="p-3 rounded-lg bg-[#080d0a] border border-emerald-950 text-emerald-200/90 font-mono text-[11px] leading-relaxed overflow-x-auto whitespace-pre">
+                    {promptImpact.goodCodeSnippet}
+                  </pre>
+                </div>
+              </div>
+
+              {/* Economics Footer */}
+              <div className="p-3 rounded-lg bg-[#141418] border border-[#27272a] flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-emerald-400 font-bold">⚡ Token Efficiency</span>
+                  <span>~800 tokens vs 26.4k baseline</span>
+                </span>
+                <span className="text-emerald-400 font-bold">~90% Context Saved</span>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 3: Live SKILL.md Instructions & Rule Previewer */}
           {drawerView === 'skillmd' && (
             <div className="space-y-4 animate-in fade-in duration-150">
               {/* SKILL.md Action Header */}

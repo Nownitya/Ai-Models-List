@@ -47,13 +47,26 @@ export const StackModal: React.FC = () => {
     setTimeout(() => setCopiedShareUrl(false), 1600)
   }
 
-  // Token budget estimation
+  // Token budget estimation & dollar economics
   const estimatedTokens = stack.length * 800
-  const monolithicBaseline = Math.max(18000, stack.length * 2800)
+  const monolithicBaseline = 26400
   const savingsPercent =
     stack.length === 0
       ? 0
       : Math.max(0, Math.round(((monolithicBaseline - estimatedTokens) / monolithicBaseline) * 100))
+
+  // Dollars per 1,000 developer turns across frontier models
+  const stackCostClaude = (((estimatedTokens * 1000) / 1000000) * 3.0).toFixed(2)
+  const baselineCostClaude = (((monolithicBaseline * 1000) / 1000000) * 3.0).toFixed(2)
+  const dollarSavingsClaude = Math.max(0, Number(baselineCostClaude) - Number(stackCostClaude)).toFixed(2)
+
+  const stackCostGemini = (((estimatedTokens * 1000) / 1000000) * 0.10).toFixed(3)
+  const baselineCostGemini = (((monolithicBaseline * 1000) / 1000000) * 0.10).toFixed(2)
+  const dollarSavingsGemini = Math.max(0, Number(baselineCostGemini) - Number(stackCostGemini)).toFixed(2)
+
+  const stackCostDeepSeek = (((estimatedTokens * 1000) / 1000000) * 0.55).toFixed(2)
+  const baselineCostDeepSeek = (((monolithicBaseline * 1000) / 1000000) * 0.55).toFixed(2)
+  const dollarSavingsDeepSeek = Math.max(0, Number(baselineCostDeepSeek) - Number(stackCostDeepSeek)).toFixed(2)
 
   const p0Count = stack.filter((s) => s.priority === 'P0').length
   const p1Count = stack.filter((s) => s.priority === 'P1').length
@@ -304,6 +317,48 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
+  // 5c. Export as Antigravity Workspace Packager (.agents/skills & skills-lock.json)
+  const downloadAntigravityBundle = () => {
+    const manifest = {
+      $schema: 'https://schema.antigravity.google/v1/workspace-skills.json',
+      version: '1.0.0',
+      generator: 'SkillDock v3.0 (https://nownitya.github.io/Ai-Models-List/)',
+      generatedAt: new Date().toISOString(),
+      workspaceConfig: {
+        skillsDir: '.agents/skills',
+        rulesDir: '.agents/rules',
+        lawsFile: '.agents/rules/repo-laws.md',
+      },
+      skills: stack.map((s) => ({
+        id: s.id,
+        name: s.name,
+        scopedCommand: `/${s.scoped}`,
+        priority: s.priority,
+        upstreamRepo: s.repo ? `https://github.com/${s.repo}` : null,
+        installCli: s.officialCli || s.cli,
+        skillPath: `.agents/skills/${s.id}/SKILL.md`,
+        frontmatter: {
+          name: s.id,
+          description: `${s.name} specialized engineering skill (${s.priority}).`,
+        },
+      })),
+      repoLaws: [
+        'Law 1: Parity - Always verify parity before claiming completion.',
+        'Law 2: Standard Structure - All skills must follow standard SKILL.md format.',
+        'Law 3: Evidence Before Assertions - Run tests and verification commands before declaring success.',
+        'Law 4: Creator Independence - Preserve unique methodology across distinct upstream frameworks.',
+      ],
+    }
+
+    const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `antigravity-skills-lock.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   // 6. Export as Multi-Agent Swarm Manifest (Antigravity Swarm, LangGraph, Mastra)
   const downloadSwarmManifest = () => {
     const manifest = generateSwarmManifest(stack)
@@ -422,6 +477,50 @@ export const StackModal: React.FC = () => {
                 )}
               </div>
               <span className="text-[10px] text-zinc-500 hidden sm:inline">Modular SKILL.md Standard</span>
+            </div>
+
+            {/* Model Economics & Live Dollar Savings Ribbon */}
+            <div className="pt-2 border-t border-[#27272a]/60 space-y-1.5">
+              <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-emerald-400 font-bold">💰 Real Dollar Economics</span>
+                  <span className="text-zinc-500 hidden sm:inline">(Estimated per 1,000 Turns)</span>
+                </span>
+                <span className="text-emerald-400 font-semibold font-mono text-[10px]">
+                  Claude 3.7 Saves ~${dollarSavingsClaude}
+                </span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-left">
+                <div className="p-2 rounded-lg bg-[#141417] border border-[#27272a]">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400">
+                    <span>Claude 3.7 Sonnet</span>
+                    <span className="text-emerald-400 font-bold">-${dollarSavingsClaude}</span>
+                  </div>
+                  <div className="text-xs font-semibold text-zinc-200 mt-0.5">
+                    ${stackCostClaude} <span className="text-[10px] font-normal text-zinc-500">/1k (vs ${baselineCostClaude})</span>
+                  </div>
+                </div>
+
+                <div className="p-2 rounded-lg bg-[#141417] border border-[#27272a]">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400">
+                    <span>Gemini 2.0 Flash</span>
+                    <span className="text-emerald-400 font-bold">-${dollarSavingsGemini}</span>
+                  </div>
+                  <div className="text-xs font-semibold text-zinc-200 mt-0.5">
+                    ${stackCostGemini} <span className="text-[10px] font-normal text-zinc-500">/1k (vs ${baselineCostGemini})</span>
+                  </div>
+                </div>
+
+                <div className="p-2 rounded-lg bg-[#141417] border border-[#27272a]">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400">
+                    <span>DeepSeek R1</span>
+                    <span className="text-emerald-400 font-bold">-${dollarSavingsDeepSeek}</span>
+                  </div>
+                  <div className="text-xs font-semibold text-zinc-200 mt-0.5">
+                    ${stackCostDeepSeek} <span className="text-[10px] font-normal text-zinc-500">/1k (vs ${baselineCostDeepSeek})</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -763,6 +862,15 @@ export const StackModal: React.FC = () => {
                 >
                   <Users className="w-3 h-3 text-purple-400" />
                   <span>Swarm Manifest</span>
+                </button>
+
+                <button
+                  onClick={downloadAntigravityBundle}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#0f1f1d] hover:bg-[#142d2a] text-teal-300 border border-teal-500/30 hover:border-teal-500/60 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export Antigravity Workspace Bundle (antigravity-skills-lock.json)"
+                >
+                  <Cpu className="w-3 h-3 text-teal-400" />
+                  <span>Antigravity Bundle</span>
                 </button>
               </div>
             </div>
