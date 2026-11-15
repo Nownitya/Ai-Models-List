@@ -152,7 +152,16 @@ export const MarketplaceView: React.FC = () => {
     let list = [...connectors]
 
     if (ecosystemFilter !== 'all') {
-      list = list.filter((c) => c.ecosystems && c.ecosystems.includes(ecosystemFilter))
+      list = list.filter((c) => {
+        if (c.ecosystems && c.ecosystems.length > 0) {
+          return c.ecosystems.includes(ecosystemFilter)
+        }
+        if (ecosystemFilter === 'claude' || ecosystemFilter === 'mcp') return true
+        if (ecosystemFilter === 'chatgpt') return Boolean(c.serverUrl || c.chatgpt_action_url)
+        if (ecosystemFilter === 'antigravity') return true
+        if (ecosystemFilter === 'cursor') return c.type === 'remote' || c.worksWith?.includes('claude-code')
+        return true
+      })
     }
 
     if (connectorSearch.trim()) {
@@ -201,7 +210,16 @@ export const MarketplaceView: React.FC = () => {
     let list = [...plugins]
 
     if (ecosystemFilter !== 'all') {
-      list = list.filter((p) => p.ecosystems && p.ecosystems.includes(ecosystemFilter))
+      list = list.filter((p) => {
+        if (p.ecosystems && p.ecosystems.length > 0) {
+          return p.ecosystems.includes(ecosystemFilter)
+        }
+        if (ecosystemFilter === 'claude' || ecosystemFilter === 'mcp') return true
+        if (ecosystemFilter === 'chatgpt') return Boolean(p.chatgpt_action_url)
+        if (ecosystemFilter === 'antigravity') return true
+        if (ecosystemFilter === 'cursor') return p.works_with.includes('Claude Code')
+        return true
+      })
     }
 
     if (pluginSearch.trim()) {
@@ -744,17 +762,17 @@ export const MarketplaceView: React.FC = () => {
                       </div>
                     )}
 
-                    {/* ChatGPT Action Schema Snippet (If Available) */}
-                    {c.chatgpt_action_url && (
+                    {/* ChatGPT Action Schema Snippet (If Available or derived from remote serverUrl) */}
+                    {(c.chatgpt_action_url || (c.serverUrl && c.type === 'remote')) && (
                       <div className="mb-2">
                         <button
-                          onClick={() => handleCopy(c.chatgpt_action_url!, `gpt:${c.slug}`)}
-                          className="w-full flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-md bg-emerald-950/20 hover:bg-emerald-900/30 border border-emerald-800/40 text-[11px] font-mono text-emerald-300 transition-colors text-left group"
+                          onClick={() => handleCopy(c.chatgpt_action_url || `${c.serverUrl}/openapi.json`, `gpt:${c.slug}`)}
+                          className="w-full flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-md bg-emerald-950/20 hover:bg-emerald-900/30 border border-emerald-800/40 text-[11px] font-mono text-emerald-300 transition-colors text-left group cursor-pointer"
                           title="Click to copy ChatGPT Action Schema URL"
                         >
                           <span className="truncate flex items-center gap-1.5">
                             <span className="text-[10px] font-bold text-emerald-400">ACTION:</span>
-                            <span className="truncate">{c.chatgpt_action_url}</span>
+                            <span className="truncate">{c.chatgpt_action_url || `${c.serverUrl}/openapi.json`}</span>
                           </span>
                           {copiedText === `gpt:${c.slug}` ? (
                             <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />

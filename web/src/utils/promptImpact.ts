@@ -204,3 +204,4 @@ export async function executeOperation() {
     keyTakeaway: `Enforces strict ${skill.name} invariants while saving ~85% prompt tokens compared to monolithic prompt suites.`,
   }
 }
+

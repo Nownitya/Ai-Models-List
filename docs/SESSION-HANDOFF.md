@@ -230,14 +230,19 @@
       - Bulk export button `[Export claude_desktop_config.json]` generating ready-to-run desktop configurations for filtered/top connectors.
       - Individual connector card `[Desktop JSON]` copy button copying single-server JSON configuration blocks.
     - **100% Codebase Badge Polish**: Eradicated the remaining `py-0.2` typo across `MarketplaceView.tsx`, achieving 100% clean `py-0.5 leading-none` styling across all 14 components.
-    - **E2E Browser Verification**: Added Scenario 08 to Playwright E2E suite (`web/e2e/skilldock.spec.ts`), locking down all 8 browser test scenarios (8/8 green in 10.6s). All 87 Python unit tests passing cleanly in 1.9s.
+    - **Cross-Platform Marketplace & ChatGPT Action Schemas**: Connected 935 remote MCP servers to automatic OpenAPI ChatGPT Action schema generation (`ACTION: <serverUrl>/openapi.json`) and cross-platform filtering across Claude & MCP, ChatGPT, Antigravity, and Cursor.
+    - **Tri-Engine Cross-Browser Playwright E2E Verification**: Expanded `web/e2e/skilldock.spec.ts` to 12 comprehensive scenarios (01 to 12) tested and 100% passing across all 3 major rendering engines:
+      - **Chromium**: 12 / 12 PASSED (19.7s)
+      - **Firefox**: 12 / 12 PASSED (34.8s)
+      - **WebKit (Safari)**: 12 / 12 PASSED (52.4s)
+      - Total: **36 / 36 green test executions** across the platform.
 
 ---
 
 ### 🧠 Current State of Repository & Metrics
 - **Catalog Totals**: 342 Atomic Skills, 125 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,340,000+ total ⭐ community stars**.
 - **Marketplace Hub**: 1,126 MCP Connectors, 530 Plugins, 33 Specialized Platforms across Claude, ChatGPT, Antigravity, and Cursor.
-- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 8/8 Playwright E2E browser tests PASSED (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
+- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 12/12 Playwright E2E browser tests PASSED across Chromium, Firefox, WebKit (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
 - **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` (823 MD lines, 657 CSV rows).
 - **Obsidian Vault**: Mirrored and synchronized to `D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`.
 
@@ -245,10 +250,11 @@
 
 ### 📋 Immediate Next Tasks Ready for Execution
 1. [x] **Phase 1: Live Visual Verification**: Validated on Vite preview server.
-2. [x] **Phase 2: Playwright E2E Integration Suite**: 6 end-to-end scenarios locked down in `web/e2e/skilldock.spec.ts`.
+2. [x] **Phase 2: Playwright E2E Integration Suite**: 12 end-to-end scenarios locked down in `web/e2e/skilldock.spec.ts`.
 3. [x] **Phase 3: Frontier Model Routing Matrix**: Authored and synced in `docs/models/MODEL-ROUTING-MATRIX.md`.
 4. [x] **Phase 4: Multi-Agent Swarm Orchestrator**: Shipped in `StackModal.tsx`, `swarmOrchestrator.ts`, and WebMCP.
 5. [x] **Phase 5: Standalone SkillDock CLI**: Shipped in `scripts/skilldock_cli.py`, `bin/skilldock.js`, and `tests/test_skilldock_cli.py`.
+6. [x] **Phase 6: Cross-Browser Validation & Marketplace Deep Dive**: Tri-engine Chromium/Firefox/WebKit verification + ChatGPT Action schemas.
 
 ---
 

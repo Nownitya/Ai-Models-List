@@ -226,3 +226,4 @@ export function analyzeProjectManifest(
     savingsPercent,
   }
 }
+

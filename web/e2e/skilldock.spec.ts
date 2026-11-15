@@ -254,7 +254,7 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     const searchInput = page.getByPlaceholder(/Search 1,126 MCP servers/i)
     await searchInput.fill('Google Drive')
     await expect(page.getByRole('heading', { name: 'Google Drive', level: 3 })).toBeVisible()
-    await expect(page.getByText('drivemcp.googleapis.com')).toBeVisible()
+    await expect(page.getByText('drivemcp.googleapis.com').first()).toBeVisible()
 
     // Verify Desktop JSON button exists for Google Drive
     const driveCard = page.locator('div.rounded-lg').filter({ hasText: 'Google Drive' }).first()
@@ -339,5 +339,48 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     // 6. Verify Real Dollar Economics ribbon
     await expect(page.getByText('Real Dollar Economics')).toBeVisible()
     await expect(page.getByText('Claude 3.7 Sonnet')).toBeVisible()
+  })
+
+  test('12: Marketplace Deep Dive: ChatGPT Action Schemas, Plugin Install Commands & Verified Partner Filters', async ({ page }) => {
+    await page.goto('/')
+
+    // 1. Navigate to Marketplace
+    const marketplaceBtn = page.getByRole('button', { name: /Marketplace/i }).first()
+    await marketplaceBtn.click()
+
+    // 2. Filter by ChatGPT Actions / GPTs
+    const chatgptFilter = page.getByRole('button', { name: /ChatGPT Actions/i })
+    await chatgptFilter.click()
+
+    // 3. Verify ChatGPT Action schema buttons are displayed in connector cards
+    const actionSnippet = page.locator('button[title="Click to copy ChatGPT Action Schema URL"]').first()
+    await expect(actionSnippet).toBeVisible()
+    await expect(actionSnippet.getByText('ACTION:')).toBeVisible()
+
+    // 4. Reset ecosystem filter to All & switch to Coding Plugins tab
+    const allEcosystems = page.getByRole('button', { name: /All Ecosystems/i })
+    await allEcosystems.click()
+
+    const pluginsTab = page.getByRole('button', { name: /Coding Plugins/i })
+    await pluginsTab.click()
+
+    // 5. Filter by Verified Plugins
+    const verifiedFilter = page.getByRole('button', { name: 'Verified', exact: true })
+    await verifiedFilter.click()
+
+    // 6. Assert Verified badge is present and copy install command
+    const verifiedBadge = page.locator('span').filter({ hasText: /^Verified$/ }).first()
+    await expect(verifiedBadge).toBeVisible()
+
+    const installBtn = page.locator('button[title="Click to copy install command"]').first()
+    await expect(installBtn).toBeVisible()
+    await installBtn.click()
+
+    // 7. Switch to AI Agents & Platforms tab
+    const agentsTab = page.getByRole('button', { name: /AI Agents & Platforms/i })
+    await agentsTab.click()
+
+    // Assert Enterprise Platform cards are rendered (e.g. Cursor)
+    await expect(page.getByRole('heading', { name: 'Cursor', level: 3 })).toBeVisible()
   })
 })
