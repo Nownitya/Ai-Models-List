@@ -82,6 +82,61 @@ export const MarketplaceView: React.FC = () => {
     }, 1800)
   }
 
+  const handleCopyClaudeSnippet = (c: MarketplaceConnector) => {
+    const key = c.slug.replace(/[^a-zA-Z0-9_-]/g, '_')
+    const snippet = c.serverUrl
+      ? {
+          [key]: {
+            url: c.serverUrl,
+          },
+        }
+      : {
+          [key]: {
+            command: 'npx',
+            args: ['-y', `@modelcontextprotocol/server-${c.slug}`],
+            env: {
+              [`${key.toUpperCase().replace(/-/g, '_')}_API_KEY`]: '<YOUR_API_KEY_HERE>',
+            },
+          },
+        }
+    const text = JSON.stringify(snippet, null, 2)
+    handleCopy(text, `desktop:${c.slug}`)
+  }
+
+  const downloadClaudeDesktopConfig = () => {
+    const targets = filteredConnectors.slice(0, 20)
+    const mcpServers: Record<string, any> = {}
+
+    targets.forEach((c) => {
+      const key = c.slug.replace(/[^a-zA-Z0-9_-]/g, '_')
+      if (c.serverUrl) {
+        mcpServers[key] = {
+          url: c.serverUrl,
+        }
+      } else {
+        mcpServers[key] = {
+          command: 'npx',
+          args: ['-y', `@modelcontextprotocol/server-${c.slug}`],
+          env: {
+            [`${key.toUpperCase().replace(/-/g, '_')}_API_KEY`]: '<YOUR_API_KEY_HERE>',
+          },
+        }
+      }
+    })
+
+    const config = {
+      mcpServers,
+    }
+
+    const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `claude_desktop_config.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   // --- FILTERED CONNECTORS (1,126) ---
   const connectorCategories = useMemo(() => {
     const set = new Set<string>()
@@ -275,6 +330,14 @@ export const MarketplaceView: React.FC = () => {
                   <FileText className="w-3.5 h-3.5 text-zinc-400" />
                   <span>View MD</span>
                 </a>
+                <button
+                  onClick={downloadClaudeDesktopConfig}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-amber-500/15 hover:bg-amber-500/25 text-xs font-semibold text-amber-300 border border-amber-500/30 transition-colors cursor-pointer"
+                  title="Download claude_desktop_config.json configured with filtered/top MCP connectors"
+                >
+                  <Download className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Export claude_desktop_config.json</span>
+                </button>
               </>
             )}
 
@@ -643,16 +706,16 @@ export const MarketplaceView: React.FC = () => {
 
                     {/* Supported Ecosystem Badges */}
                     <div className="flex items-center gap-1.5 flex-wrap mb-2.5">
-                      <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-medium bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                      <span className="px-1.5 py-0.5 leading-none rounded text-[10px] font-mono font-medium bg-orange-500/10 text-orange-400 border border-orange-500/20">
                         Claude MCP
                       </span>
                       {hasChatGpt && (
-                        <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+                        <span className="px-1.5 py-0.5 leading-none rounded text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
                           <span>🟢</span> ChatGPT Action
                         </span>
                       )}
                       {hasAntigravity && (
-                        <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center gap-1">
+                        <span className="px-1.5 py-0.5 leading-none rounded text-[10px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center gap-1">
                           <span>🔵</span> Antigravity
                         </span>
                       )}
@@ -716,7 +779,25 @@ export const MarketplaceView: React.FC = () => {
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => handleCopyClaudeSnippet(c)}
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-[#18181b] hover:bg-zinc-800 text-amber-400/90 hover:text-amber-300 border border-amber-500/20 hover:border-amber-500/40 transition-colors cursor-pointer shrink-0"
+                        title="Copy Claude Desktop config JSON snippet"
+                      >
+                        {copiedText === `desktop:${c.slug}` ? (
+                          <>
+                            <Check className="w-3 h-3 text-emerald-400" />
+                            <span className="text-emerald-400">Copied!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3 h-3 text-amber-400/70" />
+                            <span>Desktop JSON</span>
+                          </>
+                        )}
+                      </button>
+
                       <button
                         onClick={() => handleCopyShare(c.title)}
                         className="p-1 rounded text-zinc-500 hover:text-white transition-colors cursor-pointer"
@@ -935,16 +1016,16 @@ export const MarketplaceView: React.FC = () => {
 
                     {/* Supported Ecosystem Badges */}
                     <div className="flex items-center gap-1.5 flex-wrap mb-2.5">
-                      <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-medium bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                      <span className="px-1.5 py-0.5 leading-none rounded text-[10px] font-mono font-medium bg-orange-500/10 text-orange-400 border border-orange-500/20">
                         Claude Code
                       </span>
                       {hasChatGpt && (
-                        <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+                        <span className="px-1.5 py-0.5 leading-none rounded text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
                           <span>🟢</span> ChatGPT Action
                         </span>
                       )}
                       {p.already_in_repo && (
-                        <span className="px-1.5 py-0.2 rounded text-[10px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <span className="px-1.5 py-0.5 leading-none rounded text-[10px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
                           In Matrix
                         </span>
                       )}

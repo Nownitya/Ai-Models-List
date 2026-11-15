@@ -7,6 +7,10 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   // Use relative base path so assets load properly on GitHub Pages (/Ai-Models-List/)
   base: './',
+  server: {
+    host: true,
+    port: 5173,
+  },
   plugins: [
     react(),
     tailwindcss(),

@@ -180,4 +180,28 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     // Close modal
     await page.keyboard.press('Escape')
   })
+
+  test('08: Universal Multi-IDE & Claude Desktop Config Exporters', async ({ page }) => {
+    await page.goto('/?stack=taste-skill,unslop,systematic-debugging')
+
+    // 1. Verify Stack Modal Multi-IDE Exporters
+    const stackBtn = page.locator('header').getByRole('button', { name: /Stack/i })
+    await stackBtn.click()
+
+    await expect(page.getByRole('button', { name: /\.windsurfrules/i })).toBeVisible()
+    await expect(page.getByRole('button', { name: /\.clinerules/i })).toBeVisible()
+    await expect(page.getByRole('button', { name: /copilot-instructions/i })).toBeVisible()
+
+    await page.keyboard.press('Escape')
+
+    // 2. Verify Marketplace Claude Desktop MCP Config Export
+    await page.goto('/?pillar=marketplace')
+
+    const exportDesktopBtn = page.getByRole('button', { name: /Export claude_desktop_config\.json/i })
+    await expect(exportDesktopBtn).toBeVisible()
+
+    // Verify individual Desktop JSON snippet copy button
+    const snippetBtn = page.getByRole('button', { name: /Desktop JSON/i }).first()
+    await expect(snippetBtn).toBeVisible()
+  })
 })
