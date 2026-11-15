@@ -335,6 +335,10 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 - **Sellbird repository:** https://sellbird.ai · https://github.com/ethanplusai/sellbird
 - **Hermes Agent repository:** https://hermes-agent.org · https://github.com/NousResearch/hermes-agent
 - **gbrain Agent Memory repository:** https://github.com/garrytan/gbrain
+- **PydanticAI documentation / repository:** https://ai.pydantic.dev · https://github.com/pydantic/pydantic-ai
+- **OpenAI Agents SDK repository:** https://openai.github.io/openai-agents-python · https://github.com/openai/openai-agents-python
+- **DeepSeek-R1 repository:** https://github.com/deepseek-ai/DeepSeek-R1
+- **smolagents documentation / repository:** https://huggingface.co/docs/smolagents · https://github.com/huggingface/smolagents
 
 | Tool / Framework | Priority | Why |
 | --- | --- | --- |
@@ -373,6 +377,10 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | `sellbird` | **Sellbird Autonomous Outreach** | `P1` | `/sellbird` | Open-source autonomous AI sales, lead enrichment, and outreach engine running on local Claude / ChatGPT / Codex plans with automated email verification and campaign triage. |
 | `hermes-agent` | **Hermes Agent** | `P1` | `/hermes-agent` | Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution. |
 | `gbrain` | **gbrain Agent Memory & Knowledge** | `P1` | `/gbrain` | Garry Tan's open-source markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite), pgvector, hybrid search (BM25 + vector + RRF), and native MCP server. |
+| `pydantic-ai` | **PydanticAI Framework** | `P0` | `/pydantic-ai` | Pydantic's official agent framework with type-safe structured outputs, dependency injection, model-agnostic control, and production test harnesses. |
+| `openai-agents-sdk` | **OpenAI Agents SDK** | `P0` | `/openai-agents-sdk` | OpenAI's official multi-agent orchestration framework in Python with primitives for Agents, Handoffs, Guardrails, and Tool Calling with full tracing. |
+| `deepseek-r1-reasoning` | **DeepSeek-R1 Reasoning & Distillation** | `P0` | `/deepseek-r1-reasoning` | Frontier reasoning patterns, chain-of-thought verification, reflection loops, self-correction, and tool-augmented reasoning distilled from DeepSeek-R1. |
+| `smolagents` | **Hugging Face smolagents** | `P0` | `/smolagents` | Hugging Face's lightweight code-first agent library executing actions in sandboxed Python interpreters rather than serialized JSON-RPC tool calls. |
 
 ## 10 AI Infrastructure
 
@@ -658,6 +666,10 @@ Priority does not mean every skill should stay permanently loaded. Activate the 
 | [stripe/link-cli](https://github.com/stripe/link-cli) | **⭐ 894** (1.3k+ Installs) | `latest` | `MIT` | 2026-11-08 |
 | [prime-skills/runcomfy-agent-skills](https://github.com/prime-skills/runcomfy-agent-skills) | **⭐ 62** | `latest` | `MIT` | 2026-11-14 |
 | [microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples) | **⭐ 544** (17.4k+ Parent) | `latest` | `MIT` | 2026-11-14 |
+| [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai) | **⭐ 14.2k** | `latest` | `MIT` | 2026-11-15 |
+| [openai/openai-agents-python](https://github.com/openai/openai-agents-python) | **⭐ 15.6k** | `latest` | `MIT` | 2026-11-15 |
+| [deepseek-ai/DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) | **⭐ 75.8k** | `latest` | `MIT` | 2026-11-15 |
+| [huggingface/smolagents](https://github.com/huggingface/smolagents) | **⭐ 42.1k** | `latest` | `Apache-2.0` | 2026-11-15 |
 
 ## 15 Universal Project Documentation Standard
 

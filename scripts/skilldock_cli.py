@@ -415,6 +415,22 @@ def cmd_stack_export(args: argparse.Namespace) -> None:
             output_content += f"- Command: {s.get('cli')}\n\n"
         output_content += "- Always verify parity and run tests before claiming completion.\n"
 
+    elif fmt in ('cursor045', 'mdc'):
+        output_content = f"---\ndescription: \"SkillDock v3.1 Custom Agent Stack ({len(stack)} Active Skills)\"\nglobs: \"*\"\nalwaysApply: true\n---\n\n"
+        output_content += f"# SkillDock Modern Cursor 0.45+ Multi-Agent Rules\n# Generated: {__import__('datetime').date.today()}\n\n"
+        output_content += "## Non-Negotiable Operating Laws\n"
+        output_content += "1. Think before coding: Inspect codebase, formulate plan, and verify contracts.\n"
+        output_content += "2. Evidence before assertions: Always run tests before declaring success.\n"
+        output_content += "3. Surgical changes: Touch only what is necessary.\n\n"
+        output_content += f"## Active Skill Contracts ({len(stack)})\n\n"
+        for s in stack:
+            output_content += f"### [{s.get('priority')}] {s.get('name')} (/{s.get('scoped')})\n"
+            if s.get('repo'):
+                output_content += f"- Upstream: https://github.com/{s.get('repo')}\n"
+            output_content += f"- Directive: Enforce {s.get('name')} quality rubrics and constraints.\n"
+            output_content += f"- Activation: /{s.get('scoped')}\n"
+            output_content += f"- Command: {s.get('cli')}\n\n"
+
     elif fmt == 'claude':
         config = {
             "$schema": "https://json.schemastore.org/claude-settings.json",
@@ -610,13 +626,54 @@ def cmd_recommend(args: argparse.Namespace) -> None:
                 manifest_path = cand
                 break
 
-    if not manifest_path or not os.path.exists(manifest_path):
-        print("Error: No manifest found. Please provide a path to package.json, build.gradle.kts, pyproject.toml, etc.", file=sys.stderr)
+    if not manifest_path:
+        print("Error: No manifest found. Please provide a path to package.json, build.gradle.kts, pyproject.toml, or a GitHub repository URL.", file=sys.stderr)
         sys.exit(1)
 
-    target_filename = os.path.basename(manifest_path)
-    with open(manifest_path, 'r', encoding='utf-8', errors='ignore') as f:
-        content = f.read()
+    import urllib.request
+    import urllib.error
+    import re
+
+    content = ""
+    target_filename = ""
+
+    # Check if remote GitHub repository URL or shorthand (e.g. vercel/next.js)
+    is_github_repo = False
+    gh_match = re.match(r'^(?:https?://)?(?:www\.)?github\.com/([a-zA-Z0-9_.-]+)/([a-zA-Z0-9_.-]+)', manifest_path)
+    if gh_match:
+        gh_owner, gh_repo = gh_match.group(1), gh_match.group(2).replace('.git', '')
+        is_github_repo = True
+    elif not os.path.exists(manifest_path) and re.match(r'^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$', manifest_path):
+        parts = manifest_path.split('/')
+        gh_owner, gh_repo = parts[0], parts[1].replace('.git', '')
+        is_github_repo = True
+
+    if is_github_repo:
+        candidates = ['package.json', 'build.gradle.kts', 'build.gradle', 'pyproject.toml', 'requirements.txt', 'Cargo.toml']
+        headers = {'User-Agent': 'SkillDock-CLI/3.1'}
+        found = False
+        for c in candidates:
+            url = f"https://raw.githubusercontent.com/{gh_owner}/{gh_repo}/HEAD/{c}"
+            try:
+                req = urllib.request.Request(url, headers=headers)
+                with urllib.request.urlopen(req, timeout=2.5) as resp:
+                    if resp.status == 200:
+                        content = resp.read().decode('utf-8', errors='ignore')
+                        target_filename = f"github.com/{gh_owner}/{gh_repo} ({c})"
+                        found = True
+                        break
+            except Exception:
+                continue
+        if not found:
+            print(f"Error: Could not fetch manifest for https://github.com/{gh_owner}/{gh_repo} (checked package.json, build.gradle.kts, pyproject.toml, Cargo.toml).", file=sys.stderr)
+            sys.exit(1)
+    else:
+        if not os.path.exists(manifest_path):
+            print(f"Error: Manifest file '{manifest_path}' not found.", file=sys.stderr)
+            sys.exit(1)
+        target_filename = os.path.basename(manifest_path)
+        with open(manifest_path, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
 
     # Rule-based detection
     detected_tech = []
@@ -768,7 +825,7 @@ def main() -> None:
     p_sk_clr.set_defaults(func=cmd_stack_clear)
 
     p_sk_exp = stack_subs.add_parser("export", help="Export stack configuration")
-    p_sk_exp.add_argument("--format", choices=["markdown", "cursorrules", "windsurfrules", "windsurf", "clinerules", "cline", "copilot", "antigravity", "claude", "swarm", "cli"], default="markdown")
+    p_sk_exp.add_argument("--format", choices=["markdown", "cursorrules", "cursor045", "mdc", "windsurfrules", "windsurf", "clinerules", "cline", "copilot", "antigravity", "claude", "swarm", "cli"], default="markdown")
     p_sk_exp.add_argument("--output", "-o", help="Target output file")
     p_sk_exp.set_defaults(func=cmd_stack_export)
 

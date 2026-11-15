@@ -8,9 +8,11 @@ import {
   ArrowRight,
   Zap,
   Copy,
+  GitBranch,
+  Loader2,
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
-import { analyzeProjectManifest, type RecommendationResult } from '@/utils/projectRecommender'
+import { analyzeProjectManifest, fetchGitHubManifest, type RecommendationResult } from '@/utils/projectRecommender'
 
 const SAMPLE_PRESETS: { name: string; filename: string; content: string }[] = [
   {
@@ -99,6 +101,32 @@ export const ProjectRecommenderModal: React.FC = () => {
   const [filename, setFilename] = useState('')
   const [copiedCli, setCopiedCli] = useState(false)
   const [selectedSkillIds, setSelectedSkillIds] = useState<string[]>([])
+  const [githubUrl, setGithubUrl] = useState('')
+  const [isFetchingGithub, setIsFetchingGithub] = useState(false)
+  const [githubError, setGithubError] = useState<string | null>(null)
+
+  const handleGitHubFetch = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault()
+    if (!githubUrl.trim()) return
+    setIsFetchingGithub(true)
+    setGithubError(null)
+    try {
+      const { content, filename: fetchedFilename } = await fetchGitHubManifest(githubUrl)
+      setFilename(fetchedFilename)
+      setInputContent(content)
+      showToast(
+        `✅ Fetched ${fetchedFilename} from GitHub`,
+        `Auto-assembled tailored skills for ${githubUrl}`,
+        undefined,
+        undefined
+      )
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to fetch manifest from repository'
+      setGithubError(msg)
+    } finally {
+      setIsFetchingGithub(false)
+    }
+  }
 
   // Parse result dynamically whenever input changes
   const recommendation = useMemo<RecommendationResult | null>(() => {
@@ -216,6 +244,44 @@ export const ProjectRecommenderModal: React.FC = () => {
 
         {/* Input & Upload Zone */}
         <div className="space-y-3">
+          {/* GitHub Repo URL 1-Click Fetcher */}
+          <form onSubmit={handleGitHubFetch} className="space-y-1.5">
+            <div className="flex items-center gap-2">
+              <div className="relative flex-1">
+                <GitBranch className="w-3.5 h-3.5 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={githubUrl}
+                  onChange={(e) => setGithubUrl(e.target.value)}
+                  placeholder="Paste GitHub URL (e.g. https://github.com/vercel/next.js or owner/repo)..."
+                  className="w-full pl-9 pr-3 py-1.5 rounded-lg bg-[#111114] border border-[#27272a] text-xs font-mono text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-purple-500/60 transition-colors"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isFetchingGithub || !githubUrl.trim()}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/30 text-xs font-semibold font-mono disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors"
+              >
+                {isFetchingGithub ? (
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    <span>Fetching...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Fetch Stack</span>
+                  </>
+                )}
+              </button>
+            </div>
+            {githubError && (
+              <div className="text-[11px] font-mono text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-1 rounded-md">
+                {githubError}
+              </div>
+            )}
+          </form>
+
           {/* Quick Presets Ribbon */}
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-[11px] font-mono text-zinc-400">Quick Samples:</span>

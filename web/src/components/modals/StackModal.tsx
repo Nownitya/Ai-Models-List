@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import { generateSwarmManifest, generateSwarmBrief, partitionStackIntoSwarm } from '@/utils/swarmOrchestrator'
+import { lintSkillStack } from '@/utils/stackLinter'
 
 export const StackModal: React.FC = () => {
   const isStackModalOpen = useSkillStore((s) => s.isStackModalOpen)
@@ -37,6 +38,7 @@ export const StackModal: React.FC = () => {
   const [copiedScript, setCopiedScript] = useState(false)
   const [copiedShareUrl, setCopiedShareUrl] = useState(false)
   const [copiedSwarmBrief, setCopiedSwarmBrief] = useState(false)
+  const [copiedMermaid, setCopiedMermaid] = useState(false)
   const [cliFormat, setCliFormat] = useState<'npx' | 'python'>('npx')
 
   const copyShareStackUrl = () => {
@@ -73,6 +75,7 @@ export const StackModal: React.FC = () => {
   const otherCount = stack.length - p0Count - p1Count
 
   const { plannerSkills, builderSkills, verifierSkills } = partitionStackIntoSwarm(stack)
+  const lintFindings = lintSkillStack(stack.map((s) => s.id))
 
   if (!isStackModalOpen) return null
 
@@ -127,6 +130,38 @@ export const StackModal: React.FC = () => {
     const a = document.createElement('a')
     a.href = url
     a.download = `.cursorrules`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  // 2a-2. Export as Modern Cursor 0.45+ Modular Rules (.cursor/rules/skilldock.mdc)
+  const downloadCursor045Rules = () => {
+    let mdc = `---\n`
+    mdc += `description: "SkillDock v3.1 Custom Agent Stack (${stack.length} Active Skills)"\n`
+    mdc += `globs: "*"\n`
+    mdc += `alwaysApply: true\n`
+    mdc += `---\n\n`
+    mdc += `# SkillDock Modern Cursor 0.45+ Multi-Agent Rules\n\n`
+    mdc += `> Place at: .cursor/rules/skilldock.mdc\n`
+    mdc += `> Generated on: ${new Date().toISOString().split('T')[0]}\n\n`
+    mdc += `## Non-Negotiable Operating Laws\n`
+    mdc += `1. Think before coding: Inspect codebase, formulate plan, and verify contracts.\n`
+    mdc += `2. Evidence before assertions: Always run tests before declaring success.\n`
+    mdc += `3. Surgical changes: Touch only what is necessary; avoid speculative abstractions.\n\n`
+    mdc += `## Active Skill Contracts (${stack.length})\n\n`
+    stack.forEach((s) => {
+      mdc += `### [${s.priority}] ${s.name} (/${s.scoped})\n`
+      if (s.repo) mdc += `- Upstream: https://github.com/${s.repo}\n`
+      mdc += `- Directive: Enforce ${s.name} quality rubrics and constraints.\n`
+      mdc += `- Activation: \`/${s.scoped}\`\n`
+      mdc += `- Install CLI: \`${s.officialCli || s.cli}\`\n\n`
+    })
+
+    const blob = new Blob([mdc], { type: 'text/markdown;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `skilldock.mdc`
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -379,6 +414,39 @@ export const StackModal: React.FC = () => {
     setTimeout(() => setCopiedSwarmBrief(false), 1600)
   }
 
+  // 6b. Copy Ready-to-Paste GitHub Mermaid Architecture Diagram
+  const copySwarmMermaidDiagram = () => {
+    let m = `\`\`\`mermaid\n`
+    m += `flowchart TD\n`
+    m += `    Coordinator["👑 @coordinator (Claude 3.7 Sonnet)<br/>Orchestration & Release Gate"]\n`
+
+    if (plannerSkills.length > 0) {
+      const pList = plannerSkills.map((s) => `/${s.scoped}`).join(', ')
+      m += `    Architect["📐 @architect (Claude 3.7 Sonnet)<br/>${pList}"]\n`
+      m += `    Coordinator -->|Decomposes Phase| Architect\n`
+    }
+
+    if (builderSkills.length > 0) {
+      const bList = builderSkills.map((s) => `/${s.scoped}`).join(', ')
+      m += `    Builder["🔨 @builder (Gemini 2.0 Flash)<br/>${bList}"]\n`
+      m += `    ${plannerSkills.length > 0 ? 'Architect' : 'Coordinator'} -->|Dispatches Wave| Builder\n`
+    }
+
+    if (verifierSkills.length > 0) {
+      const vList = verifierSkills.map((s) => `/${s.scoped}`).join(', ')
+      m += `    Verifier["🛡️ @verifier (DeepSeek R1 / o3-mini)<br/>${vList}"]\n`
+      m += `    Builder -->|Delivers Code| Verifier\n`
+      m += `    Verifier -->|Verifies Parity & Tests| Coordinator\n`
+    } else {
+      m += `    ${builderSkills.length > 0 ? 'Builder' : 'Coordinator'} -->|Ships Work| Coordinator\n`
+    }
+    m += `\`\`\`\n`
+
+    navigator.clipboard.writeText(m)
+    setCopiedMermaid(true)
+    setTimeout(() => setCopiedMermaid(false), 1600)
+  }
+
   // 7. Copy Batch Installation Script
   const copyInstallScript = () => {
     const commands = stack.map((s) => getCommand(s)).join('\n')
@@ -522,6 +590,46 @@ export const StackModal: React.FC = () => {
                 </div>
               </div>
             </div>
+
+            {/* Intelligent Compiler Linter Findings */}
+            {lintFindings.length > 0 && (
+              <div className="pt-2 border-t border-[#27272a]/60 space-y-1.5">
+                <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                  <span className="flex items-center gap-1.5">
+                    <span className="text-amber-400 font-bold">🧠 Compiler Diagnostics</span>
+                    <span className="text-zinc-500 hidden sm:inline">({lintFindings.length} Insights)</span>
+                  </span>
+                  <span className="text-zinc-500 text-[10px]">Real-Time Quality Linter</span>
+                </div>
+                <div className="space-y-1.5">
+                  {lintFindings.map((f, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-2 rounded-lg border text-left text-xs ${
+                        f.type === 'conflict'
+                          ? 'bg-amber-950/20 border-amber-500/30 text-amber-200'
+                          : f.type === 'synergy'
+                          ? 'bg-emerald-950/20 border-emerald-500/30 text-emerald-200'
+                          : 'bg-sky-950/20 border-sky-500/30 text-sky-200'
+                      }`}
+                    >
+                      <div className="flex items-center gap-1.5 font-bold font-mono text-[11px]">
+                        <span>{f.type === 'conflict' ? '⚠️' : f.type === 'synergy' ? '✨' : '🛡️'}</span>
+                        <span>{f.title}</span>
+                      </div>
+                      <p className="text-[11px] text-zinc-300 mt-0.5 leading-relaxed font-sans">
+                        {f.message}
+                      </p>
+                      {f.suggestedAction && (
+                        <p className="text-[10px] text-zinc-400 mt-1 font-mono italic">
+                          Action: {f.suggestedAction}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -572,14 +680,19 @@ export const StackModal: React.FC = () => {
                     <span className="font-semibold text-white">SkillDock Multi-Agent Sprint Topology</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-zinc-400">
+                    <button
+                      onClick={copySwarmMermaidDiagram}
+                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-purple-500/15 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-[10px] font-mono cursor-pointer transition-colors"
+                      title="Copy GitHub Flavored Markdown Mermaid Diagram Code"
+                    >
+                      {copiedMermaid ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                      <span>{copiedMermaid ? 'Copied Mermaid!' : 'Copy Mermaid Diagram'}</span>
+                    </button>
                     <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20 text-[10px]">
                       Antigravity Swarm
                     </span>
                     <span className="px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20 text-[10px]">
                       LangGraph
-                    </span>
-                    <span className="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[10px]">
-                      Mastra
                     </span>
                   </div>
                 </div>
@@ -786,10 +899,19 @@ export const StackModal: React.FC = () => {
                 <button
                   onClick={downloadCursorRules}
                   className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export .cursorrules"
+                  title="Export Legacy .cursorrules"
                 >
                   <Cpu className="w-3 h-3 text-cyan-400" />
                   <span>.cursorrules</span>
+                </button>
+
+                <button
+                  onClick={downloadCursor045Rules}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#161a24] hover:bg-[#1e2434] text-indigo-300 border border-indigo-500/30 hover:border-indigo-500/60 cursor-pointer transition-colors text-xs font-mono"
+                  title="Export Modern Cursor 0.45+ Rules (.cursor/rules/skilldock.mdc)"
+                >
+                  <Code2 className="w-3 h-3 text-indigo-400" />
+                  <span>Cursor .mdc</span>
                 </button>
 
                 <button
@@ -909,6 +1031,15 @@ export const StackModal: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={copySwarmMermaidDiagram}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#131722] hover:bg-[#1a2130] text-purple-300 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-semibold"
+                  title="Copy GitHub Flavored Markdown Mermaid Diagram Code"
+                >
+                  {copiedMermaid ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Network className="w-3.5 h-3.5 text-purple-400" />}
+                  <span>{copiedMermaid ? 'Copied Mermaid!' : 'Copy Mermaid Diagram'}</span>
+                </button>
+
                 <button
                   onClick={copySwarmBriefText}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#161324] hover:bg-[#201c34] text-purple-200 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-semibold"

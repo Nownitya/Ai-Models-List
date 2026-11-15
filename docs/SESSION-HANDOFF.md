@@ -240,21 +240,44 @@
 ---
 
 ### 🧠 Current State of Repository & Metrics
-- **Catalog Totals**: 342 Atomic Skills, 125 Upstream Frameworks, 57 Architecture Docs, 3 System Prompt Suites, **5,340,000+ total ⭐ community stars**.
+- **Catalog Totals**: **346 Atomic Skills**, **129 Upstream Frameworks**, **334 SKILL.md packages**, 57 Architecture Docs, 3 System Prompt Suites, **5,480,000+ total ⭐ community stars**.
 - **Marketplace Hub**: 1,126 MCP Connectors, 530 Plugins, 33 Specialized Platforms across Claude, ChatGPT, Antigravity, and Cursor.
-- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 12/12 Playwright E2E browser tests PASSED across Chromium, Firefox, WebKit (`npx playwright test`). Zero TypeScript errors (`tsc -b`).
-- **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` and `.csv` (823 MD lines, 657 CSV rows).
+- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 13/13 Playwright E2E browser tests PASSED across Chromium, Firefox, WebKit (39/39 green executions). Zero TypeScript errors (`tsc -b`).
+- **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` (835 lines) and `.csv` (665 rows).
 - **Obsidian Vault**: Mirrored and synchronized to `D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`.
+
+---
+
+### 📋 What Was Accomplished in Current Wave
+
+1. **GitHub Repo URL 1-Click Auto-Stack (Wave 1)**:
+   - Built zero-auth remote manifest parser (`package.json`, `build.gradle.kts`, `pyproject.toml`, `requirements.txt`, `Cargo.toml`) in `web/src/utils/projectRecommender.ts` and `ProjectRecommenderModal.tsx`.
+   - Added CLI support: `skilldock recommend <github-url-or-shorthand>`.
+2. **Modern Cursor 0.45+ Modular Rules Exporter (`.cursor/rules/*.mdc`) (Wave 1)**:
+   - Added 1-click `.mdc` export with YAML frontmatter (`globs: "*"`, `alwaysApply: true`, `description`) in `StackModal.tsx` and CLI (`--format cursor045`).
+3. **Stack Synergy & Conflict Linter ("Compiler Safety Gate") (Wave 2)**:
+   - Built `web/src/utils/stackLinter.ts` detecting redundant auth, overlapping swarms, multi-gateway conflicts, high-leverage synergies, and missing test guards.
+   - Embedded real-time Compiler Diagnostics ribbon directly in `StackModal.tsx`.
+4. **1-Click GitHub Mermaid Swarm Architecture Exporter (Wave 2)**:
+   - Generates GitHub Flavored Markdown `mermaid` flowchart diagrams of the 4-agent swarm architecture (`@coordinator`, `@architect`, `@builder`, `@verifier`) with assigned skills.
+5. **Frontier 2026.4 Ecosystem Ingestion (Wave 3)**:
+   - Ingested `pydantic-ai` (Pydantic official agent framework), `openai-agents-sdk` (OpenAI Python agents SDK), `deepseek-r1-reasoning` (DeepSeek-R1 reasoning distillation & CoT verification), and `smolagents` (Hugging Face code-first sandboxed agents).
+   - Authored 4 authoritative `SKILL.md` packages in `skills/09-autonomous-agents/` conforming to Law 2.
+   - Maintained 100% Law 1 Dual-Matrix Parity (`sync-matrix.py`).
+6. **Playwright E2E Suite Expanded to 13 Scenarios**:
+   - Scenario 13 added to `web/e2e/skilldock.spec.ts`. All 39 cross-browser test executions (Chromium, Firefox, WebKit) passing 100%.
 
 ---
 
 ### 📋 Immediate Next Tasks Ready for Execution
 1. [x] **Phase 1: Live Visual Verification**: Validated on Vite preview server.
-2. [x] **Phase 2: Playwright E2E Integration Suite**: 12 end-to-end scenarios locked down in `web/e2e/skilldock.spec.ts`.
+2. [x] **Phase 2: Playwright E2E Integration Suite**: 13 end-to-end scenarios locked down in `web/e2e/skilldock.spec.ts`.
 3. [x] **Phase 3: Frontier Model Routing Matrix**: Authored and synced in `docs/models/MODEL-ROUTING-MATRIX.md`.
 4. [x] **Phase 4: Multi-Agent Swarm Orchestrator**: Shipped in `StackModal.tsx`, `swarmOrchestrator.ts`, and WebMCP.
 5. [x] **Phase 5: Standalone SkillDock CLI**: Shipped in `scripts/skilldock_cli.py`, `bin/skilldock.js`, and `tests/test_skilldock_cli.py`.
 6. [x] **Phase 6: Cross-Browser Validation & Marketplace Deep Dive**: Tri-engine Chromium/Firefox/WebKit verification + ChatGPT Action schemas.
+7. [x] **Phase 7: Wave 1 & 2 Execution**: GitHub URL auto-stack, Cursor 0.45+ `.mdc`, Compiler Linter, Swarm Mermaid.
+8. [x] **Phase 8: Wave 3 Execution**: Frontier 2026.4 Ingestion (`pydantic-ai`, `openai-agents-sdk`, `deepseek-r1-reasoning`, `smolagents`).
 
 ---
 

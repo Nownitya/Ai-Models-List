@@ -68,9 +68,9 @@ stripe-link-checkout,Stripe Link 1-Click Checkout,P1,/stripe-link-checkout,"Stri
 obsidian-developer-second-brain,Obsidian Developer Second Brain,P0,/obsidian-developer-second-brain,"Universal Obsidian Developer Second Brain architecture: 4 integration modes, Git-first separation, Dataview dashboards, and automated vault sync."
 claude-3-7-hybrid-reasoning,Claude 3.7 Hybrid Reasoning,P0,/claude-3-7-hybrid-reasoning,"Dynamic thinking budget allocation, calibrated step-by-step reasoning tokens, chain-of-thought verification, and fallback guards for Claude 3.7 Sonnet."
 cursor-0-45-agentic-rules,Cursor 0.45 Agentic Rules,P0,/cursor-0-45-agentic-rules,"Cursor 0.45+ modular rules standard (.cursorrules & .cursor/rules/*.mdc), agent tool permissions, and multi-file atomic edits."
-compound-engineering,Compound Engineering Plugin,P0,/compound-engineering,"EveryInc's 4-phase compounding engineering loop (Plan → Build → Review → Compound) capturing reusable patterns and repo memory so future development compounds in velocity."
+compound-engineering,Compound Engineering Plugin,P0,/compound-engineering,EveryInc's 4-phase compounding engineering loop (Plan → Build → Review → Compound) capturing reusable patterns and repo memory so future development compounds in velocity.
 anthropic-defending-code,Anthropic Defending Code,P0,/anthropic-defending-code,"Anthropic's autonomous security reference harness: skills for threat modeling, automated vulnerability scanning, triage, and human-approved patch deployment."
-anthropic-sandbox-runtime,Anthropic Sandbox Runtime,P0,/anthropic-sandbox-runtime,"Anthropic's lightweight OS-level sandboxing tool for enforcing strict filesystem and network boundaries on arbitrary processes without Docker."
+anthropic-sandbox-runtime,Anthropic Sandbox Runtime,P0,/anthropic-sandbox-runtime,Anthropic's lightweight OS-level sandboxing tool for enforcing strict filesystem and network boundaries on arbitrary processes without Docker.
 producthunt-mcp,Product Hunt MCP,P1,/producthunt-mcp,"Official Product Hunt Model Context Protocol (MCP) server for discovering trending AI products, querying leaderboards, analyzing market alternatives, and drafting launches."
 02 Matt Pocock,,
 Repository:,https://github.com/mattpocock/skills,
@@ -273,7 +273,7 @@ Codex,P1,Perform complex coding and repository tasks.
 Ponytail,P1,"Lazy senior dev mode: the smallest complete change that fully solves the task, shortest working diff, and no speculative bloat; levels: lite, full (default), ultra."
 ponytail-review,P1,"Senior code review: 6-pillar audit (bug, risk, scale, missing test, speed, lean cuts) with plain-English findings."
 ponytail-audit,P1,"Full repository health audit: prioritizes correctness, safety, load resilience, tests, speed, and dead code/bloat deletion."
-ponytail-debt,P2,"Automated tracking of shortcut: comments into a prioritized technical debt ledger."
+ponytail-debt,P2,Automated tracking of shortcut: comments into a prioritized technical debt ledger.
 ponytail-gain,P2,"Empirical benchmark scoreboard showing measured code, token, cost, and time savings."
 ponytail-help,P3,"Quick reference card for Ponytail operating levels, skills, and configuration settings."
 Harness²,P3,Explore research on agent harness design and evaluation; not a standard daily coding plugin.
@@ -297,6 +297,10 @@ mastra-agent-framework,Mastra Agent Framework,P1,/mastra-agent-framework,"Mastra
 sellbird,Sellbird Autonomous Outreach,P1,/sellbird,"Open-source autonomous AI sales, lead enrichment, and outreach engine running on local Claude / ChatGPT / Codex plans with automated email verification and campaign triage."
 hermes-agent,Hermes Agent,P1,/hermes-agent,"Nous Research's open-source autonomous agent framework featuring a self-improving skill loop, tiered persistent memory, and model-agnostic execution."
 gbrain,gbrain Agent Memory & Knowledge,P1,/gbrain,"Garry Tan's open-source markdown-first AI agent memory system and knowledge graph layer using embedded Postgres (PGLite), pgvector, hybrid search (BM25 + vector + RRF), and native MCP server."
+pydantic-ai,PydanticAI Framework,P0,/pydantic-ai,"Pydantic's official agent framework with type-safe structured outputs, dependency injection, model-agnostic control, and production test harnesses."
+openai-agents-sdk,OpenAI Agents SDK,P0,/openai-agents-sdk,"OpenAI's official multi-agent orchestration framework in Python with primitives for Agents, Handoffs, Guardrails, and Tool Calling with full tracing."
+deepseek-r1-reasoning,DeepSeek-R1 Reasoning & Distillation,P0,/deepseek-r1-reasoning,"Frontier reasoning patterns, chain-of-thought verification, reflection loops, self-correction, and tool-augmented reasoning distilled from DeepSeek-R1."
+smolagents,Hugging Face smolagents,P0,/smolagents,Hugging Face's lightweight code-first agent library executing actions in sandboxed Python interpreters rather than serialized JSON-RPC tool calls.
 10 AI Infrastructure,,,,Research
 Gemini API documentation / SDK:,https://ai.google.dev/gemini-api/docs | https://github.com/googleapis/python-genai,,,
 Graphify repository / docs:,https://github.com/Graphify-Labs/graphify | https://docs.graphify.com/,,,
@@ -473,9 +477,9 @@ playwright-cli,https://playwright.dev/,https://github.com/microsoft/playwright,"
 compound-engineering,https://every.to,https://github.com/everyinc/compound-engineering-plugin,"EveryInc's compounding engineering loop and agentic skills for Claude Code, Cursor, and AI assistants (2.8k+ stars)."
 21st-magic-ui,https://21st.dev/,https://github.com/21st-dev/cli,"21st.dev design engineering component marketplace, AI UI generator, and Magic MCP server (5.4k+ stars)."
 sellbird,https://sellbird.ai/,https://github.com/ethanplusai/sellbird,"Open-source autonomous AI sales, lead enrichment, and outreach engine running on local AI plans (4.2k+ stars)."
-hermes-agent,https://hermes-agent.org/,https://github.com/NousResearch/hermes-agent,"Nous Research autonomous agent framework with self-improving skill loop and tiered memory (18k+ stars)."
-gbrain,https://github.com/garrytan/gbrain,https://github.com/garrytan/gbrain,"Garry Tan's open-source markdown-first AI agent memory system and self-wiring knowledge graph with PGLite and MCP (32k+ stars)."
-unsloth,https://unsloth.ai/,https://github.com/unslothai/unsloth,"Ultra-fast open-source LLM fine-tuning and inference acceleration library with custom Triton kernels (80k+ stars)."
+hermes-agent,https://hermes-agent.org/,https://github.com/NousResearch/hermes-agent,Nous Research autonomous agent framework with self-improving skill loop and tiered memory (18k+ stars).
+gbrain,https://github.com/garrytan/gbrain,https://github.com/garrytan/gbrain,Garry Tan's open-source markdown-first AI agent memory system and self-wiring knowledge graph with PGLite and MCP (32k+ stars).
+unsloth,https://unsloth.ai/,https://github.com/unslothai/unsloth,Ultra-fast open-source LLM fine-tuning and inference acceleration library with custom Triton kernels (80k+ stars).
 remotion-video,P1,"Programmatic video creation and rendering using React, enabling dynamic motion graphics, audio visualization, video compositing, and automated MP4 rendering.",https://github.com/remotion-dev/skills,https://www.remotion.dev/
 remotion-video,https://www.remotion.dev/,https://github.com/remotion-dev/skills,Programmatic video creation and motion graphics in React (6.5k+ stars).
 cloudflare-skills,https://developers.cloudflare.com/workers/,https://github.com/cloudflare/skills,"Cloudflare Workers, Wrangler CLI, KV, and edge infrastructure skills (3.3k+ stars)."
@@ -519,6 +523,10 @@ binance-agentic-wallet,https://github.com/binance/binance-skills-hub,https://git
 motion-sound-effects,https://github.com/barty-bart/motion-graphics,https://github.com/barty-bart/motion-graphics,"Motion graphics sound design, audio-motion alignment, UI foley effects, and web audio synthesis."
 runcomfy-cli,https://www.runcomfy.com/,https://github.com/prime-skills/runcomfy-agent-skills,"Unified CLI and agent skills for 100+ hosted diffusion and generative video models (Kling 3.0, Wan 2.1, FLUX 2, GPT Image 2, inpainting, face-swap)."
 react-native-windows,https://microsoft.github.io/react-native-windows/,https://github.com/microsoft/react-native-windows-samples,"Microsoft official React Native for Windows & macOS architecture samples, native C++/WinRT modules, WinUI 3 desktop controls, and XAML styling patterns."
+pydantic-ai,https://ai.pydantic.dev/,https://github.com/pydantic/pydantic-ai,"Pydantic's official agent framework for production Python with strict Pydantic validation, dependency injection, and model-agnostic routing."
+openai-agents-sdk,https://openai.github.io/openai-agents-python/,https://github.com/openai/openai-agents-python,"OpenAI's official Python multi-agent orchestration framework with Agent, Handoff, Guardrail, and OpenTelemetry tracing primitives."
+deepseek-r1-reasoning,https://github.com/deepseek-ai/DeepSeek-R1,https://github.com/deepseek-ai/DeepSeek-R1,"DeepSeek's frontier open-weight reasoning model and distillation trajectories for complex math, code verification, and multi-turn logic."
+smolagents,https://huggingface.co/docs/smolagents,https://github.com/huggingface/smolagents,Hugging Face's minimalist code-first agent library executing Python actions in secure sandboxed interpreters.
 15 Universal Project Documentation Standard,,,,
 Purpose:,Reusable documentation baseline for software projects built by humans and AI agents.,,,
 Operating principle:,Create only applicable documents; keep every document synchronized with implementation and verified evidence.,,,

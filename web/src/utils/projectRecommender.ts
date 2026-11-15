@@ -227,3 +227,45 @@ export function analyzeProjectManifest(
   }
 }
 
+export function parseGitHubRepo(input: string): { owner: string; repo: string } | null {
+  const trimmed = input.trim().replace(/\/+$/, '')
+  // Match https://github.com/owner/repo or github.com/owner/repo
+  const match = trimmed.match(/(?:https?:\/\/)?(?:www\.)?github\.com\/([a-zA-Z0-9_.-]+)\/([a-zA-Z0-9_.-]+)/)
+  if (match) {
+    return { owner: match[1], repo: match[2].replace(/\.git$/, '') }
+  }
+  // Match shorthand: owner/repo
+  const shorthand = trimmed.match(/^([a-zA-Z0-9_.-]+)\/([a-zA-Z0-9_.-]+)$/)
+  if (shorthand) {
+    return { owner: shorthand[1], repo: shorthand[2].replace(/\.git$/, '') }
+  }
+  return null
+}
+
+export async function fetchGitHubManifest(repoInput: string): Promise<{ content: string; filename: string }> {
+  const parsed = parseGitHubRepo(repoInput)
+  if (!parsed) {
+    throw new Error('Invalid GitHub repository format. Use: https://github.com/owner/repo or owner/repo')
+  }
+
+  const { owner, repo } = parsed
+  const candidates = ['package.json', 'build.gradle.kts', 'build.gradle', 'pyproject.toml', 'requirements.txt', 'Cargo.toml']
+
+  for (const filename of candidates) {
+    try {
+      const url = `https://raw.githubusercontent.com/${owner}/${repo}/HEAD/${filename}`
+      const res = await fetch(url)
+      if (res.ok) {
+        const content = await res.text()
+        if (content && content.trim().length > 0) {
+          return { content, filename }
+        }
+      }
+    } catch {
+      // try next candidate
+    }
+  }
+
+  throw new Error(`No public manifest found in github.com/${owner}/${repo} (checked package.json, build.gradle.kts, pyproject.toml, requirements.txt, Cargo.toml). Paste manifest text below.`)
+}
+

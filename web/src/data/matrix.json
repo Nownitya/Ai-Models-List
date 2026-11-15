@@ -1,7 +1,7 @@
 {
   "meta": {
-    "totalSkills": 342,
-    "totalFrameworks": 125,
+    "totalSkills": 346,
+    "totalFrameworks": 129,
     "totalDocs": 57,
     "totalPrompts": 3,
     "totalStars": 5201021,
@@ -49,7 +49,7 @@
       {
         "id": "09-autonomous-agents",
         "label": "Autonomous Agents",
-        "count": 25
+        "count": 29
       },
       {
         "id": "10-ai-infrastructure",
@@ -822,9 +822,33 @@
         "repoName": "Modern Web Guidance Src",
         "count": 1,
         "stars": 0
+      },
+      {
+        "repo": "pydantic/pydantic-ai",
+        "repoName": "Pydantic Ai",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "openai/openai-agents-python",
+        "repoName": "Openai Agents Python",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "deepseek-ai/DeepSeek-R1",
+        "repoName": "Deepseek R1",
+        "count": 1,
+        "stars": 0
+      },
+      {
+        "repo": "huggingface/smolagents",
+        "repoName": "Smolagents",
+        "count": 1,
+        "stars": 0
       }
     ],
-    "p0Count": 105,
+    "p0Count": 109,
     "p1Count": 154,
     "p2Count": 54,
     "p3Count": 29,
@@ -6573,6 +6597,134 @@
           "description": "Google Chrome & web standards stewardship (Chrome, Edge, Firefox, MDN) providing 250+ modern web platform best practices, native browser APIs (dialog, popover, CSS anchor positioning, subgrid, container queries, view transitions), accessibility patterns, WebMCP agentic tools, and automated legacy code scanning (legacy-scan)."
         }
       ]
+    },
+    {
+      "id": "pydantic-pydantic-ai",
+      "repo": "pydantic/pydantic-ai",
+      "repoName": "Pydantic Ai",
+      "author": "pydantic",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Pydantic Ai.",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/pydantic/pydantic-ai",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/pydantic/pydantic-ai.git ~/.gemini/antigravity/skills/pydantic-ai",
+        "claude": "git clone https://github.com/pydantic/pydantic-ai.git ~/.claude/skills/pydantic-ai",
+        "codex": "codex install pydantic/pydantic-ai",
+        "git": "git clone https://github.com/pydantic/pydantic-ai.git",
+        "cli": "python scripts/install-to-project.py --repo pydantic/pydantic-ai"
+      },
+      "skills": [
+        {
+          "id": "pydantic-ai",
+          "name": "pydantic-ai",
+          "priority": "P0",
+          "scoped": "pydantic-ai",
+          "cli": "python scripts/install-to-project.py --skill pydantic-ai",
+          "description": "Pydantic's official agent framework with type-safe structured outputs, dependency injection, model-agnostic control, and production test harnesses."
+        }
+      ]
+    },
+    {
+      "id": "openai-openai-agents-python",
+      "repo": "openai/openai-agents-python",
+      "repoName": "Openai Agents Python",
+      "author": "openai",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Openai Agents Python.",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/openai/openai-agents-python",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/openai/openai-agents-python.git ~/.gemini/antigravity/skills/openai-agents-python",
+        "claude": "git clone https://github.com/openai/openai-agents-python.git ~/.claude/skills/openai-agents-python",
+        "codex": "codex install openai/openai-agents-python",
+        "git": "git clone https://github.com/openai/openai-agents-python.git",
+        "cli": "python scripts/install-to-project.py --repo openai/openai-agents-python"
+      },
+      "skills": [
+        {
+          "id": "openai-agents-sdk",
+          "name": "openai-agents-sdk",
+          "priority": "P0",
+          "scoped": "openai-agents-sdk",
+          "cli": "python scripts/install-to-project.py --skill openai-agents-sdk",
+          "description": "OpenAI's official multi-agent orchestration framework in Python with primitives for Agents, Handoffs, Guardrails, and Tool Calling with full tracing."
+        }
+      ]
+    },
+    {
+      "id": "deepseek-ai-deepseek-r1",
+      "repo": "deepseek-ai/DeepSeek-R1",
+      "repoName": "Deepseek R1",
+      "author": "deepseek-ai",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Deepseek R1.",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/deepseek-ai/DeepSeek-R1",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/deepseek-ai/DeepSeek-R1.git ~/.gemini/antigravity/skills/DeepSeek-R1",
+        "claude": "git clone https://github.com/deepseek-ai/DeepSeek-R1.git ~/.claude/skills/DeepSeek-R1",
+        "codex": "codex install deepseek-ai/DeepSeek-R1",
+        "git": "git clone https://github.com/deepseek-ai/DeepSeek-R1.git",
+        "cli": "python scripts/install-to-project.py --repo deepseek-ai/DeepSeek-R1"
+      },
+      "skills": [
+        {
+          "id": "deepseek-r1-reasoning",
+          "name": "deepseek-r1-reasoning",
+          "priority": "P0",
+          "scoped": "deepseek-r1-reasoning",
+          "cli": "python scripts/install-to-project.py --skill deepseek-r1-reasoning",
+          "description": "Frontier reasoning patterns, chain-of-thought verification, reflection loops, self-correction, and tool-augmented reasoning distilled from DeepSeek-R1."
+        }
+      ]
+    },
+    {
+      "id": "huggingface-smolagents",
+      "repo": "huggingface/smolagents",
+      "repoName": "Smolagents",
+      "author": "huggingface",
+      "stars": 0,
+      "starsFormatted": "0",
+      "description": "Curated tools, workflows and capabilities from Smolagents.",
+      "skillsCount": 1,
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "officialUrl": "https://github.com/huggingface/smolagents",
+      "version": "latest",
+      "license": "Open Source",
+      "installRecipes": {
+        "antigravity": "git clone https://github.com/huggingface/smolagents.git ~/.gemini/antigravity/skills/smolagents",
+        "claude": "git clone https://github.com/huggingface/smolagents.git ~/.claude/skills/smolagents",
+        "codex": "codex install huggingface/smolagents",
+        "git": "git clone https://github.com/huggingface/smolagents.git",
+        "cli": "python scripts/install-to-project.py --repo huggingface/smolagents"
+      },
+      "skills": [
+        {
+          "id": "smolagents",
+          "name": "smolagents",
+          "priority": "P0",
+          "scoped": "smolagents",
+          "cli": "python scripts/install-to-project.py --skill smolagents",
+          "description": "Hugging Face's lightweight code-first agent library executing actions in sandboxed Python interpreters rather than serialized JSON-RPC tool calls."
+        }
+      ]
     }
   ],
   "skills": [
@@ -10209,6 +10361,76 @@
       "repo": "garrytan/gbrain",
       "repoName": "gbrain",
       "stars": 32922,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "pydantic-ai",
+      "uniqueId": "09-autonomous-agents:pydantic-ai",
+      "name": "pydantic-ai",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Pydantic's official agent framework with type-safe structured outputs, dependency injection, model-agnostic control, and production test harnesses.",
+      "scoped": "pydantic-ai",
+      "cli": "python scripts/install-to-project.py --skill pydantic-ai",
+      "repo": "pydantic/pydantic-ai",
+      "repoName": "Pydantic Ai",
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "openai-agents-sdk",
+      "uniqueId": "09-autonomous-agents:openai-agents-sdk",
+      "name": "openai-agents-sdk",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "OpenAI's official multi-agent orchestration framework in Python with primitives for Agents, Handoffs, Guardrails, and Tool Calling with full tracing.",
+      "scoped": "openai-agents-sdk",
+      "cli": "python scripts/install-to-project.py --skill openai-agents-sdk",
+      "repo": "openai/openai-agents-python",
+      "repoName": "Openai Agents Python",
+      "stars": 0,
+      "ecosystems": [
+        "agents",
+        "quality"
+      ]
+    },
+    {
+      "id": "deepseek-r1-reasoning",
+      "uniqueId": "09-autonomous-agents:deepseek-r1-reasoning",
+      "name": "deepseek-r1-reasoning",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Frontier reasoning patterns, chain-of-thought verification, reflection loops, self-correction, and tool-augmented reasoning distilled from DeepSeek-R1.",
+      "scoped": "deepseek-r1-reasoning",
+      "cli": "python scripts/install-to-project.py --skill deepseek-r1-reasoning",
+      "repo": "deepseek-ai/DeepSeek-R1",
+      "repoName": "Deepseek R1",
+      "stars": 0,
+      "ecosystems": [
+        "agents"
+      ]
+    },
+    {
+      "id": "smolagents",
+      "uniqueId": "09-autonomous-agents:smolagents",
+      "name": "smolagents",
+      "priority": "P0",
+      "categoryId": "09-autonomous-agents",
+      "categoryLabel": "Autonomous Agents",
+      "description": "Hugging Face's lightweight code-first agent library executing actions in sandboxed Python interpreters rather than serialized JSON-RPC tool calls.",
+      "scoped": "smolagents",
+      "cli": "python scripts/install-to-project.py --skill smolagents",
+      "repo": "huggingface/smolagents",
+      "repoName": "Smolagents",
+      "stars": 0,
       "ecosystems": [
         "agents"
       ]

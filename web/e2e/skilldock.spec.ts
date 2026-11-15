@@ -383,4 +383,45 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     // Assert Enterprise Platform cards are rendered (e.g. Cursor)
     await expect(page.getByRole('heading', { name: 'Cursor', level: 3 })).toBeVisible()
   })
+
+  test('13: GitHub Repo URL Auto-Stack, Modern Cursor 0.45+ Rules & Stack Compiler Diagnostics Linter', async ({ page }) => {
+    await page.goto('/')
+
+    // 1. Open Auto-Stack Recommender Modal
+    const autoStackBtn = page.locator('header button[title*="Auto-Recommend"]')
+    await expect(autoStackBtn).toBeVisible()
+    await autoStackBtn.click()
+
+    // 2. Verify GitHub URL input is visible
+    const githubInput = page.getByPlaceholder(/Paste GitHub URL/i)
+    await expect(githubInput).toBeVisible()
+    await githubInput.fill('https://github.com/vercel/next.js')
+
+    const fetchBtn = page.getByRole('button', { name: /Fetch Stack/i })
+    await expect(fetchBtn).toBeVisible()
+
+    // Close Recommender Modal
+    await page.keyboard.press('Escape')
+
+    // 3. Open Stack with redundant auth + anti-slop synergy
+    await page.goto('/?stack=taste-skill,unslop,better-auth-patterns,clerk-auth-identity')
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
+    await stackBtn.click()
+
+    // 4. Verify Modern Cursor 0.45+ Exporter button
+    const cursorMdcBtn = page.getByRole('button', { name: /Cursor \.mdc/i })
+    await expect(cursorMdcBtn).toBeVisible()
+
+    // 5. Verify Compiler Diagnostics Linter Ribbon
+    await expect(page.getByText('Compiler Diagnostics')).toBeVisible()
+    await expect(page.getByText('Redundant Authentication Providers')).toBeVisible()
+    await expect(page.getByText('Anti-Slop Design Synergy')).toBeVisible()
+
+    // 6. Switch to Swarm Studio & verify Mermaid Copy button
+    const swarmTab = page.getByRole('button', { name: /Multi-Agent Swarm Topology/i })
+    await swarmTab.click()
+
+    const mermaidBtn = page.getByRole('button', { name: /Copy Mermaid Diagram/i }).first()
+    await expect(mermaidBtn).toBeVisible()
+  })
 })
