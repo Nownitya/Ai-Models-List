@@ -108,3 +108,4 @@ print(f"Response: {result.final_output}")
 > - **Circular Handoff Deadlocks**: Always set `max_turns` or recursion depth boundaries to prevent runaway agent delegation loops.
 > - **Monolithic Agent Bloat**: Do not pack dozens of unrelated tools into a single agent; break responsibilities into focused specialists connected via handoffs.
 > - **Unmonitored Tool Side-Effects**: Always configure confirmation guardrails for high-impact tools (e.g., payments, database deletions).
+

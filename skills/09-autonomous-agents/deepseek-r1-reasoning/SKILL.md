@@ -95,3 +95,4 @@ For every complex engineering problem:
 > - **Suppressing Reasoning Tokens**: Never strip or artificially limit reasoning budgets (`max_tokens`) when handling high-entropy mathematical or algorithmic problems.
 > - **Analysis Paralysis**: Ensure prompts specify clear stopping criteria and concrete deliverables so reasoning phases conclude cleanly.
 > - **Unverified Assumptions**: Always test critical deductions with executable code blocks or empirical test runs.
+

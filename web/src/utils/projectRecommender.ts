@@ -227,8 +227,31 @@ export function analyzeProjectManifest(
   }
 }
 
+const COMMON_FRAMEWORK_ALIASES: Record<string, string> = {
+  gstack: 'garrytan/gstack',
+  superpowers: 'obra/superpowers',
+  openhands: 'openhands/openhands',
+  gsd: 'open-gsd/gsd-core',
+  'gsd-core': 'open-gsd/gsd-core',
+  anthropic: 'anthropics/skills',
+  'anthropic-skills': 'anthropics/skills',
+  nextjs: 'vercel/next.js',
+  'next.js': 'vercel/next.js',
+  tailwind: 'tailwindlabs/tailwindcss',
+  prisma: 'prisma/prisma',
+  fastapi: 'fastapi/fastapi',
+  svelte: 'sveltejs/svelte',
+  'agent-skills-spec': 'agentskills/agentskills',
+}
+
 export function parseGitHubRepo(input: string): { owner: string; repo: string } | null {
   const trimmed = input.trim().replace(/\/+$/, '')
+  // Match framework aliases (e.g. "Gstack", "superpowers", "openhands")
+  const alias = COMMON_FRAMEWORK_ALIASES[trimmed.toLowerCase()]
+  if (alias) {
+    const [owner, repo] = alias.split('/')
+    return { owner, repo }
+  }
   // Match https://github.com/owner/repo or github.com/owner/repo
   const match = trimmed.match(/(?:https?:\/\/)?(?:www\.)?github\.com\/([a-zA-Z0-9_.-]+)\/([a-zA-Z0-9_.-]+)/)
   if (match) {

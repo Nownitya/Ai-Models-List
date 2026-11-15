@@ -10,7 +10,6 @@ import {
   ArrowUpRight,
   Terminal,
   Cpu,
-  Share2,
   FileText,
   ShieldCheck,
   Zap,
@@ -18,6 +17,7 @@ import {
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { AssistantType } from '@/types'
 import { getPromptImpactForSkill } from '@/utils/promptImpact'
+import { CopyButton } from '@/components/common/CopyButton'
 
 export const SkillDrawer: React.FC = () => {
   const inspectSkill = useSkillStore((s) => s.inspectSkill)
@@ -29,10 +29,7 @@ export const SkillDrawer: React.FC = () => {
 
   const [drawerView, setDrawerView] = useState<'recipe' | 'impact' | 'skillmd'>('recipe')
   const [activeAssistantTab, setActiveAssistantTab] = useState<AssistantType>(activeAssistant)
-  const [copiedSlash, setCopiedSlash] = useState(false)
-  const [copiedCli, setCopiedCli] = useState(false)
   const [copiedRecipe, setCopiedRecipe] = useState(false)
-  const [copiedLink, setCopiedLink] = useState(false)
   const [copiedSkillMd, setCopiedSkillMd] = useState(false)
   const [copiedPrompt, setCopiedPrompt] = useState(false)
 
@@ -56,18 +53,6 @@ export const SkillDrawer: React.FC = () => {
 
   const isSavedInStack = stack.some((s) => s.id === inspectSkill.id)
   const promptImpact = getPromptImpactForSkill(inspectSkill)
-
-  const copySlash = () => {
-    navigator.clipboard.writeText(`/${inspectSkill.scoped}`)
-    setCopiedSlash(true)
-    setTimeout(() => setCopiedSlash(false), 1400)
-  }
-
-  const copyCli = () => {
-    navigator.clipboard.writeText(inspectSkill.cli)
-    setCopiedCli(true)
-    setTimeout(() => setCopiedCli(false), 1400)
-  }
 
   const officialNpx = inspectSkill.repo
     ? `npx skills add ${inspectSkill.repo} --skill ${inspectSkill.id}`
@@ -108,13 +93,6 @@ export const SkillDrawer: React.FC = () => {
     navigator.clipboard.writeText(`${recipe.command}\n# ${recipe.hint}`)
     setCopiedRecipe(true)
     setTimeout(() => setCopiedRecipe(false), 1400)
-  }
-
-  const copyShareLink = () => {
-    const url = `${window.location.origin}${window.location.pathname}?pillar=skills&skill=${inspectSkill.id}`
-    navigator.clipboard.writeText(url)
-    setCopiedLink(true)
-    setTimeout(() => setCopiedLink(false), 1600)
   }
 
   const promptTemplate = `<system>\nActivate skill /${inspectSkill.scoped}\nFollow strict repository laws.\nAlways provide empirical test evidence before asserting task completion.\n</system>`
@@ -190,13 +168,11 @@ ${promptTemplate}
             </div>
 
             <div className="flex items-center gap-2">
-              <button
-                onClick={copyShareLink}
+              <CopyButton
+                variant="icon"
+                text={`${window.location.origin}${window.location.pathname}?pillar=skills&skill=${inspectSkill.id}`}
                 title="Copy Shareable Link"
-                className="p-1.5 rounded-md bg-[#18181b] text-zinc-400 border border-[#27272a] hover:text-white hover:border-zinc-500 cursor-pointer transition-colors"
-              >
-                {copiedLink ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
-              </button>
+              />
 
               <button
                 onClick={() => toggleStack(inspectSkill)}
@@ -328,16 +304,12 @@ ${promptTemplate}
                     </button>
                   </div>
 
-                  <div className="flex items-center justify-between gap-2 bg-[#18181b] px-3 py-2 rounded-md font-mono text-xs text-zinc-200 border border-[#27272a]">
-                    <span className="truncate">{recipe.command}</span>
-                    <button
-                      onClick={copySlash}
-                      className="text-zinc-500 hover:text-white p-0.5 cursor-pointer shrink-0"
-                      title="Copy Command"
-                    >
-                      {copiedSlash ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
+                  <CopyButton
+                    variant="codebar"
+                    text={recipe.command}
+                    title="Click to copy setup command"
+                    className="w-full text-xs"
+                  />
 
                   <p className="text-[11px] text-zinc-500 font-mono leading-relaxed">
                     {recipe.hint}
@@ -354,16 +326,13 @@ ${promptTemplate}
                   </span>
                   <span className="text-[10px] text-zinc-500 font-mono">Stand-alone Script</span>
                 </div>
-                <div className="flex items-center justify-between gap-2 bg-[#18181b] px-3 py-2 rounded-md font-mono text-xs text-zinc-300 border border-[#27272a]">
-                  <span className="truncate">{inspectSkill.cli}</span>
-                  <button
-                    onClick={copyCli}
-                    className="text-zinc-500 hover:text-white p-0.5 shrink-0 cursor-pointer"
-                    title="Copy CLI Command"
-                  >
-                    {copiedCli ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  </button>
-                </div>
+                <CopyButton
+                  variant="codebar"
+                  text={inspectSkill.cli}
+                  displayPrefix="CLI:"
+                  title="Click to copy CLI command"
+                  className="w-full text-xs"
+                />
               </div>
 
               {/* Metadata Specs Grid */}

@@ -242,7 +242,7 @@
 ### 🧠 Current State of Repository & Metrics
 - **Catalog Totals**: **346 Atomic Skills**, **129 Upstream Frameworks**, **334 SKILL.md packages**, 57 Architecture Docs, 3 System Prompt Suites, **5,480,000+ total ⭐ community stars**.
 - **Marketplace Hub**: 1,126 MCP Connectors, 530 Plugins, 33 Specialized Platforms across Claude, ChatGPT, Antigravity, and Cursor.
-- **Test Integrity**: 87/87 Python unit tests PASSED (`python -m unittest discover tests`). 13/13 Playwright E2E browser tests PASSED across Chromium, Firefox, WebKit (39/39 green executions). Zero TypeScript errors (`tsc -b`).
+- **Test Integrity**: **89/89 Python unit tests PASSED** (`python -m unittest discover tests`). **17/17 Playwright E2E browser tests PASSED** (14 scenarios in `e2e/skilldock.spec.ts` + 3 scenarios in `e2e/ui-ux-revamp.spec.ts`). Zero TypeScript errors (`tsc -b`).
 - **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` (835 lines) and `.csv` (665 rows).
 - **Obsidian Vault**: Mirrored and synchronized to `D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`.
 
@@ -264,8 +264,24 @@
    - Ingested `pydantic-ai` (Pydantic official agent framework), `openai-agents-sdk` (OpenAI Python agents SDK), `deepseek-r1-reasoning` (DeepSeek-R1 reasoning distillation & CoT verification), and `smolagents` (Hugging Face code-first sandboxed agents).
    - Authored 4 authoritative `SKILL.md` packages in `skills/09-autonomous-agents/` conforming to Law 2.
    - Maintained 100% Law 1 Dual-Matrix Parity (`sync-matrix.py`).
-6. **Playwright E2E Suite Expanded to 13 Scenarios**:
-   - Scenario 13 added to `web/e2e/skilldock.spec.ts`. All 39 cross-browser test executions (Chromium, Firefox, WebKit) passing 100%.
+6. **Playwright E2E Suite Expanded to 14 Scenarios**:
+   - Scenario 13 & 14 added to `web/e2e/skilldock.spec.ts`. All cross-browser test executions passing 100%.
+7. **UI/UX Revamp, Universal CopyButton Component & Card Anatomy Resilience (Current Wave)**:
+   - Designed and deployed `web/src/components/common/CopyButton.tsx` with 3 robust variants: `icon` (standard 28x28px hit target), `pill` (monospace command chip with truncation), and `codebar` (full-width terminal bar with isolated copy trigger).
+   - Replaced fragile, inconsistent copy buttons across `SkillCard.tsx`, `FrameworkCard.tsx`, `FrameworkDrawer.tsx`, `MarketplaceView.tsx`, `StaffPicks.tsx`, `ProjectRecommenderModal.tsx`, `SkillDrawer.tsx`, and `StackModal.tsx`.
+   - Fixed all text overflows and clipping with `min-w-0 flex-1 truncate` containers.
+8. **Suite Toggle Selection & Deselection & Stack Modal Revamp (Current Wave)**:
+   - Implemented toggle deselection in `useSkillStore.ts`: clicking "+ Add Suite" adds all member skills; clicking again on "Suite Saved" unselects and removes the suite from the stack with clear toast notification.
+   - Restructured `StackModal.tsx`: expanded container to `h-[90vh] max-h-[860px]`, compacted telemetry and export hubs, giving the middle skills container ~500px of comfortable scrollable space with live search filtering.
+   - Added shorthand alias support in `projectRecommender.ts` (e.g. typing "Gstack" maps directly to `garrytan/gstack`).
+   - Created `web/e2e/ui-ux-revamp.spec.ts` (3/3 tests passing). All 17 Playwright E2E browser tests green.
+9. **`skilldock init` & `skilldock check` CLI Compiler Suite ("Pre-Commit / CI Guard") (Wave 1)**:
+   - Shipped workspace auto-detection and IDE rule generation (`.cursor/rules/*.mdc`, `.windsurfrules`, `.clinerules`, `.github/copilot-instructions.md`, `antigravity-skills-lock.json`) in `scripts/skilldock_cli.py` and `bin/skilldock.js`.
+   - Shipped `skilldock check` running deterministic conflict linting in Git pre-commit or CI/CD pipelines. Tested across unit tests in `tests/test_skilldock_cli.py` (89/89 unit tests green).
+10. **System Prompt Compiler & Caveman Token Minifier (Wave 1)**:
+    - Built `web/src/utils/promptMinifier.ts` and `web/src/components/modals/PromptMinifierModal.tsx` in `StackModal.tsx`.
+    - Cuts 45–55% of token bloat and system prompt costs for active stacks while preserving 100% of contracts and hard invariants.
+    - Added `--format minified-prompt` in CLI. Verified in Playwright E2E Scenario 14.
 
 ---
 
@@ -278,6 +294,7 @@
 6. [x] **Phase 6: Cross-Browser Validation & Marketplace Deep Dive**: Tri-engine Chromium/Firefox/WebKit verification + ChatGPT Action schemas.
 7. [x] **Phase 7: Wave 1 & 2 Execution**: GitHub URL auto-stack, Cursor 0.45+ `.mdc`, Compiler Linter, Swarm Mermaid.
 8. [x] **Phase 8: Wave 3 Execution**: Frontier 2026.4 Ingestion (`pydantic-ai`, `openai-agents-sdk`, `deepseek-r1-reasoning`, `smolagents`).
+9. [x] **Phase 9: UI/UX Revamp, Universal CopyButton & Suite Deselection Toggle**: Complete card anatomy overhaul, 3-variant CopyButton, toggle deselection, and E2E verification.
 
 ---
 

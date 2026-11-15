@@ -431,6 +431,26 @@ def cmd_stack_export(args: argparse.Namespace) -> None:
             output_content += f"- Activation: /{s.get('scoped')}\n"
             output_content += f"- Command: {s.get('cli')}\n\n"
 
+    elif fmt in ('minified-prompt', 'minified'):
+        output_content = "<system_prompt version=\"3.0\" mode=\"production\" density=\"high\">\n"
+        output_content += "# ROLE: Lead Systems Engineer & Autonomous Coding Fleet\n"
+        output_content += "# DIRECTIVE: Execute surgical, deterministic implementations. Reject conversational fluff. Output verified code only.\n\n"
+        output_content += f"<active_skills count=\"{len(stack)}\">\n"
+        for s in stack:
+            output_content += f"[SKILL: {s.get('id')} | /{s.get('scoped')} | {s.get('priority')}]\n"
+            if s.get('repo'):
+                output_content += f"upstream: {s.get('repo')}\n"
+            if s.get('cli'):
+                output_content += f"cli: {s.get('cli')}\n"
+        output_content += "</active_skills>\n\n"
+        output_content += "<hard_invariants>\n"
+        output_content += "1. EVIDENCE_OVER_ASSERTIONS: Never claim success without verification command outputs.\n"
+        output_content += "2. ANTI_SLOP: Zero purple glow blobs, zero decorative emoji clutter, zero unrequested wrappers.\n"
+        output_content += "3. YAGNI_SHORTEST_DIFF: Smallest complete change wins. No speculative factories or interfaces.\n"
+        output_content += "4. CREATOR_PURITY: Never merge distinct upstream frameworks into synthetic blends.\n"
+        output_content += "</hard_invariants>\n"
+        output_content += "</system_prompt>\n"
+
     elif fmt == 'claude':
         config = {
             "$schema": "https://json.schemastore.org/claude-settings.json",
@@ -774,6 +794,309 @@ def cmd_recommend(args: argparse.Namespace) -> None:
         print(f"\nTip: Run 'skilldock recommend {manifest_path} --apply' to immediately load this stack.\n")
 
 
+def lint_skill_stack_ids(skill_ids: List[str]) -> List[Dict[str, str]]:
+    ids = set(s.lower() for s in skill_ids)
+    findings = []
+
+    # 1. Multiple Auth Providers
+    auth_skills = ['better-auth-patterns', 'clerk-auth-identity', 'auth0']
+    matched_auth = [s for s in auth_skills if s in ids]
+    if len(matched_auth) > 1:
+        findings.append({
+            "type": "conflict",
+            "title": "Redundant Authentication Providers",
+            "message": f"Stack contains multiple auth solutions ({', '.join(matched_auth)}). Retaining one saves ~800 tokens and prevents contradictory session logic.",
+            "action": "Keep your primary auth provider and remove duplicates."
+        })
+
+    # 2. Multiple Orchestrations
+    suite_skills = ['gsd-core', 'everything-claude-code-(ecc)', 'ralph-loop']
+    matched_suites = [s for s in suite_skills if s in ids]
+    if len(matched_suites) > 1:
+        findings.append({
+            "type": "conflict",
+            "title": "Overlapping Swarm / Loop Engines",
+            "message": f"Stack contains multiple orchestration harnesses ({', '.join(matched_suites)}). Choose either GSD wave execution or Ralph loop.",
+            "action": "Pick one orchestrator harness to prevent competing agent state loops."
+        })
+
+    # 3. Multiple Gateways
+    gateway_skills = ['bifrost', 'freellmapi']
+    matched_gateways = [s for s in gateway_skills if s in ids]
+    if len(matched_gateways) > 1:
+        findings.append({
+            "type": "conflict",
+            "title": "Multiple AI Router Gateways",
+            "message": f"Both Bifrost (<200µs gateway) and FreeLLMAPI are active.",
+            "action": "Select Bifrost for low-latency enterprise routing or FreeLLMAPI for zero-cost pooling."
+        })
+
+    # 4. Synergies
+    if 'taste-skill' in ids and 'unslop' in ids:
+        findings.append({
+            "type": "synergy",
+            "title": "Anti-Slop Design Synergy",
+            "message": "Optimal pairing: taste-skill micro-interactions + unslop 9-pass design refactoring."
+        })
+    if 'tdd' in ids and 'systematic-debugging' in ids:
+        findings.append({
+            "type": "synergy",
+            "title": "Verified Reliability Synergy",
+            "message": "High-signal combo: TDD contract coverage + systematic-debugging root cause isolation."
+        })
+    if 'graphify' in ids and 'mempalace' in ids:
+        findings.append({
+            "type": "synergy",
+            "title": "Second Brain & Knowledge Graph Synergy",
+            "message": "Graphify AST code graph + MemPalace durable cross-session semantic memory."
+        })
+    if 'ponytail' in ids and 'karpathy-guidelines' in ids:
+        findings.append({
+            "type": "synergy",
+            "title": "Pragmatic Simplicity Synergy",
+            "message": "Ponytail shortest-diff wins + Karpathy surgical, think-before-coding discipline."
+        })
+    if 'pydantic-ai' in ids and 'better-auth-patterns' in ids:
+        findings.append({
+            "type": "synergy",
+            "title": "End-to-End Type Safety Synergy",
+            "message": "PydanticAI agent schemas + Better Auth typed session security."
+        })
+    if 'deepseek-r1-reasoning' in ids and ('tdd' in ids or 'test-driven-development' in ids):
+        findings.append({
+            "type": "synergy",
+            "title": "Frontier Reasoning & Empirical Verification",
+            "message": "DeepSeek-R1 extended <think> deliberation verified against TDD assertions."
+        })
+
+    # 5. Missing Test Guard
+    ui_skills = ['taste-skill', 'unslop', 'shadcn-ui', 'compose-preview', 'modern-web-guidance', 'ui-ux-pro-max']
+    testing_skills = ['tdd', 'test-driven-development', 'systematic-debugging', 'momentic-visual-testing', 'playwright-cli']
+    has_ui = any(s in ids for s in ui_skills)
+    has_testing = any(s in ids for s in testing_skills)
+    if has_ui and not has_testing:
+        findings.append({
+            "type": "guard",
+            "title": "Missing Test Verification Guard",
+            "message": "Stack contains UI/frontend skills but lacks an automated test verification skill. Per Law 3, evidence must precede assertions.",
+            "action": "Pair with /mp-tdd, /superpowers-systematic-debugging, or /test-playwright-cli."
+        })
+
+    return findings
+
+
+def cmd_check(args: argparse.Namespace) -> None:
+    target = args.path or os.getcwd()
+    stack_file = None
+    if os.path.isfile(target) and target.endswith('.json'):
+        stack_file = target
+    elif os.path.isdir(target):
+        cand = os.path.join(target, '.skilldock-stack.json')
+        if os.path.exists(cand):
+            stack_file = cand
+        elif os.path.exists(LOCAL_STACK_PATH):
+            stack_file = LOCAL_STACK_PATH
+
+    if not stack_file or not os.path.exists(stack_file):
+        print(f"❌ Error: No active stack found at {target}. Run 'skilldock init' to initialize.", file=sys.stderr)
+        sys.exit(1)
+
+    with open(stack_file, 'r', encoding='utf-8') as f:
+        stack = json.load(f)
+
+    skill_ids = [s.get('id', '') for s in stack]
+    findings = lint_skill_stack_ids(skill_ids)
+
+    conflicts = [f for f in findings if f['type'] == 'conflict']
+    guards = [f for f in findings if f['type'] == 'guard']
+    synergies = [f for f in findings if f['type'] == 'synergy']
+
+    if getattr(args, 'json', False):
+        payload = {
+            "valid": len(conflicts) == 0,
+            "totalSkills": len(stack),
+            "findings": findings
+        }
+        print(json.dumps(payload, indent=2))
+        if conflicts:
+            sys.exit(1)
+        return
+
+    print(f"\n🔍 SkillDock Compiler Linter Report ({len(stack)} skills checked in {os.path.basename(stack_file)}):")
+    print("=" * 70)
+
+    if not findings:
+        print("✅ All clear! Stack is optimal with zero conflicts, redundancies, or missing guards.")
+        sys.exit(0)
+
+    for c in conflicts:
+        print(f"❌ [CONFLICT] {c['title']}")
+        print(f"   {c['message']}")
+        if 'action' in c:
+            print(f"   👉 Recommended: {c['action']}")
+        print()
+
+    for g in guards:
+        print(f"⚠️  [GUARD] {g['title']}")
+        print(f"   {g['message']}")
+        if 'action' in g:
+            print(f"   👉 Recommended: {g['action']}")
+        print()
+
+    for s in synergies:
+        print(f"✨ [SYNERGY] {s['title']}")
+        print(f"   {s['message']}")
+        print()
+
+    print("=" * 70)
+    if conflicts:
+        print("❌ Linter failed: Stack contains conflicting dependencies.")
+        sys.exit(1)
+    else:
+        print("✅ Linter passed: Zero critical conflicts detected.")
+        sys.exit(0)
+
+
+def cmd_init(args: argparse.Namespace) -> None:
+    target_dir = os.path.abspath(args.target) if args.target else os.getcwd()
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir, exist_ok=True)
+
+    matrix = load_matrix()
+    skills = matrix.get('skills', [])
+
+    # 1. Search for project manifests
+    manifest_candidates = [
+        "package.json",
+        "build.gradle.kts",
+        "build.gradle",
+        "pyproject.toml",
+        "requirements.txt",
+        "Cargo.toml"
+    ]
+    detected_manifest = None
+    detected_content = ""
+    for c in manifest_candidates:
+        p = os.path.join(target_dir, c)
+        if os.path.exists(p) and os.path.isfile(p):
+            detected_manifest = c
+            try:
+                with open(p, 'r', encoding='utf-8', errors='ignore') as f:
+                    detected_content = f.read()
+                break
+            except Exception:
+                pass
+
+    # 2. Match skills
+    if detected_manifest and detected_content:
+        matched_skills, detected_tech = recommend_stack_from_manifest(detected_content, detected_manifest, skills)
+    else:
+        # Default core stack
+        default_ids = ["taste-skill", "unslop", "systematic-debugging", "writing-plans"]
+        matched_skills = [s for s in skills if s.get('id') in default_ids]
+        detected_tech = ["Generic Software Engineering"]
+
+    # Deduplicate
+    unique_skills = []
+    seen = set()
+    for s in matched_skills:
+        if s.get('id') not in seen:
+            seen.add(s.get('id'))
+            unique_skills.append(s)
+
+    # 3. Save workspace stack: .skilldock-stack.json
+    workspace_stack_path = os.path.join(target_dir, ".skilldock-stack.json")
+    with open(workspace_stack_path, "w", encoding="utf-8") as f:
+        json.dump(unique_skills, f, indent=2)
+
+    # 4. Generate configured rule files
+    fmt = (args.format or "cursor045").lower()
+    created_files = [".skilldock-stack.json"]
+
+    if fmt in ("cursor045", "cursor", "all"):
+        rules_dir = os.path.join(target_dir, ".cursor", "rules")
+        os.makedirs(rules_dir, exist_ok=True)
+        mdc_path = os.path.join(rules_dir, "skilldock.mdc")
+        mdc_content = f"""---
+description: "SkillDock Curated Agent Capabilities & Repository Laws"
+globs: ["*"]
+alwaysApply: true
+priority: 100
+---
+
+# SkillDock Agent Stack Specifications
+
+You are an expert autonomous software engineer operating under the SkillDock Agentic framework.
+The following {len(unique_skills)} capabilities are actively installed and required for this workspace:
+
+## Active Stack Registry
+"""
+        for s in unique_skills:
+            mdc_content += f"\n### `/{s.get('scoped')}` — {s.get('name')} [{s.get('priority')}]\n"
+            if s.get('repo'):
+                mdc_content += f"- Ecosystem: https://github.com/{s.get('repo')}\n"
+            mdc_content += f"- Installation: `{s.get('officialCli') or s.get('cli')}`\n"
+        with open(mdc_path, "w", encoding="utf-8") as f:
+            f.write(mdc_content)
+        created_files.append(".cursor/rules/skilldock.mdc")
+
+    if fmt in ("windsurf", "all"):
+        ws_path = os.path.join(target_dir, ".windsurfrules")
+        with open(ws_path, "w", encoding="utf-8") as f:
+            f.write(f"# .windsurfrules — SkillDock Custom Cascade AI Rules\n## Active Skills ({len(unique_skills)})\n")
+            for s in unique_skills:
+                f.write(f"### Skill: {s.get('name')} (/{s.get('scoped')})\n- Command: {s.get('cli')}\n\n")
+        created_files.append(".windsurfrules")
+
+    if fmt in ("cline", "all"):
+        cline_path = os.path.join(target_dir, ".clinerules")
+        with open(cline_path, "w", encoding="utf-8") as f:
+            f.write(f"# .clinerules — SkillDock Autonomous Coding Agent System Rules\n## Active Skills ({len(unique_skills)})\n")
+            for s in unique_skills:
+                f.write(f"### [{s.get('priority')}] {s.get('name')} (/{s.get('scoped')})\n\n")
+        created_files.append(".clinerules")
+
+    if fmt in ("copilot", "all"):
+        copilot_dir = os.path.join(target_dir, ".github")
+        os.makedirs(copilot_dir, exist_ok=True)
+        copilot_path = os.path.join(copilot_dir, "copilot-instructions.md")
+        with open(copilot_path, "w", encoding="utf-8") as f:
+            f.write(f"# GitHub Copilot Custom Repository Instructions\n## Active Skills ({len(unique_skills)})\n")
+            for s in unique_skills:
+                f.write(f"- {s.get('name')} (/{s.get('scoped')})\n")
+        created_files.append(".github/copilot-instructions.md")
+
+    if fmt in ("antigravity", "all"):
+        ag_path = os.path.join(target_dir, "antigravity-skills-lock.json")
+        manifest = {
+            "$schema": "https://schema.antigravity.google/v1/workspace-skills.json",
+            "version": "1.0.0",
+            "generator": "SkillDock CLI v3.0",
+            "skills": [
+                {
+                    "id": s.get('id'),
+                    "name": s.get('name'),
+                    "scopedCommand": f"/{s.get('scoped')}",
+                    "priority": s.get('priority'),
+                    "installCli": s.get('cli')
+                } for s in unique_skills
+            ]
+        }
+        with open(ag_path, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, indent=2)
+        created_files.append("antigravity-skills-lock.json")
+
+    print(f"\n🚀 SkillDock Workspace Initialized successfully!")
+    print(f"📁 Target Directory: {target_dir}")
+    print(f"🔍 Detected Manifest: {detected_manifest or 'None (Default Core Stack applied)'}")
+    print(f"📦 Technologies: {', '.join(detected_tech)}")
+    print(f"⚡ Stack Size: {len(unique_skills)} curated skills")
+    print(f"📝 Config Files Generated:")
+    for cf in created_files:
+        print(f"   ✓ {cf}")
+    print(f"\nTip: Run 'skilldock check' anytime or add it to pre-commit to guard against stack conflicts.\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="skilldock",
@@ -825,9 +1148,21 @@ def main() -> None:
     p_sk_clr.set_defaults(func=cmd_stack_clear)
 
     p_sk_exp = stack_subs.add_parser("export", help="Export stack configuration")
-    p_sk_exp.add_argument("--format", choices=["markdown", "cursorrules", "cursor045", "mdc", "windsurfrules", "windsurf", "clinerules", "cline", "copilot", "antigravity", "claude", "swarm", "cli"], default="markdown")
+    p_sk_exp.add_argument("--format", choices=["markdown", "cursorrules", "cursor045", "mdc", "windsurfrules", "windsurf", "clinerules", "cline", "copilot", "antigravity", "claude", "swarm", "cli", "minified-prompt", "minified"], default="markdown")
     p_sk_exp.add_argument("--output", "-o", help="Target output file")
     p_sk_exp.set_defaults(func=cmd_stack_export)
+
+    # Init (Workspace Bootstrapper)
+    p_init = subparsers.add_parser("init", help="Initialize SkillDock in current workspace with auto-detected stack and IDE rules")
+    p_init.add_argument("target", nargs="?", default="", help="Target directory (default: current directory)")
+    p_init.add_argument("--format", choices=["cursor045", "cursor", "windsurf", "cline", "copilot", "antigravity", "all"], default="cursor045", help="Export format for IDE rules")
+    p_init.set_defaults(func=cmd_init)
+
+    # Check (Compiler & Conflict Linter)
+    p_check = subparsers.add_parser("check", help="Lint active workspace stack for conflicts, redundancies, and missing guards")
+    p_check.add_argument("path", nargs="?", default="", help="Path to workspace directory or stack JSON file")
+    p_check.add_argument("--json", action="store_true", help="Output JSON result")
+    p_check.set_defaults(func=cmd_check)
 
     # Recommend (Project Auto-Stack)
     p_rec = subparsers.add_parser("recommend", help="Auto-recommend 10x skill stack from project manifest (package.json, build.gradle, etc.)")

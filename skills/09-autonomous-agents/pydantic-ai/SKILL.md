@@ -116,3 +116,4 @@ async def fetch_temperature(ctx: RunContext[AgentDeps], city: str) -> float:
 > - **Unvalidated Regex Parsing**: Never manually parse JSON strings out of raw LLM completions; always use `result_type` to let Pydantic handle schema validation and automatic self-correction.
 > - **Global State Pollution**: Avoid referencing global database connections inside `@agent.tool` functions; pass them through `deps_type` and `RunContext` for thread-safe concurrency.
 > - **Untested Prompts**: Use `TestModel` in automated test suites to verify tool routing and dependency propagation without consuming API tokens.
+

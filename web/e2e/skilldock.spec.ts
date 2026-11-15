@@ -424,4 +424,35 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     const mermaidBtn = page.getByRole('button', { name: /Copy Mermaid Diagram/i }).first()
     await expect(mermaidBtn).toBeVisible()
   })
+
+  test('14: Compiled System Prompt Optimizer & Caveman Token Compressor', async ({ page }) => {
+    // 1. Open stack modal with sample skills
+    await page.goto('/?stack=taste-skill,unslop,systematic-debugging,writing-plans')
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
+    await stackBtn.click()
+
+    // 2. Click "Minify Prompt" button
+    const minifyBtn = page.getByRole('button', { name: /Minify Prompt/i }).first()
+    await expect(minifyBtn).toBeVisible()
+    await minifyBtn.click()
+
+    // 3. Verify Prompt Minifier Modal opens
+    await expect(page.getByRole('heading', { name: /Compiled System Prompt Optimizer/i })).toBeVisible()
+    await expect(page.getByText('Caveman Pass')).toBeVisible()
+    await expect(page.getByText(/-\d+%\s*Savings/i)).toBeVisible()
+
+    // 4. Verify Minified (<system>) tab content
+    await expect(page.getByText('<system_prompt')).toBeVisible()
+    await expect(page.getByText('EVIDENCE_OVER_ASSERTIONS')).toBeVisible()
+
+    // 5. Switch to Original Verbose Prompt tab
+    const originalTab = page.getByRole('button', { name: /Original Verbose Prompt/i })
+    await expect(originalTab).toBeVisible()
+    await originalTab.click()
+    await expect(page.getByText('# SYSTEM PROMPT: AI CODING ASSISTANT CONFIGURATION')).toBeVisible()
+
+    // 6. Verify Copy button exists
+    const copyBtn = page.getByRole('button', { name: /Copy Minified Prompt|Copy/i }).last()
+    await expect(copyBtn).toBeVisible()
+  })
 })

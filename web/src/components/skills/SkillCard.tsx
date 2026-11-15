@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import { Copy, Check, Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch, ArrowUpRight, Share2, Terminal } from 'lucide-react'
+import { Bookmark, BookmarkCheck, ExternalLink, Star, GitBranch, ArrowUpRight } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import type { Skill } from '@/types'
+import { CopyButton } from '@/components/common/CopyButton'
 
 interface SkillCardProps {
   skill: Skill
 }
 
 export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
-  const [copiedSlash, setCopiedSlash] = useState(false)
-  const [copiedCli, setCopiedCli] = useState(false)
-  const [copiedLink, setCopiedLink] = useState(false)
   const [avatarError, setAvatarError] = useState(false)
 
   const stack = useSkillStore((s) => s.stack)
@@ -32,27 +30,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
     activeAssistantCmd = `codex install ${skill.repo}`
   }
 
-  const copySlashCommand = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    navigator.clipboard.writeText(`/${skill.scoped}`)
-    setCopiedSlash(true)
-    setTimeout(() => setCopiedSlash(false), 1400)
-  }
-
-  const copyCliCommand = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    navigator.clipboard.writeText(activeAssistantCmd)
-    setCopiedCli(true)
-    setTimeout(() => setCopiedCli(false), 1400)
-  }
-
-  const copyShareLink = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    const url = `${window.location.origin}${window.location.pathname}?pillar=skills&skill=${skill.id}`
-    navigator.clipboard.writeText(url)
-    setCopiedLink(true)
-    setTimeout(() => setCopiedLink(false), 1400)
-  }
+  const shareUrl = `${window.location.origin}${window.location.pathname}?pillar=skills&skill=${skill.id}`
 
   // Minimalist Priority styling
   let priorityBadge = 'bg-[#18181b] text-zinc-400 border-[#27272a]'
@@ -63,35 +41,34 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   return (
     <div
       onClick={() => openInspect(skill)}
-      className="group rounded-xl border border-[#27272a] bg-[#111114] hover:bg-[#16161a] hover:border-zinc-500 transition-all duration-200 p-4 sm:p-5 flex flex-col justify-between cursor-pointer relative shadow-xs"
+      className="group rounded-xl border border-[#27272a] bg-[#111114] hover:bg-[#16161a] hover:border-zinc-500 transition-all duration-200 p-4 sm:p-5 flex flex-col justify-between cursor-pointer relative shadow-xs min-w-0 h-full"
     >
-      <div>
+      <div className="flex-1 flex flex-col">
         {/* Top Header: Category, Priority, Stack Toggle */}
-        <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 truncate max-w-[170px]">
+        <div className="flex items-center justify-between gap-2 mb-2 min-w-0">
+          <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 truncate max-w-[150px] sm:max-w-[170px]">
             {skill.categoryLabel}
           </span>
 
           <div className="flex items-center gap-1.5 shrink-0">
-            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border ${priorityBadge}`}>
+            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border shrink-0 ${priorityBadge}`}>
               {skill.priority}
             </span>
 
-            <button
-              onClick={copyShareLink}
+            <CopyButton
+              variant="icon"
+              text={shareUrl}
               title="Copy Shareable Link"
-              className="p-1 rounded-md transition-colors cursor-pointer border bg-[#18181b] text-zinc-400 border-[#27272a] hover:text-white hover:border-zinc-500"
-            >
-              {copiedLink ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
-            </button>
+            />
 
             <button
+              type="button"
               onClick={(e) => {
                 e.stopPropagation()
                 toggleStack(skill)
               }}
               title={isSavedInStack ? 'Remove from Stack' : 'Save to Stack'}
-              className={`p-1 rounded-md transition-colors cursor-pointer border ${
+              className={`inline-flex items-center justify-center w-7 h-7 rounded-md transition-colors cursor-pointer border shrink-0 ${
                 isSavedInStack
                   ? 'bg-white text-zinc-900 border-white font-bold'
                   : 'bg-[#18181b] text-zinc-400 border-[#27272a] hover:text-white hover:border-zinc-500'
@@ -103,8 +80,8 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
         </div>
 
         {/* Skill Name, Avatar & Arrow */}
-        <div className="flex items-start justify-between gap-2 mb-1.5">
-          <div className="flex items-center gap-2 min-w-0">
+        <div className="flex items-start justify-between gap-2 mb-1.5 min-w-0">
+          <div className="flex items-center gap-2 min-w-0 flex-1">
             {avatarUrl && !avatarError ? (
               <img
                 src={avatarUrl}
@@ -123,74 +100,70 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
 
         {/* Upstream Repository Tag */}
         {skill.repo && (
-          <div className="mb-2.5">
+          <div className="mb-2.5 min-w-0">
             <button
+              type="button"
               onClick={(e) => {
                 e.stopPropagation()
                 setRepo(skill.repo!)
               }}
-              className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] hover:border-zinc-600 text-[11px] font-mono text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] hover:border-zinc-600 text-[11px] font-mono text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer max-w-full"
               title={`Filter all skills from ${skill.repo}`}
             >
-              <GitBranch className="w-3 h-3 text-zinc-400" />
-              <span className="font-medium">{skill.repoName || skill.repo}</span>
+              <GitBranch className="w-3 h-3 text-zinc-400 shrink-0" />
+              <span className="font-medium truncate">{skill.repoName || skill.repo}</span>
             </button>
           </div>
         )}
 
-        {/* Description */}
-        <p className="text-xs sm:text-sm text-zinc-400 line-clamp-2 leading-relaxed mb-4">
+        {/* Description (Resilient 2-line clamp with word break) */}
+        <p className="text-xs sm:text-sm text-zinc-400 line-clamp-2 leading-relaxed mb-4 break-words">
           {skill.description}
         </p>
       </div>
 
-      {/* Footer Info & 1-Click Copy Commands */}
-      <div className="pt-3 border-t border-[#27272a] space-y-2">
-        <div className="flex items-center justify-between gap-2">
+      {/* Footer Info & 1-Click Copy Commands (Pinned to bottom) */}
+      <div className="pt-3 border-t border-[#27272a] space-y-2 mt-auto">
+        <div className="flex items-center justify-between gap-2 min-w-0">
           {/* Scoped Slash Command Pill */}
-          <button
-            onClick={copySlashCommand}
+          <CopyButton
+            variant="pill"
+            text={`/${skill.scoped}`}
             title="Click to copy slash command"
-            className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] hover:border-zinc-500 text-xs font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer min-w-0"
-          >
-            <span className="truncate">/{skill.scoped}</span>
-            {copiedSlash ? <Check className="w-3 h-3 text-emerald-400 shrink-0" /> : <Copy className="w-3 h-3 text-zinc-500 shrink-0" />}
-          </button>
+            className="max-w-[180px] sm:max-w-[210px]"
+          />
 
-          {/* Upstream Stars if available */}
-          {skill.stars > 0 && (
-            <span className="flex items-center gap-1 text-xs font-mono text-zinc-400 shrink-0">
-              <Star className="w-3 h-3 fill-amber-400/80 text-amber-400 shrink-0" />
-              <span>{skill.stars >= 1000 ? `${(skill.stars / 1000).toFixed(0)}k` : skill.stars}</span>
-            </span>
-          )}
+          <div className="flex items-center gap-2 shrink-0">
+            {/* Upstream Stars if available */}
+            {skill.stars > 0 && (
+              <span className="flex items-center gap-1 text-xs font-mono text-zinc-400 shrink-0">
+                <Star className="w-3 h-3 fill-amber-400/80 text-amber-400 shrink-0" />
+                <span>{skill.stars >= 1000 ? `${(skill.stars / 1000).toFixed(0)}k` : skill.stars}</span>
+              </span>
+            )}
+
+            {skill.repo && (
+              <a
+                href={`https://github.com/${skill.repo}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-zinc-500 hover:text-zinc-300 p-0.5 transition-colors shrink-0"
+                title="Open upstream repository"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
         </div>
 
         {/* Official Open Standard CLI copy bar */}
-        <div className="flex items-center justify-between gap-2 text-xs text-zinc-500">
-          <button
-            onClick={copyCliCommand}
-            className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 transition-colors cursor-pointer font-mono text-[11px] min-w-0 flex-1 text-left"
-            title={`Copy ${activeAssistant} command: ${activeAssistantCmd}`}
-          >
-            <Terminal className="w-3 h-3 text-cyan-400 shrink-0" />
-            <span className="truncate">{activeAssistantCmd}</span>
-            {copiedCli ? <Check className="w-3 h-3 text-emerald-400 shrink-0" /> : <Copy className="w-3 h-3 text-zinc-500 shrink-0" />}
-          </button>
-
-          {skill.repo && (
-            <a
-              href={`https://github.com/${skill.repo}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="text-zinc-500 hover:text-zinc-300 p-0.5 transition-colors shrink-0"
-              title="Open upstream repository"
-            >
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          )}
-        </div>
+        <CopyButton
+          variant="codebar"
+          text={activeAssistantCmd}
+          displayPrefix={activeAssistant === 'antigravity' ? 'AGY:' : 'CLI:'}
+          className="w-full"
+        />
       </div>
     </div>
   )

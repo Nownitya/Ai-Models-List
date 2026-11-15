@@ -12,12 +12,12 @@ import {
   Globe,
   Server,
   Radio,
-  Share2,
   Layers
 } from 'lucide-react'
 import marketplaceData from '@/data/claude-marketplace-plugins.json'
 import agentsProductsData from '@/data/claude-agents-products.json'
 import connectorsData from '@/data/claude-connectors-plugins.json'
+import { CopyButton } from '@/components/common/CopyButton'
 import type { MarketplacePlugin, MarketplaceAgentProduct, MarketplaceConnector, TargetEcosystem } from '@/types'
 
 const PAGE_SIZE = 20
@@ -68,15 +68,6 @@ export const MarketplaceView: React.FC = () => {
   const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text)
     setCopiedText(id)
-    setTimeout(() => {
-      setCopiedText(null)
-    }, 1800)
-  }
-
-  const handleCopyShare = (term: string) => {
-    const url = `${window.location.origin}${window.location.pathname}?pillar=marketplace&q=${encodeURIComponent(term)}`
-    navigator.clipboard.writeText(url)
-    setCopiedText(`share:${term}`)
     setTimeout(() => {
       setCopiedText(null)
     }, 1800)
@@ -674,7 +665,6 @@ export const MarketplaceView: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
             {filteredConnectors.slice(0, connectorLimit).map((c) => {
               const isRemote = c.type === 'remote'
-              const isCopied = copiedText === c.slug
               const hasChatGpt = c.ecosystems?.includes('chatgpt') || Boolean(c.chatgpt_action_url) || Boolean(c.chatgpt_gpt_url)
               const hasAntigravity = c.ecosystems?.includes('antigravity') || Boolean(c.antigravity_plugin_id)
 
@@ -747,45 +737,32 @@ export const MarketplaceView: React.FC = () => {
                     {/* Endpoint / Action URL Box */}
                     {c.serverUrl && (
                       <div className="mb-2">
-                        <button
-                          onClick={() => handleCopy(c.serverUrl!, c.slug)}
-                          className="w-full flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] text-[11px] font-mono text-zinc-300 transition-colors text-left group"
+                        <CopyButton
+                          variant="codebar"
+                          text={c.serverUrl}
+                          displayPrefix="MCP:"
                           title="Click to copy MCP endpoint URL"
-                        >
-                          <span className="truncate">{c.serverUrl}</span>
-                          {isCopied ? (
-                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                          ) : (
-                            <Copy className="w-3.5 h-3.5 text-zinc-500 group-hover:text-zinc-300 shrink-0" />
-                          )}
-                        </button>
+                          className="w-full text-[11px]"
+                        />
                       </div>
                     )}
 
                     {/* ChatGPT Action Schema Snippet (If Available or derived from remote serverUrl) */}
                     {(c.chatgpt_action_url || (c.serverUrl && c.type === 'remote')) && (
                       <div className="mb-2">
-                        <button
-                          onClick={() => handleCopy(c.chatgpt_action_url || `${c.serverUrl}/openapi.json`, `gpt:${c.slug}`)}
-                          className="w-full flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-md bg-emerald-950/20 hover:bg-emerald-900/30 border border-emerald-800/40 text-[11px] font-mono text-emerald-300 transition-colors text-left group cursor-pointer"
+                        <CopyButton
+                          variant="codebar"
+                          text={c.chatgpt_action_url || `${c.serverUrl}/openapi.json`}
+                          displayPrefix="ACTION:"
                           title="Click to copy ChatGPT Action Schema URL"
-                        >
-                          <span className="truncate flex items-center gap-1.5">
-                            <span className="text-[10px] font-bold text-emerald-400">ACTION:</span>
-                            <span className="truncate">{c.chatgpt_action_url || `${c.serverUrl}/openapi.json`}</span>
-                          </span>
-                          {copiedText === `gpt:${c.slug}` ? (
-                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                          ) : (
-                            <Copy className="w-3.5 h-3.5 text-emerald-500 group-hover:text-emerald-300 shrink-0" />
-                          )}
-                        </button>
+                          className="w-full text-[11px] bg-emerald-950/20 border-emerald-800/40 hover:border-emerald-600/50"
+                        />
                       </div>
                     )}
                   </div>
 
                   {/* Actions & Links Bottom Row */}
-                  <div className="pt-2.5 border-t border-[#27272a] flex items-center justify-between text-xs">
+                  <div className="pt-2.5 border-t border-[#27272a] flex items-center justify-between text-xs mt-auto">
                     <div className="flex items-center gap-1.5 flex-wrap">
                       {c.worksWith?.map((w) => (
                         <span
@@ -797,8 +774,9 @@ export const MarketplaceView: React.FC = () => {
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 shrink-0">
                       <button
+                        type="button"
                         onClick={() => handleCopyClaudeSnippet(c)}
                         className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-[#18181b] hover:bg-zinc-800 text-amber-400/90 hover:text-amber-300 border border-amber-500/20 hover:border-amber-500/40 transition-colors cursor-pointer shrink-0"
                         title="Copy Claude Desktop config JSON snippet"
@@ -816,17 +794,11 @@ export const MarketplaceView: React.FC = () => {
                         )}
                       </button>
 
-                      <button
-                        onClick={() => handleCopyShare(c.title)}
-                        className="p-1 rounded text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                      <CopyButton
+                        variant="icon"
+                        text={`${window.location.origin}${window.location.pathname}?pillar=marketplace&search=${encodeURIComponent(c.title)}`}
                         title="Copy Shareable Link"
-                      >
-                        {copiedText === `share:${c.title}` ? (
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        ) : (
-                          <Share2 className="w-3.5 h-3.5" />
-                        )}
-                      </button>
+                      />
 
                       {c.chatgpt_gpt_url && (
                         <a
@@ -999,7 +971,6 @@ export const MarketplaceView: React.FC = () => {
           {/* Plugins Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
             {filteredPlugins.slice(0, pluginLimit).map((p) => {
-              const isCopied = copiedText === p.slug
               const hasChatGpt = p.ecosystems?.includes('chatgpt') || Boolean(p.chatgpt_action_url) || Boolean(p.chatgpt_gpt_url)
 
               return (
@@ -1055,59 +1026,40 @@ export const MarketplaceView: React.FC = () => {
 
                     {/* Install Command */}
                     <div className="mb-2">
-                      <button
-                        onClick={() => handleCopy(p.install_cmd, p.slug)}
-                        className="w-full flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 border border-[#27272a] text-[11px] font-mono text-zinc-300 transition-colors text-left group"
+                      <CopyButton
+                        variant="codebar"
+                        text={p.install_cmd}
+                        displayPrefix="INSTALL:"
                         title="Click to copy install command"
-                      >
-                        <span className="truncate">{p.install_cmd}</span>
-                        {isCopied ? (
-                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                        ) : (
-                          <Copy className="w-3.5 h-3.5 text-zinc-500 group-hover:text-zinc-300 shrink-0" />
-                        )}
-                      </button>
+                        className="w-full text-[11px]"
+                      />
                     </div>
 
                     {/* ChatGPT Action Schema Snippet (If Available) */}
                     {p.chatgpt_action_url && (
                       <div className="mb-2">
-                        <button
-                          onClick={() => handleCopy(p.chatgpt_action_url!, `plug-gpt:${p.slug}`)}
-                          className="w-full flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-md bg-emerald-950/20 hover:bg-emerald-900/30 border border-emerald-800/40 text-[11px] font-mono text-emerald-300 transition-colors text-left group"
+                        <CopyButton
+                          variant="codebar"
+                          text={p.chatgpt_action_url}
+                          displayPrefix="ACTION:"
                           title="Click to copy ChatGPT Action Schema URL"
-                        >
-                          <span className="truncate flex items-center gap-1.5">
-                            <span className="text-[10px] font-bold text-emerald-400">ACTION:</span>
-                            <span className="truncate">{p.chatgpt_action_url}</span>
-                          </span>
-                          {copiedText === `plug-gpt:${p.slug}` ? (
-                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                          ) : (
-                            <Copy className="w-3.5 h-3.5 text-emerald-500 group-hover:text-emerald-300 shrink-0" />
-                          )}
-                        </button>
+                          className="w-full text-[11px] bg-emerald-950/20 border-emerald-800/40 hover:border-emerald-600/50"
+                        />
                       </div>
                     )}
                   </div>
 
-                  <div className="pt-2.5 border-t border-[#27272a] flex items-center justify-between text-xs">
+                  <div className="pt-2.5 border-t border-[#27272a] flex items-center justify-between text-xs mt-auto">
                     <span className="text-[11px] font-mono text-zinc-500">
                       {p.works_with.join(', ')}
                     </span>
 
-                    <div className="flex items-center gap-2.5">
-                      <button
-                        onClick={() => handleCopyShare(p.title)}
-                        className="p-1 rounded text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                    <div className="flex items-center gap-2.5 shrink-0">
+                      <CopyButton
+                        variant="icon"
+                        text={`${window.location.origin}${window.location.pathname}?pillar=marketplace&search=${encodeURIComponent(p.title)}`}
                         title="Copy Shareable Link"
-                      >
-                        {copiedText === `share:${p.title}` ? (
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        ) : (
-                          <Share2 className="w-3.5 h-3.5" />
-                        )}
-                      </button>
+                      />
 
                       {p.docs_url && (
                         <a
@@ -1276,18 +1228,12 @@ export const MarketplaceView: React.FC = () => {
                       {a.how_to_buy || 'Enterprise'}
                     </span>
 
-                    <div className="flex items-center gap-3">
-                      <button
-                        onClick={() => handleCopyShare(a.title)}
-                        className="p-1 rounded text-zinc-500 hover:text-white transition-colors cursor-pointer"
+                    <div className="flex items-center gap-3 shrink-0">
+                      <CopyButton
+                        variant="icon"
+                        text={`${window.location.origin}${window.location.pathname}?pillar=marketplace&search=${encodeURIComponent(a.title)}`}
                         title="Copy Shareable Link"
-                      >
-                        {copiedText === `share:${a.title}` ? (
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        ) : (
-                          <Share2 className="w-3.5 h-3.5" />
-                        )}
-                      </button>
+                      />
 
                       {a.website && (
                         <a

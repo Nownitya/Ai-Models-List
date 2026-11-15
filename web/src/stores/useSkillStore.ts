@@ -536,9 +536,14 @@ export const useSkillStore = create<SkillStoreState>((set, get) => ({
         () => get().setStackModalOpen(true)
       )
     } else {
+      // Toggle off: all skills already in stack -> unselect suite!
+      const frameworkSkillIds = new Set(framework.skills.map((s) => s.id))
+      const newStack = stack.filter((s) => !frameworkSkillIds.has(s.id))
+      set({ stack: newStack })
+      saveStackToStorage(newStack)
       get().showToast(
-        `All ${framework.skills.length} skills already in Stack`,
-        undefined,
+        `Removed ${framework.repoName} (-${framework.skills.length} skills)`,
+        `${newStack.length} remaining in stack`,
         'View Stack',
         () => get().setStackModalOpen(true)
       )

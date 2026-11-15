@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import { Sparkles, Star, Copy, Check, ArrowRight, Zap, Shield, Smartphone, Bot, Palette, Plus, CheckCircle2 } from 'lucide-react'
+import React from 'react'
+import { Sparkles, Star, ArrowRight, Zap, Shield, Smartphone, Bot, Palette, Plus, CheckCircle2 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import { STARTER_PACKS } from '@/data/starterPacks'
 import type { Skill } from '@/types'
+import { CopyButton } from '@/components/common/CopyButton'
 
 export const StaffPicks: React.FC = () => {
   const skills = useSkillStore((s) => s.skills)
@@ -14,21 +15,12 @@ export const StaffPicks: React.FC = () => {
   const setPillar = useSkillStore((s) => s.setPillar)
   const setEntityScope = useSkillStore((s) => s.setEntityScope)
   const setRecommenderOpen = useSkillStore((s) => s.setRecommenderOpen)
-  const [copiedId, setCopiedId] = useState<string | null>(null)
 
   // Identify our 4 flagship featured skills
   const featuredIds = ['taste-skill', 'unslop', 'systematic-debugging', 'ui-ux-pro-max']
   const featuredSkills: Skill[] = featuredIds
     .map((id) => skills.find((s) => s.id === id))
     .filter((s): s is Skill => Boolean(s))
-
-  const handleCopySlash = (e: React.MouseEvent, skill: Skill) => {
-    e.stopPropagation()
-    const slash = `/${skill.scoped}`
-    navigator.clipboard.writeText(slash)
-    setCopiedId(skill.uniqueId)
-    setTimeout(() => setCopiedId(null), 1800)
-  }
 
   const quickCategories = [
     { label: 'Autonomous Agents', icon: <Bot className="w-3.5 h-3.5 text-blue-400" />, action: () => { setPillar('skills'); setEntityScope('atomic'); setEcosystem('agents') } },
@@ -68,7 +60,6 @@ export const StaffPicks: React.FC = () => {
         {/* 4 Flagship Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-7">
           {featuredSkills.map((skill) => {
-            const isCopied = copiedId === skill.uniqueId
             return (
               <div
                 key={skill.uniqueId}
@@ -101,20 +92,14 @@ export const StaffPicks: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Bottom Action Row */}
-                <div className="pt-3 border-t border-[#27272a]/80 flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5 font-mono text-xs text-zinc-300 bg-[#18181b] px-2.5 py-1 rounded-md border border-[#27272a] min-w-0 flex-1 truncate">
-                    <span className="text-zinc-500 shrink-0">/</span>
-                    <span className="truncate">{skill.scoped}</span>
-                  </div>
-
-                  <button
-                    onClick={(e) => handleCopySlash(e, skill)}
-                    className="p-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-400 hover:text-white border border-[#27272a] transition-colors cursor-pointer shrink-0"
-                    title="Copy Slash Command"
-                  >
-                    {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  </button>
+                {/* Bottom Action Row (Pinned with CopyButton) */}
+                <div className="pt-3 border-t border-[#27272a]/80 flex items-center justify-between gap-2 mt-auto">
+                  <CopyButton
+                    variant="pill"
+                    text={`/${skill.scoped}`}
+                    title={`Copy slash command /${skill.scoped}`}
+                    className="w-full"
+                  />
                 </div>
               </div>
             )

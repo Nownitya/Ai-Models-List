@@ -104,3 +104,4 @@ print(result)
 > - **Unrestricted Module Execution**: Never allow arbitrary `import` statements in production environments without strict AST whitelisting or container isolation.
 > - **JSON Tool Forcing**: Do not force `ToolCallingAgent` when the problem involves loops or intermediate data storage; use `CodeAgent` for maximum reasoning speed.
 > - **Ignoring Tool Docstrings**: Ensure tool functions have clear type hints and Google/NumPy-style docstrings, as the CodeAgent reads them to write accurate Python calls.
+

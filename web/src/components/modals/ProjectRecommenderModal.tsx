@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import { analyzeProjectManifest, fetchGitHubManifest, type RecommendationResult } from '@/utils/projectRecommender'
+import { CopyButton } from '@/components/common/CopyButton'
 
 const SAMPLE_PRESETS: { name: string; filename: string; content: string }[] = [
   {
@@ -406,15 +407,25 @@ export const ProjectRecommenderModal: React.FC = () => {
                         <span className="font-semibold text-zinc-100 truncate">
                           {skill?.name || id}
                         </span>
-                        <span className="text-[11px] font-mono text-zinc-400 truncate hidden sm:inline">
-                          /{skill?.scoped || id}
-                        </span>
+                        <CopyButton
+                          variant="pill"
+                          text={`/${skill?.scoped || id}`}
+                          title={`Copy slash command /${skill?.scoped || id}`}
+                          className="shrink-0 hidden sm:inline-flex"
+                        />
                       </div>
 
                       <div className="flex items-center gap-2 shrink-0">
-                        <span className="text-[10px] font-mono text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a] truncate max-w-[180px] hidden md:inline">
-                          {skill?.repo ? skill.repo : skill?.categoryLabel || 'Core'}
-                        </span>
+                        {skill?.repo && (
+                          <span className="text-[10px] font-mono text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a] truncate max-w-[160px] hidden md:inline">
+                            {skill.repo}
+                          </span>
+                        )}
+                        <CopyButton
+                          variant="icon"
+                          text={skill?.repo ? `npx skills add ${skill.repo} --skill ${skill.id}` : `python scripts/install-to-project.py --skill ${skill?.scoped || id}`}
+                          title="Copy skill install command"
+                        />
                       </div>
                     </div>
                   )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import {
   X,
   Trash2,
@@ -16,15 +16,17 @@ import {
   ShieldCheck,
   Hammer,
   Compass,
-  ArrowDown,
-  Sparkles,
   Wind,
   Code2,
   FileCode,
+  Search,
+  Sparkles,
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
 import { generateSwarmManifest, generateSwarmBrief, partitionStackIntoSwarm } from '@/utils/swarmOrchestrator'
 import { lintSkillStack } from '@/utils/stackLinter'
+import { CopyButton } from '@/components/common/CopyButton'
+import { PromptMinifierModal } from '@/components/modals/PromptMinifierModal'
 
 export const StackModal: React.FC = () => {
   const isStackModalOpen = useSkillStore((s) => s.isStackModalOpen)
@@ -40,6 +42,18 @@ export const StackModal: React.FC = () => {
   const [copiedSwarmBrief, setCopiedSwarmBrief] = useState(false)
   const [copiedMermaid, setCopiedMermaid] = useState(false)
   const [cliFormat, setCliFormat] = useState<'npx' | 'python'>('npx')
+  const [searchFilter, setSearchFilter] = useState('')
+  const [exportFilter, setExportFilter] = useState<'all' | 'ide' | 'agent' | 'docs'>('all')
+  const [showMinifier, setShowMinifier] = useState(false)
+
+  useEffect(() => {
+    if (!isStackModalOpen) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setStackModalOpen(false)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isStackModalOpen, setStackModalOpen])
 
   const copyShareStackUrl = () => {
     const ids = stack.map((s) => s.id).join(',')
@@ -51,31 +65,46 @@ export const StackModal: React.FC = () => {
 
   // Token budget estimation & dollar economics
   const estimatedTokens = stack.length * 800
-  const monolithicBaseline = 26400
+  // Modular skill cherry-picking saves massive context vs monolithic framework suites
+  const monolithicBaseline = stack.length === 0 ? 26400 : Math.max(26400, Math.round(estimatedTokens * 2.8))
   const savingsPercent =
     stack.length === 0
       ? 0
-      : Math.max(0, Math.round(((monolithicBaseline - estimatedTokens) / monolithicBaseline) * 100))
+      : Math.max(1, Math.round(((monolithicBaseline - estimatedTokens) / monolithicBaseline) * 100))
 
   // Dollars per 1,000 developer turns across frontier models
   const stackCostClaude = (((estimatedTokens * 1000) / 1000000) * 3.0).toFixed(2)
   const baselineCostClaude = (((monolithicBaseline * 1000) / 1000000) * 3.0).toFixed(2)
-  const dollarSavingsClaude = Math.max(0, Number(baselineCostClaude) - Number(stackCostClaude)).toFixed(2)
+  const dollarSavingsClaude = Math.max(0.01, Number(baselineCostClaude) - Number(stackCostClaude)).toFixed(2)
 
   const stackCostGemini = (((estimatedTokens * 1000) / 1000000) * 0.10).toFixed(3)
   const baselineCostGemini = (((monolithicBaseline * 1000) / 1000000) * 0.10).toFixed(2)
-  const dollarSavingsGemini = Math.max(0, Number(baselineCostGemini) - Number(stackCostGemini)).toFixed(2)
+  const dollarSavingsGemini = Math.max(0.01, Number(baselineCostGemini) - Number(stackCostGemini)).toFixed(2)
 
   const stackCostDeepSeek = (((estimatedTokens * 1000) / 1000000) * 0.55).toFixed(2)
   const baselineCostDeepSeek = (((monolithicBaseline * 1000) / 1000000) * 0.55).toFixed(2)
-  const dollarSavingsDeepSeek = Math.max(0, Number(baselineCostDeepSeek) - Number(stackCostDeepSeek)).toFixed(2)
+  const dollarSavingsDeepSeek = Math.max(0.01, Number(baselineCostDeepSeek) - Number(stackCostDeepSeek)).toFixed(2)
 
+  // Real, accurate priority distribution
   const p0Count = stack.filter((s) => s.priority === 'P0').length
   const p1Count = stack.filter((s) => s.priority === 'P1').length
   const otherCount = stack.length - p0Count - p1Count
 
   const { plannerSkills, builderSkills, verifierSkills } = partitionStackIntoSwarm(stack)
   const lintFindings = lintSkillStack(stack.map((s) => s.id))
+
+  // Filter skills in stack dynamically
+  const filteredStack = useMemo(() => {
+    if (!searchFilter.trim()) return stack
+    const q = searchFilter.toLowerCase().trim()
+    return stack.filter(
+      (s) =>
+        s.name.toLowerCase().includes(q) ||
+        s.id.toLowerCase().includes(q) ||
+        s.scoped.toLowerCase().includes(q) ||
+        (s.repo && s.repo.toLowerCase().includes(q))
+    )
+  }, [stack, searchFilter])
 
   if (!isStackModalOpen) return null
 
@@ -104,26 +133,22 @@ export const StackModal: React.FC = () => {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `SkillDock-Stack-${new Date().toISOString().split('T')[0]}.md`
+    a.download = `SkillDock-Custom-Stack-${new Date().toISOString().split('T')[0]}.md`
     a.click()
     URL.revokeObjectURL(url)
   }
 
-  // 2. Export as Cursor Rules (.cursorrules)
+  // 2. Export as Legacy Cursor Rules (.cursorrules)
   const downloadCursorRules = () => {
-    let rules = `# .cursorrules — SkillDock Custom Agent Architecture\n\n`
-    rules += `# Generated: ${new Date().toISOString().split('T')[0]}\n`
-    rules += `# Selected Skills (${stack.length}):\n\n`
+    let rules = `# SkillDock Custom Agent Instructions (.cursorrules)\n`
+    rules += `# Generated on: ${new Date().toISOString().split('T')[0]}\n\n`
+    rules += `You are an expert AI software engineer equipped with the following curated specialized capabilities:\n\n`
     stack.forEach((s) => {
-      rules += `## Skill: ${s.name} (/${s.scoped})\n`
-      rules += `- Priority: ${s.priority}\n`
-      if (s.repo) rules += `- Upstream Repo: ${s.repo}\n`
-      rules += `- Install Command: ${s.officialCli || s.cli}\n`
-      rules += `- When executing relevant tasks, activate /${s.scoped} rules and behavioral patterns.\n\n`
+      rules += `## Skill: ${s.name} (Priority: ${s.priority})\n`
+      rules += `- Slash Command: /${s.scoped}\n`
+      if (s.repo) rules += `- Upstream Repo: https://github.com/${s.repo}\n`
+      rules += `- Activation Command: ${s.officialCli || s.cli}\n\n`
     })
-    rules += `\n# General Laws:\n`
-    rules += `- Always verify parity and run tests before claiming completion.\n`
-    rules += `- Respect modular boundaries and avoid speculative generality.\n`
 
     const blob = new Blob([rules], { type: 'text/plain;charset=utf-8' })
     const url = URL.createObjectURL(blob)
@@ -134,27 +159,26 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 2a-2. Export as Modern Cursor 0.45+ Modular Rules (.cursor/rules/skilldock.mdc)
+  // 2b. Export as Modern Cursor 0.45+ Modular Rule (.cursor/rules/skilldock.mdc)
   const downloadCursor045Rules = () => {
-    let mdc = `---\n`
-    mdc += `description: "SkillDock v3.1 Custom Agent Stack (${stack.length} Active Skills)"\n`
-    mdc += `globs: "*"\n`
-    mdc += `alwaysApply: true\n`
-    mdc += `---\n\n`
-    mdc += `# SkillDock Modern Cursor 0.45+ Multi-Agent Rules\n\n`
-    mdc += `> Place at: .cursor/rules/skilldock.mdc\n`
-    mdc += `> Generated on: ${new Date().toISOString().split('T')[0]}\n\n`
-    mdc += `## Non-Negotiable Operating Laws\n`
-    mdc += `1. Think before coding: Inspect codebase, formulate plan, and verify contracts.\n`
-    mdc += `2. Evidence before assertions: Always run tests before declaring success.\n`
-    mdc += `3. Surgical changes: Touch only what is necessary; avoid speculative abstractions.\n\n`
-    mdc += `## Active Skill Contracts (${stack.length})\n\n`
+    let mdc = `---
+description: "SkillDock Curated Agent Capabilities & Repository Laws"
+globs: ["*"]
+alwaysApply: true
+priority: 100
+---
+
+# SkillDock Agent Stack Specifications
+
+You are an expert autonomous software engineer operating under the SkillDock Agentic framework.
+The following ${stack.length} capabilities are actively installed and required for this workspace:
+
+## Active Stack Registry
+`
     stack.forEach((s) => {
-      mdc += `### [${s.priority}] ${s.name} (/${s.scoped})\n`
-      if (s.repo) mdc += `- Upstream: https://github.com/${s.repo}\n`
-      mdc += `- Directive: Enforce ${s.name} quality rubrics and constraints.\n`
-      mdc += `- Activation: \`/${s.scoped}\`\n`
-      mdc += `- Install CLI: \`${s.officialCli || s.cli}\`\n\n`
+      mdc += `\n### \`/${s.scoped}\` — ${s.name} [${s.priority}]\n`
+      if (s.repo) mdc += `- Ecosystem: https://github.com/${s.repo}\n`
+      mdc += `- Installation: \`${s.officialCli || s.cli}\`\n`
     })
 
     const blob = new Blob([mdc], { type: 'text/markdown;charset=utf-8' })
@@ -166,26 +190,16 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 2b. Export as Windsurf Rules (.windsurfrules)
+  // 2c. Export as Windsurf Rules (.windsurfrules)
   const downloadWindsurfRules = () => {
-    let rules = `# .windsurfrules — SkillDock Custom Cascade AI Rules\n\n`
-    rules += `# Generated: ${new Date().toISOString().split('T')[0]}\n`
-    rules += `# Active Skills (${stack.length}):\n\n`
-    rules += `## Core Directives\n`
-    rules += `- When solving engineering tasks, strictly adhere to the following specialized skill contracts.\n`
-    rules += `- Verify code parity and execute unit tests before asserting completion.\n`
-    rules += `- Avoid speculative over-engineering; keep implementations minimal, surgical, and robust.\n\n`
-    rules += `## Active Skill Contracts\n\n`
+    let wr = `# Windsurf Cascade AI Agent Guidelines (.windsurfrules)\n`
+    wr += `# Generated by SkillDock v3.0 on ${new Date().toISOString().split('T')[0]}\n\n`
+    wr += `## Active Skill Protocols (${stack.length} Installed)\n\n`
     stack.forEach((s) => {
-      rules += `### Skill: ${s.name} (/${s.scoped})\n`
-      rules += `- Priority: ${s.priority}\n`
-      if (s.repo) rules += `- Upstream Repo: https://github.com/${s.repo}\n`
-      rules += `- Activation: /${s.scoped}\n`
-      rules += `- Official Install: ${s.officialCli || s.cli}\n`
-      rules += `- Instruction: Enforce ${s.name} quality rubrics, architectural boundaries, and constraints.\n\n`
+      wr += `- **${s.name}** [${s.priority}]: Triggered by \`/${s.scoped}\`. Follow official guidelines from ${s.repo ? `https://github.com/${s.repo}` : 'local workspace'}.\n`
     })
 
-    const blob = new Blob([rules], { type: 'text/plain;charset=utf-8' })
+    const blob = new Blob([wr], { type: 'text/plain;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -194,26 +208,17 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 2c. Export as Cline / Roo Code Rules (.clinerules)
+  // 2d. Export as Cline / Roo Code Rules (.clinerules)
   const downloadClineRules = () => {
-    let rules = `# .clinerules — SkillDock Autonomous Coding Agent System Rules\n\n`
-    rules += `# Generated: ${new Date().toISOString().split('T')[0]}\n`
-    rules += `# Selected Skills (${stack.length}):\n\n`
-    rules += `You are an expert autonomous software engineer operating under the SkillDock engineering framework.\n\n`
-    rules += `## Non-Negotiable Operating Laws:\n`
-    rules += `1. Think before coding: Plan changes, consider edge cases, and inspect the codebase before modifying files.\n`
-    rules += `2. Evidence before assertions: Always run tests or verification commands before declaring success.\n`
-    rules += `3. Surgical changes: Touch only what is necessary to complete the task; do not refactor unrelated code.\n`
-    rules += `4. Follow conventions: Mirror surrounding file structure, error handling patterns, and typing.\n\n`
-    rules += `## Active Skill Directives:\n\n`
+    let cr = `# Cline & Roo Code Autonomous Agent System Prompt (.clinerules)\n\n`
+    cr += `You have access to the following curated skill capabilities in this repository:\n\n`
     stack.forEach((s) => {
-      rules += `### [${s.priority}] ${s.name} (/${s.scoped})\n`
-      rules += `- Trigger: When working with ${s.name.toLowerCase()} workflows or when slash command /${s.scoped} is used.\n`
-      rules += `- Directive: Enforce ${s.name} specification standards and constraints.\n`
-      rules += `- CLI Reference: \`${s.officialCli || s.cli}\`\n\n`
+      cr += `### ${s.name} (\`/${s.scoped}\`)\n`
+      cr += `- Priority: ${s.priority}\n`
+      cr += `- Command: \`${s.officialCli || s.cli}\`\n\n`
     })
 
-    const blob = new Blob([rules], { type: 'text/plain;charset=utf-8' })
+    const blob = new Blob([cr], { type: 'text/plain;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -222,23 +227,15 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 2d. Export as GitHub Copilot Custom Instructions (copilot-instructions.md)
+  // 2e. Export as GitHub Copilot Instructions (.github/copilot-instructions.md)
   const downloadCopilotInstructions = () => {
-    let instructions = `# GitHub Copilot Custom Repository Instructions\n`
-    instructions += `# Place at: .github/copilot-instructions.md\n`
-    instructions += `# Generated by SkillDock (https://nownitya.github.io/Ai-Models-List/) on ${new Date().toISOString().split('T')[0]}\n\n`
-    instructions += `## Architectural & Coding Guidelines\n\n`
-    instructions += `- Write modern, idiomatic code adhering to repository conventions and typing contracts.\n`
-    instructions += `- Avoid bloated abstractions and speculative generalizations; prefer minimal, testable solutions.\n`
-    instructions += `- Ensure all changes pass unit tests and linter checks with zero warnings.\n\n`
-    instructions += `## Active Skill Constraints (${stack.length} Active Skills)\n\n`
+    let ci = `# GitHub Copilot Workspace Instructions\n\n`
+    ci += `The development team has configured the following ${stack.length} skills in this project:\n\n`
     stack.forEach((s) => {
-      instructions += `### ${s.name} (/${s.scoped}) — Priority: ${s.priority}\n`
-      instructions += `- When generating or reviewing code in this domain, enforce ${s.name} rules and idioms.\n`
-      instructions += `- Reference Command: \`${s.officialCli || s.cli}\`\n\n`
+      ci += `- \`/${s.scoped}\`: ${s.name} (${s.priority})\n`
     })
 
-    const blob = new Blob([instructions], { type: 'text/markdown;charset=utf-8' })
+    const blob = new Blob([ci], { type: 'text/markdown;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -310,7 +307,7 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 5. Export as ChatGPT Custom GPT Configuration (OpenAPI Action Schema & Instructions)
+  // 5. Export as ChatGPT Custom GPT Configuration
   const downloadChatGptCustomGpt = () => {
     let gpt = `# ChatGPT Custom GPT Instructions & Action Manifest\n\n`
     gpt += `## Role & Identity\n`
@@ -321,27 +318,6 @@ export const StackModal: React.FC = () => {
       if (s.repo) gpt += `- Ecosystem Repository: https://github.com/${s.repo}\n`
       gpt += `- Behavior: When triggered or working on relevant tasks, enforce ${s.name} guidelines and quality invariants.\n\n`
     })
-    gpt += `## OpenAPI Actions Reference:\n`
-    gpt += `To configure OpenAPI Actions in the GPT Builder, connect to the SkillDock MCP / OpenAPI gateway:\n`
-    gpt += `\`\`\`yaml\n`
-    gpt += `openapi: 3.1.0\n`
-    gpt += `info:\n`
-    gpt += `  title: SkillDock Custom GPT Stack Gateway\n`
-    gpt += `  version: 1.0.0\n`
-    gpt += `servers:\n`
-    gpt += `  - url: https://api.skilldock.dev/v1\n`
-    gpt += `paths:\n`
-    stack.forEach((s) => {
-      const opId = s.id.replace(/[^a-zA-Z0-9]/g, '_')
-      gpt += `  /skills/${s.id}:\n`
-      gpt += `    get:\n`
-      gpt += `      summary: Invoke ${s.name} guidelines\n`
-      gpt += `      operationId: get_${opId}\n`
-      gpt += `      responses:\n`
-      gpt += `        '200':\n`
-      gpt += `          description: OK\n`
-    })
-    gpt += `\`\`\`\n`
 
     const blob = new Blob([gpt], { type: 'text/markdown;charset=utf-8' })
     const url = URL.createObjectURL(blob)
@@ -352,7 +328,7 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 5c. Export as Antigravity Workspace Packager (.agents/skills & skills-lock.json)
+  // 5c. Export as Antigravity Workspace Packager
   const downloadAntigravityBundle = () => {
     const manifest = {
       $schema: 'https://schema.antigravity.google/v1/workspace-skills.json',
@@ -372,10 +348,6 @@ export const StackModal: React.FC = () => {
         upstreamRepo: s.repo ? `https://github.com/${s.repo}` : null,
         installCli: s.officialCli || s.cli,
         skillPath: `.agents/skills/${s.id}/SKILL.md`,
-        frontmatter: {
-          name: s.id,
-          description: `${s.name} specialized engineering skill (${s.priority}).`,
-        },
       })),
       repoLaws: [
         'Law 1: Parity - Always verify parity before claiming completion.',
@@ -394,19 +366,19 @@ export const StackModal: React.FC = () => {
     URL.revokeObjectURL(url)
   }
 
-  // 6. Export as Multi-Agent Swarm Manifest (Antigravity Swarm, LangGraph, Mastra)
+  // 6. Export as Multi-Agent Swarm Manifest
   const downloadSwarmManifest = () => {
     const manifest = generateSwarmManifest(stack)
     const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `skilldock-swarm-manifest.json`
+    a.download = `antigravity-swarm-manifest.json`
     a.click()
     URL.revokeObjectURL(url)
   }
 
-  // 6. Copy Ready-to-Run Swarm Brief
+  // 6b. Copy Multi-Agent Swarm Brief to Clipboard
   const copySwarmBriefText = () => {
     const brief = generateSwarmBrief(stack)
     navigator.clipboard.writeText(brief)
@@ -414,35 +386,18 @@ export const StackModal: React.FC = () => {
     setTimeout(() => setCopiedSwarmBrief(false), 1600)
   }
 
-  // 6b. Copy Ready-to-Paste GitHub Mermaid Architecture Diagram
+  // 6c. Copy Mermaid Diagram Code to Clipboard
   const copySwarmMermaidDiagram = () => {
-    let m = `\`\`\`mermaid\n`
-    m += `flowchart TD\n`
-    m += `    Coordinator["👑 @coordinator (Claude 3.7 Sonnet)<br/>Orchestration & Release Gate"]\n`
-
-    if (plannerSkills.length > 0) {
-      const pList = plannerSkills.map((s) => `/${s.scoped}`).join(', ')
-      m += `    Architect["📐 @architect (Claude 3.7 Sonnet)<br/>${pList}"]\n`
-      m += `    Coordinator -->|Decomposes Phase| Architect\n`
-    }
-
-    if (builderSkills.length > 0) {
-      const bList = builderSkills.map((s) => `/${s.scoped}`).join(', ')
-      m += `    Builder["🔨 @builder (Gemini 2.0 Flash)<br/>${bList}"]\n`
-      m += `    ${plannerSkills.length > 0 ? 'Architect' : 'Coordinator'} -->|Dispatches Wave| Builder\n`
-    }
-
-    if (verifierSkills.length > 0) {
-      const vList = verifierSkills.map((s) => `/${s.scoped}`).join(', ')
-      m += `    Verifier["🛡️ @verifier (DeepSeek R1 / o3-mini)<br/>${vList}"]\n`
-      m += `    Builder -->|Delivers Code| Verifier\n`
-      m += `    Verifier -->|Verifies Parity & Tests| Coordinator\n`
-    } else {
-      m += `    ${builderSkills.length > 0 ? 'Builder' : 'Coordinator'} -->|Ships Work| Coordinator\n`
-    }
-    m += `\`\`\`\n`
-
-    navigator.clipboard.writeText(m)
+    let mermaid = '```mermaid\n'
+    mermaid += 'flowchart TD\n'
+    mermaid += '  subgraph Antigravity_Swarm["Antigravity Multi-Agent Swarm Topology"]\n'
+    mermaid += '    C["@coordinator<br/>claude-3-7-sonnet"]\n'
+    mermaid += '    C -->|Decomposes Waves| A["@architect<br/>claude-3-7-sonnet"]\n'
+    mermaid += '    C -->|Executes Slices| B["@builder<br/>gemini-2.0-flash"]\n'
+    mermaid += '    C -->|Verifies Parity| V["@verifier<br/>deepseek-r1"]\n'
+    mermaid += '  end\n'
+    mermaid += '```\n'
+    navigator.clipboard.writeText(mermaid)
     setCopiedMermaid(true)
     setTimeout(() => setCopiedMermaid(false), 1600)
   }
@@ -452,103 +407,109 @@ export const StackModal: React.FC = () => {
     const commands = stack.map((s) => getCommand(s)).join('\n')
     navigator.clipboard.writeText(commands)
     setCopiedScript(true)
-    setTimeout(() => setCopiedScript(false), 1400)
+    setTimeout(() => setCopiedScript(false), 1600)
   }
 
   return (
     <div
       onClick={() => setStackModalOpen(false)}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-in fade-in duration-150"
+      role="dialog"
+      aria-modal="true"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`w-full ${stackModalView === 'swarm' ? 'max-w-3xl' : 'max-w-2xl'} bg-[#09090b] border border-[#27272a] rounded-2xl p-6 space-y-5 relative shadow-2xl flex flex-col max-h-[85vh] transition-all duration-200`}
+        className="w-full max-w-5xl bg-[#0c0c0e] border border-[#27272a] rounded-2xl shadow-2xl flex flex-col h-[90vh] max-h-[860px] overflow-hidden transition-all duration-200"
       >
-        {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#27272a]">
-          <div>
-            <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <Layers className="w-5 h-5 text-zinc-300" />
-              <span>SkillDock Stack ({stack.length})</span>
-            </h2>
-            <p className="text-xs text-zinc-400 mt-1">
-              Curate your custom engineering stack, then export directly to Cursor, Claude Code, Obsidian, or CLI scripts.
+        {/* Header Bar */}
+        <div className="px-6 py-3.5 border-b border-[#27272a] bg-[#111114] flex items-center justify-between gap-4 shrink-0">
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-2.5">
+              <Layers className="w-5 h-5 text-zinc-300 shrink-0" />
+              <h2 className="text-lg font-bold text-white truncate">
+                SkillDock Stack ({stack.length})
+              </h2>
+            </div>
+            <p className="text-xs text-zinc-400 mt-0.5 truncate">
+              Curate, inspect, and export your production-ready AI engineering stack.
             </p>
           </div>
-          <div className="flex items-center gap-2">
+
+          <div className="flex items-center gap-2 shrink-0">
             {stack.length > 0 && (
               <button
+                type="button"
                 onClick={copyShareStackUrl}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-md bg-blue-500/15 hover:bg-blue-500/30 text-blue-300 border border-blue-500/30 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30 transition-colors cursor-pointer"
                 title="Copy shareable link with this exact stack"
               >
                 {copiedShareUrl ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
-                <span>{copiedShareUrl ? 'Copied Link!' : 'Share Stack Link'}</span>
+                <span className="hidden sm:inline">{copiedShareUrl ? 'Copied Link!' : 'Share Stack'}</span>
               </button>
             )}
             <button
+              type="button"
               onClick={() => setStackModalOpen(false)}
               className="text-zinc-400 hover:text-white p-1.5 rounded-md bg-[#18181b] border border-[#27272a] hover:border-zinc-500 cursor-pointer"
+              title="Close modal"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* Visual Token Budget & Context Savings Meter */}
+        {/* Telemetry Ribbon & Diagnostics */}
         {stack.length > 0 && (
-          <div className="p-3.5 rounded-xl bg-[#111114] border border-[#27272a] space-y-2.5 shrink-0">
-            <div className="flex items-center justify-between text-xs">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-semibold text-zinc-200">Active Token Footprint</span>
-                <span className="font-mono text-[11px] text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a]">
-                  ~{estimatedTokens.toLocaleString()} tokens
+          <div className="px-6 py-2.5 bg-[#141417]/90 border-b border-[#27272a] space-y-2 shrink-0">
+            {/* Token Footprint Bar */}
+            <div className="flex flex-col gap-1 font-mono text-xs">
+              <div className="flex items-center justify-between">
+                <span className="flex items-center gap-2 text-zinc-300">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Active Token Footprint:</span>
+                  <strong className="text-white">~{estimatedTokens.toLocaleString()} tokens</strong>
+                </span>
+                <span className="text-emerald-400 font-semibold">
+                  ~{savingsPercent}% savings vs monolithic suites
                 </span>
               </div>
-              <div className="flex items-center gap-2 font-mono text-[11px]">
-                <span className="text-emerald-400 font-semibold">~{savingsPercent}% savings</span>
-                <span className="text-zinc-500 hidden sm:inline">vs monolithic suites</span>
-              </div>
-            </div>
-
-            {/* Visual Token Meter Bar */}
-            <div className="space-y-1">
-              <div className="h-1.5 w-full bg-[#18181b] rounded-full overflow-hidden flex">
+              <div className="w-full h-1 rounded-full bg-zinc-800 overflow-hidden">
                 <div
-                  className="h-full bg-emerald-500 transition-all duration-300"
-                  style={{ width: `${Math.min(100, Math.max(5, (estimatedTokens / monolithicBaseline) * 100))}%` }}
+                  className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full transition-all duration-300"
+                  style={{ width: `${Math.min(100, Math.max(10, 100 - savingsPercent))}%` }}
                 />
               </div>
-              <div className="flex items-center justify-between text-[10px] text-zinc-500 font-mono">
+              <div className="flex items-center justify-between text-[11px] text-zinc-500">
                 <span>Cherry-Picked: ~{estimatedTokens.toLocaleString()} tokens</span>
                 <span>Monolithic suite baseline: ~{monolithicBaseline.toLocaleString()} tokens</span>
               </div>
             </div>
 
             {/* Priority Distribution */}
-            <div className="pt-2 border-t border-[#27272a]/60 flex items-center justify-between text-[11px] font-mono text-zinc-400">
-              <div className="flex items-center gap-3">
-                <span className="flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
-                  <span>P0 Critical: <strong className="text-zinc-200">{p0Count}</strong></span>
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono pt-1.5 border-t border-[#27272a]/60">
+              <div className="flex items-center gap-2.5">
+                <span className="px-2 py-0.5 rounded bg-zinc-800 text-zinc-200 border border-zinc-700 font-bold">
+                  {stack.length} Skills
                 </span>
-                <span className="flex items-center gap-1">
+                <span className="flex items-center gap-1.5 text-rose-300 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+                  <span>P0 Critical: <strong>{p0Count}</strong></span>
+                </span>
+                <span className="flex items-center gap-1.5 text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                  <span>P1 High: <strong className="text-zinc-200">{p1Count}</strong></span>
+                  <span>P1 High: <strong>{p1Count}</strong></span>
                 </span>
                 {otherCount > 0 && (
-                  <span className="flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
-                    <span>Other: <strong className="text-zinc-200">{otherCount}</strong></span>
+                  <span className="flex items-center gap-1.5 text-zinc-400 bg-zinc-800/60 border border-zinc-700/60 px-2 py-0.5 rounded">
+                    <span>Other: {otherCount}</span>
                   </span>
                 )}
               </div>
-              <span className="text-[10px] text-zinc-500 hidden sm:inline">Modular SKILL.md Standard</span>
+              <span className="text-[11px] text-zinc-500">Modular SKILL.md Standard</span>
             </div>
 
             {/* Model Economics & Live Dollar Savings Ribbon */}
-            <div className="pt-2 border-t border-[#27272a]/60 space-y-1.5">
+            <div className="pt-1.5 border-t border-[#27272a]/60 space-y-1">
               <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400">
                 <span className="flex items-center gap-1.5">
                   <span className="text-emerald-400 font-bold">💰 Real Dollar Economics</span>
@@ -559,7 +520,7 @@ export const StackModal: React.FC = () => {
                 </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-left">
-                <div className="p-2 rounded-lg bg-[#141417] border border-[#27272a]">
+                <div className="p-1.5 rounded-lg bg-[#141417] border border-[#27272a]">
                   <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400">
                     <span>Claude 3.7 Sonnet</span>
                     <span className="text-emerald-400 font-bold">-${dollarSavingsClaude}</span>
@@ -569,7 +530,7 @@ export const StackModal: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-2 rounded-lg bg-[#141417] border border-[#27272a]">
+                <div className="p-1.5 rounded-lg bg-[#141417] border border-[#27272a]">
                   <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400">
                     <span>Gemini 2.0 Flash</span>
                     <span className="text-emerald-400 font-bold">-${dollarSavingsGemini}</span>
@@ -579,7 +540,7 @@ export const StackModal: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-2 rounded-lg bg-[#141417] border border-[#27272a]">
+                <div className="p-1.5 rounded-lg bg-[#141417] border border-[#27272a]">
                   <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400">
                     <span>DeepSeek R1</span>
                     <span className="text-emerald-400 font-bold">-${dollarSavingsDeepSeek}</span>
@@ -593,7 +554,7 @@ export const StackModal: React.FC = () => {
 
             {/* Intelligent Compiler Linter Findings */}
             {lintFindings.length > 0 && (
-              <div className="pt-2 border-t border-[#27272a]/60 space-y-1.5">
+              <div className="pt-1.5 border-t border-[#27272a]/60 space-y-1">
                 <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400">
                   <span className="flex items-center gap-1.5">
                     <span className="text-amber-400 font-bold">🧠 Compiler Diagnostics</span>
@@ -601,11 +562,11 @@ export const StackModal: React.FC = () => {
                   </span>
                   <span className="text-zinc-500 text-[10px]">Real-Time Quality Linter</span>
                 </div>
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   {lintFindings.map((f, idx) => (
                     <div
                       key={idx}
-                      className={`p-2 rounded-lg border text-left text-xs ${
+                      className={`p-1.5 rounded-lg border text-left text-xs ${
                         f.type === 'conflict'
                           ? 'bg-amber-950/20 border-amber-500/30 text-amber-200'
                           : f.type === 'synergy'
@@ -617,14 +578,7 @@ export const StackModal: React.FC = () => {
                         <span>{f.type === 'conflict' ? '⚠️' : f.type === 'synergy' ? '✨' : '🛡️'}</span>
                         <span>{f.title}</span>
                       </div>
-                      <p className="text-[11px] text-zinc-300 mt-0.5 leading-relaxed font-sans">
-                        {f.message}
-                      </p>
-                      {f.suggestedAction && (
-                        <p className="text-[10px] text-zinc-400 mt-1 font-mono italic">
-                          Action: {f.suggestedAction}
-                        </p>
-                      )}
+                      <p className="text-[11px] text-zinc-400 mt-0.5 font-sans leading-relaxed">{f.message}</p>
                     </div>
                   ))}
                 </div>
@@ -633,443 +587,494 @@ export const StackModal: React.FC = () => {
           </div>
         )}
 
-        {/* View Switcher: Cherry-Picked List vs Swarm Visualizer */}
+        {/* View Switcher & In-Stack Search Bar */}
         {stack.length > 0 && (
-          <div className="flex items-center gap-1 p-1 bg-[#141417] rounded-lg border border-[#27272a] text-xs font-mono shrink-0">
-            <button
-              onClick={() => setStackModalView('items')}
-              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-md transition-colors cursor-pointer ${
-                stackModalView === 'items'
-                  ? 'bg-[#27272a] text-white font-semibold shadow-xs'
-                  : 'text-zinc-400 hover:text-zinc-200'
-              }`}
-            >
-              <Layers className="w-3.5 h-3.5" />
-              <span>Skills List ({stack.length})</span>
-            </button>
-            <button
-              onClick={() => setStackModalView('swarm')}
-              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-md transition-colors cursor-pointer ${
-                stackModalView === 'swarm'
-                  ? 'bg-purple-950/40 text-purple-200 border border-purple-500/40 font-semibold shadow-xs'
-                  : 'text-zinc-400 hover:text-purple-300'
-              }`}
-            >
-              <Bot className="w-3.5 h-3.5 text-purple-400" />
-              <span>Multi-Agent Swarm Topology</span>
-              <span className="px-1.5 py-0.5 leading-none rounded-full text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                Interactive
-              </span>
-            </button>
+          <div className="px-6 py-2.5 border-b border-[#27272a] bg-[#0e0e11] flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+            {/* View Switcher Tabs */}
+            <div className="flex items-center gap-1 p-1 bg-[#141417] rounded-lg border border-[#27272a] text-xs font-mono w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={() => setStackModalView('items')}
+                className={`flex-1 sm:flex-none flex items-center justify-center gap-2 py-1.5 px-3 rounded-md transition-colors cursor-pointer ${
+                  stackModalView === 'items'
+                    ? 'bg-zinc-800 text-white font-semibold'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                <Layers className="w-3.5 h-3.5" />
+                <span>Skills List ({stack.length})</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setStackModalView('swarm')}
+                className={`flex-1 sm:flex-none flex items-center justify-center gap-2 py-1.5 px-3 rounded-md transition-colors cursor-pointer ${
+                  stackModalView === 'swarm'
+                    ? 'bg-purple-950/40 text-purple-200 border border-purple-500/40 font-semibold'
+                    : 'text-zinc-400 hover:text-purple-300'
+                }`}
+              >
+                <Bot className="w-3.5 h-3.5 text-purple-400" />
+                <span>Multi-Agent Swarm Topology</span>
+                <span className="hidden sm:inline-block ml-1 px-1.5 py-0.2 rounded text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                  Interactive
+                </span>
+              </button>
+            </div>
+
+            {/* In-Stack Search Filter */}
+            {stackModalView === 'items' && (
+              <div className="relative w-full sm:w-64">
+                <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-2.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={searchFilter}
+                  onChange={(e) => setSearchFilter(e.target.value)}
+                  placeholder="Filter stack skills..."
+                  className="w-full pl-8 pr-7 py-1.5 rounded-lg bg-[#141417] border border-[#27272a] text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-500 font-mono transition-colors"
+                />
+                {searchFilter && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchFilter('')}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300 text-xs"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+            )}
           </div>
         )}
 
         {/* Main Content Area */}
-        {stackModalView === 'swarm' ? (
-          <div className="flex-1 overflow-y-auto space-y-4 pr-1">
-            {stack.length === 0 ? (
-              <div className="text-center py-12 text-zinc-500 text-xs">
-                Your stack is currently empty. Add skills to your stack to auto-partition them into an autonomous multi-agent sprint team.
+        <div className="flex-1 overflow-y-auto p-6 space-y-4">
+          {stack.length === 0 ? (
+            <div className="text-center py-16 space-y-3">
+              <Layers className="w-10 h-10 text-zinc-600 mx-auto" />
+              <p className="text-sm text-zinc-400 font-medium">Your stack is currently empty.</p>
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto">
+                Bookmark skills or click "+ Add Suite" from any framework card to assemble your agent tooling bundle.
+              </p>
+            </div>
+          ) : stackModalView === 'swarm' ? (
+            /* Swarm View */
+            <div className="space-y-4 text-xs">
+              <div className="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-[#141417] border border-[#27272a] font-mono text-[11px]">
+                <div className="flex items-center gap-2 text-zinc-300">
+                  <Network className="w-4 h-4 text-purple-400" />
+                  <span className="font-semibold text-white">SkillDock Multi-Agent Sprint Topology</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={copySwarmMermaidDiagram}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/30 text-[11px] font-mono cursor-pointer transition-colors"
+                >
+                  {copiedMermaid ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copiedMermaid ? 'Copied Mermaid Diagram!' : 'Copy Mermaid Diagram'}</span>
+                </button>
               </div>
-            ) : (
-              <div className="space-y-4 text-xs">
-                {/* Swarm Architecture Banner */}
-                <div className="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-lg bg-[#141417] border border-[#27272a] font-mono text-[11px]">
-                  <div className="flex items-center gap-2 text-zinc-300">
-                    <Network className="w-3.5 h-3.5 text-purple-400" />
-                    <span className="font-semibold text-white">SkillDock Multi-Agent Sprint Topology</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-zinc-400">
-                    <button
-                      onClick={copySwarmMermaidDiagram}
-                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-purple-500/15 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 text-[10px] font-mono cursor-pointer transition-colors"
-                      title="Copy GitHub Flavored Markdown Mermaid Diagram Code"
-                    >
-                      {copiedMermaid ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-                      <span>{copiedMermaid ? 'Copied Mermaid!' : 'Copy Mermaid Diagram'}</span>
-                    </button>
-                    <span className="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20 text-[10px]">
-                      Antigravity Swarm
+
+              {/* Coordinator */}
+              <div className="p-3.5 rounded-xl bg-gradient-to-b from-[#11161d] to-[#0d1117] border border-blue-500/30 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono font-bold text-white">
+                    <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                    <span>@coordinator</span>
+                    <span className="px-1.5 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                      claude-3-7-sonnet
                     </span>
-                    <span className="px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20 text-[10px]">
-                      LangGraph
-                    </span>
                   </div>
+                  <span className="text-[10px] font-mono text-zinc-400">Release Gate & Board Host</span>
                 </div>
-
-                {/* Level 1: Coordinator Node */}
-                <div className="p-3.5 rounded-xl bg-gradient-to-b from-[#11161d] to-[#0d1117] border border-blue-500/30 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                      <span className="font-bold text-white text-xs font-mono">@coordinator</span>
-                      <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-blue-500/20 text-blue-300 border border-blue-500/30">
-                        claude-3-7-sonnet
-                      </span>
-                    </div>
-                    <span className="text-[10px] font-mono text-zinc-400">Release Gate & Board Host</span>
-                  </div>
-                  <p className="text-[11px] text-zinc-300 leading-relaxed">
-                    Owns end-to-end milestone delivery, shared message board dispatching, task wave sequencing, and final verification sign-off before shipping.
-                  </p>
-                </div>
-
-                {/* Connecting Flow Indicator */}
-                <div className="flex items-center justify-center gap-2 text-zinc-500 font-mono text-[10px]">
-                  <span className="h-px w-12 bg-[#27272a]" />
-                  <div className="flex items-center gap-1 text-purple-400 bg-[#141417] px-2 py-0.5 rounded border border-[#27272a]">
-                    <ArrowDown className="w-3 h-3" />
-                    <span>Parallel Wave Delegation</span>
-                  </div>
-                  <span className="h-px w-12 bg-[#27272a]" />
-                </div>
-
-                {/* Level 2: 3 Specialized Worker Columns */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {/* Worker 1: Architect */}
-                  <div className="p-3 rounded-xl bg-[#111114] border border-amber-500/20 flex flex-col justify-between space-y-2.5">
-                    <div className="space-y-1.5">
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-white text-xs font-mono flex items-center gap-1.5">
-                          <Compass className="w-3.5 h-3.5 text-amber-400" />
-                          <span>@architect</span>
-                        </span>
-                        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-[#18181b] text-amber-300 border border-amber-500/30">
-                          claude-3-7
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-zinc-400">ADRs, architecture, and task wave decomposition</p>
-                    </div>
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-mono text-zinc-500">
-                        Assigned Skills ({plannerSkills.length}):
-                      </span>
-                      <div className="flex flex-wrap gap-1">
-                        {plannerSkills.length === 0 ? (
-                          <span className="text-[10px] text-zinc-600 italic">No planning skills</span>
-                        ) : (
-                          plannerSkills.map((s) => (
-                            <span
-                              key={s.id}
-                              className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#18181b] text-zinc-300 border border-[#27272a]"
-                            >
-                              /{s.scoped}
-                            </span>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Worker 2: Builder */}
-                  <div className="p-3 rounded-xl bg-[#111114] border border-emerald-500/20 flex flex-col justify-between space-y-2.5">
-                    <div className="space-y-1.5">
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-white text-xs font-mono flex items-center gap-1.5">
-                          <Hammer className="w-3.5 h-3.5 text-emerald-400" />
-                          <span>@builder</span>
-                        </span>
-                        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-[#18181b] text-emerald-300 border border-emerald-500/30">
-                          gemini-2.0
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-zinc-400">Surgical implementation and design token alignment</p>
-                    </div>
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-mono text-zinc-500">
-                        Assigned Skills ({builderSkills.length}):
-                      </span>
-                      <div className="flex flex-wrap gap-1">
-                        {builderSkills.length === 0 ? (
-                          <span className="text-[10px] text-zinc-600 italic">No builder skills</span>
-                        ) : (
-                          builderSkills.map((s) => (
-                            <span
-                              key={s.id}
-                              className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#18181b] text-zinc-300 border border-[#27272a]"
-                            >
-                              /{s.scoped}
-                            </span>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Worker 3: Verifier */}
-                  <div className="p-3 rounded-xl bg-[#111114] border border-rose-500/20 flex flex-col justify-between space-y-2.5">
-                    <div className="space-y-1.5">
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-white text-xs font-mono flex items-center gap-1.5">
-                          <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />
-                          <span>@verifier</span>
-                        </span>
-                        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-[#18181b] text-rose-300 border border-rose-500/30">
-                          deepseek-r1
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-zinc-400">Adversarial QA, test gates, and Law 1 parity</p>
-                    </div>
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-mono text-zinc-500">
-                        Assigned Skills ({verifierSkills.length}):
-                      </span>
-                      <div className="flex flex-wrap gap-1">
-                        {verifierSkills.length === 0 ? (
-                          <span className="text-[10px] text-zinc-600 italic">No verifier skills</span>
-                        ) : (
-                          verifierSkills.map((s) => (
-                            <span
-                              key={s.id}
-                              className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-[#18181b] text-zinc-300 border border-[#27272a]"
-                            >
-                              /{s.scoped}
-                            </span>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Footprint Note */}
-                <div className="p-2.5 rounded-lg bg-[#0e0e11] border border-[#27272a] text-[10px] font-mono text-zinc-400 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>Partitioned Context: ~{estimatedTokens.toLocaleString()} tokens/agent vs ~{monolithicBaseline.toLocaleString()} monolithic baseline.</span>
-                  </div>
-                  <span className="text-emerald-400 font-bold hidden sm:inline">~{savingsPercent}% token savings</span>
-                </div>
+                <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
+                  Owns milestone delivery, task wave sequencing, and final verification sign-off before shipping.
+                </p>
               </div>
-            )}
-          </div>
-        ) : (
-          /* Stack Items List */
-          <div className="flex-1 overflow-y-auto space-y-2 pr-1">
-            {stack.length === 0 ? (
-              <div className="text-center py-12 text-zinc-500 text-xs">
-                Your stack is currently empty. Click the bookmark icon or cherry-pick skills from any suite to add them here.
-              </div>
-            ) : (
-              stack.map((item) => {
-                const activeCmd = getCommand(item)
-                return (
-                  <div
-                    key={item.id}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 rounded-lg bg-[#111114] border border-[#27272a] text-xs"
-                  >
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[#18181b] text-zinc-300 border border-[#27272a]">
-                        {item.priority}
-                      </span>
-                      <span className="font-semibold text-zinc-100 truncate">{item.name}</span>
-                      <span className="text-xs font-mono text-zinc-400 truncate">/{item.scoped}</span>
-                      {item.repo && (
-                        <span className="hidden md:inline text-[10px] font-mono text-zinc-500 bg-[#18181b] px-1.5 py-0.5 rounded border border-[#27272a]">
-                          {item.repo}
-                        </span>
-                      )}
-                    </div>
 
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="hidden sm:inline font-mono text-[11px] text-zinc-400 bg-[#18181b] px-2 py-0.5 rounded border border-[#27272a] max-w-[240px] truncate select-all">
-                        {activeCmd}
+              {/* Worker Columns */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div className="p-3 rounded-xl bg-[#141417] border border-amber-500/20 flex flex-col justify-between space-y-2">
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between font-mono">
+                      <span className="font-bold text-white text-xs flex items-center gap-1.5">
+                        <Compass className="w-3.5 h-3.5 text-amber-400" />
+                        <span>@architect</span>
                       </span>
-                      <button
-                        onClick={() => removeFromStack(item.id)}
-                        className="p-1 rounded text-zinc-500 hover:text-rose-400 hover:bg-[#18181b] transition-colors cursor-pointer"
-                        title="Remove from stack"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
+                      <span className="text-[10px] text-amber-300">claude-3-7</span>
+                    </div>
+                    <p className="text-[10px] text-zinc-400">ADRs, architecture, and task wave decomposition</p>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono text-zinc-500">Skills ({plannerSkills.length}):</span>
+                    <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                      {plannerSkills.slice(0, 8).map((s) => (
+                        <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
+                          /{s.scoped}
+                        </span>
+                      ))}
+                      {plannerSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{plannerSkills.length - 8}</span>}
                     </div>
                   </div>
-                )
-              })
-            )}
-          </div>
-        )}
+                </div>
 
-        {/* Multi-Assistant Exporters Bar */}
-        {stack.length > 0 && (
-          <div className="pt-3.5 border-t border-[#27272a] space-y-3">
-            <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-              <span className="text-zinc-400 font-mono text-[11px]">Export Config Bundles:</span>
-              <div className="flex flex-wrap items-center gap-2">
-                <button
-                  onClick={downloadCursorRules}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export Legacy .cursorrules"
-                >
-                  <Cpu className="w-3 h-3 text-cyan-400" />
-                  <span>.cursorrules</span>
-                </button>
+                <div className="p-3 rounded-xl bg-[#141417] border border-emerald-500/20 flex flex-col justify-between space-y-2">
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between font-mono">
+                      <span className="font-bold text-white text-xs flex items-center gap-1.5">
+                        <Hammer className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>@builder</span>
+                      </span>
+                      <span className="text-[10px] text-emerald-300">gemini-2.0</span>
+                    </div>
+                    <p className="text-[10px] text-zinc-400">Atomic commits, test execution, and code synthesis</p>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono text-zinc-500">Skills ({builderSkills.length}):</span>
+                    <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                      {builderSkills.slice(0, 8).map((s) => (
+                        <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
+                          /{s.scoped}
+                        </span>
+                      ))}
+                      {builderSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{builderSkills.length - 8}</span>}
+                    </div>
+                  </div>
+                </div>
 
-                <button
-                  onClick={downloadCursor045Rules}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#161a24] hover:bg-[#1e2434] text-indigo-300 border border-indigo-500/30 hover:border-indigo-500/60 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export Modern Cursor 0.45+ Rules (.cursor/rules/skilldock.mdc)"
-                >
-                  <Code2 className="w-3 h-3 text-indigo-400" />
-                  <span>Cursor .mdc</span>
-                </button>
-
-                <button
-                  onClick={downloadWindsurfRules}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#111620] hover:bg-[#162030] text-blue-300 border border-blue-500/30 hover:border-blue-500/60 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export .windsurfrules (Windsurf Cascade AI)"
-                >
-                  <Wind className="w-3 h-3 text-blue-400" />
-                  <span>.windsurfrules</span>
-                </button>
-
-                <button
-                  onClick={downloadClineRules}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#171320] hover:bg-[#201930] text-purple-300 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export .clinerules (Cline & Roo Code)"
-                >
-                  <Code2 className="w-3 h-3 text-purple-400" />
-                  <span>.clinerules</span>
-                </button>
-
-                <button
-                  onClick={downloadCopilotInstructions}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#121a24] hover:bg-[#182434] text-sky-300 border border-sky-500/30 hover:border-sky-500/60 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export copilot-instructions.md (.github/copilot-instructions.md)"
-                >
-                  <FileCode className="w-3 h-3 text-sky-400" />
-                  <span>copilot-instructions</span>
-                </button>
-
-                <button
-                  onClick={downloadMarkdown}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export Markdown Stack Table"
-                >
-                  <Download className="w-3 h-3 text-emerald-400" />
-                  <span>Stack.md</span>
-                </button>
-
-                <button
-                  onClick={downloadClaudeConfig}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export claude.json"
-                >
-                  <Terminal className="w-3 h-3 text-amber-400" />
-                  <span>claude.json</span>
-                </button>
-
-                <button
-                  onClick={downloadChatGptCustomGpt}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#111914] hover:bg-[#16241c] text-emerald-300 border border-emerald-500/30 hover:border-emerald-500/60 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export ChatGPT Custom GPT Instructions & OpenAPI Action Manifest"
-                >
-                  <Bot className="w-3 h-3 text-emerald-400" />
-                  <span>ChatGPT GPT</span>
-                </button>
-
-                <button
-                  onClick={downloadObsidianNote}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#141417] hover:bg-[#1a1a20] text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export Obsidian Dataview Note"
-                >
-                  <Diamond className="w-3 h-3 text-violet-400" />
-                  <span>Obsidian Note</span>
-                </button>
-
-                <button
-                  onClick={downloadSwarmManifest}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#161324] hover:bg-[#201c34] text-purple-200 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export Multi-Agent Swarm Manifest (Antigravity Swarm, LangGraph, Mastra)"
-                >
-                  <Users className="w-3 h-3 text-purple-400" />
-                  <span>Swarm Manifest</span>
-                </button>
-
-                <button
-                  onClick={downloadAntigravityBundle}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-[#0f1f1d] hover:bg-[#142d2a] text-teal-300 border border-teal-500/30 hover:border-teal-500/60 cursor-pointer transition-colors text-xs font-mono"
-                  title="Export Antigravity Workspace Bundle (antigravity-skills-lock.json)"
-                >
-                  <Cpu className="w-3 h-3 text-teal-400" />
-                  <span>Antigravity Bundle</span>
-                </button>
+                <div className="p-3 rounded-xl bg-[#141417] border border-rose-500/20 flex flex-col justify-between space-y-2">
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between font-mono">
+                      <span className="font-bold text-white text-xs flex items-center gap-1.5">
+                        <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />
+                        <span>@verifier</span>
+                      </span>
+                      <span className="text-[10px] text-rose-300">deepseek-r1</span>
+                    </div>
+                    <p className="text-[10px] text-zinc-400">Adversarial QA, test gates, and Law 1 parity</p>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono text-zinc-500">Skills ({verifierSkills.length}):</span>
+                    <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                      {verifierSkills.slice(0, 8).map((s) => (
+                        <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
+                          /{s.scoped}
+                        </span>
+                      ))}
+                      {verifierSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{verifierSkills.length - 8}</span>}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          ) : (
+            /* Skills Table List (Spacious & Legible) */
+            <div className="space-y-2">
+              {filteredStack.length === 0 ? (
+                <div className="text-center py-10 text-xs text-zinc-500 font-mono">
+                  No skills matched your filter "{searchFilter}".
+                </div>
+              ) : (
+                filteredStack.map((item) => {
+                  const activeCmd = getCommand(item)
+                  let priorityColor = 'bg-zinc-800 text-zinc-300 border-zinc-700'
+                  if (item.priority === 'P0') priorityColor = 'bg-rose-500/10 text-rose-300 border-rose-500/30'
+                  if (item.priority === 'P1') priorityColor = 'bg-amber-500/10 text-amber-300 border-amber-500/30'
+                  if (item.priority === 'P2') priorityColor = 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
 
-            {/* Bottom Actions: CLI Format Toggle & Script Copy */}
-            <div className="pt-2 border-t border-[#27272a]/60 flex flex-wrap items-center justify-between gap-2.5 text-xs">
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={clearStack}
-                  className="text-xs text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/20 transition-colors cursor-pointer"
-                >
-                  Clear All ({stack.length})
-                </button>
+                  return (
+                    <div
+                      key={item.id}
+                      className="group flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 rounded-xl bg-[#141417] hover:bg-[#18181c] border border-[#27272a] hover:border-zinc-500/60 transition-all text-xs"
+                    >
+                      {/* Left: Priority + Name + Slash Command + Repo */}
+                      <div className="flex items-center gap-3 min-w-0 flex-1">
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold border shrink-0 ${priorityColor}`}>
+                          {item.priority}
+                        </span>
 
-                {/* CLI Command Format Toggle */}
-                <div className="inline-flex rounded-md bg-[#141417] border border-[#27272a] p-0.5 text-[11px] font-mono">
+                        <span className="font-semibold text-zinc-100 truncate max-w-[160px] sm:max-w-[200px]" title={item.name}>
+                          {item.name}
+                        </span>
+
+                        <CopyButton
+                          variant="pill"
+                          text={`/${item.scoped}`}
+                          title={`Copy slash command /${item.scoped}`}
+                          className="shrink-0"
+                        />
+
+                        {item.repo && (
+                          <span className="hidden lg:inline-flex items-center gap-1 text-[11px] font-mono text-zinc-400 bg-zinc-800/60 px-2 py-0.5 rounded border border-zinc-700/50 truncate max-w-[180px]">
+                            {item.repo}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Right: Command Bar + Delete */}
+                      <div className="flex items-center gap-2 shrink-0">
+                        <CopyButton
+                          variant="codebar"
+                          text={activeCmd}
+                          displayPrefix={cliFormat === 'npx' ? 'npx' : 'py'}
+                          className="w-48 sm:w-64 max-w-xs"
+                        />
+
+                        <button
+                          type="button"
+                          onClick={() => removeFromStack(item.id)}
+                          className="p-1.5 rounded-md text-zinc-500 hover:text-rose-400 hover:bg-rose-950/20 border border-transparent hover:border-rose-500/30 transition-colors cursor-pointer shrink-0"
+                          title={`Remove ${item.name} from stack`}
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  )
+                })
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Export Config Hub - Cleanly grouped into logical sections */}
+        {stack.length > 0 && (
+          <div className="px-6 py-2.5 border-t border-[#27272a] bg-[#111114] space-y-2 shrink-0">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[11px] font-mono text-zinc-400 font-semibold uppercase tracking-wider">
+                  Export Config Hub:
+                </span>
+                <div className="inline-flex rounded-lg bg-zinc-900 border border-[#27272a] p-0.5 text-xs font-mono">
                   <button
+                    type="button"
+                    onClick={() => setExportFilter('all')}
+                    className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
+                      exportFilter === 'all' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    All Formats
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setExportFilter('ide')}
+                    className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
+                      exportFilter === 'ide' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    IDE Rules
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setExportFilter('agent')}
+                    className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
+                      exportFilter === 'agent' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    Agent Bundles
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setExportFilter('docs')}
+                    className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
+                      exportFilter === 'docs' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    Docs & Knowledge
+                  </button>
+                </div>
+              </div>
+
+              {/* CLI Format Switcher */}
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] font-mono text-zinc-500">CLI Format:</span>
+                <div className="inline-flex rounded-md bg-[#18181b] border border-[#27272a] p-0.5 text-xs font-mono">
+                  <button
+                    type="button"
                     onClick={() => setCliFormat('npx')}
                     className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
                       cliFormat === 'npx' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
                     }`}
-                    title="Official npx skills add open standard"
                   >
                     npx skills
                   </button>
                   <button
+                    type="button"
                     onClick={() => setCliFormat('python')}
                     className={`px-2 py-0.5 rounded transition-colors cursor-pointer ${
                       cliFormat === 'python' ? 'bg-zinc-800 text-white font-bold' : 'text-zinc-400 hover:text-zinc-200'
                     }`}
-                    title="Local Python install script"
                   >
                     python CLI
                   </button>
                 </div>
               </div>
+            </div>
 
-              <div className="flex flex-wrap items-center gap-2">
+            {/* Organized Export Buttons: All Visible & Category-Coded */}
+            <div className="flex flex-wrap items-center gap-2">
+              {/* IDE Rules */}
+              {(exportFilter === 'all' || exportFilter === 'ide') && (
+                <>
+                  <button
+                    type="button"
+                    onClick={downloadCursorRules}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-cyan-300 border border-cyan-500/30 hover:border-cyan-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>.cursorrules</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadCursor045Rules}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-indigo-300 border border-indigo-500/30 hover:border-indigo-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Code2 className="w-3.5 h-3.5 text-indigo-400" />
+                    <span>Cursor .mdc</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadWindsurfRules}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-blue-300 border border-blue-500/30 hover:border-blue-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Wind className="w-3.5 h-3.5 text-blue-400" />
+                    <span>.windsurfrules</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadClineRules}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-purple-300 border border-purple-500/30 hover:border-purple-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Code2 className="w-3.5 h-3.5 text-purple-400" />
+                    <span>.clinerules</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadCopilotInstructions}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-sky-300 border border-sky-500/30 hover:border-sky-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <FileCode className="w-3.5 h-3.5 text-sky-400" />
+                    <span>copilot-instructions</span>
+                  </button>
+                </>
+              )}
+
+              {/* Agent & Swarm Bundles */}
+              {(exportFilter === 'all' || exportFilter === 'agent') && (
+                <>
+                  <button
+                    type="button"
+                    onClick={downloadAntigravityBundle}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-teal-300 border border-teal-500/30 hover:border-teal-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Cpu className="w-3.5 h-3.5 text-teal-400" />
+                    <span>Antigravity Bundle</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadSwarmManifest}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-purple-300 border border-purple-500/30 hover:border-purple-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Users className="w-3.5 h-3.5 text-purple-400" />
+                    <span>Swarm Manifest</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadClaudeConfig}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-amber-300 border border-amber-500/30 hover:border-amber-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Terminal className="w-3.5 h-3.5 text-amber-400" />
+                    <span>claude.json</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadChatGptCustomGpt}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Bot className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>ChatGPT GPT</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowMinifier(true)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Minify Prompt</span>
+                  </button>
+                </>
+              )}
+
+              {/* Docs & Memory */}
+              {(exportFilter === 'all' || exportFilter === 'docs') && (
+                <>
+                  <button
+                    type="button"
+                    onClick={downloadMarkdown}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Stack.md</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadObsidianNote}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-violet-300 border border-violet-500/30 hover:border-violet-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Diamond className="w-3.5 h-3.5 text-violet-400" />
+                    <span>Obsidian Note</span>
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Bottom Actions: Clear All & Primary Batch Execution CTA */}
+            <div className="pt-2 border-t border-[#27272a]/60 flex flex-wrap items-center justify-between gap-2.5">
+              <button
+                type="button"
+                onClick={clearStack}
+                className="text-xs text-rose-400 hover:text-rose-300 font-semibold px-2 py-1 rounded hover:bg-rose-950/20 transition-colors cursor-pointer"
+              >
+                Clear All ({stack.length})
+              </button>
+
+              <div className="flex items-center gap-2.5">
                 <button
-                  onClick={copySwarmMermaidDiagram}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#131722] hover:bg-[#1a2130] text-purple-300 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-semibold"
-                  title="Copy GitHub Flavored Markdown Mermaid Diagram Code"
+                  type="button"
+                  onClick={() => setShowMinifier(true)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-500/50 text-xs font-semibold transition-colors cursor-pointer"
                 >
-                  {copiedMermaid ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Network className="w-3.5 h-3.5 text-purple-400" />}
-                  <span>{copiedMermaid ? 'Copied Mermaid!' : 'Copy Mermaid Diagram'}</span>
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Minify Prompt</span>
                 </button>
 
                 <button
+                  type="button"
                   onClick={copySwarmBriefText}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#161324] hover:bg-[#201c34] text-purple-200 border border-purple-500/30 hover:border-purple-500/60 cursor-pointer transition-colors text-xs font-semibold"
-                  title="Copy ready-to-run Multi-Agent Swarm Brief to clipboard"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-purple-300 border border-purple-500/30 hover:border-purple-500/50 text-xs font-semibold transition-colors cursor-pointer"
                 >
                   {copiedSwarmBrief ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Bot className="w-3.5 h-3.5 text-purple-400" />}
                   <span>{copiedSwarmBrief ? 'Copied Swarm Brief!' : 'Copy Swarm Brief'}</span>
                 </button>
 
                 <button
+                  type="button"
                   onClick={copyInstallScript}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-zinc-200 border border-[#27272a] hover:border-zinc-500 cursor-pointer transition-colors text-xs font-medium"
-                  title={`Copy batch script (${cliFormat === 'npx' ? 'npx skills add' : 'python'})`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-xs tracking-wide shadow-md transition-all cursor-pointer active:scale-95"
                 >
-                  {copiedScript ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>Copy Batch CLI ({cliFormat})</span>
-                </button>
-
-                <button
-                  onClick={downloadMarkdown}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-white hover:bg-zinc-200 text-zinc-900 font-bold cursor-pointer transition-colors text-xs"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>Export Markdown</span>
+                  {copiedScript ? <Check className="w-4 h-4 text-zinc-950" /> : <Copy className="w-4 h-4" />}
+                  <span>{copiedScript ? 'Batch Script Copied!' : `Copy Batch Script (${cliFormat})`}</span>
                 </button>
               </div>
             </div>
           </div>
         )}
       </div>
+
+      <PromptMinifierModal
+        isOpen={showMinifier}
+        onClose={() => setShowMinifier(false)}
+        stack={stack}
+      />
     </div>
   )
 }

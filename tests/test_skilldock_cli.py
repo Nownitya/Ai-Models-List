@@ -112,6 +112,28 @@ class TestSkillDockCLI(unittest.TestCase):
         self.assertIn('SkillDock Multi-Agent Swarm Brief', res_brief.stdout)
         self.assertIn('@coordinator', res_brief.stdout)
 
+    def test_08_init_and_check(self):
+        # 1. Test init
+        res_init = self.run_cli(['init', self.temp_dir, '--format', 'cursor045'])
+        self.assertEqual(res_init.returncode, 0)
+        self.assertIn('SkillDock Workspace Initialized successfully!', res_init.stdout)
+        self.assertTrue(os.path.exists(os.path.join(self.temp_dir, '.skilldock-stack.json')))
+        self.assertTrue(os.path.exists(os.path.join(self.temp_dir, '.cursor', 'rules', 'skilldock.mdc')))
+
+        # 2. Test check clean
+        res_check = self.run_cli(['check', self.temp_dir, '--json'])
+        self.assertEqual(res_check.returncode, 0)
+        check_json = json.loads(res_check.stdout)
+        self.assertTrue(check_json['valid'])
+
+    def test_09_export_minified_prompt(self):
+        self.run_cli(['stack', 'add', 'taste-skill', 'unslop'])
+        res_min = self.run_cli(['stack', 'export', '--format', 'minified-prompt'])
+        self.assertEqual(res_min.returncode, 0)
+        self.assertIn('<system_prompt', res_min.stdout)
+        self.assertIn('EVIDENCE_OVER_ASSERTIONS', res_min.stdout)
+        self.assertIn('ANTI_SLOP', res_min.stdout)
+
 
 if __name__ == '__main__':
     unittest.main()
