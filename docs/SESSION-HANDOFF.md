@@ -242,7 +242,7 @@
 ### 🧠 Current State of Repository & Metrics
 - **Catalog Totals**: **346 Atomic Skills**, **129 Upstream Frameworks**, **334 SKILL.md packages**, 57 Architecture Docs, 3 System Prompt Suites, **5,480,000+ total ⭐ community stars**.
 - **Marketplace Hub**: 1,126 MCP Connectors, 530 Plugins, 33 Specialized Platforms across Claude, ChatGPT, Antigravity, and Cursor.
-- **Test Integrity**: **89/89 Python unit tests PASSED** (`python -m unittest discover tests`). **17/17 Playwright E2E browser tests PASSED** (14 scenarios in `e2e/skilldock.spec.ts` + 3 scenarios in `e2e/ui-ux-revamp.spec.ts`). Zero TypeScript errors (`tsc -b`).
+- **Test Integrity**: **95/95 Python unit tests PASSED** (`python -m unittest discover tests`). **19/19 Playwright E2E browser tests PASSED** (16 scenarios in `e2e/skilldock.spec.ts` + 3 scenarios in `e2e/ui-ux-revamp.spec.ts`). Zero TypeScript errors (`tsc -b`).
 - **Parity**: Dual matrix parity confirmed between `AI-Coding-Skills-and-Tools-Matrix.md` (835 lines) and `.csv` (665 rows).
 - **Obsidian Vault**: Mirrored and synchronized to `D:\ObsidianVault\Vault1\ObsidianVault\01_Projects\AI-Ecosystem\Ai-Models-List`.
 
@@ -282,6 +282,20 @@
     - Built `web/src/utils/promptMinifier.ts` and `web/src/components/modals/PromptMinifierModal.tsx` in `StackModal.tsx`.
     - Cuts 45–55% of token bloat and system prompt costs for active stacks while preserving 100% of contracts and hard invariants.
     - Added `--format minified-prompt` in CLI. Verified in Playwright E2E Scenario 14.
+11. **Interactive Swarm Wave Simulator & `SWARM_WAVE.md` Export (Wave 2 Horizon 1)**:
+    - Built interactive Swarm Wave Simulator in `StackModal.tsx` (`[Topology Overview]` ⇄ `[Wave Simulator]`) with play/pause simulation loop, step navigation, 5-stage stepper ribbon, active agent glowing pulse ring, deliverables checklist, and live telemetry terminal box (`wave-telemetry.log`).
+    - Generates structured, execution-ready `SWARM_WAVE.md` plans with 1-click copy and download.
+    - Added CLI support: `skilldock swarm wave [--output SWARM_WAVE.md]` and `skilldock stack export --format swarm-wave`.
+    - Verified across Playwright E2E Scenario 15 and CLI unit test 10.
+12. **Enterprise Sandboxed Agent Docker Exporter (Wave 2 Horizon 2)**:
+    - Built `web/src/utils/dockerExporter.ts` and `web/src/components/modals/DockerSandboxModal.tsx`.
+    - Generates production-ready `Dockerfile.agent` and `compose.agent.yml` with non-root developer user `agent` (UID 1001), 4GB memory ceiling, 2.0 CPUs, read-only git config bind mount, and dropped root capabilities.
+    - Added `[Docker Sandbox]` modal trigger to `StackModal.tsx` and CLI: `skilldock sandbox [--output-dir <dir>]` and `skilldock stack export --format docker|compose`.
+    - Verified across Playwright E2E Scenario 16 and CLI unit test 11.
+13. **Automated Nightly GitHub Telemetry & Star Freshness Engine (Wave 3)**:
+    - Created `.github/workflows/telemetry-sync.yml` running nightly at 02:00 UTC and on workflow dispatch.
+    - Automatically queries GitHub API, updates `data/github-metrics.json`, syncs Markdown and CSV matrices via `sync-matrix.py`, exports `web/src/data/matrix.json`, and rebuilds/stages GitHub Pages bundle via `deploy-skilldock.py`.
+    - Authored unit test suite in `tests/test_telemetry_sync.py` (total 95/95 Python unit tests passing).
 
 ---
 

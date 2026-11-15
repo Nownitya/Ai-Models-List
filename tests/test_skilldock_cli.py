@@ -134,6 +134,57 @@ class TestSkillDockCLI(unittest.TestCase):
         self.assertIn('EVIDENCE_OVER_ASSERTIONS', res_min.stdout)
         self.assertIn('ANTI_SLOP', res_min.stdout)
 
+    def test_10_swarm_wave_plan(self):
+        self.run_cli(['stack', 'add', 'taste-skill', 'writing-plans', 'systematic-debugging'])
+        res_wave = self.run_cli(['swarm', 'wave'])
+        self.assertEqual(res_wave.returncode, 0)
+        self.assertIn('SWARM_WAVE.md', res_wave.stdout)
+        self.assertIn('@coordinator', res_wave.stdout)
+        self.assertIn('@architect', res_wave.stdout)
+        self.assertIn('@builder', res_wave.stdout)
+        self.assertIn('@verifier', res_wave.stdout)
+        self.assertIn('Wave 1: Intent & Architectural Foundations', res_wave.stdout)
+        self.assertIn('Wave 2: Test-Driven Implementation Slices', res_wave.stdout)
+        self.assertIn('Wave 3: Adversarial Verification & Release Gate', res_wave.stdout)
+
+        # Test export alias
+        res_exp = self.run_cli(['stack', 'export', '--format', 'swarm-wave'])
+        self.assertEqual(res_exp.returncode, 0)
+        self.assertIn('SWARM_WAVE.md', res_exp.stdout)
+
+    def test_11_docker_sandbox_export(self):
+        self.run_cli(['stack', 'add', 'taste-skill', 'unslop'])
+        res_sandbox = self.run_cli(['sandbox', '--output-dir', self.temp_dir])
+        self.assertEqual(res_sandbox.returncode, 0)
+        self.assertIn('Generated Sandboxed Agent Docker configuration', res_sandbox.stdout)
+
+        df_path = os.path.join(self.temp_dir, 'Dockerfile.agent')
+        cp_path = os.path.join(self.temp_dir, 'compose.agent.yml')
+        self.assertTrue(os.path.exists(df_path))
+        self.assertTrue(os.path.exists(cp_path))
+
+        with open(df_path, 'r', encoding='utf-8') as f:
+            df_content = f.read()
+        self.assertIn('FROM node:22-bookworm-slim', df_content)
+        self.assertIn('useradd -u 1001', df_content)
+        self.assertIn('USER agent', df_content)
+        self.assertIn('SKILLDOCK_SANDBOX=1', df_content)
+
+        with open(cp_path, 'r', encoding='utf-8') as f:
+            cp_content = f.read()
+        self.assertIn('user: "1001:1001"', cp_content)
+        self.assertIn('no-new-privileges:true', cp_content)
+        self.assertIn('memory: 4G', cp_content)
+
+        # Test export format aliases
+        res_df = self.run_cli(['stack', 'export', '--format', 'docker'])
+        self.assertEqual(res_df.returncode, 0)
+        self.assertIn('Dockerfile.agent', res_df.stdout)
+
+        res_cp = self.run_cli(['stack', 'export', '--format', 'compose'])
+        self.assertEqual(res_cp.returncode, 0)
+        self.assertIn('compose.agent.yml', res_cp.stdout)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -21,12 +21,26 @@ import {
   FileCode,
   Search,
   Sparkles,
+  Play,
+  Pause,
+  RotateCcw,
+  ChevronRight,
+  ChevronLeft,
+  CheckCircle2,
+  Radio,
 } from 'lucide-react'
 import { useSkillStore } from '@/stores/useSkillStore'
-import { generateSwarmManifest, generateSwarmBrief, partitionStackIntoSwarm } from '@/utils/swarmOrchestrator'
+import {
+  generateSwarmManifest,
+  generateSwarmBrief,
+  partitionStackIntoSwarm,
+  getSwarmWaveStages,
+  generateSwarmWavePlan,
+} from '@/utils/swarmOrchestrator'
 import { lintSkillStack } from '@/utils/stackLinter'
 import { CopyButton } from '@/components/common/CopyButton'
 import { PromptMinifierModal } from '@/components/modals/PromptMinifierModal'
+import { DockerSandboxModal } from '@/components/modals/DockerSandboxModal'
 
 export const StackModal: React.FC = () => {
   const isStackModalOpen = useSkillStore((s) => s.isStackModalOpen)
@@ -41,10 +55,15 @@ export const StackModal: React.FC = () => {
   const [copiedShareUrl, setCopiedShareUrl] = useState(false)
   const [copiedSwarmBrief, setCopiedSwarmBrief] = useState(false)
   const [copiedMermaid, setCopiedMermaid] = useState(false)
+  const [copiedSwarmWavePlan, setCopiedSwarmWavePlan] = useState(false)
   const [cliFormat, setCliFormat] = useState<'npx' | 'python'>('npx')
   const [searchFilter, setSearchFilter] = useState('')
   const [exportFilter, setExportFilter] = useState<'all' | 'ide' | 'agent' | 'docs'>('all')
   const [showMinifier, setShowMinifier] = useState(false)
+  const [showDockerModal, setShowDockerModal] = useState(false)
+  const [swarmSubView, setSwarmSubView] = useState<'overview' | 'simulator'>('overview')
+  const [activeStageIndex, setActiveStageIndex] = useState(0)
+  const [isSimPlaying, setIsSimPlaying] = useState(false)
 
   useEffect(() => {
     if (!isStackModalOpen) return
@@ -92,6 +111,46 @@ export const StackModal: React.FC = () => {
 
   const { plannerSkills, builderSkills, verifierSkills } = partitionStackIntoSwarm(stack)
   const lintFindings = lintSkillStack(stack.map((s) => s.id))
+  const waveStages = useMemo(() => getSwarmWaveStages(stack), [stack])
+
+  // Simulation timer loop
+  useEffect(() => {
+    if (!isSimPlaying) return
+    const timer = setInterval(() => {
+      setActiveStageIndex((prev) => {
+        if (prev >= waveStages.length - 1) {
+          setIsSimPlaying(false)
+          return prev
+        }
+        return prev + 1
+      })
+    }, 1800)
+    return () => clearInterval(timer)
+  }, [isSimPlaying, waveStages.length])
+
+  const handleSimPlayPause = () => {
+    if (activeStageIndex >= waveStages.length - 1 && !isSimPlaying) {
+      setActiveStageIndex(0)
+      setIsSimPlaying(true)
+    } else {
+      setIsSimPlaying((p) => !p)
+    }
+  }
+
+  const handleSimStepNext = () => {
+    setIsSimPlaying(false)
+    setActiveStageIndex((p) => Math.min(waveStages.length - 1, p + 1))
+  }
+
+  const handleSimStepPrev = () => {
+    setIsSimPlaying(false)
+    setActiveStageIndex((p) => Math.max(0, p - 1))
+  }
+
+  const handleSimReset = () => {
+    setIsSimPlaying(false)
+    setActiveStageIndex(0)
+  }
 
   // Filter skills in stack dynamically
   const filteredStack = useMemo(() => {
@@ -402,6 +461,26 @@ The following ${stack.length} capabilities are actively installed and required f
     setTimeout(() => setCopiedMermaid(false), 1600)
   }
 
+  // 6d. Copy Multi-Agent Swarm Wave Plan to Clipboard
+  const copySwarmWavePlanText = () => {
+    const plan = generateSwarmWavePlan(stack)
+    navigator.clipboard.writeText(plan)
+    setCopiedSwarmWavePlan(true)
+    setTimeout(() => setCopiedSwarmWavePlan(false), 1600)
+  }
+
+  // 6e. Download SWARM_WAVE.md Plan
+  const downloadSwarmWavePlan = () => {
+    const plan = generateSwarmWavePlan(stack)
+    const blob = new Blob([plan], { type: 'text/markdown;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `SWARM_WAVE.md`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   // 7. Copy Batch Installation Script
   const copyInstallScript = () => {
     const commands = stack.map((s) => getCommand(s)).join('\n')
@@ -659,112 +738,349 @@ The following ${stack.length} capabilities are actively installed and required f
           ) : stackModalView === 'swarm' ? (
             /* Swarm View */
             <div className="space-y-4 text-xs">
-              <div className="flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-[#141417] border border-[#27272a] font-mono text-[11px]">
-                <div className="flex items-center gap-2 text-zinc-300">
-                  <Network className="w-4 h-4 text-purple-400" />
-                  <span className="font-semibold text-white">SkillDock Multi-Agent Sprint Topology</span>
+              {/* Swarm Sub-Navigation Bar */}
+              <div className="flex flex-wrap items-center justify-between gap-2.5 p-3 rounded-lg bg-[#141417] border border-[#27272a]">
+                <div className="inline-flex rounded-lg bg-zinc-900 border border-[#27272a] p-0.5 text-xs font-mono">
+                  <button
+                    type="button"
+                    onClick={() => setSwarmSubView('overview')}
+                    className={`px-3 py-1 rounded transition-colors cursor-pointer ${
+                      swarmSubView === 'overview'
+                        ? 'bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30'
+                        : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    Topology Overview
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSwarmSubView('simulator')}
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded transition-colors cursor-pointer ${
+                      swarmSubView === 'simulator'
+                        ? 'bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/30'
+                        : 'text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    <Radio className="w-3 h-3 text-cyan-400 animate-pulse" />
+                    <span>Wave Simulator</span>
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  onClick={copySwarmMermaidDiagram}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/30 text-[11px] font-mono cursor-pointer transition-colors"
-                >
-                  {copiedMermaid ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                  <span>{copiedMermaid ? 'Copied Mermaid Diagram!' : 'Copy Mermaid Diagram'}</span>
-                </button>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={copySwarmWavePlanText}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 border border-purple-500/30 text-[11px] font-mono cursor-pointer transition-colors"
+                    title="Copy executable SWARM_WAVE.md plan"
+                  >
+                    {copiedSwarmWavePlan ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copiedSwarmWavePlan ? 'Copied Wave Plan!' : 'Copy Wave Plan'}</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadSwarmWavePlan}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 border border-zinc-700 text-[11px] font-mono cursor-pointer transition-colors"
+                    title="Download SWARM_WAVE.md file"
+                  >
+                    <Download className="w-3.5 h-3.5 text-purple-400" />
+                    <span>SWARM_WAVE.md</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={copySwarmMermaidDiagram}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-800/80 hover:bg-zinc-700 text-zinc-400 border border-zinc-700 text-[11px] font-mono cursor-pointer transition-colors"
+                    title="Copy Mermaid flowchart syntax"
+                  >
+                    {copiedMermaid ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Network className="w-3.5 h-3.5" />}
+                    <span>{copiedMermaid ? 'Copied Mermaid Diagram!' : 'Copy Mermaid Diagram'}</span>
+                  </button>
+                </div>
               </div>
 
-              {/* Coordinator */}
-              <div className="p-3.5 rounded-xl bg-gradient-to-b from-[#11161d] to-[#0d1117] border border-blue-500/30 space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 font-mono font-bold text-white">
-                    <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                    <span>@coordinator</span>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-300 border border-blue-500/30">
-                      claude-3-7-sonnet
-                    </span>
-                  </div>
-                  <span className="text-[10px] font-mono text-zinc-400">Release Gate & Board Host</span>
-                </div>
-                <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
-                  Owns milestone delivery, task wave sequencing, and final verification sign-off before shipping.
-                </p>
-              </div>
-
-              {/* Worker Columns */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div className="p-3 rounded-xl bg-[#141417] border border-amber-500/20 flex flex-col justify-between space-y-2">
-                  <div className="space-y-1">
-                    <div className="flex items-center justify-between font-mono">
-                      <span className="font-bold text-white text-xs flex items-center gap-1.5">
-                        <Compass className="w-3.5 h-3.5 text-amber-400" />
-                        <span>@architect</span>
-                      </span>
-                      <span className="text-[10px] text-amber-300">claude-3-7</span>
-                    </div>
-                    <p className="text-[10px] text-zinc-400">ADRs, architecture, and task wave decomposition</p>
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono text-zinc-500">Skills ({plannerSkills.length}):</span>
-                    <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
-                      {plannerSkills.slice(0, 8).map((s) => (
-                        <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
-                          /{s.scoped}
+              {swarmSubView === 'overview' ? (
+                <>
+                  {/* Coordinator */}
+                  <div className="p-3.5 rounded-xl bg-gradient-to-b from-[#11161d] to-[#0d1117] border border-blue-500/30 space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 font-mono font-bold text-white">
+                        <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                        <span>@coordinator</span>
+                        <span className="px-1.5 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                          claude-3-7-sonnet
                         </span>
-                      ))}
-                      {plannerSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{plannerSkills.length - 8}</span>}
+                      </div>
+                      <span className="text-[10px] font-mono text-zinc-400">Release Gate & Board Host</span>
                     </div>
+                    <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
+                      Owns milestone delivery, task wave sequencing, and final verification sign-off before shipping.
+                    </p>
                   </div>
-                </div>
 
-                <div className="p-3 rounded-xl bg-[#141417] border border-emerald-500/20 flex flex-col justify-between space-y-2">
-                  <div className="space-y-1">
-                    <div className="flex items-center justify-between font-mono">
-                      <span className="font-bold text-white text-xs flex items-center gap-1.5">
-                        <Hammer className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>@builder</span>
-                      </span>
-                      <span className="text-[10px] text-emerald-300">gemini-2.0</span>
+                  {/* Worker Columns */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div className="p-3 rounded-xl bg-[#141417] border border-amber-500/20 flex flex-col justify-between space-y-2">
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between font-mono">
+                          <span className="font-bold text-white text-xs flex items-center gap-1.5">
+                            <Compass className="w-3.5 h-3.5 text-amber-400" />
+                            <span>@architect</span>
+                          </span>
+                          <span className="text-[10px] text-amber-300">claude-3-7</span>
+                        </div>
+                        <p className="text-[10px] text-zinc-400">ADRs, architecture, and task wave decomposition</p>
+                      </div>
+                      <div className="space-y-1">
+                        <span className="text-[10px] font-mono text-zinc-500">Skills ({plannerSkills.length}):</span>
+                        <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                          {plannerSkills.slice(0, 8).map((s) => (
+                            <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
+                              /{s.scoped}
+                            </span>
+                          ))}
+                          {plannerSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{plannerSkills.length - 8}</span>}
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-[10px] text-zinc-400">Atomic commits, test execution, and code synthesis</p>
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono text-zinc-500">Skills ({builderSkills.length}):</span>
-                    <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
-                      {builderSkills.slice(0, 8).map((s) => (
-                        <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
-                          /{s.scoped}
-                        </span>
-                      ))}
-                      {builderSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{builderSkills.length - 8}</span>}
-                    </div>
-                  </div>
-                </div>
 
-                <div className="p-3 rounded-xl bg-[#141417] border border-rose-500/20 flex flex-col justify-between space-y-2">
-                  <div className="space-y-1">
-                    <div className="flex items-center justify-between font-mono">
-                      <span className="font-bold text-white text-xs flex items-center gap-1.5">
-                        <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />
-                        <span>@verifier</span>
-                      </span>
-                      <span className="text-[10px] text-rose-300">deepseek-r1</span>
+                    <div className="p-3 rounded-xl bg-[#141417] border border-emerald-500/20 flex flex-col justify-between space-y-2">
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between font-mono">
+                          <span className="font-bold text-white text-xs flex items-center gap-1.5">
+                            <Hammer className="w-3.5 h-3.5 text-emerald-400" />
+                            <span>@builder</span>
+                          </span>
+                          <span className="text-[10px] text-emerald-300">gemini-2.0</span>
+                        </div>
+                        <p className="text-[10px] text-zinc-400">Atomic commits, test execution, and code synthesis</p>
+                      </div>
+                      <div className="space-y-1">
+                        <span className="text-[10px] font-mono text-zinc-500">Skills ({builderSkills.length}):</span>
+                        <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                          {builderSkills.slice(0, 8).map((s) => (
+                            <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
+                              /{s.scoped}
+                            </span>
+                          ))}
+                          {builderSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{builderSkills.length - 8}</span>}
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-[10px] text-zinc-400">Adversarial QA, test gates, and Law 1 parity</p>
+
+                    <div className="p-3 rounded-xl bg-[#141417] border border-rose-500/20 flex flex-col justify-between space-y-2">
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between font-mono">
+                          <span className="font-bold text-white text-xs flex items-center gap-1.5">
+                            <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />
+                            <span>@verifier</span>
+                          </span>
+                          <span className="text-[10px] text-rose-300">deepseek-r1</span>
+                        </div>
+                        <p className="text-[10px] text-zinc-400">Adversarial QA, test gates, and Law 1 parity</p>
+                      </div>
+                      <div className="space-y-1">
+                        <span className="text-[10px] font-mono text-zinc-500">Skills ({verifierSkills.length}):</span>
+                        <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
+                          {verifierSkills.slice(0, 8).map((s) => (
+                            <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
+                              /{s.scoped}
+                            </span>
+                          ))}
+                          {verifierSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{verifierSkills.length - 8}</span>}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono text-zinc-500">Skills ({verifierSkills.length}):</span>
-                    <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto">
-                      {verifierSkills.slice(0, 8).map((s) => (
-                        <span key={s.id} className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-zinc-800 text-zinc-300">
-                          /{s.scoped}
+                </>
+              ) : (
+                /* Interactive Swarm Wave Simulator */
+                <div className="space-y-4">
+                  {/* Playback Control Strip */}
+                  <div className="p-3.5 rounded-xl bg-[#111115] border border-[#27272a] flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={handleSimPlayPause}
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold font-mono transition-all cursor-pointer shadow-sm ${
+                          isSimPlaying
+                            ? 'bg-amber-500 text-zinc-950 hover:bg-amber-400'
+                            : 'bg-emerald-500 text-zinc-950 hover:bg-emerald-400'
+                        }`}
+                      >
+                        {isSimPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                        <span>{isSimPlaying ? 'Pause Simulation' : 'Play Simulation'}</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleSimStepPrev}
+                        disabled={activeStageIndex === 0}
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed border border-zinc-700/60 transition-colors"
+                        title="Step backward"
+                      >
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleSimStepNext}
+                        disabled={activeStageIndex >= waveStages.length - 1}
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed border border-zinc-700/60 transition-colors"
+                        title="Step forward"
+                      >
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleSimReset}
+                        className="p-1.5 rounded-lg bg-zinc-800 text-zinc-400 hover:text-white border border-zinc-700/60 transition-colors"
+                        title="Reset simulation to beginning"
+                      >
+                        <RotateCcw className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs font-mono">
+                      <div className="text-zinc-400">
+                        <span className="text-zinc-500">Stage:</span>{' '}
+                        <span className="font-bold text-white">
+                          {activeStageIndex + 1}/{waveStages.length}
+                        </span>{' '}
+                        <span className="text-cyan-300 font-semibold">({waveStages[activeStageIndex]?.title})</span>
+                      </div>
+                      <div className="w-24 sm:w-32 h-2 rounded-full bg-zinc-800 overflow-hidden border border-zinc-700">
+                        <div
+                          className="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 transition-all duration-300"
+                          style={{ width: `${((activeStageIndex + 1) / waveStages.length) * 100}%` }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 5-Stage Stepper Ribbon */}
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                    {waveStages.map((stage, idx) => {
+                      const isPast = idx < activeStageIndex
+                      const isCurrent = idx === activeStageIndex
+
+                      let cardBorder = 'border-[#27272a] bg-[#111114]'
+                      if (isCurrent) cardBorder = 'border-cyan-500/70 bg-cyan-950/20 shadow-md shadow-cyan-500/10 ring-1 ring-cyan-500/50'
+                      else if (isPast) cardBorder = 'border-emerald-500/40 bg-emerald-950/10'
+
+                      return (
+                        <div
+                          key={stage.id}
+                          onClick={() => {
+                            setIsSimPlaying(false)
+                            setActiveStageIndex(idx)
+                          }}
+                          className={`p-2.5 rounded-xl border transition-all cursor-pointer text-left space-y-1.5 ${cardBorder}`}
+                        >
+                          <div className="flex items-center justify-between font-mono text-[10px]">
+                            <span className="font-bold text-zinc-400">Wave 0{stage.phaseNumber}</span>
+                            {isPast ? (
+                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                            ) : isCurrent ? (
+                              <Radio className="w-3 h-3 text-cyan-400 animate-pulse shrink-0" />
+                            ) : (
+                              <span className="w-2 h-2 rounded-full bg-zinc-700 shrink-0" />
+                            )}
+                          </div>
+
+                          <div className="font-bold text-white text-xs truncate" title={stage.title}>
+                            {stage.title}
+                          </div>
+
+                          <div className="flex items-center justify-between font-mono text-[10px]">
+                            <span className="text-zinc-300 font-bold">{stage.owner}</span>
+                            <span className="text-zinc-500">{stage.model.split('-')[0]}</span>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {/* Active Stage Deep Dive & Live Telemetry Box */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {/* Left: Mission & Deliverables Checklist */}
+                    <div className="p-4 rounded-xl bg-[#111115] border border-[#27272a] space-y-3">
+                      <div className="flex items-center justify-between border-b border-[#27272a] pb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                            Wave 0{waveStages[activeStageIndex]?.phaseNumber}
+                          </span>
+                          <span className="font-bold text-white text-sm">
+                            {waveStages[activeStageIndex]?.title}
+                          </span>
+                        </div>
+                        <span className="text-[11px] font-mono text-zinc-400">
+                          {waveStages[activeStageIndex]?.owner} • {waveStages[activeStageIndex]?.model}
                         </span>
-                      ))}
-                      {verifierSkills.length > 8 && <span className="text-[9px] text-zinc-500">+{verifierSkills.length - 8}</span>}
+                      </div>
+
+                      <p className="text-xs text-zinc-300 leading-relaxed">
+                        {waveStages[activeStageIndex]?.mission}
+                      </p>
+
+                      <div className="space-y-1.5">
+                        <div className="text-[11px] font-mono font-semibold text-zinc-400 uppercase tracking-wider">
+                          Wave Deliverables:
+                        </div>
+                        {waveStages[activeStageIndex]?.deliverables.map((del, i) => (
+                          <div key={i} className="flex items-center gap-2 text-xs text-zinc-300">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                            <span>{del}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {waveStages[activeStageIndex]?.skills && waveStages[activeStageIndex].skills.length > 0 && (
+                        <div className="pt-2 border-t border-[#27272a]/60 space-y-1">
+                          <div className="text-[10px] font-mono text-zinc-500">
+                            Bound Skills ({waveStages[activeStageIndex].skills.length}):
+                          </div>
+                          <div className="flex flex-wrap gap-1">
+                            {waveStages[activeStageIndex].skills.map((s) => (
+                              <span key={s.id} className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-zinc-800 text-zinc-300 border border-zinc-700/60">
+                                /{s.scoped}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Right: Live Telemetry Dispatch Terminal */}
+                    <div className="p-4 rounded-xl bg-[#09090c] border border-[#27272a] flex flex-col justify-between font-mono text-xs space-y-3">
+                      <div className="flex items-center justify-between border-b border-zinc-800/80 pb-2 text-[10px] text-zinc-500">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-rose-500" />
+                          <span className="w-2 h-2 rounded-full bg-amber-500" />
+                          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                          <span className="ml-2 text-zinc-400">wave-telemetry.log</span>
+                        </div>
+                        <span className="text-emerald-400">● LIVE RUNTIME</span>
+                      </div>
+
+                      <div className="flex-1 space-y-2 text-[11px] leading-relaxed text-zinc-300 overflow-y-auto max-h-48">
+                        {waveStages.slice(0, activeStageIndex + 1).flatMap((stg) =>
+                          stg.telemetryLogs.map((log, lidx) => (
+                            <div key={`${stg.id}-${lidx}`} className="flex items-start gap-2">
+                              <span className="text-zinc-600 shrink-0">➜</span>
+                              <span className="text-zinc-300">{log}</span>
+                            </div>
+                          ))
+                        )}
+                      </div>
+
+                      <div className="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-[10px] text-zinc-500">
+                        <span>Handoff Status: {activeStageIndex === waveStages.length - 1 ? 'Sprint Complete' : 'Handing off to next wave'}</span>
+                        <span className="text-cyan-400 font-bold">100% Deterministic</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           ) : (
             /* Skills Table List (Spacious & Legible) */
@@ -1001,6 +1317,22 @@ The following ${stack.length} capabilities are actively installed and required f
                     <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
                     <span>Minify Prompt</span>
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowDockerModal(true)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-cyan-300 border border-cyan-500/30 hover:border-cyan-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>Docker Sandbox</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={downloadSwarmWavePlan}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-purple-300 border border-purple-500/30 hover:border-purple-500/60 transition-colors text-xs font-mono cursor-pointer"
+                  >
+                    <Users className="w-3.5 h-3.5 text-purple-400" />
+                    <span>SWARM_WAVE.md</span>
+                  </button>
                 </>
               )}
 
@@ -1040,6 +1372,15 @@ The following ${stack.length} capabilities are actively installed and required f
               <div className="flex items-center gap-2.5">
                 <button
                   type="button"
+                  onClick={() => setShowDockerModal(true)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-cyan-300 border border-cyan-500/30 hover:border-cyan-500/50 text-xs font-semibold transition-colors cursor-pointer"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Docker Sandbox</span>
+                </button>
+
+                <button
+                  type="button"
                   onClick={() => setShowMinifier(true)}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#18181b] hover:bg-zinc-800 text-emerald-300 border border-emerald-500/30 hover:border-emerald-500/50 text-xs font-semibold transition-colors cursor-pointer"
                 >
@@ -1073,6 +1414,12 @@ The following ${stack.length} capabilities are actively installed and required f
       <PromptMinifierModal
         isOpen={showMinifier}
         onClose={() => setShowMinifier(false)}
+        stack={stack}
+      />
+
+      <DockerSandboxModal
+        isOpen={showDockerModal}
+        onClose={() => setShowDockerModal(false)}
         stack={stack}
       />
     </div>

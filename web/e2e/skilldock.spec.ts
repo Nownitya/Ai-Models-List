@@ -455,4 +455,78 @@ test.describe('SkillDock Web 3.0 Platform & Agent Bridge E2E Suite', () => {
     const copyBtn = page.getByRole('button', { name: /Copy Minified Prompt|Copy/i }).last()
     await expect(copyBtn).toBeVisible()
   })
+
+  test('15: Interactive Swarm Wave Simulator & SWARM_WAVE.md Plan Exporter', async ({ page }) => {
+    // 1. Open stack modal with sample skills
+    await page.goto('/?stack=taste-skill,unslop,systematic-debugging,writing-plans')
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
+    await stackBtn.click()
+
+    // 2. Switch to Swarm Studio
+    const swarmTab = page.getByRole('button', { name: /Multi-Agent Swarm Topology/i })
+    await swarmTab.click()
+
+    // 3. Verify sub-tabs: Topology Overview and Wave Simulator
+    await expect(page.getByRole('button', { name: /Topology Overview/i })).toBeVisible()
+    const waveSimBtn = page.getByRole('button', { name: /Wave Simulator/i })
+    await expect(waveSimBtn).toBeVisible()
+    await waveSimBtn.click()
+
+    // 4. Verify Simulator Controls & 5-Stage Stepper Ribbon
+    await expect(page.getByRole('button', { name: /Play Simulation/i })).toBeVisible()
+    await expect(page.getByText('Wave 01').first()).toBeVisible()
+    await expect(page.getByText('Wave 02')).toBeVisible()
+    await expect(page.getByText('Wave 03')).toBeVisible()
+
+    // 5. Test Step Forward
+    const stepNextBtn = page.locator('button[title="Step forward"]')
+    await expect(stepNextBtn).toBeVisible()
+    await stepNextBtn.click()
+    await expect(page.getByText('System Architecture & ADRs').first()).toBeVisible()
+
+    // 6. Verify Deliverables Checklist & Telemetry Terminal
+    await expect(page.getByText('Wave Deliverables:')).toBeVisible()
+    await expect(page.getByText('wave-telemetry.log')).toBeVisible()
+    await expect(page.getByText('LIVE RUNTIME')).toBeVisible()
+
+    // 7. Verify Copy Wave Plan Action
+    const copyWaveBtn = page.getByRole('button', { name: /Copy Wave Plan/i })
+    await expect(copyWaveBtn).toBeVisible()
+    await copyWaveBtn.click()
+    await expect(page.getByRole('button', { name: /Copied Wave Plan!/i })).toBeVisible()
+  })
+
+  test('16: Enterprise Sandboxed Agent Docker Exporter (Dockerfile.agent & compose.agent.yml)', async ({ page }) => {
+    // 1. Open stack modal with sample skills
+    await page.goto('/?stack=taste-skill,unslop,systematic-debugging')
+    const stackBtn = page.locator('header button[title="Open Selected Skills Stack"]')
+    await stackBtn.click()
+
+    // 2. Click Docker Sandbox export button
+    const dockerBtn = page.getByRole('button', { name: /Docker Sandbox/i }).first()
+    await expect(dockerBtn).toBeVisible()
+    await dockerBtn.click()
+
+    // 3. Verify Docker Sandbox Modal opens
+    await expect(page.getByRole('heading', { name: /Sandboxed Agent Docker Exporter/i })).toBeVisible()
+    await expect(page.getByText('Non-Root UID 1001')).toBeVisible()
+    await expect(page.getByText('non-root (1001)')).toBeVisible()
+    await expect(page.getByText('4G / 2.0 cores')).toBeVisible()
+
+    // 4. Verify Dockerfile content
+    await expect(page.getByText('FROM node:22-bookworm-slim')).toBeVisible()
+    await expect(page.getByText('SKILLDOCK_SANDBOX=1')).toBeVisible()
+
+    // 5. Switch to compose.agent.yml tab
+    const composeTab = page.getByRole('button', { name: /compose\.agent\.yml/i }).first()
+    await expect(composeTab).toBeVisible()
+    await composeTab.click()
+
+    // 6. Verify compose content
+    await expect(page.getByText('user: "1001:1001"')).toBeVisible()
+    await expect(page.getByText('no-new-privileges:true')).toBeVisible()
+
+    // 7. Verify action buttons
+    await expect(page.getByRole('button', { name: /Download Both Files/i })).toBeVisible()
+  })
 })

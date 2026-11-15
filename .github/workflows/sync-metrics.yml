@@ -2,14 +2,9 @@ name: Sync Upstream Metrics
 
 on:
   schedule:
-    # Run daily at 00:00 UTC (Completely free in public repos)
+    # Run daily at 00:00 UTC
     - cron: '0 0 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'AI-Coding-Skills-and-Tools-Matrix.md'
 
 permissions:
   contents: write
@@ -43,13 +38,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Check for changes in data/ and docs/LIVE-STATS.md
-          if [ -n "$(git status --porcelain data/ docs/LIVE-STATS.md)" ]; then
-            git add data/ docs/LIVE-STATS.md
+          if [ -n "$(git status --porcelain data/ docs/LIVE-STATS.md web/src/data/matrix.json AI-Coding-Skills-and-Tools-Matrix.md AI-Coding-Skills-and-Tools-Matrix.csv)" ]; then
+            git add data/ docs/LIVE-STATS.md web/src/data/matrix.json AI-Coding-Skills-and-Tools-Matrix.md AI-Coding-Skills-and-Tools-Matrix.csv
             git commit -m "chore(metrics): update upstream stars and release versions [skip ci]"
             git push origin main
             echo "Metrics successfully updated and pushed."
           else
             echo "No metrics changes detected. Working tree clean."
           fi
-

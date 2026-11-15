@@ -1,0 +1,68 @@
+name: Automated Nightly Telemetry & Freshness Engine
+
+on:
+  schedule:
+    # Run nightly at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'AI-Coding-Skills-and-Tools-Matrix.md'
+
+permissions:
+  contents: write
+
+jobs:
+  telemetry-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: 'web/package-lock.json'
+
+      - name: Install Frontend Dependencies
+        run: |
+          npm --prefix web ci
+
+      - name: Fetch Live GitHub Metrics & Update Radar Table
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/sync-github-metrics.py
+
+      - name: Validate Dual Matrix Parity & Export JSON
+        run: |
+          python scripts/sync-matrix.py
+
+      - name: Build and Stage Web App Bundle
+        run: |
+          python scripts/deploy-skilldock.py
+
+      - name: Commit and Push Telemetry Update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "$(git status --porcelain data/ docs/LIVE-STATS.md web/src/data/matrix.json index.html assets/ AI-Coding-Skills-and-Tools-Matrix.md AI-Coding-Skills-and-Tools-Matrix.csv)" ]; then
+            git add data/ docs/LIVE-STATS.md web/src/data/matrix.json index.html assets/ AI-Coding-Skills-and-Tools-Matrix.md AI-Coding-Skills-and-Tools-Matrix.csv
+            git commit -m "chore(telemetry): update upstream stars, releases, and web bundle [skip ci]"
+            git push origin main
+            echo "Telemetry and production bundle successfully updated and pushed."
+          else
+            echo "No telemetry changes detected. Working tree clean."
+          fi
